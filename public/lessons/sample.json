@@ -1,0 +1,47 @@
+{
+  "id": "001:1",
+  "video": {
+    "id": "001",
+    "title": "Sing2",
+    "url": "/videos/sing2.mp4",
+    "poster": "https://i0.wp.com/www.nerdsandbeyond.com/wp-content/uploads/2021/11/sing-2-cover-image.jpg?fit=800%2C402&ssl=1"
+  },
+  "lesson": [
+    {
+      "mimicking": [
+        { "start": "00:01:43,721", "end": "00:01:46,124", "lines": "Oh, my gosh." },
+        { "start": "00:04:36,960", "end": "00:04:37,696", "lines": "What's going on?" },
+        { "start": "00:04:38,190", "end": "00:04:40,498", "lines": "No time to explain. Run away." },
+        { "start": "00:04:47,072", "end": "00:04:48,700", "lines": "You really got those moves locked down now hmm?" },
+        { "start": "00:04:49,072", "end": "00:04:50,405", "lines": "I sure do, Mr. Moon." },
+        { "start": "00:04:53,278", "end": "00:04:55,613", "lines": "Great job, everybody. Great job" },
+        { "start": "00:04:57,682", "end": "00:05:00,018", "lines": "I think we pretty much nailed it." },
+        { "start": "00:05:00,251", "end": "00:05:01,486", "lines": "So, is she here?" },
+        { "start": "00:05:03,655", "end": "00:05:05,757", "lines": "There. See the dog, middle third row?" },
+        { "start": "00:05:09,160", "end": "00:05:10,478", "lines": "she's the best scout in show business." },
+        { "start": "00:05:10,861", "end": "00:05:12,430", "lines": "I can't tell if-if she's enjoying it." },
+        { "start": "00:05:12,664", "end": "00:05:14,632", "lines": "Come on, let's get a better view." },
+        { "start": "00:05:27,579", "end": "00:05:29,915", "lines": "And how we doing over here, Miss Crawly?" },
+        { "start": "00:05:30,148", "end": "00:05:31,773", "lines": "Oh, very good, Mr. Moon." },
+        { "start": "00:05:31,997", "end": "00:05:34,486", "lines": "So far, I counted nine smiles," },
+        { "start": "00:05:34,919", "end": "00:05:37,089", "lines": "two belly laughs and five chuckles." },
+        { "start": "00:05:37,422", "end": "00:05:40,258", "lines": "Uh, though the last one could've just been gas." },
+        { "start": "00:05:40,541", "end": "00:05:42,430", "lines": "Well, that's proof, right? She must like the show." },
+        { "start": "00:05:44,929", "end": "00:05:46,164", "lines": "All right, now, keep up the good work." },
+        { "start": "00:05:46,351", "end": "00:05:47,588", "lines": "Come on, everybody, back to positions." },
+        { "start": "00:05:50,134", "end": "00:05:52,167", "lines": "Dream big dreams." },
+        { "start": "00:05:52,519", "end": "00:05:53,725", "lines": "That's what I always said, right?" },
+        { "start": "00:05:55,306", "end": "00:05:57,179", "lines": "Well, looks like we're about to take this show" },
+        { "start": "00:05:57,599", "end": "00:06:00,012", "lines": "to the entertainment capital of the world." },
+        { "start": "00:06:00,445", "end": "00:06:02,297", "lines": "Mr. Moon, she's leaving." },
+        { "start": "00:06:07,252", "end": "00:06:09,421", "lines": "Miss Crawly, stay right here." },
+        { "start": "00:06:31,109", "end": "00:06:32,790", "lines": "Uh, Suki? Suki Lane?" },
+        { "start": "00:06:34,646", "end": "00:06:36,181", "lines": "Uh, hi. So glad you could make it." },
+        { "start": "00:06:36,414", "end": "00:06:37,429", "lines": "Um, would you like some popcorn?" },
+        { "start": "00:06:38,483", "end": "00:06:40,318", "lines": "I'm not staying for the second half, so..." }
+      ]
+    }
+  ]
+}
+
+
