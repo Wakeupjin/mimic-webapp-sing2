@@ -1,7 +1,7 @@
 export interface RawLessonItem {
   start: string; // e.g. 00:05:03,655
   end: string;   // e.g. 00:05:05,757
-  lines: string;
+  text: string;
 }
 
 export interface RawLessonFile {
@@ -16,7 +16,7 @@ export interface RawLessonFile {
     watching?: {
       start: string;
       end: string;
-      lines?: string;
+      text?: string;
     };
     mimicking: RawLessonItem[];
   }>;
@@ -50,7 +50,7 @@ export function transformRawLesson(raw: RawLessonFile): ParsedMovie {
   const mimics: RawLessonItem[] = raw.lesson.flatMap((l) => l.mimicking);
   const scenes: ParsedScene[] = mimics.map((m, idx) => ({
     id: `scene-${idx + 1}`,
-    text: m.lines ?? "",
+    text: m.text ?? "",
     startTime: parseTimeToSeconds(m.start),
     endTime: parseTimeToSeconds(m.end),
   }));

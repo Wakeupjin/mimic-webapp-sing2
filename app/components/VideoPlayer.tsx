@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, memo } from "react";
 import ReactPlayer from "react-player";
 
 interface VideoPlayerProps {
@@ -11,11 +11,14 @@ interface VideoPlayerProps {
   showText: boolean;
   text: string;
   onEndedSegment?: () => void;
+  onTimeUpdate?: (currentTime: number) => void; // 시간 업데이트 콜백
+  onPlay?: () => void; // 재생 시작 콜백
   playNonce?: number; // 상위에서 증가시키면 재생 시도
   hidePauseOverlay?: boolean; // 자동 시퀀스 등에서 일시정지 오버레이 숨김
+  activeControlIndex?: number | null; // 활성화된 컨트롤 인덱스
 }
 
-export default function VideoPlayer({
+const VideoPlayer = memo(function VideoPlayer({
   src,
   startTime,
   endTime,
@@ -23,27 +26,28 @@ export default function VideoPlayer({
   showText,
   text,
   onEndedSegment,
+  onTimeUpdate,
+  onPlay,
   playNonce,
   hidePauseOverlay,
+  activeControlIndex,
 }: VideoPlayerProps) {
   const htmlVideoRef = useRef<HTMLVideoElement | null>(null);
   const reactPlayerRef = useRef<any>(null);
   const [isPaused, setIsPaused] = useState(true);
+  const [isReady, setIsReady] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const suppressEndCheckUntilRef = useRef<number>(0);
   const lastPlayTriggerAtRef = useRef<number>(0);
   const endFiredForSegmentRef = useRef<boolean>(false);
+  const lastPlayNonceRef = useRef<number>(0);
 
   useEffect(() => {
     const isPlayable = ReactPlayer.canPlay(src);
-    if (isPlayable) {
-      // ReactPlayer가 로드된 후 시킹
-      const timer = setTimeout(() => {
-        reactPlayerRef.current?.seekTo(startTime, "seconds");
-      }, 100);
-      return () => clearTimeout(timer);
-    } else {
+    if (!isPlayable) {
       const video = htmlVideoRef.current;
       if (!video) return;
+      console.log('HTML video currentTime 설정:', startTime);
       video.currentTime = startTime;
     }
   }, [startTime, src]);
@@ -67,9 +71,15 @@ export default function VideoPlayer({
       const video = htmlVideoRef.current;
       if (!video) return;
 
-      const onTimeUpdate = () => {
+      const onTimeUpdateHandler = () => {
         const now = Date.now();
         if (now < suppressEndCheckUntilRef.current) return;
+        
+        // 시간 업데이트 콜백 호출
+        if (onTimeUpdate) {
+          onTimeUpdate(video.currentTime);
+        }
+        
         if (video.currentTime >= endTime - 0.03) {
           if (endFiredForSegmentRef.current) return;
           endFiredForSegmentRef.current = true;
@@ -79,14 +89,17 @@ export default function VideoPlayer({
         }
       };
 
-      const onPlay = () => setIsPaused(false);
+      const onPlay = () => {
+        setIsPaused(false);
+        if (onPlay) onPlay();
+      };
       const onPause = () => setIsPaused(true);
 
-      video.addEventListener("timeupdate", onTimeUpdate);
+      video.addEventListener("timeupdate", onTimeUpdateHandler);
       video.addEventListener("play", onPlay);
       video.addEventListener("pause", onPause);
       return () => {
-        video.removeEventListener("timeupdate", onTimeUpdate);
+        video.removeEventListener("timeupdate", onTimeUpdateHandler);
         video.removeEventListener("play", onPlay);
         video.removeEventListener("pause", onPause);
       };
@@ -106,19 +119,51 @@ export default function VideoPlayer({
 
   // 외부 재생 트리거 처리
   useEffect(() => {
+    console.log('playNonce useEffect 실행:', playNonce);
     if (playNonce === undefined) return;
-    const isPlayable = ReactPlayer.canPlay(src);
-    const now = Date.now();
-    // Debounce external play triggers (dev StrictMode or rapid clicks)
-    if (now - lastPlayTriggerAtRef.current < 300) {
+    
+    // 같은 playNonce 값이면 무시
+    if (playNonce === lastPlayNonceRef.current) {
+      console.log('같은 playNonce 값이므로 중복 실행 방지');
       return;
     }
+    
+    // playNonce가 이전 값보다 작으면 무시 (역방향 실행 방지)
+    if (playNonce < lastPlayNonceRef.current) {
+      console.log('playNonce가 이전 값보다 작으므로 무시');
+      return;
+    }
+    
+    const isPlayable = ReactPlayer.canPlay(src);
+    const now = Date.now();
+    
+    // 강력한 중복 실행 방지
+    if (now - lastPlayTriggerAtRef.current < 2500) {
+      console.log('재생 요청 debounced:', now - lastPlayTriggerAtRef.current, 'ms ago');
+      return;
+    }
+    
+    if (suppressEndCheckUntilRef.current > now) {
+      console.log('이미 재생 중이므로 중복 실행 방지');
+      return;
+    }
+    
+    // playNonce를 즉시 업데이트하여 중복 실행 방지
+    lastPlayNonceRef.current = playNonce;
     lastPlayTriggerAtRef.current = now;
-    endFiredForSegmentRef.current = false; // reset for new segment
+    endFiredForSegmentRef.current = false;
+    console.log('playNonce 변경, endFiredForSegmentRef 리셋');
     if (isPlayable) {
       suppressEndCheckUntilRef.current = Date.now() + 500;
+      console.log('ReactPlayer seekTo:', startTime, 'seconds');
       reactPlayerRef.current?.seekTo(startTime, "seconds");
       setIsPaused(false); // ReactPlayer는 playing prop으로 제어
+      
+      // 강제로 재생 시작
+      setTimeout(() => {
+        console.log('강제 재생 시작');
+        reactPlayerRef.current?.getInternalPlayer()?.play();
+      }, 200);
     } else {
       const video = htmlVideoRef.current;
       if (!video) return;
@@ -132,20 +177,61 @@ export default function VideoPlayer({
     }
   }, [playNonce, src, startTime, muted]);
 
+  const isPlayable = ReactPlayer.canPlay(src);
+  // console.log('VideoPlayer render - isPlayable:', isPlayable, 'src:', src);
+  
   return (
     <div className="relative w-full">
-      <div className="relative w-full aspect-video bg-black rounded-md overflow-hidden">
-        {ReactPlayer.canPlay(src) ? (
+      <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden">
+        {/* 로딩 상태 표시 */}
+        {isLoading && (
+          <div className="absolute inset-0 bg-black flex items-center justify-center z-10">
+            <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        )}
+        
+        {isPlayable ? (
           <ReactPlayer
             ref={reactPlayerRef}
             url={src}
-            playing={!isPaused}
-            controls
+            playing={!isPaused && isReady}
+            onStart={() => console.log('ReactPlayer onStart')}
+            onPlay={() => { 
+              console.log('ReactPlayer onPlay');
+              setIsPaused(false);
+              if (onPlay) onPlay();
+            }}
+            controls={false}
             width="100%"
             height="100%"
             className="absolute inset-0"
-            onPlay={() => { setIsPaused(false); }}
             onPause={() => setIsPaused(true)}
+            onLoad={() => {
+              console.log('ReactPlayer onLoad - 비디오 로드 완료');
+            }}
+            onReady={() => {
+              if (!isReady) {
+                console.log('ReactPlayer onReady - seekTo 후 재생 시작');
+                // 먼저 seekTo를 호출하고, 그 다음에 재생
+                reactPlayerRef.current?.seekTo(startTime, "seconds");
+                setIsReady(true);
+                setIsPaused(false);
+                setIsLoading(false);
+              }
+            }}
+            onProgress={(state) => {
+              console.log('ReactPlayer onProgress:', state.playedSeconds, 'seconds, endTime:', endTime);
+              // 시간 업데이트 콜백 호출
+              if (onTimeUpdate) {
+                onTimeUpdate(state.playedSeconds);
+              }
+              // 종료 시간에 도달하면 정지
+              if (state.playedSeconds >= endTime && !endFiredForSegmentRef.current) {
+                console.log('onEndedSegment 호출!', state.playedSeconds, '>=', endTime);
+                endFiredForSegmentRef.current = true;
+                if (onEndedSegment) onEndedSegment();
+              }
+            }}
             muted={muted}
             config={{
               youtube: { playerVars: { modestbranding: 1 } },
@@ -156,8 +242,8 @@ export default function VideoPlayer({
           <video
             ref={htmlVideoRef}
             src={src}
-            className="absolute inset-0 w-full h-full object-contain"
-            controls
+            className="absolute inset-0 w-full h-full object-cover"
+            controls={false}
             playsInline
             preload="metadata"
             onClick={() => {
@@ -168,10 +254,10 @@ export default function VideoPlayer({
             }}
           />
         )}
-        {/* Dimmed overlay when paused */}
+        {/* Dimmed overlay when paused - PAUSE text hidden */}
         {isPaused && !hidePauseOverlay && (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40">
-            <span className="text-white text-sm font-semibold tracking-widest">PAUSE</span>
+            {/* PAUSE text removed */}
           </div>
         )}
 
@@ -185,6 +271,8 @@ export default function VideoPlayer({
 
     </div>
   );
-}
+});
+
+export default VideoPlayer;
 
 

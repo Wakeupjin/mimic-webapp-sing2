@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -38,4 +39,67 @@ body {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* Correct 애니메이션 */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* 버튼 개별 펄스 애니메이션 */
+@keyframes pulse-button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.036);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 정답 버튼만 펄스 */
+.animate-pulse-button {
+  animation: pulse-button 2.5s ease-in-out infinite;
+}
+
+/* 재생 중인 버튼 펄스 애니메이션 */
+@keyframes pulse-playing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* 10% 크기 증가 */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-playing {
+  animation: pulse-playing 1.2s ease-in-out infinite; /* 빠른 펄스 */
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 0.8s ease-in-out infinite;
 }
