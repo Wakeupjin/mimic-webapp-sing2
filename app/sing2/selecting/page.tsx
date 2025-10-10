@@ -13,8 +13,6 @@ import { supabase } from '../../supabaseClient';
 type LessonSummary = {
   id: number;
   lesson_number: number;
-  title: string; 
-  difficulty?: string; 
   video_id: number; 
 };
 // --- [/SUPABASE 연결 및 타입 정의] ---
@@ -43,7 +41,7 @@ function SelectingPageContent() {
       
       const { data, error } = await supabase
         .from('lessons')
-        .select('id, lesson_number, title, difficulty, video_id')
+        .select('id, lesson_number, video_id')
         .order('lesson_number', { ascending: true }); // 레슨 번호 순으로 정렬
 
       if (error) {
@@ -134,7 +132,11 @@ function SelectingPageContent() {
   if (lessons.length === 0) {
      return (
       <main className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
-        <h1 className="text-xl font-semibold text-red-500">등록된 Lesson이 없습니다. Supabase를 확인해주세요.</h1>
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-red-500 mb-4">등록된 Lesson이 없습니다.</h1>
+          <p className="text-gray-300 mb-2">Supabase 연결을 확인해주세요.</p>
+          <p className="text-gray-400 text-sm">환경변수: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY</p>
+        </div>
       </main>
     );
   }
@@ -236,7 +238,7 @@ function SelectingPageContent() {
                     >
                       <div className="flex flex-col items-start truncate max-w-[250px]">
                         <span className="text-sm text-gray-400">LESSON {lesson.lesson_number}</span>
-                        <span className="text-base truncate max-w-full">{lesson.title}</span>
+                        <span className="text-base truncate max-w-full">Lesson {lesson.lesson_number}</span>
                       </div>
                       
                       {isSelected && (
