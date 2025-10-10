@@ -85,20 +85,17 @@ function MimickingPageContent() {
     if (!movieId) return;
     
     const loadDataFromSupabase = async () => {
-      setIsLoading(true);
       try {
         const lessonNumberStr = movieId.split(':')[1];
         const lessonNumber = parseInt(lessonNumberStr);
         
         if (isNaN(lessonNumber)) {
-          setIsLoading(false);
           return;
         }
         
         // Lesson 데이터 가져오기
         const lesson = await fetchLessonData(lessonNumber);
         if (!lesson) {
-          setIsLoading(false);
           return;
         }
         
@@ -111,11 +108,10 @@ function MimickingPageContent() {
           
         if (videoError || !videoResult) {
           console.error('Video URL fetching error:', videoError);
-          setIsLoading(false);
           return;
         }
         
-        // 상태 업데이트
+        // 상태 업데이트 (한 번에)
         setLessonData(lesson);
         setVideoUrl(videoResult.video_url);
         setScenes(lesson.mimic_data || []);
@@ -346,12 +342,23 @@ function MimickingPageContent() {
 
 
   // 로딩 화면
-  if (isLoading || !lessonData || !videoUrl) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#60D96C] mx-auto mb-4"></div>
           <p className="text-[#60D96C]">Loading lesson data...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // 데이터가 없을 때
+  if (!lessonData || !videoUrl || scenes.length === 0) {
+    return (
+      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-[#60D96C]">No lesson data available</p>
         </div>
       </div>
     );
