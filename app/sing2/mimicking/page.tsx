@@ -15,6 +15,7 @@ import { WATCHING_NAVIGATION_DELAY_MS } from "../../constants/timings"; // 재�
 import { fetchLessonData } from '../../dataService'; // 당신의 dataService.js 경로에 맞게 수정하세요.
 import { supabase } from '../../supabaseClient'; // 비디오 URL을 가져오기 위해 직접 supabase 클라이언트 사용
 import { notFound } from 'next/navigation';
+import { timeStringToSeconds } from '../../utils/timeConverter';
 
 // Mimicking 문장 데이터 타입
 type MimicSentence = {
@@ -134,13 +135,20 @@ function MimickingPageContent() {
   useEffect(() => {
     if (videoRef.current && currentSentence) {
       const video = videoRef.current;
-      // 유효한 시간 값인지 확인
-      const startTime = Number(currentSentence.start_sec);
-      console.log('Mimicking - start_sec:', currentSentence.start_sec, 'converted:', startTime, 'isFinite:', isFinite(startTime));
+      // 시간 문자열을 초 단위 숫자로 변환
+      let startTime: number;
+      if (typeof currentSentence.start_sec === 'string') {
+        startTime = timeStringToSeconds(currentSentence.start_sec);
+        console.log('Mimicking - start_sec string:', currentSentence.start_sec, 'converted to:', startTime);
+      } else {
+        startTime = Number(currentSentence.start_sec);
+        console.log('Mimicking - start_sec number:', currentSentence.start_sec, 'converted:', startTime);
+      }
+      
       if (isFinite(startTime) && startTime >= 0) {
         video.currentTime = startTime;
       } else {
-        console.error('Invalid start_sec value:', currentSentence.start_sec);
+        console.error('Invalid start_sec value:', currentSentence.start_sec, 'converted to:', startTime);
       }
       
       if (isVideoStarted && playbackMode === 'loop') {
@@ -317,8 +325,21 @@ function MimickingPageContent() {
                 const video = e.currentTarget;
                 if (currentSentence) {
                   // 비디오가 문장 끝 시간에 도달하면 일시정지하고 루프 시작 시간으로 재설정
-                  const endTime = Number(currentSentence.end_sec);
-                  const startTime = Number(currentSentence.start_sec);
+                  let endTime: number;
+                  let startTime: number;
+                  
+                  if (typeof currentSentence.end_sec === 'string') {
+                    endTime = timeStringToSeconds(currentSentence.end_sec);
+                  } else {
+                    endTime = Number(currentSentence.end_sec);
+                  }
+                  
+                  if (typeof currentSentence.start_sec === 'string') {
+                    startTime = timeStringToSeconds(currentSentence.start_sec);
+                  } else {
+                    startTime = Number(currentSentence.start_sec);
+                  }
+                  
                   if (isFinite(endTime) && video.currentTime >= endTime) {
                     video.pause();
                     if (isFinite(startTime) && startTime >= 0) {
