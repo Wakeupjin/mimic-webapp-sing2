@@ -203,7 +203,7 @@ function SelectingPageContent() {
           >
             <div className="flex flex-col items-start truncate">
                 <span className="text-sm text-gray-400">LESSON {selectedLesson?.lesson_number}</span>
-                <span className="text-base truncate max-w-[250px]">{selectedLesson?.title || 'Lesson을 선택하세요'}</span>
+                <span className="text-base truncate max-w-[250px]">{selectedLesson ? `Lesson ${selectedLesson.lesson_number}` : 'Lesson을 선택하세요'}</span>
             </div>
             <svg
               width="20"
