@@ -737,7 +737,7 @@ export default function GuessingPage() {
                   {/* A, B, C 버튼들 - JSON의 label 사용, A, B, C 순서로 정렬 */}
                   {currentQuestion.options
                     .sort((a: any, b: any) => a.label.localeCompare(b.label))
-                    .map((option, index) => (
+                    .map((option: any, index: number) => (
                     <button
                       key={option.label}
                       className={`rounded-2xl border-8 px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg ${
