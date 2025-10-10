@@ -43,7 +43,7 @@ interface GuessingGameActions {
   startGuessing: () => void;
   playAudio: (option: any) => void;
   startAutoPlaySequence: () => void;
-  handleAnswerSelect: (answer: string) => void;
+  handleAnswerSelect: (answer: string, correctAnswer?: string) => void;
   resetGuessingState: () => void;
 }
 
