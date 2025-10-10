@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { fetchLessonData } from "../../dataService";
 import { supabase } from "../../supabaseClient";
@@ -47,7 +47,7 @@ interface MimicSentence {
   text: string;
 }
 
-export default function GuessingPage() {
+function GuessingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   
@@ -938,5 +938,13 @@ export default function GuessingPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function GuessingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <GuessingPageContent />
+    </Suspense>
   );
 }

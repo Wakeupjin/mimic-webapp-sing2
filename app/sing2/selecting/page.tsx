@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
 import { useFullscreen } from '../../hooks/useFullscreen';
 // 기존 상수 제거 (Supabase에서 데이터 수를 가져옴)
@@ -23,7 +23,7 @@ type LessonSummary = {
 const SELECTING_DROPDOWN_MAX_HEIGHT_PX = 300; 
 const SELECTING_SCROLL_THRESHOLD_PX = 5;
 
-export default function SelectingPage() {
+function SelectingPageContent() {
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
@@ -346,5 +346,13 @@ export default function SelectingPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function SelectingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SelectingPageContent />
+    </Suspense>
   );
 }

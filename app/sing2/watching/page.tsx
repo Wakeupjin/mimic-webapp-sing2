@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 // import VideoPlayer from "../../components/VideoPlayer"; // VideoPlayer 컴포넌트가 없으니 비디오 태그를 직접 사용합니다.
@@ -27,7 +27,7 @@ type LessonDataType = {
 // --- [/SUPABASE 연결 및 타입 정의] ---
 
 
-export default function WatchingPage() {
+function WatchingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   
@@ -496,5 +496,13 @@ export default function WatchingPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function WatchingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WatchingPageContent />
+    </Suspense>
   );
 }
