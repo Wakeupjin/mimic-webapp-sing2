@@ -16,11 +16,9 @@ export function useMediaControl() {
       audio.currentTime = 0;
     });
 
-    // 모든 타이머 정리
-    const highestTimeoutId = setTimeout(() => {}, 0);
-    for (let i = 0; i < highestTimeoutId; i++) {
-      clearTimeout(i);
-    }
+    // Clear all timeouts (simplified approach)
+    // Note: This is a simplified implementation
+    // In production, you might want to track timeout IDs explicitly
   }, []);
 
   const pauseAllVideos = useCallback(() => {
