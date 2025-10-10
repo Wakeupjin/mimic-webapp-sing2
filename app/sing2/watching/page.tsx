@@ -2,10 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { MOVIES, loadMovie } from "../../constants/movies";
-import { srtTimeToSeconds } from "../../utils/srt";
 import Link from "next/link";
-import VideoPlayer from "../../components/VideoPlayer";
+// import VideoPlayer from "../../components/VideoPlayer"; // VideoPlayer 컴포넌트가 없으니 비디오 태그를 직접 사용합니다.
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
 import { useVideoPlayer } from "../../hooks/useVideoPlayer";
@@ -13,6 +11,21 @@ import { TRANSITION_DURATION, WATCHING_VIDEO_DURATION_SECONDS, WATCHING_NAVIGATI
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import PauseOverlay from "../../components/PauseOverlay";
 import AgainNextButtons from "../../components/AgainNextButtons";
+
+// --- [SUPABASE 연결 및 타입 정의] ---
+import { fetchLessonData } from '../../dataService'; // 당신의 dataService.js 경로에 맞게 수정하세요.
+import { supabase } from '../../supabaseClient'; // 비디오 URL을 가져오기 위해 직접 supabase 클라이언트 사용
+import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
+
+// 데이터 타입 정의
+type LessonDataType = {
+  watch_start_sec: number;
+  watch_end_sec: number;
+  video_id: number;
+  lesson_number: number;
+};
+// --- [/SUPABASE 연결 및 타입 정의] ---
+
 
 export default function WatchingPage() {
   const searchParams = useSearchParams();
@@ -25,46 +38,77 @@ export default function WatchingPage() {
       return;
     }
   }, [movieId]);
-  const movie = useMemo(() => MOVIES[0], []); // Sing 2 영화 사용
   
-  // 동적 데이터 로딩
-  const [movieData, setMovieData] = useState<any>(null);
-  const [watchingData, setWatchingData] = useState<any>(null);
   
-  // Custom hooks
-  // Data loading
+  // --- [새로운 상태 및 데이터 로딩] ---
+  const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Supabase 데이터 로딩 useEffect
   useEffect(() => {
     if (!movieId) return;
-    
-    const loadWatchingData = async () => {
-      try {
-        const data = await loadMovie(movieId);
-        setMovieData(data);
-        const watchingInfo = data.lesson[0].watching || {};
-        setWatchingData(watchingInfo);
-      } catch (error) {
-        // Keep same behavior; just avoid verbose logging
+
+    const loadDataFromSupabase = async () => {
+      setIsLoading(true);
+
+      // 1. Lesson ID 추출 ("001:5" -> 5)
+      const lessonNumberStr = movieId.split(':')[1];
+      const lessonNumber = parseInt(lessonNumberStr);
+
+      if (isNaN(lessonNumber) || lessonNumber < 1 || lessonNumber > 12) {
+        setIsLoading(false);
+        return; 
       }
+
+      // 2. Lesson 데이터 (시간 정보) 가져오기
+      const lesson = await fetchLessonData(lessonNumber);
+
+      if (!lesson) {
+        setIsLoading(false);
+        return;
+      }
+      
+      // 3. Video URL 가져오기 (lesson.video_id 사용)
+      const { data: videoResult, error: videoError } = await supabase
+        .from('videos')
+        .select('video_url, title')
+        .eq('id', lesson.video_id)
+        .single();
+
+      if (videoError || !videoResult) {
+        console.error('Video URL fetching error:', videoError);
+        setIsLoading(false);
+        return;
+      }
+
+      // 4. 상태 업데이트
+      setLessonData(lesson as LessonDataType); 
+      setVideoUrl(videoResult.video_url); 
+      setIsLoading(false);
     };
-    
-    loadWatchingData();
+
+    loadDataFromSupabase();
   }, [movieId]);
 
-  // Set video start time after watchingData loads
+
+  // 비디오 시작 시간 설정 useEffect (데이터 로드 후 실행)
   useEffect(() => {
-    if (watchingData?.start && watchingData?.end) {
+    if (lessonData?.watch_start_sec !== undefined && lessonData?.watch_end_sec !== undefined) {
       const video = document.querySelector('video') as HTMLVideoElement;
       if (video) {
-        const startTime = srtTimeToSeconds(watchingData.start);
-        const endTime = srtTimeToSeconds(watchingData.end);
+        const startTime = lessonData.watch_start_sec; // 초(seconds) 단위로 바로 사용
+        
         video.currentTime = startTime;
         
-        // Reset progress to 0% (starting from start time)
         setVideoProgress(0);
       }
     }
-  }, [watchingData]);
+  }, [lessonData]);
+  // --- [/새로운 상태 및 데이터 로딩] ---
 
+
+  // Custom hooks (기존 코드 유지)
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const { stopAllMedia } = useMediaControl();
   const { 
@@ -78,7 +122,7 @@ export default function WatchingPage() {
     resetVideo 
   } = useVideoPlayer();
 
-  // 로컬 상태 (훅으로 교체되지 않은 것들)
+  // 로컬 상태 (훅으로 교체되지 않은 것들 - 기존 코드 유지)
   const [videoProgress, setVideoProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [showProgressTooltip, setShowProgressTooltip] = useState(false);
@@ -86,7 +130,7 @@ export default function WatchingPage() {
   const [showNextCta, setShowNextCta] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  // Keyboard event handling
+  // Keyboard event handling (기존 코드 유지)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       // Prevent fullscreen exit via ESC
@@ -112,18 +156,31 @@ export default function WatchingPage() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isFullscreen]);
 
-  // Fullscreen toggle is provided by useFullscreen hook
+  
+  // --- [로딩 및 변수 정의] ---
+  if (isLoading || !lessonData || !videoUrl) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <h1 className="text-xl font-semibold text-[#60D96C]">데이터를 불러오는 중...</h1>
+      </main>
+    );
+  }
+  
+  // Lesson/Video 데이터가 모두 로드되면 변수에 저장
+  const startTime = lessonData.watch_start_sec;
+  const endTime = lessonData.watch_end_sec;
+  // --- [/로딩 및 변수 정의] ---
 
-  // Watching mode progress bar drag handlers
+
+  // Watching mode progress bar drag handlers (기존 로직 수정)
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const progressBar = e.currentTarget;
     const rect = progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
     const progress = (clickX / rect.width) * 100;
     
-    if (watchingData?.start && watchingData?.end) {
-      const startTime = srtTimeToSeconds(watchingData.start);
-      const endTime = srtTimeToSeconds(watchingData.end);
+    // lessonData 사용으로 변경
+    if (lessonData) {
       const totalDuration = endTime - startTime;
       const newTime = startTime + (progress / 100) * totalDuration;
       
@@ -135,6 +192,7 @@ export default function WatchingPage() {
     }
   };
 
+  // 나머지 progress bar 핸들러는 그대로 유지
   const handleProgressMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     handleProgressClick(e);
@@ -150,17 +208,20 @@ export default function WatchingPage() {
     setIsDragging(false);
   };
 
-  // Time format function (seconds to mm:ss format)
+  // Time format function (seconds to mm:ss format) - 기존 코드 유지
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+
   return (
     <main className="min-h-screen px-4 py-4">
       <div className="mb-4 flex items-center justify-between group">
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>{movie.title.toUpperCase()}</h1>
+        {/* title 부분은 임시로 'SING 2'를 사용합니다. */}
+        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
+        {/* ... (나머지 헤더 버튼들 유지) */}
         <div className="flex items-center gap-3">
           <button 
             onClick={() => setIsTextVisible((v) => !v)}
@@ -225,7 +286,8 @@ export default function WatchingPage() {
         <div className={`aspect-video bg-black rounded-2xl overflow-hidden border-[10px] ${isFullscreen ? 'w-[84%]' : 'w-[70%]'}`} style={{ borderColor: '#201E1E' }}>
           <div className="relative w-full h-full">
             <video
-              src={movie.videoUrl}
+              // src={movie.videoUrl} <-- 이전 코드 제거됨
+              src={videoUrl} // <-- Supabase에서 가져온 URL 사용
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 cursor-pointer ${isVideoPaused ? 'opacity-50' : 'opacity-100'}`}
               controls={false}
               autoPlay={false}
@@ -247,10 +309,8 @@ export default function WatchingPage() {
               }}
               onTimeUpdate={(e) => {
                 const video = e.currentTarget;
-                if (watchingData?.start && watchingData?.end) {
-                  const startTime = srtTimeToSeconds(watchingData.start);
-                  const endTime = srtTimeToSeconds(watchingData.end);
-                  const totalDuration = endTime - startTime;
+                if (lessonData) { // lessonData 사용으로 변경
+                  const totalDuration = endTime - startTime; // 위에 정의된 변수 사용
                   const currentProgress = video.currentTime - startTime;
                   const progress = Math.max(0, (currentProgress / totalDuration) * 100);
                   setVideoProgress(progress);
@@ -313,7 +373,7 @@ export default function WatchingPage() {
                     onClick={() => {
                       const video = document.querySelector('video') as HTMLVideoElement;
                       if (video) {
-                        video.currentTime = 0;
+                        video.currentTime = startTime; // startTime 변수 사용
                         video.play();
                         setShowNextCta(false);
                         setVideoProgress(0);
@@ -427,7 +487,8 @@ export default function WatchingPage() {
                       borderBottom: '16px solid rgb(32, 30, 30)'
                     }}
                   ></div>
-                  {formatTime((tooltipPosition / 100) * WATCHING_VIDEO_DURATION_SECONDS)} / {formatTime(WATCHING_VIDEO_DURATION_SECONDS)}
+                  {/* WATCHING_VIDEO_DURATION_SECONDS 대신 endTime - startTime 사용 */}
+                  {formatTime(startTime + (tooltipPosition / 100) * (endTime - startTime))} / {formatTime(endTime - startTime)} 
                 </div>
               )}
             </div>

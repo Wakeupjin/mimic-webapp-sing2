@@ -2,8 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useState, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { MOVIES } from "../../constants/movies";
-import { loadMovie } from "../../constants/movies";
+import { fetchLessonData } from "../../dataService";
+import { supabase } from "../../supabaseClient";
 import Link from "next/link";
 import VideoPlayer from "../../components/VideoPlayer";
 import { useFullscreen } from "../../hooks/useFullscreen";
@@ -30,6 +30,22 @@ import {
   GUESSING_OPTION_LABELS,
 } from "../../constants/timings";
 
+// Type definitions for Supabase data
+interface LessonDataType {
+  id: number;
+  lesson_number: number;
+  video_id: number;
+  mimic_data: any[];
+  guessing_data: any[];
+  watching_data: any;
+}
+
+interface MimicSentence {
+  id: number;
+  start: string;
+  end: string;
+  text: string;
+}
 
 export default function GuessingPage() {
   const searchParams = useSearchParams();
@@ -42,7 +58,11 @@ export default function GuessingPage() {
       return;
     }
   }, [movieId]);
-  const movie = useMemo(() => MOVIES[0], []); // Sing 2 영화 사용
+  // Supabase data states
+  const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [guessingData, setGuessingData] = useState<any[]>([]);
   
   // 커스텀 훅 사용
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -102,8 +122,6 @@ export default function GuessingPage() {
   } = useGuessingGame();
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
-  const [movieData, setMovieData] = useState<any>(null);
-  const [guessingData, setGuessingData] = useState<any[]>([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [muted, setMuted] = useState(false);
@@ -114,12 +132,23 @@ export default function GuessingPage() {
   const autoPlayTriggeredRef = useRef(false); // 자동 재생 트리거 방지
   const onEndedFiredRef = useRef(false); // onEndedSegment 중복 호출 방지
 
-  const currentScene = movie.scenes[currentIndex];
   const currentQuestion = guessingData[currentQuestionIndex];
   
-  // currentScene이 존재하지 않으면 안전하게 처리
-  if (!currentScene) {
-    return null;
+  // 로딩 화면
+  if (isLoading || !lessonData || !videoUrl || guessingData.length === 0) {
+    return (
+      <main className="min-h-screen px-4 py-4">
+        <div className="mb-4 flex items-center justify-between group">
+          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
+        </div>
+        <div className="flex items-center justify-center" style={{ height: 'calc(100vh - 120px)' }}>
+          <div className="text-center text-white">
+            <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-lg" style={{ fontFamily: 'Encode Sans, sans-serif' }}>Loading...</p>
+          </div>
+        </div>
+      </main>
+    );
   }
 
   // 풀스크린 복원 useEffect
@@ -139,7 +168,7 @@ export default function GuessingPage() {
   }, []);
 
   // 직접 오디오 재생 함수
-  const playAudioDirect = (option: any, currentQuestion: any, movie: any, onComplete?: () => void) => {
+  const playAudioDirect = (option: any, currentQuestion: any, videoUrl: string, onComplete?: () => void) => {
     // 기존 재생 중인 오디오가 있으면 정지
     if (playingAudio) {
       const existingAudio = document.getElementById(`audio-${playingAudio}`) as HTMLAudioElement;
@@ -157,7 +186,7 @@ export default function GuessingPage() {
       // 오디오 요소가 없으면 생성
       audio = document.createElement('audio');
       audio.id = audioId;
-      audio.src = movie?.videoUrl || ''; // 비디오 파일을 오디오 소스로 사용
+      audio.src = videoUrl || ''; // 비디오 파일을 오디오 소스로 사용
       audio.preload = 'auto'; // 전체 오디오 데이터 미리 로드
       document.body.appendChild(audio);
     }
@@ -189,7 +218,7 @@ export default function GuessingPage() {
       if (retryCount < AUDIO_MAX_RETRIES) {
         (audio as any).retryCount = retryCount + 1;
         setTimeout(() => {
-          playAudioDirect(option, currentQuestion, movie, onComplete);
+          playAudioDirect(option, currentQuestion, videoUrl || '', onComplete);
         }, AUDIO_RETRY_DELAY);
       } else {
         console.error(`${option.label} 오디오 로딩 실패 (readyState: ${audio.readyState})`);
@@ -225,21 +254,57 @@ export default function GuessingPage() {
     });
   };
 
-  // 게싱 데이터 로드
+  // Supabase 데이터 로드
   useEffect(() => {
-    const loadGuessingData = async () => {
+    if (!movieId) return;
+
+    const loadDataFromSupabase = async () => {
+      setIsLoading(true);
+
+      const lessonNumberStr = movieId.split(':')[1];
+      const lessonNumber = parseInt(lessonNumberStr);
+
+      if (isNaN(lessonNumber)) {
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        const data = await loadMovie(movieId);
-        setMovieData(data);
-        const guessingQuestions = data.lesson[0].guessing || [];
-        setGuessingData(guessingQuestions);
-        setTotalQuestions(guessingQuestions.length);
+        // 1. Lesson 데이터 (guessing_data 포함) 가져오기
+        const lesson = await fetchLessonData(lessonNumber); 
+
+        if (!lesson) {
+          setIsLoading(false);
+          return;
+        }
+        
+        // 2. video_id를 이용해 Video URL 가져오기
+        const { data: videoResult, error: videoError } = await supabase
+          .from('videos')
+          .select('video_url')
+          .eq('id', lesson.video_id)
+          .single();
+
+        if (videoError || !videoResult) {
+          console.error('Video URL fetching error:', videoError);
+          setIsLoading(false);
+          return;
+        }
+
+        // 3. 상태 업데이트
+        setLessonData(lesson as LessonDataType); 
+        setVideoUrl(videoResult.video_url); 
+        setGuessingData(lesson.guessing_data || []);
+        setTotalQuestions(lesson.guessing_data?.length || 0);
+        setIsLoading(false);
       } catch (error) {
-        console.error("게싱 데이터 로드 실패:", error);
+        console.error('Supabase data loading error:', error);
+        setIsLoading(false);
       }
     };
-    loadGuessingData();
-  }, []);
+
+    loadDataFromSupabase();
+  }, [movieId]);
 
 
   // 풀스크린 상태 감지
@@ -305,13 +370,13 @@ export default function GuessingPage() {
   // 훅에서 가져온 함수들을 사용
 
   // Play A/B/C options sequentially using a direct audio playback helper
-  const playABCSequence = (question: any, movieData: any, onAllPlayed?: () => void) => {
+  const playABCSequence = (question: any, videoUrl: string, onAllPlayed?: () => void) => {
     const playNextOption = (idx: number) => {
       if (idx < GUESSING_OPTION_LABELS.length && question) {
         const currentLabel = GUESSING_OPTION_LABELS[idx];
         const currentOption = question.options.find((opt: any) => opt.label === currentLabel);
         if (currentOption) {
-          playAudioDirect(currentOption, question, movieData, () => {
+          playAudioDirect(currentOption, question, videoUrl || '', () => {
             playNextOption(idx + 1);
           });
         } else {
@@ -389,7 +454,7 @@ export default function GuessingPage() {
 
     return (
       <GuessingResultScreen
-        movieTitle={movie.title}
+        movieTitle="SING 2"
         correctAnswers={correctAnswers}
         totalQuestions={totalQuestions}
         isFullscreen={isFullscreen}
@@ -404,7 +469,7 @@ export default function GuessingPage() {
     return (
       <main className="min-h-screen px-4 py-4">
         <div className="mb-4 flex items-center justify-between group">
-          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>{movie.title.toUpperCase()}</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -490,7 +555,7 @@ export default function GuessingPage() {
   return (
     <main className="min-h-screen px-4 py-4 flex flex-col">
       <div className="mb-4 flex items-center justify-between group">
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>{movie.title.toUpperCase()}</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
         <div className="flex items-center gap-3">
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -569,7 +634,7 @@ export default function GuessingPage() {
               {isPlaying && currentQuestion && (
                 <VideoPlayer
                   key={`guessing-${currentQuestionIndex}`}
-                  src={movie.videoUrl}
+                  src={videoUrl || ''}
                   startTime={srtTimeToSeconds(currentQuestion.video.start)}
                   endTime={srtTimeToSeconds(currentQuestion.video.end)}
                   muted={true}
@@ -590,7 +655,7 @@ export default function GuessingPage() {
                       // A/B/C 자동 재생 시작 전 딜레이
                       setTimeout(() => {
                         // A, B, C 순차 재생 시작
-                        playABCSequence(currentQuestion, movie, () => setAllOptionsPlayed(true));
+                        playABCSequence(currentQuestion, videoUrl || '', () => setAllOptionsPlayed(true));
                       }, GUESSING_AUTO_PLAY_DELAY);
                     } else {
                       // 첫 번째 시도에서는 3번 재생
@@ -599,7 +664,7 @@ export default function GuessingPage() {
 
                         // A/B/C 자동 재생 시작 전 딜레이
                         setTimeout(() => {
-                          playABCSequence(currentQuestion, movie, () => setAllOptionsPlayed(true));
+                          playABCSequence(currentQuestion, videoUrl || '', () => setAllOptionsPlayed(true));
                         }, GUESSING_AUTO_PLAY_DELAY);
                       } else {
                         // 아직 3번이 안 되었으면 다시 재생
@@ -629,7 +694,7 @@ export default function GuessingPage() {
               {/* A, B, C 소리 재생을 위한 숨겨진 비디오 */}
               <video
                 id="audio-video"
-                src={movie.videoUrl}
+                src={videoUrl || ''}
                 style={{ display: 'none' }}
                 muted={false}
                 preload="metadata"

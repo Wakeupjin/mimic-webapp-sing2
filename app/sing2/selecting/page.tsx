@@ -2,16 +2,69 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings';
+import { useFullscreen } from '../../hooks/useFullscreen';
+// 기존 상수 제거 (Supabase에서 데이터 수를 가져옴)
+// import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings'; 
+
+// --- [SUPABASE 연결 및 타입 정의] ---
+import { supabase } from '../../supabaseClient'; 
+
+// Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
+type LessonSummary = {
+  id: number;
+  lesson_number: number;
+  title: string; 
+  difficulty?: string; 
+  video_id: number; 
+};
+// --- [/SUPABASE 연결 및 타입 정의] ---
+
+// 상수 (로컬 상수는 최소화하고 Supabase 데이터를 사용)
+const SELECTING_DROPDOWN_MAX_HEIGHT_PX = 300; 
+const SELECTING_SCROLL_THRESHOLD_PX = 5;
 
 export default function SelectingPage() {
+  const { isFullscreen, toggleFullscreen } = useFullscreen();
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const [selectedChapter, setSelectedChapter] = useState<number>(1); // Currently selected chapter
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown open state
-  const [canScrollDown, setCanScrollDown] = useState(false); // Scrollable state
+  const [lessons, setLessons] = useState<LessonSummary[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 선택된 Lesson의 번호 (Lesson 1이 기본값)
+  const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [canScrollDown, setCanScrollDown] = useState(false); 
   const dropdownRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // --- [SUPABASE 데이터 로딩] ---
+  useEffect(() => {
+    const fetchLessons = async () => {
+      setIsLoading(true);
+      
+      const { data, error } = await supabase
+        .from('lessons')
+        .select('id, lesson_number, title, difficulty, video_id')
+        .order('lesson_number', { ascending: true }); // 레슨 번호 순으로 정렬
+
+      if (error) {
+        console.error('Error fetching lessons:', error);
+        setIsLoading(false);
+        return;
+      }
+
+      const lessonList = data || [];
+      setLessons(lessonList);
+      
+      // Lesson 목록을 가져온 후, 첫 번째 Lesson을 기본값으로 설정
+      if (lessonList.length > 0) {
+        setSelectedLesson(lessonList[0]);
+      }
+      setIsLoading(false);
+    };
+
+    fetchLessons();
+  }, []);
+  // --- [/SUPABASE 데이터 로딩] ---
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -42,6 +95,8 @@ export default function SelectingPage() {
     if (isDropdownOpen && scrollContainerRef.current) {
       checkScrollable();
       const container = scrollContainerRef.current;
+      // 초기 렌더링 시 스크롤 가능 여부 확인을 위해 setTimeout 사용
+      setTimeout(checkScrollable, 0); 
       container.addEventListener('scroll', checkScrollable);
       return () => container.removeEventListener('scroll', checkScrollable);
     }
@@ -49,8 +104,11 @@ export default function SelectingPage() {
 
   const handleModeSelect = (mode: string) => {
     setSelectedMode(mode);
-    // Navigate to selected chapter and mode
-    const movieId = `001:${selectedChapter}`;
+    
+    if (!selectedLesson) return;
+
+    // Supabase에서 가져온 video_id와 lesson_number를 사용
+    const movieId = `${selectedLesson.video_id}:${selectedLesson.lesson_number}`;
     
     if (mode === 'mimicking') {
       window.location.href = `/sing2/mimicking?id=${movieId}`;
@@ -63,22 +121,32 @@ export default function SelectingPage() {
     }
   };
 
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen();
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen();
-      setIsFullscreen(false);
-    }
-  };
+  
+  // --- [로딩 및 에러 화면] ---
+  if (isLoading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
+        <h1 className="text-xl font-semibold text-[#60D96C]">Lesson 목록을 불러오는 중...</h1>
+      </main>
+    );
+  }
+
+  if (lessons.length === 0) {
+     return (
+      <main className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
+        <h1 className="text-xl font-semibold text-red-500">등록된 Lesson이 없습니다. Supabase를 확인해주세요.</h1>
+      </main>
+    );
+  }
+  // --- [/로딩 및 에러 화면] ---
 
   return (
-    <main className="min-h-screen px-4 py-4">
+    <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#201E1E' }}>
       {/* Header */}
       <div className="mb-8 flex items-center justify-between group">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-        <div className="flex items-center gap-3">
+        {/* ... (Header SVG 및 Link는 기존 코드와 동일) ... */}
+         <div className="flex items-center gap-3">
           <button 
             onClick={toggleFullscreen}
             className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
@@ -118,7 +186,7 @@ export default function SelectingPage() {
         </div>
       </div>
 
-      {/* Chapter dropdown */}
+      {/* Lesson dropdown (Chapter 대신 Lesson 번호와 제목 사용) */}
       <div className="flex justify-center mb-8">
         <div className="relative" ref={dropdownRef}>
           <button
@@ -127,11 +195,14 @@ export default function SelectingPage() {
             style={{
               backgroundColor: '#1a1a1a',
               fontFamily: 'Encode Sans, sans-serif',
-              minWidth: '200px',
+              minWidth: '320px', // Dropdown 너비를 넓힘
               justifyContent: 'space-between'
             }}
           >
-            <span>CHAPTER {selectedChapter}</span>
+            <div className="flex flex-col items-start truncate">
+                <span className="text-sm text-gray-400">LESSON {selectedLesson?.lesson_number}</span>
+                <span className="text-base truncate max-w-[250px]">{selectedLesson?.title || 'Lesson을 선택하세요'}</span>
+            </div>
             <svg
               width="20"
               height="20"
@@ -151,20 +222,23 @@ export default function SelectingPage() {
               style={{ backgroundColor: '#1a1a1a', zIndex: 50, maxHeight: `${SELECTING_DROPDOWN_MAX_HEIGHT_PX}px` }}
             >
               <div ref={scrollContainerRef} className="overflow-auto custom-scrollbar" style={{ maxHeight: `${SELECTING_DROPDOWN_MAX_HEIGHT_PX}px` }}>
-                {[...Array(SELECTING_CHAPTER_COUNT)].map((_, i) => {
-                  const chapterNum = i + 1;
-                  const isSelected = chapterNum === selectedChapter;
+                {lessons.map((lesson) => {
+                  const isSelected = lesson.id === selectedLesson?.id;
                   return (
                     <button
-                      key={chapterNum}
+                      key={lesson.id}
                       onClick={() => {
-                        setSelectedChapter(chapterNum);
+                        setSelectedLesson(lesson); // Lesson 객체 전체를 선택
                         setIsDropdownOpen(false);
                       }}
                       className="w-full px-6 py-3 text-left text-white font-bold text-lg transition-colors duration-200 hover:bg-[#2a2a2a] border-t border-gray-800 first:border-t-0 flex items-center justify-between"
                       style={{ fontFamily: 'Encode Sans, sans-serif' }}
                     >
-                      <span>CHAPTER {chapterNum}</span>
+                      <div className="flex flex-col items-start truncate max-w-[250px]">
+                        <span className="text-sm text-gray-400">LESSON {lesson.lesson_number}</span>
+                        <span className="text-base truncate max-w-full">{lesson.title}</span>
+                      </div>
+                      
                       {isSelected && (
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 38 38" fill="none">
                           <rect width="38" height="38" rx="10" transform="matrix(-1 0 0 1 38 0)" fill="#60D96C"/>
@@ -216,12 +290,7 @@ export default function SelectingPage() {
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            onMouseEnter={(e) => { 
-              e.currentTarget.style.backgroundColor = '#f8f8f8'; 
-            }}
-            onMouseLeave={(e) => { 
-              e.currentTarget.style.backgroundColor = 'white'; 
-            }}
+            // ... (hover effects)
           >
             Watch
           </button>
@@ -234,12 +303,7 @@ export default function SelectingPage() {
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            onMouseEnter={(e) => { 
-              e.currentTarget.style.backgroundColor = '#f8f8f8'; 
-            }}
-            onMouseLeave={(e) => { 
-              e.currentTarget.style.backgroundColor = 'white'; 
-            }}
+            // ... (hover effects)
           >
             Mimic
           </button>
@@ -252,12 +316,7 @@ export default function SelectingPage() {
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            onMouseEnter={(e) => { 
-              e.currentTarget.style.backgroundColor = '#f8f8f8'; 
-            }}
-            onMouseLeave={(e) => { 
-              e.currentTarget.style.backgroundColor = 'white'; 
-            }}
+            // ... (hover effects)
           >
             Guess
           </button>
@@ -270,12 +329,7 @@ export default function SelectingPage() {
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            onMouseEnter={(e) => { 
-              e.currentTarget.style.backgroundColor = '#f8f8f8'; 
-            }}
-            onMouseLeave={(e) => { 
-              e.currentTarget.style.backgroundColor = 'white'; 
-            }}
+            // ... (hover effects)
           >
             Word
           </button>

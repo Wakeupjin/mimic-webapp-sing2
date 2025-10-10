@@ -6,7 +6,8 @@ import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
 import WordCompleteButtons from '@/app/components/WordCompleteButtons';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
-import { MOVIES, loadMovie } from '@/app/constants/movies';
+import { fetchLessonData } from '@/app/dataService';
+import { supabase } from '@/app/supabaseClient';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 
@@ -29,9 +30,23 @@ interface CurrentQuestion {
   shuffledWords: string[];
 }
 
+// Type definitions for Supabase data
+interface LessonDataType {
+  id: number;
+  lesson_number: number;
+  video_id: number;
+  word_data: any[];
+  watching_data: any;
+}
+
 export default function WordPage() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+
+  // Supabase data states
+  const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [playCount, setPlayCount] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
@@ -56,27 +71,61 @@ export default function WordPage() {
 
   // 커스텀 훅 사용
   const { isFullscreen, toggleFullscreen } = useFullscreen();
-  const movie = MOVIES[0]; // Sing 2 영화 사용
   const totalQuestions = 10;
 
   // Extract current chapter number from movieId (e.g., "001:1" -> 1)
   const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
   const hasNextChapter = currentChapter < 12; // Assuming 12 chapters total
 
-  // Load lesson data based on movieId
+  // Supabase 데이터 로드
   useEffect(() => {
-    const loadLessonData = async () => {
+    if (!movieId) return;
+
+    const loadDataFromSupabase = async () => {
+      setIsLoading(true);
+
+      const lessonNumberStr = movieId.split(':')[1];
+      const lessonNumber = parseInt(lessonNumberStr);
+
+      if (isNaN(lessonNumber)) {
+        setIsLoading(false);
+        return;
+      }
+
       try {
-        console.log('Loading lesson data for movieId:', movieId);
-        const data = await loadMovie(movieId);
-        console.log('Loaded lesson data:', data);
-        setLessonData(data.lesson[0]);
+        // 1. Lesson 데이터 (word_data 포함) 가져오기
+        const lesson = await fetchLessonData(lessonNumber); 
+
+        if (!lesson) {
+          setIsLoading(false);
+          return;
+        }
+        
+        // 2. video_id를 이용해 Video URL 가져오기
+        const { data: videoResult, error: videoError } = await supabase
+          .from('videos')
+          .select('video_url')
+          .eq('id', lesson.video_id)
+          .single();
+
+        if (videoError || !videoResult) {
+          console.error('Video URL fetching error:', videoError);
+          setIsLoading(false);
+          return;
+        }
+
+        // 3. 상태 업데이트
+        setSupabaseLessonData(lesson as LessonDataType); 
+        setVideoUrl(videoResult.video_url); 
+        setLessonData({ word: lesson.word_data || [] });
+        setIsLoading(false);
       } catch (error) {
-        console.error('Failed to load lesson data:', error);
+        console.error('Supabase data loading error:', error);
+        setIsLoading(false);
       }
     };
 
-    loadLessonData();
+    loadDataFromSupabase();
   }, [movieId]);
 
   // Generate a new question from word section
@@ -139,7 +188,7 @@ export default function WordPage() {
     console.log(`  - Duration: ${endTime - startTime}s`);
     
     setCurrentQuestion({
-      videoPath: '/videos/sing2.mp4',
+      videoPath: videoUrl || '',
       startTime: startTime,
       endTime: endTime,
       correctWords: words,
@@ -398,12 +447,29 @@ export default function WordPage() {
     }
   };
 
+  // 로딩 화면
+  if (isLoading || !supabaseLessonData || !videoUrl || !lessonData) {
+    return (
+      <main className="min-h-screen px-4 py-4">
+        <div className="mb-4 flex items-center justify-between group">
+          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
+        </div>
+        <div className="flex items-center justify-center" style={{ height: 'calc(100vh - 120px)' }}>
+          <div className="text-center text-white">
+            <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+            <p className="text-lg" style={{ fontFamily: 'Encode Sans, sans-serif' }}>Loading...</p>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="min-h-screen px-4 py-4">
       {/* 헤더 */}
       <div className="mb-4 flex items-center justify-between group">
         <div className="flex items-center gap-4">
-          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>{movie.title.toUpperCase()}</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
           <span className="text-lg text-gray-400" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
             Question {currentQuestionNumber}/{totalQuestions}
           </span>
@@ -503,7 +569,7 @@ export default function WordPage() {
                   {currentQuestion && (
                     <VideoPlayer
                       key={`word-${currentQuestionNumber}`}
-                      src={currentQuestion.videoPath}
+                      src={videoUrl || ''}
                       startTime={currentQuestion.startTime}
                       endTime={currentQuestion.endTime}
                       onEndedSegment={handleVideoEnd}
