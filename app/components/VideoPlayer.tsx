@@ -73,7 +73,7 @@ const VideoPlayer = memo(function VideoPlayer({
     if (typeof window === 'undefined') return;
     
     const video = htmlVideoRef.current;
-    if (video) {
+    if (video && isFinite(startTime) && startTime >= 0) {
       video.currentTime = startTime;
     }
   }, [startTime, src]);

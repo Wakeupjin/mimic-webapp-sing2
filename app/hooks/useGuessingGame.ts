@@ -185,7 +185,9 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
       return;
     }
     
-    audio.currentTime = startTime;
+    if (isFinite(startTime) && startTime >= 0) {
+      audio.currentTime = startTime;
+    }
     audio.muted = false; // 소리 켜기
     
     // 오디오 재생
