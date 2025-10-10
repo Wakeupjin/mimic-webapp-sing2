@@ -84,18 +84,22 @@ function MimickingPageContent() {
   useEffect(() => {
     if (!movieId) return;
     
+    let isMounted = true;
+    
     const loadDataFromSupabase = async () => {
       try {
         const lessonNumberStr = movieId.split(':')[1];
         const lessonNumber = parseInt(lessonNumberStr);
         
         if (isNaN(lessonNumber)) {
+          if (isMounted) setIsLoading(false);
           return;
         }
         
         // Lesson 데이터 가져오기
         const lesson = await fetchLessonData(lessonNumber);
-        if (!lesson) {
+        if (!lesson || !isMounted) {
+          if (isMounted) setIsLoading(false);
           return;
         }
         
@@ -106,26 +110,33 @@ function MimickingPageContent() {
           .eq('id', lesson.video_id)
           .single();
           
-        if (videoError || !videoResult) {
+        if (videoError || !videoResult || !isMounted) {
           console.error('Video URL fetching error:', videoError);
+          if (isMounted) setIsLoading(false);
           return;
         }
         
-        // 상태 업데이트 (한 번에)
-        setLessonData(lesson);
-        setVideoUrl(videoResult.video_url);
-        setScenes(lesson.mimic_data || []);
-        setIsLoading(false);
-        
-        console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
-        console.log(`📚 총 ${lesson.mimic_data?.length || 0}개 미믹킹 씬 로드됨`);
+        // 상태 업데이트 (컴포넌트가 마운트된 경우에만)
+        if (isMounted) {
+          setLessonData(lesson);
+          setVideoUrl(videoResult.video_url);
+          setScenes(lesson.mimic_data || []);
+          setIsLoading(false);
+          
+          console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
+          console.log(`📚 총 ${lesson.mimic_data?.length || 0}개 미믹킹 씬 로드됨`);
+        }
       } catch (error) {
         console.error('❌ Supabase 미믹킹 데이터 로딩 실패:', error);
-        setIsLoading(false);
+        if (isMounted) setIsLoading(false);
       }
     };
     
     loadDataFromSupabase();
+    
+    return () => {
+      isMounted = false;
+    };
   }, [movieId]);
 
   const currentScene = scenes[currentIndex];
@@ -272,7 +283,7 @@ function MimickingPageContent() {
   //     // 두 번째 씬부터는 자동으로 시퀀스 시작 (단, 미믹킹이 시작된 후에만)
   // 미믹킹 시퀀스 실행 (자동)
   useEffect(() => {
-    if (isMimickingStarted && !isSequenceRunning) {
+    if (isMimickingStarted && !isSequenceRunning && currentScene) {
       // 시퀀스 자동 시작
       console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
       // Set autoSeqIndex for first button (button 0)
@@ -282,7 +293,7 @@ function MimickingPageContent() {
       console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
       executeMimickingSequence(currentIndex, playVideo, currentScene);
     }
-  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, currentScene]);
+  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning]);
 
   // currentIndex 변경 시 상태 초기화는 훅에서 처리
   //   }
