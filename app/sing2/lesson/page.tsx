@@ -1738,19 +1738,6 @@ function TrainingPageContent() {
                         triangle.style.borderBottom = '45px solid transparent';
                       }
                     }}
-                    onClick={() => {
-                      const newQuestionIndex = currentQuestionIndex - 1;
-                      if (newQuestionIndex >= 0) {
-                        // 이전 문제로 이동
-                        executeGuessingSequence(newQuestionIndex);
-                      } else {
-                        // Guess1에서 좌측 방향키 클릭 시 미믹킹 모드로 전환
-                        setIsGuessingMode(false);
-                        // URL을 미믹킹 모드로 업데이트
-                        window.history.pushState({}, '', '?mode=mimicking');
-                        execute30thMimickingSequence();
-                      }
-                    }}
                     aria-label="이전 문제"
                   >
                     <div 
