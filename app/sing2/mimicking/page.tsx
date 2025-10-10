@@ -82,6 +82,8 @@ function MimickingPageContent() {
       }
 
       // 4. 상태 업데이트
+      console.log('Supabase lesson data:', lesson);
+      console.log('Mimic data:', lesson.mimic_data);
       setLessonData(lesson as LessonDataType); 
       setVideoUrl(videoResult.video_url); 
       setMimicDataList(lesson.mimic_data || []); 
@@ -128,8 +130,11 @@ function MimickingPageContent() {
       const video = videoRef.current;
       // 유효한 시간 값인지 확인
       const startTime = Number(currentSentence.start_sec);
+      console.log('Mimicking - start_sec:', currentSentence.start_sec, 'converted:', startTime, 'isFinite:', isFinite(startTime));
       if (isFinite(startTime) && startTime >= 0) {
         video.currentTime = startTime;
+      } else {
+        console.error('Invalid start_sec value:', currentSentence.start_sec);
       }
       
       if (isVideoStarted && playbackMode === 'loop') {
