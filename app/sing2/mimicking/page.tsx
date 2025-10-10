@@ -84,6 +84,12 @@ function MimickingPageContent() {
       // 4. 상태 업데이트
       console.log('Supabase lesson data:', lesson);
       console.log('Mimic data:', lesson.mimic_data);
+      console.log('Mimic data length:', lesson.mimic_data?.length);
+      if (lesson.mimic_data && lesson.mimic_data.length > 0) {
+        console.log('First mimic item:', lesson.mimic_data[0]);
+        console.log('start_sec type:', typeof lesson.mimic_data[0]?.start_sec);
+        console.log('start_sec value:', lesson.mimic_data[0]?.start_sec);
+      }
       setLessonData(lesson as LessonDataType); 
       setVideoUrl(videoResult.video_url); 
       setMimicDataList(lesson.mimic_data || []); 

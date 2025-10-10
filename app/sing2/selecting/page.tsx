@@ -50,6 +50,8 @@ function SelectingPageContent() {
         return;
       }
 
+      console.log('Supabase lessons data:', data);
+
       const lessonList = data || [];
       setLessons(lessonList);
       
