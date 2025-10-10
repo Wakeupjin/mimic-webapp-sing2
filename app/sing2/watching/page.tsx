@@ -97,9 +97,11 @@ function WatchingPageContent() {
     if (lessonData?.watch_start_sec !== undefined && lessonData?.watch_end_sec !== undefined) {
       const video = document.querySelector('video') as HTMLVideoElement;
       if (video) {
-        const startTime = lessonData.watch_start_sec; // 초(seconds) 단위로 바로 사용
+        const startTime = Number(lessonData.watch_start_sec); // 초(seconds) 단위로 바로 사용
         
-        video.currentTime = startTime;
+        if (isFinite(startTime) && startTime >= 0) {
+          video.currentTime = startTime;
+        }
         
         setVideoProgress(0);
       }
@@ -185,7 +187,7 @@ function WatchingPageContent() {
       const newTime = startTime + (progress / 100) * totalDuration;
       
       const video = document.querySelector('video') as HTMLVideoElement;
-      if (video) {
+      if (video && isFinite(newTime) && newTime >= 0) {
         video.currentTime = newTime;
         setVideoProgress(progress);
       }
@@ -373,7 +375,9 @@ function WatchingPageContent() {
                     onClick={() => {
                       const video = document.querySelector('video') as HTMLVideoElement;
                       if (video) {
-                        video.currentTime = startTime; // startTime 변수 사용
+                        if (isFinite(startTime) && startTime >= 0) {
+                          video.currentTime = startTime;
+                        }
                         video.play();
                         setShowNextCta(false);
                         setVideoProgress(0);

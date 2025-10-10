@@ -126,7 +126,11 @@ function MimickingPageContent() {
   useEffect(() => {
     if (videoRef.current && currentSentence) {
       const video = videoRef.current;
-      video.currentTime = currentSentence.start_sec; // 초 단위로 바로 사용
+      // 유효한 시간 값인지 확인
+      const startTime = Number(currentSentence.start_sec);
+      if (isFinite(startTime) && startTime >= 0) {
+        video.currentTime = startTime;
+      }
       
       if (isVideoStarted && playbackMode === 'loop') {
         video.play();
@@ -302,9 +306,13 @@ function MimickingPageContent() {
                 const video = e.currentTarget;
                 if (currentSentence) {
                   // 비디오가 문장 끝 시간에 도달하면 일시정지하고 루프 시작 시간으로 재설정
-                  if (video.currentTime >= currentSentence.end_sec) {
+                  const endTime = Number(currentSentence.end_sec);
+                  const startTime = Number(currentSentence.start_sec);
+                  if (isFinite(endTime) && video.currentTime >= endTime) {
                     video.pause();
-                    video.currentTime = currentSentence.start_sec;
+                    if (isFinite(startTime) && startTime >= 0) {
+                      video.currentTime = startTime;
+                    }
                     
                     // 재생 모드가 'loop'인 경우, 자동으로 다시 재생
                     if (playbackMode === 'loop' && isVideoStarted && !isVideoPaused) {
