@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { fetchLessonData } from "../../dataService";
 import { supabase } from "../../supabaseClient";
@@ -16,7 +16,7 @@ import { useMimickingSequence } from "../../hooks/useMimickingSequence";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
 
-export default function MimickingPage() {
+function MimickingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   console.log('🎬 미믹킹 현재 movieId:', movieId);
@@ -643,5 +643,13 @@ export default function MimickingPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function MimickingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MimickingPageContent />
+    </Suspense>
   );
 }
