@@ -9,7 +9,7 @@ import VideoPlayer from "../../components/VideoPlayer";
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
 import { useVideoPlayer } from "../../hooks/useVideoPlayer";
-import { TRANSITION_DURATION } from "../../constants/timings";
+import { TRANSITION_DURATION, WATCHING_VIDEO_DURATION_SECONDS, WATCHING_NAVIGATION_DELAY_MS } from "../../constants/timings";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import PauseOverlay from "../../components/PauseOverlay";
 import AgainNextButtons from "../../components/AgainNextButtons";
@@ -18,10 +18,9 @@ export default function WatchingPage() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   
-  // Chapter 0 접근 시 Chapter 1로 리다이렉트
+  // Redirect Chapter 0 to Chapter 1
   useEffect(() => {
     if (movieId === '001:0') {
-      console.log('🚫 Chapter 0은 존재하지 않습니다. Chapter 1로 리다이렉트');
       window.location.href = '/sing2/watching?id=001:1';
       return;
     }
@@ -32,29 +31,26 @@ export default function WatchingPage() {
   const [movieData, setMovieData] = useState<any>(null);
   const [watchingData, setWatchingData] = useState<any>(null);
   
-  // 커스텀 훅 사용
-  // 데이터 로딩
+  // Custom hooks
+  // Data loading
   useEffect(() => {
     if (!movieId) return;
     
     const loadWatchingData = async () => {
       try {
-        console.log('🎬 워칭 loadMovie 호출:', movieId);
         const data = await loadMovie(movieId);
-        console.log('🎬 워칭 로드된 데이터:', data);
         setMovieData(data);
         const watchingInfo = data.lesson[0].watching || {};
         setWatchingData(watchingInfo);
-        console.log(`📚 워칭 데이터 로드됨:`, watchingInfo);
       } catch (error) {
-        console.error("워칭 데이터 로드 실패:", error);
+        // Keep same behavior; just avoid verbose logging
       }
     };
     
     loadWatchingData();
   }, [movieId]);
 
-  // watchingData가 로드된 후 비디오 시작 시간 설정
+  // Set video start time after watchingData loads
   useEffect(() => {
     if (watchingData?.start && watchingData?.end) {
       const video = document.querySelector('video') as HTMLVideoElement;
@@ -63,9 +59,8 @@ export default function WatchingPage() {
         const endTime = srtTimeToSeconds(watchingData.end);
         video.currentTime = startTime;
         
-        // 진행률을 0%로 초기화 (시작 시간부터 시작하므로)
+        // Reset progress to 0% (starting from start time)
         setVideoProgress(0);
-        console.log('🎬 시작 시간으로 이동:', startTime, '초, 진행률 초기화');
       }
     }
   }, [watchingData]);
@@ -91,25 +86,23 @@ export default function WatchingPage() {
   const [showNextCta, setShowNextCta] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
 
-  // 키보드 이벤트 처리
+  // Keyboard event handling
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // ESC 키로 풀스크린 해제 방지
+      // Prevent fullscreen exit via ESC
       if (e.key === 'Escape' && isFullscreen) {
         e.preventDefault();
         e.stopPropagation();
       }
-      // 스페이스바로 비디오 재생/일시정지
+      // Spacebar to play/pause video
       else if (e.code === "Space") {
         e.preventDefault();
         const video = document.querySelector('video') as HTMLVideoElement;
         if (video) {
           if (video.paused) {
             video.play();
-            // pauseVideo(); // 훅 사용
           } else {
             video.pause();
-            // pauseVideo(); // 훅 사용
           }
         }
       }
@@ -119,9 +112,9 @@ export default function WatchingPage() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isFullscreen]);
 
-  // 풀스크린 토글은 useFullscreen 훅에서 제공
+  // Fullscreen toggle is provided by useFullscreen hook
 
-  // 워칭 모드 진행률 바 드래그 핸들러
+  // Watching mode progress bar drag handlers
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const progressBar = e.currentTarget;
     const rect = progressBar.getBoundingClientRect();
@@ -157,7 +150,7 @@ export default function WatchingPage() {
     setIsDragging(false);
   };
 
-  // 시간 포맷 함수 (초를 mm:ss 형식으로)
+  // Time format function (seconds to mm:ss format)
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
@@ -240,17 +233,15 @@ export default function WatchingPage() {
               playsInline
               preload="auto"
               onLoadedData={() => {
-                console.log('워칭 모드 영상 로드 완료');
+                // Video loaded successfully
               }}
               onClick={() => {
                 const video = document.querySelector('video') as HTMLVideoElement;
                 if (video) {
                   if (video.paused) {
                     video.play();
-                    // pauseVideo(); // 훅 사용
                   } else {
                     video.pause();
-                    // pauseVideo(); // 훅 사용
                   }
                 }
               }}
@@ -272,17 +263,17 @@ export default function WatchingPage() {
               }}
               onContextMenu={(e) => {
                 e.preventDefault();
-                // 우클릭 메뉴 비활성화
+                // Disable right-click menu
               }}
               onPause={(e) => {
-                // 워칭 모드에서는 사용자가 일시정지한 경우를 존중
+                // Respect user pause in watching mode
                 if (!showNextCta && !isVideoPaused) {
                   e.currentTarget.play();
                 }
               }}
             />
             
-            {/* 시작을 위한 클릭 오버레이 */}
+            {/* Click overlay to start */}
             {!showNextCta && !isVideoStarted && (
               <ClickToStartOverlay
                 onClick={() => {
@@ -292,16 +283,16 @@ export default function WatchingPage() {
                     setIsVideoStarted(true);
                   }
                 }}
-                text="시작을 위해 클릭해주세요"
+                text="Click to start"
               />
             )}
 
-            {/* 워칭 모드 PAUSE 오버레이 */}
+            {/* Watching mode PAUSE overlay */}
             {isVideoPaused && !showNextCta && (
               <PauseOverlay />
             )}
 
-            {/* 워칭 모드 Again/Next 버튼 오버레이 */}
+            {/* Watching mode Again/Next button overlay */}
             {showNextCta && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 {/* Dimmed overlay */}
@@ -326,7 +317,7 @@ export default function WatchingPage() {
                         video.play();
                         setShowNextCta(false);
                         setVideoProgress(0);
-                        setIsVideoStarted(true); // 바로 재생 시작으로 설정
+                        setIsVideoStarted(true); // Start playback immediately
                       }
                     }}
                   >
@@ -348,24 +339,23 @@ export default function WatchingPage() {
                       e.currentTarget.style.backgroundColor = 'white';
                     }}
                     onClick={() => {
-                      // 미믹킹 모드로 전환 (풀스크린 유지)
+                      // Switch to mimicking mode (maintain fullscreen)
                       const isCurrentlyFullscreen = document.fullscreenElement !== null;
                       if (isCurrentlyFullscreen) {
                         sessionStorage.setItem('maintainFullscreen', 'true');
                       }
                       sessionStorage.setItem('fromWatching', 'true');
-                      console.log('🏠 워칭에서 미믹킹으로 이동: fromWatching 플래그 설정');
                       
-                      // 약간의 지연 후 이동 (sessionStorage 저장 보장)
+                      // Small delay before navigation (ensure sessionStorage is saved)
                       setTimeout(() => {
                         window.location.href = `/sing2/mimicking?id=${movieId}`;
-                      }, 100);
+                      }, WATCHING_NAVIGATION_DELAY_MS);
                     }}
                   >
-                    {/* 카멜레온 이미지 오버레이 */}
+                    {/* Chameleon image overlay */}
                     <img 
                       src="/Subject.png" 
-                      alt="카멜레온" 
+                      alt="Chameleon" 
                       className="absolute -top-12 left-1/2 transform -translate-x-1/2 pointer-events-none"
                       style={{ maxWidth: '80px', height: 'auto' }}
                     />
@@ -377,7 +367,7 @@ export default function WatchingPage() {
           </div>
         </div>
         
-        {/* 워칭 모드 진행률 바 - 비디오 플레이어 아래 */}
+        {/* Watching mode progress bar - below video player */}
         {!showNextCta && (
           <div className={`mt-4 px-4 ${isFullscreen ? 'w-[84%]' : 'w-[70%]'}`}>
             <div 
@@ -401,14 +391,14 @@ export default function WatchingPage() {
                 handleProgressMouseMove(e);
               }}
             >
-              {/* 진행률 바 배경 */}
+              {/* Progress bar background */}
               <div className="absolute inset-0 bg-gray-300 rounded-full overflow-hidden"></div>
-              {/* 진행률 표시 */}
+              {/* Progress indicator */}
               <div
                 className="absolute inset-0 h-full bg-[#60D96C] rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${videoProgress}%` }}
               />
-              {/* 드래그 가능한 동그라미 버튼 */}
+              {/* Draggable circle button */}
               <div 
                 className="absolute top-1/2 w-3 h-3 bg-gray-500 rounded-full cursor-pointer transform -translate-y-1/2 shadow-lg hover:bg-gray-600 transition-colors duration-200"
                 style={{ left: `calc(${videoProgress}% - 6px)` }}
@@ -418,7 +408,7 @@ export default function WatchingPage() {
                 }}
               />
               
-              {/* 시간 정보 툴팁 - 진행률 바 하단 */}
+              {/* Time info tooltip - below progress bar */}
               {showProgressTooltip && (
                 <div 
                   className="absolute top-9 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg pointer-events-none whitespace-nowrap z-50"
@@ -428,7 +418,7 @@ export default function WatchingPage() {
                     transform: 'translateX(-50%)'
                   }}
                 >
-                  {/* 포인터 삼각형 */}
+                  {/* Pointer triangle */}
                   <div 
                     className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-0 h-0"
                     style={{
@@ -437,7 +427,7 @@ export default function WatchingPage() {
                       borderBottom: '16px solid rgb(32, 30, 30)'
                     }}
                   ></div>
-                  {formatTime((tooltipPosition / 100) * 401.5)} / {formatTime(401.5)}
+                  {formatTime((tooltipPosition / 100) * WATCHING_VIDEO_DURATION_SECONDS)} / {formatTime(WATCHING_VIDEO_DURATION_SECONDS)}
                 </div>
               )}
             </div>

@@ -2,8 +2,16 @@
 
 import { useEffect, useMemo, useRef, useState, memo } from "react";
 import dynamic from "next/dynamic";
+import {
+  VIDEO_SEGMENT_END_CHECK_INTERVAL,
+  VIDEO_ONPLAY_TIMEOUT,
+  VIDEO_ONPLAY_BUTTON_DELAY,
+  VIDEO_DEBOUNCE_DELAY,
+  VIDEO_SUPPRESS_END_CHECK_DURATION,
+  VIDEO_END_THRESHOLD,
+} from "../constants/timings";
 
-// ReactPlayer를 동적 import로 변경 (SSR 방지)
+// Dynamically import ReactPlayer to avoid SSR
 const ReactPlayer = dynamic(() => import("react-player"), {
   ssr: false,
 });
@@ -60,61 +68,64 @@ const VideoPlayer = memo(function VideoPlayer({
   const onPlayCalledForCurrentSegmentRef = useRef<boolean>(false); // Track if onPlay callback was called for current segment
 
   useEffect(() => {
-    // 동적 import로 인해 ReactPlayer.canPlay 사용 불가
-    // 브라우저에서만 실행되므로 항상 ReactPlayer 사용
+    // ReactPlayer.canPlay cannot be used due to dynamic import
+    // Always runs on browser; set HTML video currentTime as a fallback
     if (typeof window === 'undefined') return;
     
     const video = htmlVideoRef.current;
     if (video) {
-      // console.log('HTML video currentTime 설정:', startTime);
       video.currentTime = startTime;
     }
   }, [startTime, src]);
 
+  // Helper to handle segment end logic identically across interval and onProgress
+  const handlePotentialSegmentEnd = (currentSeconds: number) => {
+    if (!isFinite(endTime)) return;
+
+    if (currentSeconds >= endTime - VIDEO_END_THRESHOLD) {
+      if (endFiredForSegmentRef.current) return;
+
+      const timeSinceSegmentStart = Date.now() - segmentStartTimeRef.current;
+      // Wait for onPlay unless it times out
+      if (!hasPlayedForCurrentSegmentRef.current && timeSinceSegmentStart < VIDEO_ONPLAY_TIMEOUT) {
+        return;
+      }
+
+      if (!hasPlayedForCurrentSegmentRef.current && timeSinceSegmentStart >= VIDEO_ONPLAY_TIMEOUT) {
+        if (onPlayTimeout) {
+          onPlayTimeout(); // Turn button green before ending
+        }
+        hasPlayedForCurrentSegmentRef.current = true;
+        endFiredForSegmentRef.current = true;
+        setIsPaused(true);
+        // Delay so the user can see the button color change
+        setTimeout(() => {
+          if (onEndedSegment) onEndedSegment();
+        }, VIDEO_ONPLAY_BUTTON_DELAY);
+        return;
+      }
+
+      endFiredForSegmentRef.current = true;
+      setIsPaused(true);
+      if (onEndedSegment) onEndedSegment();
+    }
+  };
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
-
-    // ReactPlayer 사용 (항상 사용)
+    // Always use ReactPlayer
     const interval = window.setInterval(() => {
       const now = Date.now();
       if (now < suppressEndCheckUntilRef.current) return;
       const current = reactPlayerRef.current?.getCurrentTime?.() ?? 0;
 
-      // 시간 업데이트 콜백 호출
+      // Invoke time update callback
       if (onTimeUpdate) {
         onTimeUpdate(current);
       }
 
-      if (current >= endTime - 0.001) { // endTime에 근접하면 멈춤 (정확도 향상)
-        if (endFiredForSegmentRef.current) return;
-        // IMPORTANT: Only fire onEndedSegment if onPlay has fired at least once
-        // BUT if 1 second has passed since segment start, fire anyway (timeout fallback)
-        const timeSinceSegmentStart = Date.now() - segmentStartTimeRef.current;
-        if (!hasPlayedForCurrentSegmentRef.current && timeSinceSegmentStart < 1000) {
-          console.log('⚠️ interval: endTime reached but onPlay has not fired yet - skipping onEndedSegment');
-          return;
-        }
-        if (!hasPlayedForCurrentSegmentRef.current && timeSinceSegmentStart >= 1000) {
-          console.log('⚠️ interval: onPlay timeout (1s) - calling onPlayTimeout then firing onEndedSegment after 200ms delay');
-          if (onPlayTimeout) {
-            onPlayTimeout(); // Turn button green before ending
-          }
-          hasPlayedForCurrentSegmentRef.current = true; // Mark as played to prevent repeated timeout calls
-          endFiredForSegmentRef.current = true;
-          setIsPaused(true);
-          // Add 200ms delay so user can see button turn green
-          setTimeout(() => {
-            if (onEndedSegment) onEndedSegment();
-          }, 200);
-          return; // Exit early to prevent immediate onEndedSegment call
-        } else {
-          console.log('✅ interval: endTime reached and onPlay has fired - calling onEndedSegment');
-        }
-        endFiredForSegmentRef.current = true;
-        setIsPaused(true);
-        if (onEndedSegment) onEndedSegment();
-      }
-    }, 50); // 더 자주 확인하여 정확도 향상
+      handlePotentialSegmentEnd(current);
+    }, VIDEO_SEGMENT_END_CHECK_INTERVAL); // 더 자주 확인하여 정확도 향상
     return () => window.clearInterval(interval);
   }, [endTime, onEndedSegment, onTimeUpdate]);
 
@@ -123,9 +134,8 @@ const VideoPlayer = memo(function VideoPlayer({
     // ReactPlayer는 muted 프롭으로 제어됨 (항상 ReactPlayer 사용)
   }, [muted, src]);
 
-  // 외부 재생 트리거 처리
+  // Handle external play trigger via playNonce
   useEffect(() => {
-    console.log('🎬 playNonce useEffect 실행:', playNonce);
     if (typeof window === 'undefined') return;
     if (playNonce === undefined) return;
     if (playNonce === 0) {
@@ -135,19 +145,16 @@ const VideoPlayer = memo(function VideoPlayer({
 
     // 같은 playNonce 값이면 무시
     if (playNonce === lastPlayNonceRef.current) {
-      console.log('⛔ 같은 playNonce 값이므로 중복 실행 방지');
       return;
     }
 
     // playNonce가 이전 값보다 작으면 무시 (역방향 실행 방지)
     if (playNonce < lastPlayNonceRef.current) {
-      console.log('⛔ playNonce가 이전 값보다 작으므로 무시');
       return;
     }
 
     // onReady가 이미 seek했고, 이것이 첫 playNonce=1이면 seek 건너뛰기 (중복 방지)
     if (playNonce === 1 && onReadyHasSeekedRef.current) {
-      console.log('⛔ onReady가 이미 seekTo했으므로 playNonce=1 seek 건너뛰기');
       lastPlayNonceRef.current = playNonce;
       setIsPaused(false);
       return;
@@ -155,29 +162,25 @@ const VideoPlayer = memo(function VideoPlayer({
 
     const now = Date.now();
 
-    // 중복 실행 방지 (500ms debounce - 짧은 클립도 지원)
-    if (now - lastPlayTriggerAtRef.current < 500) {
-      console.log('⛔ 재생 요청 debounced:', now - lastPlayTriggerAtRef.current, 'ms ago');
+    // Debounce duplicate triggers (supports short clips)
+    if (now - lastPlayTriggerAtRef.current < VIDEO_DEBOUNCE_DELAY) {
       return;
     }
 
     if (suppressEndCheckUntilRef.current > now) {
-      console.log('⛔ 이미 재생 중이므로 중복 실행 방지');
       return;
     }
 
-    // playNonce를 즉시 업데이트하여 중복 실행 방지
+    // Update playNonce instantly to avoid duplication
     lastPlayNonceRef.current = playNonce;
     lastPlayTriggerAtRef.current = now;
     endFiredForSegmentRef.current = false;
     hasPlayedForCurrentSegmentRef.current = false; // Reset on new segment
     onPlayCalledForCurrentSegmentRef.current = false; // Reset on new segment
     segmentStartTimeRef.current = Date.now(); // Track when segment playback was requested
-    console.log('✅ playNonce 변경, endFiredForSegmentRef 리셋, hasPlayedForCurrentSegmentRef 리셋, onPlayCalledForCurrentSegmentRef 리셋, playNonce:', playNonce);
 
-    // 항상 ReactPlayer 사용
-    suppressEndCheckUntilRef.current = Date.now() + 500;
-    console.log('▶️ ReactPlayer seekTo:', startTime, 'seconds');
+    // Always use ReactPlayer
+    suppressEndCheckUntilRef.current = Date.now() + VIDEO_SUPPRESS_END_CHECK_DURATION;
     if (isFinite(startTime)) {
       reactPlayerRef.current?.seekTo(startTime, "seconds");
     } else {
@@ -185,36 +188,31 @@ const VideoPlayer = memo(function VideoPlayer({
     }
     setIsPaused(false); // ReactPlayer는 playing prop으로 제어
 
-    // 강제로 재생 시작 (필요한 경우만)
-    // Removed to prevent double-play issues - ReactPlayer's 'playing' prop should handle this
+    // Do not force play; ReactPlayer's 'playing' prop handles it
   }, [playNonce, src, startTime]); // muted removed from deps - muted prop is passed directly to ReactPlayer
 
   return (
     <div className="relative w-full" onClick={onClick}>
       <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden">
-        {/* 로딩 상태 표시 */}
+        {/* Loading state overlay */}
         {isLoading && (
           <div className="absolute inset-0 bg-black flex items-center justify-center z-10">
             <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin"></div>
           </div>
         )}
         
-        {/* 항상 ReactPlayer 사용 */}
+        {/* Always use ReactPlayer */}
         <ReactPlayer
             ref={reactPlayerRef}
             url={src}
             playing={playing && !isPaused && isReady}
-            onStart={() => {/* console.log('ReactPlayer onStart') */}}
+            onStart={() => {}}
             onPlay={() => {
-              console.log('ReactPlayer onPlay - hasPlayedForCurrentSegmentRef 설정');
               if (!onPlayCalledForCurrentSegmentRef.current) {
-                console.log('🎬 ReactPlayer onPlay event - calling onPlay callback');
                 onPlayCalledForCurrentSegmentRef.current = true;
                 hasPlayedForCurrentSegmentRef.current = true; // Mark that video has played for this segment
                 setIsPaused(false);
                 if (onPlay) onPlay();
-              } else {
-                console.log('🎬 ReactPlayer onPlay event - onPlay callback already called via onProgress');
               }
             }}
             controls={false}
@@ -222,12 +220,9 @@ const VideoPlayer = memo(function VideoPlayer({
             height="100%"
             className="absolute inset-0"
             onPause={() => setIsPaused(true)}
-            onLoad={() => {
-              // console.log('ReactPlayer onLoad - 비디오 로드 완료');
-            }}
+            onLoad={() => {}}
             onReady={() => {
               if (!isReady) {
-                console.log('ReactPlayer onReady - seekTo to startTime');
                 if (isFinite(startTime) && startTime >= 0) {
                   reactPlayerRef.current?.seekTo(startTime, "seconds");
                   onReadyHasSeekedRef.current = true; // Mark that we seeked
@@ -240,48 +235,22 @@ const VideoPlayer = memo(function VideoPlayer({
               }
             }}
             onProgress={(state) => {
-              // console.log('ReactPlayer onProgress:', state.playedSeconds, 'seconds, endTime:', endTime);
-
               // If this is the first onProgress for this segment and onPlay callback hasn't been called yet, call it now
               // This is a fallback in case ReactPlayer's onPlay event doesn't fire
               if (!onPlayCalledForCurrentSegmentRef.current && !hasPlayedForCurrentSegmentRef.current && state.playedSeconds >= startTime) {
-                console.log(`🎬 onProgress detected playback at ${state.playedSeconds}s (startTime: ${startTime}s) - calling onPlay callback manually (fallback)`);
                 onPlayCalledForCurrentSegmentRef.current = true;
                 hasPlayedForCurrentSegmentRef.current = true;
                 setIsPaused(false);
                 if (onPlay) onPlay();
               }
 
-              // 시간 업데이트 콜백 호출
+              // Invoke time update callback
               if (onTimeUpdate) {
                 onTimeUpdate(state.playedSeconds);
               }
-              // 종료 시간에 도달하면 정지 (endTime 유효성 검사)
-              // IMPORTANT: Only fire onEndedSegment if onPlay has fired at least once
-              // BUT if 1 second has passed since segment start, fire anyway (timeout fallback)
-              if (isFinite(endTime) && state.playedSeconds >= endTime && !endFiredForSegmentRef.current) {
-                const timeSinceSegmentStart = Date.now() - segmentStartTimeRef.current;
-                if (!hasPlayedForCurrentSegmentRef.current && timeSinceSegmentStart < 1000) {
-                  console.log('⚠️ onProgress: endTime reached but onPlay has not fired yet - skipping onEndedSegment');
-                  return;
-                }
-                if (!hasPlayedForCurrentSegmentRef.current && timeSinceSegmentStart >= 1000) {
-                  console.log('⚠️ onProgress: onPlay timeout (1s) - calling onPlayTimeout then firing onEndedSegment after 200ms delay');
-                  if (onPlayTimeout) {
-                    onPlayTimeout(); // Turn button green before ending
-                  }
-                  hasPlayedForCurrentSegmentRef.current = true; // Mark as played to prevent repeated timeout calls
-                  endFiredForSegmentRef.current = true;
-                  // Add 200ms delay so user can see button turn green
-                  setTimeout(() => {
-                    if (onEndedSegment) onEndedSegment();
-                  }, 200);
-                  return; // Exit early to prevent immediate onEndedSegment call
-                } else {
-                  console.log('✅ onProgress: endTime reached and onPlay has fired - calling onEndedSegment');
-                }
-                endFiredForSegmentRef.current = true;
-                if (onEndedSegment) onEndedSegment();
+              // Delegate end detection to the shared helper
+              if (!endFiredForSegmentRef.current) {
+                handlePotentialSegmentEnd(state.playedSeconds);
               }
             }}
             muted={muted}

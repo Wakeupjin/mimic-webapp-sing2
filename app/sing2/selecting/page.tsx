@@ -2,17 +2,18 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings';
 
 export default function SelectingPage() {
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [selectedChapter, setSelectedChapter] = useState<number>(1); // 현재 선택된 Chapter
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // 드롭다운 열림 상태
-  const [canScrollDown, setCanScrollDown] = useState(false); // 스크롤 가능 상태
+  const [selectedChapter, setSelectedChapter] = useState<number>(1); // Currently selected chapter
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown open state
+  const [canScrollDown, setCanScrollDown] = useState(false); // Scrollable state
   const dropdownRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // 드롭다운 외부 클릭 시 닫기
+  // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -29,12 +30,12 @@ export default function SelectingPage() {
     };
   }, [isDropdownOpen]);
 
-  // 스크롤 가능 상태 체크
+  // Check scrollable state
   useEffect(() => {
     const checkScrollable = () => {
       if (scrollContainerRef.current) {
         const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
-        setCanScrollDown(scrollTop < scrollHeight - clientHeight - 10);
+        setCanScrollDown(scrollTop < scrollHeight - clientHeight - SELECTING_SCROLL_THRESHOLD_PX);
       }
     };
 
@@ -48,7 +49,7 @@ export default function SelectingPage() {
 
   const handleModeSelect = (mode: string) => {
     setSelectedMode(mode);
-    // 선택된 Chapter와 모드로 이동
+    // Navigate to selected chapter and mode
     const movieId = `001:${selectedChapter}`;
     
     if (mode === 'mimicking') {
@@ -74,7 +75,7 @@ export default function SelectingPage() {
 
   return (
     <main className="min-h-screen px-4 py-4">
-      {/* 헤더 */}
+      {/* Header */}
       <div className="mb-8 flex items-center justify-between group">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
         <div className="flex items-center gap-3">
@@ -117,7 +118,7 @@ export default function SelectingPage() {
         </div>
       </div>
 
-      {/* Chapter 드롭다운 */}
+      {/* Chapter dropdown */}
       <div className="flex justify-center mb-8">
         <div className="relative" ref={dropdownRef}>
           <button
@@ -143,14 +144,14 @@ export default function SelectingPage() {
             </svg>
           </button>
 
-          {/* 드롭다운 메뉴 */}
+          {/* Dropdown menu */}
           {isDropdownOpen && (
             <div
               className="absolute top-full mt-2 w-full rounded-xl overflow-hidden shadow-lg"
-              style={{ backgroundColor: '#1a1a1a', zIndex: 50, maxHeight: '200px' }}
+              style={{ backgroundColor: '#1a1a1a', zIndex: 50, maxHeight: `${SELECTING_DROPDOWN_MAX_HEIGHT_PX}px` }}
             >
-              <div ref={scrollContainerRef} className="overflow-auto custom-scrollbar" style={{ maxHeight: '200px' }}>
-                {[...Array(12)].map((_, i) => {
+              <div ref={scrollContainerRef} className="overflow-auto custom-scrollbar" style={{ maxHeight: `${SELECTING_DROPDOWN_MAX_HEIGHT_PX}px` }}>
+                {[...Array(SELECTING_CHAPTER_COUNT)].map((_, i) => {
                   const chapterNum = i + 1;
                   const isSelected = chapterNum === selectedChapter;
                   return (
@@ -175,7 +176,7 @@ export default function SelectingPage() {
                 })}
               </div>
               
-              {/* 우측 끝 작은 화살표 - 스크롤 가능할 때만 표시 */}
+              {/* Small arrow at right end - only show when scrollable */}
               {canScrollDown && (
                 <div className="absolute right-2 bottom-2 pointer-events-none">
                   <div className="animate-bounce">
@@ -282,10 +283,10 @@ export default function SelectingPage() {
         
         {selectedMode && (
           <p className="mt-6 text-lg text-gray-300">
-            {selectedMode === 'mimicking' ? '미믹킹' : 
-             selectedMode === 'guessing' ? '게싱' : 
-             selectedMode === 'watching' ? '워칭' : 
-             selectedMode === 'word' ? '워드' : ''} 모드로 이동 중...
+            {selectedMode === 'mimicking' ? 'Mimicking' : 
+             selectedMode === 'guessing' ? 'Guessing' : 
+             selectedMode === 'watching' ? 'Watching' : 
+             selectedMode === 'word' ? 'Word' : ''} mode loading...
           </p>
         )}
         </div>
