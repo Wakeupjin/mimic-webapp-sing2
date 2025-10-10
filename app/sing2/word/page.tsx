@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
@@ -39,7 +39,7 @@ interface LessonDataType {
   watching_data: any;
 }
 
-export default function WordPage() {
+function WordPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
 
@@ -885,5 +885,13 @@ export default function WordPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function WordPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WordPageContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useRef } from "react";
+import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useFullscreen } from "../../hooks/useFullscreen";
@@ -35,7 +35,7 @@ type LessonDataType = {
 // --- [/SUPABASE 연결 및 타입 정의] ---
 
 
-export default function MimickingPage() {
+function MimickingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   
@@ -395,5 +395,13 @@ export default function MimickingPage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function MimickingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MimickingPageContent />
+    </Suspense>
   );
 }
