@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "01:07:30,102",
+    "end": "01:15:33,318"
+  },
+  "mimicking": [
+    {
+      "start": "01:07:30,102",
+      "end": "01:07:32,703",
+      "text": "Bring me Moon."
+    },
+    {
+      "start": "01:08:13,178",
+      "end": "01:08:15,113",
+      "text": "Here, he wants to talk to you."
+    },
+    {
+      "start": "01:08:23,053",
+      "end": "01:08:23,854",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "01:08:39,770",
+      "end": "01:08:42,107",
+      "text": "Mr. Crystal. Aah! I got some great news."
+    },
+    {
+      "start": "01:08:54,419",
+      "end": "01:08:56,053",
+      "text": "You calling her a liar?"
+    },
+    {
+      "start": "01:09:16,474",
+      "end": "01:09:18,343",
+      "text": "You really think I'd let a lowlife"
+    },
+    {
+      "start": "01:09:33,525",
+      "end": "01:09:35,227",
+      "text": "Sir. Uh, sir, sir, sir."
+    },
+    {
+      "start": "01:09:48,872",
+      "end": "01:09:50,808",
+      "text": "You-you nearly killed me."
+    },
+    {
+      "start": "01:10:13,964",
+      "end": "01:10:15,267",
+      "text": "Okay, okay. I understand."
+    },
+    {
+      "start": "01:10:31,048",
+      "end": "01:10:33,585",
+      "text": "Uh, what did you say, Mr. Moon?"
+    },
+    {
+      "start": "01:10:38,623",
+      "end": "01:10:40,924",
+      "text": "and meet me back at the hotel!"
+    },
+    {
+      "start": "01:11:10,055",
+      "end": "01:11:13,023",
+      "text": "...please welcome Mr. Jimmy Crystal."
+    },
+    {
+      "start": "01:11:23,168",
+      "end": "01:11:24,569",
+      "text": "Good to see you."
+    },
+    {
+      "start": "01:11:30,075",
+      "end": "01:11:31,543",
+      "text": "Well, thank you. Thank you for having me."
+    },
+    {
+      "start": "01:11:39,317",
+      "end": "01:11:40,884",
+      "text": "theater chain in the world..."
+    },
+    {
+      "start": "01:12:09,012",
+      "end": "01:12:10,181",
+      "text": "Crystal got mad"
+    },
+    {
+      "start": "01:12:17,422",
+      "end": "01:12:20,392",
+      "text": "Oh, no. It's them."
+    },
+    {
+      "start": "01:12:33,104",
+      "end": "01:12:34,972",
+      "text": "No, no, no."
+    },
+    {
+      "start": "01:12:53,691",
+      "end": "01:12:54,958",
+      "text": "Coast is clear. Let's go."
+    },
+    {
+      "start": "01:12:59,631",
+      "end": "01:13:01,166",
+      "text": "You sure about that?"
+    },
+    {
+      "start": "01:13:13,611",
+      "end": "01:13:16,181",
+      "text": "I thought the same, but turns out"
+    },
+    {
+      "start": "01:13:27,392",
+      "end": "01:13:30,428",
+      "text": "'cause of a talentless little twerp called Buster Moon."
+    },
+    {
+      "start": "01:13:37,435",
+      "end": "01:13:39,370",
+      "text": "they crawled out of, that's where they belong,"
+    },
+    {
+      "start": "01:13:58,790",
+      "end": "01:14:01,092",
+      "text": "that bully steal our hopes and dreams."
+    },
+    {
+      "start": "01:14:14,172",
+      "end": "01:14:17,175",
+      "text": "That is exactly what we're gonna do."
+    },
+    {
+      "start": "01:14:30,688",
+      "end": "01:14:32,056",
+      "text": "What are we gonna do?"
+    },
+    {
+      "start": "01:14:39,797",
+      "end": "01:14:41,366",
+      "text": "whether Crystal likes it or not."
+    },
+    {
+      "start": "01:15:01,286",
+      "end": "01:15:04,155",
+      "text": "Repeat, nine suspects loose on the river ride."
+    },
+    {
+      "start": "01:15:11,629",
+      "end": "01:15:13,865",
+      "text": "They're heading east through the back lot!"
+    },
+    {
+      "start": "01:15:31,616",
+      "end": "01:15:33,318",
+      "text": "Thank you. Thanks, everybody."
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Oh, my gosh.",
+          "start": "01:08:23,053",
+          "end": "01:08:23,854"
+        },
+        {
+          "label": "B",
+          "text": "they crawled out of, that's where they belong,",
+          "start": "01:13:37,435",
+          "end": "01:13:39,370"
+        },
+        {
+          "label": "A",
+          "text": "'cause of a talentless little twerp called Buster Moon.",
+          "start": "01:13:27,392",
+          "end": "01:13:30,428"
+        }
+      ],
+      "video": {
+        "start": "01:08:23,053",
+        "end": "01:08:23,854"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "You really think I'd let a lowlife",
+          "start": "01:09:16,474",
+          "end": "01:09:18,343"
+        },
+        {
+          "label": "A",
+          "text": "I thought the same, but turns out",
+          "start": "01:13:13,611",
+          "end": "01:13:16,181"
+        },
+        {
+          "label": "C",
+          "text": "Uh, what did you say, Mr. Moon?",
+          "start": "01:10:31,048",
+          "end": "01:10:33,585"
+        }
+      ],
+      "video": {
+        "start": "01:09:16,474",
+        "end": "01:09:18,343"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Okay, okay. I understand.",
+          "start": "01:10:13,964",
+          "end": "01:10:15,267"
+        },
+        {
+          "label": "B",
+          "text": "Repeat, nine suspects loose on the river ride.",
+          "start": "01:15:01,286",
+          "end": "01:15:04,155"
+        },
+        {
+          "label": "A",
+          "text": "You sure about that?",
+          "start": "01:12:59,631",
+          "end": "01:13:01,166"
+        }
+      ],
+      "video": {
+        "start": "01:10:13,964",
+        "end": "01:10:15,267"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "...please welcome Mr. Jimmy Crystal.",
+          "start": "01:11:10,055",
+          "end": "01:11:13,023"
+        },
+        {
+          "label": "C",
+          "text": "Crystal got mad",
+          "start": "01:12:09,012",
+          "end": "01:12:10,181"
+        },
+        {
+          "label": "B",
+          "text": "Repeat, nine suspects loose on the river ride.",
+          "start": "01:15:01,286",
+          "end": "01:15:04,155"
+        }
+      ],
+      "video": {
+        "start": "01:11:10,055",
+        "end": "01:11:13,023"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "theater chain in the world...",
+          "start": "01:11:39,317",
+          "end": "01:11:40,884"
+        },
+        {
+          "label": "C",
+          "text": "Thank you. Thanks, everybody.",
+          "start": "01:15:31,616",
+          "end": "01:15:33,318"
+        },
+        {
+          "label": "B",
+          "text": "You really think I'd let a lowlife",
+          "start": "01:09:16,474",
+          "end": "01:09:18,343"
+        }
+      ],
+      "video": {
+        "start": "01:11:39,317",
+        "end": "01:11:40,884"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "No, no, no.",
+          "start": "01:12:33,104",
+          "end": "01:12:34,972"
+        },
+        {
+          "label": "B",
+          "text": "I thought the same, but turns out",
+          "start": "01:13:13,611",
+          "end": "01:13:16,181"
+        },
+        {
+          "label": "C",
+          "text": "Oh, my gosh.",
+          "start": "01:08:23,053",
+          "end": "01:08:23,854"
+        }
+      ],
+      "video": {
+        "start": "01:12:33,104",
+        "end": "01:12:34,972"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "I thought the same, but turns out",
+          "start": "01:13:13,611",
+          "end": "01:13:16,181"
+        },
+        {
+          "label": "A",
+          "text": "Coast is clear. Let's go.",
+          "start": "01:12:53,691",
+          "end": "01:12:54,958"
+        },
+        {
+          "label": "B",
+          "text": "Thank you. Thanks, everybody.",
+          "start": "01:15:31,616",
+          "end": "01:15:33,318"
+        }
+      ],
+      "video": {
+        "start": "01:13:13,611",
+        "end": "01:13:16,181"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "that bully steal our hopes and dreams.",
+          "start": "01:13:58,790",
+          "end": "01:14:01,092"
+        },
+        {
+          "label": "B",
+          "text": "Oh, my gosh.",
+          "start": "01:08:23,053",
+          "end": "01:08:23,854"
+        },
+        {
+          "label": "A",
+          "text": "and meet me back at the hotel!",
+          "start": "01:10:38,623",
+          "end": "01:10:40,924"
+        }
+      ],
+      "video": {
+        "start": "01:13:58,790",
+        "end": "01:14:01,092"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "whether Crystal likes it or not.",
+          "start": "01:14:39,797",
+          "end": "01:14:41,366"
+        },
+        {
+          "label": "A",
+          "text": "What are we gonna do?",
+          "start": "01:14:30,688",
+          "end": "01:14:32,056"
+        },
+        {
+          "label": "B",
+          "text": "Okay, okay. I understand.",
+          "start": "01:10:13,964",
+          "end": "01:10:15,267"
+        }
+      ],
+      "video": {
+        "start": "01:14:39,797",
+        "end": "01:14:41,366"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Thank you. Thanks, everybody.",
+          "start": "01:15:31,616",
+          "end": "01:15:33,318"
+        },
+        {
+          "label": "B",
+          "text": "What are we gonna do?",
+          "start": "01:14:30,688",
+          "end": "01:14:32,056"
+        },
+        {
+          "label": "A",
+          "text": "Coast is clear. Let's go.",
+          "start": "01:12:53,691",
+          "end": "01:12:54,958"
+        }
+      ],
+      "video": {
+        "start": "01:15:31,616",
+        "end": "01:15:33,318"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "01:07:30,102",
+      "end": "01:07:32,703",
+      "text": "Bring me Moon."
+    },
+    {
+      "question": 2,
+      "start": "01:08:13,178",
+      "end": "01:08:15,113",
+      "text": "Here, he wants to talk to you."
+    },
+    {
+      "question": 3,
+      "start": "01:08:39,770",
+      "end": "01:08:42,107",
+      "text": "Mr. Crystal. Aah! I got some great news."
+    },
+    {
+      "question": 4,
+      "start": "01:08:54,419",
+      "end": "01:08:56,053",
+      "text": "You calling her a liar?"
+    },
+    {
+      "question": 5,
+      "start": "01:09:33,525",
+      "end": "01:09:35,227",
+      "text": "Sir. Uh, sir, sir, sir."
+    },
+    {
+      "question": 6,
+      "start": "01:09:48,872",
+      "end": "01:09:50,808",
+      "text": "You-you nearly killed me."
+    },
+    {
+      "question": 7,
+      "start": "01:10:31,048",
+      "end": "01:10:33,585",
+      "text": "Uh, what did you say, Mr. Moon?"
+    },
+    {
+      "question": 8,
+      "start": "01:10:38,623",
+      "end": "01:10:40,924",
+      "text": "and meet me back at the hotel!"
+    },
+    {
+      "question": 9,
+      "start": "01:11:23,168",
+      "end": "01:11:24,569",
+      "text": "Good to see you."
+    },
+    {
+      "question": 10,
+      "start": "01:11:30,075",
+      "end": "01:11:31,543",
+      "text": "Well, thank you. Thank you for having me."
+    }
+  ]
+}

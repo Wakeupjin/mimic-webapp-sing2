@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:25:21,272",
+    "end": "00:33:35,666"
+  },
+  "mimicking": [
+    {
+      "start": "00:25:21,272",
+      "end": "00:25:22,840",
+      "text": "Yes, sir. Thank you."
+    },
+    {
+      "start": "00:25:32,350",
+      "end": "00:25:34,385",
+      "text": "And get 'em rooms at the hotel, okay?"
+    },
+    {
+      "start": "00:25:42,894",
+      "end": "00:25:44,495",
+      "text": "Oh, I will never let that happen, sir."
+    },
+    {
+      "start": "00:26:00,211",
+      "end": "00:26:02,513",
+      "text": "We're playing Redshore City, baby!"
+    },
+    {
+      "start": "00:26:10,555",
+      "end": "00:26:13,725",
+      "text": "Gunter, you're not as stupid as your papa."
+    },
+    {
+      "start": "00:26:23,434",
+      "end": "00:26:25,570",
+      "text": "Clay Calloway? I'm, like, his biggest fan,"
+    },
+    {
+      "start": "00:26:39,884",
+      "end": "00:26:41,653",
+      "text": "An address, a phone number, anything."
+    },
+    {
+      "start": "00:27:50,521",
+      "end": "00:27:52,457",
+      "text": "and then I think we should have, like,"
+    },
+    {
+      "start": "00:28:06,871",
+      "end": "00:28:08,372",
+      "text": "- Underwater? - Yeah, yeah."
+    },
+    {
+      "start": "00:28:17,082",
+      "end": "00:28:18,883",
+      "text": "Why? Because in exactly 20 minutes,"
+    },
+    {
+      "start": "00:28:37,835",
+      "end": "00:28:39,904",
+      "text": "We're your production team, and we're here to start..."
+    },
+    {
+      "start": "00:28:58,389",
+      "end": "00:29:00,424",
+      "text": "And I really appreciate your patience."
+    },
+    {
+      "start": "00:29:14,438",
+      "end": "00:29:16,108",
+      "text": "Ooh, I've got a better idea."
+    },
+    {
+      "start": "00:29:37,862",
+      "end": "00:29:39,964",
+      "text": "to be given this incredible opportunity"
+    },
+    {
+      "start": "00:29:55,479",
+      "end": "00:29:56,881",
+      "text": "Great work, Steve."
+    },
+    {
+      "start": "00:30:05,523",
+      "end": "00:30:07,625",
+      "text": "Trust me, you are perfect for it."
+    },
+    {
+      "start": "00:30:17,535",
+      "end": "00:30:19,470",
+      "text": "Together, with their trusty robot..."
+    },
+    {
+      "start": "00:30:31,549",
+      "end": "00:30:34,152",
+      "text": "performed by one of our terrific cast."
+    },
+    {
+      "start": "00:30:48,532",
+      "end": "00:30:50,568",
+      "text": "Johnny, you are gonna play"
+    },
+    {
+      "start": "00:31:06,851",
+      "end": "00:31:08,819",
+      "text": "Uh, wait. You said mine was a battle scene."
+    },
+    {
+      "start": "00:31:32,543",
+      "end": "00:31:34,545",
+      "text": "I have to kiss someone."
+    },
+    {
+      "start": "00:31:41,552",
+      "end": "00:31:42,787",
+      "text": "Ah, don't you worry."
+    },
+    {
+      "start": "00:31:50,628",
+      "end": "00:31:51,963",
+      "text": "Okay, okay, okay, listen."
+    },
+    {
+      "start": "00:32:03,741",
+      "end": "00:32:05,177",
+      "text": "He does not have the show figured out."
+    },
+    {
+      "start": "00:32:14,885",
+      "end": "00:32:16,954",
+      "text": "Gunter... we have work to do."
+    },
+    {
+      "start": "00:32:33,637",
+      "end": "00:32:35,806",
+      "text": "Oh, my darlings, you're here."
+    },
+    {
+      "start": "00:32:46,617",
+      "end": "00:32:48,120",
+      "text": "It's literally my dream come true."
+    },
+    {
+      "start": "00:33:05,270",
+      "end": "00:33:06,804",
+      "text": "to go visit him first thing tomorrow."
+    },
+    {
+      "start": "00:33:19,217",
+      "end": "00:33:21,053",
+      "text": "We're dancing. We're dancing."
+    },
+    {
+      "start": "00:33:31,862",
+      "end": "00:33:35,666",
+      "text": "Let's not forget, this is Redshore City,"
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Oh, I will never let that happen, sir.",
+          "start": "00:25:42,894",
+          "end": "00:25:44,495"
+        },
+        {
+          "label": "B",
+          "text": "Trust me, you are perfect for it.",
+          "start": "00:30:05,523",
+          "end": "00:30:07,625"
+        },
+        {
+          "label": "C",
+          "text": "Gunter... we have work to do.",
+          "start": "00:32:14,885",
+          "end": "00:32:16,954"
+        }
+      ],
+      "video": {
+        "start": "00:25:42,894",
+        "end": "00:25:44,495"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Clay Calloway? I'm, like, his biggest fan,",
+          "start": "00:26:23,434",
+          "end": "00:26:25,570"
+        },
+        {
+          "label": "C",
+          "text": "And get 'em rooms at the hotel, okay?",
+          "start": "00:25:32,350",
+          "end": "00:25:34,385"
+        },
+        {
+          "label": "B",
+          "text": "Yes, sir. Thank you.",
+          "start": "00:25:21,272",
+          "end": "00:25:22,840"
+        }
+      ],
+      "video": {
+        "start": "00:26:23,434",
+        "end": "00:26:25,570"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "- Underwater? - Yeah, yeah.",
+          "start": "00:28:06,871",
+          "end": "00:28:08,372"
+        },
+        {
+          "label": "B",
+          "text": "Yes, sir. Thank you.",
+          "start": "00:25:21,272",
+          "end": "00:25:22,840"
+        },
+        {
+          "label": "C",
+          "text": "Oh, my darlings, you're here.",
+          "start": "00:32:33,637",
+          "end": "00:32:35,806"
+        }
+      ],
+      "video": {
+        "start": "00:28:06,871",
+        "end": "00:28:08,372"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "And I really appreciate your patience.",
+          "start": "00:28:58,389",
+          "end": "00:29:00,424"
+        },
+        {
+          "label": "C",
+          "text": "Let's not forget, this is Redshore City,",
+          "start": "00:33:31,862",
+          "end": "00:33:35,666"
+        },
+        {
+          "label": "B",
+          "text": "And get 'em rooms at the hotel, okay?",
+          "start": "00:25:32,350",
+          "end": "00:25:34,385"
+        }
+      ],
+      "video": {
+        "start": "00:28:58,389",
+        "end": "00:29:00,424"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Great work, Steve.",
+          "start": "00:29:55,479",
+          "end": "00:29:56,881"
+        },
+        {
+          "label": "C",
+          "text": "Oh, my darlings, you're here.",
+          "start": "00:32:33,637",
+          "end": "00:32:35,806"
+        },
+        {
+          "label": "B",
+          "text": "He does not have the show figured out.",
+          "start": "00:32:03,741",
+          "end": "00:32:05,177"
+        }
+      ],
+      "video": {
+        "start": "00:29:55,479",
+        "end": "00:29:56,881"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "performed by one of our terrific cast.",
+          "start": "00:30:31,549",
+          "end": "00:30:34,152"
+        },
+        {
+          "label": "C",
+          "text": "Ooh, I've got a better idea.",
+          "start": "00:29:14,438",
+          "end": "00:29:16,108"
+        },
+        {
+          "label": "A",
+          "text": "An address, a phone number, anything.",
+          "start": "00:26:39,884",
+          "end": "00:26:41,653"
+        }
+      ],
+      "video": {
+        "start": "00:30:31,549",
+        "end": "00:30:34,152"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "I have to kiss someone.",
+          "start": "00:31:32,543",
+          "end": "00:31:34,545"
+        },
+        {
+          "label": "B",
+          "text": "And I really appreciate your patience.",
+          "start": "00:28:58,389",
+          "end": "00:29:00,424"
+        },
+        {
+          "label": "A",
+          "text": "Johnny, you are gonna play",
+          "start": "00:30:48,532",
+          "end": "00:30:50,568"
+        }
+      ],
+      "video": {
+        "start": "00:31:32,543",
+        "end": "00:31:34,545"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "He does not have the show figured out.",
+          "start": "00:32:03,741",
+          "end": "00:32:05,177"
+        },
+        {
+          "label": "A",
+          "text": "Oh, I will never let that happen, sir.",
+          "start": "00:25:42,894",
+          "end": "00:25:44,495"
+        },
+        {
+          "label": "C",
+          "text": "Let's not forget, this is Redshore City,",
+          "start": "00:33:31,862",
+          "end": "00:33:35,666"
+        }
+      ],
+      "video": {
+        "start": "00:32:03,741",
+        "end": "00:32:05,177"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "It's literally my dream come true.",
+          "start": "00:32:46,617",
+          "end": "00:32:48,120"
+        },
+        {
+          "label": "B",
+          "text": "Johnny, you are gonna play",
+          "start": "00:30:48,532",
+          "end": "00:30:50,568"
+        },
+        {
+          "label": "C",
+          "text": "Great work, Steve.",
+          "start": "00:29:55,479",
+          "end": "00:29:56,881"
+        }
+      ],
+      "video": {
+        "start": "00:32:46,617",
+        "end": "00:32:48,120"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Let's not forget, this is Redshore City,",
+          "start": "00:33:31,862",
+          "end": "00:33:35,666"
+        },
+        {
+          "label": "B",
+          "text": "- Underwater? - Yeah, yeah.",
+          "start": "00:28:06,871",
+          "end": "00:28:08,372"
+        },
+        {
+          "label": "C",
+          "text": "performed by one of our terrific cast.",
+          "start": "00:30:31,549",
+          "end": "00:30:34,152"
+        }
+      ],
+      "video": {
+        "start": "00:33:31,862",
+        "end": "00:33:35,666"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:25:21,272",
+      "end": "00:25:22,840",
+      "text": "Yes, sir. Thank you."
+    },
+    {
+      "question": 2,
+      "start": "00:25:32,350",
+      "end": "00:25:34,385",
+      "text": "And get 'em rooms at the hotel, okay?"
+    },
+    {
+      "question": 3,
+      "start": "00:26:00,211",
+      "end": "00:26:02,513",
+      "text": "We're playing Redshore City, baby!"
+    },
+    {
+      "question": 4,
+      "start": "00:26:10,555",
+      "end": "00:26:13,725",
+      "text": "Gunter, you're not as stupid as your papa."
+    },
+    {
+      "question": 5,
+      "start": "00:26:39,884",
+      "end": "00:26:41,653",
+      "text": "An address, a phone number, anything."
+    },
+    {
+      "question": 6,
+      "start": "00:27:50,521",
+      "end": "00:27:52,457",
+      "text": "and then I think we should have, like,"
+    },
+    {
+      "question": 7,
+      "start": "00:28:17,082",
+      "end": "00:28:18,883",
+      "text": "Why? Because in exactly 20 minutes,"
+    },
+    {
+      "question": 8,
+      "start": "00:28:37,835",
+      "end": "00:28:39,904",
+      "text": "We're your production team, and we're here to start..."
+    },
+    {
+      "question": 9,
+      "start": "00:29:14,438",
+      "end": "00:29:16,108",
+      "text": "Ooh, I've got a better idea."
+    },
+    {
+      "question": 10,
+      "start": "00:29:37,862",
+      "end": "00:29:39,964",
+      "text": "to be given this incredible opportunity"
+    }
+  ]
+}

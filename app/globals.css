@@ -41,6 +41,39 @@ body {
   overflow: hidden;
 }
 
+/* 화살표 4.2px 튕김 애니메이션 */
+@keyframes bounce-custom {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4.2px); /* 4.2px로 조절 */
+  }
+}
+
+/* 커스텀 스크롤바 - 호버 효과 제거 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #2a2a2a;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a; /* 호버 시에도 동일한 색상 유지 */
+}
+
 /* Correct 애니메이션 */
 @keyframes fadeInOut {
   0% {
@@ -57,31 +90,32 @@ body {
   }
 }
 
-/* 버튼 개별 펄스 애니메이션 */
+/* 버튼 개별 펄스 애니메이션 - 성능 최적화 */
 @keyframes pulse-button {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.036);
+    transform: scale(1.02); /* 1.036 → 1.02로 줄임 */
   }
   100% {
     transform: scale(1);
   }
 }
 
-/* 정답 버튼만 펄스 */
+/* 정답 버튼만 펄스 - 성능 최적화 */
 .animate-pulse-button {
-  animation: pulse-button 2.5s ease-in-out infinite;
+  animation: pulse-button 3s ease-in-out infinite; /* 2.5s → 3s로 느리게 */
+  will-change: transform; /* GPU 가속 */
 }
 
-/* 재생 중인 버튼 펄스 애니메이션 */
+/* 재생 중인 버튼 펄스 애니메이션 - 성능 최적화 */
 @keyframes pulse-playing {
   0% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.1); /* 10% 크기 증가 */
+    transform: scale(1.05); /* 1.1 → 1.05로 줄임 */
   }
   100% {
     transform: scale(1);
@@ -89,17 +123,19 @@ body {
 }
 
 .animate-pulse-playing {
-  animation: pulse-playing 1.2s ease-in-out infinite; /* 빠른 펄스 */
+  animation: pulse-playing 1.5s ease-in-out infinite; /* 1.2s → 1.5s로 느리게 */
+  will-change: transform; /* GPU 가속 */
 }
 
 @keyframes heartbeat {
   0% { transform: scale(1); }
-  25% { transform: scale(1.1); }
+  25% { transform: scale(1.05); } /* 1.1 → 1.05로 줄임 */
   50% { transform: scale(1); }
-  75% { transform: scale(1.05); }
+  75% { transform: scale(1.02); } /* 1.05 → 1.02로 줄임 */
   100% { transform: scale(1); }
 }
 
 .animate-heartbeat {
-  animation: heartbeat 0.8s ease-in-out infinite;
+  animation: heartbeat 1s ease-in-out infinite; /* 0.8s → 1s로 느리게 */
+  will-change: transform; /* GPU 가속 */
 }

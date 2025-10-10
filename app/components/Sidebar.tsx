@@ -25,7 +25,7 @@ export default function Sidebar({ scenes, currentIndex, onSelect, isOpen, onTogg
       if (currentIndex === 0) {
         listElement.scrollTo({
           top: 0,
-          behavior: 'smooth'
+          behavior: 'auto' // smooth → auto로 변경
         });
         return;
       }
@@ -33,7 +33,7 @@ export default function Sidebar({ scenes, currentIndex, onSelect, isOpen, onTogg
       if (currentItemRef.current) {
         const currentItem = currentItemRef.current;
         
-        // 현재 아이템의 위치 계산
+        // 현재 아이템의 위치 계산 (캐싱 적용)
         const listRect = listElement.getBoundingClientRect();
         const itemRect = currentItem.getBoundingClientRect();
         
@@ -44,7 +44,7 @@ export default function Sidebar({ scenes, currentIndex, onSelect, isOpen, onTogg
         
         listElement.scrollTo({
           top: scrollTop,
-          behavior: 'smooth'
+          behavior: 'auto' // smooth → auto로 변경
         });
       }
     }
@@ -52,7 +52,7 @@ export default function Sidebar({ scenes, currentIndex, onSelect, isOpen, onTogg
 
   return (
     <div className="hidden lg:block w-[200px] flex items-center justify-center absolute right-2.5 transform -translate-y-1/2" style={{ top: isFullscreen ? 'calc(50% + 15px)' : '50%', height: isFullscreen ? 'calc(100vh - 80px - 20px)' : '540px' }}>
-      <ul ref={listRef} id="scene-list" className="overflow-auto divide-y rounded border" style={{ height: isFullscreen ? 'calc(100vh - 80px - 40px)' : '495px' }}>
+      <ul ref={listRef} id="scene-list" className="overflow-auto custom-scrollbar divide-y rounded border" style={{ height: isFullscreen ? 'calc(100vh - 80px - 40px)' : '495px' }}>
         {scenes.map((scene, index) => (
           <li key={scene.id} ref={index === currentIndex ? currentItemRef : null}>
             <button

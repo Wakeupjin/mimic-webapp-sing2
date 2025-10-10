@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:16:53,231",
+    "end": "00:25:11,462"
+  },
+  "mimicking": [
+    {
+      "start": "00:16:53,231",
+      "end": "00:16:55,200",
+      "text": "I'm here to see Mr. Crystal for the presentation."
+    },
+    {
+      "start": "00:17:00,838",
+      "end": "00:17:02,873",
+      "text": "I got all dressed up for nothing."
+    },
+    {
+      "start": "00:17:05,843",
+      "end": "00:17:08,712",
+      "text": "Quick. Get in."
+    },
+    {
+      "start": "00:17:21,859",
+      "end": "00:17:23,694",
+      "text": "- Let's get you out of here. - Aha!"
+    },
+    {
+      "start": "00:18:02,367",
+      "end": "00:18:04,269",
+      "text": "- I'll-I'll connect you. - Oh, no."
+    },
+    {
+      "start": "00:18:09,241",
+      "end": "00:18:10,308",
+      "text": "Oh, Mr. Moon?"
+    },
+    {
+      "start": "00:18:26,091",
+      "end": "00:18:28,160",
+      "text": "Quick. Go, go, go, go, go, go, go."
+    },
+    {
+      "start": "00:19:36,561",
+      "end": "00:19:38,163",
+      "text": "Where are you going now?"
+    },
+    {
+      "start": "00:21:59,704",
+      "end": "00:22:01,972",
+      "text": "we'd appreciate that."
+    },
+    {
+      "start": "00:22:07,145",
+      "end": "00:22:08,380",
+      "text": "Why am I standing here waiting?"
+    },
+    {
+      "start": "00:22:11,416",
+      "end": "00:22:12,983",
+      "text": "Yes. Yes, sir. Yes, sir."
+    },
+    {
+      "start": "00:22:17,020",
+      "end": "00:22:18,523",
+      "text": "Little guy, you're here for the audition?"
+    },
+    {
+      "start": "00:22:27,232",
+      "end": "00:22:29,367",
+      "text": "Your name? Hey, your name, please?"
+    },
+    {
+      "start": "00:22:38,309",
+      "end": "00:22:39,144",
+      "text": "Of course. Yes."
+    },
+    {
+      "start": "00:22:45,383",
+      "end": "00:22:48,052",
+      "text": "of an ordinary high school girl who discovers..."
+    },
+    {
+      "start": "00:22:56,127",
+      "end": "00:22:58,096",
+      "text": "- Never. Never. - Where the heck did you"
+    },
+    {
+      "start": "00:23:00,732",
+      "end": "00:23:02,100",
+      "text": "we'd appreciate that, please."
+    },
+    {
+      "start": "00:23:06,137",
+      "end": "00:23:08,072",
+      "text": "Hey, I have a big one."
+    },
+    {
+      "start": "00:23:12,710",
+      "end": "00:23:14,712",
+      "text": "- That's big, right? - Um, uh..."
+    },
+    {
+      "start": "00:23:21,252",
+      "end": "00:23:23,688",
+      "text": "Whoa, whoa, whoa, whoa, whoa. Clay Calloway?"
+    },
+    {
+      "start": "00:23:27,659",
+      "end": "00:23:29,060",
+      "text": "I mean, doesn't everybody?"
+    },
+    {
+      "start": "00:23:34,799",
+      "end": "00:23:36,568",
+      "text": "so what's the show called?"
+    },
+    {
+      "start": "00:23:41,105",
+      "end": "00:23:42,407",
+      "text": "...uh, tell Mr. Crystal what it's called?"
+    },
+    {
+      "start": "00:23:53,384",
+      "end": "00:23:56,019",
+      "text": "Uh, yeah, I got it."
+    },
+    {
+      "start": "00:24:15,406",
+      "end": "00:24:16,774",
+      "text": "I love this song."
+    },
+    {
+      "start": "00:24:36,194",
+      "end": "00:24:37,362",
+      "text": "Hey, he said not now. Psst."
+    },
+    {
+      "start": "00:24:40,765",
+      "end": "00:24:42,767",
+      "text": "Clay Calloway's permission to use his song?"
+    },
+    {
+      "start": "00:24:50,708",
+      "end": "00:24:52,310",
+      "text": "Wait, if you know him,"
+    },
+    {
+      "start": "00:25:00,818",
+      "end": "00:25:02,420",
+      "text": "Sir, I'm sorry, but seriously?"
+    },
+    {
+      "start": "00:25:09,394",
+      "end": "00:25:11,462",
+      "text": "Well, Suki, for your information,"
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Quick. Get in.",
+          "start": "00:17:05,843",
+          "end": "00:17:08,712"
+        },
+        {
+          "label": "B",
+          "text": "Hey, he said not now. Psst.",
+          "start": "00:24:36,194",
+          "end": "00:24:37,362"
+        },
+        {
+          "label": "A",
+          "text": "Little guy, you're here for the audition?",
+          "start": "00:22:17,020",
+          "end": "00:22:18,523"
+        }
+      ],
+      "video": {
+        "start": "00:17:05,843",
+        "end": "00:17:08,712"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Oh, Mr. Moon?",
+          "start": "00:18:09,241",
+          "end": "00:18:10,308"
+        },
+        {
+          "label": "B",
+          "text": "Quick. Go, go, go, go, go, go, go.",
+          "start": "00:18:26,091",
+          "end": "00:18:28,160"
+        },
+        {
+          "label": "A",
+          "text": "Hey, he said not now. Psst.",
+          "start": "00:24:36,194",
+          "end": "00:24:37,362"
+        }
+      ],
+      "video": {
+        "start": "00:18:09,241",
+        "end": "00:18:10,308"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "we'd appreciate that.",
+          "start": "00:21:59,704",
+          "end": "00:22:01,972"
+        },
+        {
+          "label": "C",
+          "text": "Quick. Go, go, go, go, go, go, go.",
+          "start": "00:18:26,091",
+          "end": "00:18:28,160"
+        },
+        {
+          "label": "B",
+          "text": "- I'll-I'll connect you. - Oh, no.",
+          "start": "00:18:02,367",
+          "end": "00:18:04,269"
+        }
+      ],
+      "video": {
+        "start": "00:21:59,704",
+        "end": "00:22:01,972"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Little guy, you're here for the audition?",
+          "start": "00:22:17,020",
+          "end": "00:22:18,523"
+        },
+        {
+          "label": "A",
+          "text": "Sir, I'm sorry, but seriously?",
+          "start": "00:25:00,818",
+          "end": "00:25:02,420"
+        },
+        {
+          "label": "C",
+          "text": "Well, Suki, for your information,",
+          "start": "00:25:09,394",
+          "end": "00:25:11,462"
+        }
+      ],
+      "video": {
+        "start": "00:22:17,020",
+        "end": "00:22:18,523"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "of an ordinary high school girl who discovers...",
+          "start": "00:22:45,383",
+          "end": "00:22:48,052"
+        },
+        {
+          "label": "B",
+          "text": "so what's the show called?",
+          "start": "00:23:34,799",
+          "end": "00:23:36,568"
+        },
+        {
+          "label": "A",
+          "text": "we'd appreciate that.",
+          "start": "00:21:59,704",
+          "end": "00:22:01,972"
+        }
+      ],
+      "video": {
+        "start": "00:22:45,383",
+        "end": "00:22:48,052"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Hey, I have a big one.",
+          "start": "00:23:06,137",
+          "end": "00:23:08,072"
+        },
+        {
+          "label": "C",
+          "text": "...uh, tell Mr. Crystal what it's called?",
+          "start": "00:23:41,105",
+          "end": "00:23:42,407"
+        },
+        {
+          "label": "A",
+          "text": "- Let's get you out of here. - Aha!",
+          "start": "00:17:21,859",
+          "end": "00:17:23,694"
+        }
+      ],
+      "video": {
+        "start": "00:23:06,137",
+        "end": "00:23:08,072"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "I mean, doesn't everybody?",
+          "start": "00:23:27,659",
+          "end": "00:23:29,060"
+        },
+        {
+          "label": "C",
+          "text": "Yes. Yes, sir. Yes, sir.",
+          "start": "00:22:11,416",
+          "end": "00:22:12,983"
+        },
+        {
+          "label": "B",
+          "text": "Wait, if you know him,",
+          "start": "00:24:50,708",
+          "end": "00:24:52,310"
+        }
+      ],
+      "video": {
+        "start": "00:23:27,659",
+        "end": "00:23:29,060"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Uh, yeah, I got it.",
+          "start": "00:23:53,384",
+          "end": "00:23:56,019"
+        },
+        {
+          "label": "A",
+          "text": "Quick. Get in.",
+          "start": "00:17:05,843",
+          "end": "00:17:08,712"
+        },
+        {
+          "label": "C",
+          "text": "I mean, doesn't everybody?",
+          "start": "00:23:27,659",
+          "end": "00:23:29,060"
+        }
+      ],
+      "video": {
+        "start": "00:23:53,384",
+        "end": "00:23:56,019"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Clay Calloway's permission to use his song?",
+          "start": "00:24:40,765",
+          "end": "00:24:42,767"
+        },
+        {
+          "label": "A",
+          "text": "Quick. Get in.",
+          "start": "00:17:05,843",
+          "end": "00:17:08,712"
+        },
+        {
+          "label": "C",
+          "text": "...uh, tell Mr. Crystal what it's called?",
+          "start": "00:23:41,105",
+          "end": "00:23:42,407"
+        }
+      ],
+      "video": {
+        "start": "00:24:40,765",
+        "end": "00:24:42,767"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Well, Suki, for your information,",
+          "start": "00:25:09,394",
+          "end": "00:25:11,462"
+        },
+        {
+          "label": "B",
+          "text": "Yes. Yes, sir. Yes, sir.",
+          "start": "00:22:11,416",
+          "end": "00:22:12,983"
+        },
+        {
+          "label": "A",
+          "text": "Quick. Go, go, go, go, go, go, go.",
+          "start": "00:18:26,091",
+          "end": "00:18:28,160"
+        }
+      ],
+      "video": {
+        "start": "00:25:09,394",
+        "end": "00:25:11,462"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:16:53,231",
+      "end": "00:16:55,200",
+      "text": "I'm here to see Mr. Crystal for the presentation."
+    },
+    {
+      "question": 2,
+      "start": "00:17:00,838",
+      "end": "00:17:02,873",
+      "text": "I got all dressed up for nothing."
+    },
+    {
+      "question": 3,
+      "start": "00:17:21,859",
+      "end": "00:17:23,694",
+      "text": "- Let's get you out of here. - Aha!"
+    },
+    {
+      "question": 4,
+      "start": "00:18:02,367",
+      "end": "00:18:04,269",
+      "text": "- I'll-I'll connect you. - Oh, no."
+    },
+    {
+      "question": 5,
+      "start": "00:18:26,091",
+      "end": "00:18:28,160",
+      "text": "Quick. Go, go, go, go, go, go, go."
+    },
+    {
+      "question": 6,
+      "start": "00:19:36,561",
+      "end": "00:19:38,163",
+      "text": "Where are you going now?"
+    },
+    {
+      "question": 7,
+      "start": "00:22:07,145",
+      "end": "00:22:08,380",
+      "text": "Why am I standing here waiting?"
+    },
+    {
+      "question": 8,
+      "start": "00:22:11,416",
+      "end": "00:22:12,983",
+      "text": "Yes. Yes, sir. Yes, sir."
+    },
+    {
+      "question": 9,
+      "start": "00:22:27,232",
+      "end": "00:22:29,367",
+      "text": "Your name? Hey, your name, please?"
+    },
+    {
+      "question": 10,
+      "start": "00:22:38,309",
+      "end": "00:22:39,144",
+      "text": "Of course. Yes."
+    }
+  ]
+}

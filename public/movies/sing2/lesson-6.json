@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:42:11,215",
+    "end": "00:50:09,693"
+  },
+  "mimicking": [
+    {
+      "start": "00:42:11,215",
+      "end": "00:42:14,786",
+      "text": "I-I can't just give you Rosita's part. I mean..."
+    },
+    {
+      "start": "00:42:18,823",
+      "end": "00:42:20,425",
+      "text": "What, you got a kink in your think?"
+    },
+    {
+      "start": "00:42:31,936",
+      "end": "00:42:33,538",
+      "text": "You get me?"
+    },
+    {
+      "start": "00:42:41,946",
+      "end": "00:42:43,815",
+      "text": "I'll... Yes, I will."
+    },
+    {
+      "start": "00:42:50,455",
+      "end": "00:42:52,624",
+      "text": "That whole rings moving around thing."
+    },
+    {
+      "start": "00:42:58,930",
+      "end": "00:43:00,398",
+      "text": "Yes, right away, people."
+    },
+    {
+      "start": "00:43:07,305",
+      "end": "00:43:09,307",
+      "text": "Yeah. You know, uh..."
+    },
+    {
+      "start": "00:43:15,346",
+      "end": "00:43:16,648",
+      "text": "I'll write you another part, Rosita."
+    },
+    {
+      "start": "00:43:26,391",
+      "end": "00:43:28,192",
+      "text": "- Seriously? - Seriously."
+    },
+    {
+      "start": "00:43:46,310",
+      "end": "00:43:48,446",
+      "text": "- for five minutes? - You got it."
+    },
+    {
+      "start": "00:44:10,034",
+      "end": "00:44:11,703",
+      "text": "Oh, hello, young sir."
+    },
+    {
+      "start": "00:44:25,750",
+      "end": "00:44:27,685",
+      "text": "five, six, seven."
+    },
+    {
+      "start": "00:44:35,493",
+      "end": "00:44:37,562",
+      "text": "five, six, seven. And..."
+    },
+    {
+      "start": "00:44:44,368",
+      "end": "00:44:46,370",
+      "text": "in a terrible accident and we'd never have to"
+    },
+    {
+      "start": "00:44:57,381",
+      "end": "00:44:59,016",
+      "text": "Ryan, you'll be playing his opponent"
+    },
+    {
+      "start": "00:45:24,008",
+      "end": "00:45:25,510",
+      "text": "- Ow! - Wrong."
+    },
+    {
+      "start": "00:46:57,435",
+      "end": "00:46:59,137",
+      "text": "Mate, you're amazing."
+    },
+    {
+      "start": "00:47:09,780",
+      "end": "00:47:11,015",
+      "text": "Wow, so kind."
+    },
+    {
+      "start": "00:47:16,188",
+      "end": "00:47:17,922",
+      "text": "What? No, no, no. I didn't mean..."
+    },
+    {
+      "start": "00:47:28,066",
+      "end": "00:47:30,068",
+      "text": "Here you go. One volcano smoothie"
+    },
+    {
+      "start": "00:47:44,182",
+      "end": "00:47:46,484",
+      "text": "Wait, if you're in a real show,"
+    },
+    {
+      "start": "00:48:00,631",
+      "end": "00:48:02,767",
+      "text": "some guy I don't know to rehearsals."
+    },
+    {
+      "start": "00:48:49,580",
+      "end": "00:48:50,881",
+      "text": "First positions, please."
+    },
+    {
+      "start": "00:48:55,187",
+      "end": "00:48:56,787",
+      "text": "Pleased to meet you. I'm Nooshy."
+    },
+    {
+      "start": "00:49:07,265",
+      "end": "00:49:08,866",
+      "text": "- Riffraff? - Okay, okay. Hang on."
+    },
+    {
+      "start": "00:49:20,178",
+      "end": "00:49:22,880",
+      "text": "I'm just a stupid, fat, old monkey."
+    },
+    {
+      "start": "00:49:32,090",
+      "end": "00:49:33,724",
+      "text": "200 years, more like."
+    },
+    {
+      "start": "00:49:44,302",
+      "end": "00:49:46,771",
+      "text": "Stand by, playback."
+    },
+    {
+      "start": "00:49:58,682",
+      "end": "00:50:01,652",
+      "text": "That lion, you see, he's crazy. Crazy!"
+    },
+    {
+      "start": "00:50:07,892",
+      "end": "00:50:09,693",
+      "text": "So, you're not gonna go out there, are you?"
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "You get me?",
+          "start": "00:42:31,936",
+          "end": "00:42:33,538"
+        },
+        {
+          "label": "C",
+          "text": "That lion, you see, he's crazy. Crazy!",
+          "start": "00:49:58,682",
+          "end": "00:50:01,652"
+        },
+        {
+          "label": "B",
+          "text": "So, you're not gonna go out there, are you?",
+          "start": "00:50:07,892",
+          "end": "00:50:09,693"
+        }
+      ],
+      "video": {
+        "start": "00:42:31,936",
+        "end": "00:42:33,538"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Yes, right away, people.",
+          "start": "00:42:58,930",
+          "end": "00:43:00,398"
+        },
+        {
+          "label": "A",
+          "text": "I'll... Yes, I will.",
+          "start": "00:42:41,946",
+          "end": "00:42:43,815"
+        },
+        {
+          "label": "C",
+          "text": "Yeah. You know, uh...",
+          "start": "00:43:07,305",
+          "end": "00:43:09,307"
+        }
+      ],
+      "video": {
+        "start": "00:42:58,930",
+        "end": "00:43:00,398"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "- Seriously? - Seriously.",
+          "start": "00:43:26,391",
+          "end": "00:43:28,192"
+        },
+        {
+          "label": "B",
+          "text": "You get me?",
+          "start": "00:42:31,936",
+          "end": "00:42:33,538"
+        },
+        {
+          "label": "C",
+          "text": "Wow, so kind.",
+          "start": "00:47:09,780",
+          "end": "00:47:11,015"
+        }
+      ],
+      "video": {
+        "start": "00:43:26,391",
+        "end": "00:43:28,192"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "five, six, seven.",
+          "start": "00:44:25,750",
+          "end": "00:44:27,685"
+        },
+        {
+          "label": "B",
+          "text": "That lion, you see, he's crazy. Crazy!",
+          "start": "00:49:58,682",
+          "end": "00:50:01,652"
+        },
+        {
+          "label": "A",
+          "text": "- for five minutes? - You got it.",
+          "start": "00:43:46,310",
+          "end": "00:43:48,446"
+        }
+      ],
+      "video": {
+        "start": "00:44:25,750",
+        "end": "00:44:27,685"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Ryan, you'll be playing his opponent",
+          "start": "00:44:57,381",
+          "end": "00:44:59,016"
+        },
+        {
+          "label": "A",
+          "text": "200 years, more like.",
+          "start": "00:49:32,090",
+          "end": "00:49:33,724"
+        },
+        {
+          "label": "B",
+          "text": "Oh, hello, young sir.",
+          "start": "00:44:10,034",
+          "end": "00:44:11,703"
+        }
+      ],
+      "video": {
+        "start": "00:44:57,381",
+        "end": "00:44:59,016"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Wow, so kind.",
+          "start": "00:47:09,780",
+          "end": "00:47:11,015"
+        },
+        {
+          "label": "A",
+          "text": "- Seriously? - Seriously.",
+          "start": "00:43:26,391",
+          "end": "00:43:28,192"
+        },
+        {
+          "label": "B",
+          "text": "- Ow! - Wrong.",
+          "start": "00:45:24,008",
+          "end": "00:45:25,510"
+        }
+      ],
+      "video": {
+        "start": "00:47:09,780",
+        "end": "00:47:11,015"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Wait, if you're in a real show,",
+          "start": "00:47:44,182",
+          "end": "00:47:46,484"
+        },
+        {
+          "label": "C",
+          "text": "That lion, you see, he's crazy. Crazy!",
+          "start": "00:49:58,682",
+          "end": "00:50:01,652"
+        },
+        {
+          "label": "A",
+          "text": "I-I can't just give you Rosita's part. I mean...",
+          "start": "00:42:11,215",
+          "end": "00:42:14,786"
+        }
+      ],
+      "video": {
+        "start": "00:47:44,182",
+        "end": "00:47:46,484"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Pleased to meet you. I'm Nooshy.",
+          "start": "00:48:55,187",
+          "end": "00:48:56,787"
+        },
+        {
+          "label": "A",
+          "text": "I-I can't just give you Rosita's part. I mean...",
+          "start": "00:42:11,215",
+          "end": "00:42:14,786"
+        },
+        {
+          "label": "C",
+          "text": "First positions, please.",
+          "start": "00:48:49,580",
+          "end": "00:48:50,881"
+        }
+      ],
+      "video": {
+        "start": "00:48:55,187",
+        "end": "00:48:56,787"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "200 years, more like.",
+          "start": "00:49:32,090",
+          "end": "00:49:33,724"
+        },
+        {
+          "label": "C",
+          "text": "Yes, right away, people.",
+          "start": "00:42:58,930",
+          "end": "00:43:00,398"
+        },
+        {
+          "label": "B",
+          "text": "- Riffraff? - Okay, okay. Hang on.",
+          "start": "00:49:07,265",
+          "end": "00:49:08,866"
+        }
+      ],
+      "video": {
+        "start": "00:49:32,090",
+        "end": "00:49:33,724"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "So, you're not gonna go out there, are you?",
+          "start": "00:50:07,892",
+          "end": "00:50:09,693"
+        },
+        {
+          "label": "C",
+          "text": "Mate, you're amazing.",
+          "start": "00:46:57,435",
+          "end": "00:46:59,137"
+        },
+        {
+          "label": "B",
+          "text": "That whole rings moving around thing.",
+          "start": "00:42:50,455",
+          "end": "00:42:52,624"
+        }
+      ],
+      "video": {
+        "start": "00:50:07,892",
+        "end": "00:50:09,693"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:42:11,215",
+      "end": "00:42:14,786",
+      "text": "I-I can't just give you Rosita's part. I mean..."
+    },
+    {
+      "question": 2,
+      "start": "00:42:18,823",
+      "end": "00:42:20,425",
+      "text": "What, you got a kink in your think?"
+    },
+    {
+      "question": 3,
+      "start": "00:42:41,946",
+      "end": "00:42:43,815",
+      "text": "I'll... Yes, I will."
+    },
+    {
+      "question": 4,
+      "start": "00:42:50,455",
+      "end": "00:42:52,624",
+      "text": "That whole rings moving around thing."
+    },
+    {
+      "question": 5,
+      "start": "00:43:07,305",
+      "end": "00:43:09,307",
+      "text": "Yeah. You know, uh..."
+    },
+    {
+      "question": 6,
+      "start": "00:43:15,346",
+      "end": "00:43:16,648",
+      "text": "I'll write you another part, Rosita."
+    },
+    {
+      "question": 7,
+      "start": "00:43:46,310",
+      "end": "00:43:48,446",
+      "text": "- for five minutes? - You got it."
+    },
+    {
+      "question": 8,
+      "start": "00:44:10,034",
+      "end": "00:44:11,703",
+      "text": "Oh, hello, young sir."
+    },
+    {
+      "question": 9,
+      "start": "00:44:35,493",
+      "end": "00:44:37,562",
+      "text": "five, six, seven. And..."
+    },
+    {
+      "question": 10,
+      "start": "00:44:44,368",
+      "end": "00:44:46,370",
+      "text": "in a terrible accident and we'd never have to"
+    }
+  ]
+}

@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:33:44,875",
+    "end": "00:42:00,405"
+  },
+  "mimicking": [
+    {
+      "start": "00:33:44,875",
+      "end": "00:33:46,244",
+      "text": "Come on, Johnny. You can do better."
+    },
+    {
+      "start": "00:33:50,047",
+      "end": "00:33:51,615",
+      "text": "And thrust, and thrust."
+    },
+    {
+      "start": "00:33:54,685",
+      "end": "00:33:56,720",
+      "text": "Still not thrusting. Can you thrust, please?"
+    },
+    {
+      "start": "00:34:04,196",
+      "end": "00:34:06,098",
+      "text": "- Tippy-toes. Come on, let's go. - Seven, and..."
+    },
+    {
+      "start": "00:34:14,439",
+      "end": "00:34:16,141",
+      "text": "Hang in there, Johnny."
+    },
+    {
+      "start": "00:34:19,777",
+      "end": "00:34:21,679",
+      "text": "Meena, come and meet your partner."
+    },
+    {
+      "start": "00:34:43,834",
+      "end": "00:34:45,270",
+      "text": "That's really great, Darius."
+    },
+    {
+      "start": "00:34:53,043",
+      "end": "00:34:55,045",
+      "text": "Uh, the Golden Piccolo for Best Crying."
+    },
+    {
+      "start": "00:34:58,416",
+      "end": "00:34:59,950",
+      "text": "Oh, yeah. Yeah, yeah, yeah."
+    },
+    {
+      "start": "00:35:10,061",
+      "end": "00:35:12,397",
+      "text": "In the future, if you could not interrupt me,"
+    },
+    {
+      "start": "00:35:29,247",
+      "end": "00:35:30,448",
+      "text": "No, no, no, no, no, uh..."
+    },
+    {
+      "start": "00:35:51,902",
+      "end": "00:35:53,837",
+      "text": "Uh, he'll be here very soon."
+    },
+    {
+      "start": "00:36:17,128",
+      "end": "00:36:18,796",
+      "text": "On the right. Okay."
+    },
+    {
+      "start": "00:38:31,296",
+      "end": "00:38:33,631",
+      "text": "I can't take your call right now,"
+    },
+    {
+      "start": "00:38:40,338",
+      "end": "00:38:42,107",
+      "text": "I haven't heard from you in a while."
+    },
+    {
+      "start": "00:38:54,719",
+      "end": "00:38:56,987",
+      "text": "Where's your sense of humor, huh?"
+    },
+    {
+      "start": "00:39:08,233",
+      "end": "00:39:09,467",
+      "text": "So, where is he?"
+    },
+    {
+      "start": "00:39:15,440",
+      "end": "00:39:17,007",
+      "text": "Is this, like, a sky-fi show?"
+    },
+    {
+      "start": "00:39:25,983",
+      "end": "00:39:27,352",
+      "text": "Thank you, Sasha. We, uh..."
+    },
+    {
+      "start": "00:39:38,263",
+      "end": "00:39:40,064",
+      "text": "Just remember to release the safety catch"
+    },
+    {
+      "start": "00:39:45,035",
+      "end": "00:39:46,571",
+      "text": "She sure is."
+    },
+    {
+      "start": "00:40:20,238",
+      "end": "00:40:22,005",
+      "text": "Hey, Moon, you really think the mommy pig's"
+    },
+    {
+      "start": "00:40:31,182",
+      "end": "00:40:32,617",
+      "text": "- you were afraid of heights? - I wasn't."
+    },
+    {
+      "start": "00:40:41,526",
+      "end": "00:40:43,261",
+      "text": "What's going on up here?"
+    },
+    {
+      "start": "00:40:47,265",
+      "end": "00:40:49,067",
+      "text": "I-I can't let you jump off here."
+    },
+    {
+      "start": "00:40:54,105",
+      "end": "00:40:55,807",
+      "text": "- Yay! - Porsha, wait!"
+    },
+    {
+      "start": "00:41:04,782",
+      "end": "00:41:06,784",
+      "text": "Whee! It's easy!"
+    },
+    {
+      "start": "00:41:19,163",
+      "end": "00:41:20,798",
+      "text": "- Um... - All of you."
+    },
+    {
+      "start": "00:41:26,237",
+      "end": "00:41:29,274",
+      "text": "Yeah. And so, I was like..."
+    },
+    {
+      "start": "00:41:58,870",
+      "end": "00:42:00,405",
+      "text": "You want to try with the helmet this time?"
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Still not thrusting. Can you thrust, please?",
+          "start": "00:33:54,685",
+          "end": "00:33:56,720"
+        },
+        {
+          "label": "A",
+          "text": "Where's your sense of humor, huh?",
+          "start": "00:38:54,719",
+          "end": "00:38:56,987"
+        },
+        {
+          "label": "B",
+          "text": "Come on, Johnny. You can do better.",
+          "start": "00:33:44,875",
+          "end": "00:33:46,244"
+        }
+      ],
+      "video": {
+        "start": "00:33:54,685",
+        "end": "00:33:56,720"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Meena, come and meet your partner.",
+          "start": "00:34:19,777",
+          "end": "00:34:21,679"
+        },
+        {
+          "label": "B",
+          "text": "I haven't heard from you in a while.",
+          "start": "00:38:40,338",
+          "end": "00:38:42,107"
+        },
+        {
+          "label": "A",
+          "text": "Yeah. And so, I was like...",
+          "start": "00:41:26,237",
+          "end": "00:41:29,274"
+        }
+      ],
+      "video": {
+        "start": "00:34:19,777",
+        "end": "00:34:21,679"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Oh, yeah. Yeah, yeah, yeah.",
+          "start": "00:34:58,416",
+          "end": "00:34:59,950"
+        },
+        {
+          "label": "C",
+          "text": "What's going on up here?",
+          "start": "00:40:41,526",
+          "end": "00:40:43,261"
+        },
+        {
+          "label": "A",
+          "text": "Just remember to release the safety catch",
+          "start": "00:39:38,263",
+          "end": "00:39:40,064"
+        }
+      ],
+      "video": {
+        "start": "00:34:58,416",
+        "end": "00:34:59,950"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Uh, he'll be here very soon.",
+          "start": "00:35:51,902",
+          "end": "00:35:53,837"
+        },
+        {
+          "label": "B",
+          "text": "I haven't heard from you in a while.",
+          "start": "00:38:40,338",
+          "end": "00:38:42,107"
+        },
+        {
+          "label": "C",
+          "text": "Thank you, Sasha. We, uh...",
+          "start": "00:39:25,983",
+          "end": "00:39:27,352"
+        }
+      ],
+      "video": {
+        "start": "00:35:51,902",
+        "end": "00:35:53,837"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "I haven't heard from you in a while.",
+          "start": "00:38:40,338",
+          "end": "00:38:42,107"
+        },
+        {
+          "label": "A",
+          "text": "Still not thrusting. Can you thrust, please?",
+          "start": "00:33:54,685",
+          "end": "00:33:56,720"
+        },
+        {
+          "label": "C",
+          "text": "- you were afraid of heights? - I wasn't.",
+          "start": "00:40:31,182",
+          "end": "00:40:32,617"
+        }
+      ],
+      "video": {
+        "start": "00:38:40,338",
+        "end": "00:38:42,107"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Is this, like, a sky-fi show?",
+          "start": "00:39:15,440",
+          "end": "00:39:17,007"
+        },
+        {
+          "label": "A",
+          "text": "What's going on up here?",
+          "start": "00:40:41,526",
+          "end": "00:40:43,261"
+        },
+        {
+          "label": "C",
+          "text": "Oh, yeah. Yeah, yeah, yeah.",
+          "start": "00:34:58,416",
+          "end": "00:34:59,950"
+        }
+      ],
+      "video": {
+        "start": "00:39:15,440",
+        "end": "00:39:17,007"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "She sure is.",
+          "start": "00:39:45,035",
+          "end": "00:39:46,571"
+        },
+        {
+          "label": "C",
+          "text": "Yeah. And so, I was like...",
+          "start": "00:41:26,237",
+          "end": "00:41:29,274"
+        },
+        {
+          "label": "B",
+          "text": "You want to try with the helmet this time?",
+          "start": "00:41:58,870",
+          "end": "00:42:00,405"
+        }
+      ],
+      "video": {
+        "start": "00:39:45,035",
+        "end": "00:39:46,571"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "What's going on up here?",
+          "start": "00:40:41,526",
+          "end": "00:40:43,261"
+        },
+        {
+          "label": "C",
+          "text": "You want to try with the helmet this time?",
+          "start": "00:41:58,870",
+          "end": "00:42:00,405"
+        },
+        {
+          "label": "A",
+          "text": "Is this, like, a sky-fi show?",
+          "start": "00:39:15,440",
+          "end": "00:39:17,007"
+        }
+      ],
+      "video": {
+        "start": "00:40:41,526",
+        "end": "00:40:43,261"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Whee! It's easy!",
+          "start": "00:41:04,782",
+          "end": "00:41:06,784"
+        },
+        {
+          "label": "A",
+          "text": "Still not thrusting. Can you thrust, please?",
+          "start": "00:33:54,685",
+          "end": "00:33:56,720"
+        },
+        {
+          "label": "B",
+          "text": "Uh, he'll be here very soon.",
+          "start": "00:35:51,902",
+          "end": "00:35:53,837"
+        }
+      ],
+      "video": {
+        "start": "00:41:04,782",
+        "end": "00:41:06,784"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "You want to try with the helmet this time?",
+          "start": "00:41:58,870",
+          "end": "00:42:00,405"
+        },
+        {
+          "label": "B",
+          "text": "Uh, the Golden Piccolo for Best Crying.",
+          "start": "00:34:53,043",
+          "end": "00:34:55,045"
+        },
+        {
+          "label": "C",
+          "text": "Come on, Johnny. You can do better.",
+          "start": "00:33:44,875",
+          "end": "00:33:46,244"
+        }
+      ],
+      "video": {
+        "start": "00:41:58,870",
+        "end": "00:42:00,405"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:33:44,875",
+      "end": "00:33:46,244",
+      "text": "Come on, Johnny. You can do better."
+    },
+    {
+      "question": 2,
+      "start": "00:33:50,047",
+      "end": "00:33:51,615",
+      "text": "And thrust, and thrust."
+    },
+    {
+      "question": 3,
+      "start": "00:34:04,196",
+      "end": "00:34:06,098",
+      "text": "- Tippy-toes. Come on, let's go. - Seven, and..."
+    },
+    {
+      "question": 4,
+      "start": "00:34:14,439",
+      "end": "00:34:16,141",
+      "text": "Hang in there, Johnny."
+    },
+    {
+      "question": 5,
+      "start": "00:34:43,834",
+      "end": "00:34:45,270",
+      "text": "That's really great, Darius."
+    },
+    {
+      "question": 6,
+      "start": "00:34:53,043",
+      "end": "00:34:55,045",
+      "text": "Uh, the Golden Piccolo for Best Crying."
+    },
+    {
+      "question": 7,
+      "start": "00:35:10,061",
+      "end": "00:35:12,397",
+      "text": "In the future, if you could not interrupt me,"
+    },
+    {
+      "question": 8,
+      "start": "00:35:29,247",
+      "end": "00:35:30,448",
+      "text": "No, no, no, no, no, uh..."
+    },
+    {
+      "question": 9,
+      "start": "00:36:17,128",
+      "end": "00:36:18,796",
+      "text": "On the right. Okay."
+    },
+    {
+      "question": 10,
+      "start": "00:38:31,296",
+      "end": "00:38:33,631",
+      "text": "I can't take your call right now,"
+    }
+  ]
+}
