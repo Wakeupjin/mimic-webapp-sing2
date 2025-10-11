@@ -2,11 +2,17 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from './contexts/AuthContext';
+import { signOut } from './lib/auth';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const { user, profile, loading } = useAuth();
+  const router = useRouter();
   return (
     <div className="relative">
       {/* 햄버거 메뉴 오버레이 */}
@@ -506,20 +512,69 @@ export default function Home() {
             </svg>
           </button>
 
-          {/* 로그인 버튼 - 오른쪽 */}
-          <button
-            className="px-4 bg-[#60D96C] hover:bg-[#4CAF50] transition-all duration-200 flex items-center justify-center text-black"
-            style={{
-              height: '30px',
-              borderRadius: '50px',
-              fontFamily: 'var(--font-bm-hanna-pro), sans-serif',
-              fontSize: '22px',
-              fontWeight: '200',
-              transform: 'translateY(-20px)'
-            }}
-          >
-            로그인
-          </button>
+          {/* 로그인/로그아웃 버튼 - 오른쪽 */}
+          <div className="flex items-center gap-3" style={{ transform: 'translateY(-20px)' }}>
+            {loading ? (
+              <div className="w-20 h-6 bg-gray-700 rounded animate-pulse"></div>
+            ) : isLoggingOut && profile ? (
+              <span 
+                className="text-white text-lg font-bold" 
+                style={{ 
+                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+                  animation: 'fadeOut 4s ease-out forwards'
+                }}
+              >
+                <span className="inline-block animate-bounce" style={{ animationDelay: '0ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>S</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '150ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>e</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '300ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>e</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '450ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '600ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>y</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '750ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>o</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '900ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>u</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1050ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1200ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>s</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1350ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>o</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1500ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>o</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1650ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>n</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1800ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>,</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '1950ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '2100ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>{profile.nickname}</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '2250ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>!</span>
+              </span>
+            ) : user && profile ? (
+              <span className="text-white text-lg font-bold" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>H</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '150ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>i</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '300ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>,</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '450ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>&nbsp;</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '600ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>{profile.nickname}</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '750ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>!</span>
+              </span>
+            ) : null}
+            <button
+              onClick={() => {
+                if (user) {
+                  setIsLoggingOut(true);
+                  signOut().then(() => {
+                    router.push('/');
+                    setTimeout(() => setIsLoggingOut(false), 4000);
+                  });
+                } else {
+                  router.push('/auth/login');
+                }
+              }}
+              className="px-4 bg-[#60D96C] hover:bg-[#4CAF50] transition-all duration-200 flex items-center justify-center text-black"
+              style={{
+                height: '30px',
+                borderRadius: '50px',
+                fontFamily: 'var(--font-bm-hanna-pro), sans-serif',
+                fontSize: '22px',
+                fontWeight: '200'
+              }}
+            >
+              {loading ? '...' : user ? '로그아웃' : '로그인'}
+            </button>
+          </div>
         </div>
 
       {/* 중앙 영화 화면 */}

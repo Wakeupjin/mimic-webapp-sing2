@@ -37,29 +37,40 @@ function SelectingPageContent() {
   // --- [SUPABASE 데이터 로딩] ---
   useEffect(() => {
     const fetchLessons = async () => {
+      console.log('🔄 Lesson 데이터 로딩 시작...');
       setIsLoading(true);
       
-      const { data, error } = await supabase
-        .from('lessons')
-        .select('id, lesson_number, video_id')
-        .order('lesson_number', { ascending: true }); // 레슨 번호 순으로 정렬
+      try {
+        const { data, error } = await supabase
+          .from('lessons')
+          .select('id, lesson_number, video_id')
+          .order('lesson_number', { ascending: true }); // 레슨 번호 순으로 정렬
 
-      if (error) {
-        console.error('Error fetching lessons:', error);
+        console.log('📡 Supabase 응답:', { data, error });
+
+        if (error) {
+          console.error('❌ Error fetching lessons:', error);
+          setIsLoading(false);
+          return;
+        }
+
+        console.log('✅ Supabase lessons data:', data);
+
+        const lessonList = data || [];
+        console.log('📚 Lesson 목록:', lessonList);
+        setLessons(lessonList);
+        
+        // Lesson 목록을 가져온 후, 첫 번째 Lesson을 기본값으로 설정
+        if (lessonList.length > 0) {
+          console.log('🎯 첫 번째 Lesson 설정:', lessonList[0]);
+          setSelectedLesson(lessonList[0]);
+        }
+        console.log('✅ 로딩 완료');
         setIsLoading(false);
-        return;
+      } catch (err) {
+        console.error('❌ fetchLessons 에러:', err);
+        setIsLoading(false);
       }
-
-      console.log('Supabase lessons data:', data);
-
-      const lessonList = data || [];
-      setLessons(lessonList);
-      
-      // Lesson 목록을 가져온 후, 첫 번째 Lesson을 기본값으로 설정
-      if (lessonList.length > 0) {
-        setSelectedLesson(lessonList[0]);
-      }
-      setIsLoading(false);
     };
 
     fetchLessons();

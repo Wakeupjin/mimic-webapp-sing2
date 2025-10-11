@@ -153,10 +153,10 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
       endTime = srtTimeToSeconds(option.end);
       console.log(`${option.label} 재생: "${option.text}" (${startTime}초 ~ ${endTime}초)`);
     } else if (currentQuestion?.video) {
-      // 옵션에 시간 정보가 없으면 기본 시간 사용
+      // 새로운 구조: 각 질문의 video 필드 사용
       startTime = srtTimeToSeconds(currentQuestion.video.start);
       endTime = srtTimeToSeconds(currentQuestion.video.end);
-      console.log(`${option.label} 기본 시간 사용: ${startTime}초 ~ ${endTime}초`);
+      console.log(`${option.label} 질문 비디오 시간 사용: ${startTime}초 ~ ${endTime}초`);
     } else {
       console.error(`${option.label} 재생 시간 정보 없음`);
       return;

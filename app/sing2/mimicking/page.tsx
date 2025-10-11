@@ -21,6 +21,58 @@ function MimickingPageContent() {
   const movieId = searchParams.get('id') || '001:1';
   console.log('🎬 미믹킹 현재 movieId:', movieId);
   
+  // Supabase 데이터 상태
+  const [lessonData, setLessonData] = useState<any>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [scenes, setScenes] = useState<any[]>([]);
+  
+  
+  // 커스텀 훅 사용
+  const { isFullscreen, toggleFullscreen } = useFullscreen();
+  const { stopAllMedia } = useMediaControl();
+  const {
+    isPlaying,
+    playNonce,
+    isVideoPaused,
+    isVideoStarted,
+    setIsVideoStarted,
+    setPlayNonce,
+    playVideo,
+    pauseVideo,
+    resetVideo
+  } = useVideoPlayer();
+  const {
+    currentIndex,
+    isMimickingComplete,
+    isSequenceRunning,
+    showNextCta,
+    muted,
+    activeControlIndex,
+    autoSeqIndex,
+    mimickingTimeouts,
+    setCurrentIndex,
+    setIsMimickingComplete,
+    setIsSequenceRunning,
+    setShowNextCta,
+    setMuted,
+    setActiveControlIndex,
+    setAutoSeqIndex,
+    executeMimickingSequence,
+    execute30thMimickingSequence,
+    resetMimickingState,
+    clearTimeouts
+  } = useMimickingSequence();
+
+  // 로컬 상태 (훅으로 교체되지 않은 것들)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isMimickingStarted, setIsMimickingStarted] = useState(false);
+  const mimickingTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
+  const autoSeqIndexRef = useRef<number | null>(null);
+  const currentIndexRef = useRef<number>(0);
+  const pendingButtonIndexRef = useRef<number | null>(null);
+
   // Chapter 0 접근 시 Chapter 1로 리다이렉트
   useEffect(() => {
     if (movieId === '001:0') {
@@ -29,61 +81,9 @@ function MimickingPageContent() {
       return;
     }
   }, [movieId]);
-  // Supabase 데이터 상태 (word 페이지와 동일한 구조)
-  const [lessonData, setLessonData] = useState<any>(null);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [scenes, setScenes] = useState<any[]>([]);
-  
-  // 단순한 상태 관리 (word 페이지와 동일한 구조)
-  const { isFullscreen, toggleFullscreen } = useFullscreen();
-  
-  // 로컬 상태 (복잡한 훅들 제거)
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMimickingComplete, setIsMimickingComplete] = useState(false);
-  const [isSequenceRunning, setIsSequenceRunning] = useState(false);
-  const [showNextCta, setShowNextCta] = useState(false);
-  const [muted, setMuted] = useState(false);
-  const [activeControlIndex, setActiveControlIndex] = useState<number | null>(null);
-  const [autoSeqIndex, setAutoSeqIndex] = useState<number | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [playNonce, setPlayNonce] = useState(0);
-  const [isVideoPaused, setIsVideoPaused] = useState(false);
-  const [isVideoStarted, setIsVideoStarted] = useState(false);
 
-  // 누락된 함수들 구현
-  const pauseVideo = useCallback(() => {
-    setIsPlaying(false);
-    setIsVideoPaused(true);
-  }, []);
-
-  const resetVideo = useCallback(() => {
-    setIsPlaying(false);
-    setIsVideoPaused(false);
-    setIsVideoStarted(false);
-    setPlayNonce(0);
-  }, []);
-
-  const playVideo = useCallback(() => {
-    setIsPlaying(true);
-    setPlayNonce(prev => prev + 1);
-    setIsVideoPaused(false);
-    setIsVideoStarted(true);
-  }, []);
-
-  // 로컬 상태 (훅으로 교체되지 않은 것들)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [isTextVisible, setIsTextVisible] = useState(false);
-  const [isMimickingStarted, setIsMimickingStarted] = useState(false); // 미믹킹 시작 상태
-  const mimickingTimeoutsRef = useRef<NodeJS.Timeout[]>([]); // 미믹킹 setTimeout 관리
-  const autoSeqIndexRef = useRef<number | null>(null); // autoSeqIndex ref for closure fix
-  const currentIndexRef = useRef<number>(0); // currentIndex ref for closure fix
-  const pendingButtonIndexRef = useRef<number | null>(null); // Button waiting to turn green when video plays
-
-  // Supabase 데이터 로딩 (word 페이지와 동일한 구조)
+  // Supabase 데이터 로딩
   useEffect(() => {
-    if (!movieId) return;
-    
     const loadDataFromSupabase = async () => {
       try {
         setIsLoading(true);
@@ -118,11 +118,24 @@ function MimickingPageContent() {
         // 상태 업데이트
         setLessonData(lesson);
         setVideoUrl(videoResult.video_url);
-        setScenes(lesson.mimic_data || []);
+        
+        // mimic_data가 JSON 배열인 경우 파싱
+        let mimicData = [];
+        if (lesson.mimic_data) {
+          if (typeof lesson.mimic_data === 'string') {
+            mimicData = JSON.parse(lesson.mimic_data);
+          } else if (Array.isArray(lesson.mimic_data)) {
+            mimicData = lesson.mimic_data;
+          }
+        }
+        setScenes(mimicData);
         setIsLoading(false);
         
         console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
-        console.log(`📚 총 ${lesson.mimic_data?.length || 0}개 미믹킹 씬 로드됨`);
+        console.log('🎬 lesson 전체 구조:', Object.keys(lesson));
+        console.log('🎬 mimic_data 타입:', typeof lesson.mimic_data);
+        console.log('🎬 mimic_data 내용:', lesson.mimic_data);
+        console.log(`📚 총 ${mimicData.length}개 미믹킹 씬 로드됨`);
       } catch (error) {
         console.error('❌ Supabase 미믹킹 데이터 로딩 실패:', error);
         setIsLoading(false);
@@ -131,31 +144,6 @@ function MimickingPageContent() {
     
     loadDataFromSupabase();
   }, [movieId]);
-
-  const currentScene = scenes[currentIndex];
-  
-  // 디버깅: currentScene 정보 확인
-  if (currentScene && currentScene.start_sec && currentScene.end_sec) {
-    let startTime: number;
-    let endTime: number;
-    
-    if (typeof currentScene.start_sec === 'string') {
-      startTime = timeStringToSeconds(currentScene.start_sec);
-    } else {
-      startTime = Number(currentScene.start_sec);
-    }
-    
-    if (typeof currentScene.end_sec === 'string') {
-      endTime = timeStringToSeconds(currentScene.end_sec);
-    } else {
-      endTime = Number(currentScene.end_sec);
-    }
-    console.log(`🎬 Mimicking Scene ${currentIndex + 1}:`);
-    console.log(`  - Original start: "${currentScene.start_sec}" → ${startTime}s`);
-    console.log(`  - Original end: "${currentScene.end_sec}" → ${endTime}s`);
-    console.log(`  - Duration: ${(endTime - startTime).toFixed(2)}s`);
-    console.log(`  - Text: "${currentScene.text}"`);
-  }
   
   // autoSeqIndex가 변경될 때마다 ref 업데이트
   useEffect(() => {
@@ -168,11 +156,6 @@ function MimickingPageContent() {
     currentIndexRef.current = currentIndex;
     console.log(`📌 currentIndex 업데이트: ${currentIndex}`);
   }, [currentIndex]);
-  
-  // currentScene이 존재하지 않으면 안전하게 처리
-  if (!currentScene) {
-    return null;
-  }
 
   // 풀스크린 복원 로직
   useEffect(() => {
@@ -225,7 +208,7 @@ function MimickingPageContent() {
     } else {
       console.log('ℹ️ 새로고침 또는 직접 접근: 정상 로드');
     }
-  }, []);
+  }, [pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setMuted]);
 
   // 풀스크린 상태 감지
   useEffect(() => {
@@ -270,13 +253,10 @@ function MimickingPageContent() {
     };
   }, [isFullscreen]);
 
-  // 씬 변경 시 자동 시퀀스 시작 (제거 - 수동으로만 시작)
-  // useEffect(() => {
-  //   if (currentIndex > 0 && isMimickingStarted) {
-  //     // 두 번째 씬부터는 자동으로 시퀀스 시작 (단, 미믹킹이 시작된 후에만)
   // 미믹킹 시퀀스 실행 (자동)
   useEffect(() => {
-    if (isMimickingStarted && !isSequenceRunning) {
+    if (isMimickingStarted && !isSequenceRunning && scenes[currentIndex]) {
+      const currentScene = scenes[currentIndex];
       // 시퀀스 자동 시작
       console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
       // Set autoSeqIndex for first button (button 0)
@@ -286,13 +266,7 @@ function MimickingPageContent() {
       console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
       executeMimickingSequence(currentIndex, playVideo, currentScene);
     }
-  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, currentScene]);
-
-  // currentIndex 변경 시 상태 초기화는 훅에서 처리
-  //   }
-  // }, [currentIndex, isMimickingStarted]);
-
-
+  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes]);
 
   const handlePrev = useCallback(() => {
     if (!isSequenceRunning) {
@@ -316,7 +290,7 @@ function MimickingPageContent() {
         setIsMimickingStarted(false);
       }
     }
-  }, [isSequenceRunning, currentIndex]);
+  }, [isSequenceRunning, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta]);
 
   const handleNext = useCallback(() => {
     if (!isSequenceRunning) {
@@ -334,27 +308,40 @@ function MimickingPageContent() {
       }
       setShowNextCta(false);
     }
-  }, [currentIndex, scenes.length, isSequenceRunning, movieId]);
-
+  }, [currentIndex, scenes.length, isSequenceRunning, movieId, setCurrentIndex, setPlayNonce, setShowNextCta]);
 
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
     console.log(`🎮 handlePlay: muted=${m}, slotIndex=${slotIndex}`);
     setMuted(m);
     setActiveControlIndex(slotIndex);
     playVideo();
-  }, [playVideo]);
+  }, [playVideo, setActiveControlIndex, setMuted]);
 
+  const currentScene = scenes[currentIndex];
 
-  // 로딩 화면 (word 페이지와 동일한 구조)
+  // 로딩 화면
   if (isLoading || !lessonData || !videoUrl) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#60D96C] mx-auto mb-4"></div>
-          <p className="text-[#60D96C]">Loading lesson data...</p>
-        </div>
-      </div>
+      <main className="min-h-screen flex items-center justify-center">
+        <h1 className="text-xl font-semibold text-[#60D96C]">데이터를 불러오는 중...</h1>
+      </main>
     );
+  }
+  
+  // currentScene이 존재하지 않으면 안전하게 처리
+  if (!currentScene) {
+    return null;
+  }
+
+  // 디버깅: currentScene 정보 확인
+  if (currentScene && currentScene.start && currentScene.end) {
+    const startTime = timeStringToSeconds(currentScene.start);
+    const endTime = timeStringToSeconds(currentScene.end);
+    console.log(`🎬 Mimicking Scene ${currentIndex + 1}:`);
+    console.log(`  - Original start: "${currentScene.start}" → ${startTime}s`);
+    console.log(`  - Original end: "${currentScene.end}" → ${endTime}s`);
+    console.log(`  - Duration: ${(endTime - startTime).toFixed(2)}s`);
+    console.log(`  - Text: "${currentScene.text}"`);
   }
 
   return (
@@ -440,8 +427,8 @@ function MimickingPageContent() {
               <VideoPlayer
                 key={`mimicking-${currentIndex}`}
                 src={videoUrl || ''}
-                startTime={currentScene?.start_sec ? (typeof currentScene.start_sec === 'string' ? timeStringToSeconds(currentScene.start_sec) : Number(currentScene.start_sec)) : 0}
-                endTime={currentScene?.end_sec ? (typeof currentScene.end_sec === 'string' ? timeStringToSeconds(currentScene.end_sec) : Number(currentScene.end_sec)) : 0}
+                startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
+                endTime={currentScene?.end ? timeStringToSeconds(currentScene.end) : 0}
                 muted={muted}
                 showText={isTextVisible}
                 text={currentScene.text}
@@ -648,7 +635,7 @@ function MimickingPageContent() {
 
 export default function MimickingPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="flex items-center justify-center min-h-screen bg-black text-white">Loading...</div>}>
       <MimickingPageContent />
     </Suspense>
   );

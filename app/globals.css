@@ -139,3 +139,35 @@ body {
   animation: heartbeat 1s ease-in-out infinite; /* 0.8s → 1s로 느리게 */
   will-change: transform; /* GPU 가속 */
 }
+
+/* 로그아웃 메시지 페이드아웃 애니메이션 */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* 인사말 애니메이션 - 미믹이 바꾸는 세상과 동일한 효과 */
+@keyframes greeting {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-greeting {
+  animation: greeting 0.8s ease-out forwards;
+}
