@@ -51,6 +51,26 @@ function MimickingPageContent() {
   const [isVideoPaused, setIsVideoPaused] = useState(false);
   const [isVideoStarted, setIsVideoStarted] = useState(false);
 
+  // 누락된 함수들 구현
+  const pauseVideo = useCallback(() => {
+    setIsPlaying(false);
+    setIsVideoPaused(true);
+  }, []);
+
+  const resetVideo = useCallback(() => {
+    setIsPlaying(false);
+    setIsVideoPaused(false);
+    setIsVideoStarted(false);
+    setPlayNonce(0);
+  }, []);
+
+  const playVideo = useCallback(() => {
+    setIsPlaying(true);
+    setPlayNonce(prev => prev + 1);
+    setIsVideoPaused(false);
+    setIsVideoStarted(true);
+  }, []);
+
   // 로컬 상태 (훅으로 교체되지 않은 것들)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
