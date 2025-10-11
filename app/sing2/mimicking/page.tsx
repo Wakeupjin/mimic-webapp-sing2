@@ -21,6 +21,9 @@ function MimickingPageContent() {
   const movieId = searchParams.get('id') || '001:1';
   console.log('🎬 미믹킹 현재 movieId:', movieId);
   
+  // 초기 상태를 더 안전하게 설정
+  const [isInitialized, setIsInitialized] = useState(false);
+  
   // Chapter 0 접근 시 Chapter 1로 리다이렉트
   useEffect(() => {
     if (movieId === '001:0') {
@@ -80,26 +83,25 @@ function MimickingPageContent() {
   const currentIndexRef = useRef<number>(0); // currentIndex ref for closure fix
   const pendingButtonIndexRef = useRef<number | null>(null); // Button waiting to turn green when video plays
 
-  // Supabase 데이터 로딩
+  // Supabase 데이터 로딩 - 더 안전한 방식
   useEffect(() => {
-    if (!movieId) return;
-    
-    let isMounted = true;
+    if (!movieId || isInitialized) return;
     
     const loadDataFromSupabase = async () => {
       try {
+        setIsLoading(true);
         const lessonNumberStr = movieId.split(':')[1];
         const lessonNumber = parseInt(lessonNumberStr);
         
         if (isNaN(lessonNumber)) {
-          if (isMounted) setIsLoading(false);
+          setIsLoading(false);
           return;
         }
         
         // Lesson 데이터 가져오기
         const lesson = await fetchLessonData(lessonNumber);
-        if (!lesson || !isMounted) {
-          if (isMounted) setIsLoading(false);
+        if (!lesson) {
+          setIsLoading(false);
           return;
         }
         
@@ -110,34 +112,29 @@ function MimickingPageContent() {
           .eq('id', lesson.video_id)
           .single();
           
-        if (videoError || !videoResult || !isMounted) {
+        if (videoError || !videoResult) {
           console.error('Video URL fetching error:', videoError);
-          if (isMounted) setIsLoading(false);
+          setIsLoading(false);
           return;
         }
         
-        // 상태 업데이트 (컴포넌트가 마운트된 경우에만)
-        if (isMounted) {
-          setLessonData(lesson);
-          setVideoUrl(videoResult.video_url);
-          setScenes(lesson.mimic_data || []);
-          setIsLoading(false);
-          
-          console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
-          console.log(`📚 총 ${lesson.mimic_data?.length || 0}개 미믹킹 씬 로드됨`);
-        }
+        // 상태 업데이트
+        setLessonData(lesson);
+        setVideoUrl(videoResult.video_url);
+        setScenes(lesson.mimic_data || []);
+        setIsLoading(false);
+        setIsInitialized(true);
+        
+        console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
+        console.log(`📚 총 ${lesson.mimic_data?.length || 0}개 미믹킹 씬 로드됨`);
       } catch (error) {
         console.error('❌ Supabase 미믹킹 데이터 로딩 실패:', error);
-        if (isMounted) setIsLoading(false);
+        setIsLoading(false);
       }
     };
     
     loadDataFromSupabase();
-    
-    return () => {
-      isMounted = false;
-    };
-  }, [movieId]);
+  }, [movieId, isInitialized]);
 
   const currentScene = scenes[currentIndex];
   
@@ -281,9 +278,9 @@ function MimickingPageContent() {
   // useEffect(() => {
   //   if (currentIndex > 0 && isMimickingStarted) {
   //     // 두 번째 씬부터는 자동으로 시퀀스 시작 (단, 미믹킹이 시작된 후에만)
-  // 미믹킹 시퀀스 실행 (자동)
+  // 미믹킹 시퀀스 실행 (자동) - 안전한 방식
   useEffect(() => {
-    if (isMimickingStarted && !isSequenceRunning && currentScene) {
+    if (isMimickingStarted && !isSequenceRunning && currentScene && isInitialized) {
       // 시퀀스 자동 시작
       console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
       // Set autoSeqIndex for first button (button 0)
@@ -293,7 +290,7 @@ function MimickingPageContent() {
       console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
       executeMimickingSequence(currentIndex, playVideo, currentScene);
     }
-  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning]);
+  }, [isMimickingStarted, isSequenceRunning, isInitialized]);
 
   // currentIndex 변경 시 상태 초기화는 훅에서 처리
   //   }
