@@ -589,7 +589,10 @@ function MimickingPageContent() {
                       e.currentTarget.style.backgroundColor = 'white';
                     }}
                     onClick={() => {
-                      execute30thMimickingSequence();
+                      // 간단한 재시작 로직
+                      setIsMimickingComplete(false);
+                      setCurrentIndex(0);
+                      startMimickingSequence();
                     }}
                   >
                     Again
