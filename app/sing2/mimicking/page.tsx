@@ -665,7 +665,8 @@ function MimickingPageContent() {
                       
                       // 진행 중인 시퀀스 정리
                       console.log(`🖱️ 씬 클릭: ${index + 1}, 기존 시퀀스 정리`);
-                      clearTimeouts(); // 기존 타임아웃 정리
+                      mimickingTimeouts.current.forEach(timeout => clearTimeout(timeout));
+                      mimickingTimeouts.current = []; // 기존 타임아웃 정리
                       setAutoSeqIndex(null); // 자동 시퀀스 중단
                       setActiveControlIndex(null); // 활성 버튼 초기화
                       setMuted(false); // 무음 해제
