@@ -127,6 +127,11 @@ function MimickingPageContent() {
         
         console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
         console.log(`📚 총 ${lesson.mimic_data?.length || 0}개 미믹킹 씬 로드됨`);
+        
+        // 데이터 로딩 완료 후 시퀀스 시작
+        setTimeout(() => {
+          startMimickingSequence();
+        }, 100);
       } catch (error) {
         console.error('❌ Supabase 미믹킹 데이터 로딩 실패:', error);
         setIsLoading(false);
@@ -278,11 +283,13 @@ function MimickingPageContent() {
   // useEffect(() => {
   //   if (currentIndex > 0 && isMimickingStarted) {
   //     // 두 번째 씬부터는 자동으로 시퀀스 시작 (단, 미믹킹이 시작된 후에만)
-  // 미믹킹 시퀀스 실행 (자동) - 안전한 방식
-  useEffect(() => {
+  // 미믹킹 시퀀스 실행 (수동으로만) - useEffect 제거
+  // useEffect로 인한 React Error #310 방지를 위해 수동 실행으로 변경
+  
+  // 수동 시퀀스 시작 함수
+  const startMimickingSequence = useCallback(() => {
     if (isMimickingStarted && !isSequenceRunning && currentScene && isInitialized) {
-      // 시퀀스 자동 시작
-      console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
+      console.log(`🔄 수동 시퀀스 시작: currentIndex=${currentIndex}`);
       // Set autoSeqIndex for first button (button 0)
       autoSeqIndexRef.current = 0;
       setAutoSeqIndex(0);
@@ -290,7 +297,7 @@ function MimickingPageContent() {
       console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
       executeMimickingSequence(currentIndex, playVideo, currentScene);
     }
-  }, [isMimickingStarted, isSequenceRunning, isInitialized]);
+  }, [isMimickingStarted, isSequenceRunning, currentScene, isInitialized, currentIndex, executeMimickingSequence, playVideo]);
 
   // currentIndex 변경 시 상태 초기화는 훅에서 처리
   //   }
