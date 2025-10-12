@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef, Suspense } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '../../contexts/AuthContext';
 import { useFullscreen } from '../../hooks/useFullscreen';
 // 기존 상수 제거 (Supabase에서 데이터 수를 가져옴)
 // import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings'; 
@@ -22,10 +24,35 @@ const SELECTING_DROPDOWN_MAX_HEIGHT_PX = 300;
 const SELECTING_SCROLL_THRESHOLD_PX = 5;
 
 function SelectingPageContent() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // 인증 체크
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/auth/login');
+    }
+  }, [user, loading, router]);
+
+  // 로딩 중이거나 인증되지 않은 경우
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (!user) {
+    return null; // 리다이렉트 중
+  }
 
   // 선택된 Lesson의 번호 (Lesson 1이 기본값)
   const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { useAuth } from '@/app/contexts/AuthContext';
 import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
 import WordCompleteButtons from '@/app/components/WordCompleteButtons';
@@ -42,8 +43,33 @@ interface LessonDataType {
 }
 
 function WordPageContent() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+
+  // 인증 체크
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/auth/login');
+    }
+  }, [user, loading, router]);
+
+  // 로딩 중이거나 인증되지 않은 경우
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (!user) {
+    return null; // 리다이렉트 중
+  }
 
   // Supabase data states
   const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);

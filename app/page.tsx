@@ -581,7 +581,13 @@ export default function Home() {
         <div className="mt-0 flex justify-center">
         <div 
             className="relative w-[70%] aspect-video rounded-lg overflow-hidden border-8 border-[#555555] hover:border-[#60D96C] transition-all duration-300 cursor-pointer group"
-          onClick={() => window.location.href = '/sing2/selecting'}
+          onClick={() => {
+            if (!user) {
+              router.push('/auth/login');
+              return;
+            }
+            window.location.href = '/sing2/selecting';
+          }}
         >
           <Image
             src="/sing2Poster.jpg"

@@ -1,8 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import { useAuth } from "../../contexts/AuthContext";
 // import VideoPlayer from "../../components/VideoPlayer"; // VideoPlayer 컴포넌트가 없으니 비디오 태그를 직접 사용합니다.
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
@@ -30,8 +31,33 @@ type LessonDataType = {
 
 
 function WatchingPageContent() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+
+  // 인증 체크
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/auth/login');
+    }
+  }, [user, loading, router]);
+
+  // 로딩 중이거나 인증되지 않은 경우
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (!user) {
+    return null; // 리다이렉트 중
+  }
   
   // Redirect Chapter 0 to Chapter 1
   useEffect(() => {
