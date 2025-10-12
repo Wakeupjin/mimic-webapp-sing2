@@ -30,6 +30,13 @@ function SelectingPageContent() {
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  
+  // 모든 훅을 최상단으로 이동
+  const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [canScrollDown, setCanScrollDown] = useState(false); 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // 인증 체크
   useEffect(() => {
@@ -60,13 +67,6 @@ function SelectingPageContent() {
       </main>
     );
   }
-
-  // 선택된 Lesson의 번호 (Lesson 1이 기본값)
-  const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [canScrollDown, setCanScrollDown] = useState(false); 
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // --- [SUPABASE 데이터 로딩] ---
   useEffect(() => {

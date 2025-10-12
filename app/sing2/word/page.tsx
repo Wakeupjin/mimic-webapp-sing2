@@ -48,6 +48,11 @@ function WordPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
 
+  // 모든 훅을 최상단으로 이동
+  const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   // 인증 체크
   useEffect(() => {
     if (!loading && !user) {
@@ -77,11 +82,6 @@ function WordPageContent() {
       </main>
     );
   }
-
-  // Supabase data states
-  const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [savedProgress, setSavedProgress] = useState<any>(null);
   const [lessonNumber, setLessonNumber] = useState<number>(1);
 

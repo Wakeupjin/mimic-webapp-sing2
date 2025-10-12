@@ -57,6 +57,11 @@ function GuessingPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+  
+  // 모든 훅을 최상단으로 이동
+  const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // 인증 체크
   useEffect(() => {
@@ -87,11 +92,6 @@ function GuessingPageContent() {
       </main>
     );
   }
-  
-  // Supabase data states
-  const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
   const [guessingData, setGuessingData] = useState<any[]>([]);
   const [savedProgress, setSavedProgress] = useState<any>(null);
   const [lessonNumber, setLessonNumber] = useState<number>(1);
@@ -488,7 +488,7 @@ function GuessingPageContent() {
       if (idx < GUESSING_OPTION_LABELS.length && question) {
         const currentLabel = GUESSING_OPTION_LABELS[idx];
         const currentOption = question.options.find((opt: any) => opt.label === currentLabel);
-        if (currentOption) {
+      if (currentOption) {
           playAudioDirect(currentOption, question, () => {
             playNextOption(idx + 1);
           });
@@ -783,7 +783,7 @@ function GuessingPageContent() {
                         const endTime = srtTimeToSeconds(currentQuestion.video.end);
                         videoElement.currentTime = endTime - 0.5; // 끝나기 0.5초 전으로 이동
                         
-                        setTimeout(() => {
+                      setTimeout(() => {
                           try {
                             const screenshot = captureVideoScreenshot();
                             if (screenshot) {

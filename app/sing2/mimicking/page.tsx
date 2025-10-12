@@ -26,6 +26,14 @@ function MimickingPageContent() {
   const movieId = searchParams.get('id') || '001:1';
   // console.log('🎬 미믹킹 현재 movieId:', movieId);
 
+  // 모든 훅을 최상단으로 이동
+  const [lessonData, setLessonData] = useState<any>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [scenes, setScenes] = useState<any[]>([]);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(1);
+
   // 인증 체크
   useEffect(() => {
     if (!loading && !user) {
@@ -55,14 +63,6 @@ function MimickingPageContent() {
       </main>
     );
   }
-  
-  // Supabase 데이터 상태
-  const [lessonData, setLessonData] = useState<any>(null);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [scenes, setScenes] = useState<any[]>([]);
-  const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(1);
   
   
   // 커스텀 훅 사용

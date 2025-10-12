@@ -36,6 +36,13 @@ function WatchingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
 
+  // 모든 훅을 최상단으로 이동
+  const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(0);
+
   // 인증 체크
   useEffect(() => {
     if (!loading && !user) {
@@ -73,14 +80,6 @@ function WatchingPageContent() {
       return;
     }
   }, [movieId]);
-  
-  
-  // --- [새로운 상태 및 데이터 로딩] ---
-  const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(0);
 
   // Supabase 데이터 로딩 useEffect
   useEffect(() => {
