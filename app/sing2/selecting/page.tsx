@@ -48,29 +48,6 @@ function SelectingPageContent() {
     }
   }, [user, loading, router]);
 
-  // 로딩 상태 처리
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
-        </div>
-      </main>
-    );
-  }
-
-  // 인증되지 않은 경우
-  if (!user) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
-        </div>
-      </main>
-    );
-  }
-
   // --- [SUPABASE 데이터 로딩] ---
   useEffect(() => {
     const fetchLessons = async () => {
@@ -149,6 +126,29 @@ function SelectingPageContent() {
       return () => container.removeEventListener('scroll', checkScrollable);
     }
   }, [isDropdownOpen]);
+
+  // 로딩 상태 처리
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  // 인증되지 않은 경우
+  if (!user) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+        </div>
+      </main>
+    );
+  }
 
   const handleModeSelect = (mode: string) => {
     setSelectedMode(mode);
