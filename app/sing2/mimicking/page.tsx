@@ -16,6 +16,7 @@ import { useMimickingSequence } from "../../hooks/useMimickingSequence";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
+import { getVideoSourceWithTimeRange } from "../../utils/videoSource";
 
 function MimickingPageContent() {
   const searchParams = useSearchParams();
@@ -496,7 +497,10 @@ function MimickingPageContent() {
             }}>
               <VideoPlayer
                 key={`mimicking-${currentIndex}`}
-                src={videoUrl || ''}
+                src={getVideoSourceWithTimeRange(
+                  currentScene?.start ? timeStringToSeconds(currentScene.start) : 0,
+                  currentScene?.end ? timeStringToSeconds(currentScene.end) : 0
+                )}
                 startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
                 endTime={currentScene?.end ? timeStringToSeconds(currentScene.end) : 0}
                 muted={muted}

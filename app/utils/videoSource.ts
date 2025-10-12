@@ -16,6 +16,27 @@ export const getVideoSource = (): string => {
   }
 };
 
+/**
+ * 시간 구간이 포함된 비디오 URL 생성 (스트리밍 최적화)
+ * @param startTime 시작 시간 (초)
+ * @param endTime 종료 시간 (초)
+ * @returns 최적화된 비디오 URL
+ */
+export const getVideoSourceWithTimeRange = (startTime: number, endTime: number): string => {
+  const baseUrl = getVideoSource();
+  
+  // 로컬 파일인 경우 시간 구간 적용 불가 (HTML5 제한)
+  if (baseUrl.startsWith('/')) {
+    console.log('🔧 개발 모드: 시간 구간 적용 불가 (로컬 파일)');
+    return baseUrl;
+  }
+  
+  // CDN URL인 경우 시간 구간 적용
+  const optimizedUrl = `${baseUrl}#t=${startTime},${endTime}`;
+  console.log(`🚀 스트리밍 최적화: ${startTime}s~${endTime}s 구간만 다운로드`);
+  return optimizedUrl;
+};
+
 export const getVideoSourceInfo = () => {
   const source = getVideoSource();
   const isLocal = source.startsWith('/');

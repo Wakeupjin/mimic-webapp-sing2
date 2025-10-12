@@ -11,6 +11,7 @@ import { supabase } from '@/app/supabaseClient';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
+import { getVideoSourceWithTimeRange } from '@/app/utils/videoSource';
 
 interface WordQuestion {
   question: number;
@@ -650,7 +651,10 @@ function WordPageContent() {
                   {currentQuestion && (
                     <VideoPlayer
                       key={`word-${currentQuestionNumber}`}
-                      src={videoUrl || ''}
+                      src={getVideoSourceWithTimeRange(
+                        currentQuestion.startTime,
+                        currentQuestion.endTime
+                      )}
                       startTime={currentQuestion.startTime}
                       endTime={currentQuestion.endTime}
                       onEndedSegment={handleVideoEnd}

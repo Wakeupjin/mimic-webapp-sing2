@@ -15,7 +15,7 @@ import { srtTimeToSeconds } from "../../utils/srt";
 import { captureVideoScreenshot, captureVideoScreenshotWithFallback, captureSimpleScreenshot, captureVideoScreenshotBypass, shouldCaptureScreenshot } from "../../utils/screenshot";
 import { captureVideoScreenshotCorsFree, captureVideoScreenshotCorsFreeAsync } from "../../utils/videoCors";
 import { captureVideoScreenshotUltimate, setupVideoCorsOnLoad } from "../../utils/corsProxy";
-import { getVideoSource } from "../../utils/videoSource";
+import { getVideoSource, getVideoSourceWithTimeRange } from "../../utils/videoSource";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
@@ -726,7 +726,10 @@ function GuessingPageContent() {
               {isPlaying && currentQuestion && (
                 <VideoPlayer
                   key={`guessing-${currentQuestionIndex}`}
-                  src={videoUrl || ''}
+                  src={getVideoSourceWithTimeRange(
+                    srtTimeToSeconds(currentQuestion.video.start),
+                    srtTimeToSeconds(currentQuestion.video.end)
+                  )}
                   startTime={srtTimeToSeconds(currentQuestion.video.start)}
                   endTime={srtTimeToSeconds(currentQuestion.video.end)}
                   muted={true}

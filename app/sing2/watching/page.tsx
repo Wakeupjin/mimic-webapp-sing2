@@ -17,6 +17,7 @@ import { fetchLessonData } from '../../dataService'; // 당신의 dataService.js
 import { supabase } from '../../supabaseClient'; // 비디오 URL을 가져오기 위해 직접 supabase 클라이언트 사용
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
+import { getVideoSource } from '../../utils/videoSource';
 
 // 데이터 타입 정의
 type LessonDataType = {
