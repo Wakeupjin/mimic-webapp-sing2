@@ -49,19 +49,8 @@ export function captureVideoScreenshotBypass(): string | null {
     // 비디오를 Canvas에 그리기
     ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
     
-    // Canvas를 Blob으로 변환 (CORS 우회)
-    return new Promise<string | null>((resolve) => {
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.onerror = () => resolve(null);
-          reader.readAsDataURL(blob);
-        } else {
-          resolve(null);
-        }
-      }, 'image/png');
-    });
+    // Canvas를 Data URL로 변환
+    return canvas.toDataURL('image/png');
   } catch (error) {
     console.error('CORS 우회 스크린샷 실패:', error);
     return null;
@@ -106,18 +95,8 @@ export function captureVideoScreenshotWithFallback(): string | null {
       // 비디오를 Canvas에 그리기
       ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
       
-      // Canvas를 Blob으로 변환 후 Data URL로 변환
-      return new Promise<string | null>((resolve) => {
-        canvas.toBlob((blob) => {
-          if (blob) {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result as string);
-            reader.readAsDataURL(blob);
-          } else {
-            resolve(null);
-          }
-        }, 'image/png');
-      });
+      // Canvas를 Data URL로 변환
+      return canvas.toDataURL('image/png');
     } catch (fallbackError) {
       console.error('대체 스크린샷도 실패:', fallbackError);
       return null;
@@ -141,18 +120,8 @@ export function captureSimpleScreenshot(): string | null {
     // 비디오를 Canvas에 그리기
     ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
     
-    // Canvas를 Blob으로 변환
-    return new Promise<string | null>((resolve) => {
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result as string);
-          reader.readAsDataURL(blob);
-        } else {
-          resolve(null);
-        }
-      }, 'image/png');
-    });
+    // Canvas를 Data URL로 변환
+    return canvas.toDataURL('image/png');
   } catch (error) {
     console.error('간단한 스크린샷 실패:', error);
     return null;
