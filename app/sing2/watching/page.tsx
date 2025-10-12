@@ -65,29 +65,6 @@ function WatchingPageContent() {
     }
   }, [user, loading, router]);
 
-  // 로딩 중인 경우
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
-        </div>
-      </main>
-    );
-  }
-
-  // 인증되지 않은 경우
-  if (!user) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
-        </div>
-      </main>
-    );
-  }
-  
   // Redirect Chapter 0 to Chapter 1
   useEffect(() => {
     if (movieId === '001:0') {
@@ -241,6 +218,29 @@ function WatchingPageContent() {
       video.removeEventListener('ended', handleEnded);
     };
   }, [lessonNumber, videoUrl]);
+
+  // 로딩 상태 처리
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  // 인증되지 않은 경우
+  if (!user) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+        </div>
+      </main>
+    );
+  }
 
   // 로컬 상태 (훅으로 교체되지 않은 것들 - 기존 코드 유지)
   const [videoProgress, setVideoProgress] = useState(0);
