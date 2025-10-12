@@ -11,7 +11,7 @@ export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
-  const { user, profile, loading } = useAuth();
+  const { user, loading } = useAuth();
   const router = useRouter();
   return (
     <div className="relative">
@@ -516,7 +516,7 @@ export default function Home() {
           <div className="flex items-center gap-3" style={{ transform: 'translateY(-20px)' }}>
             {loading ? (
               <div className="w-20 h-6 bg-gray-700 rounded animate-pulse"></div>
-            ) : isLoggingOut && profile ? (
+            ) : isLoggingOut && user ? (
               <span 
                 className="text-white text-lg font-bold" 
                 style={{ 
@@ -538,16 +538,16 @@ export default function Home() {
                 <span className="inline-block animate-bounce" style={{ animationDelay: '1650ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>n</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '1800ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>,</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '1950ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '2100ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>{profile.nickname}</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '2100ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>{user.email?.split('@')[0] || 'User'}</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '2250ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>!</span>
               </span>
-            ) : user && profile ? (
+            ) : user ? (
               <span className="text-white text-lg font-bold" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>H</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '150ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>i</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '300ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>,</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '450ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>&nbsp;</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '600ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>{profile.nickname}</span>
+                <span className="inline-block animate-bounce" style={{ animationDelay: '600ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>{user.email?.split('@')[0] || 'User'}</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '750ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>!</span>
               </span>
             ) : null}
