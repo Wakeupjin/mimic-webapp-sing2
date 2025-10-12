@@ -52,6 +52,10 @@ function WordPageContent() {
   const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(1);
+  const [playCount, setPlayCount] = useState(0);
+  const [isMuted, setIsMuted] = useState(false);
 
   // 인증 체크
   useEffect(() => {
@@ -82,11 +86,6 @@ function WordPageContent() {
       </main>
     );
   }
-  const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(1);
-
-  const [playCount, setPlayCount] = useState(0);
-  const [isMuted, setIsMuted] = useState(false);
   const [selectedWords, setSelectedWords] = useState<string[]>([]);
   const [gamePhase, setGamePhase] = useState<'playing' | 'guessing'>('playing');
   const [playNonce, setPlayNonce] = useState(0);

@@ -62,6 +62,24 @@ function GuessingPageContent() {
   const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [guessingData, setGuessingData] = useState<any[]>([]);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(1);
+  
+  // 커스텀 훅 사용
+  const { isFullscreen, toggleFullscreen } = useFullscreen();
+  const { stopAllMedia } = useMediaControl();
+  const { playAttentionSound, playCorrectSound, playAgainSound } = useSoundEffects();
+  const { 
+    isPlaying, 
+    playNonce, 
+    isVideoPaused, 
+    isVideoStarted, 
+    setIsVideoStarted,
+    playVideo, 
+    pauseVideo, 
+    resetVideo 
+  } = useVideoPlayer();
 
   // 인증 체크
   useEffect(() => {
@@ -92,24 +110,6 @@ function GuessingPageContent() {
       </main>
     );
   }
-  const [guessingData, setGuessingData] = useState<any[]>([]);
-  const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(1);
-  
-  // 커스텀 훅 사용
-  const { isFullscreen, toggleFullscreen } = useFullscreen();
-  const { stopAllMedia } = useMediaControl();
-  const { playAttentionSound, playCorrectSound, playAgainSound } = useSoundEffects();
-  const { 
-    isPlaying, 
-    playNonce, 
-    isVideoPaused, 
-    isVideoStarted, 
-    setIsVideoStarted,
-    playVideo, 
-    pauseVideo, 
-    resetVideo 
-  } = useVideoPlayer();
   const {
     currentIndex,
     currentQuestionIndex,

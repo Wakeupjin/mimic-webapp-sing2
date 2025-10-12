@@ -33,6 +33,10 @@ function MimickingPageContent() {
   const [scenes, setScenes] = useState<any[]>([]);
   const [savedProgress, setSavedProgress] = useState<any>(null);
   const [lessonNumber, setLessonNumber] = useState<number>(1);
+  
+  // 커스텀 훅 사용
+  const { isFullscreen, toggleFullscreen } = useFullscreen();
+  const { stopAllMedia } = useMediaControl();
 
   // 인증 체크
   useEffect(() => {
@@ -63,11 +67,6 @@ function MimickingPageContent() {
       </main>
     );
   }
-  
-  
-  // 커스텀 훅 사용
-  const { isFullscreen, toggleFullscreen } = useFullscreen();
-  const { stopAllMedia } = useMediaControl();
   const {
     isPlaying,
     playNonce,
