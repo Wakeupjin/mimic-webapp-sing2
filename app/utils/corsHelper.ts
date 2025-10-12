@@ -99,25 +99,7 @@ export function canvasToDataUrl(canvas: HTMLCanvasElement): string | null {
     // 일반적인 방법으로 시도
     return canvas.toDataURL('image/png');
   } catch (error) {
-    console.warn('⚠️ toDataURL 실패, Blob 방법 시도:', error);
-    
-    try {
-      // Blob을 통한 대체 방법
-      return new Promise<string | null>((resolve) => {
-        canvas.toBlob((blob) => {
-          if (blob) {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result as string);
-            reader.onerror = () => resolve(null);
-            reader.readAsDataURL(blob);
-          } else {
-            resolve(null);
-          }
-        }, 'image/png');
-      });
-    } catch (blobError) {
-      console.error('❌ Blob 변환도 실패:', blobError);
-      return null;
-    }
+    console.warn('⚠️ toDataURL 실패:', error);
+    return null;
   }
 }
