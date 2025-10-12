@@ -174,20 +174,6 @@ function WatchingPageContent() {
   }, [lessonData, savedProgress]);
   // --- [/새로운 상태 및 데이터 로딩] ---
 
-  // Custom hooks (기존 코드 유지)
-  const { isFullscreen, toggleFullscreen } = useFullscreen();
-  const { stopAllMedia } = useMediaControl();
-  const { 
-    isPlaying, 
-    playNonce, 
-    isVideoPaused, 
-    isVideoStarted, 
-    setIsVideoStarted,
-    playVideo, 
-    pauseVideo, 
-    resetVideo 
-  } = useVideoPlayer();
-
   // 진도 저장 useEffect (비디오 재생 중 주기적으로 저장)
   useEffect(() => {
     if (!lessonNumber || lessonNumber === 0 || !isVideoStarted) return;
