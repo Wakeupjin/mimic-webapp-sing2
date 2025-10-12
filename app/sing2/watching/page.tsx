@@ -31,19 +31,34 @@ type LessonDataType = {
 
 
 function WatchingPageContent() {
+  // 모든 훅을 최상단에 배치 (조건부 호출 방지)
   const { user, loading } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
 
-  // 모든 훅을 최상단으로 이동
+  // 상태 관리
   const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [savedProgress, setSavedProgress] = useState<any>(null);
   const [lessonNumber, setLessonNumber] = useState<number>(0);
 
-  // 인증 체크
+  // 커스텀 훅들
+  const { isFullscreen, toggleFullscreen } = useFullscreen();
+  const { stopAllMedia } = useMediaControl();
+  const {
+    isPlaying,
+    playNonce,
+    isVideoPaused,
+    isVideoStarted,
+    setIsVideoStarted,
+    playVideo,
+    pauseVideo,
+    resetVideo
+  } = useVideoPlayer();
+
+  // 인증 체크 - useEffect로 처리
   useEffect(() => {
     if (!loading && !user) {
       router.push('/auth/login');

@@ -24,28 +24,31 @@ const SELECTING_DROPDOWN_MAX_HEIGHT_PX = 300;
 const SELECTING_SCROLL_THRESHOLD_PX = 5;
 
 function SelectingPageContent() {
+  // 모든 훅을 최상단에 배치 (조건부 호출 방지)
   const { user, loading } = useAuth();
   const router = useRouter();
   const { isFullscreen, toggleFullscreen } = useFullscreen();
+  
+  // 상태 관리
   const [selectedMode, setSelectedMode] = useState<string | null>(null);
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  
-  // 모든 훅을 최상단으로 이동
   const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [canScrollDown, setCanScrollDown] = useState(false); 
+  
+  // refs
   const dropdownRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // 인증 체크
+  // 인증 체크 - useEffect로 처리
   useEffect(() => {
     if (!loading && !user) {
       router.push('/auth/login');
     }
   }, [user, loading, router]);
 
-  // 로딩 중인 경우
+  // 로딩 상태 처리
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">

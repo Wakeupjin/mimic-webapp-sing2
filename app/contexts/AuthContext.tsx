@@ -20,17 +20,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // 초기 세션 체크
-    getCurrentUser().then((user) => {
-      setUser(user);
-      setLoading(false);
-    });
+    const initializeAuth = async () => {
+      try {
+        const user = await getCurrentUser();
+        setUser(user);
+      } catch (error) {
+        console.error('Auth initialization error:', error);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    initializeAuth();
 
     // 인증 상태 변경 감지
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
-        setUser(session?.user ?? null);
-        setLoading(false);
+        try {
+          setUser(session?.user ?? null);
+        } catch (error) {
+          console.error('Auth state change error:', error);
+          setUser(null);
+        } finally {
+          setLoading(false);
+        }
       }
     );
 
