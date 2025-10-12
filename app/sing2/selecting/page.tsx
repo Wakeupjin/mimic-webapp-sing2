@@ -38,7 +38,7 @@ function SelectingPageContent() {
     }
   }, [user, loading, router]);
 
-  // 로딩 중이거나 인증되지 않은 경우
+  // 로딩 중인 경우
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
@@ -50,8 +50,15 @@ function SelectingPageContent() {
     );
   }
 
+  // 인증되지 않은 경우
   if (!user) {
-    return null; // 리다이렉트 중
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+        </div>
+      </main>
+    );
   }
 
   // 선택된 Lesson의 번호 (Lesson 1이 기본값)
