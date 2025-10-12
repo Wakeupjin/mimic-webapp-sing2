@@ -791,7 +791,7 @@ function GuessingPageContent() {
 
               <video
                 id="audio-video"
-                src={getVideoSource()}
+                src="https://mimic-ai.b-cdn.net/sing2_audio.mp3"
                 style={{ display: 'none' }}
                 muted={false}
                 preload="auto"
