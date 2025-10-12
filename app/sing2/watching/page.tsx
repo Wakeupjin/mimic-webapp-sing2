@@ -17,7 +17,7 @@ import { fetchLessonData } from '../../dataService'; // 당신의 dataService.js
 import { supabase } from '../../supabaseClient'; // 비디오 URL을 가져오기 위해 직접 supabase 클라이언트 사용
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
-import { getVideoSourceWithTimeRange } from '../../utils/videoSource';
+import { getVideoSource, getVideoSourceWithTimeRange } from '../../utils/videoSource';
 
 // 데이터 타입 정의
 type LessonDataType = {
@@ -377,7 +377,7 @@ function WatchingPageContent() {
               src={lessonData ? getVideoSourceWithTimeRange(
                 lessonData.watch_start_sec,
                 lessonData.watch_end_sec
-              ) : videoUrl} // <-- 스트리밍 최적화된 URL 사용
+              ) : getVideoSource()} // <-- 스트리밍 최적화된 URL 사용
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 cursor-pointer ${isVideoPaused ? 'opacity-50' : 'opacity-100'}`}
               controls={false}
               autoPlay={false}
