@@ -726,10 +726,10 @@ function GuessingPageContent() {
               {isPlaying && currentQuestion && (
                 <VideoPlayer
                   key={`guessing-${currentQuestionIndex}`}
-                  src={getVideoSourceWithTimeRange(
+                  src={currentQuestion ? getVideoSourceWithTimeRange(
                     srtTimeToSeconds(currentQuestion.video.start),
                     srtTimeToSeconds(currentQuestion.video.end)
-                  )}
+                  ) : getVideoSource()}
                   startTime={srtTimeToSeconds(currentQuestion.video.start)}
                   endTime={srtTimeToSeconds(currentQuestion.video.end)}
                   muted={true}

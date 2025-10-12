@@ -208,7 +208,7 @@ const VideoPlayer = memo(function VideoPlayer({
         {/* Always use ReactPlayer */}
         <ReactPlayer
             ref={reactPlayerRef}
-            url={getVideoSource()}
+            url={src}
             playing={playing && !isPaused && isReady}
             onStart={() => {}}
             onPlay={() => {
