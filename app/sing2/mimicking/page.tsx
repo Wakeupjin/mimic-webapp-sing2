@@ -15,17 +15,20 @@ import { useVideoPlayer } from "../../hooks/useVideoPlayer";
 import { useMimickingSequence } from "../../hooks/useMimickingSequence";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
+import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 
 function MimickingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
-  console.log('🎬 미믹킹 현재 movieId:', movieId);
+  // console.log('🎬 미믹킹 현재 movieId:', movieId);
   
   // Supabase 데이터 상태
   const [lessonData, setLessonData] = useState<any>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [scenes, setScenes] = useState<any[]>([]);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(1);
   
   
   // 커스텀 훅 사용
@@ -89,6 +92,7 @@ function MimickingPageContent() {
         setIsLoading(true);
         const lessonNumberStr = movieId.split(':')[1];
         const lessonNumber = parseInt(lessonNumberStr);
+        setLessonNumber(lessonNumber);
         
         if (isNaN(lessonNumber)) {
           setIsLoading(false);
@@ -131,10 +135,21 @@ function MimickingPageContent() {
         setScenes(mimicData);
         setIsLoading(false);
         
-        console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
-        console.log('🎬 lesson 전체 구조:', Object.keys(lesson));
-        console.log('🎬 mimic_data 타입:', typeof lesson.mimic_data);
-        console.log('🎬 mimic_data 내용:', lesson.mimic_data);
+        // 저장된 진도 불러오기
+        try {
+          const progress = await getProgressByMode(lessonNumber, 'mimicking');
+          if (progress) {
+            setSavedProgress(progress);
+            console.log('📚 저장된 미믹킹 진도 불러옴:', progress);
+          }
+        } catch (error) {
+          console.log('미믹킹 진도 데이터 없음 (첫 학습)');
+        }
+        
+        // console.log('🎬 Supabase 미믹킹 데이터 로딩 완료:', lesson);
+        // console.log('🎬 lesson 전체 구조:', Object.keys(lesson));
+        // console.log('🎬 mimic_data 타입:', typeof lesson.mimic_data);
+        // console.log('🎬 mimic_data 내용:', lesson.mimic_data);
         console.log(`📚 총 ${mimicData.length}개 미믹킹 씬 로드됨`);
       } catch (error) {
         console.error('❌ Supabase 미믹킹 데이터 로딩 실패:', error);
@@ -148,21 +163,72 @@ function MimickingPageContent() {
   // autoSeqIndex가 변경될 때마다 ref 업데이트
   useEffect(() => {
     autoSeqIndexRef.current = autoSeqIndex;
-    console.log(`📌 autoSeqIndex 업데이트: ${autoSeqIndex}`);
+    // console.log(`📌 autoSeqIndex 업데이트: ${autoSeqIndex}`);
   }, [autoSeqIndex]);
   
   // currentIndex가 변경될 때마다 ref 업데이트
   useEffect(() => {
     currentIndexRef.current = currentIndex;
-    console.log(`📌 currentIndex 업데이트: ${currentIndex}`);
+    // console.log(`📌 currentIndex 업데이트: ${currentIndex}`);
   }, [currentIndex]);
+
+  // 미믹킹 진도 저장 useEffect
+  useEffect(() => {
+    if (!lessonNumber || !isMimickingStarted) return;
+
+    const saveProgressInterval = setInterval(async () => {
+      try {
+        await saveProgress(
+          lessonNumber,
+          'mimicking',
+          isMimickingComplete, // 완료 상태
+          currentIndex, // 현재 씬 인덱스
+          { 
+            currentScene: currentIndex,
+            totalScenes: scenes.length,
+            isComplete: isMimickingComplete,
+            lastSaved: new Date().toISOString()
+          }
+        );
+        console.log('💾 미믹킹 진도 저장됨:', currentIndex);
+      } catch (error) {
+        console.error('미믹킹 진도 저장 실패:', error);
+      }
+    }, 10000); // 10초마다 저장
+
+    return () => clearInterval(saveProgressInterval);
+  }, [lessonNumber, isMimickingStarted, currentIndex, isMimickingComplete, scenes.length]);
+
+  // 미믹킹 완료 시 최종 저장
+  useEffect(() => {
+    if (isMimickingComplete && lessonNumber) {
+      const saveFinalProgress = async () => {
+        try {
+          await saveProgress(lessonNumber, 'mimicking', true, currentIndex, {
+            currentScene: currentIndex,
+            totalScenes: scenes.length,
+            isComplete: true,
+            completed_at: new Date().toISOString()
+          });
+          await saveLog(lessonNumber, 'mimicking', 'mimicking_completed', {
+            totalScenes: scenes.length,
+            completed_at: new Date().toISOString()
+          });
+          console.log('🎉 미믹킹 모드 완료!');
+        } catch (error) {
+          console.error('미믹킹 완료 저장 실패:', error);
+        }
+      };
+      saveFinalProgress();
+    }
+  }, [isMimickingComplete, lessonNumber, currentIndex, scenes.length]);
 
   // 풀스크린 복원 로직
   useEffect(() => {
     const shouldMaintainFullscreen = sessionStorage.getItem('maintainFullscreen') === 'true';
     const fromWatching = sessionStorage.getItem('fromWatching') === 'true';
     
-    console.log('🔍 미믹킹 페이지 로드 체크:', { shouldMaintainFullscreen, fromWatching });
+    // console.log('🔍 미믹킹 페이지 로드 체크:', { shouldMaintainFullscreen, fromWatching });
     
     if (shouldMaintainFullscreen) {
       // 풀스크린 유지
@@ -174,25 +240,25 @@ function MimickingPageContent() {
     
     if (fromWatching) {
       // 워칭에서 넘어온 경우 자동 시작 방지
-      console.log('🚫 워칭에서 미믹킹으로 이동: 자동 시작 방지');
+      // console.log('🚫 워칭에서 미믹킹으로 이동: 자동 시작 방지');
       
       // 모든 비디오 요소 정지
       const videos = document.querySelectorAll('video');
-      console.log('📹 발견된 비디오 요소 수:', videos.length);
+      // console.log('📹 발견된 비디오 요소 수:', videos.length);
       videos.forEach(video => {
         video.pause();
         video.currentTime = 0;
         video.muted = true;
-        console.log('⏹️ 비디오 정지됨');
+        // console.log('⏹️ 비디오 정지됨');
       });
       
       // 모든 오디오 요소 정지
       const audios = document.querySelectorAll('audio');
-      console.log('🔊 발견된 오디오 요소 수:', audios.length);
+      // console.log('🔊 발견된 오디오 요소 수:', audios.length);
       audios.forEach(audio => {
         audio.pause();
         audio.currentTime = 0;
-        console.log('⏹️ 오디오 정지됨');
+        // console.log('⏹️ 오디오 정지됨');
       });
       
       // 상태 완전 초기화
@@ -203,10 +269,10 @@ function MimickingPageContent() {
       pauseVideo();
       resetVideo();
       
-      console.log('✅ 상태 초기화 완료');
+      // console.log('✅ 상태 초기화 완료');
       sessionStorage.removeItem('fromWatching');
     } else {
-      console.log('ℹ️ 새로고침 또는 직접 접근: 정상 로드');
+      // console.log('ℹ️ 새로고침 또는 직접 접근: 정상 로드');
     }
   }, [pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setMuted]);
 
@@ -258,12 +324,12 @@ function MimickingPageContent() {
     if (isMimickingStarted && !isSequenceRunning && scenes[currentIndex]) {
       const currentScene = scenes[currentIndex];
       // 시퀀스 자동 시작
-      console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
+      // console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
       // Set autoSeqIndex for first button (button 0)
       autoSeqIndexRef.current = 0;
       setAutoSeqIndex(0);
       setActiveControlIndex(0); // 첫 번째 버튼 즉시 색상 변경
-      console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
+      // console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
       executeMimickingSequence(currentIndex, playVideo, currentScene);
     }
   }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes]);
@@ -311,7 +377,7 @@ function MimickingPageContent() {
   }, [currentIndex, scenes.length, isSequenceRunning, movieId, setCurrentIndex, setPlayNonce, setShowNextCta]);
 
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
-    console.log(`🎮 handlePlay: muted=${m}, slotIndex=${slotIndex}`);
+    // console.log(`🎮 handlePlay: muted=${m}, slotIndex=${slotIndex}`);
     setMuted(m);
     setActiveControlIndex(slotIndex);
     playVideo();
@@ -337,16 +403,16 @@ function MimickingPageContent() {
   if (currentScene && currentScene.start && currentScene.end) {
     const startTime = timeStringToSeconds(currentScene.start);
     const endTime = timeStringToSeconds(currentScene.end);
-    console.log(`🎬 Mimicking Scene ${currentIndex + 1}:`);
-    console.log(`  - Original start: "${currentScene.start}" → ${startTime}s`);
-    console.log(`  - Original end: "${currentScene.end}" → ${endTime}s`);
-    console.log(`  - Duration: ${(endTime - startTime).toFixed(2)}s`);
-    console.log(`  - Text: "${currentScene.text}"`);
+    // console.log(`🎬 Mimicking Scene ${currentIndex + 1}:`);
+    // console.log(`  - Original start: "${currentScene.start}" → ${startTime}s`);
+    // console.log(`  - Original end: "${currentScene.end}" → ${endTime}s`);
+    // console.log(`  - Duration: ${(endTime - startTime).toFixed(2)}s`);
+    // console.log(`  - Text: "${currentScene.text}"`);
   }
 
   return (
     <main className="min-h-screen px-4 py-2">
-      <div className="mb-2 flex items-center justify-between group">
+      <div className="mb-6 flex items-center justify-between group">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
         <div className="flex items-center gap-3">
           <button 
@@ -420,10 +486,14 @@ function MimickingPageContent() {
         </div>
       </div>
 
-      <div className={`grid grid-cols-1 gap-4 transition-all duration-300 ${isSidebarOpen ? 'lg:grid-cols-[1fr_200px]' : 'lg:grid-cols-1'}`}>
+      <div className={`grid grid-cols-1 gap-4 transition-all duration-300 ${isSidebarOpen ? 'lg:grid-cols-[1fr_150px]' : 'lg:grid-cols-1'}`}>
         <section className="flex flex-col" style={{ backgroundColor: showNextCta ? '#0a0a0a' : undefined }}>
-          <div className={`mx-auto relative ${isSidebarOpen ? 'w-[85%]' : 'w-[70%]'}`} style={{ transform: isFullscreen ? 'scale(1.2)' : 'scale(1)', transformOrigin: 'top', marginLeft: isFullscreen ? '130px' : '0px' }}>
-            <div className={`relative w-full aspect-video bg-black rounded-2xl overflow-hidden border-[10px]`} style={{ borderColor: (activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)) ? '#60D96C' : 'rgb(32, 30, 30)' }}>
+          <div className={`mx-auto relative ${isSidebarOpen ? 'w-[90%]' : 'w-[85%]'}`} style={{ marginLeft: isFullscreen ? '90px' : '110px', marginTop: isFullscreen ? '0px' : '-40px' }}>
+            <div className={`relative w-full aspect-video bg-black rounded-2xl overflow-hidden border-[10px] flex items-center justify-center`} style={{ 
+              borderColor: (activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)) ? '#60D96C' : 'rgb(32, 30, 30)',
+              transform: isFullscreen ? 'scale(1.02)' : 'scale(0.90)',
+              transformOrigin: 'center'
+            }}>
               <VideoPlayer
                 key={`mimicking-${currentIndex}`}
                 src={videoUrl || ''}
@@ -439,33 +509,33 @@ function MimickingPageContent() {
                 onPlay={() => {
                   // Video started playing - no need to change button color here
                   // Button color is already set when sequence starts
-                  console.log(`🎬 onPlay fired - video started playing`);
+                  // console.log(`🎬 onPlay fired - video started playing`);
                 }}
                 onPlayTimeout={() => {
                   // Turn button green when onPlay times out (1s)
                   const pendingIndex = pendingButtonIndexRef.current;
-                  console.log(`⏱️ onPlayTimeout fired - pendingIndex: ${pendingIndex}, turning button green`);
+                  // console.log(`⏱️ onPlayTimeout fired - pendingIndex: ${pendingIndex}, turning button green`);
                   if (pendingIndex !== null) {
-                    console.log(`✅ 버튼 ${pendingIndex} 색상 변경 (timeout)`);
+                    // console.log(`✅ 버튼 ${pendingIndex} 색상 변경 (timeout)`);
                     setActiveControlIndex(pendingIndex);
                     pendingButtonIndexRef.current = null; // Clear pending
                   }
                 }}
                 onEndedSegment={() => {
                   const currentAutoSeqIndex = autoSeqIndexRef.current;
-                  console.log(`🏁 비디오 재생 완료: autoSeqIndex=${currentAutoSeqIndex}`);
+                  // console.log(`🏁 비디오 재생 완료: autoSeqIndex=${currentAutoSeqIndex}`);
                   setActiveControlIndex(null);
                   
                   // 자동 시퀀스 중이면 다음 버튼으로 진행
                   if (currentAutoSeqIndex !== null) {
                     const next = currentAutoSeqIndex + 1;
-                    console.log(`다음 버튼으로 이동: ${currentAutoSeqIndex} → ${next}`);
+                    // console.log(`다음 버튼으로 이동: ${currentAutoSeqIndex} → ${next}`);
                     
                     if (next <= 7) {
                       // 다음 버튼으로 진행
                       setTimeout(() => {
                         const isMuted = [3, 5, 7].includes(next);
-                        console.log(`🎯 버튼 ${next} 준비: muted=${isMuted} (색상 즉시 변경)`);
+                        // console.log(`🎯 버튼 ${next} 준비: muted=${isMuted} (색상 즉시 변경)`);
                         setAutoSeqIndex(next);
                         autoSeqIndexRef.current = next; // Update ref immediately
                         setMuted(isMuted);
@@ -474,17 +544,17 @@ function MimickingPageContent() {
                       }, 1000);
                     } else {
                       // 8개 완료 → 시퀀스 종료
-                      console.log(`✅ 8단계 완료`);
+                      // console.log(`✅ 8단계 완료`);
                       setAutoSeqIndex(null);
                       
                       // 다음 문장으로 자동 진행
                       const currentIdx = currentIndexRef.current;
                       if (currentIdx < 29) { // 30개 문장 (0-29)
                         const nextIdx = currentIdx + 1;
-                        console.log(`다음 문장으로 자동 진행: ${currentIdx} → ${nextIdx}`);
+                        // console.log(`다음 문장으로 자동 진행: ${currentIdx} → ${nextIdx}`);
 
                         setTimeout(() => {
-                          console.log(`⏭️ currentIndex 업데이트: ${currentIdx} → ${nextIdx}`);
+                          // console.log(`⏭️ currentIndex 업데이트: ${currentIdx} → ${nextIdx}`);
                           setMuted(false); // 다음 문장 시작 전 무음 해제
                           setActiveControlIndex(null); // 활성 버튼 초기화
                           setIsSequenceRunning(false); // 이동 직전에 시퀀스 종료
@@ -495,7 +565,7 @@ function MimickingPageContent() {
                         }, 1000);
                       } else {
                         // 30번째 문장이면 게싱 모드로 전환
-                        console.log(`30번째 문장 완료 - 게싱 모드로 전환`);
+                        // console.log(`30번째 문장 완료 - 게싱 모드로 전환`);
                         setIsSequenceRunning(false);
                         setIsMimickingComplete(true);
                         setShowNextCta(true);
@@ -574,7 +644,7 @@ function MimickingPageContent() {
             )}
           </div>
 
-          <div className={`mx-auto relative ${isSidebarOpen ? 'w-[85%]' : 'w-[70%]'}`} style={{ transform: isFullscreen ? 'scale(1.2)' : 'scale(1)', transformOrigin: 'top', marginTop: '-20px', marginLeft: isFullscreen ? '130px' : '0px' }}>
+          <div className={`mx-auto relative ${isSidebarOpen ? 'w-[90%]' : 'w-[85%]'}`} style={{ transform: isFullscreen ? 'scale(1.02)' : 'scale(0.85)', transformOrigin: 'top', marginTop: isFullscreen ? '-100px' : '-30px', marginLeft: isFullscreen ? '90px' : '110px' }}>
             {!showNextCta && (
               <PlaybackControls onPrev={handlePrev} onNext={handleNext} onPlay={handlePlay} activeIndex={activeControlIndex} isFullscreen={isFullscreen} />
             )}
@@ -585,7 +655,7 @@ function MimickingPageContent() {
         </section>
 
         {isSidebarOpen && (
-          <div className="flex justify-center">
+          <div className="flex justify-center" style={{ marginLeft: '-100px' }}>
             <aside className="flex flex-col gap-2 h-full">
               <div className="bg-[#1a1a1a] rounded-lg p-4" style={{ height: 'calc(100vh - 150px)' }}>
                 <h3 className="text-sm font-semibold text-[#60D96C] mb-3" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
@@ -610,7 +680,7 @@ function MimickingPageContent() {
                       }
                       
                       // 진행 중인 시퀀스 정리
-                      console.log(`🖱️ 씬 클릭: ${index + 1}, 기존 시퀀스 정리`);
+                      // console.log(`🖱️ 씬 클릭: ${index + 1}, 기존 시퀀스 정리`);
                       clearTimeouts(); // 기존 타임아웃 정리
                       setAutoSeqIndex(null); // 자동 시퀀스 중단
                       setActiveControlIndex(null); // 활성 버튼 초기화

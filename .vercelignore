@@ -1,0 +1,10 @@
+# Vercel 배포에서 제외할 파일들
+public/videos/
+assets/
+*.mp4
+*.mov
+*.avi
+node_modules/
+.git/
+.env.local
+.env

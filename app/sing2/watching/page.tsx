@@ -16,6 +16,7 @@ import AgainNextButtons from "../../components/AgainNextButtons";
 import { fetchLessonData } from '../../dataService'; // 당신의 dataService.js 경로에 맞게 수정하세요.
 import { supabase } from '../../supabaseClient'; // 비디오 URL을 가져오기 위해 직접 supabase 클라이언트 사용
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
+import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 
 // 데이터 타입 정의
 type LessonDataType = {
@@ -44,6 +45,8 @@ function WatchingPageContent() {
   const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(0);
 
   // Supabase 데이터 로딩 useEffect
   useEffect(() => {
@@ -55,6 +58,7 @@ function WatchingPageContent() {
       // 1. Lesson ID 추출 ("001:5" -> 5)
       const lessonNumberStr = movieId.split(':')[1];
       const lessonNumber = parseInt(lessonNumberStr);
+      setLessonNumber(lessonNumber);
 
       if (isNaN(lessonNumber) || lessonNumber < 1 || lessonNumber > 12) {
         setIsLoading(false);
@@ -86,6 +90,17 @@ function WatchingPageContent() {
       setLessonData(lesson as LessonDataType); 
       setVideoUrl(videoResult.video_url); 
       setIsLoading(false);
+
+      // 5. 저장된 진도 불러오기
+      try {
+        const progress = await getProgressByMode(lessonNumber, 'watching');
+        if (progress) {
+          setSavedProgress(progress);
+          console.log('📚 저장된 진도 불러옴:', progress);
+        }
+      } catch (error) {
+        console.log('진도 데이터 없음 (첫 학습)');
+      }
     };
 
     loadDataFromSupabase();
@@ -97,18 +112,19 @@ function WatchingPageContent() {
     if (lessonData?.watch_start_sec !== undefined && lessonData?.watch_end_sec !== undefined) {
       const video = document.querySelector('video') as HTMLVideoElement;
       if (video) {
-        const startTime = Number(lessonData.watch_start_sec); // 초(seconds) 단위로 바로 사용
+        // 저장된 진도가 있으면 그 위치에서 시작, 없으면 기본 시작 시간
+        const startTime = savedProgress?.current_position || Number(lessonData.watch_start_sec);
         
         if (isFinite(startTime) && startTime >= 0) {
           video.currentTime = startTime;
+          console.log('🎬 비디오 시작 시간:', startTime, savedProgress ? '(저장된 위치)' : '(기본 시작)');
         }
         
         setVideoProgress(0);
       }
     }
-  }, [lessonData]);
+  }, [lessonData, savedProgress]);
   // --- [/새로운 상태 및 데이터 로딩] ---
-
 
   // Custom hooks (기존 코드 유지)
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -123,6 +139,74 @@ function WatchingPageContent() {
     pauseVideo, 
     resetVideo 
   } = useVideoPlayer();
+
+  // 진도 저장 useEffect (비디오 재생 중 주기적으로 저장)
+  useEffect(() => {
+    if (!lessonNumber || lessonNumber === 0 || !isVideoStarted) return;
+
+    const saveProgressInterval = setInterval(async () => {
+      const video = document.querySelector('video') as HTMLVideoElement;
+      if (video && !video.paused) {
+        try {
+          await saveProgress(
+            lessonNumber,
+            'watching',
+            false, // 아직 완료되지 않음
+            video.currentTime, // 현재 재생 위치
+            { 
+              videoProgress: (video.currentTime / video.duration) * 100,
+              lastSaved: new Date().toISOString()
+            }
+          );
+          console.log('💾 진도 저장됨:', video.currentTime);
+        } catch (error) {
+          console.error('진도 저장 실패:', error);
+        }
+      }
+    }, 5000); // 5초마다 저장
+
+    return () => clearInterval(saveProgressInterval);
+  }, [lessonNumber, isVideoStarted]);
+
+  // 학습 로그 저장 (비디오 시작/일시정지/재생 등)
+  useEffect(() => {
+    if (!lessonNumber || lessonNumber === 0) return;
+
+    const video = document.querySelector('video') as HTMLVideoElement;
+    if (!video) return;
+
+    const handlePlay = () => {
+      saveLog(lessonNumber, 'watching', 'video_play', { timestamp: video.currentTime });
+    };
+
+    const handlePause = () => {
+      saveLog(lessonNumber, 'watching', 'video_pause', { timestamp: video.currentTime });
+    };
+
+    const handleEnded = async () => {
+      try {
+        // 완료 상태로 저장
+        await saveProgress(lessonNumber, 'watching', true, video.currentTime);
+        await saveLog(lessonNumber, 'watching', 'video_completed', { 
+          duration: video.duration,
+          completed_at: new Date().toISOString()
+        });
+        console.log('🎉 Watching 모드 완료!');
+      } catch (error) {
+        console.error('완료 저장 실패:', error);
+      }
+    };
+
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    video.addEventListener('ended', handleEnded);
+
+    return () => {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+      video.removeEventListener('ended', handleEnded);
+    };
+  }, [lessonNumber, videoUrl]);
 
   // 로컬 상태 (훅으로 교체되지 않은 것들 - 기존 코드 유지)
   const [videoProgress, setVideoProgress] = useState(0);

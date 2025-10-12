@@ -37,7 +37,7 @@ function SelectingPageContent() {
   // --- [SUPABASE 데이터 로딩] ---
   useEffect(() => {
     const fetchLessons = async () => {
-      console.log('🔄 Lesson 데이터 로딩 시작...');
+      // console.log('🔄 Lesson 데이터 로딩 시작...');
       setIsLoading(true);
       
       try {
@@ -46,7 +46,7 @@ function SelectingPageContent() {
           .select('id, lesson_number, video_id')
           .order('lesson_number', { ascending: true }); // 레슨 번호 순으로 정렬
 
-        console.log('📡 Supabase 응답:', { data, error });
+        // console.log('📡 Supabase 응답:', { data, error });
 
         if (error) {
           console.error('❌ Error fetching lessons:', error);
@@ -54,18 +54,18 @@ function SelectingPageContent() {
           return;
         }
 
-        console.log('✅ Supabase lessons data:', data);
+        // console.log('✅ Supabase lessons data:', data);
 
         const lessonList = data || [];
-        console.log('📚 Lesson 목록:', lessonList);
+        // console.log('📚 Lesson 목록:', lessonList);
         setLessons(lessonList);
-        
+
         // Lesson 목록을 가져온 후, 첫 번째 Lesson을 기본값으로 설정
         if (lessonList.length > 0) {
-          console.log('🎯 첫 번째 Lesson 설정:', lessonList[0]);
+          // console.log('🎯 첫 번째 Lesson 설정:', lessonList[0]);
           setSelectedLesson(lessonList[0]);
         }
-        console.log('✅ 로딩 완료');
+        // console.log('✅ 로딩 완료');
         setIsLoading(false);
       } catch (err) {
         console.error('❌ fetchLessons 에러:', err);
@@ -156,7 +156,7 @@ function SelectingPageContent() {
   // --- [/로딩 및 에러 화면] ---
 
   return (
-    <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#201E1E' }}>
+    <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#000000' }}>
       {/* Header */}
       <div className="mb-8 flex items-center justify-between group">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
@@ -208,35 +208,36 @@ function SelectingPageContent() {
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             className="flex items-center gap-3 px-6 py-3 rounded-xl text-white font-bold text-xl transition-all duration-200 hover:bg-[#2a2a2a] cursor-pointer"
             style={{
-              backgroundColor: '#1a1a1a',
+              backgroundColor: '#201E1E',
               fontFamily: 'Encode Sans, sans-serif',
               minWidth: '320px', // Dropdown 너비를 넓힘
-              justifyContent: 'space-between'
+              justifyContent: 'center'
             }}
           >
-            <div className="flex flex-col items-start truncate">
-                <span className="text-sm text-gray-400">LESSON {selectedLesson?.lesson_number}</span>
+            <div className="flex flex-col items-center truncate flex-1">
                 <span className="text-base truncate max-w-[250px]">{selectedLesson ? `Lesson ${selectedLesson.lesson_number}` : 'Lesson을 선택하세요'}</span>
             </div>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
-            >
-              <path d="M5 7.5L10 12.5L15 7.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <div className="absolute right-4">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+              >
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
           </button>
 
           {/* Dropdown menu */}
           {isDropdownOpen && (
             <div
               className="absolute top-full mt-2 w-full rounded-xl overflow-hidden shadow-lg"
-              style={{ backgroundColor: '#1a1a1a', zIndex: 50, maxHeight: `${SELECTING_DROPDOWN_MAX_HEIGHT_PX}px` }}
+              style={{ backgroundColor: '#201E1E', zIndex: 50, maxHeight: '200px' }}
             >
-              <div ref={scrollContainerRef} className="overflow-auto custom-scrollbar" style={{ maxHeight: `${SELECTING_DROPDOWN_MAX_HEIGHT_PX}px` }}>
+              <div ref={scrollContainerRef} className="overflow-auto custom-scrollbar" style={{ maxHeight: '200px' }}>
                 {lessons.map((lesson) => {
                   const isSelected = lesson.id === selectedLesson?.id;
                   return (
@@ -246,19 +247,20 @@ function SelectingPageContent() {
                         setSelectedLesson(lesson); // Lesson 객체 전체를 선택
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full px-6 py-3 text-left text-white font-bold text-lg transition-colors duration-200 hover:bg-[#2a2a2a] border-t border-gray-800 first:border-t-0 flex items-center justify-between"
+                      className="w-full px-6 py-3 text-center text-white font-bold text-lg transition-colors duration-200 hover:bg-[#2a2a2a] border-t border-gray-800 first:border-t-0 flex items-center justify-center relative"
                       style={{ fontFamily: 'Encode Sans, sans-serif' }}
                     >
-                      <div className="flex flex-col items-start truncate max-w-[250px]">
-                        <span className="text-sm text-gray-400">LESSON {lesson.lesson_number}</span>
-                        <span className="text-base truncate max-w-full">Lesson {lesson.lesson_number}</span>
+                      <div className="flex flex-col items-center justify-center flex-1 text-center">
+                        <span className="text-base">Lesson {lesson.lesson_number}</span>
                       </div>
                       
                       {isSelected && (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 38 38" fill="none">
-                          <rect width="38" height="38" rx="10" transform="matrix(-1 0 0 1 38 0)" fill="#60D96C"/>
-                          <path d="M12 15.3942L18.383 25L27 11" stroke="#ECECEC" strokeWidth="5"/>
-                        </svg>
+                        <div className="absolute right-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 38 38" fill="none">
+                            <rect width="38" height="38" rx="10" transform="matrix(-1 0 0 1 38 0)" fill="#60D96C"/>
+                            <path d="M12 15.3942L18.383 25L27 11" stroke="#ECECEC" strokeWidth="5"/>
+                          </svg>
+                        </div>
                       )}
                     </button>
                   );

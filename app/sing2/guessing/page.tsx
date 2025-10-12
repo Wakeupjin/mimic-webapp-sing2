@@ -12,10 +12,14 @@ import { useVideoPlayer } from "../../hooks/useVideoPlayer";
 import { useGuessingGame } from "../../hooks/useGuessingGame";
 import { useSoundEffects } from "../../hooks/useSoundEffects";
 import { srtTimeToSeconds } from "../../utils/srt";
-import { captureVideoScreenshot, shouldCaptureScreenshot } from "../../utils/screenshot";
+import { captureVideoScreenshot, captureVideoScreenshotWithFallback, captureSimpleScreenshot, captureVideoScreenshotBypass, shouldCaptureScreenshot } from "../../utils/screenshot";
+import { captureVideoScreenshotCorsFree, captureVideoScreenshotCorsFreeAsync } from "../../utils/videoCors";
+import { captureVideoScreenshotUltimate, setupVideoCorsOnLoad } from "../../utils/corsProxy";
+import { getVideoSource } from "../../utils/videoSource";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
+import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
 import {
   GUESSING_ANSWER_FEEDBACK_DURATION,
   GUESSING_NEXT_QUESTION_DELAY,
@@ -56,6 +60,8 @@ function GuessingPageContent() {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [guessingData, setGuessingData] = useState<any[]>([]);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(1);
   
   // 커스텀 훅 사용
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -89,6 +95,8 @@ function GuessingPageContent() {
     showCorrect,
     showAgain,
     allOptionsPlayed,
+    isGuessingComplete,
+    correctCount,
     setCurrentIndex,
     setCurrentQuestionIndex,
     setTotalQuestions,
@@ -106,6 +114,8 @@ function GuessingPageContent() {
     setShowCorrect,
     setShowAgain,
     setAllOptionsPlayed,
+    setIsGuessingComplete,
+    setCorrectCount,
     loadGuessingData,
     startGuessing,
     playAudio,
@@ -133,6 +143,33 @@ function GuessingPageContent() {
       return;
     }
   }, [movieId]);
+
+  // 모바일 가로화면 자동 변경 (넷플릭스 스타일)
+  useEffect(() => {
+    const handleOrientationChange = () => {
+      if (window.innerWidth < 768) { // 모바일 화면
+        if (window.orientation === 0 || window.orientation === 180) { // 세로화면
+          // 가로화면으로 강제 변경
+          (screen.orientation as any)?.lock('landscape').catch(() => {
+            // orientation lock이 지원되지 않는 경우
+            console.log('Orientation lock not supported');
+          });
+        }
+      }
+    };
+
+    // 초기 로드 시 체크
+    handleOrientationChange();
+
+    // 화면 회전 시 체크
+    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleOrientationChange);
+
+    return () => {
+      window.removeEventListener('orientationchange', handleOrientationChange);
+      window.removeEventListener('resize', handleOrientationChange);
+    };
+  }, []);
 
   // 풀스크린 복원 useEffect
   useEffect(() => {
@@ -189,12 +226,12 @@ function GuessingPageContent() {
 
     const loadDataFromSupabase = async () => {
       try {
-        console.log('🔄 Starting data load for movieId:', movieId);
         setIsLoading(true);
         dataLoadedRef.current = true; // 로딩 시작 시 바로 플래그 설정
 
         const lessonNumberStr = movieId.split(':')[1];
         const lessonNumber = parseInt(lessonNumberStr);
+        setLessonNumber(lessonNumber);
 
         if (isNaN(lessonNumber)) {
           console.error('❌ Invalid lesson number:', lessonNumberStr);
@@ -203,7 +240,6 @@ function GuessingPageContent() {
         }
 
         // 1. Lesson 데이터 가져오기
-        console.log('📚 Fetching lesson data for lesson:', lessonNumber);
         const lesson = await fetchLessonData(lessonNumber);
 
         if (!lesson) {
@@ -211,11 +247,8 @@ function GuessingPageContent() {
           setIsLoading(false);
           return;
         }
-
-        console.log('✅ Lesson data loaded:', lesson);
         
         // 2. Video URL 가져오기
-        console.log('🎥 Fetching video URL for video_id:', lesson.video_id);
         const { data: videoResult, error: videoError } = await supabase
           .from('videos')
           .select('video_url')
@@ -228,12 +261,8 @@ function GuessingPageContent() {
           return;
         }
 
-        console.log('✅ Video URL loaded:', videoResult.video_url);
-
         // 3. 상태 업데이트 - 한 번에 모두 업데이트
         const guessingDataArray = lesson.guessing_data || [];
-        console.log('📊 Guessing data length:', guessingDataArray.length);
-        console.log('🔍 첫 번째 guessing 데이터 구조:', guessingDataArray[0]);
         
         setLessonData(lesson as LessonDataType);
         setVideoUrl(videoResult.video_url);
@@ -241,7 +270,15 @@ function GuessingPageContent() {
         setTotalQuestions(guessingDataArray.length);
         setIsLoading(false);
         
-        console.log('✅ All data loaded successfully');
+        // 저장된 진도 불러오기
+        try {
+          const progress = await getProgressByMode(lessonNumber, 'guessing');
+          if (progress) {
+            setSavedProgress(progress);
+          }
+        } catch (error) {
+          // 게싱 진도 데이터 없음 (첫 학습)
+        }
       } catch (error) {
         console.error('❌ Supabase data loading error:', error);
         setIsLoading(false);
@@ -252,41 +289,98 @@ function GuessingPageContent() {
     loadDataFromSupabase();
   }, [movieId]); // movieId만 의존성으로
 
-  // 영상 재생 중 중앙 시점에서 스크린샷을 찍는 함수
-  const captureMidpointScreenshot = useCallback((startTime: number, endTime: number) => {
-    const videoElement = document.querySelector('video') as HTMLVideoElement;
-    if (!videoElement) return;
+  // currentQuestion 변수를 useEffect보다 위로 이동
+  const currentQuestion = guessingData[currentQuestionIndex];
 
-    const currentTime = videoElement.currentTime;
+  // 게싱 진도 저장 useEffect
+  useEffect(() => {
+    if (!lessonNumber || !isGuessingStarted) return;
 
-    if (shouldCaptureScreenshot(currentTime, startTime, endTime, screenshotTaken)) {
-      const screenshot = captureVideoScreenshot();
-      if (screenshot) {
-        setScreenshot(screenshot);
-        setScreenshotTaken(true);
+    const saveProgressInterval = setInterval(async () => {
+      try {
+        await saveProgress(
+          lessonNumber,
+          'guessing',
+          isGuessingComplete, // 완료 상태
+          currentQuestion, // 현재 문제 번호
+          JSON.stringify({ 
+            currentQuestion: currentQuestion,
+            totalQuestions: totalQuestions,
+            correctCount: correctCount,
+            isComplete: isGuessingComplete,
+            lastSaved: new Date().toISOString()
+          })
+        );
+      } catch (error) {
+        console.error('게싱 진도 저장 실패:', error);
       }
-    }
-  }, [screenshotTaken, setScreenshot, setScreenshotTaken]);
+    }, 15000); // 15초마다 저장
 
-  // 직접 오디오 재생 함수
-  const playAudioDirect = useCallback((option: any, currentQuestion: any, videoUrl: string, onComplete?: () => void) => {
+    return () => clearInterval(saveProgressInterval);
+  }, [lessonNumber, isGuessingStarted, currentQuestion, isGuessingComplete, totalQuestions, correctCount]);
+
+  // 게싱 완료 시 최종 저장
+  useEffect(() => {
+    if (isGuessingComplete && lessonNumber) {
+      const saveFinalProgress = async () => {
+        try {
+          // 진도 저장
+          await saveProgress(lessonNumber, 'guessing', true, currentQuestion, JSON.stringify({
+            currentQuestion: currentQuestion,
+            totalQuestions: totalQuestions,
+            correctCount: correctCount,
+            isComplete: true,
+            completed_at: new Date().toISOString()
+          }));
+          
+          // 결과 저장
+          const score = Math.round((correctCount / totalQuestions) * 100);
+          await saveResult(
+            lessonNumber,
+            'guessing',
+            score,
+            correctCount,
+            totalQuestions,
+            Date.now() // 시간은 임시로 현재 시간 사용
+          );
+          
+          // 로그 저장
+          await saveLog(lessonNumber, 'guessing', 'guessing_completed', {
+            totalQuestions: totalQuestions,
+            correctCount: correctCount,
+            score: score,
+            completed_at: new Date().toISOString()
+          });
+          
+        } catch (error) {
+          console.error('게싱 완료 저장 실패:', error);
+        }
+      };
+      saveFinalProgress();
+    }
+  }, [isGuessingComplete, lessonNumber, currentQuestion, totalQuestions, correctCount]);
+
+
+  // 영상 재생 중 중앙 시점에서 스크린샷을 찍는 함수 (비활성화)
+  const captureMidpointScreenshot = useCallback(async (startTime: number, endTime: number) => {
+    // 스크린샷 캡처를 비활성화하여 CORS 에러 방지
+    return;
+  }, []);
+
+  // 직접 오디오 재생 함수 (기존 비디오 요소 재사용)
+  const playAudioDirect = useCallback((option: any, currentQuestion: any, onComplete?: () => void) => {
+    // 기존 audio-video 요소 재사용
+    const audioVideo = document.getElementById('audio-video') as HTMLVideoElement;
+    if (!audioVideo) {
+      console.error('audio-video 요소를 찾을 수 없습니다');
+      if (onComplete) onComplete();
+      return;
+    }
+
+    // 이전 재생 중지
     if (playingAudio) {
-      const existingAudio = document.getElementById(`audio-${playingAudio}`) as HTMLAudioElement;
-      if (existingAudio) {
-        existingAudio.pause();
-        existingAudio.currentTime = 0;
-      }
-    }
-
-    const audioId = `audio-${option.label}`;
-    let audio = document.getElementById(audioId) as HTMLAudioElement;
-
-    if (!audio) {
-      audio = document.createElement('audio');
-      audio.id = audioId;
-      audio.src = videoUrl || '';
-      audio.preload = 'auto';
-      document.body.appendChild(audio);
+      audioVideo.pause();
+      audioVideo.currentTime = 0;
     }
 
     let startTime, endTime;
@@ -299,36 +393,41 @@ function GuessingPageContent() {
       endTime = srtTimeToSeconds(currentQuestion.video.end);
     } else {
       console.error(`${option.label} 재생 시간 정보 없음`);
+      if (onComplete) onComplete();
       return;
     }
     
-    if (audio.readyState < 4) {
-      if (audio.readyState < 2) {
-        audio.load();
+    // 기존 비디오 요소의 로딩 상태 확인
+    if (audioVideo.readyState < 4) {
+      if (audioVideo.readyState < 2) {
+        audioVideo.load();
       }
 
-      const retryCount = (audio as any).retryCount || 0;
+      const retryCount = (audioVideo as any).retryCount || 0;
       if (retryCount < AUDIO_MAX_RETRIES) {
-        (audio as any).retryCount = retryCount + 1;
+        (audioVideo as any).retryCount = retryCount + 1;
         setTimeout(() => {
-          playAudioDirect(option, currentQuestion, videoUrl || '', onComplete);
+          playAudioDirect(option, currentQuestion, onComplete);
         }, AUDIO_RETRY_DELAY);
       } else {
-        console.error(`${option.label} 오디오 로딩 실패 (readyState: ${audio.readyState})`);
+        console.error(`❌ ${option.label} 오디오 로딩 실패 (readyState: ${audioVideo.readyState})`);
+        // 오디오 재생 실패 시에도 다음 단계로 진행
+        if (onComplete) onComplete();
         setPlayingAudio(null);
       }
       return;
     }
     
-    audio.currentTime = startTime;
-    audio.muted = false;
+    // 기존 비디오 요소를 사용하여 오디오 재생
+    audioVideo.currentTime = startTime;
+    audioVideo.muted = false;
     
-    audio.play().then(() => {
+    audioVideo.play().then(() => {
       setPlayingAudio(option.label);
 
       const checkTime = () => {
-        if (audio.currentTime >= endTime) {
-          audio.pause();
+        if (audioVideo.currentTime >= endTime) {
+          audioVideo.pause();
           setPlayingAudio(null);
           if (onComplete) {
             onComplete();
@@ -351,13 +450,13 @@ function GuessingPageContent() {
   }, [playVideo]);
 
   // Play A/B/C options sequentially
-  const playABCSequence = useCallback((question: any, videoUrl: string, onAllPlayed?: () => void) => {
+  const playABCSequence = useCallback((question: any, onAllPlayed?: () => void) => {
     const playNextOption = (idx: number) => {
       if (idx < GUESSING_OPTION_LABELS.length && question) {
         const currentLabel = GUESSING_OPTION_LABELS[idx];
         const currentOption = question.options.find((opt: any) => opt.label === currentLabel);
         if (currentOption) {
-          playAudioDirect(currentOption, question, videoUrl || '', () => {
+          playAudioDirect(currentOption, question, () => {
             playNextOption(idx + 1);
           });
         } else {
@@ -421,11 +520,9 @@ function GuessingPageContent() {
       }, GUESSING_ANSWER_FEEDBACK_DURATION);
     }
   }, [currentQuestionIndex, totalQuestions, currentIndex, guessingData, handleAnswerSelect, playCorrectSound, playAgainSound, playVideo, setCurrentQuestionIndex, setCurrentIndex, setVideoPlayCount, setUserAnswers, setShowResults, setShowIntro, setUserInteracted, setIsGuessingStarted, setPlayingAudio, setAllOptionsPlayed, setCurrentAutoIndex, setScreenshot, setScreenshotTaken]);
-
-  const currentQuestion = guessingData[currentQuestionIndex];
   
   // 로딩 화면
-  if (isLoading || !lessonData || !videoUrl || guessingData.length === 0) {
+  if (isLoading || !lessonData || guessingData.length === 0) {
     return (
       <main className="min-h-screen px-4 py-4">
         <div className="mb-4 flex items-center justify-between group">
@@ -535,6 +632,10 @@ function GuessingPageContent() {
   // 게싱 게임 화면
   return (
     <main className="min-h-screen px-4 py-4 flex flex-col">
+      {/* 모바일 가로화면 안내 */}
+      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-yellow-600 text-black text-center py-2 text-sm font-bold">
+        📱 모바일에서는 가로화면으로 자동 변경됩니다
+      </div>
       <div className="mb-4 flex items-center justify-between group">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
         <div className="flex items-center gap-3">
@@ -587,8 +688,24 @@ function GuessingPageContent() {
         </div>
       </div>
 
-      <div className={`grid grid-cols-1 gap-4 transition-all duration-300 ${isSidebarOpen ? 'lg:grid-cols-[1fr_200px]' : 'lg:grid-cols-1'}`}>
-        <div className={`mx-auto relative ${isSidebarOpen ? 'w-[85%]' : 'w-[70%]'}`} style={{ transform: isFullscreen ? 'scale(1.2)' : 'scale(1)', transformOrigin: 'top' }}>
+      <div className={`grid grid-cols-1 gap-4 transition-all duration-300 ${
+        isFullscreen 
+          ? 'grid-cols-1' 
+          : isSidebarOpen 
+            ? 'lg:grid-cols-[1fr_200px]' 
+            : 'lg:grid-cols-1'
+      }`}>
+        <div className={`mx-auto relative transition-all duration-300 ${
+          isFullscreen 
+            ? 'w-full h-full' 
+            : isSidebarOpen 
+              ? 'w-[85%] max-w-4xl' 
+              : 'w-[90%] max-w-5xl'
+        }`} style={{ 
+          transform: isFullscreen ? 'scale(1.2)' : 'scale(1)', 
+          transformOrigin: 'top',
+          minHeight: isFullscreen ? '100vh' : 'auto'
+        }}>
           <div className={`relative w-full aspect-video bg-black rounded-2xl overflow-hidden border-[10px] ${isPlaying ? 'border-[#60D96C]' : 'border-[rgb(32,30,30)]'}`}>
             <div className="w-full h-full">
               {!isPlaying && screenshot && (
@@ -623,16 +740,37 @@ function GuessingPageContent() {
                     const currentCount = videoPlayCountRef.current;
                     setVideoPlayCount(currentCount);
 
+                    // 첫 번째 재생 완료 직전에 스크린샷 캡처
+                    if (currentCount === 1 && !screenshotTaken) {
+                      const videoElement = document.querySelector('video') as HTMLVideoElement;
+                      if (videoElement) {
+                        const endTime = srtTimeToSeconds(currentQuestion.video.end);
+                        videoElement.currentTime = endTime - 0.5; // 끝나기 0.5초 전으로 이동
+                        
+                        setTimeout(() => {
+                          try {
+                            const screenshot = captureVideoScreenshot();
+                            if (screenshot) {
+                              setScreenshot(screenshot);
+                              setScreenshotTaken(true);
+                            }
+                          } catch (error) {
+                            // 스크린샷 캡처 실패
+                          }
+                        }, 100);
+                      }
+                    }
+
                     if (userAnswers.length > 0) {
                       pauseVideo();
                       setTimeout(() => {
-                        playABCSequence(currentQuestion, videoUrl || '', () => setAllOptionsPlayed(true));
+                        playABCSequence(currentQuestion, () => setAllOptionsPlayed(true));
                       }, GUESSING_AUTO_PLAY_DELAY);
                     } else {
                       if (currentCount >= GUESSING_OPTION_LABELS.length) {
                         pauseVideo();
                         setTimeout(() => {
-                          playABCSequence(currentQuestion, videoUrl || '', () => setAllOptionsPlayed(true));
+                          playABCSequence(currentQuestion, () => setAllOptionsPlayed(true));
                         }, GUESSING_AUTO_PLAY_DELAY);
                       } else {
                         pauseVideo();
@@ -643,10 +781,7 @@ function GuessingPageContent() {
                     }
                   }}
                   onTimeUpdate={(currentTime) => {
-                    captureMidpointScreenshot(
-                      srtTimeToSeconds(currentQuestion.video.start),
-                      srtTimeToSeconds(currentQuestion.video.end)
-                    );
+                    // 스크린샷 캡처를 onTimeUpdate에서 제거
                   }}
                   onPlay={() => {
                     playAttentionSound();
@@ -656,10 +791,11 @@ function GuessingPageContent() {
 
               <video
                 id="audio-video"
-                src={videoUrl || ''}
+                src={getVideoSource()}
                 style={{ display: 'none' }}
                 muted={false}
-                preload="metadata"
+                preload="auto"
+                crossOrigin="anonymous"
               />
 
               {!isGuessingStarted && currentQuestion && (
@@ -680,16 +816,23 @@ function GuessingPageContent() {
             />
           </div>
 
-          <div className="rounded-lg w-full mx-auto mt-5" style={{ marginTop: isFullscreen ? '7px' : '5px' }}>
+          <div className="rounded-lg w-full mx-auto transition-all duration-300" style={{ 
+            marginTop: isFullscreen ? '7px' : '20px',
+            marginBottom: isFullscreen ? '7px' : '20px'
+          }}>
             <div 
-              className={`flex items-center justify-center rounded-lg mx-auto transition-all duration-300 ${isFullscreen ? 'w-fit' : 'w-fit'}`}
+              className={`flex items-center justify-center rounded-lg mx-auto transition-all duration-300 ${
+                isFullscreen 
+                  ? 'w-fit' 
+                  : 'w-full max-w-4xl'
+              }`}
               style={{ 
                 backgroundColor: '#201E1E', 
-                gap: '20px', 
-                paddingTop: '4px', 
-                paddingBottom: '4px', 
-                paddingLeft: '10px', 
-                paddingRight: '10px' 
+                gap: isFullscreen ? '20px' : '15px', 
+                paddingTop: isFullscreen ? '4px' : '8px', 
+                paddingBottom: isFullscreen ? '4px' : '8px', 
+                paddingLeft: isFullscreen ? '10px' : '20px', 
+                paddingRight: isFullscreen ? '10px' : '20px'
               }}
             >
               {currentQuestion && (
@@ -758,7 +901,11 @@ function GuessingPageContent() {
                     .map((option: any) => (
                     <button
                       key={option.label}
-                      className={`rounded-2xl border-8 px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                      className={`rounded-2xl border-8 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg ${
+                        isFullscreen 
+                          ? 'px-10 py-5 text-lg' 
+                          : 'px-6 py-4 text-base sm:px-8 sm:py-5 sm:text-lg'
+                      } ${
                         playingAudio === option.label && !isPlaying
                           ? 'border-[#60D96C] animate-pulse-playing' 
                           : 'border-gray-300 hover:border-gray-400'
@@ -766,7 +913,7 @@ function GuessingPageContent() {
                       style={{
                         backgroundColor: 'white', 
                         fontFamily: 'Encode Sans, sans-serif', 
-                        fontSize: '1.5rem',
+                        fontSize: isFullscreen ? '1.5rem' : '1.25rem',
                         borderColor: playingAudio === option.label && !isPlaying ? '#60D96C' : undefined
                       }}
                       onMouseEnter={(e) => { 
@@ -847,12 +994,27 @@ function GuessingPageContent() {
 
         {isSidebarOpen && (
           <div className="flex justify-center">
-            <aside className="flex flex-col gap-2 h-full">
-              <div className="bg-[#1a1a1a] rounded-lg p-4" style={{ height: 'calc(100vh - 150px)' }}>
+            <aside className={`flex flex-col gap-2 transition-all duration-300 ${
+              isFullscreen ? 'h-full' : 'h-auto'
+            }`}>
+              <div className={`bg-[#1a1a1a] rounded-lg p-4 transition-all duration-300 ${
+                isFullscreen 
+                  ? 'h-full' 
+                  : 'max-h-[70vh]'
+              }`} style={{ 
+                height: isFullscreen ? 'calc(100vh - 150px)' : 'auto',
+                minHeight: isFullscreen ? 'calc(100vh - 150px)' : '400px'
+              }}>
                 <h3 className="text-sm font-semibold text-[#60D96C] mb-3" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
                   QUESTIONS
                 </h3>
-                <div className="flex flex-col gap-2 overflow-y-auto custom-scrollbar" style={{ height: 'calc(100% - 40px)' }}>
+                <div className={`flex flex-col gap-2 overflow-y-auto custom-scrollbar transition-all duration-300 ${
+                  isFullscreen 
+                    ? 'h-full' 
+                    : 'max-h-[60vh]'
+                }`} style={{ 
+                  height: isFullscreen ? 'calc(100% - 40px)' : 'auto'
+                }}>
                   {guessingData.map((question, index) => (
                     <button
                       key={index}

@@ -19,6 +19,8 @@ interface GuessingGameState {
   showCorrect: boolean;
   showAgain: boolean;
   allOptionsPlayed: boolean;
+  isGuessingComplete: boolean;
+  correctCount: number;
 }
 
 interface GuessingGameActions {
@@ -39,6 +41,8 @@ interface GuessingGameActions {
   setShowCorrect: (show: boolean) => void;
   setShowAgain: (show: boolean) => void;
   setAllOptionsPlayed: (played: boolean) => void;
+  setIsGuessingComplete: (complete: boolean) => void;
+  setCorrectCount: (count: number) => void;
   loadGuessingData: (data: any[]) => void;
   startGuessing: () => void;
   playAudio: (option: any) => void;
@@ -65,6 +69,8 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
   const [showCorrect, setShowCorrect] = useState(false);
   const [showAgain, setShowAgain] = useState(false);
   const [allOptionsPlayed, setAllOptionsPlayed] = useState(false);
+  const [isGuessingComplete, setIsGuessingComplete] = useState(false);
+  const [correctCount, setCorrectCount] = useState(0);
 
   const autoPlayIndexRef = useRef(0);
   const videoPlayCountRef = useRef(0);
@@ -269,6 +275,8 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
     showCorrect,
     showAgain,
     allOptionsPlayed,
+    isGuessingComplete,
+    correctCount,
     setCurrentIndex,
     setCurrentQuestionIndex,
     setTotalQuestions,
@@ -286,6 +294,8 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
     setShowCorrect,
     setShowAgain,
     setAllOptionsPlayed,
+    setIsGuessingComplete,
+    setCorrectCount,
     loadGuessingData,
     startGuessing,
     playAudio,

@@ -2,6 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState, memo } from "react";
 import dynamic from "next/dynamic";
+import { setupVideoForScreenshot } from "../utils/screenshot";
+import { setupVideoCors, addCorsToVideoUrl } from "../utils/videoCors";
+import { setupVideoCorsOnLoad, forceVideoCors } from "../utils/corsProxy";
+import { getVideoSource } from "../utils/videoSource";
 import {
   VIDEO_SEGMENT_END_CHECK_INTERVAL,
   VIDEO_ONPLAY_TIMEOUT,
@@ -204,7 +208,7 @@ const VideoPlayer = memo(function VideoPlayer({
         {/* Always use ReactPlayer */}
         <ReactPlayer
             ref={reactPlayerRef}
-            url={src}
+            url={getVideoSource()}
             playing={playing && !isPaused && isReady}
             onStart={() => {}}
             onPlay={() => {
@@ -223,6 +227,24 @@ const VideoPlayer = memo(function VideoPlayer({
             onLoad={() => {}}
             onReady={() => {
               if (!isReady) {
+                // CORS 설정을 위한 비디오 요소 설정 (게싱 모드 최소화)
+                try {
+                  const internalPlayer = reactPlayerRef.current?.getInternalPlayer();
+                  if (internalPlayer && internalPlayer.tagName === 'VIDEO') {
+                    const videoElement = internalPlayer as HTMLVideoElement;
+                    
+                    // 중복 설정 방지
+                    if (!(videoElement as any).corsSetup) {
+                      // 게싱 모드에서는 CORS 설정을 최소화하여 비디오 재생에 영향 주지 않도록
+                      videoElement.crossOrigin = 'anonymous';
+                      videoElement.setAttribute('crossorigin', 'anonymous');
+                      console.log('✅ 비디오 CORS 최소 설정 완료');
+                    }
+                  }
+                } catch (error) {
+                  console.warn('CORS 설정 실패:', error);
+                }
+
                 if (isFinite(startTime) && startTime >= 0) {
                   reactPlayerRef.current?.seekTo(startTime, "seconds");
                   onReadyHasSeekedRef.current = true; // Mark that we seeked

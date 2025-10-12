@@ -37,11 +37,11 @@ export function useMimickingSequence(): MimickingSequenceState & MimickingSequen
 
   const executeMimickingSequence = useCallback((sceneIndex: number, playVideo: () => void, currentScene?: any) => {
     if (isSequenceRunning) {
-      console.log('이미 시퀀스가 실행 중입니다.');
+      // console.log('이미 시퀀스가 실행 중입니다.');
       return;
     }
     
-    console.log(`🎬 미믹킹 시퀀스 시작: Scene ${sceneIndex + 1}`);
+    // console.log(`🎬 미믹킹 시퀀스 시작: Scene ${sceneIndex + 1}`);
     
     // 이전 시퀀스 정리
     mimickingTimeoutsRef.current.forEach(timeout => clearTimeout(timeout));
@@ -67,7 +67,7 @@ export function useMimickingSequence(): MimickingSequenceState & MimickingSequen
   }, [isSequenceRunning, setIsSequenceRunning, setCurrentIndex, setActiveControlIndex, setShowNextCta, setAutoSeqIndex, setMuted]);
 
   const execute30thMimickingSequence = useCallback(() => {
-    console.log('🎯 30번째 미믹킹 시퀀스 시작');
+    // console.log('🎯 30번째 미믹킹 시퀀스 시작');
     setIsMimickingComplete(true);
     setShowNextCta(true);
     setIsSequenceRunning(false);

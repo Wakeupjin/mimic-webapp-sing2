@@ -10,6 +10,7 @@ import { fetchLessonData } from '@/app/dataService';
 import { supabase } from '@/app/supabaseClient';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
+import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
 
 interface WordQuestion {
   question: number;
@@ -47,6 +48,8 @@ function WordPageContent() {
   const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [savedProgress, setSavedProgress] = useState<any>(null);
+  const [lessonNumber, setLessonNumber] = useState<number>(1);
 
   const [playCount, setPlayCount] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
@@ -86,6 +89,7 @@ function WordPageContent() {
 
       const lessonNumberStr = movieId.split(':')[1];
       const lessonNumber = parseInt(lessonNumberStr);
+      setLessonNumber(lessonNumber);
 
       if (isNaN(lessonNumber)) {
         setIsLoading(false);
@@ -119,6 +123,17 @@ function WordPageContent() {
         setVideoUrl(videoResult.video_url); 
         setLessonData({ word: lesson.word_data || [] });
         setIsLoading(false);
+        
+        // 4. 저장된 진도 불러오기
+        try {
+          const progress = await getProgressByMode(lessonNumber, 'word');
+          if (progress) {
+            setSavedProgress(progress);
+            console.log('📚 저장된 워드 진도 불러옴:', progress);
+          }
+        } catch (error) {
+          console.log('워드 진도 데이터 없음 (첫 학습)');
+        }
       } catch (error) {
         console.error('Supabase data loading error:', error);
         setIsLoading(false);
@@ -127,6 +142,72 @@ function WordPageContent() {
 
     loadDataFromSupabase();
   }, [movieId]);
+
+  // 워드 진도 저장 useEffect
+  useEffect(() => {
+    if (!lessonNumber || !isStarted) return;
+
+    const saveProgressInterval = setInterval(async () => {
+      try {
+        await saveProgress(
+          lessonNumber,
+          'word',
+          currentQuestionNumber > totalQuestions, // 완료 상태
+          currentQuestionNumber, // 현재 문제 번호
+          { 
+            currentQuestion: currentQuestionNumber,
+            totalQuestions: totalQuestions,
+            selectedWords: selectedWords,
+            isComplete: currentQuestionNumber > totalQuestions,
+            lastSaved: new Date().toISOString()
+          }
+        );
+        console.log('💾 워드 진도 저장됨:', currentQuestionNumber);
+      } catch (error) {
+        console.error('워드 진도 저장 실패:', error);
+      }
+    }, 20000); // 20초마다 저장
+
+    return () => clearInterval(saveProgressInterval);
+  }, [lessonNumber, isStarted, currentQuestionNumber, totalQuestions, selectedWords]);
+
+  // 워드 완료 시 최종 저장
+  useEffect(() => {
+    if (currentQuestionNumber > totalQuestions && lessonNumber) {
+      const saveFinalProgress = async () => {
+        try {
+          // 진도 저장
+          await saveProgress(lessonNumber, 'word', true, currentQuestionNumber, {
+            currentQuestion: currentQuestionNumber,
+            totalQuestions: totalQuestions,
+            isComplete: true,
+            completed_at: new Date().toISOString()
+          });
+          
+          // 결과 저장 (워드 모드는 정확한 점수 계산이 어려우므로 완료 여부만 저장)
+          await saveResult(
+            lessonNumber,
+            'word',
+            100, // 완료 시 100점
+            totalQuestions,
+            totalQuestions,
+            Date.now()
+          );
+          
+          // 로그 저장
+          await saveLog(lessonNumber, 'word', 'word_completed', {
+            totalQuestions: totalQuestions,
+            completed_at: new Date().toISOString()
+          });
+          
+          console.log('🎉 워드 모드 완료!');
+        } catch (error) {
+          console.error('워드 완료 저장 실패:', error);
+        }
+      };
+      saveFinalProgress();
+    }
+  }, [currentQuestionNumber, totalQuestions, lessonNumber]);
 
   // Generate a new question from word section
   const generateQuestion = () => {
@@ -182,10 +263,10 @@ function WordPageContent() {
 
     const startTime = srtTimeToSeconds(wordQuestion.start);
     const endTime = srtTimeToSeconds(wordQuestion.end);
-    console.log(`🎬 Word Question ${currentQuestionNumber}:`);
-    console.log(`  - Original start: "${wordQuestion.start}" → ${startTime}s`);
-    console.log(`  - Original end: "${wordQuestion.end}" → ${endTime}s`);
-    console.log(`  - Duration: ${endTime - startTime}s`);
+    // console.log(`🎬 Word Question ${currentQuestionNumber}:`);
+    // console.log(`  - Original start: "${wordQuestion.start}" → ${startTime}s`);
+    // console.log(`  - Original end: "${wordQuestion.end}" → ${endTime}s`);
+    // console.log(`  - Duration: ${endTime - startTime}s`);
     
     setCurrentQuestion({
       videoPath: videoUrl || '',
@@ -211,7 +292,7 @@ function WordPageContent() {
   }, [currentQuestionNumber]);
 
   const handleStart = () => {
-    console.log('Starting video sequence');
+    // console.log('Starting video sequence');
     setShowStartOverlay(false);
     setIsStarted(true);
     playCountRef.current = 0; // Reset ref
@@ -226,24 +307,24 @@ function WordPageContent() {
 
   const handleVideoEnd = () => {
     const currentCount = playCountRef.current;
-    console.log('🏁 Video ended. playCountRef.current:', currentCount);
+    // console.log('🏁 Video ended. playCountRef.current:', currentCount);
 
     // Update ref IMMEDIATELY to prevent double-trigger
     playCountRef.current = currentCount + 1;
 
     if (currentCount === 0) {
       // After 1st play (unmuted) → wait → 2nd play (unmuted)
-      console.log('✅ 1st video complete → waiting 1s → 2nd video (unmuted)');
+      // console.log('✅ 1st video complete → waiting 1s → 2nd video (unmuted)');
       // setPlayCount(1) will be called in onPlay when 2nd video actually starts
       setTimeout(() => {
-        console.log('▶️ 2nd video starting (unmuted)');
+        // console.log('▶️ 2nd video starting (unmuted)');
         setPlayNonce(prev => prev + 1);
       }, 1000);
     } else if (currentCount === 1) {
       // After 2nd play (unmuted) → wait → 3rd play (muted with green border)
-      console.log('✅ 2nd video complete → waiting 1s → 3rd video (MUTED with green border)');
+      // console.log('✅ 2nd video complete → waiting 1s → 3rd video (MUTED with green border)');
       setTimeout(() => {
-        console.log('▶️ 3rd video starting (MUTED)');
+        // console.log('▶️ 3rd video starting (MUTED)');
         // Border will turn green in onPlay callback when video actually starts
         setIsMuted(true);
         setIsPlayingMuted(true);
@@ -251,13 +332,13 @@ function WordPageContent() {
       }, 1000);
     } else if (currentCount === 2) {
       // After 3rd play (muted) → wait 1.5s → show word buttons
-      console.log('✅ 3rd video complete → showing word buttons after 1.5s delay');
+      // console.log('✅ 3rd video complete → showing word buttons after 1.5s delay');
       setTimeout(() => {
         setPlayCount(3);
         setIsPlayingMuted(false);
         setIsMuted(false);
         setGamePhase('guessing');
-        console.log('⏳ 1.5s delay complete, showing word buttons now');
+        // console.log('⏳ 1.5s delay complete, showing word buttons now');
       }, 1500);
       return;
     }
@@ -576,7 +657,7 @@ function WordPageContent() {
                       onPlay={() => {
                         // Turn button/border green when video actually starts playing
                         const currentCount = playCountRef.current;
-                        console.log(`🎬 Video ${currentCount + 1} actually playing - button ${currentCount} turns green NOW`);
+                        // console.log(`🎬 Video ${currentCount + 1} actually playing - button ${currentCount} turns green NOW`);
                         setPlayCount(currentCount);
                       }}
                       muted={isMuted}
