@@ -12,6 +12,7 @@ import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
 import { getVideoSource } from '@/app/utils/videoSource';
+import LessonShell from '@/app/components/LessonShell';
 
 interface WordQuestion {
   question: number;
@@ -561,74 +562,24 @@ function WordPageContent() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-4">
-      {/* 헤더 */}
-      <div className="mb-4 flex items-center justify-between group">
-        <div className="flex items-center gap-4">
-          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-          <span className="text-lg text-gray-400" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-            Question {currentQuestionNumber}/{totalQuestions}
-          </span>
-        </div>
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={() => setIsTextVisible((v) => !v)}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
-          </button>
-          <button 
-            onClick={toggleFullscreen}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
-            {isFullscreen ? (
-              // 풀스크린 종료 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#60D96C"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            ) : (
-              // 풀스크린 진입 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#9CA3AF"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            )}
-          </button>
-          <Link href="/" className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-10 group-hover:opacity-100 transition-opacity duration-1000" style={{ width: '29px', height: '29px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
-              <circle cx="29" cy="29" r="29" fill="#60D96C"/>
-              <path d="M16 16L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M42 16L16 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-            </svg>
-          </Link>
-        </div>
-      </div>
-
-      {/* Main Content - Grid Layout */}
-      <div className="flex-1 flex items-center justify-center" style={{
-        paddingLeft: isFullscreen ? '16px' : '32px',
-        paddingRight: isFullscreen ? '16px' : '32px',
-        paddingTop: isFullscreen ? '8px' : '20px',
-        paddingBottom: isFullscreen ? '8px' : '20px'
-      }}>
-        <div className="grid grid-cols-[180px_1fr_180px] gap-6 w-full" style={{
-          maxWidth: isFullscreen ? '100%' : '1400px'
-        }} items-start>
-
-          {/* Left Word Buttons */}
-          <div className="flex flex-col gap-4 pt-0">
+    <LessonShell
+      subtitle={`${currentQuestionNumber}/${totalQuestions}`}
+      extraActions={
+        <button onClick={toggleFullscreen} className="flex h-7 w-7 items-center justify-center" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="24" fill={isFullscreen ? "#60D96C" : "#9CA3AF"}/>
+            <g transform="scale(0.7) translate(10.3, 10.3)">
+              <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+            </g>
+          </svg>
+        </button>
+      }
+    >
+      <div className="flex min-h-0 flex-1 flex-col md:grid md:grid-cols-[120px_minmax(0,1fr)_120px] md:gap-3">
+          <div className="hidden md:flex flex-col gap-2 overflow-y-auto">
             {gamePhase === 'guessing' && currentQuestion && currentQuestion.shuffledWords.slice(0, 5).map((word, index) => {
               const isUsed = usedWords.includes(index.toString());
               const shouldHide = isUsed || hideAllWords;
@@ -654,11 +605,9 @@ function WordPageContent() {
           </div>
 
           {/* Center Column - Video and Controls */}
-          <div className="flex flex-col items-center">
-            {/* Video Player */}
-            <div className="w-full mb-4" style={{ maxWidth: isFullscreen ? '100%' : '800px' }}>
-              <div className="relative w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl"
-                   style={{ border: `8px solid ${playCount === 2 && gamePhase === 'playing' && isStarted ? '#60D96C' : '#201E1E'}` }}>
+          <div className="flex min-h-0 flex-1 flex-col items-center">
+            <div className="relative min-h-0 w-full flex-1 overflow-hidden rounded-xl border-4 border-[#201E1E] md:rounded-3xl md:border-8"
+                   style={{ borderColor: playCount === 2 && gamePhase === 'playing' && isStarted ? '#60D96C' : '#201E1E' }}>
 
 
                 <div style={{ marginTop: '-4px' }}>
@@ -752,10 +701,28 @@ function WordPageContent() {
                   />
                 )}
               </div>
+
+            <div className="mt-2 flex max-h-[22vh] flex-wrap justify-center gap-1 overflow-y-auto md:hidden">
+              {gamePhase === 'guessing' && currentQuestion && currentQuestion.shuffledWords.map((word, index) => {
+                const isUsed = usedWords.includes(index.toString());
+                const shouldHide = isUsed || hideAllWords;
+                return (
+                  <button
+                    key={`m-${index}`}
+                    onClick={() => handleWordClick(word, index)}
+                    className={`rounded-xl border-2 border-gray-300 bg-white px-3 py-1.5 text-sm font-bold text-black ${
+                      shouldHide ? 'pointer-events-none opacity-0' : ''
+                    }`}
+                    disabled={shouldHide}
+                  >
+                    {word}
+                  </button>
+                );
+              })}
             </div>
 
             {/* Control Buttons - 원래 하단바 디자인 */}
-            <div className="rounded-lg w-full mx-auto" style={{ 
+            <div className="origin-bottom scale-75 md:scale-100 rounded-lg w-full mx-auto" style={{ 
               paddingTop: '4px', 
               paddingBottom: '4px', 
               paddingLeft: '8px', 
@@ -942,7 +909,7 @@ function WordPageContent() {
           </div>
 
           {/* Right Word Buttons */}
-          <div className="flex flex-col gap-4 pt-0">
+          <div className="hidden md:flex flex-col gap-2 overflow-y-auto">
             {gamePhase === 'guessing' && currentQuestion && currentQuestion.shuffledWords.slice(5, 10).map((word, index) => {
               const actualIndex = index + 5;
               const isUsed = usedWords.includes(actualIndex.toString());
@@ -969,18 +936,16 @@ function WordPageContent() {
           </div>
         </div>
 
-        {/* Selected Words Display */}
         {selectedWords.length > 0 && (
-          <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900/95 rounded-2xl p-5 flex items-center gap-3 shadow-2xl border-2 border-gray-700">
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-2 rounded-xl bg-gray-900/95 p-2">
             {selectedWords.map((word, index) => (
-              <span key={index} className="bg-green-500 px-5 py-3 rounded-xl font-bold text-white text-lg shadow-lg">
+              <span key={index} className="rounded-lg bg-green-500 px-3 py-1 text-sm font-bold text-white md:px-5 md:py-3 md:text-lg">
                 {word}
               </span>
             ))}
           </div>
         )}
-      </div>
-    </main>
+    </LessonShell>
   );
 }
 

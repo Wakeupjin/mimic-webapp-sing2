@@ -18,6 +18,7 @@ import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 import { getVideoSource } from "../../utils/videoSource";
 import { requestAppFullscreen } from "../../utils/device";
+import LessonShell from "../../components/LessonShell";
 
 function MimickingPageContent() {
   const { user, loading } = useAuth();
@@ -426,35 +427,19 @@ function MimickingPageContent() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-2">
-      <div className="mb-6 flex items-center justify-between group">
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={() => setIsTextVisible((v) => !v)}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
+    <LessonShell
+      subtitle={`${currentIndex + 1}/30`}
+      onClose={stopAllMedia}
+      videoHighlight={activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)}
+      extraActions={
+        <>
+          <button onClick={() => setIsTextVisible((v) => !v)} className="flex h-7 w-7 items-center justify-center" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
               <circle cx="24" cy="24" r="24" fill={isTextVisible ? "#60D96C" : "#9CA3AF"}/>
-              <text 
-                x="24" 
-                y="34" 
-                textAnchor="middle" 
-                fontSize="20" 
-                fontWeight="bold" 
-                fill={isTextVisible ? "black" : "black"}
-                style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '-1px' }}
-              >
-                CC
-              </text>
+              <text x="24" y="34" textAnchor="middle" fontSize="20" fontWeight="bold" fill="black" style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '-1px' }}>CC</text>
             </svg>
           </button>
-          <button 
-            onClick={() => setIsSidebarOpen((v) => !v)}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
+          <button onClick={() => setIsSidebarOpen((v) => !v)} className="flex h-7 w-7 items-center justify-center" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
               <circle cx="29" cy="29" r="29" fill={isSidebarOpen ? "#60D96C" : "#9CA3AF"}/>
               <path d="M16 16L42 16" stroke="black" strokeWidth="5" strokeLinecap="round"/>
@@ -462,53 +447,21 @@ function MimickingPageContent() {
               <path d="M16 42L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
             </svg>
           </button>
-          <button 
-            onClick={toggleFullscreen}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
-            {isFullscreen ? (
-              // 풀스크린 종료 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#60D96C"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            ) : (
-              // 풀스크린 진입 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#9CA3AF"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            )}
-          </button>
-          <Link href="/" onClick={stopAllMedia} className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-10 group-hover:opacity-100 transition-opacity duration-1000" style={{ width: '29px', height: '29px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
-              <circle cx="29" cy="29" r="29" fill="#60D96C"/>
-              <path d="M16 16L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M42 16L16 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
+          <button onClick={toggleFullscreen} className="flex h-7 w-7 items-center justify-center" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="24" fill={isFullscreen ? "#60D96C" : "#9CA3AF"}/>
+              <g transform="scale(0.7) translate(10.3, 10.3)">
+                <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </g>
             </svg>
-          </Link>
-        </div>
-      </div>
-
-      <div className={`grid grid-cols-1 gap-4 transition-all duration-300 ${isSidebarOpen ? 'lg:grid-cols-[1fr_150px]' : 'lg:grid-cols-1'}`}>
-        <section className="flex flex-col" style={{ backgroundColor: showNextCta ? '#0a0a0a' : undefined }}>
-          <div className={`mx-auto relative ${isSidebarOpen ? 'w-[90%]' : 'w-[85%]'}`} style={{ marginLeft: isFullscreen ? '90px' : '110px', marginTop: isFullscreen ? '0px' : '-40px' }}>
-            <div className={`relative w-full aspect-video bg-black rounded-2xl overflow-hidden border-[10px] flex items-center justify-center`} style={{ 
-              borderColor: (activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)) ? '#60D96C' : 'rgb(32, 30, 30)',
-              transform: isFullscreen ? 'scale(1.02)' : 'scale(0.90)',
-              transformOrigin: 'center'
-            }}>
+          </button>
+        </>
+      }
+      video={
+            <div className="relative h-full w-full">
               <VideoPlayer
                 key="mimicking-player"
                 src={getVideoSource()}
@@ -602,7 +555,6 @@ function MimickingPageContent() {
                   }}
                 />
               )}
-            </div>
         
             {showNextCta && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -657,63 +609,43 @@ function MimickingPageContent() {
               </div>
             )}
           </div>
-
-          <div className={`mx-auto relative ${isSidebarOpen ? 'w-[90%]' : 'w-[85%]'}`} style={{ transform: isFullscreen ? 'scale(1.02)' : 'scale(0.85)', transformOrigin: 'top', marginTop: isFullscreen ? '-100px' : '-30px', marginLeft: isFullscreen ? '90px' : '110px' }}>
-            {!showNextCta && (
-              <PlaybackControls onPrev={handlePrev} onNext={handleNext} onPlay={handlePlay} activeIndex={activeControlIndex} isFullscreen={isFullscreen} />
-            )}
-            {showNextCta && (
-              <div className="absolute inset-0 bg-black/80 rounded-lg"></div>
-            )}
+      }
+      controls={
+        !showNextCta ? (
+          <div className="origin-bottom scale-75 md:scale-100">
+            <PlaybackControls onPrev={handlePrev} onNext={handleNext} onPlay={handlePlay} activeIndex={activeControlIndex} isFullscreen={false} />
           </div>
-        </section>
-
-        {isSidebarOpen && (
-          <div className="flex justify-center" style={{ marginLeft: '-100px' }}>
-            <aside className="flex flex-col gap-2 h-full">
-              <div className="bg-[#1a1a1a] rounded-lg p-4" style={{ height: 'calc(100vh - 150px)' }}>
-                <h3 className="text-sm font-semibold text-[#60D96C] mb-3" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+        ) : null
+      }
+      aside={
+        isSidebarOpen ? (
+              <div className="flex h-full flex-col rounded-lg bg-[#1a1a1a] p-3">
+                <h3 className="mb-3 text-sm font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
                   SCENES
                 </h3>
-                <div className="flex flex-col gap-2 overflow-y-auto custom-scrollbar" style={{ height: 'calc(100% - 40px)' }} ref={(el) => {
-                  if (el && currentIndex >= 0 && currentIndex === 0) {
-                    // 첫 번째 씬일 때만 중앙으로 스크롤
-                    const buttonHeight = 48; // 버튼 높이 + gap
-                    const containerHeight = el.clientHeight;
-                    const scrollTop = (currentIndex * buttonHeight) - (containerHeight / 2) + (buttonHeight / 2);
-                    el.scrollTop = Math.max(0, scrollTop);
-                  }
-                }}>
+                <div className="custom-scrollbar flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
                   <SceneList
                     scenes={scenes as any}
                     currentIndex={currentIndex}
                     onSceneClick={(index) => {
                       if (index === 0 && !isMimickingStarted) {
-                        // 첫 번째 씬이고 아직 시작하지 않았다면 클릭 오버레이를 통해 시작
                         return;
                       }
-                      
-                      // 진행 중인 시퀀스 정리
-                      // console.log(`🖱️ 씬 클릭: ${index + 1}, 기존 시퀀스 정리`);
-                      clearTimeouts(); // 기존 타임아웃 정리
-                      setAutoSeqIndex(null); // 자동 시퀀스 중단
-                      setActiveControlIndex(null); // 활성 버튼 초기화
-                      setMuted(false); // 무음 해제
-                      setIsSequenceRunning(false); // 시퀀스 실행 중단
-                      setPlayNonce(0); // Reset playNonce before changing scene
-
-                      // 새 씬으로 이동 (useEffect가 자동으로 시퀀스 시작)
+                      clearTimeouts();
+                      setAutoSeqIndex(null);
+                      setActiveControlIndex(null);
+                      setMuted(false);
+                      setIsSequenceRunning(false);
+                      setPlayNonce(0);
                       setCurrentIndex(index);
                     }}
                     isSequenceRunning={isSequenceRunning}
                   />
                 </div>
               </div>
-            </aside>
-          </div>
-        )}
-      </div>
-    </main>
+        ) : null
+      }
+    />
   );
 }
 

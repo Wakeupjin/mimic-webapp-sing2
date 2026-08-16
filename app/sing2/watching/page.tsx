@@ -19,6 +19,7 @@ import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리�
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
+import LessonShell from '../../components/LessonShell';
 
 // 데이터 타입 정의
 type LessonDataType = {
@@ -322,77 +323,37 @@ function WatchingPageContent() {
 
 
   return (
-    <main className="min-h-screen px-4 py-4">
-      <div className="mb-4 flex items-center justify-between group">
-        {/* title 부분은 임시로 'SING 2'를 사용합니다. */}
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-        {/* ... (나머지 헤더 버튼들 유지) */}
-        <div className="flex items-center gap-3">
-          <button 
+    <LessonShell
+      extraActions={
+        <>
+          <button
             onClick={() => setIsTextVisible((v) => !v)}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
+            className="flex h-7 w-7 items-center justify-center"
+            type="button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
               <circle cx="24" cy="24" r="24" fill={isTextVisible ? "#60D96C" : "#9CA3AF"}/>
-              <text 
-                x="24" 
-                y="34" 
-                textAnchor="middle" 
-                fontSize="20" 
-                fontWeight="bold" 
-                fill={isTextVisible ? "black" : "black"}
-                style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '-1px' }}
-              >
-                CC
-              </text>
+              <text x="24" y="34" textAnchor="middle" fontSize="20" fontWeight="bold" fill="black" style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '-1px' }}>CC</text>
             </svg>
           </button>
-          <button 
-            onClick={toggleFullscreen}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
-            {isFullscreen ? (
-              // 풀스크린 종료 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#60D96C"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            ) : (
-              // 풀스크린 진입 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#9CA3AF"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            )}
-          </button>
-          <Link href="/" className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-10 group-hover:opacity-100 transition-opacity duration-1000" style={{ width: '29px', height: '29px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
-              <circle cx="29" cy="29" r="29" fill="#60D96C"/>
-              <path d="M16 16L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M42 16L16 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
+          <button onClick={toggleFullscreen} className="flex h-7 w-7 items-center justify-center" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="24" fill={isFullscreen ? "#60D96C" : "#9CA3AF"}/>
+              <g transform="scale(0.7) translate(10.3, 10.3)">
+                <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </g>
             </svg>
-          </Link>
-        </div>
-      </div>
-
-      <div className="flex flex-col items-center justify-center" style={{ height: 'calc(100vh - 120px)' }}>
-        <div className={`aspect-video bg-black rounded-2xl overflow-hidden border-[10px] ${isFullscreen ? 'w-[84%]' : 'w-[70%]'}`} style={{ borderColor: '#201E1E' }}>
-          <div className="relative w-full h-full">
+          </button>
+        </>
+      }
+      video={
+          <div className="relative h-full w-full">
             <video
               src={getVideoSource()}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 cursor-pointer ${isVideoPaused ? 'opacity-50' : 'opacity-100'}`}
+              className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 cursor-pointer ${isVideoPaused ? 'opacity-50' : 'opacity-100'}`}
               controls={false}
               autoPlay={false}
               muted={false}
@@ -537,11 +498,10 @@ function WatchingPageContent() {
               </div>
             )}
           </div>
-        </div>
-        
-        {/* Watching mode progress bar - below video player */}
-        {!showNextCta && (
-          <div className={`mt-4 px-4 ${isFullscreen ? 'w-[84%]' : 'w-[70%]'}`}>
+      }
+      controls={
+        !showNextCta ? (
+          <div className="w-full px-2 md:px-8">
             <div 
               className="relative w-full h-2 cursor-pointer"
               onClick={handleProgressClick}
@@ -563,24 +523,19 @@ function WatchingPageContent() {
                 handleProgressMouseMove(e);
               }}
             >
-              {/* Progress bar background */}
               <div className="absolute inset-0 bg-gray-300 rounded-full overflow-hidden"></div>
-              {/* Progress indicator */}
               <div
                 className="absolute inset-0 h-full bg-[#60D96C] rounded-full transition-all duration-300 ease-out"
                 style={{ width: `${videoProgress}%` }}
               />
-              {/* Draggable circle button */}
               <div 
-                className="absolute top-1/2 w-3 h-3 bg-gray-500 rounded-full cursor-pointer transform -translate-y-1/2 shadow-lg hover:bg-gray-600 transition-colors duration-200"
+                className="absolute top-1/2 w-3 h-3 bg-gray-500 rounded-full cursor-pointer transform -translate-y-1/2 shadow-lg"
                 style={{ left: `calc(${videoProgress}% - 6px)` }}
                 onMouseDown={(e) => {
                   e.stopPropagation();
                   setIsDragging(true);
                 }}
               />
-              
-              {/* Time info tooltip - below progress bar */}
               {showProgressTooltip && (
                 <div 
                   className="absolute top-9 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg pointer-events-none whitespace-nowrap z-50"
@@ -590,7 +545,6 @@ function WatchingPageContent() {
                     transform: 'translateX(-50%)'
                   }}
                 >
-                  {/* Pointer triangle */}
                   <div 
                     className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-0 h-0"
                     style={{
@@ -599,15 +553,14 @@ function WatchingPageContent() {
                       borderBottom: '16px solid rgb(32, 30, 30)'
                     }}
                   ></div>
-                  {/* WATCHING_VIDEO_DURATION_SECONDS 대신 endTime - startTime 사용 */}
                   {formatTime(startTime + (tooltipPosition / 100) * (endTime - startTime))} / {formatTime(endTime - startTime)} 
                 </div>
               )}
             </div>
           </div>
-        )}
-      </div>
-    </main>
+        ) : null
+      }
+    />
   );
 }
 

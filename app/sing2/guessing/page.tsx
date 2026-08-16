@@ -21,6 +21,7 @@ import { requestAppFullscreen, applyInlinePlayback } from "../../utils/device";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
+import LessonShell from "../../components/LessonShell";
 import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
 import {
   GUESSING_ANSWER_FEEDBACK_DURATION,
@@ -592,14 +593,17 @@ function GuessingPageContent() {
 
   // 게싱 게임 화면
   return (
-    <main className="min-h-screen px-4 py-4 flex flex-col">
-      <div className="mb-4 flex items-center justify-between group">
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-        <div className="flex items-center gap-3">
+    <LessonShell
+      subtitle={`${currentQuestionIndex + 1}/${totalQuestions}`}
+      onClose={stopAllMedia}
+      onCloseHref="/"
+      videoHighlight={isClipPlaying}
+      extraActions={
+        <>
           <button
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
+            className="flex h-7 w-7 items-center justify-center"
+            type="button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
               <circle cx="29" cy="29" r="29" fill={isSidebarOpen ? "#60D96C" : "#9CA3AF"}/>
@@ -608,63 +612,21 @@ function GuessingPageContent() {
               <path d="M16 42L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
             </svg>
           </button>
-          <button
-            onClick={toggleFullscreen}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
-            {isFullscreen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#60D96C"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#9CA3AF"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            )}
-          </button>
-          <Link href="/" onClick={stopAllMedia} className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-10 group-hover:opacity-100 transition-opacity duration-1000" style={{ width: '29px', height: '29px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
-              <circle cx="29" cy="29" r="29" fill="#60D96C"/>
-              <path d="M16 16L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M42 16L16 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
+          <button onClick={toggleFullscreen} className="flex h-7 w-7 items-center justify-center" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="24" fill={isFullscreen ? "#60D96C" : "#9CA3AF"}/>
+              <g transform="scale(0.7) translate(10.3, 10.3)">
+                <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </g>
             </svg>
-          </Link>
-        </div>
-      </div>
-
-      <div className={`grid grid-cols-1 gap-4 transition-all duration-300 ${
-        isFullscreen 
-          ? 'grid-cols-1' 
-          : isSidebarOpen 
-            ? 'lg:grid-cols-[1fr_200px]' 
-            : 'lg:grid-cols-1'
-      }`}>
-        <div className={`mx-auto relative transition-all duration-300 ${
-          isFullscreen 
-            ? 'w-full h-full' 
-            : isSidebarOpen 
-              ? 'w-[85%] max-w-4xl' 
-              : 'w-[90%] max-w-5xl'
-        }`} style={{ 
-          transform: isFullscreen ? 'scale(1.2)' : 'scale(1)', 
-          transformOrigin: 'top',
-          minHeight: isFullscreen ? '100vh' : 'auto'
-        }}>
-          <div className={`relative w-full aspect-video bg-black rounded-2xl overflow-hidden border-[10px] ${isClipPlaying ? 'border-[#60D96C]' : 'border-[rgb(32,30,30)]'}`}>
-            <div className="w-full h-full">
+          </button>
+        </>
+      }
+      video={
+        <div className="h-full w-full">
               {isGuessingStarted && currentQuestion && (
                 <VideoPlayer
                   key="guessing-player"
@@ -724,7 +686,6 @@ function GuessingPageContent() {
                   }}
                 />
               )}
-            </div>
 
             <GuessingOverlays
               screenshot={screenshot}
@@ -732,25 +693,19 @@ function GuessingPageContent() {
               showCorrect={showCorrect}
               showAgain={showAgain}
             />
-          </div>
-
-          <div className="rounded-lg w-full mx-auto transition-all duration-300" style={{ 
-            marginTop: isFullscreen ? '7px' : '20px',
-            marginBottom: isFullscreen ? '7px' : '20px'
-          }}>
+        </div>
+      }
+      controls={
+          <div className="origin-bottom scale-90 md:scale-100">
             <div 
-              className={`flex items-center justify-center rounded-lg mx-auto transition-all duration-300 ${
-                isFullscreen 
-                  ? 'w-fit' 
-                  : 'w-full max-w-4xl'
-              }`}
+              className="flex w-full max-w-4xl items-center justify-center rounded-lg mx-auto"
               style={{ 
                 backgroundColor: '#201E1E', 
-                gap: isFullscreen ? '20px' : '15px', 
-                paddingTop: isFullscreen ? '4px' : '8px', 
-                paddingBottom: isFullscreen ? '4px' : '8px', 
-                paddingLeft: isFullscreen ? '10px' : '20px', 
-                paddingRight: isFullscreen ? '10px' : '20px'
+                gap: '10px', 
+                paddingTop: '4px', 
+                paddingBottom: '4px', 
+                paddingLeft: '8px', 
+                paddingRight: '8px'
               }}
             >
               {currentQuestion && (
@@ -820,11 +775,7 @@ function GuessingPageContent() {
                     .map((option: any) => (
                     <button
                       key={option.label}
-                      className={`rounded-2xl border-8 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg ${
-                        isFullscreen 
-                          ? 'px-10 py-5 text-lg' 
-                          : 'px-6 py-4 text-base sm:px-8 sm:py-5 sm:text-lg'
-                      } ${
+                      className={`rounded-2xl border-8 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base ${
                         playingAudio === option.label && !isPlaying
                           ? 'border-[#60D96C] animate-pulse-playing' 
                           : 'border-gray-300 hover:border-gray-400'
@@ -910,31 +861,14 @@ function GuessingPageContent() {
               )}
             </div>
           </div>
-        </div>
-
-        {isSidebarOpen && (
-          <div className="flex justify-center">
-            <aside className={`flex flex-col gap-2 transition-all duration-300 ${
-              isFullscreen ? 'h-full' : 'h-auto'
-            }`}>
-              <div className={`bg-[#1a1a1a] rounded-lg p-4 transition-all duration-300 ${
-                isFullscreen 
-                  ? 'h-full' 
-                  : 'max-h-[70vh]'
-              }`} style={{ 
-                height: isFullscreen ? 'calc(100vh - 150px)' : 'auto',
-                minHeight: isFullscreen ? 'calc(100vh - 150px)' : '400px'
-              }}>
-                <h3 className="text-sm font-semibold text-[#60D96C] mb-3" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+      }
+      aside={
+        isSidebarOpen ? (
+              <div className="flex h-full flex-col rounded-lg bg-[#1a1a1a] p-3">
+                <h3 className="mb-3 text-sm font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
                   QUESTIONS
                 </h3>
-                <div className={`flex flex-col gap-2 overflow-y-auto custom-scrollbar transition-all duration-300 ${
-                  isFullscreen 
-                    ? 'h-full' 
-                    : 'max-h-[60vh]'
-                }`} style={{ 
-                  height: isFullscreen ? 'calc(100% - 40px)' : 'auto'
-                }}>
+                <div className="custom-scrollbar flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
                   {guessingData.map((question, index) => (
                     <button
                       key={index}
@@ -954,7 +888,7 @@ function GuessingPageContent() {
                         setAllOptionsPlayed(false);
                         setShowIntro(true);
                       }}
-                      className={`px-3 py-3 rounded text-sm font-medium transition-colors ${
+                      className={`rounded px-3 py-3 text-sm font-medium transition-colors ${
                         currentQuestionIndex === index
                           ? 'bg-[#60D96C] text-black'
                           : 'bg-[#2a2a2a] text-gray-400 hover:bg-[#3a3a3a]'
@@ -966,11 +900,9 @@ function GuessingPageContent() {
                   ))}
                 </div>
               </div>
-            </aside>
-          </div>
-        )}
-      </div>
-    </main>
+        ) : null
+      }
+    />
   );
 }
 
