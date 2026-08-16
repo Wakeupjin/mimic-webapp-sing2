@@ -47,6 +47,7 @@ export type StudentDashboardRow = {
   completedCount: number;
   progressByLesson: Record<number, Record<string, boolean>>;
   latestScores: { lesson: number; mode: string; score: number | null }[];
+  evaluations: Record<string, Record<string, unknown>>;
 };
 
 const MODES = ['watching', 'mimicking', 'guessing', 'word'] as const;
@@ -65,7 +66,7 @@ export async function fetchAcademyDashboard(): Promise<{
   students: StudentDashboardRow[];
   errorMessage: string | null;
 }> {
-  const [profilesRes, progressRes, sessionsRes, resultsRes] = await Promise.all([
+  const [profilesRes, progressRes, sessionsRes, resultsRes, evalRes] = await Promise.all([
     supabase.from('student_profiles').select('id, email, nickname, role'),
     supabase
       .from('learning_progress')
@@ -76,6 +77,9 @@ export async function fetchAcademyDashboard(): Promise<{
     supabase
       .from('learning_results')
       .select('student_id, lesson_number, mode, score, correct_count, total_count, time_spent, created_at'),
+    supabase
+      .from('learning_evaluations')
+      .select('student_id, lesson_number, mode, payload'),
   ]);
 
   const firstError =
@@ -83,6 +87,7 @@ export async function fetchAcademyDashboard(): Promise<{
     progressRes.error?.message ||
     sessionsRes.error?.message ||
     resultsRes.error?.message ||
+    evalRes.error?.message ||
     null;
 
   if (firstError) {
@@ -94,12 +99,23 @@ export async function fetchAcademyDashboard(): Promise<{
   const progress = (progressRes.data || []) as ProgressRow[];
   const sessions = (sessionsRes.data || []) as SessionRow[];
   const results = (resultsRes.data || []) as ResultRow[];
+  const evalRows = (evalRes.data || []) as {
+    student_id: string;
+    lesson_number: number;
+    mode: string;
+    payload: Record<string, unknown> | null;
+  }[];
 
   const students = profiles
     .map((p) => {
       const myProgress = progress.filter((row) => row.student_id === p.id);
       const mySessions = sessions.filter((row) => row.student_id === p.id);
       const myResults = results.filter((row) => row.student_id === p.id);
+      const myEvals = evalRows.filter((row) => row.student_id === p.id);
+      const evaluations: Record<string, Record<string, unknown>> = {};
+      myEvals.forEach((row) => {
+        evaluations[`${row.lesson_number}:${row.mode}`] = row.payload || {};
+      });
 
       const progressByLesson: Record<number, Record<string, boolean>> = {};
       for (let lesson = 1; lesson <= 12; lesson += 1) {
@@ -158,6 +174,7 @@ export async function fetchAcademyDashboard(): Promise<{
         completedCount,
         progressByLesson,
         latestScores,
+        evaluations,
       };
     })
     .sort((a, b) => {

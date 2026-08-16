@@ -16,6 +16,7 @@ import { useMimickingSequence } from "../../hooks/useMimickingSequence";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
+import { useEvaluationLog } from "../../lib/evaluation";
 import { getVideoSource } from "../../utils/videoSource";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
@@ -83,6 +84,7 @@ function MimickingPageContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isMimickingStarted, setIsMimickingStarted] = useState(false);
+  const evalLog = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
   const mimickingTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const autoSeqIndexRef = useRef<number | null>(null);
   const currentIndexRef = useRef<number>(0);
@@ -327,8 +329,14 @@ function MimickingPageContent() {
       setActiveControlIndex(0); // 첫 번째 버튼 즉시 색상 변경
       // console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
       executeMimickingSequence(currentIndex, playVideo, currentScene);
+      evalLog.bumpPlay(String(currentIndex + 1));
+      const counts = (evalLog.payloadRef.current.playCounts as Record<string, number>) || {};
+      evalLog.patch({
+        totalSentences: scenes.length,
+        sentencesPlayed: Object.keys(counts).length,
+      });
     }
-  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes]);
+  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes, evalLog]);
 
   const handlePrev = useCallback(() => {
     if (!isSequenceRunning) {

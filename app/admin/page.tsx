@@ -23,12 +23,115 @@ function formatWhen(iso: string | null) {
   });
 }
 
+function formatInvested(sec: unknown) {
+  const n = Math.max(0, Math.round(Number(sec || 0)));
+  const m = Math.floor(n / 60);
+  const s = n % 60;
+  return `${m}분 ${s}초`;
+}
+
+function EvaluationDetail({
+  mode,
+  payload,
+}: {
+  mode: string;
+  payload: Record<string, unknown> | undefined;
+}) {
+  if (!payload || Object.keys(payload).length === 0) {
+    return (
+      <p className="text-sm text-gray-400 mt-3">
+        아직 이 칸의 평가 기록이 없습니다. 학습한 뒤에 쌓입니다.
+      </p>
+    );
+  }
+
+  const attempts = Array.isArray(payload.attempts)
+    ? (payload.attempts as Record<string, unknown>[])
+    : [];
+  const playCounts = (payload.playCounts as Record<string, number>) || {};
+  const replayTotal = Object.values(playCounts).reduce((sum, n) => sum + Number(n || 0), 0);
+
+  if (mode === 'watching') {
+    return (
+      <div className="mt-3 text-sm text-gray-200 space-y-1">
+        <p>본 비율: {Number(payload.maxPercent || 0)}%</p>
+        <p>투자 시간: {formatInvested(payload.investedSeconds)}</p>
+        <p>재생 횟수: {playCounts.play || replayTotal || 0}회</p>
+      </div>
+    );
+  }
+
+  if (mode === 'mimicking') {
+    return (
+      <div className="mt-3 text-sm text-gray-200 space-y-1">
+        <p>
+          문장: {Number(payload.sentencesPlayed || Object.keys(playCounts).length)} /{' '}
+          {Number(payload.totalSentences || 0)}
+        </p>
+        <p>투자 시간: {formatInvested(payload.investedSeconds)}</p>
+        <p>반복(문장별 재생):</p>
+        <ul className="text-gray-400 max-h-40 overflow-y-auto">
+          {Object.entries(playCounts).map(([key, count]) => (
+            <li key={key}>
+              문장 {key}: {count}회
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  if (mode === 'guessing') {
+    const wrong = attempts.filter((a) => !a.isCorrect).length;
+    return (
+      <div className="mt-3 text-sm text-gray-200 space-y-2">
+        <p>
+          시도 {attempts.length}회 · 틀림 {wrong}회 · 투자 {formatInvested(payload.investedSeconds)}
+        </p>
+        <ul className="space-y-1 text-gray-300 max-h-56 overflow-y-auto">
+          {attempts.map((a, idx) => (
+            <li key={idx}>
+              {Number(a.question)}번: 선택 {String(a.selected)} / 정답 {String(a.correct)}{' '}
+              {a.isCorrect ? '맞음' : '틀림'}
+              {a.replayCount ? ` · 반복 ${String(a.replayCount)}` : ''}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  const wrong = attempts.filter((a) => !a.isCorrect).length;
+  return (
+    <div className="mt-3 text-sm text-gray-200 space-y-2">
+      <p>
+        시도 {attempts.length}회 · 틀림 {wrong}회 · 투자 {formatInvested(payload.investedSeconds)}
+      </p>
+      <ul className="space-y-2 text-gray-300 max-h-56 overflow-y-auto">
+        {attempts.map((a, idx) => (
+          <li key={idx}>
+            {Number(a.question)}번 {a.isCorrect ? '맞음' : '틀림'}
+            {a.replayCount ? ` · 반복 ${String(a.replayCount)}` : ''}
+            <div className="text-gray-500">
+              제출: {Array.isArray(a.submitted) ? a.submitted.join(' ') : '-'}
+            </div>
+            <div className="text-gray-500">
+              정답: {Array.isArray(a.correct) ? a.correct.join(' ') : '-'}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function AdminPage() {
   const router = useRouter();
   const { user, profile, loading } = useAuth();
   const [rows, setRows] = useState<StudentDashboardRow[]>([]);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [selected, setSelected] = useState<StudentDashboardRow | null>(null);
+  const [openCell, setOpenCell] = useState<{ lesson: number; mode: string } | null>(null);
   const [busy, setBusy] = useState(true);
 
   useEffect(() => {
@@ -99,7 +202,8 @@ export default function AdminPage() {
         {errorMessage && (
           <div className="mb-6 p-4 rounded-xl border border-amber-500/50 bg-amber-500/10 text-amber-200 text-sm whitespace-pre-wrap">
             데이터를 못 읽었습니다. Supabase SQL Editor에서{' '}
-            <code className="text-white">supabase/academy_master.sql</code> 을 실행했는지 확인하세요.
+            <code className="text-white">supabase/academy_master.sql</code> 또는{' '}
+            <code className="text-white">supabase/learning_evaluations.sql</code> 을 실행했는지 확인하세요.
             {'\n'}
             {errorMessage}
           </div>
@@ -127,7 +231,10 @@ export default function AdminPage() {
                   <tr
                     key={row.id}
                     className="border-t border-gray-800 hover:bg-gray-900/70 cursor-pointer"
-                    onClick={() => setSelected(row)}
+                    onClick={() => {
+                      setSelected(row);
+                      setOpenCell(null);
+                    }}
                   >
                     <td className="px-4 py-3 font-medium">{row.nickname}</td>
                     <td className="px-4 py-3 text-gray-400">{row.email}</td>
@@ -163,29 +270,43 @@ export default function AdminPage() {
 
               <p className="text-sm text-gray-300 mb-4">
                 이번 주 {selected.weekMinutes}분 · 누적 {selected.totalMinutes}분
+                <span className="text-gray-500"> · 칸을 누르면 평가 상세</span>
               </p>
 
               <div className="space-y-2">
                 {Array.from({ length: 12 }, (_, i) => i + 1).map((lesson) => (
-                  <div key={lesson} className="flex items-center gap-3 text-sm">
-                    <span className="w-16 text-gray-400">레슨 {lesson}</span>
-                    <div className="flex flex-wrap gap-2">
-                      {MODES.map((mode) => {
-                        const done = selected.progressByLesson[lesson]?.[mode];
-                        return (
-                          <span
-                            key={mode}
-                            className={`px-2 py-1 rounded-md ${
-                              done
-                                ? 'bg-[#60D96C] text-black'
-                                : 'bg-gray-800 text-gray-400'
-                            }`}
-                          >
-                            {MODE_LABEL[mode]}
-                          </span>
-                        );
-                      })}
+                  <div key={lesson}>
+                    <div className="flex items-center gap-3 text-sm">
+                      <span className="w-16 text-gray-400">레슨 {lesson}</span>
+                      <div className="flex flex-wrap gap-2">
+                        {MODES.map((mode) => {
+                          const done = selected.progressByLesson[lesson]?.[mode];
+                          const isOpen = openCell?.lesson === lesson && openCell?.mode === mode;
+                          return (
+                            <button
+                              key={mode}
+                              type="button"
+                              onClick={() =>
+                                setOpenCell(isOpen ? null : { lesson, mode })
+                              }
+                              className={`px-2 py-1 rounded-md ${
+                                done
+                                  ? 'bg-[#60D96C] text-black'
+                                  : 'bg-gray-800 text-gray-400'
+                              } ${isOpen ? 'ring-2 ring-white' : ''}`}
+                            >
+                              {MODE_LABEL[mode]}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
+                    {openCell?.lesson === lesson && (
+                      <EvaluationDetail
+                        mode={openCell.mode}
+                        payload={selected.evaluations[`${lesson}:${openCell.mode}`]}
+                      />
+                    )}
                   </div>
                 ))}
               </div>

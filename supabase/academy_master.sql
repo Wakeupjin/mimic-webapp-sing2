@@ -137,3 +137,38 @@ WHERE NOT EXISTS (
 -- UPDATE public.student_profiles
 -- SET role = 'academy'
 -- WHERE email = 'your-email@example.com';
+
+-- 9) 평가 상세 (워칭/미믹/게싱/워드)
+-- 이미 운영 중이면 supabase/learning_evaluations.sql 만 따로 Run 해도 됩니다.
+CREATE TABLE IF NOT EXISTS public.learning_evaluations (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_id uuid NOT NULL REFERENCES public.student_profiles(id) ON DELETE CASCADE,
+  lesson_number integer NOT NULL,
+  mode text NOT NULL,
+  payload jsonb NOT NULL DEFAULT '{}'::jsonb,
+  updated_at timestamptz NOT NULL DEFAULT now(),
+  UNIQUE (student_id, lesson_number, mode)
+);
+
+ALTER TABLE public.learning_evaluations ENABLE ROW LEVEL SECURITY;
+GRANT SELECT, INSERT, UPDATE ON public.learning_evaluations TO authenticated;
+
+DROP POLICY IF EXISTS "students upsert own evaluations" ON public.learning_evaluations;
+CREATE POLICY "students upsert own evaluations"
+  ON public.learning_evaluations FOR INSERT TO authenticated
+  WITH CHECK (auth.uid() = student_id);
+
+DROP POLICY IF EXISTS "students update own evaluations" ON public.learning_evaluations;
+CREATE POLICY "students update own evaluations"
+  ON public.learning_evaluations FOR UPDATE TO authenticated
+  USING (auth.uid() = student_id) WITH CHECK (auth.uid() = student_id);
+
+DROP POLICY IF EXISTS "students select own evaluations" ON public.learning_evaluations;
+CREATE POLICY "students select own evaluations"
+  ON public.learning_evaluations FOR SELECT TO authenticated
+  USING (auth.uid() = student_id);
+
+DROP POLICY IF EXISTS "academy select all evaluations" ON public.learning_evaluations;
+CREATE POLICY "academy select all evaluations"
+  ON public.learning_evaluations FOR SELECT TO authenticated
+  USING (public.is_academy());

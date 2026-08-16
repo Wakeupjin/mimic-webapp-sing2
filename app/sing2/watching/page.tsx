@@ -17,6 +17,7 @@ import AgainNextButtons from "../../components/AgainNextButtons";
 import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '../../dataService';
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
+import { useEvaluationLog } from '../../lib/evaluation';
 import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
 import LessonShell from '../../components/LessonShell';
@@ -59,6 +60,8 @@ function WatchingPageContent() {
     pauseVideo,
     resetVideo
   } = useVideoPlayer();
+
+  const evalLog = useEvaluationLog(lessonNumber, 'watching', isVideoStarted);
 
   const playSafely = (video: HTMLVideoElement | null) => {
     if (!video) return;
@@ -161,6 +164,23 @@ function WatchingPageContent() {
               lastSaved: new Date().toISOString()
             }
           );
+          const start = Number(lessonData?.watch_start_sec || 0);
+          const end = Number(lessonData?.watch_end_sec || 0);
+          const span = Math.max(1, end - start);
+          const percent = Math.min(
+            100,
+            Math.max(0, Math.round(((video.currentTime - start) / span) * 100))
+          );
+          const maxPercent = Math.max(
+            Number(evalLog.payloadRef.current.maxPercent || 0),
+            percent
+          );
+          evalLog.patch({
+            startSec: start,
+            endSec: end,
+            lastPositionSec: Math.round(video.currentTime),
+            maxPercent,
+          });
           console.log('💾 진도 저장됨:', video.currentTime);
         } catch (error) {
           console.error('진도 저장 실패:', error);
@@ -169,7 +189,7 @@ function WatchingPageContent() {
     }, 5000); // 5초마다 저장
 
     return () => clearInterval(saveProgressInterval);
-  }, [lessonNumber, isVideoStarted]);
+  }, [lessonNumber, isVideoStarted, lessonData, evalLog]);
 
   // 학습 로그 저장 (비디오 시작/일시정지/재생 등)
   useEffect(() => {
@@ -180,6 +200,7 @@ function WatchingPageContent() {
 
     const handlePlay = () => {
       saveLog(lessonNumber, 'watching', 'video_play', { timestamp: video.currentTime });
+      evalLog.bumpPlay('play');
     };
 
     const handlePause = () => {
@@ -190,6 +211,8 @@ function WatchingPageContent() {
       try {
         // 완료 상태로 저장
         await saveProgress(lessonNumber, 'watching', true, video.currentTime);
+        evalLog.patch({ maxPercent: 100 });
+        void evalLog.flush();
         await saveLog(lessonNumber, 'watching', 'video_completed', { 
           duration: video.duration,
           completed_at: new Date().toISOString()
@@ -209,7 +232,7 @@ function WatchingPageContent() {
       video.removeEventListener('pause', handlePause);
       video.removeEventListener('ended', handleEnded);
     };
-  }, [lessonNumber, videoUrl]);
+  }, [lessonNumber, videoUrl, evalLog]);
 
   const [videoProgress, setVideoProgress] = useState(0);
   const [isDragging, setIsDragging] = useState(false);

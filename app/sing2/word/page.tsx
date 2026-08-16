@@ -11,6 +11,7 @@ import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '@/app/dataS
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
+import { useEvaluationLog } from '@/app/lib/evaluation';
 import { getVideoSource } from '@/app/utils/videoSource';
 import LessonShell from '@/app/components/LessonShell';
 
@@ -86,6 +87,7 @@ function WordPageContent() {
   // 커스텀 훅 사용
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const totalQuestions = 10;
+  const evalLog = useEvaluationLog(lessonNumber, 'word', isStarted);
 
   // Extract current chapter number from movieId (e.g., "001:1" -> 1)
   const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
@@ -470,6 +472,16 @@ function WordPageContent() {
 
     // Check if answer is correct
     const isCorrect = JSON.stringify(selectedWords) === JSON.stringify(currentQuestion.correctWords);
+
+    evalLog.addAttempt({
+      question: currentQuestionNumber,
+      submitted: [...selectedWords],
+      correct: [...currentQuestion.correctWords],
+      isCorrect,
+      replayCount: playCountRef.current,
+    });
+    evalLog.patch({ totalQuestions });
+    void evalLog.flush();
 
     // Hide all remaining word buttons
     setHideAllWords(true);

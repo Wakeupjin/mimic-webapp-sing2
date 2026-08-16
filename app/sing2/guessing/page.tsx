@@ -23,6 +23,7 @@ import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
 import LessonShell from "../../components/LessonShell";
 import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
+import { useEvaluationLog } from "../../lib/evaluation";
 import {
   GUESSING_ANSWER_FEEDBACK_DURATION,
   GUESSING_NEXT_QUESTION_DELAY,
@@ -135,6 +136,8 @@ function GuessingPageContent() {
     handleAnswerSelect,
     resetGuessingState
   } = useGuessingGame();
+
+  const evalLog = useEvaluationLog(lessonNumber, 'guessing', isGuessingStarted);
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -425,6 +428,17 @@ function GuessingPageContent() {
     const correctAnswer = currentQuestion.correctAnswer;
     const isCorrect = selectedAnswer === correctAnswer;
 
+    evalLog.addAttempt({
+      question: currentQuestionIndex + 1,
+      selected: selectedAnswer,
+      correct: correctAnswer,
+      isCorrect,
+      replayCount: videoPlayCountRef.current || videoPlayCount,
+      prompt: currentQuestion?.question || currentQuestion?.options?.[0]?.text || '',
+    });
+    evalLog.patch({ totalQuestions });
+    void evalLog.flush();
+
     setAllOptionsPlayed(false);
     handleAnswerSelect(selectedAnswer, correctAnswer);
 
@@ -462,7 +476,7 @@ function GuessingPageContent() {
         playVideo();
       }, GUESSING_ANSWER_FEEDBACK_DURATION);
     }
-  }, [allOptionsPlayed, currentQuestionIndex, totalQuestions, currentIndex, guessingData, handleAnswerSelect, playCorrectSound, playAgainSound, playVideo, resetQuestionPlayback, setCurrentQuestionIndex, setCurrentIndex, setShowResults, setShowIntro, setUserInteracted, setIsGuessingStarted, setUserAnswers, setCorrectCount, setAllOptionsPlayed]);
+  }, [allOptionsPlayed, currentQuestionIndex, totalQuestions, currentIndex, guessingData, handleAnswerSelect, playCorrectSound, playAgainSound, playVideo, resetQuestionPlayback, setCurrentQuestionIndex, setCurrentIndex, setShowResults, setShowIntro, setUserInteracted, setIsGuessingStarted, setUserAnswers, setCorrectCount, setAllOptionsPlayed, evalLog, videoPlayCount]);
   
   if (loading) {
     return (
