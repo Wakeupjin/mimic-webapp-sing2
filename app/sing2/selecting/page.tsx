@@ -9,7 +9,7 @@ import { useFullscreen } from '../../hooks/useFullscreen';
 // import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings'; 
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { supabase } from '../../supabaseClient'; 
+import { fetchLessonSummaries } from '../../dataService'; 
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -55,31 +55,13 @@ function SelectingPageContent() {
       setIsLoading(true);
       
       try {
-        const { data, error } = await supabase
-          .from('lessons')
-          .select('id, lesson_number, video_id')
-          .order('lesson_number', { ascending: true }); // 레슨 번호 순으로 정렬
-
-        // console.log('📡 Supabase 응답:', { data, error });
-
-        if (error) {
-          console.error('❌ Error fetching lessons:', error);
-          setIsLoading(false);
-          return;
-        }
-
-        // console.log('✅ Supabase lessons data:', data);
-
-        const lessonList = data || [];
-        // console.log('📚 Lesson 목록:', lessonList);
+        const lessonList = await fetchLessonSummaries();
         setLessons(lessonList);
 
-        // Lesson 목록을 가져온 후, 첫 번째 Lesson을 기본값으로 설정
-        if (lessonList.length > 0) {
-          // console.log('🎯 첫 번째 Lesson 설정:', lessonList[0]);
-          setSelectedLesson(lessonList[0]);
+        const lessonOne = lessonList.find((lesson) => lesson.lesson_number === 1) || lessonList[0];
+        if (lessonOne) {
+          setSelectedLesson(lessonOne);
         }
-        // console.log('✅ 로딩 완료');
         setIsLoading(false);
       } catch (err) {
         console.error('❌ fetchLessons 에러:', err);
@@ -156,7 +138,7 @@ function SelectingPageContent() {
     if (!selectedLesson) return;
 
     // Supabase에서 가져온 video_id와 lesson_number를 사용
-    const movieId = `${selectedLesson.video_id}:${selectedLesson.lesson_number}`;
+    const movieId = `001:${selectedLesson.lesson_number}`;
     
     if (mode === 'mimicking') {
       window.location.href = `/sing2/mimicking?id=${movieId}`;

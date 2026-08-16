@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:59:20,845",
+    "end": "01:07:25,263"
+  },
+  "mimicking": [
+    {
+      "start": "00:59:20,845",
+      "end": "00:59:22,347",
+      "text": "Well, there you go."
+    },
+    {
+      "start": "00:59:44,736",
+      "end": "00:59:46,471",
+      "text": "I know, I know."
+    },
+    {
+      "start": "00:59:54,579",
+      "end": "00:59:57,749",
+      "text": "but when I get close,"
+    },
+    {
+      "start": "01:00:11,996",
+      "end": "01:00:13,965",
+      "text": "Uh, honestly, th-this is gonna be"
+    },
+    {
+      "start": "01:00:18,836",
+      "end": "01:00:20,471",
+      "text": "Turn on that tap for me."
+    },
+    {
+      "start": "01:00:40,858",
+      "end": "01:00:42,427",
+      "text": "You drink it."
+    },
+    {
+      "start": "01:00:46,798",
+      "end": "01:00:48,700",
+      "text": "I mean, fantastic show ever."
+    },
+    {
+      "start": "01:00:52,403",
+      "end": "01:00:54,972",
+      "text": "I mean, i-it's gonna end with you"
+    },
+    {
+      "start": "01:00:58,876",
+      "end": "01:01:02,013",
+      "text": "Besides, lost my singing voice, so..."
+    },
+    {
+      "start": "01:01:18,730",
+      "end": "01:01:20,465",
+      "text": "All of my songs."
+    },
+    {
+      "start": "01:01:31,409",
+      "end": "01:01:35,480",
+      "text": "I mean, you out here on your own"
+    },
+    {
+      "start": "01:01:37,782",
+      "end": "01:01:40,318",
+      "text": "No, y-you don't understand."
+    },
+    {
+      "start": "01:01:46,390",
+      "end": "01:01:48,826",
+      "text": "Your songs will bring you back."
+    },
+    {
+      "start": "01:01:57,401",
+      "end": "01:01:59,437",
+      "text": "And for good reason."
+    },
+    {
+      "start": "01:02:14,452",
+      "end": "01:02:16,721",
+      "text": "He's not gonna change his mind."
+    },
+    {
+      "start": "01:02:22,927",
+      "end": "01:02:25,797",
+      "text": "I just need time with him."
+    },
+    {
+      "start": "01:02:33,638",
+      "end": "01:02:36,374",
+      "text": "- Whoa. - Welcome back, Mr. Moon, sir."
+    },
+    {
+      "start": "01:02:39,977",
+      "end": "01:02:41,479",
+      "text": "Thank you, Mr. Moon, sir."
+    },
+    {
+      "start": "01:02:45,583",
+      "end": "01:02:47,618",
+      "text": "So, any luck with Clay Calloway?"
+    },
+    {
+      "start": "01:02:50,988",
+      "end": "01:02:53,791",
+      "text": "All right, folks, tomorrow, we have our first run-through,"
+    },
+    {
+      "start": "01:03:49,947",
+      "end": "01:03:51,482",
+      "text": "I must take care,"
+    },
+    {
+      "start": "01:03:59,457",
+      "end": "01:04:01,126",
+      "text": "Uh, everyone, take five."
+    },
+    {
+      "start": "01:04:09,167",
+      "end": "01:04:12,170",
+      "text": "Porsha, you know I truly believe"
+    },
+    {
+      "start": "01:04:16,941",
+      "end": "01:04:18,776",
+      "text": "- Thank you. - Y-Yeah, yeah,"
+    },
+    {
+      "start": "01:04:35,826",
+      "end": "01:04:38,130",
+      "text": "- to switch roles with... - You're firing me?"
+    },
+    {
+      "start": "01:04:44,635",
+      "end": "01:04:47,139",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "01:04:52,210",
+      "end": "01:04:53,945",
+      "text": "Well, I don't care if you hate me."
+    },
+    {
+      "start": "01:04:59,850",
+      "end": "01:05:01,953",
+      "text": "Porsha, stop. Wait!"
+    },
+    {
+      "start": "01:07:09,114",
+      "end": "01:07:13,617",
+      "text": "Porsha Crystal was reportedly fired from her father's show."
+    },
+    {
+      "start": "01:07:23,861",
+      "end": "01:07:25,263",
+      "text": "Now the whole world thinks I got"
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "but when I get close,",
+          "start": "00:59:54,579",
+          "end": "00:59:57,749"
+        },
+        {
+          "label": "C",
+          "text": "Besides, lost my singing voice, so...",
+          "start": "01:00:58,876",
+          "end": "01:01:02,013"
+        },
+        {
+          "label": "A",
+          "text": "I mean, i-it's gonna end with you",
+          "start": "01:00:52,403",
+          "end": "01:00:54,972"
+        }
+      ],
+      "video": {
+        "start": "00:59:54,579",
+        "end": "00:59:57,749"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "You drink it.",
+          "start": "01:00:40,858",
+          "end": "01:00:42,427"
+        },
+        {
+          "label": "B",
+          "text": "- Whoa. - Welcome back, Mr. Moon, sir.",
+          "start": "01:02:33,638",
+          "end": "01:02:36,374"
+        },
+        {
+          "label": "A",
+          "text": "I mean, i-it's gonna end with you",
+          "start": "01:00:52,403",
+          "end": "01:00:54,972"
+        }
+      ],
+      "video": {
+        "start": "01:00:40,858",
+        "end": "01:00:42,427"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Besides, lost my singing voice, so...",
+          "start": "01:00:58,876",
+          "end": "01:01:02,013"
+        },
+        {
+          "label": "A",
+          "text": "Uh, honestly, th-this is gonna be",
+          "start": "01:00:11,996",
+          "end": "01:00:13,965"
+        },
+        {
+          "label": "C",
+          "text": "Porsha, stop. Wait!",
+          "start": "01:04:59,850",
+          "end": "01:05:01,953"
+        }
+      ],
+      "video": {
+        "start": "01:00:58,876",
+        "end": "01:01:02,013"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "No, y-you don't understand.",
+          "start": "01:01:37,782",
+          "end": "01:01:40,318"
+        },
+        {
+          "label": "A",
+          "text": "Porsha, stop. Wait!",
+          "start": "01:04:59,850",
+          "end": "01:05:01,953"
+        },
+        {
+          "label": "B",
+          "text": "- Whoa. - Welcome back, Mr. Moon, sir.",
+          "start": "01:02:33,638",
+          "end": "01:02:36,374"
+        }
+      ],
+      "video": {
+        "start": "01:01:37,782",
+        "end": "01:01:40,318"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "He's not gonna change his mind.",
+          "start": "01:02:14,452",
+          "end": "01:02:16,721"
+        },
+        {
+          "label": "C",
+          "text": "Besides, lost my singing voice, so...",
+          "start": "01:00:58,876",
+          "end": "01:01:02,013"
+        },
+        {
+          "label": "A",
+          "text": "Uh, everyone, take five.",
+          "start": "01:03:59,457",
+          "end": "01:04:01,126"
+        }
+      ],
+      "video": {
+        "start": "01:02:14,452",
+        "end": "01:02:16,721"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Thank you, Mr. Moon, sir.",
+          "start": "01:02:39,977",
+          "end": "01:02:41,479"
+        },
+        {
+          "label": "A",
+          "text": "I mean, you out here on your own",
+          "start": "01:01:31,409",
+          "end": "01:01:35,480"
+        },
+        {
+          "label": "B",
+          "text": "Uh, honestly, th-this is gonna be",
+          "start": "01:00:11,996",
+          "end": "01:00:13,965"
+        }
+      ],
+      "video": {
+        "start": "01:02:39,977",
+        "end": "01:02:41,479"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "I must take care,",
+          "start": "01:03:49,947",
+          "end": "01:03:51,482"
+        },
+        {
+          "label": "B",
+          "text": "- Thank you. - Y-Yeah, yeah,",
+          "start": "01:04:16,941",
+          "end": "01:04:18,776"
+        },
+        {
+          "label": "C",
+          "text": "Oh, my gosh.",
+          "start": "01:04:44,635",
+          "end": "01:04:47,139"
+        }
+      ],
+      "video": {
+        "start": "01:03:49,947",
+        "end": "01:03:51,482"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "- Thank you. - Y-Yeah, yeah,",
+          "start": "01:04:16,941",
+          "end": "01:04:18,776"
+        },
+        {
+          "label": "B",
+          "text": "Porsha, stop. Wait!",
+          "start": "01:04:59,850",
+          "end": "01:05:01,953"
+        },
+        {
+          "label": "C",
+          "text": "I mean, fantastic show ever.",
+          "start": "01:00:46,798",
+          "end": "01:00:48,700"
+        }
+      ],
+      "video": {
+        "start": "01:04:16,941",
+        "end": "01:04:18,776"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Well, I don't care if you hate me.",
+          "start": "01:04:52,210",
+          "end": "01:04:53,945"
+        },
+        {
+          "label": "A",
+          "text": "- Thank you. - Y-Yeah, yeah,",
+          "start": "01:04:16,941",
+          "end": "01:04:18,776"
+        },
+        {
+          "label": "C",
+          "text": "Thank you, Mr. Moon, sir.",
+          "start": "01:02:39,977",
+          "end": "01:02:41,479"
+        }
+      ],
+      "video": {
+        "start": "01:04:52,210",
+        "end": "01:04:53,945"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Now the whole world thinks I got",
+          "start": "01:07:23,861",
+          "end": "01:07:25,263"
+        },
+        {
+          "label": "C",
+          "text": "You drink it.",
+          "start": "01:00:40,858",
+          "end": "01:00:42,427"
+        },
+        {
+          "label": "B",
+          "text": "I just need time with him.",
+          "start": "01:02:22,927",
+          "end": "01:02:25,797"
+        }
+      ],
+      "video": {
+        "start": "01:07:23,861",
+        "end": "01:07:25,263"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:59:20,845",
+      "end": "00:59:22,347",
+      "text": "Well, there you go."
+    },
+    {
+      "question": 2,
+      "start": "00:59:44,736",
+      "end": "00:59:46,471",
+      "text": "I know, I know."
+    },
+    {
+      "question": 3,
+      "start": "01:00:11,996",
+      "end": "01:00:13,965",
+      "text": "Uh, honestly, th-this is gonna be"
+    },
+    {
+      "question": 4,
+      "start": "01:00:18,836",
+      "end": "01:00:20,471",
+      "text": "Turn on that tap for me."
+    },
+    {
+      "question": 5,
+      "start": "01:00:46,798",
+      "end": "01:00:48,700",
+      "text": "I mean, fantastic show ever."
+    },
+    {
+      "question": 6,
+      "start": "01:00:52,403",
+      "end": "01:00:54,972",
+      "text": "I mean, i-it's gonna end with you"
+    },
+    {
+      "question": 7,
+      "start": "01:01:18,730",
+      "end": "01:01:20,465",
+      "text": "All of my songs."
+    },
+    {
+      "question": 8,
+      "start": "01:01:31,409",
+      "end": "01:01:35,480",
+      "text": "I mean, you out here on your own"
+    },
+    {
+      "question": 9,
+      "start": "01:01:46,390",
+      "end": "01:01:48,826",
+      "text": "Your songs will bring you back."
+    },
+    {
+      "question": 10,
+      "start": "01:01:57,401",
+      "end": "01:01:59,437",
+      "text": "And for good reason."
+    }
+  ]
+}

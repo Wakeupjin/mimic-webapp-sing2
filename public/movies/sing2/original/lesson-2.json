@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:09:40,898",
+    "end": "00:16:50,328"
+  },
+  "mimicking": [
+    {
+      "start": "00:09:40,898",
+      "end": "00:09:43,201",
+      "text": "Oh, for heaven's sake."
+    },
+    {
+      "start": "00:09:48,973",
+      "end": "00:09:50,675",
+      "text": "I was reaching too high."
+    },
+    {
+      "start": "00:09:59,384",
+      "end": "00:10:01,386",
+      "text": "that my destiny, all of my hopes and dreams,"
+    },
+    {
+      "start": "00:10:11,295",
+      "end": "00:10:12,930",
+      "text": "She-she ran me off the road into a canal."
+    },
+    {
+      "start": "00:10:22,907",
+      "end": "00:10:24,542",
+      "text": "Ah, Hobbs. I found him."
+    },
+    {
+      "start": "00:10:33,251",
+      "end": "00:10:35,353",
+      "text": "Do you think you're good enough?"
+    },
+    {
+      "start": "00:10:37,989",
+      "end": "00:10:40,224",
+      "text": "Guts, stamina, faith."
+    },
+    {
+      "start": "00:10:44,429",
+      "end": "00:10:46,731",
+      "text": "Well, maybe that scout was right."
+    },
+    {
+      "start": "00:11:37,482",
+      "end": "00:11:38,883",
+      "text": "And listen, I'm outside her place now,"
+    },
+    {
+      "start": "00:11:41,986",
+      "end": "00:11:43,921",
+      "text": "Great. Thank you."
+    },
+    {
+      "start": "00:12:28,699",
+      "end": "00:12:30,535",
+      "text": "I got to go back out for an encore."
+    },
+    {
+      "start": "00:12:33,638",
+      "end": "00:12:35,406",
+      "text": "Well, listen, I know this is crazy short notice,"
+    },
+    {
+      "start": "00:12:43,115",
+      "end": "00:12:44,682",
+      "text": "I'm getting the gang together to go audition"
+    },
+    {
+      "start": "00:12:48,853",
+      "end": "00:12:50,588",
+      "text": "half what the other acts get?"
+    },
+    {
+      "start": "00:12:57,995",
+      "end": "00:12:59,764",
+      "text": "so, you know, unless I get paid"
+    },
+    {
+      "start": "00:13:03,868",
+      "end": "00:13:05,103",
+      "text": "Where else you gonna play?"
+    },
+    {
+      "start": "00:13:15,980",
+      "end": "00:13:17,982",
+      "text": "Deal with it, sweetheart."
+    },
+    {
+      "start": "00:13:22,453",
+      "end": "00:13:24,755",
+      "text": "Okay, I got the tickets."
+    },
+    {
+      "start": "00:13:27,425",
+      "end": "00:13:28,693",
+      "text": "- Here's yours, and... - Mr. Moon."
+    },
+    {
+      "start": "00:13:32,496",
+      "end": "00:13:34,632",
+      "text": "What? No, no, no, wait."
+    },
+    {
+      "start": "00:13:38,536",
+      "end": "00:13:40,172",
+      "text": "I mean, that theater scout,"
+    },
+    {
+      "start": "00:13:51,482",
+      "end": "00:13:53,151",
+      "text": "Ooh. Or maybe we could just, like,"
+    },
+    {
+      "start": "00:13:59,991",
+      "end": "00:14:02,894",
+      "text": "All right, we're rolling out here."
+    },
+    {
+      "start": "00:14:18,009",
+      "end": "00:14:20,745",
+      "text": "Listen, you guys, I have dreamt of performing"
+    },
+    {
+      "start": "00:14:25,716",
+      "end": "00:14:27,718",
+      "text": "to babysit for the next 24 hours,"
+    },
+    {
+      "start": "00:14:38,829",
+      "end": "00:14:40,698",
+      "text": "Wait. We're just gonna rehearse this here"
+    },
+    {
+      "start": "00:14:54,578",
+      "end": "00:14:59,184",
+      "text": "Uh, well, you did say, Dress to impress."
+    },
+    {
+      "start": "00:15:56,241",
+      "end": "00:15:57,575",
+      "text": "the guitar part through the whole scene."
+    },
+    {
+      "start": "00:16:41,086",
+      "end": "00:16:42,686",
+      "text": "No? What do you mean, no?"
+    },
+    {
+      "start": "00:16:48,826",
+      "end": "00:16:50,328",
+      "text": "Yes, you should. Next, please."
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "that my destiny, all of my hopes and dreams,",
+          "start": "00:09:59,384",
+          "end": "00:10:01,386"
+        },
+        {
+          "label": "A",
+          "text": "Ooh. Or maybe we could just, like,",
+          "start": "00:13:51,482",
+          "end": "00:13:53,151"
+        },
+        {
+          "label": "C",
+          "text": "What? No, no, no, wait.",
+          "start": "00:13:32,496",
+          "end": "00:13:34,632"
+        }
+      ],
+      "video": {
+        "start": "00:09:59,384",
+        "end": "00:10:01,386"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Do you think you're good enough?",
+          "start": "00:10:33,251",
+          "end": "00:10:35,353"
+        },
+        {
+          "label": "A",
+          "text": "Yes, you should. Next, please.",
+          "start": "00:16:48,826",
+          "end": "00:16:50,328"
+        },
+        {
+          "label": "C",
+          "text": "the guitar part through the whole scene.",
+          "start": "00:15:56,241",
+          "end": "00:15:57,575"
+        }
+      ],
+      "video": {
+        "start": "00:10:33,251",
+        "end": "00:10:35,353"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "And listen, I'm outside her place now,",
+          "start": "00:11:37,482",
+          "end": "00:11:38,883"
+        },
+        {
+          "label": "C",
+          "text": "I got to go back out for an encore.",
+          "start": "00:12:28,699",
+          "end": "00:12:30,535"
+        },
+        {
+          "label": "B",
+          "text": "I mean, that theater scout,",
+          "start": "00:13:38,536",
+          "end": "00:13:40,172"
+        }
+      ],
+      "video": {
+        "start": "00:11:37,482",
+        "end": "00:11:38,883"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Well, listen, I know this is crazy short notice,",
+          "start": "00:12:33,638",
+          "end": "00:12:35,406"
+        },
+        {
+          "label": "C",
+          "text": "Oh, for heaven's sake.",
+          "start": "00:09:40,898",
+          "end": "00:09:43,201"
+        },
+        {
+          "label": "A",
+          "text": "Yes, you should. Next, please.",
+          "start": "00:16:48,826",
+          "end": "00:16:50,328"
+        }
+      ],
+      "video": {
+        "start": "00:12:33,638",
+        "end": "00:12:35,406"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "so, you know, unless I get paid",
+          "start": "00:12:57,995",
+          "end": "00:12:59,764"
+        },
+        {
+          "label": "A",
+          "text": "Great. Thank you.",
+          "start": "00:11:41,986",
+          "end": "00:11:43,921"
+        },
+        {
+          "label": "B",
+          "text": "Guts, stamina, faith.",
+          "start": "00:10:37,989",
+          "end": "00:10:40,224"
+        }
+      ],
+      "video": {
+        "start": "00:12:57,995",
+        "end": "00:12:59,764"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Okay, I got the tickets.",
+          "start": "00:13:22,453",
+          "end": "00:13:24,755"
+        },
+        {
+          "label": "C",
+          "text": "Oh, for heaven's sake.",
+          "start": "00:09:40,898",
+          "end": "00:09:43,201"
+        },
+        {
+          "label": "A",
+          "text": "Ah, Hobbs. I found him.",
+          "start": "00:10:22,907",
+          "end": "00:10:24,542"
+        }
+      ],
+      "video": {
+        "start": "00:13:22,453",
+        "end": "00:13:24,755"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "I mean, that theater scout,",
+          "start": "00:13:38,536",
+          "end": "00:13:40,172"
+        },
+        {
+          "label": "C",
+          "text": "to babysit for the next 24 hours,",
+          "start": "00:14:25,716",
+          "end": "00:14:27,718"
+        },
+        {
+          "label": "A",
+          "text": "Do you think you're good enough?",
+          "start": "00:10:33,251",
+          "end": "00:10:35,353"
+        }
+      ],
+      "video": {
+        "start": "00:13:38,536",
+        "end": "00:13:40,172"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Listen, you guys, I have dreamt of performing",
+          "start": "00:14:18,009",
+          "end": "00:14:20,745"
+        },
+        {
+          "label": "C",
+          "text": "Yes, you should. Next, please.",
+          "start": "00:16:48,826",
+          "end": "00:16:50,328"
+        },
+        {
+          "label": "B",
+          "text": "Uh, well, you did say, Dress to impress.",
+          "start": "00:14:54,578",
+          "end": "00:14:59,184"
+        }
+      ],
+      "video": {
+        "start": "00:14:18,009",
+        "end": "00:14:20,745"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Uh, well, you did say, Dress to impress.",
+          "start": "00:14:54,578",
+          "end": "00:14:59,184"
+        },
+        {
+          "label": "B",
+          "text": "- Here's yours, and... - Mr. Moon.",
+          "start": "00:13:27,425",
+          "end": "00:13:28,693"
+        },
+        {
+          "label": "A",
+          "text": "that my destiny, all of my hopes and dreams,",
+          "start": "00:09:59,384",
+          "end": "00:10:01,386"
+        }
+      ],
+      "video": {
+        "start": "00:14:54,578",
+        "end": "00:14:59,184"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Yes, you should. Next, please.",
+          "start": "00:16:48,826",
+          "end": "00:16:50,328"
+        },
+        {
+          "label": "B",
+          "text": "Ooh. Or maybe we could just, like,",
+          "start": "00:13:51,482",
+          "end": "00:13:53,151"
+        },
+        {
+          "label": "A",
+          "text": "Okay, I got the tickets.",
+          "start": "00:13:22,453",
+          "end": "00:13:24,755"
+        }
+      ],
+      "video": {
+        "start": "00:16:48,826",
+        "end": "00:16:50,328"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:09:40,898",
+      "end": "00:09:43,201",
+      "text": "Oh, for heaven's sake."
+    },
+    {
+      "question": 2,
+      "start": "00:09:48,973",
+      "end": "00:09:50,675",
+      "text": "I was reaching too high."
+    },
+    {
+      "question": 3,
+      "start": "00:10:11,295",
+      "end": "00:10:12,930",
+      "text": "She-she ran me off the road into a canal."
+    },
+    {
+      "question": 4,
+      "start": "00:10:22,907",
+      "end": "00:10:24,542",
+      "text": "Ah, Hobbs. I found him."
+    },
+    {
+      "question": 5,
+      "start": "00:10:37,989",
+      "end": "00:10:40,224",
+      "text": "Guts, stamina, faith."
+    },
+    {
+      "question": 6,
+      "start": "00:10:44,429",
+      "end": "00:10:46,731",
+      "text": "Well, maybe that scout was right."
+    },
+    {
+      "question": 7,
+      "start": "00:11:41,986",
+      "end": "00:11:43,921",
+      "text": "Great. Thank you."
+    },
+    {
+      "question": 8,
+      "start": "00:12:28,699",
+      "end": "00:12:30,535",
+      "text": "I got to go back out for an encore."
+    },
+    {
+      "question": 9,
+      "start": "00:12:43,115",
+      "end": "00:12:44,682",
+      "text": "I'm getting the gang together to go audition"
+    },
+    {
+      "question": 10,
+      "start": "00:12:48,853",
+      "end": "00:12:50,588",
+      "text": "half what the other acts get?"
+    }
+  ]
+}

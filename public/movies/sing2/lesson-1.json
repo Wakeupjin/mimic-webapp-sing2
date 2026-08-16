@@ -1,13 +1,313 @@
 {
   "watching": {
     "start": "00:00:00,000",
-    "end": "00:06:37,549"
+    "end": "00:10:24,542"
   },
-  "mimicking": [
+  "fullSubtitles": [
+    {
+      "start": "00:00:00,000",
+      "end": "00:00:05,000",
+      "text": "Mimicking is Fun"
+    },
+    {
+      "start": "00:00:27,345",
+      "end": "00:00:30,148",
+      "text": "♪ Illumination... ♪"
+    },
+    {
+      "start": "00:00:30,182",
+      "end": "00:00:32,084",
+      "text": "♪ Illumination ♪"
+    },
+    {
+      "start": "00:00:34,018",
+      "end": "00:00:35,719",
+      "text": "♪ Illumination ♪"
+    },
+    {
+      "start": "00:00:37,322",
+      "end": "00:00:39,023",
+      "text": "♪ Illumination ♪"
+    },
+    {
+      "start": "00:00:39,057",
+      "end": "00:00:40,958",
+      "text": "♪ Yeah! ♪"
+    },
+    {
+      "start": "00:00:40,991",
+      "end": "00:00:45,130",
+      "text": "- ♪ Illumination ♪ - ♪ Illumination ♪"
+    },
+    {
+      "start": "00:00:45,163",
+      "end": "00:00:50,168",
+      "text": "♪ Illumination... ♪"
+    },
+    {
+      "start": "00:01:38,916",
+      "end": "00:01:40,818",
+      "text": "Oh."
+    },
     {
       "start": "00:01:43,721",
       "end": "00:01:46,124",
       "text": "Oh, my gosh."
+    },
+    {
+      "start": "00:02:11,749",
+      "end": "00:02:13,351",
+      "text": "♪ Let's go crazy ♪"
+    },
+    {
+      "start": "00:02:13,385",
+      "end": "00:02:14,818",
+      "text": "♪ Whoo! ♪"
+    },
+    {
+      "start": "00:02:14,852",
+      "end": "00:02:16,488",
+      "text": "♪ Let's go crazy ♪"
+    },
+    {
+      "start": "00:02:16,521",
+      "end": "00:02:20,492",
+      "text": "♪ Let's go crazy, let's go crazy ♪"
+    },
+    {
+      "start": "00:02:20,525",
+      "end": "00:02:22,726",
+      "text": "♪ If you don't like ♪"
+    },
+    {
+      "start": "00:02:22,760",
+      "end": "00:02:24,695",
+      "text": "♪ The world you're living in ♪"
+    },
+    {
+      "start": "00:02:25,430",
+      "end": "00:02:27,432",
+      "text": "♪ Take a look around ♪"
+    },
+    {
+      "start": "00:02:27,465",
+      "end": "00:02:29,334",
+      "text": "♪ At least you got friends ♪"
+    },
+    {
+      "start": "00:02:29,367",
+      "end": "00:02:32,204",
+      "text": "♪ You see, I called my old lady ♪"
+    },
+    {
+      "start": "00:02:32,237",
+      "end": "00:02:34,206",
+      "text": "♪ For a friendly word ♪"
+    },
+    {
+      "start": "00:02:35,373",
+      "end": "00:02:37,908",
+      "text": "♪ She picked up the phone, dropped it on the floor ♪"
+    },
+    {
+      "start": "00:02:37,942",
+      "end": "00:02:40,111",
+      "text": "♪ \"Ah-ah\" is all I heard ♪"
+    },
+    {
+      "start": "00:02:40,145",
+      "end": "00:02:43,781",
+      "text": "♪ Are we gonna let the elevator bring us down? ♪"
+    },
+    {
+      "start": "00:02:43,814",
+      "end": "00:02:45,217",
+      "text": "♪ Oh, no, let's go ♪"
+    },
+    {
+      "start": "00:02:45,250",
+      "end": "00:02:46,917",
+      "text": "♪ Let's go crazy ♪"
+    },
+    {
+      "start": "00:02:47,552",
+      "end": "00:02:49,487",
+      "text": "♪ Let's get nuts ♪"
+    },
+    {
+      "start": "00:02:49,521",
+      "end": "00:02:51,489",
+      "text": "♪ Let's look for the purple banana ♪"
+    },
+    {
+      "start": "00:02:51,523",
+      "end": "00:02:54,226",
+      "text": "♪ Till they put us in the truck ♪"
+    },
+    {
+      "start": "00:02:54,259",
+      "end": "00:02:55,859",
+      "text": "♪ Let's go! ♪"
+    },
+    {
+      "start": "00:02:55,893",
+      "end": "00:02:58,129",
+      "text": "♪ Oh, yeah, yeah, yeah ♪"
+    },
+    {
+      "start": "00:02:58,163",
+      "end": "00:03:01,099",
+      "text": "- ♪ Yeah, yeah, yeah, yeah ♪ - ♪ Yeah, yeah ♪"
+    },
+    {
+      "start": "00:03:04,402",
+      "end": "00:03:06,937",
+      "text": "- ♪ We're all excited ♪ - ♪ We're all excited ♪"
+    },
+    {
+      "start": "00:03:06,971",
+      "end": "00:03:09,341",
+      "text": "- ♪ Don't know why ♪ - ♪ Don't know why ♪"
+    },
+    {
+      "start": "00:03:09,374",
+      "end": "00:03:11,476",
+      "text": "♪ Maybe it's 'cause ♪"
+    },
+    {
+      "start": "00:03:11,509",
+      "end": "00:03:14,011",
+      "text": "♪ We're all gonna die ♪"
+    },
+    {
+      "start": "00:03:16,880",
+      "end": "00:03:18,949",
+      "text": "♪ When we do ♪"
+    },
+    {
+      "start": "00:03:18,983",
+      "end": "00:03:21,852",
+      "text": "- ♪ What's it all for? ♪ - ♪ What's it all for? ♪"
+    },
+    {
+      "start": "00:03:21,885",
+      "end": "00:03:24,422",
+      "text": "♪ You better live now before the grim reaper comes ♪"
+    },
+    {
+      "start": "00:03:24,456",
+      "end": "00:03:26,991",
+      "text": "♪ Knocking on your door, tell me ♪"
+    },
+    {
+      "start": "00:03:27,024",
+      "end": "00:03:30,395",
+      "text": "♪ Are we gonna let the elevator bring us down? ♪"
+    },
+    {
+      "start": "00:03:30,428",
+      "end": "00:03:32,163",
+      "text": "♪ Oh, no, let's go ♪"
+    },
+    {
+      "start": "00:03:32,197",
+      "end": "00:03:34,132",
+      "text": "- ♪ Let's go crazy ♪ - ♪ Let's go crazy ♪"
+    },
+    {
+      "start": "00:03:34,165",
+      "end": "00:03:36,867",
+      "text": "- ♪ Let's get nuts ♪ - ♪ Let's get nuts ♪"
+    },
+    {
+      "start": "00:03:36,900",
+      "end": "00:03:39,036",
+      "text": "♪ Let's look for the purple banana ♪"
+    },
+    {
+      "start": "00:03:39,070",
+      "end": "00:03:41,872",
+      "text": "♪ Till they put us in the truck, let's go! ♪"
+    },
+    {
+      "start": "00:03:43,575",
+      "end": "00:03:45,510",
+      "text": "♪ Come on, baby ♪"
+    },
+    {
+      "start": "00:03:45,543",
+      "end": "00:03:47,545",
+      "text": "♪ Let's get nuts ♪"
+    },
+    {
+      "start": "00:03:47,579",
+      "end": "00:03:49,514",
+      "text": "♪ Yeah ♪"
+    },
+    {
+      "start": "00:03:49,547",
+      "end": "00:03:51,349",
+      "text": "♪ Crazy ♪"
+    },
+    {
+      "start": "00:03:51,383",
+      "end": "00:03:54,818",
+      "text": "♪ Are we gonna let the elevator bring us down ♪"
+    },
+    {
+      "start": "00:03:54,852",
+      "end": "00:03:56,554",
+      "text": "♪ Oh, no, let's go ♪"
+    },
+    {
+      "start": "00:03:56,588",
+      "end": "00:03:58,989",
+      "text": "- ♪ Let's go crazy ♪ - ♪ Let's go crazy ♪"
+    },
+    {
+      "start": "00:03:59,023",
+      "end": "00:04:01,059",
+      "text": "- ♪ Let's get nuts ♪ - ♪ Let's get nuts ♪"
+    },
+    {
+      "start": "00:04:01,092",
+      "end": "00:04:02,960",
+      "text": "♪ Let's look for the purple banana ♪"
+    },
+    {
+      "start": "00:04:02,993",
+      "end": "00:04:05,263",
+      "text": "♪ Till they put us in the truck ♪"
+    },
+    {
+      "start": "00:04:05,297",
+      "end": "00:04:06,564",
+      "text": "♪ Let's go! ♪"
+    },
+    {
+      "start": "00:04:06,598",
+      "end": "00:04:08,199",
+      "text": "♪ Dr. Everything'll Be All Right ♪"
+    },
+    {
+      "start": "00:04:08,233",
+      "end": "00:04:10,502",
+      "text": "♪ Will make everything go wrong ♪"
+    },
+    {
+      "start": "00:04:10,535",
+      "end": "00:04:12,170",
+      "text": "♪ Let's go! ♪"
+    },
+    {
+      "start": "00:04:21,613",
+      "end": "00:04:25,383",
+      "text": "♪ Yeah, yeah ♪"
+    },
+    {
+      "start": "00:04:25,417",
+      "end": "00:04:28,186",
+      "text": "♪ Let's go! ♪"
     },
     {
       "start": "00:04:36,960",
@@ -20,6 +320,11 @@
       "text": "No time to explain. Run away."
     },
     {
+      "start": "00:04:45,035",
+      "end": "00:04:47,037",
+      "text": "Oh, hey, Sammy."
+    },
+    {
       "start": "00:04:47,072",
       "end": "00:04:48,939",
       "text": "You really got those moves locked down now, hmm?"
@@ -30,9 +335,19 @@
       "text": "I sure do, Mr. Moon."
     },
     {
+      "start": "00:04:50,608",
+      "end": "00:04:53,244",
+      "text": "Yeah, look at you."
+    },
+    {
       "start": "00:04:53,278",
       "end": "00:04:56,013",
       "text": "Great job, everybody. Great job."
+    },
+    {
+      "start": "00:04:56,046",
+      "end": "00:04:57,649",
+      "text": "- Thanks, Mr. Moon. - Yeah!"
     },
     {
       "start": "00:04:57,682",
@@ -55,6 +370,11 @@
       "text": "Oh, she's younger than I imagined."
     },
     {
+      "start": "00:05:07,659",
+      "end": "00:05:09,127",
+      "text": "Yeah, well, supposedly,"
+    },
+    {
       "start": "00:05:09,160",
       "end": "00:05:10,928",
       "text": "she's the best scout in show business."
@@ -68,6 +388,26 @@
       "start": "00:05:12,664",
       "end": "00:05:14,632",
       "text": "Come on, let's get a better view."
+    },
+    {
+      "start": "00:05:14,666",
+      "end": "00:05:16,401",
+      "text": "♪ This I know ♪"
+    },
+    {
+      "start": "00:05:16,434",
+      "end": "00:05:21,072",
+      "text": "♪ He told me, \"Don't worry about it\" ♪"
+    },
+    {
+      "start": "00:05:21,106",
+      "end": "00:05:25,076",
+      "text": "♪ He told me, \"Don't worry no more\" ♪"
+    },
+    {
+      "start": "00:05:25,110",
+      "end": "00:05:27,545",
+      "text": "♪ We both know we can't go... ♪"
     },
     {
       "start": "00:05:27,579",
@@ -100,6 +440,11 @@
       "text": "Well, that's proof, right? She must like the show."
     },
     {
+      "start": "00:05:42,694",
+      "end": "00:05:44,396",
+      "text": "- Oh, my gosh. You think so? - I hope so."
+    },
+    {
       "start": "00:05:44,429",
       "end": "00:05:46,164",
       "text": "All right, now, keep up the good work."
@@ -110,7 +455,12 @@
       "text": "Come on, everybody, back to positions."
     },
     {
-      "start": "00:05:50,134",
+      "start": "00:05:48,031",
+      "end": "00:05:49,701",
+      "text": "She'd be, like, cuckoo not to love the show."
+    },
+    {
+      "start": "00:05:49,734",
       "end": "00:05:52,137",
       "text": "Dream big dreams."
     },
@@ -118,6 +468,11 @@
       "start": "00:05:52,170",
       "end": "00:05:53,705",
       "text": "That's what I always said, right?"
+    },
+    {
+      "start": "00:05:53,738",
+      "end": "00:05:55,273",
+      "text": "Mm-hmm."
     },
     {
       "start": "00:05:55,306",
@@ -135,9 +490,541 @@
       "text": "Mr. Moon, she's leaving."
     },
     {
+      "start": "00:06:02,580",
+      "end": "00:06:04,682",
+      "text": "- Huh? - She's leaving the show."
+    },
+    {
+      "start": "00:06:04,716",
+      "end": "00:06:07,218",
+      "text": "♪ He told me, \"You'll never...\" ♪"
+    },
+    {
       "start": "00:06:07,252",
       "end": "00:06:09,421",
       "text": "Miss Crawly, stay right here."
+    },
+    {
+      "start": "00:06:09,454",
+      "end": "00:06:11,723",
+      "text": "- What are you gonna do? - I'm gonna follow that dog."
+    },
+    {
+      "start": "00:06:11,756",
+      "end": "00:06:13,391",
+      "text": "- ♪ Whoo! ♪ - ♪ I can't feel my face ♪"
+    },
+    {
+      "start": "00:06:13,425",
+      "end": "00:06:14,592",
+      "text": "♪ When I'm with you ♪"
+    },
+    {
+      "start": "00:06:14,626",
+      "end": "00:06:16,661",
+      "text": "♪ I can't feel my face, yeah... ♪"
+    },
+    {
+      "start": "00:06:16,694",
+      "end": "00:06:18,563",
+      "text": "Good heavens!"
+    },
+    {
+      "start": "00:06:18,596",
+      "end": "00:06:20,632",
+      "text": "- Hey, Nana. - What are you doing?"
+    },
+    {
+      "start": "00:06:20,665",
+      "end": "00:06:21,999",
+      "text": "The scout is leaving."
+    },
+    {
+      "start": "00:06:22,032",
+      "end": "00:06:23,168",
+      "text": "♪ I can't feel my face... ♪"
+    },
+    {
+      "start": "00:06:23,201",
+      "end": "00:06:25,303",
+      "text": "Ah, so she is."
+    },
+    {
+      "start": "00:06:25,336",
+      "end": "00:06:27,037",
+      "text": "Hurry."
+    },
+    {
+      "start": "00:06:31,109",
+      "end": "00:06:33,010",
+      "text": "Uh, Suki? Suki Lane?"
+    },
+    {
+      "start": "00:06:33,043",
+      "end": "00:06:34,612",
+      "text": "I'm Buster Moon."
+    },
+    {
+      "start": "00:06:34,646",
+      "end": "00:06:36,181",
+      "text": "Uh, hi. So glad you could make it."
+    },
+    {
+      "start": "00:06:36,214",
+      "end": "00:06:37,549",
+      "text": "Um, would you like some popcorn?"
+    },
+    {
+      "start": "00:06:37,582",
+      "end": "00:06:39,049",
+      "text": "Oh, no, thanks."
+    },
+    {
+      "start": "00:06:39,083",
+      "end": "00:06:40,718",
+      "text": "I'm not staying for the second half, so..."
+    },
+    {
+      "start": "00:06:40,752",
+      "end": "00:06:42,487",
+      "text": "Oh. But, uh, we thought you were enjoying it."
+    },
+    {
+      "start": "00:06:42,520",
+      "end": "00:06:44,522",
+      "text": "I mean, not that we were watching you or anything."
+    },
+    {
+      "start": "00:06:44,556",
+      "end": "00:06:47,991",
+      "text": "It really is a cute little show."
+    },
+    {
+      "start": "00:06:48,025",
+      "end": "00:06:49,494",
+      "text": "Just not what we're looking for."
+    },
+    {
+      "start": "00:06:49,527",
+      "end": "00:06:51,496",
+      "text": "But-but wait. Y-You got to see the second act."
+    },
+    {
+      "start": "00:06:51,529",
+      "end": "00:06:53,498",
+      "text": "I'm-I'm telling you, it's a smash."
+    },
+    {
+      "start": "00:06:53,531",
+      "end": "00:06:55,133",
+      "text": "Okay, Mr. Moon, can I be honest?"
+    },
+    {
+      "start": "00:06:55,166",
+      "end": "00:06:57,135",
+      "text": "- Of course. - Are you sure?"
+    },
+    {
+      "start": "00:06:57,168",
+      "end": "00:06:59,036",
+      "text": "'Cause folks say that when they don't really mean it."
+    },
+    {
+      "start": "00:06:59,070",
+      "end": "00:07:01,072",
+      "text": "No, please, please, be as honest as you like."
+    },
+    {
+      "start": "00:07:01,105",
+      "end": "00:07:02,740",
+      "text": "You're not good enough."
+    },
+    {
+      "start": "00:07:02,774",
+      "end": "00:07:04,309",
+      "text": "What?"
+    },
+    {
+      "start": "00:07:04,342",
+      "end": "00:07:06,077",
+      "text": "Taxi!"
+    },
+    {
+      "start": "00:07:06,110",
+      "end": "00:07:09,180",
+      "text": "You know, maybe I will have that popcorn."
+    },
+    {
+      "start": "00:07:09,214",
+      "end": "00:07:12,250",
+      "text": "Look, you've got a nice little local theater here,"
+    },
+    {
+      "start": "00:07:12,283",
+      "end": "00:07:14,385",
+      "text": "and it's great for what it is,"
+    },
+    {
+      "start": "00:07:14,419",
+      "end": "00:07:17,622",
+      "text": "but trust me, you'd never make it in the big leagues."
+    },
+    {
+      "start": "00:07:17,655",
+      "end": "00:07:20,091",
+      "text": "Bye, now."
+    },
+    {
+      "start": "00:07:23,695",
+      "end": "00:07:26,698",
+      "text": "Well, what did she say?"
+    },
+    {
+      "start": "00:07:26,731",
+      "end": "00:07:29,032",
+      "text": "I'll be right back."
+    },
+    {
+      "start": "00:07:29,067",
+      "end": "00:07:30,802",
+      "text": "Nah. Mm-mm."
+    },
+    {
+      "start": "00:07:30,835",
+      "end": "00:07:33,171",
+      "text": "A few laughs, bunch of quirky ideas."
+    },
+    {
+      "start": "00:07:33,204",
+      "end": "00:07:36,140",
+      "text": "But, anyway, about Thursday..."
+    },
+    {
+      "start": "00:07:36,174",
+      "end": "00:07:38,142",
+      "text": "Oh, my..."
+    },
+    {
+      "start": "00:07:38,176",
+      "end": "00:07:39,777",
+      "text": "Yeah, hi. It's me again."
+    },
+    {
+      "start": "00:07:41,279",
+      "end": "00:07:42,180",
+      "text": "Whoa."
+    },
+    {
+      "start": "00:07:42,213",
+      "end": "00:07:44,616",
+      "text": "- Whoa. - I'll call you back."
+    },
+    {
+      "start": "00:07:44,649",
+      "end": "00:07:46,584",
+      "text": "Are you out of your mind?"
+    },
+    {
+      "start": "00:07:46,618",
+      "end": "00:07:47,752",
+      "text": "When are you holding auditions?"
+    },
+    {
+      "start": "00:07:47,785",
+      "end": "00:07:49,254",
+      "text": "Tomorrow."
+    },
+    {
+      "start": "00:07:49,287",
+      "end": "00:07:50,655",
+      "text": "But there is no way you'll..."
+    },
+    {
+      "start": "00:07:50,688",
+      "end": "00:07:51,789",
+      "text": "Uh, listen, it..."
+    },
+    {
+      "start": "00:07:51,823",
+      "end": "00:07:53,191",
+      "text": "Get out of the road, you idiot!"
+    },
+    {
+      "start": "00:07:53,224",
+      "end": "00:07:55,360",
+      "text": "Hey, do you mind? I'm in a meeting here."
+    },
+    {
+      "start": "00:07:55,393",
+      "end": "00:07:57,161",
+      "text": "Could-could you at least give us a chance"
+    },
+    {
+      "start": "00:07:57,195",
+      "end": "00:07:58,530",
+      "text": "to try out for your boss?"
+    },
+    {
+      "start": "00:07:58,563",
+      "end": "00:08:01,132",
+      "text": "Driver, could you please lose this maniac?"
+    },
+    {
+      "start": "00:08:01,165",
+      "end": "00:08:02,333",
+      "text": "Wait, wait, wait, wait. Hold on a second."
+    },
+    {
+      "start": "00:08:02,367",
+      "end": "00:08:03,668",
+      "text": "No, no, no, no!"
+    },
+    {
+      "start": "00:08:32,263",
+      "end": "00:08:36,200",
+      "text": "♪ When are you gonna come down? ♪"
+    },
+    {
+      "start": "00:08:36,234",
+      "end": "00:08:39,404",
+      "text": "♪ When are you going to land? ♪"
+    },
+    {
+      "start": "00:08:39,437",
+      "end": "00:08:42,874",
+      "text": "♪ I should have stayed on the farm ♪"
+    },
+    {
+      "start": "00:08:42,907",
+      "end": "00:08:47,445",
+      "text": "♪ I should have listened to my old man ♪"
+    },
+    {
+      "start": "00:08:47,478",
+      "end": "00:08:51,449",
+      "text": "♪ You know you can't hold me forever ♪"
+    },
+    {
+      "start": "00:08:51,482",
+      "end": "00:08:53,585",
+      "text": "♪ I didn't sign up with you ♪"
+    },
+    {
+      "start": "00:08:55,320",
+      "end": "00:08:59,791",
+      "text": "♪ I'm not a present for your friends to open ♪"
+    },
+    {
+      "start": "00:08:59,824",
+      "end": "00:09:03,728",
+      "text": "♪ This boy's too young to be singing ♪"
+    },
+    {
+      "start": "00:09:03,761",
+      "end": "00:09:07,365",
+      "text": "♪ The blues ♪"
+    },
+    {
+      "start": "00:09:07,398",
+      "end": "00:09:10,868",
+      "text": "♪ Ah, ah-ah, ah, ah ♪"
+    },
+    {
+      "start": "00:09:10,902",
+      "end": "00:09:13,871",
+      "text": "♪ Ah, ah, ah ♪"
+    },
+    {
+      "start": "00:09:13,905",
+      "end": "00:09:15,473",
+      "text": "Mr. Moon?"
+    },
+    {
+      "start": "00:09:15,506",
+      "end": "00:09:18,843",
+      "text": "♪ So goodbye, yellow brick road ♪"
+    },
+    {
+      "start": "00:09:18,876",
+      "end": "00:09:22,380",
+      "text": "♪ Where the dogs of society howl ♪"
+    },
+    {
+      "start": "00:09:22,413",
+      "end": "00:09:27,251",
+      "text": "♪ You can't plant me in your penthouse ♪"
+    },
+    {
+      "start": "00:09:27,285",
+      "end": "00:09:30,521",
+      "text": "♪ I'm going back to my plow ♪"
+    },
+    {
+      "start": "00:09:30,555",
+      "end": "00:09:34,492",
+      "text": "♪ Back to the howling old owl in the woods ♪"
+    },
+    {
+      "start": "00:09:34,525",
+      "end": "00:09:37,862",
+      "text": "♪ Hunting the horny-back toad... ♪"
+    },
+    {
+      "start": "00:09:40,898",
+      "end": "00:09:43,201",
+      "text": "Oh, for heaven's sake."
+    },
+    {
+      "start": "00:09:44,936",
+      "end": "00:09:46,771",
+      "text": "What can I say, Nana?"
+    },
+    {
+      "start": "00:09:46,804",
+      "end": "00:09:48,940",
+      "text": "- I'm a failure. - Oh, poppycock."
+    },
+    {
+      "start": "00:09:48,973",
+      "end": "00:09:50,675",
+      "text": "I was reaching too high."
+    },
+    {
+      "start": "00:09:50,708",
+      "end": "00:09:54,612",
+      "text": "Honestly, one negative comment, and it's all, \"Woe is me.\""
+    },
+    {
+      "start": "00:09:54,646",
+      "end": "00:09:57,181",
+      "text": "Nana, come on. She said I'm not good enough."
+    },
+    {
+      "start": "00:09:57,215",
+      "end": "00:09:59,350",
+      "text": "I mean, heck, I've just been told"
+    },
+    {
+      "start": "00:09:59,384",
+      "end": "00:10:01,386",
+      "text": "that my destiny, all of my hopes and dreams,"
+    },
+    {
+      "start": "00:10:01,419",
+      "end": "00:10:03,254",
+      "text": "uh, they all end right here."
+    },
+    {
+      "start": "00:10:03,287",
+      "end": "00:10:04,656",
+      "text": "Well, what did you expect?"
+    },
+    {
+      "start": "00:10:04,689",
+      "end": "00:10:07,725",
+      "text": "That she would drop to her knees and declare you a genius?"
+    },
+    {
+      "start": "00:10:07,759",
+      "end": "00:10:11,262",
+      "text": "Roll out the red carpet for the great Buster Moon!"
+    },
+    {
+      "start": "00:10:11,295",
+      "end": "00:10:12,930",
+      "text": "She-she ran me off the road into a canal."
+    },
+    {
+      "start": "00:10:12,964",
+      "end": "00:10:14,632",
+      "text": "Well, you're still in one piece, aren't you?"
+    },
+    {
+      "start": "00:10:14,666",
+      "end": "00:10:16,267",
+      "text": "Well, yeah, but..."
+    },
+    {
+      "start": "00:10:16,300",
+      "end": "00:10:19,270",
+      "text": "Well, anyone who dares set out to follow their dreams"
+    },
+    {
+      "start": "00:10:19,303",
+      "end": "00:10:22,874",
+      "text": "is bound to face a lot worse than a dip in the canal."
+    },
+    {
+      "start": "00:10:22,907",
+      "end": "00:10:24,542",
+      "text": "Ah, Hobbs. I found him."
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "00:01:43,721",
+      "end": "00:01:46,124",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "00:04:38,330",
+      "end": "00:04:40,498",
+      "text": "No time to explain. Run away."
+    },
+    {
+      "start": "00:04:47,072",
+      "end": "00:04:48,939",
+      "text": "You really got those moves locked down now, hmm?"
+    },
+    {
+      "start": "00:04:50,608",
+      "end": "00:04:53,244",
+      "text": "Yeah, look at you."
+    },
+    {
+      "start": "00:04:57,682",
+      "end": "00:05:00,218",
+      "text": "I think we pretty much nailed it."
+    },
+    {
+      "start": "00:05:06,091",
+      "end": "00:05:07,625",
+      "text": "Oh, she's younger than I imagined."
+    },
+    {
+      "start": "00:05:12,664",
+      "end": "00:05:14,632",
+      "text": "Come on, let's get a better view."
+    },
+    {
+      "start": "00:05:30,148",
+      "end": "00:05:32,083",
+      "text": "Oh, very good, Mr. Moon."
+    },
+    {
+      "start": "00:05:40,291",
+      "end": "00:05:42,660",
+      "text": "Well, that's proof, right? She must like the show."
+    },
+    {
+      "start": "00:05:46,197",
+      "end": "00:05:47,998",
+      "text": "Come on, everybody, back to positions."
+    },
+    {
+      "start": "00:05:49,734",
+      "end": "00:05:52,137",
+      "text": "Dream big dreams."
+    },
+    {
+      "start": "00:06:00,445",
+      "end": "00:06:02,547",
+      "text": "Mr. Moon, she's leaving."
+    },
+    {
+      "start": "00:06:20,665",
+      "end": "00:06:21,999",
+      "text": "The scout is leaving."
     },
     {
       "start": "00:06:31,109",
@@ -150,38 +1037,108 @@
       "text": "Uh, hi. So glad you could make it."
     },
     {
-      "start": "00:06:36,214",
-      "end": "00:06:37,549",
-      "text": "Um, would you like some popcorn?"
+      "start": "00:06:40,752",
+      "end": "00:06:42,487",
+      "text": "Oh. But, uh, we thought you were enjoying it."
+    },
+    {
+      "start": "00:06:44,556",
+      "end": "00:06:47,991",
+      "text": "It really is a cute little show."
+    },
+    {
+      "start": "00:06:49,527",
+      "end": "00:06:51,496",
+      "text": "But-but wait. Y-You got to see the second act."
+    },
+    {
+      "start": "00:06:53,531",
+      "end": "00:06:55,133",
+      "text": "Okay, Mr. Moon, can I be honest?"
+    },
+    {
+      "start": "00:07:01,105",
+      "end": "00:07:02,740",
+      "text": "You're not good enough."
+    },
+    {
+      "start": "00:07:23,695",
+      "end": "00:07:26,698",
+      "text": "Well, what did she say?"
+    },
+    {
+      "start": "00:07:30,835",
+      "end": "00:07:33,171",
+      "text": "A few laughs, bunch of quirky ideas."
+    },
+    {
+      "start": "00:07:44,649",
+      "end": "00:07:46,584",
+      "text": "Are you out of your mind?"
+    },
+    {
+      "start": "00:07:53,224",
+      "end": "00:07:55,360",
+      "text": "Hey, do you mind? I'm in a meeting here."
+    },
+    {
+      "start": "00:09:40,898",
+      "end": "00:09:43,201",
+      "text": "Oh, for heaven's sake."
+    },
+    {
+      "start": "00:09:48,973",
+      "end": "00:09:50,675",
+      "text": "I was reaching too high."
+    },
+    {
+      "start": "00:09:54,646",
+      "end": "00:09:57,181",
+      "text": "Nana, come on. She said I'm not good enough."
+    },
+    {
+      "start": "00:10:04,689",
+      "end": "00:10:07,725",
+      "text": "That she would drop to her knees and declare you a genius?"
+    },
+    {
+      "start": "00:10:11,295",
+      "end": "00:10:12,930",
+      "text": "She-she ran me off the road into a canal."
+    },
+    {
+      "start": "00:10:22,907",
+      "end": "00:10:24,542",
+      "text": "Ah, Hobbs. I found him."
     }
   ],
   "guessing": [
     {
       "question": 1,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
+        {
+          "label": "B",
+          "text": "You really got those moves locked down now, hmm?",
+          "start": "00:04:47,072",
+          "end": "00:04:48,939"
+        },
+        {
+          "label": "C",
+          "text": "She-she ran me off the road into a canal.",
+          "start": "00:10:11,295",
+          "end": "00:10:12,930"
+        },
         {
           "label": "A",
           "text": "No time to explain. Run away.",
           "start": "00:04:38,330",
           "end": "00:04:40,498"
-        },
-        {
-          "label": "C",
-          "text": "I think we pretty much nailed it.",
-          "start": "00:04:57,682",
-          "end": "00:05:00,218"
-        },
-        {
-          "label": "B",
-          "text": "Um, would you like some popcorn?",
-          "start": "00:06:36,214",
-          "end": "00:06:37,549"
         }
       ],
       "video": {
-        "start": "00:04:38,330",
-        "end": "00:04:40,498"
+        "start": "00:04:47,072",
+        "end": "00:04:48,939"
       }
     },
     {
@@ -190,26 +1147,26 @@
       "options": [
         {
           "label": "C",
-          "text": "Great job, everybody. Great job.",
-          "start": "00:04:53,278",
-          "end": "00:04:56,013"
-        },
-        {
-          "label": "A",
-          "text": "Um, would you like some popcorn?",
-          "start": "00:06:36,214",
-          "end": "00:06:37,549"
+          "text": "Oh, she's younger than I imagined.",
+          "start": "00:05:06,091",
+          "end": "00:05:07,625"
         },
         {
           "label": "B",
-          "text": "Mr. Moon, she's leaving.",
-          "start": "00:06:00,445",
-          "end": "00:06:02,547"
+          "text": "The scout is leaving.",
+          "start": "00:06:20,665",
+          "end": "00:06:21,999"
+        },
+        {
+          "label": "A",
+          "text": "That she would drop to her knees and declare you a genius?",
+          "start": "00:10:04,689",
+          "end": "00:10:07,725"
         }
       ],
       "video": {
-        "start": "00:04:53,278",
-        "end": "00:04:56,013"
+        "start": "00:05:06,091",
+        "end": "00:05:07,625"
       }
     },
     {
@@ -218,12 +1175,6 @@
       "options": [
         {
           "label": "B",
-          "text": "There. See the dog, middle third row?",
-          "start": "00:05:03,655",
-          "end": "00:05:06,057"
-        },
-        {
-          "label": "A",
           "text": "Well, that's proof, right? She must like the show.",
           "start": "00:05:40,291",
           "end": "00:05:42,660"
@@ -233,39 +1184,45 @@
           "text": "Come on, everybody, back to positions.",
           "start": "00:05:46,197",
           "end": "00:05:47,998"
+        },
+        {
+          "label": "A",
+          "text": "Well, what did she say?",
+          "start": "00:07:23,695",
+          "end": "00:07:26,698"
         }
       ],
       "video": {
-        "start": "00:05:03,655",
-        "end": "00:05:06,057"
+        "start": "00:05:40,291",
+        "end": "00:05:42,660"
       }
     },
     {
       "question": 4,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
-          "label": "A",
-          "text": "I can't tell if-if she's enjoying it.",
-          "start": "00:05:10,961",
-          "end": "00:05:12,630"
+          "label": "C",
+          "text": "Mr. Moon, she's leaving.",
+          "start": "00:06:00,445",
+          "end": "00:06:02,547"
         },
         {
           "label": "B",
-          "text": "Oh, she's younger than I imagined.",
-          "start": "00:05:06,091",
-          "end": "00:05:07,625"
+          "text": "You're not good enough.",
+          "start": "00:07:01,105",
+          "end": "00:07:02,740"
         },
         {
-          "label": "C",
-          "text": "Miss Crawly, stay right here.",
-          "start": "00:06:07,252",
-          "end": "00:06:09,421"
+          "label": "A",
+          "text": "Are you out of your mind?",
+          "start": "00:07:44,649",
+          "end": "00:07:46,584"
         }
       ],
       "video": {
-        "start": "00:05:10,961",
-        "end": "00:05:12,630"
+        "start": "00:06:00,445",
+        "end": "00:06:02,547"
       }
     },
     {
@@ -274,71 +1231,43 @@
       "options": [
         {
           "label": "A",
-          "text": "Oh, very good, Mr. Moon.",
-          "start": "00:05:30,148",
-          "end": "00:05:32,083"
-        },
-        {
-          "label": "C",
-          "text": "Dream big dreams.",
-          "start": "00:05:50,134",
-          "end": "00:05:52,137"
+          "text": "Uh, hi. So glad you could make it.",
+          "start": "00:06:34,646",
+          "end": "00:06:36,181"
         },
         {
           "label": "B",
-          "text": "There. See the dog, middle third row?",
-          "start": "00:05:03,655",
-          "end": "00:05:06,057"
+          "text": "A few laughs, bunch of quirky ideas.",
+          "start": "00:07:30,835",
+          "end": "00:07:33,171"
+        },
+        {
+          "label": "C",
+          "text": "The scout is leaving.",
+          "start": "00:06:20,665",
+          "end": "00:06:21,999"
         }
       ],
       "video": {
-        "start": "00:05:30,148",
-        "end": "00:05:32,083"
+        "start": "00:06:34,646",
+        "end": "00:06:36,181"
       }
     },
     {
       "question": 6,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "Uh, though the last one could've just been gas.",
-          "start": "00:05:37,422",
-          "end": "00:05:40,258"
-        },
-        {
-          "label": "A",
-          "text": "Miss Crawly, stay right here.",
-          "start": "00:06:07,252",
-          "end": "00:06:09,421"
-        },
-        {
-          "label": "B",
-          "text": "Great job, everybody. Great job.",
-          "start": "00:04:53,278",
-          "end": "00:04:56,013"
-        }
-      ],
-      "video": {
-        "start": "00:05:37,422",
-        "end": "00:05:40,258"
-      }
-    },
-    {
-      "question": 7,
       "correctAnswer": "A",
       "options": [
         {
           "label": "A",
-          "text": "Come on, everybody, back to positions.",
-          "start": "00:05:46,197",
-          "end": "00:05:47,998"
+          "text": "But-but wait. Y-You got to see the second act.",
+          "start": "00:06:49,527",
+          "end": "00:06:51,496"
         },
         {
           "label": "B",
-          "text": "What's going on?",
-          "start": "00:04:36,960",
-          "end": "00:04:38,296"
+          "text": "Okay, Mr. Moon, can I be honest?",
+          "start": "00:06:53,531",
+          "end": "00:06:55,133"
         },
         {
           "label": "C",
@@ -348,8 +1277,36 @@
         }
       ],
       "video": {
-        "start": "00:05:46,197",
-        "end": "00:05:47,998"
+        "start": "00:06:49,527",
+        "end": "00:06:51,496"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Well, what did she say?",
+          "start": "00:07:23,695",
+          "end": "00:07:26,698"
+        },
+        {
+          "label": "B",
+          "text": "Ah, Hobbs. I found him.",
+          "start": "00:10:22,907",
+          "end": "00:10:24,542"
+        },
+        {
+          "label": "A",
+          "text": "No time to explain. Run away.",
+          "start": "00:04:38,330",
+          "end": "00:04:40,498"
+        }
+      ],
+      "video": {
+        "start": "00:07:23,695",
+        "end": "00:07:26,698"
       }
     },
     {
@@ -358,26 +1315,26 @@
       "options": [
         {
           "label": "A",
-          "text": "Well, looks like we're about to take this show",
-          "start": "00:05:55,306",
-          "end": "00:05:57,409"
-        },
-        {
-          "label": "B",
-          "text": "Great job, everybody. Great job.",
-          "start": "00:04:53,278",
-          "end": "00:04:56,013"
+          "text": "Hey, do you mind? I'm in a meeting here.",
+          "start": "00:07:53,224",
+          "end": "00:07:55,360"
         },
         {
           "label": "C",
-          "text": "Miss Crawly, stay right here.",
-          "start": "00:06:07,252",
-          "end": "00:06:09,421"
+          "text": "Uh, hi. So glad you could make it.",
+          "start": "00:06:34,646",
+          "end": "00:06:36,181"
+        },
+        {
+          "label": "B",
+          "text": "Dream big dreams.",
+          "start": "00:05:49,734",
+          "end": "00:05:52,137"
         }
       ],
       "video": {
-        "start": "00:05:55,306",
-        "end": "00:05:57,409"
+        "start": "00:07:53,224",
+        "end": "00:07:55,360"
       }
     },
     {
@@ -386,117 +1343,117 @@
       "options": [
         {
           "label": "B",
-          "text": "Miss Crawly, stay right here.",
-          "start": "00:06:07,252",
-          "end": "00:06:09,421"
+          "text": "Nana, come on. She said I'm not good enough.",
+          "start": "00:09:54,646",
+          "end": "00:09:57,181"
         },
         {
           "label": "C",
-          "text": "No time to explain. Run away.",
-          "start": "00:04:38,330",
-          "end": "00:04:40,498"
+          "text": "Ah, Hobbs. I found him.",
+          "start": "00:10:22,907",
+          "end": "00:10:24,542"
         },
         {
           "label": "A",
-          "text": "I sure do, Mr. Moon.",
-          "start": "00:04:48,972",
-          "end": "00:04:50,575"
+          "text": "It really is a cute little show.",
+          "start": "00:06:44,556",
+          "end": "00:06:47,991"
         }
       ],
       "video": {
-        "start": "00:06:07,252",
-        "end": "00:06:09,421"
+        "start": "00:09:54,646",
+        "end": "00:09:57,181"
       }
     },
     {
       "question": 10,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
-          "label": "A",
-          "text": "Um, would you like some popcorn?",
-          "start": "00:06:36,214",
-          "end": "00:06:37,549"
+          "label": "C",
+          "text": "Ah, Hobbs. I found him.",
+          "start": "00:10:22,907",
+          "end": "00:10:24,542"
         },
         {
           "label": "B",
-          "text": "two belly laughs and five chuckles.",
-          "start": "00:05:34,519",
-          "end": "00:05:37,389"
+          "text": "Oh, very good, Mr. Moon.",
+          "start": "00:05:30,148",
+          "end": "00:05:32,083"
         },
         {
-          "label": "C",
-          "text": "That's what I always said, right?",
-          "start": "00:05:52,170",
-          "end": "00:05:53,705"
+          "label": "A",
+          "text": "Oh, my gosh.",
+          "start": "00:01:43,721",
+          "end": "00:01:46,124"
         }
       ],
       "video": {
-        "start": "00:06:36,214",
-        "end": "00:06:37,549"
+        "start": "00:10:22,907",
+        "end": "00:10:24,542"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "00:04:36,960",
-      "end": "00:04:38,296",
-      "text": "What's going on?"
+      "start": "00:01:43,721",
+      "end": "00:01:46,124",
+      "text": "Oh, my gosh."
     },
     {
       "question": 2,
-      "start": "00:04:47,072",
-      "end": "00:04:48,939",
-      "text": "You really got those moves locked down now, hmm?"
+      "start": "00:04:50,608",
+      "end": "00:04:53,244",
+      "text": "Yeah, look at you."
     },
     {
       "question": 3,
-      "start": "00:04:48,972",
-      "end": "00:04:50,575",
-      "text": "I sure do, Mr. Moon."
-    },
-    {
-      "question": 4,
-      "start": "00:04:57,682",
-      "end": "00:05:00,218",
-      "text": "I think we pretty much nailed it."
-    },
-    {
-      "question": 5,
-      "start": "00:05:06,091",
-      "end": "00:05:07,625",
-      "text": "Oh, she's younger than I imagined."
-    },
-    {
-      "question": 6,
       "start": "00:05:12,664",
       "end": "00:05:14,632",
       "text": "Come on, let's get a better view."
     },
     {
+      "question": 4,
+      "start": "00:05:46,197",
+      "end": "00:05:47,998",
+      "text": "Come on, everybody, back to positions."
+    },
+    {
+      "question": 5,
+      "start": "00:06:20,665",
+      "end": "00:06:21,999",
+      "text": "The scout is leaving."
+    },
+    {
+      "question": 6,
+      "start": "00:06:44,556",
+      "end": "00:06:47,991",
+      "text": "It really is a cute little show."
+    },
+    {
       "question": 7,
-      "start": "00:05:27,579",
-      "end": "00:05:30,115",
-      "text": "And how we doing over here, Miss Crawly?"
+      "start": "00:07:01,105",
+      "end": "00:07:02,740",
+      "text": "You're not good enough."
     },
     {
       "question": 8,
-      "start": "00:05:40,291",
-      "end": "00:05:42,660",
-      "text": "Well, that's proof, right? She must like the show."
+      "start": "00:07:44,649",
+      "end": "00:07:46,584",
+      "text": "Are you out of your mind?"
     },
     {
       "question": 9,
-      "start": "00:05:52,170",
-      "end": "00:05:53,705",
-      "text": "That's what I always said, right?"
+      "start": "00:09:48,973",
+      "end": "00:09:50,675",
+      "text": "I was reaching too high."
     },
     {
       "question": 10,
-      "start": "00:06:34,646",
-      "end": "00:06:36,181",
-      "text": "Uh, hi. So glad you could make it."
+      "start": "00:10:11,295",
+      "end": "00:10:12,930",
+      "text": "She-she ran me off the road into a canal."
     }
   ]
 }

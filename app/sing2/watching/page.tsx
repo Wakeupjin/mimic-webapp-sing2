@@ -14,11 +14,10 @@ import PauseOverlay from "../../components/PauseOverlay";
 import AgainNextButtons from "../../components/AgainNextButtons";
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonData } from '../../dataService'; // 당신의 dataService.js 경로에 맞게 수정하세요.
-import { supabase } from '../../supabaseClient'; // 비디오 URL을 가져오기 위해 직접 supabase 클라이언트 사용
+import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '../../dataService';
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
-import { getVideoSource, getVideoSourceWithTimeRange } from '../../utils/videoSource';
+import { getVideoSource } from '../../utils/videoSource';
 
 // 데이터 타입 정의
 type LessonDataType = {
@@ -53,10 +52,16 @@ function WatchingPageContent() {
     isVideoPaused,
     isVideoStarted,
     setIsVideoStarted,
+    setIsVideoPaused,
     playVideo,
     pauseVideo,
     resetVideo
   } = useVideoPlayer();
+
+  const playSafely = (video: HTMLVideoElement | null) => {
+    if (!video) return;
+    void video.play().catch(() => {});
+  };
 
   // 인증 체크 - useEffect로 처리
   useEffect(() => {
@@ -81,8 +86,7 @@ function WatchingPageContent() {
       setIsLoading(true);
 
       // 1. Lesson ID 추출 ("001:5" -> 5)
-      const lessonNumberStr = movieId.split(':')[1];
-      const lessonNumber = parseInt(lessonNumberStr);
+      const lessonNumber = parseLessonNumber(movieId);
       setLessonNumber(lessonNumber);
 
       if (isNaN(lessonNumber) || lessonNumber < 1 || lessonNumber > 12) {
@@ -90,30 +94,16 @@ function WatchingPageContent() {
         return; 
       }
 
-      // 2. Lesson 데이터 (시간 정보) 가져오기
       const lesson = await fetchLessonData(lessonNumber);
 
       if (!lesson) {
         setIsLoading(false);
         return;
       }
-      
-      // 3. Video URL 가져오기 (lesson.video_id 사용)
-      const { data: videoResult, error: videoError } = await supabase
-        .from('videos')
-        .select('video_url, title')
-        .eq('id', lesson.video_id)
-        .single();
 
-      if (videoError || !videoResult) {
-        console.error('Video URL fetching error:', videoError);
-        setIsLoading(false);
-        return;
-      }
-
-      // 4. 상태 업데이트
+      const videoUrl = await resolveVideoUrl(lesson.video_id);
       setLessonData(lesson as LessonDataType); 
-      setVideoUrl(videoResult.video_url); 
+      setVideoUrl(videoUrl); 
       setIsLoading(false);
 
       // 5. 저장된 진도 불러오기
@@ -219,7 +209,37 @@ function WatchingPageContent() {
     };
   }, [lessonNumber, videoUrl]);
 
-  // 로딩 상태 처리
+  const [videoProgress, setVideoProgress] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [showProgressTooltip, setShowProgressTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState(0);
+  const [showNextCta, setShowNextCta] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        e.preventDefault();
+        e.stopPropagation();
+      } else if (e.code === "Space") {
+        e.preventDefault();
+        const video = document.querySelector('video') as HTMLVideoElement;
+        if (video) {
+          if (video.paused) {
+            playSafely(video);
+            setIsVideoPaused(false);
+          } else {
+            video.pause();
+            pauseVideo();
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isFullscreen]);
+
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
@@ -231,7 +251,6 @@ function WatchingPageContent() {
     );
   }
 
-  // 인증되지 않은 경우
   if (!user) {
     return (
       <main className="min-h-screen flex items-center justify-center">
@@ -242,41 +261,6 @@ function WatchingPageContent() {
     );
   }
 
-  // 로컬 상태 (훅으로 교체되지 않은 것들 - 기존 코드 유지)
-  const [videoProgress, setVideoProgress] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [showProgressTooltip, setShowProgressTooltip] = useState(false);
-  const [tooltipPosition, setTooltipPosition] = useState(0);
-  const [showNextCta, setShowNextCta] = useState(false);
-  const [isTextVisible, setIsTextVisible] = useState(false);
-
-  // Keyboard event handling (기존 코드 유지)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Prevent fullscreen exit via ESC
-      if (e.key === 'Escape' && isFullscreen) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      // Spacebar to play/pause video
-      else if (e.code === "Space") {
-        e.preventDefault();
-        const video = document.querySelector('video') as HTMLVideoElement;
-        if (video) {
-          if (video.paused) {
-            video.play();
-          } else {
-            video.pause();
-          }
-        }
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isFullscreen]);
-
-  
   // --- [로딩 및 변수 정의] ---
   if (isLoading || !lessonData || !videoUrl) {
     return (
@@ -406,53 +390,52 @@ function WatchingPageContent() {
         <div className={`aspect-video bg-black rounded-2xl overflow-hidden border-[10px] ${isFullscreen ? 'w-[84%]' : 'w-[70%]'}`} style={{ borderColor: '#201E1E' }}>
           <div className="relative w-full h-full">
             <video
-              // src={movie.videoUrl} <-- 이전 코드 제거됨
-              src={lessonData ? getVideoSourceWithTimeRange(
-                lessonData.watch_start_sec,
-                lessonData.watch_end_sec
-              ) : getVideoSource()} // <-- 스트리밍 최적화된 URL 사용
+              src={getVideoSource()}
               className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 cursor-pointer ${isVideoPaused ? 'opacity-50' : 'opacity-100'}`}
               controls={false}
               autoPlay={false}
               muted={false}
               playsInline
               preload="auto"
-              onLoadedData={() => {
-                // Video loaded successfully
+              onLoadedData={(e) => {
+                const video = e.currentTarget;
+                const startAt = savedProgress?.current_position || Number(lessonData?.watch_start_sec) || 0;
+                if (isFinite(startAt) && startAt >= 0) {
+                  video.currentTime = startAt;
+                }
               }}
               onClick={() => {
                 const video = document.querySelector('video') as HTMLVideoElement;
-                if (video) {
-                  if (video.paused) {
-                    video.play();
-                  } else {
-                    video.pause();
-                  }
+                if (!video) return;
+                if (video.paused) {
+                  playSafely(video);
+                  setIsVideoPaused(false);
+                  setIsVideoStarted(true);
+                } else {
+                  video.pause();
+                  pauseVideo();
                 }
               }}
               onTimeUpdate={(e) => {
                 const video = e.currentTarget;
-                if (lessonData) { // lessonData 사용으로 변경
-                  const totalDuration = endTime - startTime; // 위에 정의된 변수 사용
+                if (lessonData) {
+                  const totalDuration = endTime - startTime;
                   const currentProgress = video.currentTime - startTime;
                   const progress = Math.max(0, (currentProgress / totalDuration) * 100);
                   setVideoProgress(progress);
                   
                   if (video.currentTime >= endTime) {
-                    video.pause();
-                    setShowNextCta(true);
+                    if (!video.paused) {
+                      video.pause();
+                    }
+                    if (!showNextCta) {
+                      setShowNextCta(true);
+                    }
                   }
                 }
               }}
               onContextMenu={(e) => {
                 e.preventDefault();
-                // Disable right-click menu
-              }}
-              onPause={(e) => {
-                // Respect user pause in watching mode
-                if (!showNextCta && !isVideoPaused) {
-                  e.currentTarget.play();
-                }
               }}
             />
             
@@ -462,7 +445,8 @@ function WatchingPageContent() {
                 onClick={() => {
                   const video = document.querySelector('video');
                   if (video) {
-                    video.play();
+                    playSafely(video);
+                    setIsVideoPaused(false);
                     setIsVideoStarted(true);
                   }
                 }}
@@ -499,10 +483,11 @@ function WatchingPageContent() {
                         if (isFinite(startTime) && startTime >= 0) {
                           video.currentTime = startTime;
                         }
-                        video.play();
+                        playSafely(video);
                         setShowNextCta(false);
                         setVideoProgress(0);
-                        setIsVideoStarted(true); // Start playback immediately
+                        setIsVideoPaused(false);
+                        setIsVideoStarted(true);
                       }
                     }}
                   >

@@ -3,8 +3,7 @@
 import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "../../contexts/AuthContext";
-import { fetchLessonData } from "../../dataService";
-import { supabase } from "../../supabaseClient";
+import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from "../../dataService";
 import { timeStringToSeconds } from "../../utils/timeConverter";
 import Link from "next/link";
 import VideoPlayer from "../../components/VideoPlayer";
@@ -17,7 +16,7 @@ import { useMimickingSequence } from "../../hooks/useMimickingSequence";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
-import { getVideoSource, getVideoSourceWithTimeRange } from "../../utils/videoSource";
+import { getVideoSource } from "../../utils/videoSource";
 
 function MimickingPageContent() {
   const { user, loading } = useAuth();
@@ -45,28 +44,6 @@ function MimickingPageContent() {
     }
   }, [user, loading, router]);
 
-  // 로딩 중인 경우
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
-        </div>
-      </main>
-    );
-  }
-
-  // 인증되지 않은 경우
-  if (!user) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
-        </div>
-      </main>
-    );
-  }
   const {
     isPlaying,
     playNonce,
@@ -123,8 +100,7 @@ function MimickingPageContent() {
     const loadDataFromSupabase = async () => {
       try {
         setIsLoading(true);
-        const lessonNumberStr = movieId.split(':')[1];
-        const lessonNumber = parseInt(lessonNumberStr);
+        const lessonNumber = parseLessonNumber(movieId);
         setLessonNumber(lessonNumber);
         
         if (isNaN(lessonNumber)) {
@@ -132,29 +108,16 @@ function MimickingPageContent() {
           return;
         }
         
-        // Lesson 데이터 가져오기
         const lesson = await fetchLessonData(lessonNumber);
         if (!lesson) {
           setIsLoading(false);
           return;
         }
+
+        const resolvedVideoUrl = await resolveVideoUrl(lesson.video_id);
         
-        // Video URL 가져오기
-        const { data: videoResult, error: videoError } = await supabase
-          .from('videos')
-          .select('video_url')
-          .eq('id', lesson.video_id)
-          .single();
-          
-        if (videoError || !videoResult) {
-          console.error('Video URL fetching error:', videoError);
-          setIsLoading(false);
-          return;
-        }
-        
-        // 상태 업데이트
         setLessonData(lesson);
-        setVideoUrl(videoResult.video_url);
+        setVideoUrl(resolvedVideoUrl);
         
         // mimic_data가 JSON 배열인 경우 파싱
         let mimicData = [];
@@ -394,7 +357,6 @@ function MimickingPageContent() {
   const handleNext = useCallback(() => {
     if (!isSequenceRunning) {
       if (currentIndex < scenes.length - 1) {
-        setPlayNonce(0); // Reset playNonce before changing scene
         setCurrentIndex(currentIndex + 1);
       } else {
         // 마지막 씬이면 게싱 모드로 전환
@@ -417,6 +379,27 @@ function MimickingPageContent() {
   }, [playVideo, setActiveControlIndex, setMuted]);
 
   const currentScene = scenes[currentIndex];
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (!user) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+        </div>
+      </main>
+    );
+  }
 
   // 로딩 화면
   if (isLoading || !lessonData || !videoUrl) {
@@ -528,11 +511,8 @@ function MimickingPageContent() {
               transformOrigin: 'center'
             }}>
               <VideoPlayer
-                key={`mimicking-${currentIndex}`}
-                src={currentScene ? getVideoSourceWithTimeRange(
-                  timeStringToSeconds(currentScene.start),
-                  timeStringToSeconds(currentScene.end)
-                ) : getVideoSource()}
+                key="mimicking-player"
+                src={getVideoSource()}
                 startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
                 endTime={currentScene?.end ? timeStringToSeconds(currentScene.end) : 0}
                 muted={muted}
@@ -596,7 +576,6 @@ function MimickingPageContent() {
                           setIsSequenceRunning(false); // 이동 직전에 시퀀스 종료
                           pendingButtonIndexRef.current = null; // Clear pending button ref to prevent stale data
                           autoSeqIndexRef.current = null; // Clear auto sequence ref to prevent stale data
-                          setPlayNonce(0); // Reset playNonce to 0 BEFORE changing scene (prevents old playNonce with new scene)
                           setCurrentIndex(nextIdx); // useEffect가 자동으로 시퀀스 시작
                         }, 1000);
                       } else {

@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 import {
   ATTENTION_SOUND_DURATION,
   CORRECT_SOUND_NOTE_DURATION,
@@ -7,7 +7,14 @@ import {
 
 export function useSoundEffects() {
   // 주의를 끄는 소리 효과 함수
+  const lastAttentionAtRef = useRef(0);
+
   const playAttentionSound = useCallback(() => {
+    const now = Date.now();
+    if (now - lastAttentionAtRef.current < 450) {
+      return;
+    }
+    lastAttentionAtRef.current = now;
     try {
       const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
 

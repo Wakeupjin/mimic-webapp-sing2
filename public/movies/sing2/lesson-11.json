@@ -1,13 +1,895 @@
 {
   "watching": {
-    "start": "01:24:49,039",
-    "end": "01:31:41,386"
+    "start": "01:16:18,496",
+    "end": "01:25:07,758"
   },
-  "mimicking": [
+  "fullSubtitles": [
+    {
+      "start": "01:16:18,496",
+      "end": "01:16:19,697",
+      "text": "It's your role."
+    },
+    {
+      "start": "01:16:22,734",
+      "end": "01:16:25,637",
+      "text": "Miss Crawly, let's see if we can get us a new green alien."
+    },
+    {
+      "start": "01:16:25,670",
+      "end": "01:16:26,904",
+      "text": "Yes, sir, Mr. Moon, sir."
+    },
+    {
+      "start": "01:16:31,542",
+      "end": "01:16:33,745",
+      "text": "Rise and shine, sweetheart!"
+    },
+    {
+      "start": "01:16:33,778",
+      "end": "01:16:35,780",
+      "text": "♪ Soy yo... ♪"
+    },
+    {
+      "start": "01:16:35,813",
+      "end": "01:16:37,382",
+      "text": "Hey! You made it!"
+    },
+    {
+      "start": "01:16:37,415",
+      "end": "01:16:40,585",
+      "text": "Yeah, well, uh, maybe I overreacted a little before."
+    },
+    {
+      "start": "01:16:40,618",
+      "end": "01:16:43,388",
+      "text": "A little? You were, like, a total drama queen back there."
+    },
+    {
+      "start": "01:16:43,421",
+      "end": "01:16:45,189",
+      "text": "Yeah, okay, we're all good now."
+    },
+    {
+      "start": "01:16:45,223",
+      "end": "01:16:47,425",
+      "text": "Wow, my dad's gonna flip when he finds out about us."
+    },
+    {
+      "start": "01:16:47,458",
+      "end": "01:16:49,661",
+      "text": "- Well, we're safe for now, but listen, let's... - Safe?"
+    },
+    {
+      "start": "01:16:49,694",
+      "end": "01:16:51,229",
+      "text": "Uh, no."
+    },
+    {
+      "start": "01:16:51,262",
+      "end": "01:16:52,630",
+      "text": "None of us are safe."
+    },
+    {
+      "start": "01:16:52,664",
+      "end": "01:16:55,433",
+      "text": "Mr. Moon, I know someone who can protect us."
+    },
+    {
+      "start": "01:16:55,466",
+      "end": "01:16:58,770",
+      "text": "Right. Mm-hmm. Yeah. Yeah."
+    },
+    {
+      "start": "01:16:58,803",
+      "end": "01:17:00,605",
+      "text": "Protection?"
+    },
+    {
+      "start": "01:17:00,638",
+      "end": "01:17:01,906",
+      "text": "Say no more, son."
+    },
+    {
+      "start": "01:17:01,939",
+      "end": "01:17:03,541",
+      "text": "We're on our way."
+    },
+    {
+      "start": "01:17:03,574",
+      "end": "01:17:05,376",
+      "text": "♪ Soy yo ♪"
+    },
+    {
+      "start": "01:17:07,578",
+      "end": "01:17:09,447",
+      "text": "♪ Soy yo ♪"
+    },
+    {
+      "start": "01:17:11,916",
+      "end": "01:17:14,185",
+      "text": "♪ Soy yo ♪"
+    },
+    {
+      "start": "01:17:16,020",
+      "end": "01:17:17,689",
+      "text": "♪ Soy yo ♪"
+    },
+    {
+      "start": "01:17:19,691",
+      "end": "01:17:20,625",
+      "text": "♪ Soy yo ♪"
+    },
+    {
+      "start": "01:17:20,658",
+      "end": "01:17:21,859",
+      "text": "♪ Soy, soy, soy ♪"
+    },
+    {
+      "start": "01:17:21,893",
+      "end": "01:17:23,861",
+      "text": "♪ Soy, soy, soy, soy ♪"
+    },
+    {
+      "start": "01:17:23,895",
+      "end": "01:17:26,230",
+      "text": "- ♪ Soy yo ♪ - ♪ Yo, yo, yo ♪"
+    },
+    {
+      "start": "01:17:26,264",
+      "end": "01:17:28,566",
+      "text": "♪ Yo, yo, yo, yo ♪"
+    },
+    {
+      "start": "01:17:28,599",
+      "end": "01:17:31,335",
+      "text": "- ♪ Soy yo ♪ - ♪ Soy, soy, soy, soy ♪"
+    },
+    {
+      "start": "01:17:34,405",
+      "end": "01:17:35,940",
+      "text": "Good night, Porsha."
+    },
+    {
+      "start": "01:17:35,973",
+      "end": "01:17:38,309",
+      "text": "♪ Soy yo. ♪"
+    },
+    {
+      "start": "01:17:38,342",
+      "end": "01:17:39,977",
+      "text": "All right, be that way. I don't care."
+    },
+    {
+      "start": "01:17:40,011",
+      "end": "01:17:41,979",
+      "text": "Spoiled little brat."
+    },
+    {
+      "start": "01:17:42,013",
+      "end": "01:17:44,549",
+      "text": "All right, time to get us an audience."
+    },
+    {
+      "start": "01:17:44,582",
+      "end": "01:17:47,719",
+      "text": "Wait. Moon, as soon as you start inviting folks in here,"
+    },
+    {
+      "start": "01:17:47,752",
+      "end": "01:17:50,388",
+      "text": "hotel security will just shut us down, right?"
+    },
+    {
+      "start": "01:17:50,421",
+      "end": "01:17:52,790",
+      "text": "Oh, it's okay. Rosita's got that covered."
+    },
+    {
+      "start": "01:17:54,959",
+      "end": "01:17:57,261",
+      "text": "Norman, release the piglets."
+    },
+    {
+      "start": "01:18:00,898",
+      "end": "01:18:02,767",
+      "text": "♪ No, not today... ♪"
+    },
+    {
+      "start": "01:18:08,005",
+      "end": "01:18:10,441",
+      "text": "Hey, no!"
+    },
+    {
+      "start": "01:18:13,311",
+      "end": "01:18:17,615",
+      "text": "All security, we have a situation on floor 17."
+    },
+    {
+      "start": "01:18:17,648",
+      "end": "01:18:20,752",
+      "text": "Repeat, all security to floor 17."
+    },
+    {
+      "start": "01:18:20,785",
+      "end": "01:18:24,555",
+      "text": "This is the best day of my life, Daddy! Whoo!"
+    },
+    {
+      "start": "01:18:24,589",
+      "end": "01:18:28,493",
+      "text": "Repeat, everybody to floor 17!"
+    },
+    {
+      "start": "01:18:29,627",
+      "end": "01:18:32,029",
+      "text": "Wait, uh, is it on?"
+    },
+    {
+      "start": "01:18:32,064",
+      "end": "01:18:33,931",
+      "text": "- Yes, it's on now. - Oh, now?"
+    },
+    {
+      "start": "01:18:33,965",
+      "end": "01:18:35,633",
+      "text": "- Yes, now. - Oh, yes, yes, yes, yes."
+    },
+    {
+      "start": "01:18:35,666",
+      "end": "01:18:37,301",
+      "text": "Before I blah, blah, blah, blah, blah. Yeah, yeah, okay."
+    },
+    {
+      "start": "01:18:37,335",
+      "end": "01:18:38,870",
+      "text": "Good evening."
+    },
+    {
+      "start": "01:18:38,903",
+      "end": "01:18:40,705",
+      "text": "Uh, my name is Buster Moon,"
+    },
+    {
+      "start": "01:18:40,738",
+      "end": "01:18:42,907",
+      "text": "and it is my great pleasure to present to you,"
+    },
+    {
+      "start": "01:18:42,940",
+      "end": "01:18:45,376",
+      "text": "for one night only in the Crystal Tower Theater..."
+    },
+    {
+      "start": "01:18:45,409",
+      "end": "01:18:46,878",
+      "text": "Mr. Crystal's office."
+    },
+    {
+      "start": "01:18:46,911",
+      "end": "01:18:48,379",
+      "text": "This is Jerry speaking."
+    },
+    {
+      "start": "01:18:48,412",
+      "end": "01:18:52,383",
+      "text": "...a brand-new show called Out of This World."
+    },
+    {
+      "start": "01:18:52,416",
+      "end": "01:18:55,620",
+      "text": "A musical space odyssey featuring the return of"
+    },
+    {
+      "start": "01:18:55,653",
+      "end": "01:18:57,789",
+      "text": "the legendary Clay Calloway."
+    },
+    {
+      "start": "01:18:57,822",
+      "end": "01:19:01,059",
+      "text": "That's right, Clay Calloway."
+    },
+    {
+      "start": "01:19:01,093",
+      "end": "01:19:04,462",
+      "text": "And what's more, this show is completely free,"
+    },
+    {
+      "start": "01:19:04,495",
+      "end": "01:19:07,465",
+      "text": "so step right up, folks, and take your seats."
+    },
+    {
+      "start": "01:19:07,498",
+      "end": "01:19:10,568",
+      "text": "The journey of a lifetime is about to begin."
+    },
+    {
+      "start": "01:19:10,601",
+      "end": "01:19:13,671",
+      "text": "All right, folks, we all set back here?"
+    },
+    {
+      "start": "01:19:13,704",
+      "end": "01:19:15,406",
+      "text": "There he is!"
+    },
+    {
+      "start": "01:19:15,439",
+      "end": "01:19:17,041",
+      "text": "Dad."
+    },
+    {
+      "start": "01:19:17,075",
+      "end": "01:19:18,810",
+      "text": "- Come here. - What are you wearing?"
+    },
+    {
+      "start": "01:19:18,843",
+      "end": "01:19:20,478",
+      "text": "Oh, well, we're still doing"
+    },
+    {
+      "start": "01:19:20,511",
+      "end": "01:19:22,346",
+      "text": "our community service, ain't we, lads?"
+    },
+    {
+      "start": "01:19:22,380",
+      "end": "01:19:23,548",
+      "text": "- Yeah. - That's right."
+    },
+    {
+      "start": "01:19:23,581",
+      "end": "01:19:25,917",
+      "text": "Oh, my gosh. He's here."
+    },
+    {
+      "start": "01:19:25,950",
+      "end": "01:19:26,951",
+      "text": "Crystal's here?"
+    },
+    {
+      "start": "01:19:26,984",
+      "end": "01:19:29,987",
+      "text": "No. M-My ice cream guy."
+    },
+    {
+      "start": "01:19:30,021",
+      "end": "01:19:32,090",
+      "text": "And he's sitting in the front row."
+    },
+    {
+      "start": "01:19:32,124",
+      "end": "01:19:34,559",
+      "text": "- Mr. Crystal! Mr. Crystal! - Aah! Jerry!"
+    },
+    {
+      "start": "01:19:34,592",
+      "end": "01:19:36,128",
+      "text": "- Mr. Crystal, wake up, wake up. - I tried to stop him, sir."
+    },
+    {
+      "start": "01:19:36,161",
+      "end": "01:19:37,595",
+      "text": "I-I'm so sorry. I'm so sorry to wake you up, sir."
+    },
+    {
+      "start": "01:19:37,628",
+      "end": "01:19:38,963",
+      "text": "It's Moon. He's taken over the theater,"
+    },
+    {
+      "start": "01:19:38,996",
+      "end": "01:19:40,598",
+      "text": "and he's putting on a show right now."
+    },
+    {
+      "start": "01:19:40,631",
+      "end": "01:19:42,867",
+      "text": "He's what?!"
+    },
+    {
+      "start": "01:19:52,110",
+      "end": "01:19:53,611",
+      "text": "Okay, this is it, guys. You ready?"
+    },
+    {
+      "start": "01:19:53,644",
+      "end": "01:19:55,446",
+      "text": "Oh, my gosh. Are we really doing this?"
+    },
+    {
+      "start": "01:19:55,479",
+      "end": "01:19:56,848",
+      "text": "Yeah, you better believe it."
+    },
+    {
+      "start": "01:19:56,881",
+      "end": "01:19:59,617",
+      "text": "Yeah, big-time, baby!"
+    },
+    {
+      "start": "01:19:59,650",
+      "end": "01:20:00,718",
+      "text": "Remember..."
+    },
+    {
+      "start": "01:20:00,751",
+      "end": "01:20:04,522",
+      "text": "There's only one way left to go, and that's up!"
+    },
+    {
+      "start": "01:20:04,555",
+      "end": "01:20:06,023",
+      "text": "- Yeah! - Let's do it! Come on!"
+    },
+    {
+      "start": "01:20:06,058",
+      "end": "01:20:08,893",
+      "text": "Gunter robot activating piggy power."
+    },
+    {
+      "start": "01:20:08,926",
+      "end": "01:20:10,095",
+      "text": "Beep-beep, boop-boop."
+    },
+    {
+      "start": "01:20:10,128",
+      "end": "01:20:11,662",
+      "text": "Playback!"
+    },
+    {
+      "start": "01:20:16,467",
+      "end": "01:20:20,972",
+      "text": "All creatures great and small,"
+    },
+    {
+      "start": "01:20:21,005",
+      "end": "01:20:23,908",
+      "text": "welcome to outer space."
+    },
+    {
+      "start": "01:20:33,885",
+      "end": "01:20:36,721",
+      "text": "My name is Captain Rosita."
+    },
+    {
+      "start": "01:20:36,754",
+      "end": "01:20:40,591",
+      "text": "My mission: to find and rescue a space explorer"
+    },
+    {
+      "start": "01:20:40,625",
+      "end": "01:20:43,661",
+      "text": "who mysteriously went missing long ago."
+    },
+    {
+      "start": "01:20:43,694",
+      "end": "01:20:47,431",
+      "text": "Captain, I am picking up his signal."
+    },
+    {
+      "start": "01:20:47,465",
+      "end": "01:20:49,901",
+      "text": "Excellent. But from which planet?"
+    },
+    {
+      "start": "01:20:49,934",
+      "end": "01:20:51,502",
+      "text": "I see four of them ahead."
+    },
+    {
+      "start": "01:20:51,535",
+      "end": "01:20:53,771",
+      "text": "It is impossible to know which one"
+    },
+    {
+      "start": "01:20:53,804",
+      "end": "01:20:55,840",
+      "text": "the signal is, like, coming from."
+    },
+    {
+      "start": "01:20:55,873",
+      "end": "01:20:57,142",
+      "text": "I see."
+    },
+    {
+      "start": "01:20:57,175",
+      "end": "01:20:59,177",
+      "text": "Then I'll have to explore them all."
+    },
+    {
+      "start": "01:20:59,211",
+      "end": "01:21:01,113",
+      "text": "Take us down."
+    },
+    {
+      "start": "01:21:01,146",
+      "end": "01:21:02,880",
+      "text": "You've got this, big guy."
+    },
+    {
+      "start": "01:21:02,914",
+      "end": "01:21:05,583",
+      "text": "Remember what I said... just go with the flow."
+    },
+    {
+      "start": "01:21:06,984",
+      "end": "01:21:09,820",
+      "text": "Mission report. I must take care,"
+    },
+    {
+      "start": "01:21:09,854",
+      "end": "01:21:13,591",
+      "text": "for I have landed on the Planet of War."
+    },
+    {
+      "start": "01:21:22,200",
+      "end": "01:21:24,202",
+      "text": "♪ 'Cause you're a sky ♪"
+    },
+    {
+      "start": "01:21:24,236",
+      "end": "01:21:28,673",
+      "text": "♪ 'Cause you're a sky full of stars ♪"
+    },
+    {
+      "start": "01:21:30,108",
+      "end": "01:21:34,578",
+      "text": "♪ I'm gonna give you my heart ♪"
+    },
+    {
+      "start": "01:21:37,615",
+      "end": "01:21:39,550",
+      "text": "♪ 'Cause you're a sky ♪"
+    },
+    {
+      "start": "01:21:39,583",
+      "end": "01:21:43,921",
+      "text": "♪ 'Cause you're a sky full of stars ♪"
+    },
+    {
+      "start": "01:21:45,623",
+      "end": "01:21:49,560",
+      "text": "♪ 'Cause you light up the path ♪"
+    },
+    {
+      "start": "01:21:49,593",
+      "end": "01:21:51,996",
+      "text": "That's my boy."
+    },
+    {
+      "start": "01:21:53,065",
+      "end": "01:21:55,100",
+      "text": "♪ I don't care ♪"
+    },
+    {
+      "start": "01:21:55,133",
+      "end": "01:21:58,803",
+      "text": "♪ Go on and tear me apart ♪"
+    },
+    {
+      "start": "01:22:00,604",
+      "end": "01:22:04,976",
+      "text": "♪ I don't care if you do ♪"
+    },
+    {
+      "start": "01:22:05,009",
+      "end": "01:22:08,512",
+      "text": "♪ Ooh ♪"
+    },
+    {
+      "start": "01:22:08,546",
+      "end": "01:22:10,614",
+      "text": "♪ 'Cause in a sky ♪"
+    },
+    {
+      "start": "01:22:10,648",
+      "end": "01:22:13,584",
+      "text": "♪ 'Cause in a sky full of stars ♪"
+    },
+    {
+      "start": "01:22:13,617",
+      "end": "01:22:19,091",
+      "text": "♪ I think I saw you... ♪"
+    },
+    {
+      "start": "01:22:29,633",
+      "end": "01:22:32,003",
+      "text": "Yeah!"
+    },
+    {
+      "start": "01:22:33,205",
+      "end": "01:22:34,672",
+      "text": "Give me that!"
+    },
+    {
+      "start": "01:22:34,705",
+      "end": "01:22:36,807",
+      "text": "- And your costume. Now! - Wait, what?"
+    },
+    {
+      "start": "01:22:36,841",
+      "end": "01:22:38,076",
+      "text": "Take it off now!"
+    },
+    {
+      "start": "01:22:44,815",
+      "end": "01:22:46,617",
+      "text": "Uh, we'll be at the theater soon, sir."
+    },
+    {
+      "start": "01:22:46,650",
+      "end": "01:22:48,652",
+      "text": "I don't want to be there soon. I want to be there now."
+    },
+    {
+      "start": "01:22:48,686",
+      "end": "01:22:50,054",
+      "text": "Yeah, we want to be there now."
+    },
+    {
+      "start": "01:22:50,088",
+      "end": "01:22:51,156",
+      "text": "Yes, sir."
+    },
+    {
+      "start": "01:22:54,725",
+      "end": "01:22:58,263",
+      "text": "♪ I don't care if you do ♪"
+    },
+    {
+      "start": "01:22:58,296",
+      "end": "01:23:02,633",
+      "text": "♪ Ooh ♪"
+    },
+    {
+      "start": "01:23:02,666",
+      "end": "01:23:04,668",
+      "text": "♪ 'Cause in a sky ♪"
+    },
+    {
+      "start": "01:23:04,702",
+      "end": "01:23:08,173",
+      "text": "♪ 'Cause in a sky full of stars ♪"
+    },
+    {
+      "start": "01:23:08,206",
+      "end": "01:23:13,078",
+      "text": "♪ I think I saw you ♪"
+    },
+    {
+      "start": "01:23:35,699",
+      "end": "01:23:40,172",
+      "text": "You see? You will never be great, Johnny."
+    },
+    {
+      "start": "01:23:44,409",
+      "end": "01:23:47,044",
+      "text": "Oh, come on."
+    },
+    {
+      "start": "01:24:03,395",
+      "end": "01:24:05,363",
+      "text": "♪ I don't care ♪"
+    },
+    {
+      "start": "01:24:05,397",
+      "end": "01:24:08,599",
+      "text": "♪ Go on and tear me apart ♪"
+    },
+    {
+      "start": "01:24:09,767",
+      "end": "01:24:13,138",
+      "text": "♪ I don't care if you do ♪"
+    },
+    {
+      "start": "01:24:14,272",
+      "end": "01:24:16,241",
+      "text": "♪ Oh ♪"
+    },
+    {
+      "start": "01:24:16,274",
+      "end": "01:24:19,043",
+      "text": "♪ 'Cause in a sky, 'cause in a sky ♪"
+    },
+    {
+      "start": "01:24:19,077",
+      "end": "01:24:21,313",
+      "text": "- ♪ Full of stars ♪ - Yeah, that's more like it."
+    },
+    {
+      "start": "01:24:21,346",
+      "end": "01:24:23,981",
+      "text": "♪ I think I saw you! ♪"
+    },
     {
       "start": "01:24:49,039",
       "end": "01:24:51,143",
       "text": "This is Barry. Come in. Over."
+    },
+    {
+      "start": "01:24:51,176",
+      "end": "01:24:52,743",
+      "text": "Yeah, go ahead, Barry."
+    },
+    {
+      "start": "01:24:52,776",
+      "end": "01:24:53,978",
+      "text": "Crystal's on site."
+    },
+    {
+      "start": "01:24:54,011",
+      "end": "01:24:56,680",
+      "text": "Repeat, Crystal is on site. Over."
+    },
+    {
+      "start": "01:24:56,714",
+      "end": "01:24:57,982",
+      "text": "Roger that."
+    },
+    {
+      "start": "01:24:58,015",
+      "end": "01:25:00,684",
+      "text": "Right, let's go to work."
+    },
+    {
+      "start": "01:25:00,718",
+      "end": "01:25:02,154",
+      "text": "Mission report."
+    },
+    {
+      "start": "01:25:02,187",
+      "end": "01:25:04,755",
+      "text": "My search takes me to the second planet,"
+    },
+    {
+      "start": "01:25:04,788",
+      "end": "01:25:05,923",
+      "text": "the Planet of Joy."
+    },
+    {
+      "start": "01:25:05,956",
+      "end": "01:25:07,758",
+      "text": "All right. Here we go, Porsha."
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "01:16:18,496",
+      "end": "01:16:19,697",
+      "text": "It's your role."
+    },
+    {
+      "start": "01:16:31,542",
+      "end": "01:16:33,745",
+      "text": "Rise and shine, sweetheart!"
+    },
+    {
+      "start": "01:16:37,415",
+      "end": "01:16:40,585",
+      "text": "Yeah, well, uh, maybe I overreacted a little before."
+    },
+    {
+      "start": "01:16:43,421",
+      "end": "01:16:45,189",
+      "text": "Yeah, okay, we're all good now."
+    },
+    {
+      "start": "01:16:51,262",
+      "end": "01:16:52,630",
+      "text": "None of us are safe."
+    },
+    {
+      "start": "01:16:55,466",
+      "end": "01:16:58,770",
+      "text": "Right. Mm-hmm. Yeah. Yeah."
+    },
+    {
+      "start": "01:17:01,939",
+      "end": "01:17:03,541",
+      "text": "We're on our way."
+    },
+    {
+      "start": "01:17:38,342",
+      "end": "01:17:39,977",
+      "text": "All right, be that way. I don't care."
+    },
+    {
+      "start": "01:17:50,421",
+      "end": "01:17:52,790",
+      "text": "Oh, it's okay. Rosita's got that covered."
+    },
+    {
+      "start": "01:18:13,311",
+      "end": "01:18:17,615",
+      "text": "All security, we have a situation on floor 17."
+    },
+    {
+      "start": "01:18:20,785",
+      "end": "01:18:24,555",
+      "text": "This is the best day of my life, Daddy! Whoo!"
+    },
+    {
+      "start": "01:18:29,627",
+      "end": "01:18:32,029",
+      "text": "Wait, uh, is it on?"
+    },
+    {
+      "start": "01:18:45,409",
+      "end": "01:18:46,878",
+      "text": "Mr. Crystal's office."
+    },
+    {
+      "start": "01:18:57,822",
+      "end": "01:19:01,059",
+      "text": "That's right, Clay Calloway."
+    },
+    {
+      "start": "01:19:10,601",
+      "end": "01:19:13,671",
+      "text": "All right, folks, we all set back here?"
+    },
+    {
+      "start": "01:19:23,581",
+      "end": "01:19:25,917",
+      "text": "Oh, my gosh. He's here."
+    },
+    {
+      "start": "01:19:30,021",
+      "end": "01:19:32,090",
+      "text": "And he's sitting in the front row."
+    },
+    {
+      "start": "01:19:53,644",
+      "end": "01:19:55,446",
+      "text": "Oh, my gosh. Are we really doing this?"
+    },
+    {
+      "start": "01:19:56,881",
+      "end": "01:19:59,617",
+      "text": "Yeah, big-time, baby!"
+    },
+    {
+      "start": "01:20:06,058",
+      "end": "01:20:08,893",
+      "text": "Gunter robot activating piggy power."
+    },
+    {
+      "start": "01:20:43,694",
+      "end": "01:20:47,431",
+      "text": "Captain, I am picking up his signal."
+    },
+    {
+      "start": "01:20:49,934",
+      "end": "01:20:51,502",
+      "text": "I see four of them ahead."
+    },
+    {
+      "start": "01:20:59,211",
+      "end": "01:21:01,113",
+      "text": "Take us down."
+    },
+    {
+      "start": "01:21:02,914",
+      "end": "01:21:05,583",
+      "text": "Remember what I said... just go with the flow."
+    },
+    {
+      "start": "01:22:33,205",
+      "end": "01:22:34,672",
+      "text": "Give me that!"
+    },
+    {
+      "start": "01:22:44,815",
+      "end": "01:22:46,617",
+      "text": "Uh, we'll be at the theater soon, sir."
+    },
+    {
+      "start": "01:23:44,409",
+      "end": "01:23:47,044",
+      "text": "Oh, come on."
     },
     {
       "start": "01:24:51,176",
@@ -20,172 +902,266 @@
       "text": "Repeat, Crystal is on site. Over."
     },
     {
-      "start": "01:24:58,015",
-      "end": "01:25:00,684",
-      "text": "Right, let's go to work."
-    },
-    {
-      "start": "01:25:04,788",
-      "end": "01:25:05,923",
-      "text": "the Planet of Joy."
-    },
-    {
       "start": "01:25:05,956",
       "end": "01:25:07,758",
       "text": "All right. Here we go, Porsha."
-    },
-    {
-      "start": "01:25:41,259",
-      "end": "01:25:43,228",
-      "text": "We're security now, mate."
-    },
-    {
-      "start": "01:26:48,926",
-      "end": "01:26:51,196",
-      "text": "That's it, I'm coming out there!"
-    },
-    {
-      "start": "01:26:56,201",
-      "end": "01:26:58,270",
-      "text": "so you should be comfortable till the show's over."
-    },
-    {
-      "start": "01:27:37,007",
-      "end": "01:27:39,311",
-      "text": "No sign here of the missing space explorer."
-    },
-    {
-      "start": "01:27:41,346",
-      "end": "01:27:42,880",
-      "text": "- Ready, Gina? - It's Meena."
-    },
-    {
-      "start": "01:27:42,913",
-      "end": "01:27:44,616",
-      "text": "- Wait, what is? - Never mind."
-    },
-    {
-      "start": "01:27:46,551",
-      "end": "01:27:49,187",
-      "text": "It is now or never."
-    },
-    {
-      "start": "01:28:04,968",
-      "end": "01:28:07,305",
-      "text": "Okay. I'm ready now."
-    },
-    {
-      "start": "01:28:49,012",
-      "end": "01:28:51,383",
-      "text": "I'm trapped somewhere under the stage."
-    },
-    {
-      "start": "01:28:53,318",
-      "end": "01:28:55,387",
-      "text": "Mr. Crystal, I'm coming!"
-    },
-    {
-      "start": "01:30:12,730",
-      "end": "01:30:14,699",
-      "text": "Oh. Um, Alfonso."
-    },
-    {
-      "start": "01:30:17,268",
-      "end": "01:30:18,603",
-      "text": "So were you."
-    },
-    {
-      "start": "01:30:20,171",
-      "end": "01:30:22,340",
-      "text": "Oh. Uh, uh, never mind."
-    },
-    {
-      "start": "01:30:26,778",
-      "end": "01:30:28,713",
-      "text": "Okay, great. Bye."
-    },
-    {
-      "start": "01:30:30,682",
-      "end": "01:30:33,718",
-      "text": "Captain, we cannot land on the last planet."
-    },
-    {
-      "start": "01:30:36,254",
-      "end": "01:30:39,057",
-      "text": "The ship will never make it."
-    },
-    {
-      "start": "01:30:39,090",
-      "end": "01:30:41,659",
-      "text": "You're right. It won't make it."
-    },
-    {
-      "start": "01:31:13,825",
-      "end": "01:31:16,794",
-      "text": "Rosita, you've got to jump."
-    },
-    {
-      "start": "01:31:21,165",
-      "end": "01:31:22,667",
-      "text": "Come on, Rosita."
-    },
-    {
-      "start": "01:31:24,168",
-      "end": "01:31:25,803",
-      "text": "- Daddy, stop it! - No!"
-    },
-    {
-      "start": "01:31:25,837",
-      "end": "01:31:28,606",
-      "text": "- Mr. Moon! - Mr. Crystal, no!"
-    },
-    {
-      "start": "01:31:33,378",
-      "end": "01:31:35,113",
-      "text": "I'm not a loser."
-    },
-    {
-      "start": "01:31:35,146",
-      "end": "01:31:37,081",
-      "text": "We did what we came here to do."
-    },
-    {
-      "start": "01:31:38,816",
-      "end": "01:31:41,386",
-      "text": "you can do or say to change that."
     }
   ],
   "guessing": [
     {
       "question": 1,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "C",
-          "text": "Repeat, Crystal is on site. Over.",
-          "start": "01:24:54,011",
-          "end": "01:24:56,680"
+          "label": "B",
+          "text": "Yeah, well, uh, maybe I overreacted a little before.",
+          "start": "01:16:37,415",
+          "end": "01:16:40,585"
         },
         {
           "label": "A",
-          "text": "The ship will never make it.",
-          "start": "01:30:36,254",
-          "end": "01:30:39,057"
+          "text": "None of us are safe.",
+          "start": "01:16:51,262",
+          "end": "01:16:52,630"
         },
         {
-          "label": "B",
-          "text": "the Planet of Joy.",
-          "start": "01:25:04,788",
-          "end": "01:25:05,923"
+          "label": "C",
+          "text": "Wait, uh, is it on?",
+          "start": "01:18:29,627",
+          "end": "01:18:32,029"
         }
       ],
       "video": {
-        "start": "01:24:54,011",
-        "end": "01:24:56,680"
+        "start": "01:16:37,415",
+        "end": "01:16:40,585"
       }
     },
     {
       "question": 2,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Right. Mm-hmm. Yeah. Yeah.",
+          "start": "01:16:55,466",
+          "end": "01:16:58,770"
+        },
+        {
+          "label": "A",
+          "text": "Remember what I said... just go with the flow.",
+          "start": "01:21:02,914",
+          "end": "01:21:05,583"
+        },
+        {
+          "label": "B",
+          "text": "Oh, my gosh. Are we really doing this?",
+          "start": "01:19:53,644",
+          "end": "01:19:55,446"
+        }
+      ],
+      "video": {
+        "start": "01:16:55,466",
+        "end": "01:16:58,770"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Oh, it's okay. Rosita's got that covered.",
+          "start": "01:17:50,421",
+          "end": "01:17:52,790"
+        },
+        {
+          "label": "A",
+          "text": "All right. Here we go, Porsha.",
+          "start": "01:25:05,956",
+          "end": "01:25:07,758"
+        },
+        {
+          "label": "B",
+          "text": "Right. Mm-hmm. Yeah. Yeah.",
+          "start": "01:16:55,466",
+          "end": "01:16:58,770"
+        }
+      ],
+      "video": {
+        "start": "01:17:50,421",
+        "end": "01:17:52,790"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Wait, uh, is it on?",
+          "start": "01:18:29,627",
+          "end": "01:18:32,029"
+        },
+        {
+          "label": "A",
+          "text": "That's right, Clay Calloway.",
+          "start": "01:18:57,822",
+          "end": "01:19:01,059"
+        },
+        {
+          "label": "B",
+          "text": "Repeat, Crystal is on site. Over.",
+          "start": "01:24:54,011",
+          "end": "01:24:56,680"
+        }
+      ],
+      "video": {
+        "start": "01:18:29,627",
+        "end": "01:18:32,029"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "All right, folks, we all set back here?",
+          "start": "01:19:10,601",
+          "end": "01:19:13,671"
+        },
+        {
+          "label": "B",
+          "text": "Oh, my gosh. He's here.",
+          "start": "01:19:23,581",
+          "end": "01:19:25,917"
+        },
+        {
+          "label": "A",
+          "text": "Give me that!",
+          "start": "01:22:33,205",
+          "end": "01:22:34,672"
+        }
+      ],
+      "video": {
+        "start": "01:19:10,601",
+        "end": "01:19:13,671"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Oh, my gosh. Are we really doing this?",
+          "start": "01:19:53,644",
+          "end": "01:19:55,446"
+        },
+        {
+          "label": "B",
+          "text": "All right. Here we go, Porsha.",
+          "start": "01:25:05,956",
+          "end": "01:25:07,758"
+        },
+        {
+          "label": "A",
+          "text": "Give me that!",
+          "start": "01:22:33,205",
+          "end": "01:22:34,672"
+        }
+      ],
+      "video": {
+        "start": "01:19:53,644",
+        "end": "01:19:55,446"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Captain, I am picking up his signal.",
+          "start": "01:20:43,694",
+          "end": "01:20:47,431"
+        },
+        {
+          "label": "C",
+          "text": "And he's sitting in the front row.",
+          "start": "01:19:30,021",
+          "end": "01:19:32,090"
+        },
+        {
+          "label": "B",
+          "text": "Rise and shine, sweetheart!",
+          "start": "01:16:31,542",
+          "end": "01:16:33,745"
+        }
+      ],
+      "video": {
+        "start": "01:20:43,694",
+        "end": "01:20:47,431"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Remember what I said... just go with the flow.",
+          "start": "01:21:02,914",
+          "end": "01:21:05,583"
+        },
+        {
+          "label": "B",
+          "text": "Mr. Crystal's office.",
+          "start": "01:18:45,409",
+          "end": "01:18:46,878"
+        },
+        {
+          "label": "C",
+          "text": "Oh, it's okay. Rosita's got that covered.",
+          "start": "01:17:50,421",
+          "end": "01:17:52,790"
+        }
+      ],
+      "video": {
+        "start": "01:21:02,914",
+        "end": "01:21:05,583"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Oh, come on.",
+          "start": "01:23:44,409",
+          "end": "01:23:47,044"
+        },
+        {
+          "label": "C",
+          "text": "Take us down.",
+          "start": "01:20:59,211",
+          "end": "01:21:01,113"
+        },
+        {
+          "label": "B",
+          "text": "Captain, I am picking up his signal.",
+          "start": "01:20:43,694",
+          "end": "01:20:47,431"
+        }
+      ],
+      "video": {
+        "start": "01:23:44,409",
+        "end": "01:23:47,044"
+      }
+    },
+    {
+      "question": 10,
       "correctAnswer": "B",
       "options": [
         {
@@ -195,308 +1171,84 @@
           "end": "01:25:07,758"
         },
         {
-          "label": "C",
-          "text": "so you should be comfortable till the show's over.",
-          "start": "01:26:56,201",
-          "end": "01:26:58,270"
+          "label": "A",
+          "text": "Oh, my gosh. Are we really doing this?",
+          "start": "01:19:53,644",
+          "end": "01:19:55,446"
         },
         {
-          "label": "A",
-          "text": "you can do or say to change that.",
-          "start": "01:31:38,816",
-          "end": "01:31:41,386"
+          "label": "C",
+          "text": "This is the best day of my life, Daddy! Whoo!",
+          "start": "01:18:20,785",
+          "end": "01:18:24,555"
         }
       ],
       "video": {
         "start": "01:25:05,956",
         "end": "01:25:07,758"
       }
-    },
-    {
-      "question": 3,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "so you should be comfortable till the show's over.",
-          "start": "01:26:56,201",
-          "end": "01:26:58,270"
-        },
-        {
-          "label": "C",
-          "text": "Okay. I'm ready now.",
-          "start": "01:28:04,968",
-          "end": "01:28:07,305"
-        },
-        {
-          "label": "B",
-          "text": "Oh. Um, Alfonso.",
-          "start": "01:30:12,730",
-          "end": "01:30:14,699"
-        }
-      ],
-      "video": {
-        "start": "01:26:56,201",
-        "end": "01:26:58,270"
-      }
-    },
-    {
-      "question": 4,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "- Wait, what is? - Never mind.",
-          "start": "01:27:42,913",
-          "end": "01:27:44,616"
-        },
-        {
-          "label": "B",
-          "text": "No sign here of the missing space explorer.",
-          "start": "01:27:37,007",
-          "end": "01:27:39,311"
-        },
-        {
-          "label": "A",
-          "text": "- Ready, Gina? - It's Meena.",
-          "start": "01:27:41,346",
-          "end": "01:27:42,880"
-        }
-      ],
-      "video": {
-        "start": "01:27:42,913",
-        "end": "01:27:44,616"
-      }
-    },
-    {
-      "question": 5,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "I'm trapped somewhere under the stage.",
-          "start": "01:28:49,012",
-          "end": "01:28:51,383"
-        },
-        {
-          "label": "B",
-          "text": "We did what we came here to do.",
-          "start": "01:31:35,146",
-          "end": "01:31:37,081"
-        },
-        {
-          "label": "A",
-          "text": "- Daddy, stop it! - No!",
-          "start": "01:31:24,168",
-          "end": "01:31:25,803"
-        }
-      ],
-      "video": {
-        "start": "01:28:49,012",
-        "end": "01:28:51,383"
-      }
-    },
-    {
-      "question": 6,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "So were you.",
-          "start": "01:30:17,268",
-          "end": "01:30:18,603"
-        },
-        {
-          "label": "B",
-          "text": "- Mr. Moon! - Mr. Crystal, no!",
-          "start": "01:31:25,837",
-          "end": "01:31:28,606"
-        },
-        {
-          "label": "A",
-          "text": "Rosita, you've got to jump.",
-          "start": "01:31:13,825",
-          "end": "01:31:16,794"
-        }
-      ],
-      "video": {
-        "start": "01:30:17,268",
-        "end": "01:30:18,603"
-      }
-    },
-    {
-      "question": 7,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "Captain, we cannot land on the last planet.",
-          "start": "01:30:30,682",
-          "end": "01:30:33,718"
-        },
-        {
-          "label": "C",
-          "text": "Rosita, you've got to jump.",
-          "start": "01:31:13,825",
-          "end": "01:31:16,794"
-        },
-        {
-          "label": "B",
-          "text": "I'm trapped somewhere under the stage.",
-          "start": "01:28:49,012",
-          "end": "01:28:51,383"
-        }
-      ],
-      "video": {
-        "start": "01:30:30,682",
-        "end": "01:30:33,718"
-      }
-    },
-    {
-      "question": 8,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "Rosita, you've got to jump.",
-          "start": "01:31:13,825",
-          "end": "01:31:16,794"
-        },
-        {
-          "label": "B",
-          "text": "the Planet of Joy.",
-          "start": "01:25:04,788",
-          "end": "01:25:05,923"
-        },
-        {
-          "label": "A",
-          "text": "This is Barry. Come in. Over.",
-          "start": "01:24:49,039",
-          "end": "01:24:51,143"
-        }
-      ],
-      "video": {
-        "start": "01:31:13,825",
-        "end": "01:31:16,794"
-      }
-    },
-    {
-      "question": 9,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
-          "text": "- Mr. Moon! - Mr. Crystal, no!",
-          "start": "01:31:25,837",
-          "end": "01:31:28,606"
-        },
-        {
-          "label": "A",
-          "text": "Okay, great. Bye.",
-          "start": "01:30:26,778",
-          "end": "01:30:28,713"
-        },
-        {
-          "label": "C",
-          "text": "Come on, Rosita.",
-          "start": "01:31:21,165",
-          "end": "01:31:22,667"
-        }
-      ],
-      "video": {
-        "start": "01:31:25,837",
-        "end": "01:31:28,606"
-      }
-    },
-    {
-      "question": 10,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
-          "text": "you can do or say to change that.",
-          "start": "01:31:38,816",
-          "end": "01:31:41,386"
-        },
-        {
-          "label": "C",
-          "text": "That's it, I'm coming out there!",
-          "start": "01:26:48,926",
-          "end": "01:26:51,196"
-        },
-        {
-          "label": "A",
-          "text": "Mr. Crystal, I'm coming!",
-          "start": "01:28:53,318",
-          "end": "01:28:55,387"
-        }
-      ],
-      "video": {
-        "start": "01:31:38,816",
-        "end": "01:31:41,386"
-      }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "01:24:49,039",
-      "end": "01:24:51,143",
-      "text": "This is Barry. Come in. Over."
+      "start": "01:16:18,496",
+      "end": "01:16:19,697",
+      "text": "It's your role."
     },
     {
       "question": 2,
-      "start": "01:24:51,176",
-      "end": "01:24:52,743",
-      "text": "Yeah, go ahead, Barry."
+      "start": "01:16:43,421",
+      "end": "01:16:45,189",
+      "text": "Yeah, okay, we're all good now."
     },
     {
       "question": 3,
-      "start": "01:24:58,015",
-      "end": "01:25:00,684",
-      "text": "Right, let's go to work."
+      "start": "01:17:01,939",
+      "end": "01:17:03,541",
+      "text": "We're on our way."
     },
     {
       "question": 4,
-      "start": "01:25:04,788",
-      "end": "01:25:05,923",
-      "text": "the Planet of Joy."
+      "start": "01:18:13,311",
+      "end": "01:18:17,615",
+      "text": "All security, we have a situation on floor 17."
     },
     {
       "question": 5,
-      "start": "01:25:41,259",
-      "end": "01:25:43,228",
-      "text": "We're security now, mate."
+      "start": "01:18:45,409",
+      "end": "01:18:46,878",
+      "text": "Mr. Crystal's office."
     },
     {
       "question": 6,
-      "start": "01:26:48,926",
-      "end": "01:26:51,196",
-      "text": "That's it, I'm coming out there!"
+      "start": "01:19:30,021",
+      "end": "01:19:32,090",
+      "text": "And he's sitting in the front row."
     },
     {
       "question": 7,
-      "start": "01:27:37,007",
-      "end": "01:27:39,311",
-      "text": "No sign here of the missing space explorer."
+      "start": "01:20:06,058",
+      "end": "01:20:08,893",
+      "text": "Gunter robot activating piggy power."
     },
     {
       "question": 8,
-      "start": "01:27:41,346",
-      "end": "01:27:42,880",
-      "text": "- Ready, Gina? - It's Meena."
+      "start": "01:20:59,211",
+      "end": "01:21:01,113",
+      "text": "Take us down."
     },
     {
       "question": 9,
-      "start": "01:27:46,551",
-      "end": "01:27:49,187",
-      "text": "It is now or never."
+      "start": "01:22:44,815",
+      "end": "01:22:46,617",
+      "text": "Uh, we'll be at the theater soon, sir."
     },
     {
       "question": 10,
-      "start": "01:28:04,968",
-      "end": "01:28:07,305",
-      "text": "Okay. I'm ready now."
+      "start": "01:24:54,011",
+      "end": "01:24:56,680",
+      "text": "Repeat, Crystal is on site. Over."
     }
   ]
 }

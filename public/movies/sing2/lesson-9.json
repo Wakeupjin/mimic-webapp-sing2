@@ -1,9 +1,826 @@
 {
   "watching": {
-    "start": "01:07:30,102",
-    "end": "01:15:33,318"
+    "start": "01:01:46,390",
+    "end": "01:10:13,931"
   },
+  "fullSubtitles": [
+    {
+      "start": "01:01:46,390",
+      "end": "01:01:48,826",
+      "text": "Your songs will bring you back."
+    },
+    {
+      "start": "01:01:48,860",
+      "end": "01:01:51,063",
+      "text": "You can. You can reconnect with..."
+    },
+    {
+      "start": "01:01:51,096",
+      "end": "01:01:52,697",
+      "text": "No, I can't!"
+    },
+    {
+      "start": "01:01:52,730",
+      "end": "01:01:57,368",
+      "text": "I haven't even heard one of my songs in over 15 years."
+    },
+    {
+      "start": "01:01:57,401",
+      "end": "01:01:59,437",
+      "text": "And for good reason."
+    },
+    {
+      "start": "01:02:02,707",
+      "end": "01:02:06,444",
+      "text": "Ruby was everything."
+    },
+    {
+      "start": "01:02:07,678",
+      "end": "01:02:11,649",
+      "text": "And I don't like honey in my tea."
+    },
+    {
+      "start": "01:02:14,452",
+      "end": "01:02:16,721",
+      "text": "He's not gonna change his mind."
+    },
+    {
+      "start": "01:02:16,754",
+      "end": "01:02:18,090",
+      "text": "He will."
+    },
+    {
+      "start": "01:02:18,123",
+      "end": "01:02:19,991",
+      "text": "But you should go back."
+    },
+    {
+      "start": "01:02:20,024",
+      "end": "01:02:22,293",
+      "text": "Me? What about you?"
+    },
+    {
+      "start": "01:02:22,927",
+      "end": "01:02:25,797",
+      "text": "I just need time with him."
+    },
+    {
+      "start": "01:02:26,664",
+      "end": "01:02:29,433",
+      "text": "I can't just leave him like this."
+    },
+    {
+      "start": "01:02:31,536",
+      "end": "01:02:33,604",
+      "text": "Ten-hut!"
+    },
+    {
+      "start": "01:02:33,638",
+      "end": "01:02:36,374",
+      "text": "- Whoa. - Welcome back, Mr. Moon, sir."
+    },
+    {
+      "start": "01:02:36,407",
+      "end": "01:02:38,009",
+      "text": "Uh, thank you, Miss Crawly."
+    },
+    {
+      "start": "01:02:38,042",
+      "end": "01:02:39,944",
+      "text": "Oh, and I have something for you."
+    },
+    {
+      "start": "01:02:39,977",
+      "end": "01:02:41,479",
+      "text": "Thank you, Mr. Moon, sir."
+    },
+    {
+      "start": "01:02:41,512",
+      "end": "01:02:43,781",
+      "text": "All right, you can ease off the attitude now."
+    },
+    {
+      "start": "01:02:43,815",
+      "end": "01:02:45,550",
+      "text": "Oh, oh, yes, yes."
+    },
+    {
+      "start": "01:02:45,583",
+      "end": "01:02:47,618",
+      "text": "So, any luck with Clay Calloway?"
+    },
+    {
+      "start": "01:02:47,652",
+      "end": "01:02:48,686",
+      "text": "Shh! Not yet."
+    },
+    {
+      "start": "01:02:48,719",
+      "end": "01:02:50,955",
+      "text": "But if anyone can convince him, it's Ash, so..."
+    },
+    {
+      "start": "01:02:50,988",
+      "end": "01:02:53,791",
+      "text": "All right, folks, tomorrow, we have our first run-through,"
+    },
+    {
+      "start": "01:02:53,825",
+      "end": "01:02:56,828",
+      "text": "so let's get this show in shipshape shape."
+    },
+    {
+      "start": "01:03:39,971",
+      "end": "01:03:42,506",
+      "text": "And cue Porsha."
+    },
+    {
+      "start": "01:03:47,912",
+      "end": "01:03:49,914",
+      "text": "Captain's log."
+    },
+    {
+      "start": "01:03:49,947",
+      "end": "01:03:51,482",
+      "text": "I must take care,"
+    },
+    {
+      "start": "01:03:51,515",
+      "end": "01:03:55,786",
+      "text": "for I have landed on the Planet of War."
+    },
+    {
+      "start": "01:03:55,820",
+      "end": "01:03:59,423",
+      "text": "Ooh. Okay, so let's just hold it right there, folks."
+    },
+    {
+      "start": "01:03:59,457",
+      "end": "01:04:01,126",
+      "text": "Uh, everyone, take five."
+    },
+    {
+      "start": "01:04:02,593",
+      "end": "01:04:05,596",
+      "text": "What the heck is a captain's log, anyway?"
+    },
+    {
+      "start": "01:04:05,630",
+      "end": "01:04:09,134",
+      "text": "Um, Porsha, can I have a word?"
+    },
+    {
+      "start": "01:04:09,167",
+      "end": "01:04:12,170",
+      "text": "Porsha, you know I truly believe"
+    },
+    {
+      "start": "01:04:12,204",
+      "end": "01:04:13,905",
+      "text": "that this show, i-it..."
+    },
+    {
+      "start": "01:04:13,938",
+      "end": "01:04:16,908",
+      "text": "it's close to being fantastic, maybe even perfect."
+    },
+    {
+      "start": "01:04:16,941",
+      "end": "01:04:18,776",
+      "text": "- Thank you. - Y-Yeah, yeah,"
+    },
+    {
+      "start": "01:04:18,809",
+      "end": "01:04:21,179",
+      "text": "but-but, see, to make it the best it can be..."
+    },
+    {
+      "start": "01:04:22,813",
+      "end": "01:04:25,650",
+      "text": "...well, I got to make some changes."
+    },
+    {
+      "start": "01:04:25,683",
+      "end": "01:04:27,219",
+      "text": "Uh-huh."
+    },
+    {
+      "start": "01:04:27,252",
+      "end": "01:04:28,819",
+      "text": "Like..."
+    },
+    {
+      "start": "01:04:28,853",
+      "end": "01:04:30,655",
+      "text": "uh..."
+    },
+    {
+      "start": "01:04:30,688",
+      "end": "01:04:33,058",
+      "text": "I have to give the lead role back to Rosita."
+    },
+    {
+      "start": "01:04:33,091",
+      "end": "01:04:34,525",
+      "text": "What?"
+    },
+    {
+      "start": "01:04:34,558",
+      "end": "01:04:35,793",
+      "text": "I'm just offering you the opportunity"
+    },
+    {
+      "start": "01:04:35,826",
+      "end": "01:04:38,130",
+      "text": "- to switch roles with... - You're firing me?"
+    },
+    {
+      "start": "01:04:38,163",
+      "end": "01:04:39,697",
+      "text": "No, I-I'm not firing you."
+    },
+    {
+      "start": "01:04:39,730",
+      "end": "01:04:42,200",
+      "text": "Oh, wait till my dad hears that you fired me."
+    },
+    {
+      "start": "01:04:42,234",
+      "end": "01:04:44,602",
+      "text": "But I'm not firing you. Please, wait!"
+    },
+    {
+      "start": "01:04:44,635",
+      "end": "01:04:47,139",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "01:04:47,172",
+      "end": "01:04:49,207",
+      "text": "You all hate me, don't you?"
+    },
+    {
+      "start": "01:04:49,241",
+      "end": "01:04:52,177",
+      "text": "No, no, no, we don't hate you. We all think you're terrific!"
+    },
+    {
+      "start": "01:04:52,210",
+      "end": "01:04:53,945",
+      "text": "Well, I don't care if you hate me."
+    },
+    {
+      "start": "01:04:53,978",
+      "end": "01:04:55,213",
+      "text": "Please stop."
+    },
+    {
+      "start": "01:04:55,247",
+      "end": "01:04:58,083",
+      "text": "You and your stupid, stupid sky-fi show"
+    },
+    {
+      "start": "01:04:58,116",
+      "end": "01:04:59,817",
+      "text": "can go to heck!"
+    },
+    {
+      "start": "01:04:59,850",
+      "end": "01:05:01,953",
+      "text": "Porsha, stop. Wait!"
+    },
+    {
+      "start": "01:05:03,587",
+      "end": "01:05:06,590",
+      "text": "Oh, I am one dead koala."
+    },
+    {
+      "start": "01:05:24,209",
+      "end": "01:05:27,112",
+      "text": "♪ I'm not afraid ♪"
+    },
+    {
+      "start": "01:05:27,145",
+      "end": "01:05:30,148",
+      "text": "♪ Of anything in this world ♪"
+    },
+    {
+      "start": "01:05:30,182",
+      "end": "01:05:33,251",
+      "text": "♪ There's nothing you can throw at me ♪"
+    },
+    {
+      "start": "01:05:33,285",
+      "end": "01:05:36,721",
+      "text": "♪ That I haven't already heard ♪"
+    },
+    {
+      "start": "01:05:36,754",
+      "end": "01:05:39,991",
+      "text": "♪ I'm just trying to find ♪"
+    },
+    {
+      "start": "01:05:40,024",
+      "end": "01:05:42,994",
+      "text": "♪ A decent melody ♪"
+    },
+    {
+      "start": "01:05:43,027",
+      "end": "01:05:46,298",
+      "text": "♪ A song that I can sing ♪"
+    },
+    {
+      "start": "01:05:46,331",
+      "end": "01:05:49,600",
+      "text": "♪ In my own company ♪"
+    },
+    {
+      "start": "01:05:51,169",
+      "end": "01:05:54,805",
+      "text": "♪ I never thought you were a fool ♪"
+    },
+    {
+      "start": "01:05:57,309",
+      "end": "01:06:02,546",
+      "text": "♪ But, darling, look at you, ooh ♪"
+    },
+    {
+      "start": "01:06:03,781",
+      "end": "01:06:07,152",
+      "text": "♪ You gotta stand up straight ♪"
+    },
+    {
+      "start": "01:06:07,185",
+      "end": "01:06:10,021",
+      "text": "♪ And carry your own weight ♪"
+    },
+    {
+      "start": "01:06:10,055",
+      "end": "01:06:15,060",
+      "text": "♪ These tears are going nowhere, babe ♪"
+    },
+    {
+      "start": "01:06:16,328",
+      "end": "01:06:20,898",
+      "text": "♪ You've got to get yourself together ♪"
+    },
+    {
+      "start": "01:06:20,931",
+      "end": "01:06:24,568",
+      "text": "♪ You've got stuck in a moment ♪"
+    },
+    {
+      "start": "01:06:24,602",
+      "end": "01:06:28,206",
+      "text": "♪ Now you can't get out of it ♪"
+    },
+    {
+      "start": "01:06:41,319",
+      "end": "01:06:45,756",
+      "text": "♪ Oh, love, look at you now ♪"
+    },
+    {
+      "start": "01:06:45,790",
+      "end": "01:06:49,727",
+      "text": "♪ You got yourself stuck in a moment ♪"
+    },
+    {
+      "start": "01:06:49,760",
+      "end": "01:06:53,864",
+      "text": "♪ And you can't get out of it. ♪"
+    },
+    {
+      "start": "01:07:05,110",
+      "end": "01:07:06,677",
+      "text": "♪ Hot News. ♪"
+    },
+    {
+      "start": "01:07:06,710",
+      "end": "01:07:09,081",
+      "text": "And the hottest story today:"
+    },
+    {
+      "start": "01:07:09,114",
+      "end": "01:07:13,617",
+      "text": "Porsha Crystal was reportedly fired from her father's show."
+    },
+    {
+      "start": "01:07:15,052",
+      "end": "01:07:18,156",
+      "text": "He fired my daughter?"
+    },
+    {
+      "start": "01:07:18,190",
+      "end": "01:07:20,058",
+      "text": "My daughter?"
+    },
+    {
+      "start": "01:07:20,092",
+      "end": "01:07:22,626",
+      "text": "Would you be quiet? You've embarrassed me enough."
+    },
+    {
+      "start": "01:07:22,660",
+      "end": "01:07:23,828",
+      "text": "But, Daddy..."
+    },
+    {
+      "start": "01:07:23,861",
+      "end": "01:07:25,263",
+      "text": "Now the whole world thinks I got"
+    },
+    {
+      "start": "01:07:25,297",
+      "end": "01:07:27,099",
+      "text": "a talentless loser for a daughter."
+    },
+    {
+      "start": "01:07:27,132",
+      "end": "01:07:29,033",
+      "text": "Take her home."
+    },
+    {
+      "start": "01:07:30,102",
+      "end": "01:07:32,703",
+      "text": "Bring me Moon."
+    },
+    {
+      "start": "01:07:40,345",
+      "end": "01:07:44,249",
+      "text": "♪ He will not always say ♪"
+    },
+    {
+      "start": "01:07:44,282",
+      "end": "01:07:49,354",
+      "text": "♪ What you would have him say ♪"
+    },
+    {
+      "start": "01:07:49,387",
+      "end": "01:07:54,226",
+      "text": "♪ But now and then, he'll say ♪"
+    },
+    {
+      "start": "01:07:54,259",
+      "end": "01:07:59,930",
+      "text": "♪ Something wonderful... ♪"
+    },
+    {
+      "start": "01:08:07,305",
+      "end": "01:08:09,441",
+      "text": "Ash? Now is not a good..."
+    },
+    {
+      "start": "01:08:09,474",
+      "end": "01:08:11,276",
+      "text": "Moon, I've got him!"
+    },
+    {
+      "start": "01:08:11,309",
+      "end": "01:08:13,145",
+      "text": "- What? - I got Calloway!"
+    },
+    {
+      "start": "01:08:13,178",
+      "end": "01:08:15,113",
+      "text": "Here, he wants to talk to you."
+    },
+    {
+      "start": "01:08:15,147",
+      "end": "01:08:18,283",
+      "text": "Your friend is even more annoying than you are."
+    },
+    {
+      "start": "01:08:18,316",
+      "end": "01:08:19,884",
+      "text": "Don't listen to him."
+    },
+    {
+      "start": "01:08:19,917",
+      "end": "01:08:22,019",
+      "text": "We're heading to Redshore right now."
+    },
+    {
+      "start": "01:08:22,052",
+      "end": "01:08:23,020",
+      "text": "- You are? - Yes."
+    },
+    {
+      "start": "01:08:23,053",
+      "end": "01:08:23,854",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "01:08:23,888",
+      "end": "01:08:25,723",
+      "text": "Okay, this is great news, seriously."
+    },
+    {
+      "start": "01:08:25,756",
+      "end": "01:08:27,292",
+      "text": "You may have just saved my life here."
+    },
+    {
+      "start": "01:08:34,432",
+      "end": "01:08:36,134",
+      "text": "Okay."
+    },
+    {
+      "start": "01:08:36,168",
+      "end": "01:08:37,435",
+      "text": "Here we go."
+    },
+    {
+      "start": "01:08:37,469",
+      "end": "01:08:39,737",
+      "text": "Mr. Moon, what have you done?"
+    },
+    {
+      "start": "01:08:39,770",
+      "end": "01:08:42,107",
+      "text": "Mr. Crystal. Aah! I got some great news."
+    },
+    {
+      "start": "01:08:42,140",
+      "end": "01:08:45,210",
+      "text": "Clay Calloway is on his way here right now."
+    },
+    {
+      "start": "01:08:45,243",
+      "end": "01:08:46,944",
+      "text": "Everybody, out."
+    },
+    {
+      "start": "01:08:48,079",
+      "end": "01:08:51,082",
+      "text": "Okay, I think I know what this might be about, and I..."
+    },
+    {
+      "start": "01:08:51,116",
+      "end": "01:08:52,384",
+      "text": "You fired Porsha."
+    },
+    {
+      "start": "01:08:52,417",
+      "end": "01:08:54,386",
+      "text": "No. No. I never fired her."
+    },
+    {
+      "start": "01:08:54,419",
+      "end": "01:08:56,053",
+      "text": "You calling her a liar?"
+    },
+    {
+      "start": "01:08:56,087",
+      "end": "01:08:58,889",
+      "text": "No, no, no, no, she just got it wrong, is all."
+    },
+    {
+      "start": "01:08:58,923",
+      "end": "01:09:01,059",
+      "text": "I was only trying to help her do the best she could,"
+    },
+    {
+      "start": "01:09:01,092",
+      "end": "01:09:04,795",
+      "text": "and be-believe me, I-I-I just wanted to do the right thing."
+    },
+    {
+      "start": "01:09:04,828",
+      "end": "01:09:07,065",
+      "text": "The right thing to do..."
+    },
+    {
+      "start": "01:09:07,098",
+      "end": "01:09:09,201",
+      "text": "- ...is what I tell you to do! - But I did!"
+    },
+    {
+      "start": "01:09:09,234",
+      "end": "01:09:11,436",
+      "text": "I-I-I delivered a great show."
+    },
+    {
+      "start": "01:09:11,469",
+      "end": "01:09:13,305",
+      "text": "And Ca-Calloway, he's coming."
+    },
+    {
+      "start": "01:09:13,338",
+      "end": "01:09:15,173",
+      "text": "No, no, no! Stop! Stop!"
+    },
+    {
+      "start": "01:09:15,207",
+      "end": "01:09:16,441",
+      "text": "No!"
+    },
+    {
+      "start": "01:09:16,474",
+      "end": "01:09:18,343",
+      "text": "You really think I'd let a lowlife"
+    },
+    {
+      "start": "01:09:18,376",
+      "end": "01:09:21,346",
+      "text": "little amateur loser like you"
+    },
+    {
+      "start": "01:09:21,379",
+      "end": "01:09:22,480",
+      "text": "humiliate me?"
+    },
+    {
+      "start": "01:09:22,514",
+      "end": "01:09:24,815",
+      "text": "Please! Please!"
+    },
+    {
+      "start": "01:09:24,848",
+      "end": "01:09:26,484",
+      "text": "- You made me look bad. - No, no!"
+    },
+    {
+      "start": "01:09:26,518",
+      "end": "01:09:27,818",
+      "text": "I didn't mean to!"
+    },
+    {
+      "start": "01:09:27,851",
+      "end": "01:09:29,354",
+      "text": "No!"
+    },
+    {
+      "start": "01:09:29,387",
+      "end": "01:09:31,122",
+      "text": "So I'm gonna have to let you go."
+    },
+    {
+      "start": "01:09:31,156",
+      "end": "01:09:33,491",
+      "text": "What? Whoa!"
+    },
+    {
+      "start": "01:09:33,525",
+      "end": "01:09:35,227",
+      "text": "Sir. Uh, sir, sir, sir."
+    },
+    {
+      "start": "01:09:35,260",
+      "end": "01:09:37,295",
+      "text": "I'm-I'm so sorry, um, so sorry to bother you,"
+    },
+    {
+      "start": "01:09:37,329",
+      "end": "01:09:40,098",
+      "text": "but, uh, you have a live TV appearance in just a moment,"
+    },
+    {
+      "start": "01:09:40,131",
+      "end": "01:09:41,865",
+      "text": "so it-it might be better if we just"
+    },
+    {
+      "start": "01:09:41,899",
+      "end": "01:09:44,269",
+      "text": "put a pin in this right now. Um..."
+    },
+    {
+      "start": "01:09:48,872",
+      "end": "01:09:50,808",
+      "text": "You-you nearly killed me."
+    },
+    {
+      "start": "01:09:50,841",
+      "end": "01:09:52,510",
+      "text": "And I'll finish the job later."
+    },
+    {
+      "start": "01:09:54,145",
+      "end": "01:09:55,247",
+      "text": "No."
+    },
+    {
+      "start": "01:09:56,414",
+      "end": "01:09:58,048",
+      "text": "No! No!"
+    },
+    {
+      "start": "01:09:58,083",
+      "end": "01:09:59,484",
+      "text": "Help!"
+    },
+    {
+      "start": "01:09:59,517",
+      "end": "01:10:02,254",
+      "text": "Help! Jerry! Anyone!"
+    },
+    {
+      "start": "01:10:03,887",
+      "end": "01:10:07,259",
+      "text": "No. Help, please!"
+    },
+    {
+      "start": "01:10:07,292",
+      "end": "01:10:09,094",
+      "text": "Shh!"
+    },
+    {
+      "start": "01:10:09,127",
+      "end": "01:10:12,197",
+      "text": "You need to get out of this city and never, ever come back."
+    },
+    {
+      "start": "01:10:12,230",
+      "end": "01:10:13,931",
+      "text": "Do you understand? Never."
+    }
+  ],
   "mimicking": [
+    {
+      "start": "01:01:46,390",
+      "end": "01:01:48,826",
+      "text": "Your songs will bring you back."
+    },
+    {
+      "start": "01:01:57,401",
+      "end": "01:01:59,437",
+      "text": "And for good reason."
+    },
+    {
+      "start": "01:02:07,678",
+      "end": "01:02:11,649",
+      "text": "And I don't like honey in my tea."
+    },
+    {
+      "start": "01:02:18,123",
+      "end": "01:02:19,991",
+      "text": "But you should go back."
+    },
+    {
+      "start": "01:02:22,927",
+      "end": "01:02:25,797",
+      "text": "I just need time with him."
+    },
+    {
+      "start": "01:02:36,407",
+      "end": "01:02:38,009",
+      "text": "Uh, thank you, Miss Crawly."
+    },
+    {
+      "start": "01:02:39,977",
+      "end": "01:02:41,479",
+      "text": "Thank you, Mr. Moon, sir."
+    },
+    {
+      "start": "01:02:43,815",
+      "end": "01:02:45,550",
+      "text": "Oh, oh, yes, yes."
+    },
+    {
+      "start": "01:03:39,971",
+      "end": "01:03:42,506",
+      "text": "And cue Porsha."
+    },
+    {
+      "start": "01:03:59,457",
+      "end": "01:04:01,126",
+      "text": "Uh, everyone, take five."
+    },
+    {
+      "start": "01:04:05,630",
+      "end": "01:04:09,134",
+      "text": "Um, Porsha, can I have a word?"
+    },
+    {
+      "start": "01:04:39,730",
+      "end": "01:04:42,200",
+      "text": "Oh, wait till my dad hears that you fired me."
+    },
+    {
+      "start": "01:04:44,635",
+      "end": "01:04:47,139",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "01:04:49,241",
+      "end": "01:04:52,177",
+      "text": "No, no, no, we don't hate you. We all think you're terrific!"
+    },
+    {
+      "start": "01:04:59,850",
+      "end": "01:05:01,953",
+      "text": "Porsha, stop. Wait!"
+    },
+    {
+      "start": "01:07:09,114",
+      "end": "01:07:13,617",
+      "text": "Porsha Crystal was reportedly fired from her father's show."
+    },
+    {
+      "start": "01:07:20,092",
+      "end": "01:07:22,626",
+      "text": "Would you be quiet? You've embarrassed me enough."
+    },
     {
       "start": "01:07:30,102",
       "end": "01:07:32,703",
@@ -15,29 +832,44 @@
       "text": "Here, he wants to talk to you."
     },
     {
-      "start": "01:08:23,053",
-      "end": "01:08:23,854",
-      "text": "Oh, my gosh."
+      "start": "01:08:18,316",
+      "end": "01:08:19,884",
+      "text": "Don't listen to him."
     },
     {
-      "start": "01:08:39,770",
-      "end": "01:08:42,107",
-      "text": "Mr. Crystal. Aah! I got some great news."
+      "start": "01:08:25,756",
+      "end": "01:08:27,292",
+      "text": "You may have just saved my life here."
     },
     {
-      "start": "01:08:54,419",
-      "end": "01:08:56,053",
-      "text": "You calling her a liar?"
+      "start": "01:08:37,469",
+      "end": "01:08:39,737",
+      "text": "Mr. Moon, what have you done?"
     },
     {
-      "start": "01:09:16,474",
-      "end": "01:09:18,343",
-      "text": "You really think I'd let a lowlife"
+      "start": "01:08:42,140",
+      "end": "01:08:45,210",
+      "text": "Clay Calloway is on his way here right now."
     },
     {
-      "start": "01:09:33,525",
-      "end": "01:09:35,227",
-      "text": "Sir. Uh, sir, sir, sir."
+      "start": "01:08:52,417",
+      "end": "01:08:54,386",
+      "text": "No. No. I never fired her."
+    },
+    {
+      "start": "01:08:56,087",
+      "end": "01:08:58,889",
+      "text": "No, no, no, no, she just got it wrong, is all."
+    },
+    {
+      "start": "01:09:11,469",
+      "end": "01:09:13,305",
+      "text": "And Ca-Calloway, he's coming."
+    },
+    {
+      "start": "01:09:29,387",
+      "end": "01:09:31,122",
+      "text": "So I'm gonna have to let you go."
     },
     {
       "start": "01:09:48,872",
@@ -45,114 +877,14 @@
       "text": "You-you nearly killed me."
     },
     {
-      "start": "01:10:13,964",
-      "end": "01:10:15,267",
-      "text": "Okay, okay. I understand."
+      "start": "01:09:59,517",
+      "end": "01:10:02,254",
+      "text": "Help! Jerry! Anyone!"
     },
     {
-      "start": "01:10:31,048",
-      "end": "01:10:33,585",
-      "text": "Uh, what did you say, Mr. Moon?"
-    },
-    {
-      "start": "01:10:38,623",
-      "end": "01:10:40,924",
-      "text": "and meet me back at the hotel!"
-    },
-    {
-      "start": "01:11:10,055",
-      "end": "01:11:13,023",
-      "text": "...please welcome Mr. Jimmy Crystal."
-    },
-    {
-      "start": "01:11:23,168",
-      "end": "01:11:24,569",
-      "text": "Good to see you."
-    },
-    {
-      "start": "01:11:30,075",
-      "end": "01:11:31,543",
-      "text": "Well, thank you. Thank you for having me."
-    },
-    {
-      "start": "01:11:39,317",
-      "end": "01:11:40,884",
-      "text": "theater chain in the world..."
-    },
-    {
-      "start": "01:12:09,012",
-      "end": "01:12:10,181",
-      "text": "Crystal got mad"
-    },
-    {
-      "start": "01:12:17,422",
-      "end": "01:12:20,392",
-      "text": "Oh, no. It's them."
-    },
-    {
-      "start": "01:12:33,104",
-      "end": "01:12:34,972",
-      "text": "No, no, no."
-    },
-    {
-      "start": "01:12:53,691",
-      "end": "01:12:54,958",
-      "text": "Coast is clear. Let's go."
-    },
-    {
-      "start": "01:12:59,631",
-      "end": "01:13:01,166",
-      "text": "You sure about that?"
-    },
-    {
-      "start": "01:13:13,611",
-      "end": "01:13:16,181",
-      "text": "I thought the same, but turns out"
-    },
-    {
-      "start": "01:13:27,392",
-      "end": "01:13:30,428",
-      "text": "'cause of a talentless little twerp called Buster Moon."
-    },
-    {
-      "start": "01:13:37,435",
-      "end": "01:13:39,370",
-      "text": "they crawled out of, that's where they belong,"
-    },
-    {
-      "start": "01:13:58,790",
-      "end": "01:14:01,092",
-      "text": "that bully steal our hopes and dreams."
-    },
-    {
-      "start": "01:14:14,172",
-      "end": "01:14:17,175",
-      "text": "That is exactly what we're gonna do."
-    },
-    {
-      "start": "01:14:30,688",
-      "end": "01:14:32,056",
-      "text": "What are we gonna do?"
-    },
-    {
-      "start": "01:14:39,797",
-      "end": "01:14:41,366",
-      "text": "whether Crystal likes it or not."
-    },
-    {
-      "start": "01:15:01,286",
-      "end": "01:15:04,155",
-      "text": "Repeat, nine suspects loose on the river ride."
-    },
-    {
-      "start": "01:15:11,629",
-      "end": "01:15:13,865",
-      "text": "They're heading east through the back lot!"
-    },
-    {
-      "start": "01:15:31,616",
-      "end": "01:15:33,318",
-      "text": "Thank you. Thanks, everybody."
+      "start": "01:10:12,230",
+      "end": "01:10:13,931",
+      "text": "Do you understand? Never."
     }
   ],
   "guessing": [
@@ -162,82 +894,82 @@
       "options": [
         {
           "label": "C",
-          "text": "Oh, my gosh.",
-          "start": "01:08:23,053",
-          "end": "01:08:23,854"
-        },
-        {
-          "label": "B",
-          "text": "they crawled out of, that's where they belong,",
-          "start": "01:13:37,435",
-          "end": "01:13:39,370"
+          "text": "And I don't like honey in my tea.",
+          "start": "01:02:07,678",
+          "end": "01:02:11,649"
         },
         {
           "label": "A",
-          "text": "'cause of a talentless little twerp called Buster Moon.",
-          "start": "01:13:27,392",
-          "end": "01:13:30,428"
+          "text": "Do you understand? Never.",
+          "start": "01:10:12,230",
+          "end": "01:10:13,931"
+        },
+        {
+          "label": "B",
+          "text": "I just need time with him.",
+          "start": "01:02:22,927",
+          "end": "01:02:25,797"
         }
       ],
       "video": {
-        "start": "01:08:23,053",
-        "end": "01:08:23,854"
+        "start": "01:02:07,678",
+        "end": "01:02:11,649"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "B",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "B",
-          "text": "You really think I'd let a lowlife",
-          "start": "01:09:16,474",
-          "end": "01:09:18,343"
+          "label": "A",
+          "text": "Uh, thank you, Miss Crawly.",
+          "start": "01:02:36,407",
+          "end": "01:02:38,009"
         },
         {
-          "label": "A",
-          "text": "I thought the same, but turns out",
-          "start": "01:13:13,611",
-          "end": "01:13:16,181"
+          "label": "B",
+          "text": "But you should go back.",
+          "start": "01:02:18,123",
+          "end": "01:02:19,991"
         },
         {
           "label": "C",
-          "text": "Uh, what did you say, Mr. Moon?",
-          "start": "01:10:31,048",
-          "end": "01:10:33,585"
+          "text": "And I don't like honey in my tea.",
+          "start": "01:02:07,678",
+          "end": "01:02:11,649"
         }
       ],
       "video": {
-        "start": "01:09:16,474",
-        "end": "01:09:18,343"
+        "start": "01:02:36,407",
+        "end": "01:02:38,009"
       }
     },
     {
       "question": 3,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "C",
-          "text": "Okay, okay. I understand.",
-          "start": "01:10:13,964",
-          "end": "01:10:15,267"
+          "label": "B",
+          "text": "And cue Porsha.",
+          "start": "01:03:39,971",
+          "end": "01:03:42,506"
         },
         {
-          "label": "B",
-          "text": "Repeat, nine suspects loose on the river ride.",
-          "start": "01:15:01,286",
-          "end": "01:15:04,155"
+          "label": "C",
+          "text": "Mr. Moon, what have you done?",
+          "start": "01:08:37,469",
+          "end": "01:08:39,737"
         },
         {
           "label": "A",
-          "text": "You sure about that?",
-          "start": "01:12:59,631",
-          "end": "01:13:01,166"
+          "text": "No, no, no, we don't hate you. We all think you're terrific!",
+          "start": "01:04:49,241",
+          "end": "01:04:52,177"
         }
       ],
       "video": {
-        "start": "01:10:13,964",
-        "end": "01:10:15,267"
+        "start": "01:03:39,971",
+        "end": "01:03:42,506"
       }
     },
     {
@@ -246,26 +978,26 @@
       "options": [
         {
           "label": "A",
-          "text": "...please welcome Mr. Jimmy Crystal.",
-          "start": "01:11:10,055",
-          "end": "01:11:13,023"
-        },
-        {
-          "label": "C",
-          "text": "Crystal got mad",
-          "start": "01:12:09,012",
-          "end": "01:12:10,181"
+          "text": "Oh, wait till my dad hears that you fired me.",
+          "start": "01:04:39,730",
+          "end": "01:04:42,200"
         },
         {
           "label": "B",
-          "text": "Repeat, nine suspects loose on the river ride.",
-          "start": "01:15:01,286",
-          "end": "01:15:04,155"
+          "text": "Your songs will bring you back.",
+          "start": "01:01:46,390",
+          "end": "01:01:48,826"
+        },
+        {
+          "label": "C",
+          "text": "You may have just saved my life here.",
+          "start": "01:08:25,756",
+          "end": "01:08:27,292"
         }
       ],
       "video": {
-        "start": "01:11:10,055",
-        "end": "01:11:13,023"
+        "start": "01:04:39,730",
+        "end": "01:04:42,200"
       }
     },
     {
@@ -274,138 +1006,138 @@
       "options": [
         {
           "label": "A",
-          "text": "theater chain in the world...",
-          "start": "01:11:39,317",
-          "end": "01:11:40,884"
-        },
-        {
-          "label": "C",
-          "text": "Thank you. Thanks, everybody.",
-          "start": "01:15:31,616",
-          "end": "01:15:33,318"
+          "text": "Porsha, stop. Wait!",
+          "start": "01:04:59,850",
+          "end": "01:05:01,953"
         },
         {
           "label": "B",
-          "text": "You really think I'd let a lowlife",
-          "start": "01:09:16,474",
-          "end": "01:09:18,343"
+          "text": "And Ca-Calloway, he's coming.",
+          "start": "01:09:11,469",
+          "end": "01:09:13,305"
+        },
+        {
+          "label": "C",
+          "text": "And for good reason.",
+          "start": "01:01:57,401",
+          "end": "01:01:59,437"
         }
       ],
       "video": {
-        "start": "01:11:39,317",
-        "end": "01:11:40,884"
+        "start": "01:04:59,850",
+        "end": "01:05:01,953"
       }
     },
     {
       "question": 6,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
+          "label": "C",
+          "text": "Bring me Moon.",
+          "start": "01:07:30,102",
+          "end": "01:07:32,703"
+        },
+        {
           "label": "A",
-          "text": "No, no, no.",
-          "start": "01:12:33,104",
-          "end": "01:12:34,972"
+          "text": "Uh, everyone, take five.",
+          "start": "01:03:59,457",
+          "end": "01:04:01,126"
         },
         {
           "label": "B",
-          "text": "I thought the same, but turns out",
-          "start": "01:13:13,611",
-          "end": "01:13:16,181"
-        },
-        {
-          "label": "C",
-          "text": "Oh, my gosh.",
-          "start": "01:08:23,053",
-          "end": "01:08:23,854"
+          "text": "Oh, wait till my dad hears that you fired me.",
+          "start": "01:04:39,730",
+          "end": "01:04:42,200"
         }
       ],
       "video": {
-        "start": "01:12:33,104",
-        "end": "01:12:34,972"
+        "start": "01:07:30,102",
+        "end": "01:07:32,703"
       }
     },
     {
       "question": 7,
-      "correctAnswer": "C",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "C",
-          "text": "I thought the same, but turns out",
-          "start": "01:13:13,611",
-          "end": "01:13:16,181"
+          "label": "A",
+          "text": "You may have just saved my life here.",
+          "start": "01:08:25,756",
+          "end": "01:08:27,292"
         },
         {
-          "label": "A",
-          "text": "Coast is clear. Let's go.",
-          "start": "01:12:53,691",
-          "end": "01:12:54,958"
+          "label": "C",
+          "text": "So I'm gonna have to let you go.",
+          "start": "01:09:29,387",
+          "end": "01:09:31,122"
         },
         {
           "label": "B",
-          "text": "Thank you. Thanks, everybody.",
-          "start": "01:15:31,616",
-          "end": "01:15:33,318"
+          "text": "Oh, wait till my dad hears that you fired me.",
+          "start": "01:04:39,730",
+          "end": "01:04:42,200"
         }
       ],
       "video": {
-        "start": "01:13:13,611",
-        "end": "01:13:16,181"
+        "start": "01:08:25,756",
+        "end": "01:08:27,292"
       }
     },
     {
       "question": 8,
-      "correctAnswer": "C",
+      "correctAnswer": "A",
       "options": [
         {
+          "label": "A",
+          "text": "No. No. I never fired her.",
+          "start": "01:08:52,417",
+          "end": "01:08:54,386"
+        },
+        {
           "label": "C",
-          "text": "that bully steal our hopes and dreams.",
-          "start": "01:13:58,790",
-          "end": "01:14:01,092"
+          "text": "Would you be quiet? You've embarrassed me enough.",
+          "start": "01:07:20,092",
+          "end": "01:07:22,626"
         },
         {
           "label": "B",
-          "text": "Oh, my gosh.",
-          "start": "01:08:23,053",
-          "end": "01:08:23,854"
-        },
-        {
-          "label": "A",
-          "text": "and meet me back at the hotel!",
-          "start": "01:10:38,623",
-          "end": "01:10:40,924"
+          "text": "Help! Jerry! Anyone!",
+          "start": "01:09:59,517",
+          "end": "01:10:02,254"
         }
       ],
       "video": {
-        "start": "01:13:58,790",
-        "end": "01:14:01,092"
+        "start": "01:08:52,417",
+        "end": "01:08:54,386"
       }
     },
     {
       "question": 9,
-      "correctAnswer": "C",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "C",
-          "text": "whether Crystal likes it or not.",
-          "start": "01:14:39,797",
-          "end": "01:14:41,366"
-        },
-        {
           "label": "A",
-          "text": "What are we gonna do?",
-          "start": "01:14:30,688",
-          "end": "01:14:32,056"
+          "text": "So I'm gonna have to let you go.",
+          "start": "01:09:29,387",
+          "end": "01:09:31,122"
         },
         {
           "label": "B",
-          "text": "Okay, okay. I understand.",
-          "start": "01:10:13,964",
-          "end": "01:10:15,267"
+          "text": "Porsha Crystal was reportedly fired from her father's show.",
+          "start": "01:07:09,114",
+          "end": "01:07:13,617"
+        },
+        {
+          "label": "C",
+          "text": "You-you nearly killed me.",
+          "start": "01:09:48,872",
+          "end": "01:09:50,808"
         }
       ],
       "video": {
-        "start": "01:14:39,797",
-        "end": "01:14:41,366"
+        "start": "01:09:29,387",
+        "end": "01:09:31,122"
       }
     },
     {
@@ -414,89 +1146,89 @@
       "options": [
         {
           "label": "C",
-          "text": "Thank you. Thanks, everybody.",
-          "start": "01:15:31,616",
-          "end": "01:15:33,318"
+          "text": "Do you understand? Never.",
+          "start": "01:10:12,230",
+          "end": "01:10:13,931"
         },
         {
           "label": "B",
-          "text": "What are we gonna do?",
-          "start": "01:14:30,688",
-          "end": "01:14:32,056"
+          "text": "Oh, my gosh.",
+          "start": "01:04:44,635",
+          "end": "01:04:47,139"
         },
         {
           "label": "A",
-          "text": "Coast is clear. Let's go.",
-          "start": "01:12:53,691",
-          "end": "01:12:54,958"
+          "text": "Oh, oh, yes, yes.",
+          "start": "01:02:43,815",
+          "end": "01:02:45,550"
         }
       ],
       "video": {
-        "start": "01:15:31,616",
-        "end": "01:15:33,318"
+        "start": "01:10:12,230",
+        "end": "01:10:13,931"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "01:07:30,102",
-      "end": "01:07:32,703",
-      "text": "Bring me Moon."
+      "start": "01:01:46,390",
+      "end": "01:01:48,826",
+      "text": "Your songs will bring you back."
     },
     {
       "question": 2,
-      "start": "01:08:13,178",
-      "end": "01:08:15,113",
-      "text": "Here, he wants to talk to you."
+      "start": "01:02:18,123",
+      "end": "01:02:19,991",
+      "text": "But you should go back."
     },
     {
       "question": 3,
-      "start": "01:08:39,770",
-      "end": "01:08:42,107",
-      "text": "Mr. Crystal. Aah! I got some great news."
+      "start": "01:02:39,977",
+      "end": "01:02:41,479",
+      "text": "Thank you, Mr. Moon, sir."
     },
     {
       "question": 4,
-      "start": "01:08:54,419",
-      "end": "01:08:56,053",
-      "text": "You calling her a liar?"
+      "start": "01:03:59,457",
+      "end": "01:04:01,126",
+      "text": "Uh, everyone, take five."
     },
     {
       "question": 5,
-      "start": "01:09:33,525",
-      "end": "01:09:35,227",
-      "text": "Sir. Uh, sir, sir, sir."
+      "start": "01:04:44,635",
+      "end": "01:04:47,139",
+      "text": "Oh, my gosh."
     },
     {
       "question": 6,
-      "start": "01:09:48,872",
-      "end": "01:09:50,808",
-      "text": "You-you nearly killed me."
+      "start": "01:07:20,092",
+      "end": "01:07:22,626",
+      "text": "Would you be quiet? You've embarrassed me enough."
     },
     {
       "question": 7,
-      "start": "01:10:31,048",
-      "end": "01:10:33,585",
-      "text": "Uh, what did you say, Mr. Moon?"
+      "start": "01:08:18,316",
+      "end": "01:08:19,884",
+      "text": "Don't listen to him."
     },
     {
       "question": 8,
-      "start": "01:10:38,623",
-      "end": "01:10:40,924",
-      "text": "and meet me back at the hotel!"
+      "start": "01:08:42,140",
+      "end": "01:08:45,210",
+      "text": "Clay Calloway is on his way here right now."
     },
     {
       "question": 9,
-      "start": "01:11:23,168",
-      "end": "01:11:24,569",
-      "text": "Good to see you."
+      "start": "01:09:11,469",
+      "end": "01:09:13,305",
+      "text": "And Ca-Calloway, he's coming."
     },
     {
       "question": 10,
-      "start": "01:11:30,075",
-      "end": "01:11:31,543",
-      "text": "Well, thank you. Thank you for having me."
+      "start": "01:09:59,517",
+      "end": "01:10:02,254",
+      "text": "Help! Jerry! Anyone!"
     }
   ]
 }

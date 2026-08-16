@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "01:33:16,581",
+    "end": "01:41:08,986"
+  },
+  "mimicking": [
+    {
+      "start": "01:33:16,581",
+      "end": "01:33:18,750",
+      "text": "I love you!"
+    },
+    {
+      "start": "01:33:20,718",
+      "end": "01:33:22,553",
+      "text": "Oh, Mr. Moon, are you okay?"
+    },
+    {
+      "start": "01:33:22,587",
+      "end": "01:33:24,389",
+      "text": "Yeah. Never better."
+    },
+    {
+      "start": "01:33:38,703",
+      "end": "01:33:40,638",
+      "text": "Clay, you back here?"
+    },
+    {
+      "start": "01:33:40,672",
+      "end": "01:33:42,306",
+      "text": "We're on next."
+    },
+    {
+      "start": "01:33:52,016",
+      "end": "01:33:54,352",
+      "text": "- Yeah! - Yeah."
+    },
+    {
+      "start": "01:33:54,385",
+      "end": "01:33:57,522",
+      "text": "And arrived on the last planet."
+    },
+    {
+      "start": "01:34:00,491",
+      "end": "01:34:03,795",
+      "text": "but there's no sign of life on my scanner."
+    },
+    {
+      "start": "01:34:03,828",
+      "end": "01:34:05,697",
+      "text": "That's your cue."
+    },
+    {
+      "start": "01:34:05,730",
+      "end": "01:34:07,632",
+      "text": "Clay, it's time to go on."
+    },
+    {
+      "start": "01:34:10,034",
+      "end": "01:34:12,770",
+      "text": "Nothing but an empty cave."
+    },
+    {
+      "start": "01:34:12,804",
+      "end": "01:34:14,439",
+      "text": "- Clay. - Oh, no."
+    },
+    {
+      "start": "01:34:16,874",
+      "end": "01:34:19,343",
+      "text": "- Your songs will carry you. - No."
+    },
+    {
+      "start": "01:34:19,377",
+      "end": "01:34:21,312",
+      "text": "- This is a mistake. - Please."
+    },
+    {
+      "start": "01:34:24,549",
+      "end": "01:34:25,883",
+      "text": "I'm not ready."
+    },
+    {
+      "start": "01:34:27,752",
+      "end": "01:34:29,754",
+      "text": "I'm not ready."
+    },
+    {
+      "start": "01:37:39,510",
+      "end": "01:37:40,778",
+      "text": "We're heading home."
+    },
+    {
+      "start": "01:38:47,179",
+      "end": "01:38:50,215",
+      "text": "Oh, my gosh, listen to that crowd."
+    },
+    {
+      "start": "01:38:50,248",
+      "end": "01:38:52,583",
+      "text": "You are a genius."
+    },
+    {
+      "start": "01:38:55,653",
+      "end": "01:38:58,589",
+      "text": "Yeah, you got that right, Linda."
+    },
+    {
+      "start": "01:39:01,326",
+      "end": "01:39:03,594",
+      "text": "Thank you, thank you."
+    },
+    {
+      "start": "01:39:08,166",
+      "end": "01:39:10,568",
+      "text": "Look, I am very proud of this show."
+    },
+    {
+      "start": "01:39:10,601",
+      "end": "01:39:13,205",
+      "text": "We did great work here. Great work."
+    },
+    {
+      "start": "01:39:22,880",
+      "end": "01:39:26,218",
+      "text": "at my theater for many, many years to come."
+    },
+    {
+      "start": "01:39:44,369",
+      "end": "01:39:45,803",
+      "text": "Wait, wait, wait, wait, wait!"
+    },
+    {
+      "start": "01:39:45,836",
+      "end": "01:39:48,005",
+      "text": "He's innocent! Mr. Crystal, please!"
+    },
+    {
+      "start": "01:40:58,008",
+      "end": "01:40:59,244",
+      "text": "Stop the bus!"
+    },
+    {
+      "start": "01:41:01,979",
+      "end": "01:41:03,281",
+      "text": "- What is it? - What happened?"
+    },
+    {
+      "start": "01:41:04,782",
+      "end": "01:41:06,984",
+      "text": "I just got a call from The Majestic."
+    },
+    {
+      "start": "01:41:07,017",
+      "end": "01:41:08,986",
+      "text": "They think your show is fantastic,"
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Yeah. Never better.",
+          "start": "01:33:22,587",
+          "end": "01:33:24,389"
+        },
+        {
+          "label": "C",
+          "text": "Thank you, thank you.",
+          "start": "01:39:01,326",
+          "end": "01:39:03,594"
+        },
+        {
+          "label": "B",
+          "text": "We did great work here. Great work.",
+          "start": "01:39:10,601",
+          "end": "01:39:13,205"
+        }
+      ],
+      "video": {
+        "start": "01:33:22,587",
+        "end": "01:33:24,389"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "- Yeah! - Yeah.",
+          "start": "01:33:52,016",
+          "end": "01:33:54,352"
+        },
+        {
+          "label": "A",
+          "text": "That's your cue.",
+          "start": "01:34:03,828",
+          "end": "01:34:05,697"
+        },
+        {
+          "label": "C",
+          "text": "I just got a call from The Majestic.",
+          "start": "01:41:04,782",
+          "end": "01:41:06,984"
+        }
+      ],
+      "video": {
+        "start": "01:33:52,016",
+        "end": "01:33:54,352"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "That's your cue.",
+          "start": "01:34:03,828",
+          "end": "01:34:05,697"
+        },
+        {
+          "label": "A",
+          "text": "I just got a call from The Majestic.",
+          "start": "01:41:04,782",
+          "end": "01:41:06,984"
+        },
+        {
+          "label": "C",
+          "text": "And arrived on the last planet.",
+          "start": "01:33:54,385",
+          "end": "01:33:57,522"
+        }
+      ],
+      "video": {
+        "start": "01:34:03,828",
+        "end": "01:34:05,697"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "- Clay. - Oh, no.",
+          "start": "01:34:12,804",
+          "end": "01:34:14,439"
+        },
+        {
+          "label": "A",
+          "text": "You are a genius.",
+          "start": "01:38:50,248",
+          "end": "01:38:52,583"
+        },
+        {
+          "label": "B",
+          "text": "And arrived on the last planet.",
+          "start": "01:33:54,385",
+          "end": "01:33:57,522"
+        }
+      ],
+      "video": {
+        "start": "01:34:12,804",
+        "end": "01:34:14,439"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "I'm not ready.",
+          "start": "01:34:24,549",
+          "end": "01:34:25,883"
+        },
+        {
+          "label": "A",
+          "text": "You are a genius.",
+          "start": "01:38:50,248",
+          "end": "01:38:52,583"
+        },
+        {
+          "label": "C",
+          "text": "That's your cue.",
+          "start": "01:34:03,828",
+          "end": "01:34:05,697"
+        }
+      ],
+      "video": {
+        "start": "01:34:24,549",
+        "end": "01:34:25,883"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Oh, my gosh, listen to that crowd.",
+          "start": "01:38:47,179",
+          "end": "01:38:50,215"
+        },
+        {
+          "label": "A",
+          "text": "We did great work here. Great work.",
+          "start": "01:39:10,601",
+          "end": "01:39:13,205"
+        },
+        {
+          "label": "B",
+          "text": "at my theater for many, many years to come.",
+          "start": "01:39:22,880",
+          "end": "01:39:26,218"
+        }
+      ],
+      "video": {
+        "start": "01:38:47,179",
+        "end": "01:38:50,215"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Thank you, thank you.",
+          "start": "01:39:01,326",
+          "end": "01:39:03,594"
+        },
+        {
+          "label": "C",
+          "text": "I'm not ready.",
+          "start": "01:34:24,549",
+          "end": "01:34:25,883"
+        },
+        {
+          "label": "B",
+          "text": "Yeah. Never better.",
+          "start": "01:33:22,587",
+          "end": "01:33:24,389"
+        }
+      ],
+      "video": {
+        "start": "01:39:01,326",
+        "end": "01:39:03,594"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "at my theater for many, many years to come.",
+          "start": "01:39:22,880",
+          "end": "01:39:26,218"
+        },
+        {
+          "label": "B",
+          "text": "We did great work here. Great work.",
+          "start": "01:39:10,601",
+          "end": "01:39:13,205"
+        },
+        {
+          "label": "C",
+          "text": "Look, I am very proud of this show.",
+          "start": "01:39:08,166",
+          "end": "01:39:10,568"
+        }
+      ],
+      "video": {
+        "start": "01:39:22,880",
+        "end": "01:39:26,218"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Stop the bus!",
+          "start": "01:40:58,008",
+          "end": "01:40:59,244"
+        },
+        {
+          "label": "B",
+          "text": "Look, I am very proud of this show.",
+          "start": "01:39:08,166",
+          "end": "01:39:10,568"
+        },
+        {
+          "label": "C",
+          "text": "You are a genius.",
+          "start": "01:38:50,248",
+          "end": "01:38:52,583"
+        }
+      ],
+      "video": {
+        "start": "01:40:58,008",
+        "end": "01:40:59,244"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "They think your show is fantastic,",
+          "start": "01:41:07,017",
+          "end": "01:41:08,986"
+        },
+        {
+          "label": "A",
+          "text": "And arrived on the last planet.",
+          "start": "01:33:54,385",
+          "end": "01:33:57,522"
+        },
+        {
+          "label": "B",
+          "text": "I'm not ready.",
+          "start": "01:34:27,752",
+          "end": "01:34:29,754"
+        }
+      ],
+      "video": {
+        "start": "01:41:07,017",
+        "end": "01:41:08,986"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "01:33:16,581",
+      "end": "01:33:18,750",
+      "text": "I love you!"
+    },
+    {
+      "question": 2,
+      "start": "01:33:20,718",
+      "end": "01:33:22,553",
+      "text": "Oh, Mr. Moon, are you okay?"
+    },
+    {
+      "question": 3,
+      "start": "01:33:38,703",
+      "end": "01:33:40,638",
+      "text": "Clay, you back here?"
+    },
+    {
+      "question": 4,
+      "start": "01:33:40,672",
+      "end": "01:33:42,306",
+      "text": "We're on next."
+    },
+    {
+      "question": 5,
+      "start": "01:33:54,385",
+      "end": "01:33:57,522",
+      "text": "And arrived on the last planet."
+    },
+    {
+      "question": 6,
+      "start": "01:34:00,491",
+      "end": "01:34:03,795",
+      "text": "but there's no sign of life on my scanner."
+    },
+    {
+      "question": 7,
+      "start": "01:34:05,730",
+      "end": "01:34:07,632",
+      "text": "Clay, it's time to go on."
+    },
+    {
+      "question": 8,
+      "start": "01:34:10,034",
+      "end": "01:34:12,770",
+      "text": "Nothing but an empty cave."
+    },
+    {
+      "question": 9,
+      "start": "01:34:16,874",
+      "end": "01:34:19,343",
+      "text": "- Your songs will carry you. - No."
+    },
+    {
+      "question": 10,
+      "start": "01:34:19,377",
+      "end": "01:34:21,312",
+      "text": "- This is a mistake. - Please."
+    }
+  ]
+}

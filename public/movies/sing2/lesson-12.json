@@ -1,13 +1,758 @@
 {
   "watching": {
-    "start": "01:33:16,581",
-    "end": "01:41:08,986"
+    "start": "01:25:41,259",
+    "end": "01:41:15,860"
   },
-  "mimicking": [
+  "fullSubtitles": [
+    {
+      "start": "01:25:41,259",
+      "end": "01:25:43,228",
+      "text": "We're security now, mate."
+    },
+    {
+      "start": "01:25:43,261",
+      "end": "01:25:44,329",
+      "text": "What?"
+    },
+    {
+      "start": "01:25:46,498",
+      "end": "01:25:48,933",
+      "text": "♪ I wanna taste love and pain ♪"
+    },
+    {
+      "start": "01:25:48,966",
+      "end": "01:25:51,769",
+      "text": "♪ Wanna feel pride and shame ♪"
+    },
+    {
+      "start": "01:25:51,802",
+      "end": "01:25:54,972",
+      "text": "♪ I don't wanna take my time ♪"
+    },
+    {
+      "start": "01:25:55,005",
+      "end": "01:25:57,841",
+      "text": "♪ Don't wanna waste one line ♪"
+    },
+    {
+      "start": "01:25:57,875",
+      "end": "01:26:00,911",
+      "text": "♪ I wanna live better days ♪"
+    },
+    {
+      "start": "01:26:00,945",
+      "end": "01:26:03,881",
+      "text": "♪ Never look back and say ♪"
+    },
+    {
+      "start": "01:26:03,914",
+      "end": "01:26:06,817",
+      "text": "♪ It could've been me ♪"
+    },
+    {
+      "start": "01:26:06,850",
+      "end": "01:26:10,955",
+      "text": "♪ It could've been me, yeah ♪"
+    },
+    {
+      "start": "01:26:13,225",
+      "end": "01:26:16,494",
+      "text": "♪ Don't wanna wake up on a Monday morning ♪"
+    },
+    {
+      "start": "01:26:16,528",
+      "end": "01:26:18,196",
+      "text": "- Porsha! - ♪ The thought of work's ♪"
+    },
+    {
+      "start": "01:26:18,230",
+      "end": "01:26:20,265",
+      "text": "- ♪ Getting my skin crawling ♪ - Get off of there!"
+    },
+    {
+      "start": "01:26:20,298",
+      "end": "01:26:23,235",
+      "text": "- ♪ I can't fear you ♪ - Don't you make me come out there!"
+    },
+    {
+      "start": "01:26:23,268",
+      "end": "01:26:26,137",
+      "text": "♪ I don't hear you now ♪"
+    },
+    {
+      "start": "01:26:27,072",
+      "end": "01:26:29,807",
+      "text": "♪ Wrapped in your regret ♪"
+    },
+    {
+      "start": "01:26:29,840",
+      "end": "01:26:33,111",
+      "text": "♪ What a waste of blood and sweat ♪"
+    },
+    {
+      "start": "01:26:33,144",
+      "end": "01:26:34,812",
+      "text": "♪ Oh ♪"
+    },
+    {
+      "start": "01:26:34,845",
+      "end": "01:26:36,514",
+      "text": "♪ I wanna taste ♪"
+    },
+    {
+      "start": "01:26:36,548",
+      "end": "01:26:38,949",
+      "text": "- ♪ Love and pain ♪ - ♪ I wanna taste love ♪"
+    },
+    {
+      "start": "01:26:38,983",
+      "end": "01:26:41,119",
+      "text": "♪ Wanna feel pride and shame ♪"
+    },
+    {
+      "start": "01:26:41,152",
+      "end": "01:26:44,822",
+      "text": "- ♪ I don't wanna take my time ♪ - ♪ No ♪"
+    },
+    {
+      "start": "01:26:44,855",
+      "end": "01:26:47,359",
+      "text": "♪ Don't wanna waste one line... ♪"
+    },
+    {
+      "start": "01:26:47,392",
+      "end": "01:26:48,892",
+      "text": "You traitor."
+    },
+    {
+      "start": "01:26:48,926",
+      "end": "01:26:51,196",
+      "text": "That's it, I'm coming out there!"
+    },
+    {
+      "start": "01:26:54,199",
+      "end": "01:26:56,167",
+      "text": "Miss Crawly put some cushions and snacks down there,"
+    },
+    {
+      "start": "01:26:56,201",
+      "end": "01:26:58,270",
+      "text": "so you should be comfortable till the show's over."
+    },
+    {
+      "start": "01:26:58,303",
+      "end": "01:26:59,970",
+      "text": "You little..."
+    },
+    {
+      "start": "01:27:00,004",
+      "end": "01:27:01,406",
+      "text": "♪ I wanna taste love and pain ♪"
+    },
+    {
+      "start": "01:27:01,439",
+      "end": "01:27:03,541",
+      "text": "♪ I wanna taste love and pain ♪"
+    },
+    {
+      "start": "01:27:03,575",
+      "end": "01:27:06,411",
+      "text": "- ♪ Wanna feel pride and shame ♪ - ♪ Wanna feel pride and shame ♪"
+    },
+    {
+      "start": "01:27:06,444",
+      "end": "01:27:08,313",
+      "text": "♪ I don't wanna take my time ♪"
+    },
+    {
+      "start": "01:27:08,346",
+      "end": "01:27:14,419",
+      "text": "♪ I don't wanna waste my time, don't wanna waste one line ♪"
+    },
+    {
+      "start": "01:27:14,452",
+      "end": "01:27:17,355",
+      "text": "♪ Never look back and say ♪"
+    },
+    {
+      "start": "01:27:17,389",
+      "end": "01:27:20,091",
+      "text": "♪ It could've been me ♪"
+    },
+    {
+      "start": "01:27:20,125",
+      "end": "01:27:23,561",
+      "text": "♪ Oh, it could've been me ♪"
+    },
+    {
+      "start": "01:27:23,595",
+      "end": "01:27:27,165",
+      "text": "♪ It could've been me. ♪"
+    },
+    {
+      "start": "01:27:35,407",
+      "end": "01:27:36,974",
+      "text": "Mission report."
+    },
+    {
+      "start": "01:27:37,007",
+      "end": "01:27:39,311",
+      "text": "No sign here of the missing space explorer."
+    },
+    {
+      "start": "01:27:39,344",
+      "end": "01:27:41,313",
+      "text": "I'm moving to the next planet."
+    },
+    {
+      "start": "01:27:41,346",
+      "end": "01:27:42,880",
+      "text": "- Ready, Gina? - It's Meena."
+    },
+    {
+      "start": "01:27:42,913",
+      "end": "01:27:44,616",
+      "text": "- Wait, what is? - Never mind."
+    },
+    {
+      "start": "01:27:44,649",
+      "end": "01:27:46,518",
+      "text": "Listen, find that feeling."
+    },
+    {
+      "start": "01:27:46,551",
+      "end": "01:27:49,187",
+      "text": "It is now or never."
+    },
+    {
+      "start": "01:28:04,968",
+      "end": "01:28:07,305",
+      "text": "Okay. I'm ready now."
+    },
+    {
+      "start": "01:28:07,339",
+      "end": "01:28:11,576",
+      "text": "♪ I say a little prayer for you ♪"
+    },
+    {
+      "start": "01:28:11,609",
+      "end": "01:28:15,146",
+      "text": "♪ The moment I wake up ♪"
+    },
+    {
+      "start": "01:28:15,180",
+      "end": "01:28:19,016",
+      "text": "- ♪ Before I put on my makeup ♪ - ♪ Makeup ♪"
+    },
+    {
+      "start": "01:28:19,049",
+      "end": "01:28:23,121",
+      "text": "♪ I say a little prayer for you ♪"
+    },
+    {
+      "start": "01:28:23,154",
+      "end": "01:28:26,957",
+      "text": "♪ While combing my hair now ♪"
+    },
+    {
+      "start": "01:28:26,990",
+      "end": "01:28:29,960",
+      "text": "♪ And wondering what to wear now ♪"
+    },
+    {
+      "start": "01:28:29,993",
+      "end": "01:28:31,196",
+      "text": "♪ Wear now ♪"
+    },
+    {
+      "start": "01:28:31,229",
+      "end": "01:28:32,963",
+      "text": "♪ I say a little prayer for you ♪"
+    },
+    {
+      "start": "01:28:32,996",
+      "end": "01:28:34,632",
+      "text": "- ♪ For you ♪ - ♪ Oh, baby ♪"
+    },
+    {
+      "start": "01:28:34,666",
+      "end": "01:28:36,368",
+      "text": "♪ Forever, ever ♪"
+    },
+    {
+      "start": "01:28:36,401",
+      "end": "01:28:39,537",
+      "text": "♪ You'll stay in my heart and I will love you ♪"
+    },
+    {
+      "start": "01:28:39,571",
+      "end": "01:28:41,373",
+      "text": "♪ Forever, ever ♪"
+    },
+    {
+      "start": "01:28:41,406",
+      "end": "01:28:42,607",
+      "text": "♪ We never will part ♪"
+    },
+    {
+      "start": "01:28:42,640",
+      "end": "01:28:44,376",
+      "text": "♪ Oh, how I love you ♪"
+    },
+    {
+      "start": "01:28:44,409",
+      "end": "01:28:46,378",
+      "text": "♪ Together, together... ♪"
+    },
+    {
+      "start": "01:28:46,411",
+      "end": "01:28:48,979",
+      "text": "Oh, Mr. Crystal, where are you?"
+    },
+    {
+      "start": "01:28:49,012",
+      "end": "01:28:51,383",
+      "text": "I'm trapped somewhere under the stage."
+    },
+    {
+      "start": "01:28:51,416",
+      "end": "01:28:53,284",
+      "text": "I'll find you, sir."
+    },
+    {
+      "start": "01:28:53,318",
+      "end": "01:28:55,387",
+      "text": "Mr. Crystal, I'm coming!"
+    },
+    {
+      "start": "01:28:55,420",
+      "end": "01:28:58,523",
+      "text": "♪ I run for the bus, dear ♪"
+    },
+    {
+      "start": "01:28:58,556",
+      "end": "01:29:00,258",
+      "text": "♪ While riding ♪"
+    },
+    {
+      "start": "01:29:00,291",
+      "end": "01:29:02,394",
+      "text": "- ♪ I think of us, dear ♪ - ♪ Us, dear ♪"
+    },
+    {
+      "start": "01:29:02,427",
+      "end": "01:29:05,530",
+      "text": "- ♪ I say a little, oh ♪ - ♪ Prayer for you ♪"
+    },
+    {
+      "start": "01:29:05,563",
+      "end": "01:29:07,699",
+      "text": "- ♪ Oh, shawty ♪ - ♪ At work ♪"
+    },
+    {
+      "start": "01:29:07,732",
+      "end": "01:29:10,702",
+      "text": "♪ I just take time ♪"
+    },
+    {
+      "start": "01:29:10,735",
+      "end": "01:29:13,705",
+      "text": "♪ And all through my coffee break time ♪"
+    },
+    {
+      "start": "01:29:13,738",
+      "end": "01:29:15,707",
+      "text": "- ♪ Break time ♪ - ♪ I say a little ♪"
+    },
+    {
+      "start": "01:29:15,740",
+      "end": "01:29:18,276",
+      "text": "♪ Prayer for you ♪"
+    },
+    {
+      "start": "01:29:18,309",
+      "end": "01:29:20,478",
+      "text": "- ♪ Forever and ever ♪ - ♪ Forever ♪"
+    },
+    {
+      "start": "01:29:20,512",
+      "end": "01:29:21,679",
+      "text": "♪ Oh, yeah ♪"
+    },
+    {
+      "start": "01:29:21,713",
+      "end": "01:29:23,615",
+      "text": "♪ I will love you ♪"
+    },
+    {
+      "start": "01:29:23,648",
+      "end": "01:29:26,084",
+      "text": "- ♪ Ever ♪ - ♪ I say a prayer for you ♪"
+    },
+    {
+      "start": "01:29:26,117",
+      "end": "01:29:28,386",
+      "text": "♪ Oh, how I love you ♪"
+    },
+    {
+      "start": "01:29:28,420",
+      "end": "01:29:31,389",
+      "text": "- ♪ Together, together ♪ - ♪ Together, yeah ♪"
+    },
+    {
+      "start": "01:29:31,423",
+      "end": "01:29:33,158",
+      "text": "♪ Oh, yeah ♪"
+    },
+    {
+      "start": "01:29:33,191",
+      "end": "01:29:35,226",
+      "text": "♪ Would only be heartbreak ♪"
+    },
+    {
+      "start": "01:29:35,260",
+      "end": "01:29:40,931",
+      "text": "♪ For me ♪"
+    },
+    {
+      "start": "01:29:41,599",
+      "end": "01:29:46,438",
+      "text": "♪ Only be heartbreak ♪"
+    },
+    {
+      "start": "01:29:46,471",
+      "end": "01:29:51,543",
+      "text": "♪ For me. ♪"
+    },
+    {
+      "start": "01:30:00,318",
+      "end": "01:30:01,386",
+      "text": "Yes!"
+    },
+    {
+      "start": "01:30:01,419",
+      "end": "01:30:04,988",
+      "text": "I am gonna win a ton of awards for this."
+    },
+    {
+      "start": "01:30:08,626",
+      "end": "01:30:09,661",
+      "text": "Hi."
+    },
+    {
+      "start": "01:30:09,694",
+      "end": "01:30:11,463",
+      "text": "Um, hi."
+    },
+    {
+      "start": "01:30:11,496",
+      "end": "01:30:12,697",
+      "text": "I'm Meena."
+    },
+    {
+      "start": "01:30:12,730",
+      "end": "01:30:14,699",
+      "text": "Oh. Um, Alfonso."
+    },
+    {
+      "start": "01:30:14,732",
+      "end": "01:30:17,235",
+      "text": "You-you were incredible."
+    },
+    {
+      "start": "01:30:17,268",
+      "end": "01:30:18,603",
+      "text": "So were you."
+    },
+    {
+      "start": "01:30:18,636",
+      "end": "01:30:20,138",
+      "text": "Um, what?"
+    },
+    {
+      "start": "01:30:20,171",
+      "end": "01:30:22,340",
+      "text": "Oh. Uh, uh, never mind."
+    },
+    {
+      "start": "01:30:22,373",
+      "end": "01:30:25,310",
+      "text": "Um, want to meet up after the show, maybe?"
+    },
+    {
+      "start": "01:30:25,343",
+      "end": "01:30:26,744",
+      "text": "Uh, okay."
+    },
+    {
+      "start": "01:30:26,778",
+      "end": "01:30:28,713",
+      "text": "Okay, great. Bye."
+    },
+    {
+      "start": "01:30:30,682",
+      "end": "01:30:33,718",
+      "text": "Captain, we cannot land on the last planet."
+    },
+    {
+      "start": "01:30:33,751",
+      "end": "01:30:36,221",
+      "text": "There is, like, a huge wormhole."
+    },
+    {
+      "start": "01:30:36,254",
+      "end": "01:30:39,057",
+      "text": "The ship will never make it."
+    },
+    {
+      "start": "01:30:39,090",
+      "end": "01:30:41,659",
+      "text": "You're right. It won't make it."
+    },
+    {
+      "start": "01:30:41,693",
+      "end": "01:30:43,628",
+      "text": "But I will."
+    },
+    {
+      "start": "01:30:43,661",
+      "end": "01:30:45,530",
+      "text": "♪ If you want it ♪"
+    },
+    {
+      "start": "01:30:45,563",
+      "end": "01:30:47,532",
+      "text": "- ♪ Take it ♪ - ♪ Beep-beep, boop-boop ♪"
+    },
+    {
+      "start": "01:30:47,565",
+      "end": "01:30:49,701",
+      "text": "♪ I should have said it before ♪"
+    },
+    {
+      "start": "01:30:49,734",
+      "end": "01:30:51,169",
+      "text": "♪ Boop-boop-boop, beep ♪"
+    },
+    {
+      "start": "01:30:51,202",
+      "end": "01:30:52,570",
+      "text": "♪ Tried to hide it ♪"
+    },
+    {
+      "start": "01:30:52,604",
+      "end": "01:30:54,639",
+      "text": "- Watch your fingers. - ♪ Fake it ♪"
+    },
+    {
+      "start": "01:30:56,241",
+      "end": "01:30:59,244",
+      "text": "- ♪ I can't pretend anymore ♪ - ♪ Boop ♪"
+    },
+    {
+      "start": "01:30:59,277",
+      "end": "01:31:02,247",
+      "text": "♪ I only want to die alive ♪"
+    },
+    {
+      "start": "01:31:02,280",
+      "end": "01:31:05,116",
+      "text": "♪ Never by the hands of a broken heart ♪"
+    },
+    {
+      "start": "01:31:05,149",
+      "end": "01:31:06,684",
+      "text": "♪ Boop ♪"
+    },
+    {
+      "start": "01:31:06,718",
+      "end": "01:31:10,121",
+      "text": "♪ I don't wanna hear you lie tonight ♪"
+    },
+    {
+      "start": "01:31:13,825",
+      "end": "01:31:16,794",
+      "text": "Rosita, you've got to jump."
+    },
+    {
+      "start": "01:31:19,097",
+      "end": "01:31:21,132",
+      "text": "Oh, honey."
+    },
+    {
+      "start": "01:31:21,165",
+      "end": "01:31:22,667",
+      "text": "Come on, Rosita."
+    },
+    {
+      "start": "01:31:22,700",
+      "end": "01:31:24,135",
+      "text": "- Look out! - Whoa!"
+    },
+    {
+      "start": "01:31:24,168",
+      "end": "01:31:25,803",
+      "text": "- Daddy, stop it! - No!"
+    },
+    {
+      "start": "01:31:25,837",
+      "end": "01:31:28,606",
+      "text": "- Mr. Moon! - Mr. Crystal, no!"
+    },
+    {
+      "start": "01:31:28,640",
+      "end": "01:31:31,676",
+      "text": "Well, I've got you now, you lowlife little loser."
+    },
+    {
+      "start": "01:31:31,709",
+      "end": "01:31:33,344",
+      "text": "No, sir."
+    },
+    {
+      "start": "01:31:33,378",
+      "end": "01:31:35,113",
+      "text": "I'm not a loser."
+    },
+    {
+      "start": "01:31:35,146",
+      "end": "01:31:37,081",
+      "text": "We did what we came here to do."
+    },
+    {
+      "start": "01:31:37,115",
+      "end": "01:31:38,783",
+      "text": "And there is nothing"
+    },
+    {
+      "start": "01:31:38,816",
+      "end": "01:31:41,386",
+      "text": "you can do or say to change that."
+    },
+    {
+      "start": "01:31:44,589",
+      "end": "01:31:48,593",
+      "text": "Oh, I can do whatever I want."
+    },
+    {
+      "start": "01:32:15,320",
+      "end": "01:32:17,355",
+      "text": "♪ This is ♪"
+    },
+    {
+      "start": "01:32:17,388",
+      "end": "01:32:20,291",
+      "text": "♪ The part when I say I don't want ya ♪"
+    },
+    {
+      "start": "01:32:20,325",
+      "end": "01:32:22,827",
+      "text": "♪ I'm stronger than I've been before ♪"
+    },
+    {
+      "start": "01:32:22,860",
+      "end": "01:32:24,462",
+      "text": "♪ This is ♪"
+    },
+    {
+      "start": "01:32:24,495",
+      "end": "01:32:26,364",
+      "text": "♪ The part when I break free ♪"
+    },
+    {
+      "start": "01:32:26,397",
+      "end": "01:32:28,433",
+      "text": "Aah! Whoa...!"
+    },
+    {
+      "start": "01:32:28,466",
+      "end": "01:32:30,335",
+      "text": "♪ 'Cause I can't resist it no more ♪"
+    },
+    {
+      "start": "01:32:31,569",
+      "end": "01:32:34,372",
+      "text": "♪ Whoa, whoa, the thought of your body ♪"
+    },
+    {
+      "start": "01:32:34,405",
+      "end": "01:32:38,142",
+      "text": "- ♪ I came alive ♪ - ♪ Whoo! ♪"
+    },
+    {
+      "start": "01:32:38,176",
+      "end": "01:32:42,413",
+      "text": "♪ It was lethal, it was fatal ♪"
+    },
+    {
+      "start": "01:32:42,447",
+      "end": "01:32:45,550",
+      "text": "♪ In my dreams, it felt so right ♪"
+    },
+    {
+      "start": "01:32:45,583",
+      "end": "01:32:47,752",
+      "text": "♪ But I woke up ♪"
+    },
+    {
+      "start": "01:32:47,785",
+      "end": "01:32:52,190",
+      "text": "♪ Every time ♪"
+    },
+    {
+      "start": "01:32:53,324",
+      "end": "01:32:55,860",
+      "text": "♪ Oh, baby ♪"
+    },
+    {
+      "start": "01:32:55,893",
+      "end": "01:32:57,495",
+      "text": "♪ This is ♪"
+    },
+    {
+      "start": "01:32:57,528",
+      "end": "01:33:00,431",
+      "text": "♪ The part when I say I don't want ya ♪"
+    },
+    {
+      "start": "01:33:00,465",
+      "end": "01:33:03,768",
+      "text": "♪ I'm stronger than I've been before ♪"
+    },
+    {
+      "start": "01:33:03,801",
+      "end": "01:33:05,370",
+      "text": "♪ This is ♪"
+    },
+    {
+      "start": "01:33:05,403",
+      "end": "01:33:07,939",
+      "text": "♪ The part when I break free ♪"
+    },
+    {
+      "start": "01:33:07,972",
+      "end": "01:33:10,308",
+      "text": "♪ 'Cause I can't resist it no more ♪"
+    },
+    {
+      "start": "01:33:10,341",
+      "end": "01:33:11,943",
+      "text": "♪ Beep-beep, boop-boop. ♪"
+    },
+    {
+      "start": "01:33:14,312",
+      "end": "01:33:16,547",
+      "text": "Woo-hoo!"
+    },
     {
       "start": "01:33:16,581",
       "end": "01:33:18,750",
       "text": "I love you!"
+    },
+    {
+      "start": "01:33:18,783",
+      "end": "01:33:20,685",
+      "text": "Yeah!"
     },
     {
       "start": "01:33:20,718",
@@ -20,6 +765,16 @@
       "text": "Yeah. Never better."
     },
     {
+      "start": "01:33:24,422",
+      "end": "01:33:27,191",
+      "text": "Uh, where's Ash and Clay?"
+    },
+    {
+      "start": "01:33:37,235",
+      "end": "01:33:38,670",
+      "text": "Clay."
+    },
+    {
       "start": "01:33:38,703",
       "end": "01:33:40,638",
       "text": "Clay, you back here?"
@@ -30,6 +785,26 @@
       "text": "We're on next."
     },
     {
+      "start": "01:33:43,574",
+      "end": "01:33:45,510",
+      "text": "You okay?"
+    },
+    {
+      "start": "01:33:45,543",
+      "end": "01:33:47,278",
+      "text": "Uh-huh."
+    },
+    {
+      "start": "01:33:47,311",
+      "end": "01:33:49,914",
+      "text": "Mission report."
+    },
+    {
+      "start": "01:33:49,947",
+      "end": "01:33:51,983",
+      "text": "We have survived the wormhole."
+    },
+    {
       "start": "01:33:52,016",
       "end": "01:33:54,352",
       "text": "- Yeah! - Yeah."
@@ -38,6 +813,11 @@
       "start": "01:33:54,385",
       "end": "01:33:57,522",
       "text": "And arrived on the last planet."
+    },
+    {
+      "start": "01:33:57,555",
+      "end": "01:34:00,458",
+      "text": "The missing space explorer must be here somewhere,"
     },
     {
       "start": "01:34:00,491",
@@ -55,6 +835,11 @@
       "text": "Clay, it's time to go on."
     },
     {
+      "start": "01:34:07,665",
+      "end": "01:34:10,001",
+      "text": "But I see no signs of life."
+    },
+    {
       "start": "01:34:10,034",
       "end": "01:34:12,770",
       "text": "Nothing but an empty cave."
@@ -63,6 +848,11 @@
       "start": "01:34:12,804",
       "end": "01:34:14,439",
       "text": "- Clay. - Oh, no."
+    },
+    {
+      "start": "01:34:14,472",
+      "end": "01:34:16,841",
+      "text": "It's okay. Just sing."
     },
     {
       "start": "01:34:16,874",
@@ -75,9 +865,19 @@
       "text": "- This is a mistake. - Please."
     },
     {
+      "start": "01:34:21,345",
+      "end": "01:34:23,514",
+      "text": "It's been so long."
+    },
+    {
       "start": "01:34:24,549",
       "end": "01:34:25,883",
       "text": "I'm not ready."
+    },
+    {
+      "start": "01:34:25,917",
+      "end": "01:34:27,719",
+      "text": "I'm sorry."
     },
     {
       "start": "01:34:27,752",
@@ -85,9 +885,204 @@
       "text": "I'm not ready."
     },
     {
+      "start": "01:34:46,337",
+      "end": "01:34:49,040",
+      "text": "♪ I have climbed ♪"
+    },
+    {
+      "start": "01:34:49,074",
+      "end": "01:34:52,744",
+      "text": "♪ The highest mountains ♪"
+    },
+    {
+      "start": "01:34:52,777",
+      "end": "01:34:55,480",
+      "text": "♪ I have run ♪"
+    },
+    {
+      "start": "01:34:55,513",
+      "end": "01:34:58,316",
+      "text": "♪ Through the fields ♪"
+    },
+    {
+      "start": "01:34:58,349",
+      "end": "01:35:01,786",
+      "text": "♪ Only to be with you ♪"
+    },
+    {
+      "start": "01:35:02,854",
+      "end": "01:35:07,258",
+      "text": "♪ Only to be with you ♪"
+    },
+    {
+      "start": "01:35:10,428",
+      "end": "01:35:15,900",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:35:15,933",
+      "end": "01:35:20,438",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:35:21,672",
+      "end": "01:35:27,345",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:35:27,378",
+      "end": "01:35:32,383",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:35:32,416",
+      "end": "01:35:37,922",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:35:37,955",
+      "end": "01:35:42,660",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:36:09,053",
+      "end": "01:36:11,522",
+      "text": "♪ I believe ♪"
+    },
+    {
+      "start": "01:36:11,556",
+      "end": "01:36:13,925",
+      "text": "♪ In the kingdom come ♪"
+    },
+    {
+      "start": "01:36:13,958",
+      "end": "01:36:15,860",
+      "text": "♪ Then all the colors ♪"
+    },
+    {
+      "start": "01:36:15,893",
+      "end": "01:36:18,830",
+      "text": "♪ Will bleed into one ♪"
+    },
+    {
+      "start": "01:36:18,863",
+      "end": "01:36:23,068",
+      "text": "♪ Bleed into one ♪"
+    },
+    {
+      "start": "01:36:23,101",
+      "end": "01:36:26,838",
+      "text": "♪ But yes, I'm still running ♪"
+    },
+    {
+      "start": "01:36:27,872",
+      "end": "01:36:29,607",
+      "text": "♪ You broke the bonds ♪"
+    },
+    {
+      "start": "01:36:29,640",
+      "end": "01:36:32,577",
+      "text": "♪ And you loosed the chains ♪"
+    },
+    {
+      "start": "01:36:32,610",
+      "end": "01:36:35,413",
+      "text": "♪ Carried the cross ♪"
+    },
+    {
+      "start": "01:36:35,446",
+      "end": "01:36:40,918",
+      "text": "♪ Of my shame, of my shame ♪"
+    },
+    {
+      "start": "01:36:42,154",
+      "end": "01:36:45,389",
+      "text": "♪ You know I believe it ♪"
+    },
+    {
+      "start": "01:36:47,425",
+      "end": "01:36:51,996",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:36:52,029",
+      "end": "01:36:55,433",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:36:56,767",
+      "end": "01:37:01,439",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:37:01,472",
+      "end": "01:37:04,775",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:37:06,644",
+      "end": "01:37:10,982",
+      "text": "♪ I still haven't found ♪"
+    },
+    {
+      "start": "01:37:11,015",
+      "end": "01:37:14,585",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:37:15,920",
+      "end": "01:37:20,625",
+      "text": "♪ I still haven't found ♪"
+    },
+    {
+      "start": "01:37:20,658",
+      "end": "01:37:23,527",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:37:25,130",
+      "end": "01:37:30,102",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:37:30,135",
+      "end": "01:37:34,639",
+      "text": "♪ What I'm looking for ♪"
+    },
+    {
+      "start": "01:37:34,672",
+      "end": "01:37:37,642",
+      "text": "♪ But I still haven't found ♪"
+    },
+    {
+      "start": "01:37:37,675",
+      "end": "01:37:39,477",
+      "text": "Mission accomplished."
+    },
+    {
       "start": "01:37:39,510",
       "end": "01:37:40,778",
       "text": "We're heading home."
+    },
+    {
+      "start": "01:37:40,811",
+      "end": "01:37:44,182",
+      "text": "♪ What I'm looking for. ♪"
+    },
+    {
+      "start": "01:38:01,632",
+      "end": "01:38:03,601",
+      "text": "- Hey, Mr. Moon! - Come on!"
+    },
+    {
+      "start": "01:38:03,634",
+      "end": "01:38:05,836",
+      "text": "- Get out here, Moon. - Come on out here!"
+    },
+    {
+      "start": "01:38:44,675",
+      "end": "01:38:47,145",
+      "text": "Jimmy!"
     },
     {
       "start": "01:38:47,179",
@@ -100,6 +1095,11 @@
       "text": "You are a genius."
     },
     {
+      "start": "01:38:52,616",
+      "end": "01:38:54,618",
+      "text": "Yeah, you really are a genius, sir."
+    },
+    {
       "start": "01:38:55,653",
       "end": "01:38:58,589",
       "text": "Yeah, you got that right, Linda."
@@ -108,6 +1108,16 @@
       "start": "01:39:01,326",
       "end": "01:39:03,594",
       "text": "Thank you, thank you."
+    },
+    {
+      "start": "01:39:03,627",
+      "end": "01:39:06,131",
+      "text": "Too kind. I appreciate it, really."
+    },
+    {
+      "start": "01:39:06,164",
+      "end": "01:39:08,133",
+      "text": "I-I do."
     },
     {
       "start": "01:39:08,166",
@@ -120,9 +1130,39 @@
       "text": "We did great work here. Great work."
     },
     {
+      "start": "01:39:13,238",
+      "end": "01:39:17,008",
+      "text": "And my good friend, Clay... great to have him back, right?"
+    },
+    {
+      "start": "01:39:17,041",
+      "end": "01:39:19,610",
+      "text": "Yeah!"
+    },
+    {
+      "start": "01:39:19,643",
+      "end": "01:39:22,847",
+      "text": "And listen, I look forward to seeing this show run"
+    },
+    {
       "start": "01:39:22,880",
       "end": "01:39:26,218",
       "text": "at my theater for many, many years to come."
+    },
+    {
+      "start": "01:39:26,251",
+      "end": "01:39:28,619",
+      "text": "Right, Moon?"
+    },
+    {
+      "start": "01:39:29,587",
+      "end": "01:39:31,789",
+      "text": "Moon?"
+    },
+    {
+      "start": "01:39:40,165",
+      "end": "01:39:43,068",
+      "text": "Officers, arrest that wolf."
     },
     {
       "start": "01:39:44,369",
@@ -135,14 +1175,89 @@
       "text": "He's innocent! Mr. Crystal, please!"
     },
     {
+      "start": "01:39:48,039",
+      "end": "01:39:49,607",
+      "text": "I love you!"
+    },
+    {
+      "start": "01:40:01,086",
+      "end": "01:40:04,089",
+      "text": "♪ Was a Monday morning ♪"
+    },
+    {
+      "start": "01:40:05,656",
+      "end": "01:40:08,692",
+      "text": "♪ 'Bout a quarter past 4:00 ♪"
+    },
+    {
+      "start": "01:40:10,761",
+      "end": "01:40:14,698",
+      "text": "♪ You were busy dreaming ♪"
+    },
+    {
+      "start": "01:40:14,732",
+      "end": "01:40:18,035",
+      "text": "♪ So what did you wake up for? ♪"
+    },
+    {
+      "start": "01:40:20,838",
+      "end": "01:40:25,943",
+      "text": "♪ Are you a stranger in your own life? ♪"
+    },
+    {
+      "start": "01:40:25,976",
+      "end": "01:40:31,216",
+      "text": "♪ What are you hiding behind those eyes? ♪"
+    },
+    {
+      "start": "01:40:31,249",
+      "end": "01:40:34,685",
+      "text": "♪ Is no one looking for you there? ♪"
+    },
+    {
+      "start": "01:40:37,389",
+      "end": "01:40:43,027",
+      "text": "♪ You know your song saved my life ♪"
+    },
+    {
+      "start": "01:40:43,061",
+      "end": "01:40:48,300",
+      "text": "♪ I don't sing it just so I can get by ♪"
+    },
+    {
+      "start": "01:40:48,333",
+      "end": "01:40:50,368",
+      "text": "♪ Won't you hear me ♪"
+    },
+    {
+      "start": "01:40:50,402",
+      "end": "01:40:54,306",
+      "text": "♪ When I tell you, darlin' ♪"
+    },
+    {
+      "start": "01:40:54,339",
+      "end": "01:40:56,208",
+      "text": "♪ I sing it to survive ♪"
+    },
+    {
       "start": "01:40:58,008",
       "end": "01:40:59,244",
       "text": "Stop the bus!"
     },
     {
+      "start": "01:41:00,412",
+      "end": "01:41:01,946",
+      "text": "Whoa!"
+    },
+    {
       "start": "01:41:01,979",
       "end": "01:41:03,281",
       "text": "- What is it? - What happened?"
+    },
+    {
+      "start": "01:41:03,315",
+      "end": "01:41:04,748",
+      "text": "- What's going on? - Ow!"
     },
     {
       "start": "01:41:04,782",
@@ -153,119 +1268,281 @@
       "start": "01:41:07,017",
       "end": "01:41:08,986",
       "text": "They think your show is fantastic,"
+    },
+    {
+      "start": "01:41:09,019",
+      "end": "01:41:11,223",
+      "text": "and they want to put it on at their theater."
+    },
+    {
+      "start": "01:41:13,325",
+      "end": "01:41:15,860",
+      "text": "Well, what do you say, Mr. Calloway?"
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "01:25:41,259",
+      "end": "01:25:43,228",
+      "text": "We're security now, mate."
+    },
+    {
+      "start": "01:27:37,007",
+      "end": "01:27:39,311",
+      "text": "No sign here of the missing space explorer."
+    },
+    {
+      "start": "01:27:44,649",
+      "end": "01:27:46,518",
+      "text": "Listen, find that feeling."
+    },
+    {
+      "start": "01:28:04,968",
+      "end": "01:28:07,305",
+      "text": "Okay. I'm ready now."
+    },
+    {
+      "start": "01:28:49,012",
+      "end": "01:28:51,383",
+      "text": "I'm trapped somewhere under the stage."
+    },
+    {
+      "start": "01:28:53,318",
+      "end": "01:28:55,387",
+      "text": "Mr. Crystal, I'm coming!"
+    },
+    {
+      "start": "01:30:14,732",
+      "end": "01:30:17,235",
+      "text": "You-you were incredible."
+    },
+    {
+      "start": "01:30:20,171",
+      "end": "01:30:22,340",
+      "text": "Oh. Uh, uh, never mind."
+    },
+    {
+      "start": "01:30:26,778",
+      "end": "01:30:28,713",
+      "text": "Okay, great. Bye."
+    },
+    {
+      "start": "01:30:33,751",
+      "end": "01:30:36,221",
+      "text": "There is, like, a huge wormhole."
+    },
+    {
+      "start": "01:30:39,090",
+      "end": "01:30:41,659",
+      "text": "You're right. It won't make it."
+    },
+    {
+      "start": "01:31:13,825",
+      "end": "01:31:16,794",
+      "text": "Rosita, you've got to jump."
+    },
+    {
+      "start": "01:31:28,640",
+      "end": "01:31:31,676",
+      "text": "Well, I've got you now, you lowlife little loser."
+    },
+    {
+      "start": "01:31:35,146",
+      "end": "01:31:37,081",
+      "text": "We did what we came here to do."
+    },
+    {
+      "start": "01:33:16,581",
+      "end": "01:33:18,750",
+      "text": "I love you!"
+    },
+    {
+      "start": "01:33:24,422",
+      "end": "01:33:27,191",
+      "text": "Uh, where's Ash and Clay?"
+    },
+    {
+      "start": "01:33:40,672",
+      "end": "01:33:42,306",
+      "text": "We're on next."
+    },
+    {
+      "start": "01:33:54,385",
+      "end": "01:33:57,522",
+      "text": "And arrived on the last planet."
+    },
+    {
+      "start": "01:34:05,730",
+      "end": "01:34:07,632",
+      "text": "Clay, it's time to go on."
+    },
+    {
+      "start": "01:34:10,034",
+      "end": "01:34:12,770",
+      "text": "Nothing but an empty cave."
+    },
+    {
+      "start": "01:34:21,345",
+      "end": "01:34:23,514",
+      "text": "It's been so long."
+    },
+    {
+      "start": "01:34:27,752",
+      "end": "01:34:29,754",
+      "text": "I'm not ready."
+    },
+    {
+      "start": "01:38:47,179",
+      "end": "01:38:50,215",
+      "text": "Oh, my gosh, listen to that crowd."
+    },
+    {
+      "start": "01:38:52,616",
+      "end": "01:38:54,618",
+      "text": "Yeah, you really are a genius, sir."
+    },
+    {
+      "start": "01:39:01,326",
+      "end": "01:39:03,594",
+      "text": "Thank you, thank you."
+    },
+    {
+      "start": "01:39:10,601",
+      "end": "01:39:13,205",
+      "text": "We did great work here. Great work."
+    },
+    {
+      "start": "01:39:40,165",
+      "end": "01:39:43,068",
+      "text": "Officers, arrest that wolf."
+    },
+    {
+      "start": "01:39:45,836",
+      "end": "01:39:48,005",
+      "text": "He's innocent! Mr. Crystal, please!"
+    },
+    {
+      "start": "01:40:58,008",
+      "end": "01:40:59,244",
+      "text": "Stop the bus!"
+    },
+    {
+      "start": "01:41:13,325",
+      "end": "01:41:15,860",
+      "text": "Well, what do you say, Mr. Calloway?"
     }
   ],
   "guessing": [
     {
       "question": 1,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "A",
-          "text": "Yeah. Never better.",
-          "start": "01:33:22,587",
-          "end": "01:33:24,389"
-        },
-        {
-          "label": "C",
-          "text": "Thank you, thank you.",
-          "start": "01:39:01,326",
-          "end": "01:39:03,594"
-        },
-        {
           "label": "B",
+          "text": "Listen, find that feeling.",
+          "start": "01:27:44,649",
+          "end": "01:27:46,518"
+        },
+        {
+          "label": "A",
           "text": "We did great work here. Great work.",
           "start": "01:39:10,601",
           "end": "01:39:13,205"
+        },
+        {
+          "label": "C",
+          "text": "He's innocent! Mr. Crystal, please!",
+          "start": "01:39:45,836",
+          "end": "01:39:48,005"
         }
       ],
       "video": {
-        "start": "01:33:22,587",
-        "end": "01:33:24,389"
+        "start": "01:27:44,649",
+        "end": "01:27:46,518"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
-          "text": "- Yeah! - Yeah.",
-          "start": "01:33:52,016",
-          "end": "01:33:54,352"
-        },
-        {
-          "label": "A",
-          "text": "That's your cue.",
-          "start": "01:34:03,828",
-          "end": "01:34:05,697"
-        },
-        {
-          "label": "C",
-          "text": "I just got a call from The Majestic.",
-          "start": "01:41:04,782",
-          "end": "01:41:06,984"
-        }
-      ],
-      "video": {
-        "start": "01:33:52,016",
-        "end": "01:33:54,352"
-      }
-    },
-    {
-      "question": 3,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
-          "text": "That's your cue.",
-          "start": "01:34:03,828",
-          "end": "01:34:05,697"
-        },
-        {
-          "label": "A",
-          "text": "I just got a call from The Majestic.",
-          "start": "01:41:04,782",
-          "end": "01:41:06,984"
-        },
-        {
-          "label": "C",
-          "text": "And arrived on the last planet.",
-          "start": "01:33:54,385",
-          "end": "01:33:57,522"
-        }
-      ],
-      "video": {
-        "start": "01:34:03,828",
-        "end": "01:34:05,697"
-      }
-    },
-    {
-      "question": 4,
       "correctAnswer": "C",
       "options": [
         {
           "label": "C",
-          "text": "- Clay. - Oh, no.",
-          "start": "01:34:12,804",
-          "end": "01:34:14,439"
-        },
-        {
-          "label": "A",
-          "text": "You are a genius.",
-          "start": "01:38:50,248",
-          "end": "01:38:52,583"
+          "text": "Mr. Crystal, I'm coming!",
+          "start": "01:28:53,318",
+          "end": "01:28:55,387"
         },
         {
           "label": "B",
-          "text": "And arrived on the last planet.",
-          "start": "01:33:54,385",
-          "end": "01:33:57,522"
+          "text": "Clay, it's time to go on.",
+          "start": "01:34:05,730",
+          "end": "01:34:07,632"
+        },
+        {
+          "label": "A",
+          "text": "It's been so long.",
+          "start": "01:34:21,345",
+          "end": "01:34:23,514"
         }
       ],
       "video": {
-        "start": "01:34:12,804",
-        "end": "01:34:14,439"
+        "start": "01:28:53,318",
+        "end": "01:28:55,387"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Okay, great. Bye.",
+          "start": "01:30:26,778",
+          "end": "01:30:28,713"
+        },
+        {
+          "label": "A",
+          "text": "He's innocent! Mr. Crystal, please!",
+          "start": "01:39:45,836",
+          "end": "01:39:48,005"
+        },
+        {
+          "label": "B",
+          "text": "Oh, my gosh, listen to that crowd.",
+          "start": "01:38:47,179",
+          "end": "01:38:50,215"
+        }
+      ],
+      "video": {
+        "start": "01:30:26,778",
+        "end": "01:30:28,713"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Rosita, you've got to jump.",
+          "start": "01:31:13,825",
+          "end": "01:31:16,794"
+        },
+        {
+          "label": "B",
+          "text": "You're right. It won't make it.",
+          "start": "01:30:39,090",
+          "end": "01:30:41,659"
+        },
+        {
+          "label": "C",
+          "text": "Uh, where's Ash and Clay?",
+          "start": "01:33:24,422",
+          "end": "01:33:27,191"
+        }
+      ],
+      "video": {
+        "start": "01:31:13,825",
+        "end": "01:31:16,794"
       }
     },
     {
@@ -274,150 +1551,32 @@
       "options": [
         {
           "label": "B",
-          "text": "I'm not ready.",
-          "start": "01:34:24,549",
-          "end": "01:34:25,883"
-        },
-        {
-          "label": "A",
-          "text": "You are a genius.",
-          "start": "01:38:50,248",
-          "end": "01:38:52,583"
+          "text": "I love you!",
+          "start": "01:33:16,581",
+          "end": "01:33:18,750"
         },
         {
           "label": "C",
-          "text": "That's your cue.",
-          "start": "01:34:03,828",
-          "end": "01:34:05,697"
+          "text": "I'm not ready.",
+          "start": "01:34:27,752",
+          "end": "01:34:29,754"
+        },
+        {
+          "label": "A",
+          "text": "Mr. Crystal, I'm coming!",
+          "start": "01:28:53,318",
+          "end": "01:28:55,387"
         }
       ],
       "video": {
-        "start": "01:34:24,549",
-        "end": "01:34:25,883"
+        "start": "01:33:16,581",
+        "end": "01:33:18,750"
       }
     },
     {
       "question": 6,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "Oh, my gosh, listen to that crowd.",
-          "start": "01:38:47,179",
-          "end": "01:38:50,215"
-        },
-        {
-          "label": "A",
-          "text": "We did great work here. Great work.",
-          "start": "01:39:10,601",
-          "end": "01:39:13,205"
-        },
-        {
-          "label": "B",
-          "text": "at my theater for many, many years to come.",
-          "start": "01:39:22,880",
-          "end": "01:39:26,218"
-        }
-      ],
-      "video": {
-        "start": "01:38:47,179",
-        "end": "01:38:50,215"
-      }
-    },
-    {
-      "question": 7,
       "correctAnswer": "A",
       "options": [
-        {
-          "label": "A",
-          "text": "Thank you, thank you.",
-          "start": "01:39:01,326",
-          "end": "01:39:03,594"
-        },
-        {
-          "label": "C",
-          "text": "I'm not ready.",
-          "start": "01:34:24,549",
-          "end": "01:34:25,883"
-        },
-        {
-          "label": "B",
-          "text": "Yeah. Never better.",
-          "start": "01:33:22,587",
-          "end": "01:33:24,389"
-        }
-      ],
-      "video": {
-        "start": "01:39:01,326",
-        "end": "01:39:03,594"
-      }
-    },
-    {
-      "question": 8,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "at my theater for many, many years to come.",
-          "start": "01:39:22,880",
-          "end": "01:39:26,218"
-        },
-        {
-          "label": "B",
-          "text": "We did great work here. Great work.",
-          "start": "01:39:10,601",
-          "end": "01:39:13,205"
-        },
-        {
-          "label": "C",
-          "text": "Look, I am very proud of this show.",
-          "start": "01:39:08,166",
-          "end": "01:39:10,568"
-        }
-      ],
-      "video": {
-        "start": "01:39:22,880",
-        "end": "01:39:26,218"
-      }
-    },
-    {
-      "question": 9,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "Stop the bus!",
-          "start": "01:40:58,008",
-          "end": "01:40:59,244"
-        },
-        {
-          "label": "B",
-          "text": "Look, I am very proud of this show.",
-          "start": "01:39:08,166",
-          "end": "01:39:10,568"
-        },
-        {
-          "label": "C",
-          "text": "You are a genius.",
-          "start": "01:38:50,248",
-          "end": "01:38:52,583"
-        }
-      ],
-      "video": {
-        "start": "01:40:58,008",
-        "end": "01:40:59,244"
-      }
-    },
-    {
-      "question": 10,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "They think your show is fantastic,",
-          "start": "01:41:07,017",
-          "end": "01:41:08,986"
-        },
         {
           "label": "A",
           "text": "And arrived on the last planet.",
@@ -426,77 +1585,195 @@
         },
         {
           "label": "B",
-          "text": "I'm not ready.",
-          "start": "01:34:27,752",
-          "end": "01:34:29,754"
+          "text": "Well, I've got you now, you lowlife little loser.",
+          "start": "01:31:28,640",
+          "end": "01:31:31,676"
+        },
+        {
+          "label": "C",
+          "text": "You-you were incredible.",
+          "start": "01:30:14,732",
+          "end": "01:30:17,235"
         }
       ],
       "video": {
-        "start": "01:41:07,017",
-        "end": "01:41:08,986"
+        "start": "01:33:54,385",
+        "end": "01:33:57,522"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "It's been so long.",
+          "start": "01:34:21,345",
+          "end": "01:34:23,514"
+        },
+        {
+          "label": "B",
+          "text": "Well, what do you say, Mr. Calloway?",
+          "start": "01:41:13,325",
+          "end": "01:41:15,860"
+        },
+        {
+          "label": "A",
+          "text": "You-you were incredible.",
+          "start": "01:30:14,732",
+          "end": "01:30:17,235"
+        }
+      ],
+      "video": {
+        "start": "01:34:21,345",
+        "end": "01:34:23,514"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Yeah, you really are a genius, sir.",
+          "start": "01:38:52,616",
+          "end": "01:38:54,618"
+        },
+        {
+          "label": "B",
+          "text": "He's innocent! Mr. Crystal, please!",
+          "start": "01:39:45,836",
+          "end": "01:39:48,005"
+        },
+        {
+          "label": "A",
+          "text": "And arrived on the last planet.",
+          "start": "01:33:54,385",
+          "end": "01:33:57,522"
+        }
+      ],
+      "video": {
+        "start": "01:38:52,616",
+        "end": "01:38:54,618"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Officers, arrest that wolf.",
+          "start": "01:39:40,165",
+          "end": "01:39:43,068"
+        },
+        {
+          "label": "A",
+          "text": "Yeah, you really are a genius, sir.",
+          "start": "01:38:52,616",
+          "end": "01:38:54,618"
+        },
+        {
+          "label": "C",
+          "text": "Clay, it's time to go on.",
+          "start": "01:34:05,730",
+          "end": "01:34:07,632"
+        }
+      ],
+      "video": {
+        "start": "01:39:40,165",
+        "end": "01:39:43,068"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Well, what do you say, Mr. Calloway?",
+          "start": "01:41:13,325",
+          "end": "01:41:15,860"
+        },
+        {
+          "label": "A",
+          "text": "Uh, where's Ash and Clay?",
+          "start": "01:33:24,422",
+          "end": "01:33:27,191"
+        },
+        {
+          "label": "C",
+          "text": "We did great work here. Great work.",
+          "start": "01:39:10,601",
+          "end": "01:39:13,205"
+        }
+      ],
+      "video": {
+        "start": "01:41:13,325",
+        "end": "01:41:15,860"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "01:33:16,581",
-      "end": "01:33:18,750",
-      "text": "I love you!"
+      "start": "01:25:41,259",
+      "end": "01:25:43,228",
+      "text": "We're security now, mate."
     },
     {
       "question": 2,
-      "start": "01:33:20,718",
-      "end": "01:33:22,553",
-      "text": "Oh, Mr. Moon, are you okay?"
+      "start": "01:28:04,968",
+      "end": "01:28:07,305",
+      "text": "Okay. I'm ready now."
     },
     {
       "question": 3,
-      "start": "01:33:38,703",
-      "end": "01:33:40,638",
-      "text": "Clay, you back here?"
+      "start": "01:30:14,732",
+      "end": "01:30:17,235",
+      "text": "You-you were incredible."
     },
     {
       "question": 4,
+      "start": "01:30:33,751",
+      "end": "01:30:36,221",
+      "text": "There is, like, a huge wormhole."
+    },
+    {
+      "question": 5,
+      "start": "01:31:28,640",
+      "end": "01:31:31,676",
+      "text": "Well, I've got you now, you lowlife little loser."
+    },
+    {
+      "question": 6,
       "start": "01:33:40,672",
       "end": "01:33:42,306",
       "text": "We're on next."
     },
     {
-      "question": 5,
-      "start": "01:33:54,385",
-      "end": "01:33:57,522",
-      "text": "And arrived on the last planet."
-    },
-    {
-      "question": 6,
-      "start": "01:34:00,491",
-      "end": "01:34:03,795",
-      "text": "but there's no sign of life on my scanner."
-    },
-    {
       "question": 7,
-      "start": "01:34:05,730",
-      "end": "01:34:07,632",
-      "text": "Clay, it's time to go on."
-    },
-    {
-      "question": 8,
       "start": "01:34:10,034",
       "end": "01:34:12,770",
       "text": "Nothing but an empty cave."
     },
     {
+      "question": 8,
+      "start": "01:38:47,179",
+      "end": "01:38:50,215",
+      "text": "Oh, my gosh, listen to that crowd."
+    },
+    {
       "question": 9,
-      "start": "01:34:16,874",
-      "end": "01:34:19,343",
-      "text": "- Your songs will carry you. - No."
+      "start": "01:39:10,601",
+      "end": "01:39:13,205",
+      "text": "We did great work here. Great work."
     },
     {
       "question": 10,
-      "start": "01:34:19,377",
-      "end": "01:34:21,312",
-      "text": "- This is a mistake. - Please."
+      "start": "01:40:58,008",
+      "end": "01:40:59,244",
+      "text": "Stop the bus!"
     }
   ]
 }

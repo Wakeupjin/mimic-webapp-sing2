@@ -1,18 +1,543 @@
 {
   "watching": {
-    "start": "00:59:20,845",
-    "end": "01:07:25,263"
+    "start": "00:53:57,555",
+    "end": "01:01:44,322"
   },
-  "mimicking": [
+  "fullSubtitles": [
+    {
+      "start": "00:53:57,555",
+      "end": "00:54:00,525",
+      "text": "Holy moly, it really is."
+    },
+    {
+      "start": "00:54:00,558",
+      "end": "00:54:03,194",
+      "text": "He doesn't look so scary."
+    },
+    {
+      "start": "00:54:03,228",
+      "end": "00:54:05,096",
+      "text": "Mr. Calloway!"
+    },
+    {
+      "start": "00:54:05,929",
+      "end": "00:54:08,099",
+      "text": "- Go away! - No, please."
+    },
+    {
+      "start": "00:54:08,133",
+      "end": "00:54:10,402",
+      "text": "We-we-we just want to talk to you for one minute."
+    },
+    {
+      "start": "00:54:10,435",
+      "end": "00:54:12,237",
+      "text": "That's all."
+    },
+    {
+      "start": "00:54:13,904",
+      "end": "00:54:17,342",
+      "text": "We are not leaving until you talk to us."
+    },
+    {
+      "start": "00:54:18,476",
+      "end": "00:54:20,844",
+      "text": "Fine. If you're not coming over here,"
+    },
+    {
+      "start": "00:54:20,878",
+      "end": "00:54:22,980",
+      "text": "we're coming over to you."
+    },
+    {
+      "start": "00:54:23,013",
+      "end": "00:54:24,848",
+      "text": "No! Stay off the fence!"
+    },
+    {
+      "start": "00:54:24,882",
+      "end": "00:54:26,284",
+      "text": "Don't listen to him."
+    },
+    {
+      "start": "00:55:00,352",
+      "end": "00:55:01,619",
+      "text": "Stop, stop, stop!"
+    },
+    {
+      "start": "00:55:01,653",
+      "end": "00:55:03,555",
+      "text": "Porsha, you're still messing it up."
+    },
+    {
+      "start": "00:55:03,588",
+      "end": "00:55:05,457",
+      "text": "It's not my fault."
+    },
+    {
+      "start": "00:55:05,490",
+      "end": "00:55:07,392",
+      "text": "He keeps missing the catch."
+    },
+    {
+      "start": "00:55:07,425",
+      "end": "00:55:09,893",
+      "text": "I think she's trying to kill me."
+    },
+    {
+      "start": "00:55:09,927",
+      "end": "00:55:11,429",
+      "text": "Reset. Let's go again."
+    },
+    {
+      "start": "00:55:11,463",
+      "end": "00:55:13,164",
+      "text": "Meena! Darius!"
+    },
+    {
+      "start": "00:55:13,198",
+      "end": "00:55:15,400",
+      "text": "We're coming to you next, and I better see"
+    },
+    {
+      "start": "00:55:15,433",
+      "end": "00:55:17,669",
+      "text": "some chemistry between you two."
+    },
+    {
+      "start": "00:55:17,702",
+      "end": "00:55:20,105",
+      "text": "Okay, let's run these steps one more time."
+    },
+    {
+      "start": "00:55:20,138",
+      "end": "00:55:23,675",
+      "text": "So, music starts, I step out,"
+    },
+    {
+      "start": "00:55:23,708",
+      "end": "00:55:25,976",
+      "text": "do my moves, fancy moves."
+    },
+    {
+      "start": "00:55:26,009",
+      "end": "00:55:27,412",
+      "text": "Step together, drop."
+    },
+    {
+      "start": "00:55:27,445",
+      "end": "00:55:32,083",
+      "text": "Gazing at each other like we're burning up with love..."
+    },
+    {
+      "start": "00:55:32,950",
+      "end": "00:55:35,018",
+      "text": "What are you doing with your face?"
+    },
+    {
+      "start": "00:55:36,521",
+      "end": "00:55:38,289",
+      "text": "Your face looks broken."
+    },
+    {
+      "start": "00:55:38,323",
+      "end": "00:55:39,657",
+      "text": "What is that?"
+    },
+    {
+      "start": "00:55:39,691",
+      "end": "00:55:41,126",
+      "text": "Uh..."
+    },
+    {
+      "start": "00:55:41,159",
+      "end": "00:55:43,628",
+      "text": "I was falling in love?"
+    },
+    {
+      "start": "00:55:43,661",
+      "end": "00:55:45,563",
+      "text": "Yeah, Gina, listen."
+    },
+    {
+      "start": "00:55:45,597",
+      "end": "00:55:47,699",
+      "text": "I'm sorry, that-that's not what"
+    },
+    {
+      "start": "00:55:47,732",
+      "end": "00:55:49,501",
+      "text": "falling in love with me looks like."
+    },
+    {
+      "start": "00:55:49,534",
+      "end": "00:55:51,069",
+      "text": "I... I should know."
+    },
+    {
+      "start": "00:55:51,102",
+      "end": "00:55:53,036",
+      "text": "I see it day after day, week after week."
+    },
+    {
+      "start": "00:55:53,071",
+      "end": "00:55:55,038",
+      "text": "Let's run it again."
+    },
+    {
+      "start": "00:55:55,073",
+      "end": "00:55:57,609",
+      "text": "From the top! And five, six, seven, eight."
+    },
+    {
+      "start": "00:55:57,642",
+      "end": "00:55:59,411",
+      "text": "And one..."
+    },
+    {
+      "start": "00:56:03,548",
+      "end": "00:56:06,418",
+      "text": "Would you like some ice cream, ma'am?"
+    },
+    {
+      "start": "00:56:06,451",
+      "end": "00:56:10,321",
+      "text": "Or should I say, Your Majesty?"
+    },
+    {
+      "start": "00:56:11,322",
+      "end": "00:56:12,290",
+      "text": "Uh..."
+    },
+    {
+      "start": "00:56:12,323",
+      "end": "00:56:14,359",
+      "text": "I just... You look like a goddess,"
+    },
+    {
+      "start": "00:56:14,392",
+      "end": "00:56:17,195",
+      "text": "and, uh... and-and-and lucky for you,"
+    },
+    {
+      "start": "00:56:17,228",
+      "end": "00:56:19,697",
+      "text": "it's \"free ice cream for all goddesses\" day."
+    },
+    {
+      "start": "00:56:19,731",
+      "end": "00:56:22,534",
+      "text": "Aw."
+    },
+    {
+      "start": "00:56:34,145",
+      "end": "00:56:37,282",
+      "text": "That's cherry cheesecake, and I-I make it all myself."
+    },
+    {
+      "start": "00:56:37,315",
+      "end": "00:56:39,317",
+      "text": "See, my truck's right over there."
+    },
+    {
+      "start": "00:56:39,350",
+      "end": "00:56:41,319",
+      "text": "Come by anytime..."
+    },
+    {
+      "start": "00:56:41,352",
+      "end": "00:56:43,288",
+      "text": "Your Majesty."
+    },
+    {
+      "start": "00:56:45,156",
+      "end": "00:56:47,991",
+      "text": "Ooh, that... Are you okay?"
+    },
+    {
+      "start": "00:57:00,738",
+      "end": "00:57:02,774",
+      "text": "Buster?"
+    },
+    {
+      "start": "00:57:04,642",
+      "end": "00:57:06,377",
+      "text": "You okay?"
+    },
+    {
+      "start": "00:57:07,245",
+      "end": "00:57:09,647",
+      "text": "Ash?"
+    },
+    {
+      "start": "00:57:09,681",
+      "end": "00:57:11,483",
+      "text": "Where are we?"
+    },
+    {
+      "start": "00:57:12,450",
+      "end": "00:57:14,252",
+      "text": "We're in Clay's house."
+    },
+    {
+      "start": "00:57:14,285",
+      "end": "00:57:15,086",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "00:57:15,119",
+      "end": "00:57:17,255",
+      "text": "- Have you talked to him yet? - Uh-huh."
+    },
+    {
+      "start": "00:57:17,288",
+      "end": "00:57:19,390",
+      "text": "- You have? - We were just discussing"
+    },
+    {
+      "start": "00:57:19,424",
+      "end": "00:57:21,493",
+      "text": "whether he'd consider being in our show."
+    },
+    {
+      "start": "00:57:21,526",
+      "end": "00:57:22,660",
+      "text": "What did he say?"
+    },
+    {
+      "start": "00:57:22,694",
+      "end": "00:57:24,696",
+      "text": "He said no."
+    },
+    {
+      "start": "00:57:24,729",
+      "end": "00:57:28,433",
+      "text": "Not in a million years."
+    },
+    {
+      "start": "00:57:29,434",
+      "end": "00:57:31,302",
+      "text": "Please, Mr. Calloway."
+    },
+    {
+      "start": "00:57:31,336",
+      "end": "00:57:33,505",
+      "text": "Look, you don't... you don't realize how much"
+    },
+    {
+      "start": "00:57:33,538",
+      "end": "00:57:36,107",
+      "text": "it would mean to have you in our show and..."
+    },
+    {
+      "start": "00:57:36,140",
+      "end": "00:57:37,609",
+      "text": "Will you stop your yakking?"
+    },
+    {
+      "start": "00:57:39,677",
+      "end": "00:57:41,079",
+      "text": "Here."
+    },
+    {
+      "start": "00:57:41,112",
+      "end": "00:57:44,382",
+      "text": "Your friend left this on my property."
+    },
+    {
+      "start": "00:57:50,455",
+      "end": "00:57:53,191",
+      "text": "And I want you gone in the morning."
+    },
+    {
+      "start": "00:57:55,460",
+      "end": "00:57:59,163",
+      "text": "And that's why they say, \"Never meet your heroes.\""
+    },
+    {
+      "start": "00:57:59,764",
+      "end": "00:58:02,267",
+      "text": "Step, two, three, four."
+    },
+    {
+      "start": "00:58:02,300",
+      "end": "00:58:04,402",
+      "text": "One, two, three, four."
+    },
+    {
+      "start": "00:58:04,435",
+      "end": "00:58:05,603",
+      "text": "Yes!"
+    },
+    {
+      "start": "00:58:07,171",
+      "end": "00:58:08,473",
+      "text": "Whoa, mate."
+    },
+    {
+      "start": "00:58:08,506",
+      "end": "00:58:10,775",
+      "text": "You're not ready to be busting out these moves."
+    },
+    {
+      "start": "00:58:10,808",
+      "end": "00:58:12,310",
+      "text": "- Sorry. - Look at you."
+    },
+    {
+      "start": "00:58:12,343",
+      "end": "00:58:14,245",
+      "text": "Klaus has thrown you in the deep end"
+    },
+    {
+      "start": "00:58:14,279",
+      "end": "00:58:16,681",
+      "text": "and drained out all of your confidence like..."
+    },
+    {
+      "start": "00:58:18,850",
+      "end": "00:58:20,718",
+      "text": "Don't worry."
+    },
+    {
+      "start": "00:58:20,752",
+      "end": "00:58:22,453",
+      "text": "We'll build up to it step-by-step."
+    },
+    {
+      "start": "00:58:22,487",
+      "end": "00:58:25,123",
+      "text": "Just forget what Klaus told you and go with the flow."
+    },
+    {
+      "start": "00:58:25,156",
+      "end": "00:58:26,491",
+      "text": "♪ Hey, uh, uh ♪"
+    },
+    {
+      "start": "00:58:26,524",
+      "end": "00:58:29,327",
+      "text": "♪ I'd rather be nobody other than me ♪"
+    },
+    {
+      "start": "00:58:29,360",
+      "end": "00:58:31,329",
+      "text": "♪ Mark my words, my talk ain't cheap ♪"
+    },
+    {
+      "start": "00:58:31,362",
+      "end": "00:58:34,198",
+      "text": "♪ Life's a dream, but I'm not sleep ♪"
+    },
+    {
+      "start": "00:58:34,232",
+      "end": "00:58:36,801",
+      "text": "♪ I, I feel like a work of art ♪"
+    },
+    {
+      "start": "00:58:36,834",
+      "end": "00:58:38,736",
+      "text": "♪ I'm not easily forgot ♪"
+    },
+    {
+      "start": "00:58:38,770",
+      "end": "00:58:40,638",
+      "text": "♪ Had to set myself apart ♪"
+    },
+    {
+      "start": "00:58:40,672",
+      "end": "00:58:42,240",
+      "text": "♪ I'm just following my heart ♪"
+    },
+    {
+      "start": "00:58:42,273",
+      "end": "00:58:44,175",
+      "text": "♪ I'm just following my path ♪"
+    },
+    {
+      "start": "00:58:44,208",
+      "end": "00:58:46,110",
+      "text": "♪ I'm just here to make it last ♪"
+    },
+    {
+      "start": "00:58:46,144",
+      "end": "00:58:47,679",
+      "text": "♪ I'm not living in the past ♪"
+    },
+    {
+      "start": "00:58:47,712",
+      "end": "00:58:49,581",
+      "text": "♪ If you don't feel me, kiss my ♪"
+    },
+    {
+      "start": "00:58:49,614",
+      "end": "00:58:51,749",
+      "text": "♪ Uh, uh, suéltate ♪"
+    },
+    {
+      "start": "00:58:56,888",
+      "end": "00:58:58,723",
+      "text": "♪ Uh, uh, suéltate ♪"
+    },
+    {
+      "start": "00:59:04,162",
+      "end": "00:59:06,297",
+      "text": "♪ Uh, uh, suéltate. ♪"
+    },
+    {
+      "start": "00:59:15,406",
+      "end": "00:59:17,241",
+      "text": "Nailed it!"
+    },
+    {
+      "start": "00:59:18,443",
+      "end": "00:59:20,812",
+      "text": "Now, didn't you say you were gonna eat your hat?"
+    },
     {
       "start": "00:59:20,845",
       "end": "00:59:22,347",
       "text": "Well, there you go."
     },
     {
+      "start": "00:59:22,380",
+      "end": "00:59:24,282",
+      "text": "Mmm. Yum-yum."
+    },
+    {
+      "start": "00:59:34,258",
+      "end": "00:59:38,630",
+      "text": "♪ I love it when you call me señorita ♪"
+    },
+    {
+      "start": "00:59:38,663",
+      "end": "00:59:42,767",
+      "text": "♪ I wish I could pretend I didn't need ya... ♪"
+    },
+    {
+      "start": "00:59:42,800",
+      "end": "00:59:44,702",
+      "text": "Girl, that is your fourth today."
+    },
+    {
       "start": "00:59:44,736",
       "end": "00:59:46,471",
       "text": "I know, I know."
+    },
+    {
+      "start": "00:59:46,504",
+      "end": "00:59:47,905",
+      "text": "But I can't stop."
+    },
+    {
+      "start": "00:59:47,939",
+      "end": "00:59:51,442",
+      "text": "It's 'cause I really want to talk to him."
+    },
+    {
+      "start": "00:59:52,543",
+      "end": "00:59:54,545",
+      "text": "But..."
     },
     {
       "start": "00:59:54,579",
@@ -20,14 +545,79 @@
       "text": "but when I get close,"
     },
     {
+      "start": "00:59:57,782",
+      "end": "01:00:00,885",
+      "text": "I get nervous, so..."
+    },
+    {
+      "start": "01:00:00,918",
+      "end": "01:00:03,521",
+      "text": "so I just buy another ice cream."
+    },
+    {
+      "start": "01:00:03,554",
+      "end": "01:00:07,792",
+      "text": "♪ It felt like ooh-la-la-la, yeah. ♪"
+    },
+    {
       "start": "01:00:11,996",
       "end": "01:00:13,965",
       "text": "Uh, honestly, th-this is gonna be"
     },
     {
+      "start": "01:00:13,998",
+      "end": "01:00:15,700",
+      "text": "the greatest show I have ever made."
+    },
+    {
+      "start": "01:00:15,733",
+      "end": "01:00:16,934",
+      "text": "Whoa!"
+    },
+    {
+      "start": "01:00:16,968",
+      "end": "01:00:18,803",
+      "text": "And when you see the sets and the..."
+    },
+    {
       "start": "01:00:18,836",
       "end": "01:00:20,471",
       "text": "Turn on that tap for me."
+    },
+    {
+      "start": "01:00:20,505",
+      "end": "01:00:21,906",
+      "text": "Tap? Uh, sure."
+    },
+    {
+      "start": "01:00:21,939",
+      "end": "01:00:23,741",
+      "text": "So, anyway..."
+    },
+    {
+      "start": "01:00:24,542",
+      "end": "01:00:25,777",
+      "text": "Whoa!"
+    },
+    {
+      "start": "01:00:29,681",
+      "end": "01:00:30,948",
+      "text": "Oopsie-daisy."
+    },
+    {
+      "start": "01:00:30,982",
+      "end": "01:00:32,984",
+      "text": "Moon, you okay?"
+    },
+    {
+      "start": "01:00:33,017",
+      "end": "01:00:35,553",
+      "text": "I'm okay!"
+    },
+    {
+      "start": "01:00:38,990",
+      "end": "01:00:40,825",
+      "text": "It's tea."
     },
     {
       "start": "01:00:40,858",
@@ -35,14 +625,44 @@
       "text": "You drink it."
     },
     {
+      "start": "01:00:42,460",
+      "end": "01:00:44,429",
+      "text": "I promise,"
+    },
+    {
+      "start": "01:00:44,462",
+      "end": "01:00:46,764",
+      "text": "this is going to be the most wonderful..."
+    },
+    {
       "start": "01:00:46,798",
       "end": "01:00:48,700",
       "text": "I mean, fantastic show ever."
     },
     {
+      "start": "01:00:48,733",
+      "end": "01:00:50,334",
+      "text": "Did you put honey in this?"
+    },
+    {
+      "start": "01:00:50,368",
+      "end": "01:00:52,370",
+      "text": "A-And the ending? Oh, boy."
+    },
+    {
       "start": "01:00:52,403",
       "end": "01:00:54,972",
       "text": "I mean, i-it's gonna end with you"
+    },
+    {
+      "start": "01:00:55,006",
+      "end": "01:00:56,841",
+      "text": "and your song..."
+    },
+    {
+      "start": "01:00:56,874",
+      "end": "01:00:58,843",
+      "text": "You don't want to do the show."
     },
     {
       "start": "01:00:58,876",
@@ -50,14 +670,69 @@
       "text": "Besides, lost my singing voice, so..."
     },
     {
+      "start": "01:01:02,046",
+      "end": "01:01:04,649",
+      "text": "Your voice sounds fine to me."
+    },
+    {
+      "start": "01:01:05,717",
+      "end": "01:01:07,452",
+      "text": "This..."
+    },
+    {
+      "start": "01:01:07,485",
+      "end": "01:01:10,855",
+      "text": "This is all because you lost your wife, isn't it?"
+    },
+    {
+      "start": "01:01:10,888",
+      "end": "01:01:12,957",
+      "text": "Okay, porcupine."
+    },
+    {
+      "start": "01:01:12,990",
+      "end": "01:01:14,992",
+      "text": "We're not talking about my Ruby."
+    },
+    {
+      "start": "01:01:15,026",
+      "end": "01:01:18,696",
+      "text": "Look, I know she inspired so many of your songs..."
+    },
+    {
       "start": "01:01:18,730",
       "end": "01:01:20,465",
       "text": "All of my songs."
     },
     {
+      "start": "01:01:20,498",
+      "end": "01:01:21,399",
+      "text": "Right."
+    },
+    {
+      "start": "01:01:21,432",
+      "end": "01:01:24,469",
+      "text": "I... I can't imagine what it must be like"
+    },
+    {
+      "start": "01:01:24,502",
+      "end": "01:01:26,671",
+      "text": "to lose someone so special,"
+    },
+    {
+      "start": "01:01:26,704",
+      "end": "01:01:31,375",
+      "text": "but do you think this is what Ruby would've wanted for you?"
+    },
+    {
       "start": "01:01:31,409",
       "end": "01:01:35,480",
       "text": "I mean, you out here on your own"
+    },
+    {
+      "start": "01:01:35,513",
+      "end": "01:01:37,749",
+      "text": "and never singing again?"
     },
     {
       "start": "01:01:37,782",
@@ -65,179 +740,246 @@
       "text": "No, y-you don't understand."
     },
     {
-      "start": "01:01:46,390",
-      "end": "01:01:48,826",
-      "text": "Your songs will bring you back."
+      "start": "01:01:40,351",
+      "end": "01:01:44,322",
+      "text": "There's... there's no rock star living here anymore."
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "00:53:57,555",
+      "end": "00:54:00,525",
+      "text": "Holy moly, it really is."
     },
     {
-      "start": "01:01:57,401",
-      "end": "01:01:59,437",
-      "text": "And for good reason."
+      "start": "00:54:08,133",
+      "end": "00:54:10,402",
+      "text": "We-we-we just want to talk to you for one minute."
     },
     {
-      "start": "01:02:14,452",
-      "end": "01:02:16,721",
-      "text": "He's not gonna change his mind."
+      "start": "00:54:23,013",
+      "end": "00:54:24,848",
+      "text": "No! Stay off the fence!"
     },
     {
-      "start": "01:02:22,927",
-      "end": "01:02:25,797",
-      "text": "I just need time with him."
+      "start": "00:55:01,653",
+      "end": "00:55:03,555",
+      "text": "Porsha, you're still messing it up."
     },
     {
-      "start": "01:02:33,638",
-      "end": "01:02:36,374",
-      "text": "- Whoa. - Welcome back, Mr. Moon, sir."
+      "start": "00:55:05,490",
+      "end": "00:55:07,392",
+      "text": "He keeps missing the catch."
     },
     {
-      "start": "01:02:39,977",
-      "end": "01:02:41,479",
-      "text": "Thank you, Mr. Moon, sir."
+      "start": "00:55:09,927",
+      "end": "00:55:11,429",
+      "text": "Reset. Let's go again."
     },
     {
-      "start": "01:02:45,583",
-      "end": "01:02:47,618",
-      "text": "So, any luck with Clay Calloway?"
+      "start": "00:55:26,009",
+      "end": "00:55:27,412",
+      "text": "Step together, drop."
     },
     {
-      "start": "01:02:50,988",
-      "end": "01:02:53,791",
-      "text": "All right, folks, tomorrow, we have our first run-through,"
+      "start": "00:55:36,521",
+      "end": "00:55:38,289",
+      "text": "Your face looks broken."
     },
     {
-      "start": "01:03:49,947",
-      "end": "01:03:51,482",
-      "text": "I must take care,"
+      "start": "00:55:41,159",
+      "end": "00:55:43,628",
+      "text": "I was falling in love?"
     },
     {
-      "start": "01:03:59,457",
-      "end": "01:04:01,126",
-      "text": "Uh, everyone, take five."
+      "start": "00:55:49,534",
+      "end": "00:55:51,069",
+      "text": "I... I should know."
     },
     {
-      "start": "01:04:09,167",
-      "end": "01:04:12,170",
-      "text": "Porsha, you know I truly believe"
+      "start": "00:55:53,071",
+      "end": "00:55:55,038",
+      "text": "Let's run it again."
     },
     {
-      "start": "01:04:16,941",
-      "end": "01:04:18,776",
-      "text": "- Thank you. - Y-Yeah, yeah,"
+      "start": "00:56:03,548",
+      "end": "00:56:06,418",
+      "text": "Would you like some ice cream, ma'am?"
     },
     {
-      "start": "01:04:35,826",
-      "end": "01:04:38,130",
-      "text": "- to switch roles with... - You're firing me?"
+      "start": "00:56:34,145",
+      "end": "00:56:37,282",
+      "text": "That's cherry cheesecake, and I-I make it all myself."
     },
     {
-      "start": "01:04:44,635",
-      "end": "01:04:47,139",
-      "text": "Oh, my gosh."
+      "start": "00:57:09,681",
+      "end": "00:57:11,483",
+      "text": "Where are we?"
     },
     {
-      "start": "01:04:52,210",
-      "end": "01:04:53,945",
-      "text": "Well, I don't care if you hate me."
+      "start": "00:57:22,694",
+      "end": "00:57:24,696",
+      "text": "He said no."
     },
     {
-      "start": "01:04:59,850",
-      "end": "01:05:01,953",
-      "text": "Porsha, stop. Wait!"
+      "start": "00:57:29,434",
+      "end": "00:57:31,302",
+      "text": "Please, Mr. Calloway."
     },
     {
-      "start": "01:07:09,114",
-      "end": "01:07:13,617",
-      "text": "Porsha Crystal was reportedly fired from her father's show."
+      "start": "00:57:41,112",
+      "end": "00:57:44,382",
+      "text": "Your friend left this on my property."
     },
     {
-      "start": "01:07:23,861",
-      "end": "01:07:25,263",
-      "text": "Now the whole world thinks I got"
+      "start": "00:57:55,460",
+      "end": "00:57:59,163",
+      "text": "And that's why they say, \"Never meet your heroes.\""
+    },
+    {
+      "start": "00:58:02,300",
+      "end": "00:58:04,402",
+      "text": "One, two, three, four."
+    },
+    {
+      "start": "00:58:20,752",
+      "end": "00:58:22,453",
+      "text": "We'll build up to it step-by-step."
+    },
+    {
+      "start": "00:59:18,443",
+      "end": "00:59:20,812",
+      "text": "Now, didn't you say you were gonna eat your hat?"
+    },
+    {
+      "start": "00:59:42,800",
+      "end": "00:59:44,702",
+      "text": "Girl, that is your fourth today."
+    },
+    {
+      "start": "00:59:47,939",
+      "end": "00:59:51,442",
+      "text": "It's 'cause I really want to talk to him."
+    },
+    {
+      "start": "01:00:20,505",
+      "end": "01:00:21,906",
+      "text": "Tap? Uh, sure."
+    },
+    {
+      "start": "01:00:40,858",
+      "end": "01:00:42,427",
+      "text": "You drink it."
+    },
+    {
+      "start": "01:00:48,733",
+      "end": "01:00:50,334",
+      "text": "Did you put honey in this?"
+    },
+    {
+      "start": "01:00:56,874",
+      "end": "01:00:58,843",
+      "text": "You don't want to do the show."
+    },
+    {
+      "start": "01:01:07,485",
+      "end": "01:01:10,855",
+      "text": "This is all because you lost your wife, isn't it?"
+    },
+    {
+      "start": "01:01:18,730",
+      "end": "01:01:20,465",
+      "text": "All of my songs."
+    },
+    {
+      "start": "01:01:40,351",
+      "end": "01:01:44,322",
+      "text": "There's... there's no rock star living here anymore."
     }
   ],
   "guessing": [
     {
       "question": 1,
-      "correctAnswer": "B",
+      "correctAnswer": "A",
       "options": [
         {
+          "label": "A",
+          "text": "No! Stay off the fence!",
+          "start": "00:54:23,013",
+          "end": "00:54:24,848"
+        },
+        {
           "label": "B",
-          "text": "but when I get close,",
-          "start": "00:59:54,579",
-          "end": "00:59:57,749"
+          "text": "Holy moly, it really is.",
+          "start": "00:53:57,555",
+          "end": "00:54:00,525"
         },
         {
           "label": "C",
-          "text": "Besides, lost my singing voice, so...",
-          "start": "01:00:58,876",
-          "end": "01:01:02,013"
-        },
-        {
-          "label": "A",
-          "text": "I mean, i-it's gonna end with you",
-          "start": "01:00:52,403",
-          "end": "01:00:54,972"
+          "text": "All of my songs.",
+          "start": "01:01:18,730",
+          "end": "01:01:20,465"
         }
       ],
       "video": {
-        "start": "00:59:54,579",
-        "end": "00:59:57,749"
+        "start": "00:54:23,013",
+        "end": "00:54:24,848"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "You drink it.",
-          "start": "01:00:40,858",
-          "end": "01:00:42,427"
-        },
-        {
-          "label": "B",
-          "text": "- Whoa. - Welcome back, Mr. Moon, sir.",
-          "start": "01:02:33,638",
-          "end": "01:02:36,374"
-        },
-        {
-          "label": "A",
-          "text": "I mean, i-it's gonna end with you",
-          "start": "01:00:52,403",
-          "end": "01:00:54,972"
-        }
-      ],
-      "video": {
-        "start": "01:00:40,858",
-        "end": "01:00:42,427"
-      }
-    },
-    {
-      "question": 3,
       "correctAnswer": "B",
       "options": [
         {
           "label": "B",
-          "text": "Besides, lost my singing voice, so...",
-          "start": "01:00:58,876",
-          "end": "01:01:02,013"
-        },
-        {
-          "label": "A",
-          "text": "Uh, honestly, th-this is gonna be",
-          "start": "01:00:11,996",
-          "end": "01:00:13,965"
+          "text": "Reset. Let's go again.",
+          "start": "00:55:09,927",
+          "end": "00:55:11,429"
         },
         {
           "label": "C",
-          "text": "Porsha, stop. Wait!",
-          "start": "01:04:59,850",
-          "end": "01:05:01,953"
+          "text": "Porsha, you're still messing it up.",
+          "start": "00:55:01,653",
+          "end": "00:55:03,555"
+        },
+        {
+          "label": "A",
+          "text": "Let's run it again.",
+          "start": "00:55:53,071",
+          "end": "00:55:55,038"
         }
       ],
       "video": {
-        "start": "01:00:58,876",
-        "end": "01:01:02,013"
+        "start": "00:55:09,927",
+        "end": "00:55:11,429"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "I was falling in love?",
+          "start": "00:55:41,159",
+          "end": "00:55:43,628"
+        },
+        {
+          "label": "B",
+          "text": "You don't want to do the show.",
+          "start": "01:00:56,874",
+          "end": "01:00:58,843"
+        },
+        {
+          "label": "A",
+          "text": "Please, Mr. Calloway.",
+          "start": "00:57:29,434",
+          "end": "00:57:31,302"
+        }
+      ],
+      "video": {
+        "start": "00:55:41,159",
+        "end": "00:55:43,628"
       }
     },
     {
@@ -246,26 +988,26 @@
       "options": [
         {
           "label": "C",
-          "text": "No, y-you don't understand.",
-          "start": "01:01:37,782",
-          "end": "01:01:40,318"
+          "text": "Would you like some ice cream, ma'am?",
+          "start": "00:56:03,548",
+          "end": "00:56:06,418"
         },
         {
           "label": "A",
-          "text": "Porsha, stop. Wait!",
-          "start": "01:04:59,850",
-          "end": "01:05:01,953"
+          "text": "Girl, that is your fourth today.",
+          "start": "00:59:42,800",
+          "end": "00:59:44,702"
         },
         {
           "label": "B",
-          "text": "- Whoa. - Welcome back, Mr. Moon, sir.",
-          "start": "01:02:33,638",
-          "end": "01:02:36,374"
+          "text": "Your friend left this on my property.",
+          "start": "00:57:41,112",
+          "end": "00:57:44,382"
         }
       ],
       "video": {
-        "start": "01:01:37,782",
-        "end": "01:01:40,318"
+        "start": "00:56:03,548",
+        "end": "00:56:06,418"
       }
     },
     {
@@ -274,26 +1016,26 @@
       "options": [
         {
           "label": "B",
-          "text": "He's not gonna change his mind.",
-          "start": "01:02:14,452",
-          "end": "01:02:16,721"
-        },
-        {
-          "label": "C",
-          "text": "Besides, lost my singing voice, so...",
-          "start": "01:00:58,876",
-          "end": "01:01:02,013"
+          "text": "He said no.",
+          "start": "00:57:22,694",
+          "end": "00:57:24,696"
         },
         {
           "label": "A",
-          "text": "Uh, everyone, take five.",
-          "start": "01:03:59,457",
-          "end": "01:04:01,126"
+          "text": "There's... there's no rock star living here anymore.",
+          "start": "01:01:40,351",
+          "end": "01:01:44,322"
+        },
+        {
+          "label": "C",
+          "text": "We'll build up to it step-by-step.",
+          "start": "00:58:20,752",
+          "end": "00:58:22,453"
         }
       ],
       "video": {
-        "start": "01:02:14,452",
-        "end": "01:02:16,721"
+        "start": "00:57:22,694",
+        "end": "00:57:24,696"
       }
     },
     {
@@ -302,110 +1044,110 @@
       "options": [
         {
           "label": "C",
-          "text": "Thank you, Mr. Moon, sir.",
-          "start": "01:02:39,977",
-          "end": "01:02:41,479"
-        },
-        {
-          "label": "A",
-          "text": "I mean, you out here on your own",
-          "start": "01:01:31,409",
-          "end": "01:01:35,480"
+          "text": "And that's why they say, \"Never meet your heroes.\"",
+          "start": "00:57:55,460",
+          "end": "00:57:59,163"
         },
         {
           "label": "B",
-          "text": "Uh, honestly, th-this is gonna be",
-          "start": "01:00:11,996",
-          "end": "01:00:13,965"
+          "text": "Holy moly, it really is.",
+          "start": "00:53:57,555",
+          "end": "00:54:00,525"
+        },
+        {
+          "label": "A",
+          "text": "I... I should know.",
+          "start": "00:55:49,534",
+          "end": "00:55:51,069"
         }
       ],
       "video": {
-        "start": "01:02:39,977",
-        "end": "01:02:41,479"
+        "start": "00:57:55,460",
+        "end": "00:57:59,163"
       }
     },
     {
       "question": 7,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "I must take care,",
-          "start": "01:03:49,947",
-          "end": "01:03:51,482"
-        },
-        {
-          "label": "B",
-          "text": "- Thank you. - Y-Yeah, yeah,",
-          "start": "01:04:16,941",
-          "end": "01:04:18,776"
-        },
-        {
-          "label": "C",
-          "text": "Oh, my gosh.",
-          "start": "01:04:44,635",
-          "end": "01:04:47,139"
-        }
-      ],
-      "video": {
-        "start": "01:03:49,947",
-        "end": "01:03:51,482"
-      }
-    },
-    {
-      "question": 8,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "- Thank you. - Y-Yeah, yeah,",
-          "start": "01:04:16,941",
-          "end": "01:04:18,776"
-        },
-        {
-          "label": "B",
-          "text": "Porsha, stop. Wait!",
-          "start": "01:04:59,850",
-          "end": "01:05:01,953"
-        },
-        {
-          "label": "C",
-          "text": "I mean, fantastic show ever.",
-          "start": "01:00:46,798",
-          "end": "01:00:48,700"
-        }
-      ],
-      "video": {
-        "start": "01:04:16,941",
-        "end": "01:04:18,776"
-      }
-    },
-    {
-      "question": 9,
       "correctAnswer": "B",
       "options": [
         {
           "label": "B",
-          "text": "Well, I don't care if you hate me.",
-          "start": "01:04:52,210",
-          "end": "01:04:53,945"
-        },
-        {
-          "label": "A",
-          "text": "- Thank you. - Y-Yeah, yeah,",
-          "start": "01:04:16,941",
-          "end": "01:04:18,776"
+          "text": "Now, didn't you say you were gonna eat your hat?",
+          "start": "00:59:18,443",
+          "end": "00:59:20,812"
         },
         {
           "label": "C",
-          "text": "Thank you, Mr. Moon, sir.",
-          "start": "01:02:39,977",
-          "end": "01:02:41,479"
+          "text": "I... I should know.",
+          "start": "00:55:49,534",
+          "end": "00:55:51,069"
+        },
+        {
+          "label": "A",
+          "text": "You drink it.",
+          "start": "01:00:40,858",
+          "end": "01:00:42,427"
         }
       ],
       "video": {
-        "start": "01:04:52,210",
-        "end": "01:04:53,945"
+        "start": "00:59:18,443",
+        "end": "00:59:20,812"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Tap? Uh, sure.",
+          "start": "01:00:20,505",
+          "end": "01:00:21,906"
+        },
+        {
+          "label": "C",
+          "text": "Did you put honey in this?",
+          "start": "01:00:48,733",
+          "end": "01:00:50,334"
+        },
+        {
+          "label": "A",
+          "text": "Please, Mr. Calloway.",
+          "start": "00:57:29,434",
+          "end": "00:57:31,302"
+        }
+      ],
+      "video": {
+        "start": "01:00:20,505",
+        "end": "01:00:21,906"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "You don't want to do the show.",
+          "start": "01:00:56,874",
+          "end": "01:00:58,843"
+        },
+        {
+          "label": "C",
+          "text": "One, two, three, four.",
+          "start": "00:58:02,300",
+          "end": "00:58:04,402"
+        },
+        {
+          "label": "B",
+          "text": "Would you like some ice cream, ma'am?",
+          "start": "00:56:03,548",
+          "end": "00:56:06,418"
+        }
+      ],
+      "video": {
+        "start": "01:00:56,874",
+        "end": "01:00:58,843"
       }
     },
     {
@@ -414,89 +1156,89 @@
       "options": [
         {
           "label": "A",
-          "text": "Now the whole world thinks I got",
-          "start": "01:07:23,861",
-          "end": "01:07:25,263"
+          "text": "There's... there's no rock star living here anymore.",
+          "start": "01:01:40,351",
+          "end": "01:01:44,322"
         },
         {
           "label": "C",
-          "text": "You drink it.",
-          "start": "01:00:40,858",
-          "end": "01:00:42,427"
+          "text": "He keeps missing the catch.",
+          "start": "00:55:05,490",
+          "end": "00:55:07,392"
         },
         {
           "label": "B",
-          "text": "I just need time with him.",
-          "start": "01:02:22,927",
-          "end": "01:02:25,797"
+          "text": "You drink it.",
+          "start": "01:00:40,858",
+          "end": "01:00:42,427"
         }
       ],
       "video": {
-        "start": "01:07:23,861",
-        "end": "01:07:25,263"
+        "start": "01:01:40,351",
+        "end": "01:01:44,322"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "00:59:20,845",
-      "end": "00:59:22,347",
-      "text": "Well, there you go."
+      "start": "00:53:57,555",
+      "end": "00:54:00,525",
+      "text": "Holy moly, it really is."
     },
     {
       "question": 2,
-      "start": "00:59:44,736",
-      "end": "00:59:46,471",
-      "text": "I know, I know."
+      "start": "00:55:01,653",
+      "end": "00:55:03,555",
+      "text": "Porsha, you're still messing it up."
     },
     {
       "question": 3,
-      "start": "01:00:11,996",
-      "end": "01:00:13,965",
-      "text": "Uh, honestly, th-this is gonna be"
+      "start": "00:55:26,009",
+      "end": "00:55:27,412",
+      "text": "Step together, drop."
     },
     {
       "question": 4,
-      "start": "01:00:18,836",
-      "end": "01:00:20,471",
-      "text": "Turn on that tap for me."
+      "start": "00:55:49,534",
+      "end": "00:55:51,069",
+      "text": "I... I should know."
     },
     {
       "question": 5,
-      "start": "01:00:46,798",
-      "end": "01:00:48,700",
-      "text": "I mean, fantastic show ever."
+      "start": "00:56:34,145",
+      "end": "00:56:37,282",
+      "text": "That's cherry cheesecake, and I-I make it all myself."
     },
     {
       "question": 6,
-      "start": "01:00:52,403",
-      "end": "01:00:54,972",
-      "text": "I mean, i-it's gonna end with you"
+      "start": "00:57:41,112",
+      "end": "00:57:44,382",
+      "text": "Your friend left this on my property."
     },
     {
       "question": 7,
-      "start": "01:01:18,730",
-      "end": "01:01:20,465",
-      "text": "All of my songs."
+      "start": "00:58:20,752",
+      "end": "00:58:22,453",
+      "text": "We'll build up to it step-by-step."
     },
     {
       "question": 8,
-      "start": "01:01:31,409",
-      "end": "01:01:35,480",
-      "text": "I mean, you out here on your own"
+      "start": "00:59:47,939",
+      "end": "00:59:51,442",
+      "text": "It's 'cause I really want to talk to him."
     },
     {
       "question": 9,
-      "start": "01:01:46,390",
-      "end": "01:01:48,826",
-      "text": "Your songs will bring you back."
+      "start": "01:00:48,733",
+      "end": "01:00:50,334",
+      "text": "Did you put honey in this?"
     },
     {
       "question": 10,
-      "start": "01:01:57,401",
-      "end": "01:01:59,437",
-      "text": "And for good reason."
+      "start": "01:01:18,730",
+      "end": "01:01:20,465",
+      "text": "All of my songs."
     }
   ]
 }

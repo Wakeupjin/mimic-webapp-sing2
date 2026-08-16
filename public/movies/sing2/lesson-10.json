@@ -1,13 +1,668 @@
 {
   "watching": {
-    "start": "01:15:57,208",
-    "end": "01:22:50,054"
+    "start": "01:10:17,402",
+    "end": "01:16:08,920"
   },
-  "mimicking": [
+  "fullSubtitles": [
+    {
+      "start": "01:10:17,402",
+      "end": "01:10:19,036",
+      "text": "He tried to kill me."
+    },
+    {
+      "start": "01:10:19,070",
+      "end": "01:10:20,938",
+      "text": "Yeah, and when he finds you're gone, he'll have his thugs"
+    },
+    {
+      "start": "01:10:20,971",
+      "end": "01:10:22,840",
+      "text": "looking all over for you."
+    },
+    {
+      "start": "01:10:22,873",
+      "end": "01:10:25,176",
+      "text": "Okay. Thank you, Suki. I'm so, so..."
+    },
+    {
+      "start": "01:10:25,210",
+      "end": "01:10:26,411",
+      "text": "Get out of here."
+    },
+    {
+      "start": "01:10:31,048",
+      "end": "01:10:33,585",
+      "text": "Uh, what did you say, Mr. Moon?"
+    },
+    {
+      "start": "01:10:33,618",
+      "end": "01:10:35,120",
+      "text": "Get out! All of you!"
+    },
+    {
+      "start": "01:10:35,153",
+      "end": "01:10:36,887",
+      "text": "Get out of there right now!"
+    },
+    {
+      "start": "01:10:36,920",
+      "end": "01:10:38,590",
+      "text": "There's no time to explain. Just get the cast"
+    },
+    {
+      "start": "01:10:38,623",
+      "end": "01:10:40,924",
+      "text": "and meet me back at the hotel!"
+    },
+    {
+      "start": "01:10:42,394",
+      "end": "01:10:45,829",
+      "text": "And we're live in five, four,"
+    },
+    {
+      "start": "01:10:45,863",
+      "end": "01:10:48,199",
+      "text": "three, two..."
+    },
+    {
+      "start": "01:10:49,167",
+      "end": "01:10:51,169",
+      "text": "♪ Hot News ♪"
+    },
+    {
+      "start": "01:10:51,202",
+      "end": "01:10:53,238",
+      "text": "- ♪ Hot News... ♪ - Jerry, go get my snacks."
+    },
+    {
+      "start": "01:10:53,271",
+      "end": "01:10:54,972",
+      "text": "Yes, sir."
+    },
+    {
+      "start": "01:10:59,377",
+      "end": "01:11:01,279",
+      "text": "What a great show we have..."
+    },
+    {
+      "start": "01:11:04,482",
+      "end": "01:11:06,117",
+      "text": "Here to discuss the drama"
+    },
+    {
+      "start": "01:11:06,151",
+      "end": "01:11:08,153",
+      "text": "- surrounding his new show... - Sir! Uh, sir, sir, sir."
+    },
+    {
+      "start": "01:11:08,186",
+      "end": "01:11:10,020",
+      "text": "- Mr. Redshore City himself... - What?"
+    },
+    {
+      "start": "01:11:10,055",
+      "end": "01:11:13,023",
+      "text": "...please welcome Mr. Jimmy Crystal."
+    },
+    {
+      "start": "01:11:13,058",
+      "end": "01:11:15,060",
+      "text": "Come on out here, Jimmy."
+    },
+    {
+      "start": "01:11:15,093",
+      "end": "01:11:17,062",
+      "text": "- Don't make us beg. - Moon got out."
+    },
+    {
+      "start": "01:11:17,095",
+      "end": "01:11:19,064",
+      "text": "- Find him. - Does this guy know"
+    },
+    {
+      "start": "01:11:19,097",
+      "end": "01:11:21,232",
+      "text": "how to make an entrance or what?"
+    },
+    {
+      "start": "01:11:21,266",
+      "end": "01:11:23,134",
+      "text": "Hey, everybody!"
+    },
+    {
+      "start": "01:11:23,168",
+      "end": "01:11:24,569",
+      "text": "Good to see you."
+    },
+    {
+      "start": "01:11:24,602",
+      "end": "01:11:26,271",
+      "text": "Linda, I got some hot news for you."
+    },
+    {
+      "start": "01:11:26,304",
+      "end": "01:11:28,106",
+      "text": "You look terrific."
+    },
+    {
+      "start": "01:11:28,139",
+      "end": "01:11:30,040",
+      "text": "It is so good to see you."
+    },
+    {
+      "start": "01:11:30,075",
+      "end": "01:11:31,543",
+      "text": "Well, thank you. Thank you for having me."
+    },
+    {
+      "start": "01:11:32,644",
+      "end": "01:11:34,212",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "01:11:34,245",
+      "end": "01:11:36,081",
+      "text": "Billionaire Magazine Man of the Year"
+    },
+    {
+      "start": "01:11:36,114",
+      "end": "01:11:37,215",
+      "text": "three years in a row,"
+    },
+    {
+      "start": "01:11:37,248",
+      "end": "01:11:39,284",
+      "text": "owner of the largest..."
+    },
+    {
+      "start": "01:11:39,317",
+      "end": "01:11:40,884",
+      "text": "theater chain in the world..."
+    },
+    {
+      "start": "01:11:52,330",
+      "end": "01:11:54,099",
+      "text": "Buster?"
+    },
+    {
+      "start": "01:11:54,132",
+      "end": "01:11:55,433",
+      "text": "Ash?"
+    },
+    {
+      "start": "01:11:55,467",
+      "end": "01:11:57,302",
+      "text": "Ash, in here!"
+    },
+    {
+      "start": "01:11:57,335",
+      "end": "01:11:58,503",
+      "text": "Buster?"
+    },
+    {
+      "start": "01:12:00,405",
+      "end": "01:12:02,307",
+      "text": "I-I'm stuck!"
+    },
+    {
+      "start": "01:12:02,340",
+      "end": "01:12:03,907",
+      "text": "You got to be kidding me."
+    },
+    {
+      "start": "01:12:03,941",
+      "end": "01:12:05,110",
+      "text": "Hold still."
+    },
+    {
+      "start": "01:12:05,143",
+      "end": "01:12:07,078",
+      "text": "What are you doing in there?"
+    },
+    {
+      "start": "01:12:07,112",
+      "end": "01:12:08,979",
+      "text": "Ash, the show's off."
+    },
+    {
+      "start": "01:12:09,012",
+      "end": "01:12:10,181",
+      "text": "Crystal got mad"
+    },
+    {
+      "start": "01:12:10,215",
+      "end": "01:12:11,516",
+      "text": "- and tried to kill me. - What?"
+    },
+    {
+      "start": "01:12:13,016",
+      "end": "01:12:14,552",
+      "text": "I thought you were his thugs"
+    },
+    {
+      "start": "01:12:14,586",
+      "end": "01:12:16,087",
+      "text": "coming here to finish me off."
+    },
+    {
+      "start": "01:12:17,422",
+      "end": "01:12:20,392",
+      "text": "Oh, no. It's them."
+    },
+    {
+      "start": "01:12:20,425",
+      "end": "01:12:22,193",
+      "text": "Shh. Pretend we're not here."
+    },
+    {
+      "start": "01:12:24,027",
+      "end": "01:12:26,164",
+      "text": "The first time I leave home in 15 years,"
+    },
+    {
+      "start": "01:12:26,197",
+      "end": "01:12:27,565",
+      "text": "and what do I find?"
+    },
+    {
+      "start": "01:12:27,599",
+      "end": "01:12:30,168",
+      "text": "The show is off, and this guy is hiding in a suitcase."
+    },
+    {
+      "start": "01:12:30,201",
+      "end": "01:12:33,071",
+      "text": "No, no, don't... don't open the door."
+    },
+    {
+      "start": "01:12:33,104",
+      "end": "01:12:34,972",
+      "text": "No, no, no."
+    },
+    {
+      "start": "01:12:39,177",
+      "end": "01:12:41,312",
+      "text": "Clay Calloway."
+    },
+    {
+      "start": "01:12:42,714",
+      "end": "01:12:44,315",
+      "text": "I remember you."
+    },
+    {
+      "start": "01:12:46,184",
+      "end": "01:12:47,685",
+      "text": "Miss Crawly."
+    },
+    {
+      "start": "01:12:47,719",
+      "end": "01:12:50,388",
+      "text": "- Pew, pew. Pew. - Miss Crawly, wake up."
+    },
+    {
+      "start": "01:12:50,422",
+      "end": "01:12:51,955",
+      "text": "Wha... Mm, what?"
+    },
+    {
+      "start": "01:12:51,989",
+      "end": "01:12:53,658",
+      "text": "Wake up. We got to get out of here."
+    },
+    {
+      "start": "01:12:53,691",
+      "end": "01:12:54,958",
+      "text": "Coast is clear. Let's go."
+    },
+    {
+      "start": "01:12:54,992",
+      "end": "01:12:56,127",
+      "text": "Come on, Miss Crawly. Come on."
+    },
+    {
+      "start": "01:12:56,161",
+      "end": "01:12:57,495",
+      "text": "Come on. Come on."
+    },
+    {
+      "start": "01:12:57,529",
+      "end": "01:12:59,597",
+      "text": "We'll all feel better when we're safe at home."
+    },
+    {
+      "start": "01:12:59,631",
+      "end": "01:13:01,166",
+      "text": "You sure about that?"
+    },
+    {
+      "start": "01:13:01,199",
+      "end": "01:13:04,702",
+      "text": "'Cause I can tell you, running and hiding away"
+    },
+    {
+      "start": "01:13:04,736",
+      "end": "01:13:07,472",
+      "text": "is not all that it's cracked up to be."
+    },
+    {
+      "start": "01:13:07,505",
+      "end": "01:13:10,642",
+      "text": "Well, we don't have a choice."
+    },
+    {
+      "start": "01:13:10,675",
+      "end": "01:13:13,578",
+      "text": "Yeah, well, all these years,"
+    },
+    {
+      "start": "01:13:13,611",
+      "end": "01:13:16,181",
+      "text": "I thought the same, but turns out"
+    },
+    {
+      "start": "01:13:16,214",
+      "end": "01:13:18,149",
+      "text": "there's always a choice."
+    },
+    {
+      "start": "01:13:18,183",
+      "end": "01:13:21,619",
+      "text": "Just never had the guts to make the right one."
+    },
+    {
+      "start": "01:13:21,653",
+      "end": "01:13:24,055",
+      "text": "Know what I mean?"
+    },
+    {
+      "start": "01:13:24,088",
+      "end": "01:13:25,723",
+      "text": "Right? A victim."
+    },
+    {
+      "start": "01:13:25,757",
+      "end": "01:13:27,358",
+      "text": "I shut down my show"
+    },
+    {
+      "start": "01:13:27,392",
+      "end": "01:13:30,428",
+      "text": "'cause of a talentless little twerp called Buster Moon."
+    },
+    {
+      "start": "01:13:30,462",
+      "end": "01:13:33,598",
+      "text": "Seriously, you should've seen this teeny, tiny loser."
+    },
+    {
+      "start": "01:13:33,631",
+      "end": "01:13:35,733",
+      "text": "Oh, and his pathetic amateur friends..."
+    },
+    {
+      "start": "01:13:35,767",
+      "end": "01:13:37,402",
+      "text": "let's just say, whatever Podunk town"
+    },
+    {
+      "start": "01:13:37,435",
+      "end": "01:13:39,370",
+      "text": "they crawled out of, that's where they belong,"
+    },
+    {
+      "start": "01:13:39,404",
+      "end": "01:13:42,973",
+      "text": "'cause it sure ain't this great city."
+    },
+    {
+      "start": "01:13:47,245",
+      "end": "01:13:48,713",
+      "text": "No."
+    },
+    {
+      "start": "01:13:48,746",
+      "end": "01:13:50,482",
+      "text": "I see, Clay's right."
+    },
+    {
+      "start": "01:13:50,515",
+      "end": "01:13:53,718",
+      "text": "What we're trying to do here, it takes guts."
+    },
+    {
+      "start": "01:13:55,520",
+      "end": "01:13:56,754",
+      "text": "Guys, wait."
+    },
+    {
+      "start": "01:13:56,788",
+      "end": "01:13:58,756",
+      "text": "We-we cannot let that-that-that-that..."
+    },
+    {
+      "start": "01:13:58,790",
+      "end": "01:14:01,092",
+      "text": "that bully steal our hopes and dreams."
+    },
+    {
+      "start": "01:14:01,125",
+      "end": "01:14:03,761",
+      "text": "No, no, no. We are way past singing and dancing now."
+    },
+    {
+      "start": "01:14:03,795",
+      "end": "01:14:05,463",
+      "text": "Look, I-I know this might sound crazy."
+    },
+    {
+      "start": "01:14:05,497",
+      "end": "01:14:07,632",
+      "text": "- If we got the theater back... - Oh, come on."
+    },
+    {
+      "start": "01:14:07,665",
+      "end": "01:14:09,167",
+      "text": "- Just for one night only. - Seriously?"
+    },
+    {
+      "start": "01:14:09,200",
+      "end": "01:14:10,802",
+      "text": "It's not like we can just sneak in there"
+    },
+    {
+      "start": "01:14:10,835",
+      "end": "01:14:13,271",
+      "text": "and put the show on behind Crystal's back."
+    },
+    {
+      "start": "01:14:14,172",
+      "end": "01:14:17,175",
+      "text": "That is exactly what we're gonna do."
+    },
+    {
+      "start": "01:14:17,208",
+      "end": "01:14:18,176",
+      "text": "Yes!"
+    },
+    {
+      "start": "01:14:20,778",
+      "end": "01:14:22,714",
+      "text": "Maybe it's, like, room service?"
+    },
+    {
+      "start": "01:14:24,282",
+      "end": "01:14:26,150",
+      "text": "Open up or you're dead, Moon!"
+    },
+    {
+      "start": "01:14:26,184",
+      "end": "01:14:28,119",
+      "text": "Okay, it's not room service."
+    },
+    {
+      "start": "01:14:28,152",
+      "end": "01:14:30,655",
+      "text": "You and your dumb friends better not be hiding in there."
+    },
+    {
+      "start": "01:14:30,688",
+      "end": "01:14:32,056",
+      "text": "What are we gonna do?"
+    },
+    {
+      "start": "01:14:32,090",
+      "end": "01:14:33,558",
+      "text": "Guys, we just got to be brave now."
+    },
+    {
+      "start": "01:14:33,591",
+      "end": "01:14:35,393",
+      "text": "Are you saying we should fight these thugs?"
+    },
+    {
+      "start": "01:14:35,426",
+      "end": "01:14:37,095",
+      "text": "No, no. They'll beat us to a pulp."
+    },
+    {
+      "start": "01:14:38,296",
+      "end": "01:14:39,764",
+      "text": "We're gonna put this show on"
+    },
+    {
+      "start": "01:14:39,797",
+      "end": "01:14:41,366",
+      "text": "whether Crystal likes it or not."
+    },
+    {
+      "start": "01:14:41,399",
+      "end": "01:14:44,669",
+      "text": "But first, we're gonna jump out that window."
+    },
+    {
+      "start": "01:14:44,702",
+      "end": "01:14:46,137",
+      "text": "What?"
+    },
+    {
+      "start": "01:14:46,170",
+      "end": "01:14:48,406",
+      "text": "I'm beginning to like this guy."
+    },
+    {
+      "start": "01:14:58,116",
+      "end": "01:14:59,684",
+      "text": "Security. Yeah, we got nine suspects"
+    },
+    {
+      "start": "01:14:59,717",
+      "end": "01:15:01,252",
+      "text": "loose on the river ride."
+    },
+    {
+      "start": "01:15:01,286",
+      "end": "01:15:04,155",
+      "text": "Repeat, nine suspects loose on the river ride."
+    },
+    {
+      "start": "01:15:04,188",
+      "end": "01:15:06,824",
+      "text": "Hang on, everybody."
+    },
+    {
+      "start": "01:15:06,858",
+      "end": "01:15:08,560",
+      "text": "Uh, this is pool security."
+    },
+    {
+      "start": "01:15:08,593",
+      "end": "01:15:10,395",
+      "text": "I don't see anyone here. Over."
+    },
+    {
+      "start": "01:15:10,428",
+      "end": "01:15:11,596",
+      "text": "There!"
+    },
+    {
+      "start": "01:15:11,629",
+      "end": "01:15:13,865",
+      "text": "They're heading east through the back lot!"
+    },
+    {
+      "start": "01:15:13,898",
+      "end": "01:15:15,333",
+      "text": "Go, go, go, go, go."
+    },
+    {
+      "start": "01:15:15,366",
+      "end": "01:15:17,468",
+      "text": "Oh, I wish I didn't have..."
+    },
+    {
+      "start": "01:15:17,502",
+      "end": "01:15:19,170",
+      "text": "such teeny, tiny legs!"
+    },
+    {
+      "start": "01:15:22,874",
+      "end": "01:15:25,410",
+      "text": "- ♪ Soy yo ♪ - ♪ Soy, soy, soy ♪"
+    },
+    {
+      "start": "01:15:25,443",
+      "end": "01:15:28,146",
+      "text": "- ♪ Soy, soy, soy, soy ♪ - ♪ Soy yo ♪"
+    },
+    {
+      "start": "01:15:28,179",
+      "end": "01:15:29,847",
+      "text": "♪ Yo, yo, yo, yo... ♪"
+    },
+    {
+      "start": "01:15:29,881",
+      "end": "01:15:31,583",
+      "text": "Thank you, Linda."
+    },
+    {
+      "start": "01:15:31,616",
+      "end": "01:15:33,318",
+      "text": "Thank you. Thanks, everybody."
+    },
+    {
+      "start": "01:15:35,587",
+      "end": "01:15:37,255",
+      "text": "Well?"
+    },
+    {
+      "start": "01:15:37,288",
+      "end": "01:15:38,456",
+      "text": "Uh, no sign of 'em, sir."
+    },
+    {
+      "start": "01:15:38,489",
+      "end": "01:15:39,857",
+      "text": "We think they might have split town."
+    },
+    {
+      "start": "01:15:51,536",
+      "end": "01:15:54,505",
+      "text": "No one is supposed to be in here."
+    },
+    {
+      "start": "01:15:54,539",
+      "end": "01:15:57,175",
+      "text": "Uh, who are you?"
+    },
     {
       "start": "01:15:57,208",
       "end": "01:15:58,876",
       "text": "We're the night cleaners."
+    },
+    {
+      "start": "01:15:58,910",
+      "end": "01:16:00,378",
+      "text": "Oh, I see."
     },
     {
       "start": "01:16:00,411",
@@ -15,144 +670,166 @@
       "text": "Well, we don't need any cleaning right now,"
     },
     {
-      "start": "01:16:18,496",
-      "end": "01:16:19,697",
-      "text": "It's your role."
+      "start": "01:16:02,580",
+      "end": "01:16:05,750",
+      "text": "but it'd be better if you didn't leave, so..."
     },
     {
-      "start": "01:16:35,813",
-      "end": "01:16:37,382",
-      "text": "Hey! You made it!"
+      "start": "01:16:05,783",
+      "end": "01:16:08,920",
+      "text": "Mm, I don't suppose any of you can tap-dance, huh?"
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "01:10:17,402",
+      "end": "01:10:19,036",
+      "text": "He tried to kill me."
     },
     {
-      "start": "01:16:43,421",
-      "end": "01:16:45,189",
-      "text": "Yeah, okay, we're all good now."
+      "start": "01:10:31,048",
+      "end": "01:10:33,585",
+      "text": "Uh, what did you say, Mr. Moon?"
     },
     {
-      "start": "01:16:55,466",
-      "end": "01:16:58,770",
-      "text": "Right. Mm-hmm. Yeah. Yeah."
+      "start": "01:10:35,153",
+      "end": "01:10:36,887",
+      "text": "Get out of there right now!"
     },
     {
-      "start": "01:17:34,405",
-      "end": "01:17:35,940",
-      "text": "Good night, Porsha."
+      "start": "01:11:23,168",
+      "end": "01:11:24,569",
+      "text": "Good to see you."
     },
     {
-      "start": "01:17:42,013",
-      "end": "01:17:44,549",
-      "text": "All right, time to get us an audience."
+      "start": "01:11:26,304",
+      "end": "01:11:28,106",
+      "text": "You look terrific."
     },
     {
-      "start": "01:17:50,421",
-      "end": "01:17:52,790",
-      "text": "Oh, it's okay. Rosita's got that covered."
+      "start": "01:11:30,075",
+      "end": "01:11:31,543",
+      "text": "Well, thank you. Thank you for having me."
     },
     {
-      "start": "01:18:17,648",
-      "end": "01:18:20,752",
-      "text": "Repeat, all security to floor 17."
+      "start": "01:11:55,467",
+      "end": "01:11:57,302",
+      "text": "Ash, in here!"
     },
     {
-      "start": "01:18:32,064",
-      "end": "01:18:33,931",
-      "text": "- Yes, it's on now. - Oh, now?"
+      "start": "01:12:05,143",
+      "end": "01:12:07,078",
+      "text": "What are you doing in there?"
     },
     {
-      "start": "01:18:42,940",
-      "end": "01:18:45,376",
-      "text": "for one night only in the Crystal Tower Theater..."
+      "start": "01:12:17,422",
+      "end": "01:12:20,392",
+      "text": "Oh, no. It's them."
     },
     {
-      "start": "01:18:46,911",
-      "end": "01:18:48,379",
-      "text": "This is Jerry speaking."
+      "start": "01:12:30,201",
+      "end": "01:12:33,071",
+      "text": "No, no, don't... don't open the door."
     },
     {
-      "start": "01:18:55,653",
-      "end": "01:18:57,789",
-      "text": "the legendary Clay Calloway."
+      "start": "01:12:42,714",
+      "end": "01:12:44,315",
+      "text": "I remember you."
     },
     {
-      "start": "01:19:04,495",
-      "end": "01:19:07,465",
-      "text": "so step right up, folks, and take your seats."
+      "start": "01:12:51,989",
+      "end": "01:12:53,658",
+      "text": "Wake up. We got to get out of here."
     },
     {
-      "start": "01:19:13,704",
-      "end": "01:19:15,406",
-      "text": "There he is!"
+      "start": "01:12:56,161",
+      "end": "01:12:57,495",
+      "text": "Come on. Come on."
     },
     {
-      "start": "01:19:18,843",
-      "end": "01:19:20,478",
-      "text": "Oh, well, we're still doing"
+      "start": "01:12:59,631",
+      "end": "01:13:01,166",
+      "text": "You sure about that?"
     },
     {
-      "start": "01:19:23,581",
-      "end": "01:19:25,917",
-      "text": "Oh, my gosh. He's here."
+      "start": "01:13:18,183",
+      "end": "01:13:21,619",
+      "text": "Just never had the guts to make the right one."
     },
     {
-      "start": "01:19:32,124",
-      "end": "01:19:34,559",
-      "text": "- Mr. Crystal! Mr. Crystal! - Aah! Jerry!"
+      "start": "01:13:24,088",
+      "end": "01:13:25,723",
+      "text": "Right? A victim."
     },
     {
-      "start": "01:19:38,996",
-      "end": "01:19:40,598",
-      "text": "and he's putting on a show right now."
+      "start": "01:13:48,746",
+      "end": "01:13:50,482",
+      "text": "I see, Clay's right."
     },
     {
-      "start": "01:19:55,479",
-      "end": "01:19:56,848",
-      "text": "Yeah, you better believe it."
+      "start": "01:14:01,125",
+      "end": "01:14:03,761",
+      "text": "No, no, no. We are way past singing and dancing now."
     },
     {
-      "start": "01:20:06,058",
-      "end": "01:20:08,893",
-      "text": "Gunter robot activating piggy power."
+      "start": "01:14:14,172",
+      "end": "01:14:17,175",
+      "text": "That is exactly what we're gonna do."
     },
     {
-      "start": "01:20:33,885",
-      "end": "01:20:36,721",
-      "text": "My name is Captain Rosita."
+      "start": "01:14:26,184",
+      "end": "01:14:28,119",
+      "text": "Okay, it's not room service."
     },
     {
-      "start": "01:20:40,625",
-      "end": "01:20:43,661",
-      "text": "who mysteriously went missing long ago."
+      "start": "01:14:30,688",
+      "end": "01:14:32,056",
+      "text": "What are we gonna do?"
     },
     {
-      "start": "01:20:49,934",
-      "end": "01:20:51,502",
-      "text": "I see four of them ahead."
+      "start": "01:14:33,591",
+      "end": "01:14:35,393",
+      "text": "Are you saying we should fight these thugs?"
     },
     {
-      "start": "01:20:57,175",
-      "end": "01:20:59,177",
-      "text": "Then I'll have to explore them all."
+      "start": "01:14:41,399",
+      "end": "01:14:44,669",
+      "text": "But first, we're gonna jump out that window."
     },
     {
-      "start": "01:21:02,914",
-      "end": "01:21:05,583",
-      "text": "Remember what I said... just go with the flow."
+      "start": "01:15:01,286",
+      "end": "01:15:04,155",
+      "text": "Repeat, nine suspects loose on the river ride."
     },
     {
-      "start": "01:21:09,854",
-      "end": "01:21:13,591",
-      "text": "for I have landed on the Planet of War."
+      "start": "01:15:06,858",
+      "end": "01:15:08,560",
+      "text": "Uh, this is pool security."
     },
     {
-      "start": "01:22:34,705",
-      "end": "01:22:36,807",
-      "text": "- And your costume. Now! - Wait, what?"
+      "start": "01:15:11,629",
+      "end": "01:15:13,865",
+      "text": "They're heading east through the back lot!"
     },
     {
-      "start": "01:22:48,686",
-      "end": "01:22:50,054",
-      "text": "Yeah, we want to be there now."
+      "start": "01:15:29,881",
+      "end": "01:15:31,583",
+      "text": "Thank you, Linda."
+    },
+    {
+      "start": "01:15:38,489",
+      "end": "01:15:39,857",
+      "text": "We think they might have split town."
+    },
+    {
+      "start": "01:15:57,208",
+      "end": "01:15:58,876",
+      "text": "We're the night cleaners."
+    },
+    {
+      "start": "01:16:05,783",
+      "end": "01:16:08,920",
+      "text": "Mm, I don't suppose any of you can tap-dance, huh?"
     }
   ],
   "guessing": [
@@ -162,138 +839,138 @@
       "options": [
         {
           "label": "A",
-          "text": "It's your role.",
-          "start": "01:16:18,496",
-          "end": "01:16:19,697"
-        },
-        {
-          "label": "C",
-          "text": "This is Jerry speaking.",
-          "start": "01:18:46,911",
-          "end": "01:18:48,379"
+          "text": "Get out of there right now!",
+          "start": "01:10:35,153",
+          "end": "01:10:36,887"
         },
         {
           "label": "B",
-          "text": "Oh, well, we're still doing",
-          "start": "01:19:18,843",
-          "end": "01:19:20,478"
+          "text": "What are we gonna do?",
+          "start": "01:14:30,688",
+          "end": "01:14:32,056"
+        },
+        {
+          "label": "C",
+          "text": "No, no, don't... don't open the door.",
+          "start": "01:12:30,201",
+          "end": "01:12:33,071"
         }
       ],
       "video": {
-        "start": "01:16:18,496",
-        "end": "01:16:19,697"
+        "start": "01:10:35,153",
+        "end": "01:10:36,887"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
         {
+          "label": "B",
+          "text": "Well, thank you. Thank you for having me.",
+          "start": "01:11:30,075",
+          "end": "01:11:31,543"
+        },
+        {
           "label": "A",
-          "text": "Right. Mm-hmm. Yeah. Yeah.",
-          "start": "01:16:55,466",
-          "end": "01:16:58,770"
+          "text": "Repeat, nine suspects loose on the river ride.",
+          "start": "01:15:01,286",
+          "end": "01:15:04,155"
         },
         {
           "label": "C",
-          "text": "the legendary Clay Calloway.",
-          "start": "01:18:55,653",
-          "end": "01:18:57,789"
-        },
-        {
-          "label": "B",
-          "text": "- Mr. Crystal! Mr. Crystal! - Aah! Jerry!",
-          "start": "01:19:32,124",
-          "end": "01:19:34,559"
+          "text": "But first, we're gonna jump out that window.",
+          "start": "01:14:41,399",
+          "end": "01:14:44,669"
         }
       ],
       "video": {
-        "start": "01:16:55,466",
-        "end": "01:16:58,770"
+        "start": "01:11:30,075",
+        "end": "01:11:31,543"
       }
     },
     {
       "question": 3,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "C",
-          "text": "Oh, it's okay. Rosita's got that covered.",
-          "start": "01:17:50,421",
-          "end": "01:17:52,790"
-        },
-        {
           "label": "B",
-          "text": "- Yes, it's on now. - Oh, now?",
-          "start": "01:18:32,064",
-          "end": "01:18:33,931"
+          "text": "Oh, no. It's them.",
+          "start": "01:12:17,422",
+          "end": "01:12:20,392"
         },
         {
           "label": "A",
-          "text": "It's your role.",
-          "start": "01:16:18,496",
-          "end": "01:16:19,697"
+          "text": "Okay, it's not room service.",
+          "start": "01:14:26,184",
+          "end": "01:14:28,119"
+        },
+        {
+          "label": "C",
+          "text": "Uh, this is pool security.",
+          "start": "01:15:06,858",
+          "end": "01:15:08,560"
         }
       ],
       "video": {
-        "start": "01:17:50,421",
-        "end": "01:17:52,790"
+        "start": "01:12:17,422",
+        "end": "01:12:20,392"
       }
     },
     {
       "question": 4,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
+          "label": "B",
+          "text": "Wake up. We got to get out of here.",
+          "start": "01:12:51,989",
+          "end": "01:12:53,658"
+        },
+        {
           "label": "C",
-          "text": "for one night only in the Crystal Tower Theater...",
-          "start": "01:18:42,940",
-          "end": "01:18:45,376"
+          "text": "Get out of there right now!",
+          "start": "01:10:35,153",
+          "end": "01:10:36,887"
         },
         {
           "label": "A",
-          "text": "so step right up, folks, and take your seats.",
-          "start": "01:19:04,495",
-          "end": "01:19:07,465"
-        },
-        {
-          "label": "B",
-          "text": "Good night, Porsha.",
-          "start": "01:17:34,405",
-          "end": "01:17:35,940"
+          "text": "Come on. Come on.",
+          "start": "01:12:56,161",
+          "end": "01:12:57,495"
         }
       ],
       "video": {
-        "start": "01:18:42,940",
-        "end": "01:18:45,376"
+        "start": "01:12:51,989",
+        "end": "01:12:53,658"
       }
     },
     {
       "question": 5,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "A",
-          "text": "so step right up, folks, and take your seats.",
-          "start": "01:19:04,495",
-          "end": "01:19:07,465"
-        },
-        {
           "label": "B",
-          "text": "My name is Captain Rosita.",
-          "start": "01:20:33,885",
-          "end": "01:20:36,721"
+          "text": "Just never had the guts to make the right one.",
+          "start": "01:13:18,183",
+          "end": "01:13:21,619"
         },
         {
           "label": "C",
-          "text": "All right, time to get us an audience.",
-          "start": "01:17:42,013",
-          "end": "01:17:44,549"
+          "text": "Thank you, Linda.",
+          "start": "01:15:29,881",
+          "end": "01:15:31,583"
+        },
+        {
+          "label": "A",
+          "text": "You sure about that?",
+          "start": "01:12:59,631",
+          "end": "01:13:01,166"
         }
       ],
       "video": {
-        "start": "01:19:04,495",
-        "end": "01:19:07,465"
+        "start": "01:13:18,183",
+        "end": "01:13:21,619"
       }
     },
     {
@@ -302,201 +979,201 @@
       "options": [
         {
           "label": "B",
-          "text": "Oh, my gosh. He's here.",
-          "start": "01:19:23,581",
-          "end": "01:19:25,917"
-        },
-        {
-          "label": "C",
-          "text": "and he's putting on a show right now.",
-          "start": "01:19:38,996",
-          "end": "01:19:40,598"
+          "text": "No, no, no. We are way past singing and dancing now.",
+          "start": "01:14:01,125",
+          "end": "01:14:03,761"
         },
         {
           "label": "A",
-          "text": "so step right up, folks, and take your seats.",
-          "start": "01:19:04,495",
-          "end": "01:19:07,465"
+          "text": "Mm, I don't suppose any of you can tap-dance, huh?",
+          "start": "01:16:05,783",
+          "end": "01:16:08,920"
+        },
+        {
+          "label": "C",
+          "text": "But first, we're gonna jump out that window.",
+          "start": "01:14:41,399",
+          "end": "01:14:44,669"
         }
       ],
       "video": {
-        "start": "01:19:23,581",
-        "end": "01:19:25,917"
+        "start": "01:14:01,125",
+        "end": "01:14:03,761"
       }
     },
     {
       "question": 7,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
+          "label": "C",
+          "text": "What are we gonna do?",
+          "start": "01:14:30,688",
+          "end": "01:14:32,056"
+        },
+        {
           "label": "A",
-          "text": "Yeah, you better believe it.",
-          "start": "01:19:55,479",
-          "end": "01:19:56,848"
+          "text": "You look terrific.",
+          "start": "01:11:26,304",
+          "end": "01:11:28,106"
         },
         {
           "label": "B",
-          "text": "This is Jerry speaking.",
-          "start": "01:18:46,911",
-          "end": "01:18:48,379"
-        },
-        {
-          "label": "C",
-          "text": "It's your role.",
-          "start": "01:16:18,496",
-          "end": "01:16:19,697"
+          "text": "No, no, don't... don't open the door.",
+          "start": "01:12:30,201",
+          "end": "01:12:33,071"
         }
       ],
       "video": {
-        "start": "01:19:55,479",
-        "end": "01:19:56,848"
+        "start": "01:14:30,688",
+        "end": "01:14:32,056"
       }
     },
     {
       "question": 8,
-      "correctAnswer": "C",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "C",
-          "text": "who mysteriously went missing long ago.",
-          "start": "01:20:40,625",
-          "end": "01:20:43,661"
-        },
-        {
           "label": "A",
-          "text": "Hey! You made it!",
-          "start": "01:16:35,813",
-          "end": "01:16:37,382"
+          "text": "Repeat, nine suspects loose on the river ride.",
+          "start": "01:15:01,286",
+          "end": "01:15:04,155"
         },
         {
           "label": "B",
-          "text": "and he's putting on a show right now.",
-          "start": "01:19:38,996",
-          "end": "01:19:40,598"
+          "text": "But first, we're gonna jump out that window.",
+          "start": "01:14:41,399",
+          "end": "01:14:44,669"
+        },
+        {
+          "label": "C",
+          "text": "Are you saying we should fight these thugs?",
+          "start": "01:14:33,591",
+          "end": "01:14:35,393"
         }
       ],
       "video": {
-        "start": "01:20:40,625",
-        "end": "01:20:43,661"
+        "start": "01:15:01,286",
+        "end": "01:15:04,155"
       }
     },
     {
       "question": 9,
-      "correctAnswer": "C",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "C",
-          "text": "Remember what I said... just go with the flow.",
-          "start": "01:21:02,914",
-          "end": "01:21:05,583"
+          "label": "A",
+          "text": "Thank you, Linda.",
+          "start": "01:15:29,881",
+          "end": "01:15:31,583"
         },
         {
           "label": "B",
-          "text": "All right, time to get us an audience.",
-          "start": "01:17:42,013",
-          "end": "01:17:44,549"
+          "text": "Just never had the guts to make the right one.",
+          "start": "01:13:18,183",
+          "end": "01:13:21,619"
         },
         {
-          "label": "A",
-          "text": "My name is Captain Rosita.",
-          "start": "01:20:33,885",
-          "end": "01:20:36,721"
+          "label": "C",
+          "text": "Well, thank you. Thank you for having me.",
+          "start": "01:11:30,075",
+          "end": "01:11:31,543"
         }
       ],
       "video": {
-        "start": "01:21:02,914",
-        "end": "01:21:05,583"
+        "start": "01:15:29,881",
+        "end": "01:15:31,583"
       }
     },
     {
       "question": 10,
-      "correctAnswer": "B",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "B",
-          "text": "Yeah, we want to be there now.",
-          "start": "01:22:48,686",
-          "end": "01:22:50,054"
+          "label": "A",
+          "text": "Mm, I don't suppose any of you can tap-dance, huh?",
+          "start": "01:16:05,783",
+          "end": "01:16:08,920"
         },
         {
-          "label": "A",
-          "text": "Right. Mm-hmm. Yeah. Yeah.",
-          "start": "01:16:55,466",
-          "end": "01:16:58,770"
+          "label": "B",
+          "text": "Good to see you.",
+          "start": "01:11:23,168",
+          "end": "01:11:24,569"
         },
         {
           "label": "C",
-          "text": "Oh, my gosh. He's here.",
-          "start": "01:19:23,581",
-          "end": "01:19:25,917"
+          "text": "You look terrific.",
+          "start": "01:11:26,304",
+          "end": "01:11:28,106"
         }
       ],
       "video": {
-        "start": "01:22:48,686",
-        "end": "01:22:50,054"
+        "start": "01:16:05,783",
+        "end": "01:16:08,920"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "01:15:57,208",
-      "end": "01:15:58,876",
-      "text": "We're the night cleaners."
+      "start": "01:10:17,402",
+      "end": "01:10:19,036",
+      "text": "He tried to kill me."
     },
     {
       "question": 2,
-      "start": "01:16:00,411",
-      "end": "01:16:02,547",
-      "text": "Well, we don't need any cleaning right now,"
+      "start": "01:11:23,168",
+      "end": "01:11:24,569",
+      "text": "Good to see you."
     },
     {
       "question": 3,
-      "start": "01:16:35,813",
-      "end": "01:16:37,382",
-      "text": "Hey! You made it!"
+      "start": "01:11:55,467",
+      "end": "01:11:57,302",
+      "text": "Ash, in here!"
     },
     {
       "question": 4,
-      "start": "01:16:43,421",
-      "end": "01:16:45,189",
-      "text": "Yeah, okay, we're all good now."
+      "start": "01:12:30,201",
+      "end": "01:12:33,071",
+      "text": "No, no, don't... don't open the door."
     },
     {
       "question": 5,
-      "start": "01:17:34,405",
-      "end": "01:17:35,940",
-      "text": "Good night, Porsha."
+      "start": "01:12:56,161",
+      "end": "01:12:57,495",
+      "text": "Come on. Come on."
     },
     {
       "question": 6,
-      "start": "01:17:42,013",
-      "end": "01:17:44,549",
-      "text": "All right, time to get us an audience."
+      "start": "01:13:48,746",
+      "end": "01:13:50,482",
+      "text": "I see, Clay's right."
     },
     {
       "question": 7,
-      "start": "01:18:17,648",
-      "end": "01:18:20,752",
-      "text": "Repeat, all security to floor 17."
+      "start": "01:14:26,184",
+      "end": "01:14:28,119",
+      "text": "Okay, it's not room service."
     },
     {
       "question": 8,
-      "start": "01:18:32,064",
-      "end": "01:18:33,931",
-      "text": "- Yes, it's on now. - Oh, now?"
+      "start": "01:14:41,399",
+      "end": "01:14:44,669",
+      "text": "But first, we're gonna jump out that window."
     },
     {
       "question": 9,
-      "start": "01:18:46,911",
-      "end": "01:18:48,379",
-      "text": "This is Jerry speaking."
+      "start": "01:15:11,629",
+      "end": "01:15:13,865",
+      "text": "They're heading east through the back lot!"
     },
     {
       "question": 10,
-      "start": "01:18:55,653",
-      "end": "01:18:57,789",
-      "text": "the legendary Clay Calloway."
+      "start": "01:15:57,208",
+      "end": "01:15:58,876",
+      "text": "We're the night cleaners."
     }
   ]
 }

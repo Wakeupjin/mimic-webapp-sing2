@@ -7,12 +7,11 @@ import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
 import WordCompleteButtons from '@/app/components/WordCompleteButtons';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
-import { fetchLessonData } from '@/app/dataService';
-import { supabase } from '@/app/supabaseClient';
+import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
-import { getVideoSource, getVideoSourceWithTimeRange } from '@/app/utils/videoSource';
+import { getVideoSource } from '@/app/utils/videoSource';
 
 interface WordQuestion {
   question: number;
@@ -64,28 +63,6 @@ function WordPageContent() {
     }
   }, [user, loading, router]);
 
-  // 로딩 중인 경우
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
-        </div>
-      </main>
-    );
-  }
-
-  // 인증되지 않은 경우
-  if (!user) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
-        </div>
-      </main>
-    );
-  }
   const [selectedWords, setSelectedWords] = useState<string[]>([]);
   const [gamePhase, setGamePhase] = useState<'playing' | 'guessing'>('playing');
   const [playNonce, setPlayNonce] = useState(0);
@@ -120,8 +97,7 @@ function WordPageContent() {
     const loadDataFromSupabase = async () => {
       setIsLoading(true);
 
-      const lessonNumberStr = movieId.split(':')[1];
-      const lessonNumber = parseInt(lessonNumberStr);
+      const lessonNumber = parseLessonNumber(movieId);
       setLessonNumber(lessonNumber);
 
       if (isNaN(lessonNumber)) {
@@ -130,30 +106,16 @@ function WordPageContent() {
       }
 
       try {
-        // 1. Lesson 데이터 (word_data 포함) 가져오기
         const lesson = await fetchLessonData(lessonNumber); 
 
         if (!lesson) {
           setIsLoading(false);
           return;
         }
-        
-        // 2. video_id를 이용해 Video URL 가져오기
-        const { data: videoResult, error: videoError } = await supabase
-          .from('videos')
-          .select('video_url')
-          .eq('id', lesson.video_id)
-          .single();
 
-        if (videoError || !videoResult) {
-          console.error('Video URL fetching error:', videoError);
-          setIsLoading(false);
-          return;
-        }
-
-        // 3. 상태 업데이트
+        const resolvedVideoUrl = await resolveVideoUrl(lesson.video_id);
         setSupabaseLessonData(lesson as LessonDataType); 
-        setVideoUrl(videoResult.video_url); 
+        setVideoUrl(resolvedVideoUrl); 
         setLessonData({ word: lesson.word_data || [] });
         setIsLoading(false);
         
@@ -532,8 +494,7 @@ function WordPageContent() {
           setIsMuted(false);
           setIsPlayingMuted(false);
           setGamePhase('playing');
-          setPlayNonce(0); // Reset playNonce to 0 BEFORE changing question
-          setCurrentQuestionNumber(prev => prev + 1); // This will trigger useEffect to generate question
+          setCurrentQuestionNumber(prev => prev + 1);
           setTimeout(() => {
             setPlayNonce(prev => prev + 1);
           }, 200);
@@ -560,6 +521,27 @@ function WordPageContent() {
       }, 2000);
     }
   };
+
+  if (loading) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (!user) {
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+        </div>
+      </main>
+    );
+  }
 
   // 로딩 화면
   if (isLoading || !supabaseLessonData || !videoUrl || !lessonData) {
@@ -682,11 +664,8 @@ function WordPageContent() {
                 <div style={{ marginTop: '-4px' }}>
                   {currentQuestion && (
                     <VideoPlayer
-                      key={`word-${currentQuestionNumber}`}
-                      src={currentQuestion ? getVideoSourceWithTimeRange(
-                        currentQuestion.startTime,
-                        currentQuestion.endTime
-                      ) : getVideoSource()}
+                      key="word-player"
+                      src={getVideoSource()}
                       startTime={currentQuestion.startTime}
                       endTime={currentQuestion.endTime}
                       onEndedSegment={handleVideoEnd}

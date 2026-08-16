@@ -1,18 +1,273 @@
 {
   "watching": {
-    "start": "00:50:38,356",
-    "end": "00:58:10,775"
+    "start": "00:48:59,023",
+    "end": "00:53:40,838"
   },
-  "mimicking": [
+  "fullSubtitles": [
+    {
+      "start": "00:48:59,023",
+      "end": "00:49:01,159",
+      "text": "She's right. Great hat."
+    },
+    {
+      "start": "00:49:02,693",
+      "end": "00:49:05,963",
+      "text": "You think some riffraff street dancer"
+    },
+    {
+      "start": "00:49:05,997",
+      "end": "00:49:07,232",
+      "text": "can help you more than me?"
+    },
+    {
+      "start": "00:49:07,265",
+      "end": "00:49:08,866",
+      "text": "- Riffraff? - Okay, okay. Hang on."
+    },
+    {
+      "start": "00:49:08,899",
+      "end": "00:49:10,634",
+      "text": "She's just gonna give me some extra lessons, that's all."
+    },
+    {
+      "start": "00:49:10,668",
+      "end": "00:49:13,604",
+      "text": "Oh, because I, Klaus Kickenklober,"
+    },
+    {
+      "start": "00:49:13,637",
+      "end": "00:49:17,008",
+      "text": "master choreographer, am not good enough for Johnny."
+    },
+    {
+      "start": "00:49:17,041",
+      "end": "00:49:20,145",
+      "text": "- No, that's not what I meant. - Yes, I'm irrelevant to him."
+    },
+    {
+      "start": "00:49:20,178",
+      "end": "00:49:22,880",
+      "text": "I'm just a stupid, fat, old monkey."
+    },
+    {
+      "start": "00:49:22,913",
+      "end": "00:49:24,749",
+      "text": "- I don't think that at all. - I do."
+    },
+    {
+      "start": "00:49:24,782",
+      "end": "00:49:26,218",
+      "text": "Shh! Please."
+    },
+    {
+      "start": "00:49:26,251",
+      "end": "00:49:27,885",
+      "text": "She's only trying to help me, that's all."
+    },
+    {
+      "start": "00:49:27,918",
+      "end": "00:49:30,088",
+      "text": "Dude, anyway, I only need two days with him."
+    },
+    {
+      "start": "00:49:30,122",
+      "end": "00:49:32,057",
+      "text": "Two days? Ha!"
+    },
+    {
+      "start": "00:49:32,090",
+      "end": "00:49:33,724",
+      "text": "200 years, more like."
+    },
+    {
+      "start": "00:49:33,758",
+      "end": "00:49:35,160",
+      "text": "Two days. He'll be amazing."
+    },
+    {
+      "start": "00:49:35,193",
+      "end": "00:49:36,694",
+      "text": "Oh, really?"
+    },
+    {
+      "start": "00:49:36,727",
+      "end": "00:49:41,766",
+      "text": "Well, if he is, I will eat my hat."
+    },
+    {
+      "start": "00:49:41,799",
+      "end": "00:49:44,269",
+      "text": "Okay, everybody, from the top."
+    },
+    {
+      "start": "00:49:44,302",
+      "end": "00:49:46,771",
+      "text": "Stand by, playback."
+    },
+    {
+      "start": "00:49:46,804",
+      "end": "00:49:48,906",
+      "text": "Lots of energy now, and..."
+    },
+    {
+      "start": "00:49:48,939",
+      "end": "00:49:51,042",
+      "text": "Wha...?"
+    },
+    {
+      "start": "00:49:52,310",
+      "end": "00:49:54,279",
+      "text": "Miss Crawly?"
+    },
+    {
+      "start": "00:49:54,312",
+      "end": "00:49:56,781",
+      "text": "You can't go back there, Mr. Moon."
+    },
+    {
+      "start": "00:49:56,814",
+      "end": "00:49:58,649",
+      "text": "- Never. Never. - What? What happened to you?"
+    },
+    {
+      "start": "00:49:58,682",
+      "end": "00:50:01,652",
+      "text": "That lion, you see, he's crazy. Crazy!"
+    },
+    {
+      "start": "00:50:01,685",
+      "end": "00:50:04,189",
+      "text": "Oh, he's crazy."
+    },
+    {
+      "start": "00:50:04,222",
+      "end": "00:50:06,324",
+      "text": "Pew. Pew, pew."
+    },
+    {
+      "start": "00:50:06,358",
+      "end": "00:50:07,858",
+      "text": "- Wow, she's a mess. - Pew, pew! Pew..."
+    },
+    {
+      "start": "00:50:07,892",
+      "end": "00:50:09,693",
+      "text": "So, you're not gonna go out there, are you?"
+    },
+    {
+      "start": "00:50:09,727",
+      "end": "00:50:10,961",
+      "text": "Gonna have to. I mean..."
+    },
+    {
+      "start": "00:50:10,995",
+      "end": "00:50:12,596",
+      "text": "All set over here, Mr. Moon."
+    },
+    {
+      "start": "00:50:12,630",
+      "end": "00:50:14,765",
+      "text": "Okay. Playback!"
+    },
+    {
+      "start": "00:50:16,268",
+      "end": "00:50:18,303",
+      "text": "Stand by, Rosita."
+    },
+    {
+      "start": "00:50:18,336",
+      "end": "00:50:20,805",
+      "text": "And... action!"
+    },
+    {
+      "start": "00:50:20,838",
+      "end": "00:50:23,707",
+      "text": "♪ Ooh, look what you made me do ♪"
+    },
+    {
+      "start": "00:50:23,741",
+      "end": "00:50:25,643",
+      "text": "♪ Look what you made me do ♪"
+    },
+    {
+      "start": "00:50:25,676",
+      "end": "00:50:27,312",
+      "text": "♪ Look what you just made me do ♪"
+    },
+    {
+      "start": "00:50:27,345",
+      "end": "00:50:28,813",
+      "text": "♪ Look what you just made me ♪"
+    },
+    {
+      "start": "00:50:28,846",
+      "end": "00:50:31,048",
+      "text": "♪ Ooh, look what you made me do ♪"
+    },
+    {
+      "start": "00:50:31,083",
+      "end": "00:50:33,218",
+      "text": "- And cue Porsha. - ♪ Look what you made me do ♪"
+    },
+    {
+      "start": "00:50:33,251",
+      "end": "00:50:35,019",
+      "text": "♪ Look what you just made me do ♪"
+    },
+    {
+      "start": "00:50:35,052",
+      "end": "00:50:37,122",
+      "text": "♪ Look what you just made me, ooh. ♪"
+    },
     {
       "start": "00:50:38,356",
       "end": "00:50:42,726",
       "text": "Take that, you nasty alien monster."
     },
     {
+      "start": "00:50:43,361",
+      "end": "00:50:45,130",
+      "text": "Did I do good?"
+    },
+    {
+      "start": "00:50:45,163",
+      "end": "00:50:46,964",
+      "text": "Yeah."
+    },
+    {
+      "start": "00:50:46,997",
+      "end": "00:50:49,367",
+      "text": "That was so good."
+    },
+    {
+      "start": "00:50:49,401",
+      "end": "00:50:50,968",
+      "text": "Yay!"
+    },
+    {
+      "start": "00:50:51,001",
+      "end": "00:50:52,337",
+      "text": "Did you hear that?"
+    },
+    {
       "start": "00:50:52,370",
       "end": "00:50:54,239",
       "text": "He thinks I'm awesome."
+    },
+    {
+      "start": "00:50:56,040",
+      "end": "00:50:58,310",
+      "text": "Okay, she cannot act."
+    },
+    {
+      "start": "00:50:58,343",
+      "end": "00:50:59,910",
+      "text": "Shh. I know. I know."
+    },
+    {
+      "start": "00:50:59,944",
+      "end": "00:51:01,745",
+      "text": "But I got to keep Mr. Crystal happy."
     },
     {
       "start": "00:51:01,779",
@@ -20,14 +275,69 @@
       "text": "Take that, you nasty alien monster."
     },
     {
+      "start": "00:51:04,748",
+      "end": "00:51:06,784",
+      "text": "Excuse me, but Mr. Crystal wants to see you."
+    },
+    {
+      "start": "00:51:06,817",
+      "end": "00:51:08,786",
+      "text": "Take that, you nasty alien monster."
+    },
+    {
+      "start": "00:51:08,819",
+      "end": "00:51:10,654",
+      "text": "Oh. Well, I could come by this afternoon."
+    },
+    {
       "start": "00:51:10,688",
       "end": "00:51:12,656",
       "text": "He means now. Right now."
     },
     {
+      "start": "00:51:12,690",
+      "end": "00:51:15,626",
+      "text": "O... kay."
+    },
+    {
+      "start": "00:51:16,694",
+      "end": "00:51:18,230",
+      "text": "You wanted to see me, sir?"
+    },
+    {
+      "start": "00:51:18,263",
+      "end": "00:51:20,265",
+      "text": "Yes, I did. Yes, I did."
+    },
+    {
+      "start": "00:51:20,298",
+      "end": "00:51:21,999",
+      "text": "- Come on in. - Whoa."
+    },
+    {
       "start": "00:51:22,032",
       "end": "00:51:24,202",
       "text": "This place is incredible."
+    },
+    {
+      "start": "00:51:24,236",
+      "end": "00:51:26,036",
+      "text": "Pretty great, huh?"
+    },
+    {
+      "start": "00:51:26,071",
+      "end": "00:51:28,206",
+      "text": "So, how's it going with Calloway?"
+    },
+    {
+      "start": "00:51:28,240",
+      "end": "00:51:30,040",
+      "text": "Calloway?"
+    },
+    {
+      "start": "00:51:30,075",
+      "end": "00:51:31,909",
+      "text": "It's, uh... it's good."
     },
     {
       "start": "00:51:31,942",
@@ -35,14 +345,94 @@
       "text": "- Yeah. Very good. - Right, right."
     },
     {
+      "start": "00:51:34,845",
+      "end": "00:51:36,181",
+      "text": "Well, let me ask you something."
+    },
+    {
+      "start": "00:51:36,214",
+      "end": "00:51:38,883",
+      "text": "What did I do to make you disrespect me, huh?"
+    },
+    {
+      "start": "00:51:38,916",
+      "end": "00:51:39,683",
+      "text": "What?"
+    },
+    {
+      "start": "00:51:39,717",
+      "end": "00:51:41,219",
+      "text": "Oh, what? You think I'm an idiot?"
+    },
+    {
+      "start": "00:51:41,253",
+      "end": "00:51:42,753",
+      "text": "Some kind of bozo?"
+    },
+    {
       "start": "00:51:42,786",
       "end": "00:51:44,755",
       "text": "No. No, sir, not at all."
     },
     {
+      "start": "00:51:44,788",
+      "end": "00:51:48,193",
+      "text": "My team, they talked to Calloway's lawyer,"
+    },
+    {
+      "start": "00:51:48,226",
+      "end": "00:51:52,397",
+      "text": "and they say he's never heard of you or your show."
+    },
+    {
+      "start": "00:51:52,430",
+      "end": "00:51:54,732",
+      "text": "Really? They said that? Uh..."
+    },
+    {
+      "start": "00:51:54,765",
+      "end": "00:51:56,734",
+      "text": "- You lied to me! - I-I didn't mean to."
+    },
+    {
+      "start": "00:51:56,767",
+      "end": "00:51:58,969",
+      "text": "Okay? Honestly, I really thought I could get him."
+    },
+    {
+      "start": "00:51:59,003",
+      "end": "00:52:01,106",
+      "text": "No one makes me look like a fool! No one!"
+    },
+    {
       "start": "00:52:01,139",
       "end": "00:52:03,108",
       "text": "I-I wouldn't dream of doing that to you."
+    },
+    {
+      "start": "00:52:03,141",
+      "end": "00:52:05,310",
+      "text": "I swear, if you didn't have my kid in your show,"
+    },
+    {
+      "start": "00:52:05,343",
+      "end": "00:52:07,044",
+      "text": "you'd be out of that window by now!"
+    },
+    {
+      "start": "00:52:07,078",
+      "end": "00:52:08,779",
+      "text": "Please, please, please. I-I'm so sorry."
+    },
+    {
+      "start": "00:52:08,812",
+      "end": "00:52:10,415",
+      "text": "You'd better have Calloway by the end of next week,"
+    },
+    {
+      "start": "00:52:10,448",
+      "end": "00:52:12,450",
+      "text": "- or so help me! - I-I-I will."
     },
     {
       "start": "00:52:12,484",
@@ -50,14 +440,99 @@
       "text": "I-I-I'll get him. I won't let you down, sir."
     },
     {
+      "start": "00:52:15,487",
+      "end": "00:52:19,090",
+      "text": "Oh, I know you won't let me down."
+    },
+    {
+      "start": "00:52:19,124",
+      "end": "00:52:21,459",
+      "text": "- Jerry, get in here! - Yes, sir. Right here, sir."
+    },
+    {
+      "start": "00:52:21,493",
+      "end": "00:52:24,028",
+      "text": "- Clean this mess up, will you? - Yes, absolutely, I'd love to."
+    },
+    {
+      "start": "00:52:25,096",
+      "end": "00:52:26,830",
+      "text": "Listen up. I got to go to Calloway's,"
+    },
+    {
+      "start": "00:52:26,864",
+      "end": "00:52:28,400",
+      "text": "and I got to go ASAP."
+    },
+    {
+      "start": "00:52:28,433",
+      "end": "00:52:30,202",
+      "text": "- Oh, no, please don't go there. - D-Don't worry. Don't worry."
+    },
+    {
+      "start": "00:52:30,235",
+      "end": "00:52:32,337",
+      "text": "I know you said he's crazy, but I'll be all right."
+    },
+    {
+      "start": "00:52:32,370",
+      "end": "00:52:34,439",
+      "text": "- Oh, can I go with you, please? - Uh, I don't know."
+    },
+    {
       "start": "00:52:34,472",
       "end": "00:52:35,940",
       "text": "Come on, you're gonna need me."
     },
     {
+      "start": "00:52:35,973",
+      "end": "00:52:37,741",
+      "text": "I know everything about this guy."
+    },
+    {
+      "start": "00:52:37,775",
+      "end": "00:52:39,977",
+      "text": "- Uh... I think you're right. - Yes!"
+    },
+    {
+      "start": "00:52:40,010",
+      "end": "00:52:41,946",
+      "text": "Now, listen, Gunter, you've got to figure out"
+    },
+    {
       "start": "00:52:41,979",
       "end": "00:52:43,515",
       "text": "the ending of this show on your own."
+    },
+    {
+      "start": "00:52:43,548",
+      "end": "00:52:45,217",
+      "text": "- On my own? - Yes."
+    },
+    {
+      "start": "00:52:45,250",
+      "end": "00:52:47,485",
+      "text": "Miss Crawly, I need you to take charge while I'm away."
+    },
+    {
+      "start": "00:52:47,519",
+      "end": "00:52:49,019",
+      "text": "- Yes, sir. - Now, listen to me."
+    },
+    {
+      "start": "00:52:49,054",
+      "end": "00:52:50,888",
+      "text": "You got to bring your A game here, Miss Crawly."
+    },
+    {
+      "start": "00:52:50,921",
+      "end": "00:52:52,224",
+      "text": "I'm serious. You got to be tough."
+    },
+    {
+      "start": "00:52:52,257",
+      "end": "00:52:54,459",
+      "text": "- Yes, I got to be tough. - You got to be firm."
     },
     {
       "start": "00:52:54,492",
@@ -65,14 +540,79 @@
       "text": "Oh, and I got to be firm. Yes."
     },
     {
+      "start": "00:52:55,993",
+      "end": "00:52:57,828",
+      "text": "And you cannot... I repeat, cannot..."
+    },
+    {
+      "start": "00:52:57,861",
+      "end": "00:52:59,830",
+      "text": "let production fall behind, not one little bit."
+    },
+    {
+      "start": "00:52:59,863",
+      "end": "00:53:00,965",
+      "text": "Is that clear?"
+    },
+    {
       "start": "00:53:00,998",
       "end": "00:53:02,833",
       "text": "Yes, sir, Mr. Moon, sir."
     },
     {
+      "start": "00:53:09,873",
+      "end": "00:53:11,243",
+      "text": "Mason!"
+    },
+    {
+      "start": "00:53:11,276",
+      "end": "00:53:13,545",
+      "text": "That volcano should've been finished yesterday!"
+    },
+    {
+      "start": "00:53:13,578",
+      "end": "00:53:15,913",
+      "text": "- W-We're on it, Miss Crawly. - You better be!"
+    },
+    {
+      "start": "00:53:15,946",
+      "end": "00:53:18,316",
+      "text": "Meena, Darius, take it from the top,"
+    },
+    {
+      "start": "00:53:18,350",
+      "end": "00:53:21,253",
+      "text": "and this time, put a little juice in it, will you?"
+    },
+    {
+      "start": "00:53:21,286",
+      "end": "00:53:23,521",
+      "text": "I'm trying my best, Miss Crawly."
+    },
+    {
       "start": "00:53:23,555",
       "end": "00:53:25,523",
       "text": "A little juice?"
+    },
+    {
+      "start": "00:53:25,557",
+      "end": "00:53:27,925",
+      "text": "Hey, everybody."
+    },
+    {
+      "start": "00:53:30,562",
+      "end": "00:53:32,896",
+      "text": "You're two hours late for rehearsal!"
+    },
+    {
+      "start": "00:53:32,930",
+      "end": "00:53:35,267",
+      "text": "Wait. Wait, where's the koala?"
+    },
+    {
+      "start": "00:53:35,300",
+      "end": "00:53:36,434",
+      "text": "Who are you?"
     },
     {
       "start": "00:53:36,468",
@@ -80,423 +620,505 @@
       "text": "I'm in charge! That's who!"
     },
     {
-      "start": "00:54:00,558",
-      "end": "00:54:03,194",
-      "text": "He doesn't look so scary."
+      "start": "00:53:38,035",
+      "end": "00:53:40,838",
+      "text": "Now, get your tail to wardrobe, sweetheart."
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "00:48:59,023",
+      "end": "00:49:01,159",
+      "text": "She's right. Great hat."
     },
     {
-      "start": "00:54:20,878",
-      "end": "00:54:22,980",
-      "text": "we're coming over to you."
+      "start": "00:49:20,178",
+      "end": "00:49:22,880",
+      "text": "I'm just a stupid, fat, old monkey."
     },
     {
-      "start": "00:55:01,653",
-      "end": "00:55:03,555",
-      "text": "Porsha, you're still messing it up."
+      "start": "00:49:27,918",
+      "end": "00:49:30,088",
+      "text": "Dude, anyway, I only need two days with him."
     },
     {
-      "start": "00:55:09,927",
-      "end": "00:55:11,429",
-      "text": "Reset. Let's go again."
+      "start": "00:49:33,758",
+      "end": "00:49:35,160",
+      "text": "Two days. He'll be amazing."
     },
     {
-      "start": "00:55:20,138",
-      "end": "00:55:23,675",
-      "text": "So, music starts, I step out,"
+      "start": "00:49:41,799",
+      "end": "00:49:44,269",
+      "text": "Okay, everybody, from the top."
     },
     {
-      "start": "00:55:36,521",
-      "end": "00:55:38,289",
-      "text": "Your face looks broken."
+      "start": "00:49:58,682",
+      "end": "00:50:01,652",
+      "text": "That lion, you see, he's crazy. Crazy!"
     },
     {
-      "start": "00:55:45,597",
-      "end": "00:55:47,699",
-      "text": "I'm sorry, that-that's not what"
+      "start": "00:50:04,222",
+      "end": "00:50:06,324",
+      "text": "Pew. Pew, pew."
     },
     {
-      "start": "00:55:53,071",
-      "end": "00:55:55,038",
-      "text": "Let's run it again."
+      "start": "00:50:10,995",
+      "end": "00:50:12,596",
+      "text": "All set over here, Mr. Moon."
     },
     {
-      "start": "00:56:12,323",
-      "end": "00:56:14,359",
-      "text": "I just... You look like a goddess,"
+      "start": "00:50:38,356",
+      "end": "00:50:42,726",
+      "text": "Take that, you nasty alien monster."
     },
     {
-      "start": "00:56:37,315",
-      "end": "00:56:39,317",
-      "text": "See, my truck's right over there."
+      "start": "00:50:46,997",
+      "end": "00:50:49,367",
+      "text": "That was so good."
     },
     {
-      "start": "00:57:12,450",
-      "end": "00:57:14,252",
-      "text": "We're in Clay's house."
+      "start": "00:50:52,370",
+      "end": "00:50:54,239",
+      "text": "He thinks I'm awesome."
     },
     {
-      "start": "00:57:19,424",
-      "end": "00:57:21,493",
-      "text": "whether he'd consider being in our show."
+      "start": "00:50:58,343",
+      "end": "00:50:59,910",
+      "text": "Shh. I know. I know."
     },
     {
-      "start": "00:57:29,434",
-      "end": "00:57:31,302",
-      "text": "Please, Mr. Calloway."
+      "start": "00:51:01,779",
+      "end": "00:51:04,715",
+      "text": "Take that, you nasty alien monster."
     },
     {
-      "start": "00:57:50,455",
-      "end": "00:57:53,191",
-      "text": "And I want you gone in the morning."
+      "start": "00:51:06,817",
+      "end": "00:51:08,786",
+      "text": "Take that, you nasty alien monster."
     },
     {
-      "start": "00:58:08,506",
-      "end": "00:58:10,775",
-      "text": "You're not ready to be busting out these moves."
+      "start": "00:51:16,694",
+      "end": "00:51:18,230",
+      "text": "You wanted to see me, sir?"
+    },
+    {
+      "start": "00:51:22,032",
+      "end": "00:51:24,202",
+      "text": "This place is incredible."
+    },
+    {
+      "start": "00:51:26,071",
+      "end": "00:51:28,206",
+      "text": "So, how's it going with Calloway?"
+    },
+    {
+      "start": "00:51:34,845",
+      "end": "00:51:36,181",
+      "text": "Well, let me ask you something."
+    },
+    {
+      "start": "00:51:39,717",
+      "end": "00:51:41,219",
+      "text": "Oh, what? You think I'm an idiot?"
+    },
+    {
+      "start": "00:51:42,786",
+      "end": "00:51:44,755",
+      "text": "No. No, sir, not at all."
+    },
+    {
+      "start": "00:51:59,003",
+      "end": "00:52:01,106",
+      "text": "No one makes me look like a fool! No one!"
+    },
+    {
+      "start": "00:52:07,078",
+      "end": "00:52:08,779",
+      "text": "Please, please, please. I-I'm so sorry."
+    },
+    {
+      "start": "00:52:15,487",
+      "end": "00:52:19,090",
+      "text": "Oh, I know you won't let me down."
+    },
+    {
+      "start": "00:52:34,472",
+      "end": "00:52:35,940",
+      "text": "Come on, you're gonna need me."
+    },
+    {
+      "start": "00:52:49,054",
+      "end": "00:52:50,888",
+      "text": "You got to bring your A game here, Miss Crawly."
+    },
+    {
+      "start": "00:52:54,492",
+      "end": "00:52:55,960",
+      "text": "Oh, and I got to be firm. Yes."
+    },
+    {
+      "start": "00:53:11,276",
+      "end": "00:53:13,545",
+      "text": "That volcano should've been finished yesterday!"
+    },
+    {
+      "start": "00:53:23,555",
+      "end": "00:53:25,523",
+      "text": "A little juice?"
+    },
+    {
+      "start": "00:53:32,930",
+      "end": "00:53:35,267",
+      "text": "Wait. Wait, where's the koala?"
+    },
+    {
+      "start": "00:53:38,035",
+      "end": "00:53:40,838",
+      "text": "Now, get your tail to wardrobe, sweetheart."
     }
   ],
   "guessing": [
     {
       "question": 1,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "A",
-          "text": "Take that, you nasty alien monster.",
-          "start": "00:51:01,779",
-          "end": "00:51:04,715"
-        },
-        {
           "label": "B",
-          "text": "See, my truck's right over there.",
-          "start": "00:56:37,315",
-          "end": "00:56:39,317"
+          "text": "Dude, anyway, I only need two days with him.",
+          "start": "00:49:27,918",
+          "end": "00:49:30,088"
         },
         {
           "label": "C",
-          "text": "Porsha, you're still messing it up.",
-          "start": "00:55:01,653",
-          "end": "00:55:03,555"
+          "text": "Take that, you nasty alien monster.",
+          "start": "00:50:38,356",
+          "end": "00:50:42,726"
+        },
+        {
+          "label": "A",
+          "text": "Okay, everybody, from the top.",
+          "start": "00:49:41,799",
+          "end": "00:49:44,269"
         }
       ],
       "video": {
-        "start": "00:51:01,779",
-        "end": "00:51:04,715"
+        "start": "00:49:27,918",
+        "end": "00:49:30,088"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
+          "label": "B",
+          "text": "That lion, you see, he's crazy. Crazy!",
+          "start": "00:49:58,682",
+          "end": "00:50:01,652"
+        },
+        {
           "label": "C",
-          "text": "- Yeah. Very good. - Right, right.",
-          "start": "00:51:31,942",
-          "end": "00:51:34,812"
+          "text": "Pew. Pew, pew.",
+          "start": "00:50:04,222",
+          "end": "00:50:06,324"
         },
         {
           "label": "A",
-          "text": "He means now. Right now.",
-          "start": "00:51:10,688",
-          "end": "00:51:12,656"
-        },
-        {
-          "label": "B",
-          "text": "You're not ready to be busting out these moves.",
-          "start": "00:58:08,506",
-          "end": "00:58:10,775"
+          "text": "Oh, and I got to be firm. Yes.",
+          "start": "00:52:54,492",
+          "end": "00:52:55,960"
         }
       ],
       "video": {
-        "start": "00:51:31,942",
-        "end": "00:51:34,812"
+        "start": "00:49:58,682",
+        "end": "00:50:01,652"
       }
     },
     {
       "question": 3,
-      "correctAnswer": "B",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "B",
-          "text": "I-I-I'll get him. I won't let you down, sir.",
-          "start": "00:52:12,484",
-          "end": "00:52:15,453"
+          "label": "A",
+          "text": "Take that, you nasty alien monster.",
+          "start": "00:50:38,356",
+          "end": "00:50:42,726"
         },
         {
-          "label": "A",
-          "text": "I'm in charge! That's who!",
-          "start": "00:53:36,468",
-          "end": "00:53:38,002"
+          "label": "B",
+          "text": "Pew. Pew, pew.",
+          "start": "00:50:04,222",
+          "end": "00:50:06,324"
         },
         {
           "label": "C",
-          "text": "So, music starts, I step out,",
-          "start": "00:55:20,138",
-          "end": "00:55:23,675"
+          "text": "She's right. Great hat.",
+          "start": "00:48:59,023",
+          "end": "00:49:01,159"
         }
       ],
       "video": {
-        "start": "00:52:12,484",
-        "end": "00:52:15,453"
+        "start": "00:50:38,356",
+        "end": "00:50:42,726"
       }
     },
     {
       "question": 4,
-      "correctAnswer": "B",
+      "correctAnswer": "A",
       "options": [
         {
+          "label": "A",
+          "text": "Shh. I know. I know.",
+          "start": "00:50:58,343",
+          "end": "00:50:59,910"
+        },
+        {
           "label": "B",
-          "text": "Oh, and I got to be firm. Yes.",
-          "start": "00:52:54,492",
-          "end": "00:52:55,960"
+          "text": "This place is incredible.",
+          "start": "00:51:22,032",
+          "end": "00:51:24,202"
         },
         {
           "label": "C",
-          "text": "- Yeah. Very good. - Right, right.",
-          "start": "00:51:31,942",
-          "end": "00:51:34,812"
-        },
-        {
-          "label": "A",
-          "text": "We're in Clay's house.",
-          "start": "00:57:12,450",
-          "end": "00:57:14,252"
+          "text": "That was so good.",
+          "start": "00:50:46,997",
+          "end": "00:50:49,367"
         }
       ],
       "video": {
-        "start": "00:52:54,492",
-        "end": "00:52:55,960"
+        "start": "00:50:58,343",
+        "end": "00:50:59,910"
       }
     },
     {
       "question": 5,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
-          "label": "A",
-          "text": "I'm in charge! That's who!",
-          "start": "00:53:36,468",
-          "end": "00:53:38,002"
-        },
-        {
           "label": "C",
-          "text": "So, music starts, I step out,",
-          "start": "00:55:20,138",
-          "end": "00:55:23,675"
+          "text": "You wanted to see me, sir?",
+          "start": "00:51:16,694",
+          "end": "00:51:18,230"
         },
         {
           "label": "B",
-          "text": "You're not ready to be busting out these moves.",
-          "start": "00:58:08,506",
-          "end": "00:58:10,775"
+          "text": "Pew. Pew, pew.",
+          "start": "00:50:04,222",
+          "end": "00:50:06,324"
+        },
+        {
+          "label": "A",
+          "text": "Oh, I know you won't let me down.",
+          "start": "00:52:15,487",
+          "end": "00:52:19,090"
         }
       ],
       "video": {
-        "start": "00:53:36,468",
-        "end": "00:53:38,002"
+        "start": "00:51:16,694",
+        "end": "00:51:18,230"
       }
     },
     {
       "question": 6,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
+          "label": "B",
+          "text": "Well, let me ask you something.",
+          "start": "00:51:34,845",
+          "end": "00:51:36,181"
+        },
+        {
           "label": "C",
-          "text": "Porsha, you're still messing it up.",
-          "start": "00:55:01,653",
-          "end": "00:55:03,555"
+          "text": "Take that, you nasty alien monster.",
+          "start": "00:51:06,817",
+          "end": "00:51:08,786"
         },
         {
           "label": "A",
-          "text": "Oh, and I got to be firm. Yes.",
-          "start": "00:52:54,492",
-          "end": "00:52:55,960"
-        },
-        {
-          "label": "B",
-          "text": "Take that, you nasty alien monster.",
-          "start": "00:50:38,356",
-          "end": "00:50:42,726"
+          "text": "So, how's it going with Calloway?",
+          "start": "00:51:26,071",
+          "end": "00:51:28,206"
         }
       ],
       "video": {
-        "start": "00:55:01,653",
-        "end": "00:55:03,555"
+        "start": "00:51:34,845",
+        "end": "00:51:36,181"
       }
     },
     {
       "question": 7,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "A",
-          "text": "Your face looks broken.",
-          "start": "00:55:36,521",
-          "end": "00:55:38,289"
+          "label": "B",
+          "text": "No one makes me look like a fool! No one!",
+          "start": "00:51:59,003",
+          "end": "00:52:01,106"
         },
         {
-          "label": "B",
-          "text": "we're coming over to you.",
-          "start": "00:54:20,878",
-          "end": "00:54:22,980"
+          "label": "A",
+          "text": "Now, get your tail to wardrobe, sweetheart.",
+          "start": "00:53:38,035",
+          "end": "00:53:40,838"
         },
         {
           "label": "C",
-          "text": "I-I wouldn't dream of doing that to you.",
-          "start": "00:52:01,139",
-          "end": "00:52:03,108"
+          "text": "Take that, you nasty alien monster.",
+          "start": "00:51:06,817",
+          "end": "00:51:08,786"
         }
       ],
       "video": {
-        "start": "00:55:36,521",
-        "end": "00:55:38,289"
+        "start": "00:51:59,003",
+        "end": "00:52:01,106"
       }
     },
     {
       "question": 8,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "I just... You look like a goddess,",
-          "start": "00:56:12,323",
-          "end": "00:56:14,359"
-        },
-        {
-          "label": "A",
-          "text": "whether he'd consider being in our show.",
-          "start": "00:57:19,424",
-          "end": "00:57:21,493"
-        },
-        {
-          "label": "B",
-          "text": "we're coming over to you.",
-          "start": "00:54:20,878",
-          "end": "00:54:22,980"
-        }
-      ],
-      "video": {
-        "start": "00:56:12,323",
-        "end": "00:56:14,359"
-      }
-    },
-    {
-      "question": 9,
       "correctAnswer": "A",
       "options": [
         {
           "label": "A",
-          "text": "whether he'd consider being in our show.",
-          "start": "00:57:19,424",
-          "end": "00:57:21,493"
-        },
-        {
-          "label": "B",
-          "text": "See, my truck's right over there.",
-          "start": "00:56:37,315",
-          "end": "00:56:39,317"
+          "text": "Come on, you're gonna need me.",
+          "start": "00:52:34,472",
+          "end": "00:52:35,940"
         },
         {
           "label": "C",
-          "text": "He means now. Right now.",
-          "start": "00:51:10,688",
-          "end": "00:51:12,656"
+          "text": "Two days. He'll be amazing.",
+          "start": "00:49:33,758",
+          "end": "00:49:35,160"
+        },
+        {
+          "label": "B",
+          "text": "Please, please, please. I-I'm so sorry.",
+          "start": "00:52:07,078",
+          "end": "00:52:08,779"
         }
       ],
       "video": {
-        "start": "00:57:19,424",
-        "end": "00:57:21,493"
+        "start": "00:52:34,472",
+        "end": "00:52:35,940"
       }
     },
     {
-      "question": 10,
+      "question": 9,
       "correctAnswer": "C",
       "options": [
         {
           "label": "C",
-          "text": "You're not ready to be busting out these moves.",
-          "start": "00:58:08,506",
-          "end": "00:58:10,775"
+          "text": "That volcano should've been finished yesterday!",
+          "start": "00:53:11,276",
+          "end": "00:53:13,545"
         },
         {
           "label": "B",
-          "text": "the ending of this show on your own.",
-          "start": "00:52:41,979",
-          "end": "00:52:43,515"
+          "text": "She's right. Great hat.",
+          "start": "00:48:59,023",
+          "end": "00:49:01,159"
         },
         {
           "label": "A",
-          "text": "Take that, you nasty alien monster.",
-          "start": "00:51:01,779",
-          "end": "00:51:04,715"
+          "text": "So, how's it going with Calloway?",
+          "start": "00:51:26,071",
+          "end": "00:51:28,206"
         }
       ],
       "video": {
-        "start": "00:58:08,506",
-        "end": "00:58:10,775"
+        "start": "00:53:11,276",
+        "end": "00:53:13,545"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Now, get your tail to wardrobe, sweetheart.",
+          "start": "00:53:38,035",
+          "end": "00:53:40,838"
+        },
+        {
+          "label": "C",
+          "text": "That was so good.",
+          "start": "00:50:46,997",
+          "end": "00:50:49,367"
+        },
+        {
+          "label": "B",
+          "text": "Oh, I know you won't let me down.",
+          "start": "00:52:15,487",
+          "end": "00:52:19,090"
+        }
+      ],
+      "video": {
+        "start": "00:53:38,035",
+        "end": "00:53:40,838"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "00:50:38,356",
-      "end": "00:50:42,726",
-      "text": "Take that, you nasty alien monster."
+      "start": "00:48:59,023",
+      "end": "00:49:01,159",
+      "text": "She's right. Great hat."
     },
     {
       "question": 2,
-      "start": "00:50:52,370",
-      "end": "00:50:54,239",
-      "text": "He thinks I'm awesome."
+      "start": "00:49:33,758",
+      "end": "00:49:35,160",
+      "text": "Two days. He'll be amazing."
     },
     {
       "question": 3,
-      "start": "00:51:10,688",
-      "end": "00:51:12,656",
-      "text": "He means now. Right now."
+      "start": "00:50:04,222",
+      "end": "00:50:06,324",
+      "text": "Pew. Pew, pew."
     },
     {
       "question": 4,
-      "start": "00:51:22,032",
-      "end": "00:51:24,202",
-      "text": "This place is incredible."
+      "start": "00:50:46,997",
+      "end": "00:50:49,367",
+      "text": "That was so good."
     },
     {
       "question": 5,
+      "start": "00:51:01,779",
+      "end": "00:51:04,715",
+      "text": "Take that, you nasty alien monster."
+    },
+    {
+      "question": 6,
+      "start": "00:51:26,071",
+      "end": "00:51:28,206",
+      "text": "So, how's it going with Calloway?"
+    },
+    {
+      "question": 7,
       "start": "00:51:42,786",
       "end": "00:51:44,755",
       "text": "No. No, sir, not at all."
     },
     {
-      "question": 6,
-      "start": "00:52:01,139",
-      "end": "00:52:03,108",
-      "text": "I-I wouldn't dream of doing that to you."
-    },
-    {
-      "question": 7,
-      "start": "00:52:34,472",
-      "end": "00:52:35,940",
-      "text": "Come on, you're gonna need me."
-    },
-    {
       "question": 8,
-      "start": "00:52:41,979",
-      "end": "00:52:43,515",
-      "text": "the ending of this show on your own."
+      "start": "00:52:15,487",
+      "end": "00:52:19,090",
+      "text": "Oh, I know you won't let me down."
     },
     {
       "question": 9,
-      "start": "00:53:00,998",
-      "end": "00:53:02,833",
-      "text": "Yes, sir, Mr. Moon, sir."
+      "start": "00:52:54,492",
+      "end": "00:52:55,960",
+      "text": "Oh, and I got to be firm. Yes."
     },
     {
       "question": 10,
-      "start": "00:53:23,555",
-      "end": "00:53:25,523",
-      "text": "A little juice?"
+      "start": "00:53:32,930",
+      "end": "00:53:35,267",
+      "text": "Wait. Wait, where's the koala?"
     }
   ]
 }

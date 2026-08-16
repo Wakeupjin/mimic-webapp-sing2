@@ -23,7 +23,7 @@ export const GUESSING_VIDEO_PLAYS = 3; // 무음 영상 재생 횟수
 export const GUESSING_AUTO_PLAY_DELAY = 1250; // A/B/C 자동 재생 시작 전 딜레이 (ms)
 export const GUESSING_ANSWER_FEEDBACK_DURATION = 2000; // "Correct" 또는 "Again" 표시 시간 (ms)
 export const GUESSING_NEXT_QUESTION_DELAY = 500; // 다음 문제로 이동 딜레이 (ms)
-export const GUESSING_VIDEO_REPLAY_DELAY = 1000; // 무음 영상 반복 간 딜레이 (ms)
+export const GUESSING_VIDEO_REPLAY_DELAY = 250; // 무음 영상 반복 간 딜레이 (ms)
 export const GUESSING_OPTION_LABELS = ['A', 'B', 'C'] as const; // Guessing options order
 
 // 비디오 플레이어 상수

@@ -1,63 +1,13 @@
 {
   "watching": {
-    "start": "00:16:53,231",
-    "end": "00:25:11,462"
+    "start": "00:22:14,719",
+    "end": "00:28:00,898"
   },
-  "mimicking": [
+  "fullSubtitles": [
     {
-      "start": "00:16:53,231",
-      "end": "00:16:55,200",
-      "text": "I'm here to see Mr. Crystal for the presentation."
-    },
-    {
-      "start": "00:17:00,838",
-      "end": "00:17:02,873",
-      "text": "I got all dressed up for nothing."
-    },
-    {
-      "start": "00:17:05,843",
-      "end": "00:17:08,712",
-      "text": "Quick. Get in."
-    },
-    {
-      "start": "00:17:21,859",
-      "end": "00:17:23,694",
-      "text": "- Let's get you out of here. - Aha!"
-    },
-    {
-      "start": "00:18:02,367",
-      "end": "00:18:04,269",
-      "text": "- I'll-I'll connect you. - Oh, no."
-    },
-    {
-      "start": "00:18:09,241",
-      "end": "00:18:10,308",
-      "text": "Oh, Mr. Moon?"
-    },
-    {
-      "start": "00:18:26,091",
-      "end": "00:18:28,160",
-      "text": "Quick. Go, go, go, go, go, go, go."
-    },
-    {
-      "start": "00:19:36,561",
-      "end": "00:19:38,163",
-      "text": "Where are you going now?"
-    },
-    {
-      "start": "00:21:59,704",
-      "end": "00:22:01,972",
-      "text": "we'd appreciate that."
-    },
-    {
-      "start": "00:22:07,145",
-      "end": "00:22:08,380",
-      "text": "Why am I standing here waiting?"
-    },
-    {
-      "start": "00:22:11,416",
-      "end": "00:22:12,983",
-      "text": "Yes. Yes, sir. Yes, sir."
+      "start": "00:22:14,719",
+      "end": "00:22:16,987",
+      "text": "Hey. Hey. Yeah, you."
     },
     {
       "start": "00:22:17,020",
@@ -65,9 +15,49 @@
       "text": "Little guy, you're here for the audition?"
     },
     {
+      "start": "00:22:18,556",
+      "end": "00:22:20,291",
+      "text": "Uh, yes."
+    },
+    {
+      "start": "00:22:20,325",
+      "end": "00:22:22,060",
+      "text": "Yeah, yeah, yes, we are."
+    },
+    {
+      "start": "00:22:22,093",
+      "end": "00:22:24,027",
+      "text": "Guys, we're on right now."
+    },
+    {
+      "start": "00:22:24,062",
+      "end": "00:22:25,296",
+      "text": "- Now? - What?"
+    },
+    {
       "start": "00:22:27,232",
       "end": "00:22:29,367",
       "text": "Your name? Hey, your name, please?"
+    },
+    {
+      "start": "00:22:29,401",
+      "end": "00:22:32,270",
+      "text": "Uh, it's Buster Moon from the New Moon Theater."
+    },
+    {
+      "start": "00:22:32,303",
+      "end": "00:22:34,706",
+      "text": "And we're very excited to share our story with you today, sir."
+    },
+    {
+      "start": "00:22:34,739",
+      "end": "00:22:36,074",
+      "text": "Right, guys?"
+    },
+    {
+      "start": "00:22:36,107",
+      "end": "00:22:38,276",
+      "text": "Yeah, great. Now, get to it."
     },
     {
       "start": "00:22:38,309",
@@ -75,9 +65,44 @@
       "text": "Of course. Yes."
     },
     {
+      "start": "00:22:39,177",
+      "end": "00:22:41,079",
+      "text": "Okay, guys, just like we rehearsed."
+    },
+    {
+      "start": "00:22:44,014",
+      "end": "00:22:45,350",
+      "text": "This is the story"
+    },
+    {
       "start": "00:22:45,383",
       "end": "00:22:48,052",
       "text": "of an ordinary high school girl who discovers..."
+    },
+    {
+      "start": "00:22:48,086",
+      "end": "00:22:49,487",
+      "text": "Stop."
+    },
+    {
+      "start": "00:22:49,521",
+      "end": "00:22:50,522",
+      "text": "Stop?"
+    },
+    {
+      "start": "00:22:50,555",
+      "end": "00:22:51,556",
+      "text": "He wants you to stop."
+    },
+    {
+      "start": "00:22:52,590",
+      "end": "00:22:54,292",
+      "text": "\"Ordinary\" and \"school.\""
+    },
+    {
+      "start": "00:22:54,325",
+      "end": "00:22:56,094",
+      "text": "Two words I will never be associated with."
     },
     {
       "start": "00:22:56,127",
@@ -85,9 +110,29 @@
       "text": "- Never. Never. - Where the heck did you"
     },
     {
+      "start": "00:22:58,129",
+      "end": "00:22:59,330",
+      "text": "dig these guys up from, huh?"
+    },
+    {
+      "start": "00:22:59,364",
+      "end": "00:23:00,698",
+      "text": "If you could all leave very quickly,"
+    },
+    {
       "start": "00:23:00,732",
       "end": "00:23:02,100",
       "text": "we'd appreciate that, please."
+    },
+    {
+      "start": "00:23:02,133",
+      "end": "00:23:04,102",
+      "text": "I need big shows, Jerry."
+    },
+    {
+      "start": "00:23:04,135",
+      "end": "00:23:06,104",
+      "text": "- Big ideas! - Yes, sir, big. The biggest."
     },
     {
       "start": "00:23:06,137",
@@ -95,9 +140,34 @@
       "text": "Hey, I have a big one."
     },
     {
+      "start": "00:23:09,006",
+      "end": "00:23:10,974",
+      "text": "Okay, honey. Come on, let's go."
+    },
+    {
+      "start": "00:23:11,008",
+      "end": "00:23:12,677",
+      "text": "You know, the sci-fi musical."
+    },
+    {
       "start": "00:23:12,710",
       "end": "00:23:14,712",
       "text": "- That's big, right? - Um, uh..."
+    },
+    {
+      "start": "00:23:14,746",
+      "end": "00:23:17,115",
+      "text": "I mean, it's got the aliens and the robots"
+    },
+    {
+      "start": "00:23:17,148",
+      "end": "00:23:19,484",
+      "text": "and the lasers and these amazing songs"
+    },
+    {
+      "start": "00:23:19,517",
+      "end": "00:23:21,219",
+      "text": "from, like, Clay Calloway to..."
     },
     {
       "start": "00:23:21,252",
@@ -105,9 +175,34 @@
       "text": "Whoa, whoa, whoa, whoa, whoa. Clay Calloway?"
     },
     {
+      "start": "00:23:23,721",
+      "end": "00:23:25,557",
+      "text": "I love Clay Calloway."
+    },
+    {
+      "start": "00:23:26,424",
+      "end": "00:23:27,625",
+      "text": "I know, right?"
+    },
+    {
       "start": "00:23:27,659",
       "end": "00:23:29,060",
       "text": "I mean, doesn't everybody?"
+    },
+    {
+      "start": "00:23:29,093",
+      "end": "00:23:30,462",
+      "text": "Yeah. Yeah, yeah, yeah. See, Jerry?"
+    },
+    {
+      "start": "00:23:30,495",
+      "end": "00:23:33,198",
+      "text": "This is exactly the kind of big idea I'm talking about."
+    },
+    {
+      "start": "00:23:33,231",
+      "end": "00:23:34,766",
+      "text": "- Yes, sir. - So, uh..."
     },
     {
       "start": "00:23:34,799",
@@ -115,9 +210,39 @@
       "text": "so what's the show called?"
     },
     {
+      "start": "00:23:36,601",
+      "end": "00:23:38,770",
+      "text": "What's it called? Um..."
+    },
+    {
+      "start": "00:23:38,803",
+      "end": "00:23:41,072",
+      "text": "- Gunter, you, uh... - you want to..."
+    },
+    {
       "start": "00:23:41,105",
       "end": "00:23:42,407",
       "text": "...uh, tell Mr. Crystal what it's called?"
+    },
+    {
+      "start": "00:23:42,440",
+      "end": "00:23:45,477",
+      "text": "Uh-huh. It's called Out of This World."
+    },
+    {
+      "start": "00:23:46,411",
+      "end": "00:23:49,514",
+      "text": "Out of This World."
+    },
+    {
+      "start": "00:23:49,547",
+      "end": "00:23:51,683",
+      "text": "That's right. Just imagine it."
+    },
+    {
+      "start": "00:23:51,716",
+      "end": "00:23:53,351",
+      "text": "Ash?"
     },
     {
       "start": "00:23:53,384",
@@ -125,9 +250,74 @@
       "text": "Uh, yeah, I got it."
     },
     {
+      "start": "00:23:56,054",
+      "end": "00:23:57,789",
+      "text": "A spectacular musical"
+    },
+    {
+      "start": "00:23:57,822",
+      "end": "00:24:01,426",
+      "text": "that takes your audience out of this world."
+    },
+    {
+      "start": "00:24:01,459",
+      "end": "00:24:04,529",
+      "text": "♪ I wanna run ♪"
+    },
+    {
+      "start": "00:24:05,530",
+      "end": "00:24:08,766",
+      "text": "♪ I want to hide ♪"
+    },
+    {
+      "start": "00:24:08,800",
+      "end": "00:24:12,737",
+      "text": "♪ I wanna tear down the walls ♪"
+    },
+    {
+      "start": "00:24:12,770",
+      "end": "00:24:15,373",
+      "text": "♪ That hold me inside ♪"
+    },
+    {
       "start": "00:24:15,406",
       "end": "00:24:16,774",
       "text": "I love this song."
+    },
+    {
+      "start": "00:24:16,808",
+      "end": "00:24:20,278",
+      "text": "♪ I wanna reach out ♪"
+    },
+    {
+      "start": "00:24:20,311",
+      "end": "00:24:24,649",
+      "text": "♪ And touch the flame ♪"
+    },
+    {
+      "start": "00:24:24,682",
+      "end": "00:24:30,188",
+      "text": "♪ Where the streets have no name. ♪"
+    },
+    {
+      "start": "00:24:30,221",
+      "end": "00:24:31,756",
+      "text": "Sir, your lunch meeting with..."
+    },
+    {
+      "start": "00:24:31,789",
+      "end": "00:24:33,558",
+      "text": "Oh, my..."
+    },
+    {
+      "start": "00:24:33,591",
+      "end": "00:24:34,759",
+      "text": "Not now."
+    },
+    {
+      "start": "00:24:34,792",
+      "end": "00:24:36,160",
+      "text": "Moon, how did you get in here?"
     },
     {
       "start": "00:24:36,194",
@@ -135,9 +325,39 @@
       "text": "Hey, he said not now. Psst."
     },
     {
+      "start": "00:24:37,395",
+      "end": "00:24:39,197",
+      "text": "Yeah, I heard him. Thanks, Jerry."
+    },
+    {
+      "start": "00:24:39,230",
+      "end": "00:24:40,732",
+      "text": "Are you telling me you-you got"
+    },
+    {
       "start": "00:24:40,765",
       "end": "00:24:42,767",
       "text": "Clay Calloway's permission to use his song?"
+    },
+    {
+      "start": "00:24:42,800",
+      "end": "00:24:45,436",
+      "text": "- Well, what if I told you I did? - Ah."
+    },
+    {
+      "start": "00:24:45,470",
+      "end": "00:24:46,437",
+      "text": "Okay, so what, you got"
+    },
+    {
+      "start": "00:24:46,471",
+      "end": "00:24:48,339",
+      "text": "some kind of personal connection to this guy?"
+    },
+    {
+      "start": "00:24:48,373",
+      "end": "00:24:50,675",
+      "text": "- How else would I get it? - Moon!"
     },
     {
       "start": "00:24:50,708",
@@ -145,14 +365,546 @@
       "text": "Wait, if you know him,"
     },
     {
+      "start": "00:24:52,343",
+      "end": "00:24:56,281",
+      "text": "then you could get him in the show, right?"
+    },
+    {
+      "start": "00:24:57,415",
+      "end": "00:24:59,384",
+      "text": "Oh, that'd be huge for me."
+    },
+    {
+      "start": "00:24:59,417",
+      "end": "00:25:00,785",
+      "text": "Huge."
+    },
+    {
       "start": "00:25:00,818",
       "end": "00:25:02,420",
       "text": "Sir, I'm sorry, but seriously?"
     },
     {
+      "start": "00:25:02,453",
+      "end": "00:25:04,856",
+      "text": "You think this little guy from nowhere"
+    },
+    {
+      "start": "00:25:04,889",
+      "end": "00:25:07,592",
+      "text": "can get Clay Calloway in the show?"
+    },
+    {
       "start": "00:25:09,394",
       "end": "00:25:11,462",
       "text": "Well, Suki, for your information,"
+    },
+    {
+      "start": "00:25:11,496",
+      "end": "00:25:15,099",
+      "text": "I am not just a little guy from nowhere."
+    },
+    {
+      "start": "00:25:15,133",
+      "end": "00:25:16,834",
+      "text": "Consider it done, sir."
+    },
+    {
+      "start": "00:25:16,868",
+      "end": "00:25:18,570",
+      "text": "I'll give you three weeks, Moon."
+    },
+    {
+      "start": "00:25:18,603",
+      "end": "00:25:21,239",
+      "text": "Three weeks to get this show up and running, okay?"
+    },
+    {
+      "start": "00:25:21,272",
+      "end": "00:25:22,840",
+      "text": "Yes, sir. Thank you."
+    },
+    {
+      "start": "00:25:22,874",
+      "end": "00:25:24,576",
+      "text": "Moon, do you really know Clay Calloway?"
+    },
+    {
+      "start": "00:25:24,609",
+      "end": "00:25:25,710",
+      "text": "Shh, shh. Not now."
+    },
+    {
+      "start": "00:25:25,743",
+      "end": "00:25:27,378",
+      "text": "- Jerry. - Oh! Right here, sir."
+    },
+    {
+      "start": "00:25:27,412",
+      "end": "00:25:29,614",
+      "text": "I want these guys to start work right away."
+    },
+    {
+      "start": "00:25:29,647",
+      "end": "00:25:32,317",
+      "text": "Set 'em up with our designers, our dancers, whatever they need."
+    },
+    {
+      "start": "00:25:32,350",
+      "end": "00:25:34,385",
+      "text": "And get 'em rooms at the hotel, okay?"
+    },
+    {
+      "start": "00:25:34,419",
+      "end": "00:25:36,721",
+      "text": "The very best suites. The whole shaboodle."
+    },
+    {
+      "start": "00:25:36,754",
+      "end": "00:25:37,855",
+      "text": "Yes, sir. Yes, of course."
+    },
+    {
+      "start": "00:25:37,889",
+      "end": "00:25:39,357",
+      "text": "Uh, hey, one last thing."
+    },
+    {
+      "start": "00:25:39,390",
+      "end": "00:25:41,492",
+      "text": "Don't you ever do nothing to make me look bad."
+    },
+    {
+      "start": "00:25:41,526",
+      "end": "00:25:42,860",
+      "text": "You got that?"
+    },
+    {
+      "start": "00:25:42,894",
+      "end": "00:25:44,495",
+      "text": "Oh, I will never let that happen, sir."
+    },
+    {
+      "start": "00:25:44,529",
+      "end": "00:25:46,731",
+      "text": "You better not, or I'll throw you off the roof."
+    },
+    {
+      "start": "00:25:48,833",
+      "end": "00:25:50,201",
+      "text": "Great job, everyone."
+    },
+    {
+      "start": "00:25:50,234",
+      "end": "00:25:52,503",
+      "text": "Take it away, Raoul."
+    },
+    {
+      "start": "00:25:57,508",
+      "end": "00:25:58,276",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "00:25:58,309",
+      "end": "00:26:00,178",
+      "text": "- Is this really happening? - Yeah!"
+    },
+    {
+      "start": "00:26:00,211",
+      "end": "00:26:02,513",
+      "text": "We're playing Redshore City, baby!"
+    },
+    {
+      "start": "00:26:02,547",
+      "end": "00:26:05,283",
+      "text": "Yes, we are, Gunter."
+    },
+    {
+      "start": "00:26:05,316",
+      "end": "00:26:07,151",
+      "text": "Gunter, sci-fi musical?"
+    },
+    {
+      "start": "00:26:07,185",
+      "end": "00:26:08,620",
+      "text": "You're a genius."
+    },
+    {
+      "start": "00:26:08,653",
+      "end": "00:26:10,521",
+      "text": "Yeah, well, Mama always said,"
+    },
+    {
+      "start": "00:26:10,555",
+      "end": "00:26:13,725",
+      "text": "\"Gunter, you're not as stupid as your papa.\""
+    },
+    {
+      "start": "00:26:13,758",
+      "end": "00:26:15,493",
+      "text": "No, you're not."
+    },
+    {
+      "start": "00:26:15,526",
+      "end": "00:26:16,861",
+      "text": "Hey, Suki."
+    },
+    {
+      "start": "00:26:16,894",
+      "end": "00:26:18,329",
+      "text": "No hard feelings, huh?"
+    },
+    {
+      "start": "00:26:18,363",
+      "end": "00:26:20,665",
+      "text": "You have no idea what you're getting into."
+    },
+    {
+      "start": "00:26:20,698",
+      "end": "00:26:21,899",
+      "text": "Whoa."
+    },
+    {
+      "start": "00:26:21,933",
+      "end": "00:26:23,401",
+      "text": "- Are you out of your mind? - What?"
+    },
+    {
+      "start": "00:26:23,434",
+      "end": "00:26:25,570",
+      "text": "Clay Calloway? I'm, like, his biggest fan,"
+    },
+    {
+      "start": "00:26:25,603",
+      "end": "00:26:27,805",
+      "text": "and I can tell you, the guy is a recluse."
+    },
+    {
+      "start": "00:26:27,839",
+      "end": "00:26:29,907",
+      "text": "Seriously, after his wife died,"
+    },
+    {
+      "start": "00:26:29,941",
+      "end": "00:26:31,909",
+      "text": "no one's seen him in over 15 years."
+    },
+    {
+      "start": "00:26:31,943",
+      "end": "00:26:33,878",
+      "text": "Ah. That's not good."
+    },
+    {
+      "start": "00:26:33,911",
+      "end": "00:26:35,613",
+      "text": "No, it's not."
+    },
+    {
+      "start": "00:26:35,647",
+      "end": "00:26:37,515",
+      "text": "Uh..."
+    },
+    {
+      "start": "00:26:37,548",
+      "end": "00:26:39,851",
+      "text": "Miss Crawly, I need you to help me find Clay Calloway."
+    },
+    {
+      "start": "00:26:39,884",
+      "end": "00:26:41,653",
+      "text": "An address, a phone number, anything."
+    },
+    {
+      "start": "00:26:41,686",
+      "end": "00:26:43,921",
+      "text": "- But we've got to find that guy. - Yes, sir."
+    },
+    {
+      "start": "00:26:43,955",
+      "end": "00:26:45,256",
+      "text": "♪ Think about it... ♪"
+    },
+    {
+      "start": "00:26:45,289",
+      "end": "00:26:46,658",
+      "text": "Good morning!"
+    },
+    {
+      "start": "00:26:46,691",
+      "end": "00:26:49,427",
+      "text": "I'm Linda Le Bon, and have I got some hot news for you."
+    },
+    {
+      "start": "00:26:49,460",
+      "end": "00:26:51,462",
+      "text": "♪ Down in the heart or hidden... ♪"
+    },
+    {
+      "start": "00:26:51,496",
+      "end": "00:26:53,831",
+      "text": "Infamous billionaire Jimmy Crystal has hired"
+    },
+    {
+      "start": "00:26:53,865",
+      "end": "00:26:55,800",
+      "text": "- an unknown theater producer... - What?"
+    },
+    {
+      "start": "00:26:55,833",
+      "end": "00:26:58,236",
+      "text": "...by the name of Buster Moon."
+    },
+    {
+      "start": "00:26:58,269",
+      "end": "00:27:03,274",
+      "text": "♪ Look inside your heart and I'll look inside mine ♪"
+    },
+    {
+      "start": "00:27:03,307",
+      "end": "00:27:06,277",
+      "text": "♪ Things look so bad everywhere ♪"
+    },
+    {
+      "start": "00:27:06,310",
+      "end": "00:27:07,879",
+      "text": "♪ Everywhere ♪"
+    },
+    {
+      "start": "00:27:07,912",
+      "end": "00:27:12,283",
+      "text": "♪ In this whole world, what is fair? ♪"
+    },
+    {
+      "start": "00:27:12,316",
+      "end": "00:27:15,286",
+      "text": "♪ We walk the line and try to see ♪"
+    },
+    {
+      "start": "00:27:15,319",
+      "end": "00:27:17,355",
+      "text": "♪ Try to see ♪"
+    },
+    {
+      "start": "00:27:17,388",
+      "end": "00:27:20,458",
+      "text": "♪ Falling behind in what could be ♪"
+    },
+    {
+      "start": "00:27:20,491",
+      "end": "00:27:24,595",
+      "text": "♪ Oh, oh, bring me a higher love ♪"
+    },
+    {
+      "start": "00:27:25,596",
+      "end": "00:27:30,802",
+      "text": "♪ Bring me a higher love, oh ♪"
+    },
+    {
+      "start": "00:27:30,835",
+      "end": "00:27:34,539",
+      "text": "♪ Bring me a higher love ♪"
+    },
+    {
+      "start": "00:27:34,572",
+      "end": "00:27:39,410",
+      "text": "♪ Where's that higher love I keep thinking of? ♪"
+    },
+    {
+      "start": "00:27:40,044",
+      "end": "00:27:41,813",
+      "text": "♪ That love, that love ♪"
+    },
+    {
+      "start": "00:27:41,846",
+      "end": "00:27:43,848",
+      "text": "♪ Bring me higher love ♪"
+    },
+    {
+      "start": "00:27:43,881",
+      "end": "00:27:46,417",
+      "text": "♪ Love, that love, that love... ♪"
+    },
+    {
+      "start": "00:27:46,451",
+      "end": "00:27:48,720",
+      "text": "Okay, so this guy is coming in from that side,"
+    },
+    {
+      "start": "00:27:48,753",
+      "end": "00:27:50,488",
+      "text": "and it's, like, cuckoo crazy,"
+    },
+    {
+      "start": "00:27:50,521",
+      "end": "00:27:52,457",
+      "text": "and then I think we should have, like,"
+    },
+    {
+      "start": "00:27:52,490",
+      "end": "00:27:55,293",
+      "text": "this cool alien tango scene."
+    },
+    {
+      "start": "00:27:55,326",
+      "end": "00:27:59,530",
+      "text": "\"Alien tango scene.\""
+    },
+    {
+      "start": "00:27:59,564",
+      "end": "00:28:00,898",
+      "text": "Oh. I love it."
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "00:22:14,719",
+      "end": "00:22:16,987",
+      "text": "Hey. Hey. Yeah, you."
+    },
+    {
+      "start": "00:22:20,325",
+      "end": "00:22:22,060",
+      "text": "Yeah, yeah, yes, we are."
+    },
+    {
+      "start": "00:22:29,401",
+      "end": "00:22:32,270",
+      "text": "Uh, it's Buster Moon from the New Moon Theater."
+    },
+    {
+      "start": "00:22:36,107",
+      "end": "00:22:38,276",
+      "text": "Yeah, great. Now, get to it."
+    },
+    {
+      "start": "00:22:52,590",
+      "end": "00:22:54,292",
+      "text": "\"Ordinary\" and \"school.\""
+    },
+    {
+      "start": "00:23:02,133",
+      "end": "00:23:04,102",
+      "text": "I need big shows, Jerry."
+    },
+    {
+      "start": "00:23:09,006",
+      "end": "00:23:10,974",
+      "text": "Okay, honey. Come on, let's go."
+    },
+    {
+      "start": "00:23:21,252",
+      "end": "00:23:23,688",
+      "text": "Whoa, whoa, whoa, whoa, whoa. Clay Calloway?"
+    },
+    {
+      "start": "00:23:26,424",
+      "end": "00:23:27,625",
+      "text": "I know, right?"
+    },
+    {
+      "start": "00:23:29,093",
+      "end": "00:23:30,462",
+      "text": "Yeah. Yeah, yeah, yeah. See, Jerry?"
+    },
+    {
+      "start": "00:23:42,440",
+      "end": "00:23:45,477",
+      "text": "Uh-huh. It's called Out of This World."
+    },
+    {
+      "start": "00:23:53,384",
+      "end": "00:23:56,019",
+      "text": "Uh, yeah, I got it."
+    },
+    {
+      "start": "00:24:34,792",
+      "end": "00:24:36,160",
+      "text": "Moon, how did you get in here?"
+    },
+    {
+      "start": "00:24:40,765",
+      "end": "00:24:42,767",
+      "text": "Clay Calloway's permission to use his song?"
+    },
+    {
+      "start": "00:25:00,818",
+      "end": "00:25:02,420",
+      "text": "Sir, I'm sorry, but seriously?"
+    },
+    {
+      "start": "00:25:15,133",
+      "end": "00:25:16,834",
+      "text": "Consider it done, sir."
+    },
+    {
+      "start": "00:25:18,603",
+      "end": "00:25:21,239",
+      "text": "Three weeks to get this show up and running, okay?"
+    },
+    {
+      "start": "00:25:22,874",
+      "end": "00:25:24,576",
+      "text": "Moon, do you really know Clay Calloway?"
+    },
+    {
+      "start": "00:25:29,647",
+      "end": "00:25:32,317",
+      "text": "Set 'em up with our designers, our dancers, whatever they need."
+    },
+    {
+      "start": "00:25:34,419",
+      "end": "00:25:36,721",
+      "text": "The very best suites. The whole shaboodle."
+    },
+    {
+      "start": "00:25:39,390",
+      "end": "00:25:41,492",
+      "text": "Don't you ever do nothing to make me look bad."
+    },
+    {
+      "start": "00:25:44,529",
+      "end": "00:25:46,731",
+      "text": "You better not, or I'll throw you off the roof."
+    },
+    {
+      "start": "00:25:50,234",
+      "end": "00:25:52,503",
+      "text": "Take it away, Raoul."
+    },
+    {
+      "start": "00:26:02,547",
+      "end": "00:26:05,283",
+      "text": "Yes, we are, Gunter."
+    },
+    {
+      "start": "00:26:07,185",
+      "end": "00:26:08,620",
+      "text": "You're a genius."
+    },
+    {
+      "start": "00:26:13,758",
+      "end": "00:26:15,493",
+      "text": "No, you're not."
+    },
+    {
+      "start": "00:26:18,363",
+      "end": "00:26:20,665",
+      "text": "You have no idea what you're getting into."
+    },
+    {
+      "start": "00:26:33,911",
+      "end": "00:26:35,613",
+      "text": "No, it's not."
+    },
+    {
+      "start": "00:26:39,884",
+      "end": "00:26:41,653",
+      "text": "An address, a phone number, anything."
+    },
+    {
+      "start": "00:27:59,564",
+      "end": "00:28:00,898",
+      "text": "Oh. I love it."
     }
   ],
   "guessing": [
@@ -162,54 +914,54 @@
       "options": [
         {
           "label": "C",
-          "text": "Quick. Get in.",
-          "start": "00:17:05,843",
-          "end": "00:17:08,712"
+          "text": "Uh, it's Buster Moon from the New Moon Theater.",
+          "start": "00:22:29,401",
+          "end": "00:22:32,270"
         },
         {
           "label": "B",
-          "text": "Hey, he said not now. Psst.",
-          "start": "00:24:36,194",
-          "end": "00:24:37,362"
+          "text": "No, it's not.",
+          "start": "00:26:33,911",
+          "end": "00:26:35,613"
         },
         {
           "label": "A",
-          "text": "Little guy, you're here for the audition?",
-          "start": "00:22:17,020",
-          "end": "00:22:18,523"
+          "text": "Yes, we are, Gunter.",
+          "start": "00:26:02,547",
+          "end": "00:26:05,283"
         }
       ],
       "video": {
-        "start": "00:17:05,843",
-        "end": "00:17:08,712"
+        "start": "00:22:29,401",
+        "end": "00:22:32,270"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "C",
+      "correctAnswer": "A",
       "options": [
         {
+          "label": "A",
+          "text": "I need big shows, Jerry.",
+          "start": "00:23:02,133",
+          "end": "00:23:04,102"
+        },
+        {
           "label": "C",
-          "text": "Oh, Mr. Moon?",
-          "start": "00:18:09,241",
-          "end": "00:18:10,308"
+          "text": "No, you're not.",
+          "start": "00:26:13,758",
+          "end": "00:26:15,493"
         },
         {
           "label": "B",
-          "text": "Quick. Go, go, go, go, go, go, go.",
-          "start": "00:18:26,091",
-          "end": "00:18:28,160"
-        },
-        {
-          "label": "A",
-          "text": "Hey, he said not now. Psst.",
-          "start": "00:24:36,194",
-          "end": "00:24:37,362"
+          "text": "Three weeks to get this show up and running, okay?",
+          "start": "00:25:18,603",
+          "end": "00:25:21,239"
         }
       ],
       "video": {
-        "start": "00:18:09,241",
-        "end": "00:18:10,308"
+        "start": "00:23:02,133",
+        "end": "00:23:04,102"
       }
     },
     {
@@ -218,161 +970,49 @@
       "options": [
         {
           "label": "A",
-          "text": "we'd appreciate that.",
-          "start": "00:21:59,704",
-          "end": "00:22:01,972"
-        },
-        {
-          "label": "C",
-          "text": "Quick. Go, go, go, go, go, go, go.",
-          "start": "00:18:26,091",
-          "end": "00:18:28,160"
+          "text": "I know, right?",
+          "start": "00:23:26,424",
+          "end": "00:23:27,625"
         },
         {
           "label": "B",
-          "text": "- I'll-I'll connect you. - Oh, no.",
-          "start": "00:18:02,367",
-          "end": "00:18:04,269"
+          "text": "You have no idea what you're getting into.",
+          "start": "00:26:18,363",
+          "end": "00:26:20,665"
+        },
+        {
+          "label": "C",
+          "text": "Yes, we are, Gunter.",
+          "start": "00:26:02,547",
+          "end": "00:26:05,283"
         }
       ],
       "video": {
-        "start": "00:21:59,704",
-        "end": "00:22:01,972"
+        "start": "00:23:26,424",
+        "end": "00:23:27,625"
       }
     },
     {
       "question": 4,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
-          "text": "Little guy, you're here for the audition?",
-          "start": "00:22:17,020",
-          "end": "00:22:18,523"
-        },
-        {
-          "label": "A",
-          "text": "Sir, I'm sorry, but seriously?",
-          "start": "00:25:00,818",
-          "end": "00:25:02,420"
-        },
-        {
-          "label": "C",
-          "text": "Well, Suki, for your information,",
-          "start": "00:25:09,394",
-          "end": "00:25:11,462"
-        }
-      ],
-      "video": {
-        "start": "00:22:17,020",
-        "end": "00:22:18,523"
-      }
-    },
-    {
-      "question": 5,
       "correctAnswer": "C",
       "options": [
         {
           "label": "C",
-          "text": "of an ordinary high school girl who discovers...",
-          "start": "00:22:45,383",
-          "end": "00:22:48,052"
-        },
-        {
-          "label": "B",
-          "text": "so what's the show called?",
-          "start": "00:23:34,799",
-          "end": "00:23:36,568"
-        },
-        {
-          "label": "A",
-          "text": "we'd appreciate that.",
-          "start": "00:21:59,704",
-          "end": "00:22:01,972"
-        }
-      ],
-      "video": {
-        "start": "00:22:45,383",
-        "end": "00:22:48,052"
-      }
-    },
-    {
-      "question": 6,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
-          "text": "Hey, I have a big one.",
-          "start": "00:23:06,137",
-          "end": "00:23:08,072"
-        },
-        {
-          "label": "C",
-          "text": "...uh, tell Mr. Crystal what it's called?",
-          "start": "00:23:41,105",
-          "end": "00:23:42,407"
-        },
-        {
-          "label": "A",
-          "text": "- Let's get you out of here. - Aha!",
-          "start": "00:17:21,859",
-          "end": "00:17:23,694"
-        }
-      ],
-      "video": {
-        "start": "00:23:06,137",
-        "end": "00:23:08,072"
-      }
-    },
-    {
-      "question": 7,
-      "correctAnswer": "A",
-      "options": [
-        {
-          "label": "A",
-          "text": "I mean, doesn't everybody?",
-          "start": "00:23:27,659",
-          "end": "00:23:29,060"
-        },
-        {
-          "label": "C",
-          "text": "Yes. Yes, sir. Yes, sir.",
-          "start": "00:22:11,416",
-          "end": "00:22:12,983"
-        },
-        {
-          "label": "B",
-          "text": "Wait, if you know him,",
-          "start": "00:24:50,708",
-          "end": "00:24:52,310"
-        }
-      ],
-      "video": {
-        "start": "00:23:27,659",
-        "end": "00:23:29,060"
-      }
-    },
-    {
-      "question": 8,
-      "correctAnswer": "B",
-      "options": [
-        {
-          "label": "B",
           "text": "Uh, yeah, I got it.",
           "start": "00:23:53,384",
           "end": "00:23:56,019"
         },
         {
-          "label": "A",
-          "text": "Quick. Get in.",
-          "start": "00:17:05,843",
-          "end": "00:17:08,712"
+          "label": "B",
+          "text": "Yeah. Yeah, yeah, yeah. See, Jerry?",
+          "start": "00:23:29,093",
+          "end": "00:23:30,462"
         },
         {
-          "label": "C",
-          "text": "I mean, doesn't everybody?",
-          "start": "00:23:27,659",
-          "end": "00:23:29,060"
+          "label": "A",
+          "text": "You're a genius.",
+          "start": "00:26:07,185",
+          "end": "00:26:08,620"
         }
       ],
       "video": {
@@ -381,31 +1021,143 @@
       }
     },
     {
+      "question": 5,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Sir, I'm sorry, but seriously?",
+          "start": "00:25:00,818",
+          "end": "00:25:02,420"
+        },
+        {
+          "label": "A",
+          "text": "Moon, do you really know Clay Calloway?",
+          "start": "00:25:22,874",
+          "end": "00:25:24,576"
+        },
+        {
+          "label": "C",
+          "text": "Uh, yeah, I got it.",
+          "start": "00:23:53,384",
+          "end": "00:23:56,019"
+        }
+      ],
+      "video": {
+        "start": "00:25:00,818",
+        "end": "00:25:02,420"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
+          "text": "Moon, do you really know Clay Calloway?",
+          "start": "00:25:22,874",
+          "end": "00:25:24,576"
+        },
+        {
+          "label": "A",
+          "text": "You have no idea what you're getting into.",
+          "start": "00:26:18,363",
+          "end": "00:26:20,665"
+        },
+        {
+          "label": "B",
+          "text": "No, it's not.",
+          "start": "00:26:33,911",
+          "end": "00:26:35,613"
+        }
+      ],
+      "video": {
+        "start": "00:25:22,874",
+        "end": "00:25:24,576"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Don't you ever do nothing to make me look bad.",
+          "start": "00:25:39,390",
+          "end": "00:25:41,492"
+        },
+        {
+          "label": "A",
+          "text": "No, it's not.",
+          "start": "00:26:33,911",
+          "end": "00:26:35,613"
+        },
+        {
+          "label": "C",
+          "text": "Okay, honey. Come on, let's go.",
+          "start": "00:23:09,006",
+          "end": "00:23:10,974"
+        }
+      ],
+      "video": {
+        "start": "00:25:39,390",
+        "end": "00:25:41,492"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "B",
+          "text": "Yes, we are, Gunter.",
+          "start": "00:26:02,547",
+          "end": "00:26:05,283"
+        },
+        {
+          "label": "A",
+          "text": "Yeah, yeah, yes, we are.",
+          "start": "00:22:20,325",
+          "end": "00:22:22,060"
+        },
+        {
+          "label": "C",
+          "text": "Set 'em up with our designers, our dancers, whatever they need.",
+          "start": "00:25:29,647",
+          "end": "00:25:32,317"
+        }
+      ],
+      "video": {
+        "start": "00:26:02,547",
+        "end": "00:26:05,283"
+      }
+    },
+    {
       "question": 9,
       "correctAnswer": "B",
       "options": [
         {
           "label": "B",
-          "text": "Clay Calloway's permission to use his song?",
-          "start": "00:24:40,765",
-          "end": "00:24:42,767"
-        },
-        {
-          "label": "A",
-          "text": "Quick. Get in.",
-          "start": "00:17:05,843",
-          "end": "00:17:08,712"
+          "text": "You have no idea what you're getting into.",
+          "start": "00:26:18,363",
+          "end": "00:26:20,665"
         },
         {
           "label": "C",
-          "text": "...uh, tell Mr. Crystal what it's called?",
-          "start": "00:23:41,105",
-          "end": "00:23:42,407"
+          "text": "I know, right?",
+          "start": "00:23:26,424",
+          "end": "00:23:27,625"
+        },
+        {
+          "label": "A",
+          "text": "Set 'em up with our designers, our dancers, whatever they need.",
+          "start": "00:25:29,647",
+          "end": "00:25:32,317"
         }
       ],
       "video": {
-        "start": "00:24:40,765",
-        "end": "00:24:42,767"
+        "start": "00:26:18,363",
+        "end": "00:26:20,665"
       }
     },
     {
@@ -414,89 +1166,89 @@
       "options": [
         {
           "label": "C",
-          "text": "Well, Suki, for your information,",
-          "start": "00:25:09,394",
-          "end": "00:25:11,462"
+          "text": "Oh. I love it.",
+          "start": "00:27:59,564",
+          "end": "00:28:00,898"
         },
         {
           "label": "B",
-          "text": "Yes. Yes, sir. Yes, sir.",
-          "start": "00:22:11,416",
-          "end": "00:22:12,983"
+          "text": "You're a genius.",
+          "start": "00:26:07,185",
+          "end": "00:26:08,620"
         },
         {
           "label": "A",
-          "text": "Quick. Go, go, go, go, go, go, go.",
-          "start": "00:18:26,091",
-          "end": "00:18:28,160"
+          "text": "Three weeks to get this show up and running, okay?",
+          "start": "00:25:18,603",
+          "end": "00:25:21,239"
         }
       ],
       "video": {
-        "start": "00:25:09,394",
-        "end": "00:25:11,462"
+        "start": "00:27:59,564",
+        "end": "00:28:00,898"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "00:16:53,231",
-      "end": "00:16:55,200",
-      "text": "I'm here to see Mr. Crystal for the presentation."
+      "start": "00:22:14,719",
+      "end": "00:22:16,987",
+      "text": "Hey. Hey. Yeah, you."
     },
     {
       "question": 2,
-      "start": "00:17:00,838",
-      "end": "00:17:02,873",
-      "text": "I got all dressed up for nothing."
+      "start": "00:22:36,107",
+      "end": "00:22:38,276",
+      "text": "Yeah, great. Now, get to it."
     },
     {
       "question": 3,
-      "start": "00:17:21,859",
-      "end": "00:17:23,694",
-      "text": "- Let's get you out of here. - Aha!"
+      "start": "00:23:09,006",
+      "end": "00:23:10,974",
+      "text": "Okay, honey. Come on, let's go."
     },
     {
       "question": 4,
-      "start": "00:18:02,367",
-      "end": "00:18:04,269",
-      "text": "- I'll-I'll connect you. - Oh, no."
+      "start": "00:23:29,093",
+      "end": "00:23:30,462",
+      "text": "Yeah. Yeah, yeah, yeah. See, Jerry?"
     },
     {
       "question": 5,
-      "start": "00:18:26,091",
-      "end": "00:18:28,160",
-      "text": "Quick. Go, go, go, go, go, go, go."
+      "start": "00:24:34,792",
+      "end": "00:24:36,160",
+      "text": "Moon, how did you get in here?"
     },
     {
       "question": 6,
-      "start": "00:19:36,561",
-      "end": "00:19:38,163",
-      "text": "Where are you going now?"
+      "start": "00:25:18,603",
+      "end": "00:25:21,239",
+      "text": "Three weeks to get this show up and running, okay?"
     },
     {
       "question": 7,
-      "start": "00:22:07,145",
-      "end": "00:22:08,380",
-      "text": "Why am I standing here waiting?"
+      "start": "00:25:34,419",
+      "end": "00:25:36,721",
+      "text": "The very best suites. The whole shaboodle."
     },
     {
       "question": 8,
-      "start": "00:22:11,416",
-      "end": "00:22:12,983",
-      "text": "Yes. Yes, sir. Yes, sir."
+      "start": "00:25:50,234",
+      "end": "00:25:52,503",
+      "text": "Take it away, Raoul."
     },
     {
       "question": 9,
-      "start": "00:22:27,232",
-      "end": "00:22:29,367",
-      "text": "Your name? Hey, your name, please?"
+      "start": "00:26:13,758",
+      "end": "00:26:15,493",
+      "text": "No, you're not."
     },
     {
       "question": 10,
-      "start": "00:22:38,309",
-      "end": "00:22:39,144",
-      "text": "Of course. Yes."
+      "start": "00:26:39,884",
+      "end": "00:26:41,653",
+      "text": "An address, a phone number, anything."
     }
   ]
 }

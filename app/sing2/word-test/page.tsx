@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
+import { getVideoSource } from '@/app/utils/videoSource';
 
 export default function WordTestPage() {
   const [playCount, setPlayCount] = useState(0);
@@ -18,7 +19,7 @@ export default function WordTestPage() {
 
   // Sample data - using main Sing2 video with timestamps from lesson data
   const currentScene = {
-    videoPath: '/videos/sing2.mp4',
+    videoPath: getVideoSource(),
     startTime: 103.721, // 00:01:43,721 from lesson-1.json
     endTime: 106.124,   // 00:01:46,124 - "All right, let's keep up the good work"
     correctWords: ['all right', 'let\'s', 'keep up', 'the', 'good', 'work']

@@ -219,9 +219,6 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
   }, [playingAudio]);
 
   const handleAnswerSelect = useCallback((selectedAnswer: string, correctAnswer?: string) => {
-    setUserAnswers(prev => [...prev, selectedAnswer]);
-    
-    // 정답/오답 판단
     if (correctAnswer && selectedAnswer === correctAnswer) {
       setShowCorrect(true);
       setTimeout(() => setShowCorrect(false), 2000);

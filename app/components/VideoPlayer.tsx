@@ -82,6 +82,14 @@ const VideoPlayer = memo(function VideoPlayer({
     }
   }, [startTime, src]);
 
+  useEffect(() => {
+    lastPlayNonceRef.current = 0;
+    endFiredForSegmentRef.current = false;
+    hasPlayedForCurrentSegmentRef.current = false;
+    onPlayCalledForCurrentSegmentRef.current = false;
+    onReadyHasSeekedRef.current = false;
+  }, [startTime, endTime]);
+
   // Helper to handle segment end logic identically across interval and onProgress
   const handlePotentialSegmentEnd = (currentSeconds: number) => {
     if (!isFinite(endTime)) return;
@@ -223,7 +231,12 @@ const VideoPlayer = memo(function VideoPlayer({
             width="100%"
             height="100%"
             className="absolute inset-0"
-            onPause={() => setIsPaused(true)}
+            onPause={() => {
+              if (Date.now() < suppressEndCheckUntilRef.current) {
+                return;
+              }
+              setIsPaused(true);
+            }}
             onLoad={() => {}}
             onReady={() => {
               if (!isReady) {
@@ -259,11 +272,16 @@ const VideoPlayer = memo(function VideoPlayer({
             onProgress={(state) => {
               // If this is the first onProgress for this segment and onPlay callback hasn't been called yet, call it now
               // This is a fallback in case ReactPlayer's onPlay event doesn't fire
-              if (!onPlayCalledForCurrentSegmentRef.current && !hasPlayedForCurrentSegmentRef.current && state.playedSeconds >= startTime) {
-                onPlayCalledForCurrentSegmentRef.current = true;
-                hasPlayedForCurrentSegmentRef.current = true;
-                setIsPaused(false);
-                if (onPlay) onPlay();
+              if (!onPlayCalledForCurrentSegmentRef.current && !hasPlayedForCurrentSegmentRef.current) {
+                const inSegment =
+                  state.playedSeconds >= startTime - 0.12 &&
+                  (!isFinite(endTime) || state.playedSeconds <= endTime + 0.05);
+                if (inSegment) {
+                  onPlayCalledForCurrentSegmentRef.current = true;
+                  hasPlayedForCurrentSegmentRef.current = true;
+                  setIsPaused(false);
+                  if (onPlay) onPlay();
+                }
               }
 
               // Invoke time update callback

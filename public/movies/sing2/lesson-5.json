@@ -1,23 +1,23 @@
 {
   "watching": {
-    "start": "00:33:44,875",
-    "end": "00:42:00,405"
+    "start": "00:33:56,754",
+    "end": "00:41:19,130"
   },
-  "mimicking": [
+  "fullSubtitles": [
     {
-      "start": "00:33:44,875",
-      "end": "00:33:46,244",
-      "text": "Come on, Johnny. You can do better."
+      "start": "00:33:56,754",
+      "end": "00:34:00,624",
+      "text": "Five, six, seven, and tippy-toes, tippy-toes."
     },
     {
-      "start": "00:33:50,047",
-      "end": "00:33:51,615",
-      "text": "And thrust, and thrust."
+      "start": "00:34:00,658",
+      "end": "00:34:02,360",
+      "text": "I don't see your tippy-toes."
     },
     {
-      "start": "00:33:54,685",
-      "end": "00:33:56,720",
-      "text": "Still not thrusting. Can you thrust, please?"
+      "start": "00:34:02,394",
+      "end": "00:34:04,162",
+      "text": "Oh, come on, he's having a laugh."
     },
     {
       "start": "00:34:04,196",
@@ -25,9 +25,29 @@
       "text": "- Tippy-toes. Come on, let's go. - Seven, and..."
     },
     {
+      "start": "00:34:06,131",
+      "end": "00:34:09,600",
+      "text": "That is rubbish, terribly poor, really bad."
+    },
+    {
+      "start": "00:34:11,869",
+      "end": "00:34:14,406",
+      "text": "That bloke absolutely hates me."
+    },
+    {
       "start": "00:34:14,439",
       "end": "00:34:16,141",
       "text": "Hang in there, Johnny."
+    },
+    {
+      "start": "00:34:16,174",
+      "end": "00:34:17,775",
+      "text": "The first week's always tough."
+    },
+    {
+      "start": "00:34:17,808",
+      "end": "00:34:19,743",
+      "text": "Yeah. You're right. You're right."
     },
     {
       "start": "00:34:19,777",
@@ -35,9 +55,79 @@
       "text": "Meena, come and meet your partner."
     },
     {
+      "start": "00:34:21,712",
+      "end": "00:34:22,746",
+      "text": "Oh, my gosh, he's here?"
+    },
+    {
+      "start": "00:34:22,780",
+      "end": "00:34:24,316",
+      "text": "Yep. He's called Darius."
+    },
+    {
+      "start": "00:34:24,349",
+      "end": "00:34:25,916",
+      "text": "Won a ton of awards."
+    },
+    {
+      "start": "00:34:25,950",
+      "end": "00:34:28,353",
+      "text": "And I think you guys are gonna have great chemistry."
+    },
+    {
+      "start": "00:34:28,386",
+      "end": "00:34:30,255",
+      "text": "♪ If I was your boyfriend ♪"
+    },
+    {
+      "start": "00:34:30,288",
+      "end": "00:34:32,923",
+      "text": "♪ I'd never let you go ♪"
+    },
+    {
+      "start": "00:34:32,957",
+      "end": "00:34:35,260",
+      "text": "♪ Keep you on my arm, girl ♪"
+    },
+    {
+      "start": "00:34:35,293",
+      "end": "00:34:37,761",
+      "text": "♪ You'd never be alone ♪"
+    },
+    {
+      "start": "00:34:37,795",
+      "end": "00:34:40,365",
+      "text": "♪ I can be a gentleman ♪"
+    },
+    {
+      "start": "00:34:40,398",
+      "end": "00:34:42,234",
+      "text": "♪ Anything you want ♪"
+    },
+    {
+      "start": "00:34:42,267",
+      "end": "00:34:43,801",
+      "text": "- Wow. - ♪ If I... ♪"
+    },
+    {
       "start": "00:34:43,834",
       "end": "00:34:45,270",
       "text": "That's really great, Darius."
+    },
+    {
+      "start": "00:34:45,303",
+      "end": "00:34:47,771",
+      "text": "Uh, yeah, it's a scene from the last show I was in."
+    },
+    {
+      "start": "00:34:47,805",
+      "end": "00:34:50,142",
+      "text": "I'm sure you heard of it... Hope Against Hope."
+    },
+    {
+      "start": "00:34:50,175",
+      "end": "00:34:53,010",
+      "text": "Gosh, I won every award in town."
     },
     {
       "start": "00:34:53,043",
@@ -45,9 +135,44 @@
       "text": "Uh, the Golden Piccolo for Best Crying."
     },
     {
+      "start": "00:34:55,080",
+      "end": "00:34:56,814",
+      "text": "Uh, the Archer Newman Award"
+    },
+    {
+      "start": "00:34:56,847",
+      "end": "00:34:58,383",
+      "text": "for Outstanding Hair."
+    },
+    {
       "start": "00:34:58,416",
       "end": "00:34:59,950",
       "text": "Oh, yeah. Yeah, yeah, yeah."
+    },
+    {
+      "start": "00:34:59,984",
+      "end": "00:35:02,220",
+      "text": "Anyway, my costar, she was just like you, Gina."
+    },
+    {
+      "start": "00:35:02,254",
+      "end": "00:35:04,222",
+      "text": "- She was, uh... - Uh, it's Meena."
+    },
+    {
+      "start": "00:35:04,256",
+      "end": "00:35:05,390",
+      "text": "Excuse me?"
+    },
+    {
+      "start": "00:35:05,423",
+      "end": "00:35:08,692",
+      "text": "M-My name, it's Meena, not Gina."
+    },
+    {
+      "start": "00:35:08,726",
+      "end": "00:35:10,027",
+      "text": "Yeah, okay."
     },
     {
       "start": "00:35:10,061",
@@ -55,9 +180,84 @@
       "text": "In the future, if you could not interrupt me,"
     },
     {
+      "start": "00:35:12,430",
+      "end": "00:35:14,166",
+      "text": "that would be way better."
+    },
+    {
+      "start": "00:35:14,199",
+      "end": "00:35:16,468",
+      "text": "Okay, okay. Let's rehearse."
+    },
+    {
+      "start": "00:35:18,136",
+      "end": "00:35:21,072",
+      "text": "♪ Don't wanna close my eyes ♪"
+    },
+    {
+      "start": "00:35:21,106",
+      "end": "00:35:23,475",
+      "text": "♪ Don't wanna fall asleep ♪"
+    },
+    {
+      "start": "00:35:23,508",
+      "end": "00:35:25,709",
+      "text": "- ♪ 'Cause I'd miss you, babe ♪ - Uh, uh, uh..."
+    },
+    {
+      "start": "00:35:25,743",
+      "end": "00:35:27,078",
+      "text": "- ♪ And I ♪ - Oh."
+    },
+    {
+      "start": "00:35:27,112",
+      "end": "00:35:29,214",
+      "text": "♪ Don't wanna miss a thing... ♪"
+    },
+    {
       "start": "00:35:29,247",
       "end": "00:35:30,448",
       "text": "No, no, no, no, no, uh..."
+    },
+    {
+      "start": "00:35:30,482",
+      "end": "00:35:33,050",
+      "text": "This song is not helping her at all."
+    },
+    {
+      "start": "00:35:33,084",
+      "end": "00:35:36,354",
+      "text": "♪ When I saw you in that dress ♪"
+    },
+    {
+      "start": "00:35:36,388",
+      "end": "00:35:39,191",
+      "text": "♪ Looking so beautiful ♪"
+    },
+    {
+      "start": "00:35:39,224",
+      "end": "00:35:42,793",
+      "text": "♪ I don't deserve this ♪"
+    },
+    {
+      "start": "00:35:42,826",
+      "end": "00:35:45,130",
+      "text": "♪ Darling, you look ♪"
+    },
+    {
+      "start": "00:35:45,163",
+      "end": "00:35:48,200",
+      "text": "♪ Perfect tonight. ♪"
+    },
+    {
+      "start": "00:35:48,233",
+      "end": "00:35:49,733",
+      "text": "Oh, boy."
+    },
+    {
+      "start": "00:35:49,767",
+      "end": "00:35:51,869",
+      "text": "So, where's Calloway?"
     },
     {
       "start": "00:35:51,902",
@@ -65,9 +265,109 @@
       "text": "Uh, he'll be here very soon."
     },
     {
+      "start": "00:35:53,871",
+      "end": "00:35:56,074",
+      "text": "- Mm, is that so? - It is indeed so."
+    },
+    {
+      "start": "00:35:56,107",
+      "end": "00:35:58,809",
+      "text": "In fact, my trusty assistant Miss Crawly"
+    },
+    {
+      "start": "00:35:58,842",
+      "end": "00:36:01,213",
+      "text": "is on her way to meet him right now."
+    },
+    {
+      "start": "00:36:04,282",
+      "end": "00:36:06,184",
+      "text": "- ♪ Wake up ♪ - ♪ Wake up ♪"
+    },
+    {
+      "start": "00:36:06,218",
+      "end": "00:36:08,286",
+      "text": "- ♪ Grab a brush and put a little makeup ♪ - ♪ Makeup ♪"
+    },
+    {
+      "start": "00:36:08,320",
+      "end": "00:36:10,355",
+      "text": "- ♪ Hide your scars to fade away the shake-up ♪ - ♪ Doo-doo ♪"
+    },
+    {
+      "start": "00:36:10,388",
+      "end": "00:36:12,424",
+      "text": "- ♪ Why'd you leave the keys upon the table? ♪ - ♪ The table ♪"
+    },
+    {
+      "start": "00:36:12,457",
+      "end": "00:36:14,226",
+      "text": "- ♪ Here you go, create another fable ♪ - ♪ You wanted to ♪"
+    },
+    {
+      "start": "00:36:14,259",
+      "end": "00:36:16,026",
+      "text": "♪ Grab a brush and put a little makeup... ♪"
+    },
+    {
+      "start": "00:36:16,061",
+      "end": "00:36:17,095",
+      "text": "Your destination is on the right."
+    },
+    {
       "start": "00:36:17,128",
       "end": "00:36:18,796",
       "text": "On the right. Okay."
+    },
+    {
+      "start": "00:36:59,471",
+      "end": "00:37:01,872",
+      "text": "Oh."
+    },
+    {
+      "start": "00:37:14,352",
+      "end": "00:37:15,786",
+      "text": "Oh."
+    },
+    {
+      "start": "00:37:25,130",
+      "end": "00:37:26,997",
+      "text": "Mr. Calloway?"
+    },
+    {
+      "start": "00:37:27,031",
+      "end": "00:37:28,899",
+      "text": "Hello?"
+    },
+    {
+      "start": "00:37:28,932",
+      "end": "00:37:31,035",
+      "text": "Is anybody home?"
+    },
+    {
+      "start": "00:37:40,278",
+      "end": "00:37:41,346",
+      "text": "Ooh."
+    },
+    {
+      "start": "00:38:02,634",
+      "end": "00:38:04,602",
+      "text": "Okay, I got you."
+    },
+    {
+      "start": "00:38:20,318",
+      "end": "00:38:22,220",
+      "text": "Clay Callowa..."
+    },
+    {
+      "start": "00:38:28,293",
+      "end": "00:38:29,893",
+      "text": "Oopsie-daisy."
+    },
+    {
+      "start": "00:38:29,927",
+      "end": "00:38:31,262",
+      "text": "Hello."
     },
     {
       "start": "00:38:31,296",
@@ -75,9 +375,49 @@
       "text": "I can't take your call right now,"
     },
     {
+      "start": "00:38:33,665",
+      "end": "00:38:37,102",
+      "text": "but please leave me a message after the beep."
+    },
+    {
+      "start": "00:38:38,670",
+      "end": "00:38:40,305",
+      "text": "Miss Crawly, it's me, Mr. Moon."
+    },
+    {
       "start": "00:38:40,338",
       "end": "00:38:42,107",
       "text": "I haven't heard from you in a while."
+    },
+    {
+      "start": "00:38:42,140",
+      "end": "00:38:43,508",
+      "text": "I'm starting to worry here."
+    },
+    {
+      "start": "00:38:43,541",
+      "end": "00:38:44,975",
+      "text": "Moon!"
+    },
+    {
+      "start": "00:38:45,008",
+      "end": "00:38:46,644",
+      "text": "Mr. Crystal."
+    },
+    {
+      "start": "00:38:46,678",
+      "end": "00:38:49,381",
+      "text": "Your set designs are a disgrace."
+    },
+    {
+      "start": "00:38:49,414",
+      "end": "00:38:51,014",
+      "text": "What?"
+    },
+    {
+      "start": "00:38:52,317",
+      "end": "00:38:54,686",
+      "text": "I'm just messing with you."
     },
     {
       "start": "00:38:54,719",
@@ -85,9 +425,49 @@
       "text": "Where's your sense of humor, huh?"
     },
     {
+      "start": "00:38:58,256",
+      "end": "00:39:00,392",
+      "text": "Anyway, this is my daughter Porsha."
+    },
+    {
+      "start": "00:39:00,425",
+      "end": "00:39:01,659",
+      "text": "Hey."
+    },
+    {
+      "start": "00:39:01,693",
+      "end": "00:39:03,294",
+      "text": "Nice to meet you, Porsha."
+    },
+    {
+      "start": "00:39:03,328",
+      "end": "00:39:05,296",
+      "text": "She wants to meet Calloway. Big fan, aren't you, baby?"
+    },
+    {
+      "start": "00:39:05,330",
+      "end": "00:39:08,199",
+      "text": "Oh, my gosh, I'm, like, so into vintage right now."
+    },
+    {
       "start": "00:39:08,233",
       "end": "00:39:09,467",
       "text": "So, where is he?"
+    },
+    {
+      "start": "00:39:09,501",
+      "end": "00:39:11,269",
+      "text": "Uh, well..."
+    },
+    {
+      "start": "00:39:11,302",
+      "end": "00:39:13,971",
+      "text": "I-I'm not expecting Clay on set just yet."
+    },
+    {
+      "start": "00:39:14,004",
+      "end": "00:39:15,407",
+      "text": "- I mean... - Wait."
     },
     {
       "start": "00:39:15,440",
@@ -95,9 +475,54 @@
       "text": "Is this, like, a sky-fi show?"
     },
     {
+      "start": "00:39:17,040",
+      "end": "00:39:19,544",
+      "text": "Uh, sci-fi? Yes. Yes, it is."
+    },
+    {
+      "start": "00:39:19,577",
+      "end": "00:39:22,380",
+      "text": "Oh, my gosh, I love sky-fi."
+    },
+    {
+      "start": "00:39:22,414",
+      "end": "00:39:23,681",
+      "text": "Mr. Moon!"
+    },
+    {
+      "start": "00:39:23,715",
+      "end": "00:39:25,949",
+      "text": "- We're ready on the tower. - Oh."
+    },
+    {
       "start": "00:39:25,983",
       "end": "00:39:27,352",
       "text": "Thank you, Sasha. We, uh..."
+    },
+    {
+      "start": "00:39:27,385",
+      "end": "00:39:29,287",
+      "text": "We're gonna rehearse, Mr. Crystal, so..."
+    },
+    {
+      "start": "00:39:29,320",
+      "end": "00:39:31,556",
+      "text": "Yeah, yeah, yeah, yeah. You go and do your rehearsing thing."
+    },
+    {
+      "start": "00:39:31,589",
+      "end": "00:39:33,258",
+      "text": "- Go, go, go, go. - Playback."
+    },
+    {
+      "start": "00:39:35,693",
+      "end": "00:39:37,362",
+      "text": "Okay."
+    },
+    {
+      "start": "00:39:37,395",
+      "end": "00:39:38,229",
+      "text": "All set."
     },
     {
       "start": "00:39:38,263",
@@ -105,9 +530,89 @@
       "text": "Just remember to release the safety catch"
     },
     {
+      "start": "00:39:40,098",
+      "end": "00:39:41,566",
+      "text": "before you jump, okay?"
+    },
+    {
+      "start": "00:39:41,599",
+      "end": "00:39:43,101",
+      "text": "Okay, yeah."
+    },
+    {
+      "start": "00:39:43,134",
+      "end": "00:39:45,002",
+      "text": "Is Mommy gonna jump off that?"
+    },
+    {
       "start": "00:39:45,035",
       "end": "00:39:46,571",
       "text": "She sure is."
+    },
+    {
+      "start": "00:39:46,604",
+      "end": "00:39:48,640",
+      "text": "Wow!"
+    },
+    {
+      "start": "00:39:48,673",
+      "end": "00:39:50,708",
+      "text": "♪ If you want it ♪"
+    },
+    {
+      "start": "00:39:50,742",
+      "end": "00:39:53,043",
+      "text": "♪ Take it ♪"
+    },
+    {
+      "start": "00:39:53,077",
+      "end": "00:39:56,046",
+      "text": "♪ I should've said it before ♪"
+    },
+    {
+      "start": "00:39:56,080",
+      "end": "00:39:58,048",
+      "text": "♪ Tried to hide it ♪"
+    },
+    {
+      "start": "00:39:58,082",
+      "end": "00:40:00,585",
+      "text": "♪ Fake it ♪"
+    },
+    {
+      "start": "00:40:00,618",
+      "end": "00:40:03,455",
+      "text": "♪ I can't pretend anymore... ♪"
+    },
+    {
+      "start": "00:40:08,793",
+      "end": "00:40:10,462",
+      "text": "Uh..."
+    },
+    {
+      "start": "00:40:10,495",
+      "end": "00:40:12,063",
+      "text": "Oh, my gosh."
+    },
+    {
+      "start": "00:40:12,096",
+      "end": "00:40:13,731",
+      "text": "Gunter."
+    },
+    {
+      "start": "00:40:13,765",
+      "end": "00:40:16,634",
+      "text": "Mr. Moon, I think Rosita's having, like,"
+    },
+    {
+      "start": "00:40:16,668",
+      "end": "00:40:19,204",
+      "text": "a major freak-out up here."
+    },
+    {
+      "start": "00:40:19,237",
+      "end": "00:40:20,205",
+      "text": "Oh, no."
     },
     {
       "start": "00:40:20,238",
@@ -115,9 +620,54 @@
       "text": "Hey, Moon, you really think the mommy pig's"
     },
     {
+      "start": "00:40:22,039",
+      "end": "00:40:23,341",
+      "text": "gonna pull this off?"
+    },
+    {
+      "start": "00:40:23,374",
+      "end": "00:40:24,209",
+      "text": "Mommy pig?"
+    },
+    {
+      "start": "00:40:24,242",
+      "end": "00:40:26,077",
+      "text": "Absolutely, sir."
+    },
+    {
+      "start": "00:40:26,110",
+      "end": "00:40:29,046",
+      "text": "Believe me, there's nothing Rosita can't do."
+    },
+    {
+      "start": "00:40:29,080",
+      "end": "00:40:31,149",
+      "text": "- I can't do this. - Why didn't you tell me"
+    },
+    {
       "start": "00:40:31,182",
       "end": "00:40:32,617",
       "text": "- you were afraid of heights? - I wasn't."
+    },
+    {
+      "start": "00:40:32,650",
+      "end": "00:40:34,619",
+      "text": "I-I mean, I've never been afraid in my whole life before,"
+    },
+    {
+      "start": "00:40:34,652",
+      "end": "00:40:36,788",
+      "text": "but I... suddenly, I just..."
+    },
+    {
+      "start": "00:40:36,821",
+      "end": "00:40:39,090",
+      "text": "I don't know what happened to me."
+    },
+    {
+      "start": "00:40:39,123",
+      "end": "00:40:41,493",
+      "text": "- Did my kids see that? - Hey, you guys."
     },
     {
       "start": "00:40:41,526",
@@ -125,9 +675,34 @@
       "text": "What's going on up here?"
     },
     {
+      "start": "00:40:43,294",
+      "end": "00:40:44,562",
+      "text": "Who is that?"
+    },
+    {
+      "start": "00:40:44,596",
+      "end": "00:40:46,097",
+      "text": "Ooh. Can I try?"
+    },
+    {
+      "start": "00:40:46,130",
+      "end": "00:40:47,232",
+      "text": "No, no, no, no, no, no."
+    },
+    {
       "start": "00:40:47,265",
       "end": "00:40:49,067",
       "text": "I-I can't let you jump off here."
+    },
+    {
+      "start": "00:40:49,100",
+      "end": "00:40:51,769",
+      "text": "Daddy, he won't let me jump!"
+    },
+    {
+      "start": "00:40:51,803",
+      "end": "00:40:54,072",
+      "text": "Moon, come on. Let her do the thing."
     },
     {
       "start": "00:40:54,105",
@@ -135,24 +710,196 @@
       "text": "- Yay! - Porsha, wait!"
     },
     {
+      "start": "00:40:55,840",
+      "end": "00:40:58,576",
+      "text": "Whoa, hey. Uh, just a minute."
+    },
+    {
+      "start": "00:41:02,547",
+      "end": "00:41:04,749",
+      "text": "I love it!"
+    },
+    {
       "start": "00:41:04,782",
       "end": "00:41:06,784",
       "text": "Whee! It's easy!"
     },
     {
-      "start": "00:41:19,163",
-      "end": "00:41:20,798",
-      "text": "- Um... - All of you."
+      "start": "00:41:06,818",
+      "end": "00:41:08,686",
+      "text": "All right, let's get you down, Rosita."
     },
     {
-      "start": "00:41:26,237",
-      "end": "00:41:29,274",
-      "text": "Yeah. And so, I was like..."
+      "start": "00:41:08,720",
+      "end": "00:41:10,321",
+      "text": "Oh, my gosh, you guys."
     },
     {
-      "start": "00:41:58,870",
-      "end": "00:42:00,405",
-      "text": "You want to try with the helmet this time?"
+      "start": "00:41:10,355",
+      "end": "00:41:13,324",
+      "text": "This is exactly like the dream I had last night."
+    },
+    {
+      "start": "00:41:13,358",
+      "end": "00:41:16,160",
+      "text": "Seriously, you-you were all there."
+    },
+    {
+      "start": "00:41:16,194",
+      "end": "00:41:19,130",
+      "text": "And you and you and that funny-looking guy over there."
+    }
+  ],
+  "mimicking": [
+    {
+      "start": "00:33:56,754",
+      "end": "00:34:00,624",
+      "text": "Five, six, seven, and tippy-toes, tippy-toes."
+    },
+    {
+      "start": "00:34:02,394",
+      "end": "00:34:04,162",
+      "text": "Oh, come on, he's having a laugh."
+    },
+    {
+      "start": "00:34:11,869",
+      "end": "00:34:14,406",
+      "text": "That bloke absolutely hates me."
+    },
+    {
+      "start": "00:34:16,174",
+      "end": "00:34:17,775",
+      "text": "The first week's always tough."
+    },
+    {
+      "start": "00:34:19,777",
+      "end": "00:34:21,679",
+      "text": "Meena, come and meet your partner."
+    },
+    {
+      "start": "00:34:24,349",
+      "end": "00:34:25,916",
+      "text": "Won a ton of awards."
+    },
+    {
+      "start": "00:34:43,834",
+      "end": "00:34:45,270",
+      "text": "That's really great, Darius."
+    },
+    {
+      "start": "00:34:47,805",
+      "end": "00:34:50,142",
+      "text": "I'm sure you heard of it... Hope Against Hope."
+    },
+    {
+      "start": "00:34:58,416",
+      "end": "00:34:59,950",
+      "text": "Oh, yeah. Yeah, yeah, yeah."
+    },
+    {
+      "start": "00:35:05,423",
+      "end": "00:35:08,692",
+      "text": "M-My name, it's Meena, not Gina."
+    },
+    {
+      "start": "00:35:30,482",
+      "end": "00:35:33,050",
+      "text": "This song is not helping her at all."
+    },
+    {
+      "start": "00:35:51,902",
+      "end": "00:35:53,837",
+      "text": "Uh, he'll be here very soon."
+    },
+    {
+      "start": "00:37:28,932",
+      "end": "00:37:31,035",
+      "text": "Is anybody home?"
+    },
+    {
+      "start": "00:38:38,670",
+      "end": "00:38:40,305",
+      "text": "Miss Crawly, it's me, Mr. Moon."
+    },
+    {
+      "start": "00:38:42,140",
+      "end": "00:38:43,508",
+      "text": "I'm starting to worry here."
+    },
+    {
+      "start": "00:38:52,317",
+      "end": "00:38:54,686",
+      "text": "I'm just messing with you."
+    },
+    {
+      "start": "00:38:58,256",
+      "end": "00:39:00,392",
+      "text": "Anyway, this is my daughter Porsha."
+    },
+    {
+      "start": "00:39:05,330",
+      "end": "00:39:08,199",
+      "text": "Oh, my gosh, I'm, like, so into vintage right now."
+    },
+    {
+      "start": "00:39:11,302",
+      "end": "00:39:13,971",
+      "text": "I-I'm not expecting Clay on set just yet."
+    },
+    {
+      "start": "00:39:17,040",
+      "end": "00:39:19,544",
+      "text": "Uh, sci-fi? Yes. Yes, it is."
+    },
+    {
+      "start": "00:39:29,320",
+      "end": "00:39:31,556",
+      "text": "Yeah, yeah, yeah, yeah. You go and do your rehearsing thing."
+    },
+    {
+      "start": "00:39:45,035",
+      "end": "00:39:46,571",
+      "text": "She sure is."
+    },
+    {
+      "start": "00:40:26,110",
+      "end": "00:40:29,046",
+      "text": "Believe me, there's nothing Rosita can't do."
+    },
+    {
+      "start": "00:40:41,526",
+      "end": "00:40:43,261",
+      "text": "What's going on up here?"
+    },
+    {
+      "start": "00:40:44,596",
+      "end": "00:40:46,097",
+      "text": "Ooh. Can I try?"
+    },
+    {
+      "start": "00:40:49,100",
+      "end": "00:40:51,769",
+      "text": "Daddy, he won't let me jump!"
+    },
+    {
+      "start": "00:40:55,840",
+      "end": "00:40:58,576",
+      "text": "Whoa, hey. Uh, just a minute."
+    },
+    {
+      "start": "00:41:06,818",
+      "end": "00:41:08,686",
+      "text": "All right, let's get you down, Rosita."
+    },
+    {
+      "start": "00:41:10,355",
+      "end": "00:41:13,324",
+      "text": "This is exactly like the dream I had last night."
+    },
+    {
+      "start": "00:41:16,194",
+      "end": "00:41:19,130",
+      "text": "And you and you and that funny-looking guy over there."
     }
   ],
   "guessing": [
@@ -162,77 +909,77 @@
       "options": [
         {
           "label": "C",
-          "text": "Still not thrusting. Can you thrust, please?",
-          "start": "00:33:54,685",
-          "end": "00:33:56,720"
+          "text": "That bloke absolutely hates me.",
+          "start": "00:34:11,869",
+          "end": "00:34:14,406"
         },
         {
           "label": "A",
-          "text": "Where's your sense of humor, huh?",
-          "start": "00:38:54,719",
-          "end": "00:38:56,987"
+          "text": "This song is not helping her at all.",
+          "start": "00:35:30,482",
+          "end": "00:35:33,050"
         },
         {
           "label": "B",
-          "text": "Come on, Johnny. You can do better.",
-          "start": "00:33:44,875",
-          "end": "00:33:46,244"
+          "text": "Uh, he'll be here very soon.",
+          "start": "00:35:51,902",
+          "end": "00:35:53,837"
         }
       ],
       "video": {
-        "start": "00:33:54,685",
-        "end": "00:33:56,720"
+        "start": "00:34:11,869",
+        "end": "00:34:14,406"
       }
     },
     {
       "question": 2,
-      "correctAnswer": "C",
-      "options": [
-        {
-          "label": "C",
-          "text": "Meena, come and meet your partner.",
-          "start": "00:34:19,777",
-          "end": "00:34:21,679"
-        },
-        {
-          "label": "B",
-          "text": "I haven't heard from you in a while.",
-          "start": "00:38:40,338",
-          "end": "00:38:42,107"
-        },
-        {
-          "label": "A",
-          "text": "Yeah. And so, I was like...",
-          "start": "00:41:26,237",
-          "end": "00:41:29,274"
-        }
-      ],
-      "video": {
-        "start": "00:34:19,777",
-        "end": "00:34:21,679"
-      }
-    },
-    {
-      "question": 3,
       "correctAnswer": "B",
       "options": [
         {
           "label": "B",
+          "text": "Won a ton of awards.",
+          "start": "00:34:24,349",
+          "end": "00:34:25,916"
+        },
+        {
+          "label": "A",
+          "text": "This song is not helping her at all.",
+          "start": "00:35:30,482",
+          "end": "00:35:33,050"
+        },
+        {
+          "label": "C",
+          "text": "I'm just messing with you.",
+          "start": "00:38:52,317",
+          "end": "00:38:54,686"
+        }
+      ],
+      "video": {
+        "start": "00:34:24,349",
+        "end": "00:34:25,916"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "C",
           "text": "Oh, yeah. Yeah, yeah, yeah.",
           "start": "00:34:58,416",
           "end": "00:34:59,950"
         },
         {
-          "label": "C",
-          "text": "What's going on up here?",
-          "start": "00:40:41,526",
-          "end": "00:40:43,261"
+          "label": "A",
+          "text": "And you and you and that funny-looking guy over there.",
+          "start": "00:41:16,194",
+          "end": "00:41:19,130"
         },
         {
-          "label": "A",
-          "text": "Just remember to release the safety catch",
-          "start": "00:39:38,263",
-          "end": "00:39:40,064"
+          "label": "B",
+          "text": "M-My name, it's Meena, not Gina.",
+          "start": "00:35:05,423",
+          "end": "00:35:08,692"
         }
       ],
       "video": {
@@ -242,25 +989,25 @@
     },
     {
       "question": 4,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
-          "label": "A",
+          "label": "C",
           "text": "Uh, he'll be here very soon.",
           "start": "00:35:51,902",
           "end": "00:35:53,837"
         },
         {
           "label": "B",
-          "text": "I haven't heard from you in a while.",
-          "start": "00:38:40,338",
-          "end": "00:38:42,107"
+          "text": "Anyway, this is my daughter Porsha.",
+          "start": "00:38:58,256",
+          "end": "00:39:00,392"
         },
         {
-          "label": "C",
-          "text": "Thank you, Sasha. We, uh...",
-          "start": "00:39:25,983",
-          "end": "00:39:27,352"
+          "label": "A",
+          "text": "I'm sure you heard of it... Hope Against Hope.",
+          "start": "00:34:47,805",
+          "end": "00:34:50,142"
         }
       ],
       "video": {
@@ -270,109 +1017,109 @@
     },
     {
       "question": 5,
-      "correctAnswer": "B",
+      "correctAnswer": "C",
       "options": [
         {
+          "label": "C",
+          "text": "I'm starting to worry here.",
+          "start": "00:38:42,140",
+          "end": "00:38:43,508"
+        },
+        {
           "label": "B",
-          "text": "I haven't heard from you in a while.",
-          "start": "00:38:40,338",
-          "end": "00:38:42,107"
+          "text": "All right, let's get you down, Rosita.",
+          "start": "00:41:06,818",
+          "end": "00:41:08,686"
         },
         {
           "label": "A",
-          "text": "Still not thrusting. Can you thrust, please?",
-          "start": "00:33:54,685",
-          "end": "00:33:56,720"
-        },
-        {
-          "label": "C",
-          "text": "- you were afraid of heights? - I wasn't.",
-          "start": "00:40:31,182",
-          "end": "00:40:32,617"
+          "text": "The first week's always tough.",
+          "start": "00:34:16,174",
+          "end": "00:34:17,775"
         }
       ],
       "video": {
-        "start": "00:38:40,338",
-        "end": "00:38:42,107"
+        "start": "00:38:42,140",
+        "end": "00:38:43,508"
       }
     },
     {
       "question": 6,
-      "correctAnswer": "B",
+      "correctAnswer": "C",
       "options": [
         {
+          "label": "C",
+          "text": "Oh, my gosh, I'm, like, so into vintage right now.",
+          "start": "00:39:05,330",
+          "end": "00:39:08,199"
+        },
+        {
           "label": "B",
-          "text": "Is this, like, a sky-fi show?",
-          "start": "00:39:15,440",
-          "end": "00:39:17,007"
+          "text": "Whoa, hey. Uh, just a minute.",
+          "start": "00:40:55,840",
+          "end": "00:40:58,576"
         },
         {
           "label": "A",
-          "text": "What's going on up here?",
-          "start": "00:40:41,526",
-          "end": "00:40:43,261"
-        },
-        {
-          "label": "C",
-          "text": "Oh, yeah. Yeah, yeah, yeah.",
-          "start": "00:34:58,416",
-          "end": "00:34:59,950"
+          "text": "This is exactly like the dream I had last night.",
+          "start": "00:41:10,355",
+          "end": "00:41:13,324"
         }
       ],
       "video": {
-        "start": "00:39:15,440",
-        "end": "00:39:17,007"
+        "start": "00:39:05,330",
+        "end": "00:39:08,199"
       }
     },
     {
       "question": 7,
-      "correctAnswer": "A",
+      "correctAnswer": "C",
       "options": [
         {
-          "label": "A",
-          "text": "She sure is.",
-          "start": "00:39:45,035",
-          "end": "00:39:46,571"
+          "label": "C",
+          "text": "Yeah, yeah, yeah, yeah. You go and do your rehearsing thing.",
+          "start": "00:39:29,320",
+          "end": "00:39:31,556"
         },
         {
-          "label": "C",
-          "text": "Yeah. And so, I was like...",
-          "start": "00:41:26,237",
-          "end": "00:41:29,274"
+          "label": "A",
+          "text": "I'm just messing with you.",
+          "start": "00:38:52,317",
+          "end": "00:38:54,686"
         },
         {
           "label": "B",
-          "text": "You want to try with the helmet this time?",
-          "start": "00:41:58,870",
-          "end": "00:42:00,405"
+          "text": "Anyway, this is my daughter Porsha.",
+          "start": "00:38:58,256",
+          "end": "00:39:00,392"
         }
       ],
       "video": {
-        "start": "00:39:45,035",
-        "end": "00:39:46,571"
+        "start": "00:39:29,320",
+        "end": "00:39:31,556"
       }
     },
     {
       "question": 8,
-      "correctAnswer": "B",
+      "correctAnswer": "A",
       "options": [
         {
-          "label": "B",
+          "label": "A",
           "text": "What's going on up here?",
           "start": "00:40:41,526",
           "end": "00:40:43,261"
         },
         {
           "label": "C",
-          "text": "You want to try with the helmet this time?",
-          "start": "00:41:58,870",
-          "end": "00:42:00,405"
+          "text": "This is exactly like the dream I had last night.",
+          "start": "00:41:10,355",
+          "end": "00:41:13,324"
         },
         {
-          "label": "A",
-          "text": "Is this, like, a sky-fi show?",
-          "start": "00:39:15,440",
-          "end": "00:39:17,007"
+          "label": "B",
+          "text": "This song is not helping her at all.",
+          "start": "00:35:30,482",
+          "end": "00:35:33,050"
         }
       ],
       "video": {
@@ -382,121 +1129,121 @@
     },
     {
       "question": 9,
-      "correctAnswer": "C",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "C",
-          "text": "Whee! It's easy!",
-          "start": "00:41:04,782",
-          "end": "00:41:06,784"
+          "label": "B",
+          "text": "Whoa, hey. Uh, just a minute.",
+          "start": "00:40:55,840",
+          "end": "00:40:58,576"
         },
         {
           "label": "A",
-          "text": "Still not thrusting. Can you thrust, please?",
-          "start": "00:33:54,685",
-          "end": "00:33:56,720"
+          "text": "Uh, sci-fi? Yes. Yes, it is.",
+          "start": "00:39:17,040",
+          "end": "00:39:19,544"
         },
         {
-          "label": "B",
-          "text": "Uh, he'll be here very soon.",
-          "start": "00:35:51,902",
-          "end": "00:35:53,837"
+          "label": "C",
+          "text": "Miss Crawly, it's me, Mr. Moon.",
+          "start": "00:38:38,670",
+          "end": "00:38:40,305"
         }
       ],
       "video": {
-        "start": "00:41:04,782",
-        "end": "00:41:06,784"
+        "start": "00:40:55,840",
+        "end": "00:40:58,576"
       }
     },
     {
       "question": 10,
-      "correctAnswer": "A",
+      "correctAnswer": "B",
       "options": [
         {
-          "label": "A",
-          "text": "You want to try with the helmet this time?",
-          "start": "00:41:58,870",
-          "end": "00:42:00,405"
-        },
-        {
           "label": "B",
-          "text": "Uh, the Golden Piccolo for Best Crying.",
-          "start": "00:34:53,043",
-          "end": "00:34:55,045"
+          "text": "And you and you and that funny-looking guy over there.",
+          "start": "00:41:16,194",
+          "end": "00:41:19,130"
         },
         {
           "label": "C",
-          "text": "Come on, Johnny. You can do better.",
-          "start": "00:33:44,875",
-          "end": "00:33:46,244"
+          "text": "Believe me, there's nothing Rosita can't do.",
+          "start": "00:40:26,110",
+          "end": "00:40:29,046"
+        },
+        {
+          "label": "A",
+          "text": "Oh, my gosh, I'm, like, so into vintage right now.",
+          "start": "00:39:05,330",
+          "end": "00:39:08,199"
         }
       ],
       "video": {
-        "start": "00:41:58,870",
-        "end": "00:42:00,405"
+        "start": "00:41:16,194",
+        "end": "00:41:19,130"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "00:33:44,875",
-      "end": "00:33:46,244",
-      "text": "Come on, Johnny. You can do better."
+      "start": "00:33:56,754",
+      "end": "00:34:00,624",
+      "text": "Five, six, seven, and tippy-toes, tippy-toes."
     },
     {
       "question": 2,
-      "start": "00:33:50,047",
-      "end": "00:33:51,615",
-      "text": "And thrust, and thrust."
+      "start": "00:34:16,174",
+      "end": "00:34:17,775",
+      "text": "The first week's always tough."
     },
     {
       "question": 3,
-      "start": "00:34:04,196",
-      "end": "00:34:06,098",
-      "text": "- Tippy-toes. Come on, let's go. - Seven, and..."
-    },
-    {
-      "question": 4,
-      "start": "00:34:14,439",
-      "end": "00:34:16,141",
-      "text": "Hang in there, Johnny."
-    },
-    {
-      "question": 5,
       "start": "00:34:43,834",
       "end": "00:34:45,270",
       "text": "That's really great, Darius."
     },
     {
+      "question": 4,
+      "start": "00:35:05,423",
+      "end": "00:35:08,692",
+      "text": "M-My name, it's Meena, not Gina."
+    },
+    {
+      "question": 5,
+      "start": "00:37:28,932",
+      "end": "00:37:31,035",
+      "text": "Is anybody home?"
+    },
+    {
       "question": 6,
-      "start": "00:34:53,043",
-      "end": "00:34:55,045",
-      "text": "Uh, the Golden Piccolo for Best Crying."
+      "start": "00:38:58,256",
+      "end": "00:39:00,392",
+      "text": "Anyway, this is my daughter Porsha."
     },
     {
       "question": 7,
-      "start": "00:35:10,061",
-      "end": "00:35:12,397",
-      "text": "In the future, if you could not interrupt me,"
+      "start": "00:39:17,040",
+      "end": "00:39:19,544",
+      "text": "Uh, sci-fi? Yes. Yes, it is."
     },
     {
       "question": 8,
-      "start": "00:35:29,247",
-      "end": "00:35:30,448",
-      "text": "No, no, no, no, no, uh..."
+      "start": "00:40:26,110",
+      "end": "00:40:29,046",
+      "text": "Believe me, there's nothing Rosita can't do."
     },
     {
       "question": 9,
-      "start": "00:36:17,128",
-      "end": "00:36:18,796",
-      "text": "On the right. Okay."
+      "start": "00:40:49,100",
+      "end": "00:40:51,769",
+      "text": "Daddy, he won't let me jump!"
     },
     {
       "question": 10,
-      "start": "00:38:31,296",
-      "end": "00:38:33,631",
-      "text": "I can't take your call right now,"
+      "start": "00:41:10,355",
+      "end": "00:41:13,324",
+      "text": "This is exactly like the dream I had last night."
     }
   ]
 }

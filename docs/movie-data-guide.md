@@ -50,20 +50,19 @@
 
 #### 2단계: Python 스크립트 실행
 ```bash
-cd scripts
-python3 generate_all_lessons.py 영화코드
+python3 scripts/generate_lessons_from_srt.py
 ```
 
 **스크립트가 자동으로 처리:**
 - SRT 파일 파싱 (전체 자막 읽기)
-- 노래 가사(♪) 제외
-- 3-9 단어 대화만 필터링
-- 영화를 12개 구간으로 균등 분할
-- 각 구간에서 30개 문장 고르게 선별
+- 노래(♪), 효과음, 두 사람 한 줄, 잘린 문장 제외
+- 쓸 만한 대화를 시간순으로 모은 뒤 **30개씩 12묶음**
+- 시계로 영화를 12등분하지 않음 (노래 구간에 수업이 걸리지 않게)
+- 각 묶음의 첫~마지막 문장이 watching 구간
 - fullSubtitles 자동 추출
-- guessing 문제 자동 생성
+- guessing / word 는 그 회차 미믹 30개에서 생성
 - lesson-1.json ~ lesson-12.json 생성
-- lesson-additional.json 생성 (번외용)
+- 기존 수동 선별본은 `original/` 폴더에 보관
 
 #### 3단계: 검수
 - [ ] lesson-1.json 첫 자막 "Mimicking is Fun" 확인
@@ -155,10 +154,15 @@ public/movies/
 
 ### 2. watching 필드 규칙
 
+회차는 **러닝타임을 12등분한 결과가 아닙니다.**  
+먼저 대화 문장을 고르고, 30개씩 묶은 뒤 그 묶음의 시간 범위를 watching으로 씁니다.
+
 | 회차 | start 규칙 | end 규칙 | 목적 |
 |------|------------|----------|------|
-| **1회차** | `00:00:00,000` (영화 처음부터) | 마지막 mimicking의 end 값 | 전체 조감 및 스토리 파악 |
-| **2~12회차** | 첫 번째 mimicking의 start 값 | 마지막 mimicking의 end 값 | 학습 구간에만 집중 |
+| **1회차** | `00:00:00,000` (영화 처음부터) | 마지막 mimicking의 end 값 | 오프닝 포함 분위기 파악 |
+| **2~12회차** | 첫 번째 mimicking의 start 값 | 마지막 mimicking의 end 값 | 이 회차 30문장이 있는 구간 |
+
+노래·공연처럼 대사가 없는 시간은 watching 안에 포함될 수 있지만, mimicking에는 넣지 않습니다.
 
 **💡 1회차가 특별한 이유:**
 - 학습자가 전체 영화의 흐름과 분위기를 파악할 수 있도록 처음부터 시청
@@ -206,17 +210,23 @@ public/movies/
 ### 4. mimicking 필드 규칙
 
 - 각 회차마다 **정확히 30개**의 문장
-- 영화에서 실제로 사용된 대사 선택
+- 영화에서 실제로 사용된 **한 사람의 완전한 대화**만
 - 시간 순서대로 정렬
-- 짧고 명확한 문장 선호 (3~9 단어)
-- 노래 가사(♪) 제외
-- watching 구간 내에서 고르게 분산
+- 3~12 단어, 길이 약 1.2~6초
+- `. ? !` 로 끝나는 문장 선호
 
-**선별 기준:**
-- 순수 대화 대사만
-- 3~9 단어 범위
-- 학습 가치가 있는 문장
-- 영화 전체 스토리 이해에 도움
+**넣지 않기:**
+- 노래 가사(`♪`)
+- 효과음 (`[crowd]`, `(sighs)`)
+- 자막 워터마크 (`Downloaded from...`)
+- 두 사람이 한 줄에 나온 대사 (`- A - B`)
+- 소문자로 시작하는 잘린 말
+- 쉼표/`and`/`like` 로만 끝나는 조각
+
+**선별 순서:**
+1. 영화 전체에서 위 조건을 통과한 대사를 시간순으로 모은다
+2. 전체를 고르게 30×12 = 360개 고른다
+3. 앞에서부터 30개씩 회차에 넣는다
 
 ```json
 {
@@ -229,10 +239,17 @@ public/movies/
 ### 5. guessing 필드 규칙
 
 - 각 회차마다 **정확히 10개**의 문제
+- 정답·오답 모두 **그 회차 mimicking 30개**에서만 고른다
 - 각 문제는 3지선다 (A, B, C)
 - `correctAnswer`는 정답 라벨 ("A", "B", "C")
 - `video`는 정답 영상의 시작/종료 시간
-- 오답 보기는 다른 미믹킹 문장에서 선택
+- 오답 보기는 다른 미믹킹 문장에서 선택 (다른 장면 소리가 나는 것이 정상)
+
+### 6. word 필드 규칙
+
+- 각 회차마다 **10개**
+- mimicking 30개 중 **게싱 정답으로 쓰지 않은 문장**에서 고른다
+- `{ question, start, end, text }`
 
 ```json
 {
@@ -415,13 +432,14 @@ AI에게 다음 프롬프트와 템플릿을 복사해서 보여주세요:
 새로운 영화 데이터를 만들 때 확인하세요:
 
 - [ ] 12회차 모두 생성했는가?
-- [ ] 각 회차마다 mimicking 30개, guessing 10개인가?
+- [ ] 각 회차마다 mimicking 30개, guessing 10개, word 10개인가?
+- [ ] 시계 12등분이 아니라 대화 30개 묶음인가?
 - [ ] 1회차 watching.start가 "00:00:00,000"인가?
 - [ ] 2~12회차 watching.start가 첫 mimicking.start와 동일한가?
 - [ ] 모든 watching.end가 마지막 mimicking.end와 동일한가?
+- [ ] 미믹 문장에 ♪, 두 사람 한 줄, 잘린 말이 없는가?
 - [ ] 시간 형식이 SRT 형식(HH:MM:SS,mmm)인가?
-- [ ] _comment 필드가 모두 제거되었는가?
-- [ ] JSON이 유효한가? (온라인 JSON validator로 검증)
+- [ ] JSON이 유효한가?
 
 ---
 
@@ -464,10 +482,10 @@ public/movies/
 ## 🔗 관련 파일
 
 - `docs/movie-data-guide.md` - 이 가이드 문서 (템플릿 포함)
+- `scripts/generate_lessons_from_srt.py` - 자막에서 12회차 생성
+- `public/movies/sing2/original/` - 수동 선별 원본
 - `public/movies/sing2.json` - 영화 정보 예시
-- `public/movies/sing2/lesson-1.json` - 1회차 데이터 예시
-- `app/constants/movies.ts` - loadMovie 함수 (동적 로드)
-- `app/constants/lesson.ts` - TypeScript 타입 정의
+- `public/movies/sing2/lesson-1.json` - 1회차 데이터
 
 ---
 
