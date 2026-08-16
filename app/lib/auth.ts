@@ -1,5 +1,14 @@
 import { supabase } from '../supabaseClient';
 
+export type AcademyRole = 'student' | 'academy';
+
+export type StudentProfile = {
+  id: string;
+  email: string | null;
+  nickname: string | null;
+  role: AcademyRole;
+};
+
 export async function signUp(email: string, password: string, nickname: string) {
   const { data, error } = await supabase.auth.signUp({
     email,
@@ -46,7 +55,7 @@ export async function getCurrentUser() {
   return user;
 }
 
-export async function getStudentProfile(userId: string) {
+export async function getStudentProfile(userId: string): Promise<StudentProfile> {
   const { data, error } = await supabase
     .from('student_profiles')
     .select('*')
@@ -54,5 +63,11 @@ export async function getStudentProfile(userId: string) {
     .single();
   
   if (error) throw error;
-  return data;
+  const role = data?.role === 'academy' ? 'academy' : 'student';
+  return {
+    id: data.id,
+    email: data.email ?? null,
+    nickname: data.nickname ?? null,
+    role,
+  };
 }

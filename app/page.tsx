@@ -11,8 +11,9 @@ export default function Home() {
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
-  const { user, loading } = useAuth();
+  const { user, profile, loading } = useAuth();
   const router = useRouter();
+
   return (
     <div className="relative">
       {/* 햄버거 메뉴 오버레이 */}
@@ -514,6 +515,22 @@ export default function Home() {
 
           {/* 로그인/로그아웃 버튼 - 오른쪽 */}
           <div className="flex items-center gap-3" style={{ transform: 'translateY(-20px)' }}>
+            {profile?.role === 'academy' && (
+              <button
+                type="button"
+                onClick={() => router.push('/admin')}
+                className="px-4 bg-gray-800 hover:bg-gray-700 transition-all duration-200 flex items-center justify-center text-[#60D96C]"
+                style={{
+                  height: '30px',
+                  borderRadius: '50px',
+                  fontFamily: 'var(--font-bm-hanna-pro), sans-serif',
+                  fontSize: '18px',
+                  fontWeight: '200'
+                }}
+              >
+                학생 현황
+              </button>
+            )}
             {loading ? (
               <div className="w-20 h-6 bg-gray-700 rounded animate-pulse"></div>
             ) : isLoggingOut && user ? (

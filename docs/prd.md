@@ -478,6 +478,34 @@ function srtTimeToSeconds(time: string): number {
 
 ---
 
-**문서 버전:** 2.0  
+**문서 버전:** 2.1  
 **작성일:** 2024.10.06  
 **다음 리뷰:** 필요시 업데이트
+
+---
+
+## 부록 v2.1 — 학원 마스터 (2026.08)
+
+학습 화면(Watching / Mimicking / Guessing / Word) UI·흐름은 변경하지 않는다.
+
+### 역할
+- `student_profiles.role`: `student`(기본) | `academy`
+- 학원 마스터는 공개 회원가입으로 만들지 않는다. SQL로만 승격한다.
+
+```sql
+UPDATE public.student_profiles
+SET role = 'academy'
+WHERE email = 'your-email@example.com';
+```
+
+### 화면
+- `/admin` 화면 이름: **학생 현황** (전 학생 + 원장 본인 진도·체류 시간)
+- 학원 계정도 홈에서 학습 가능. 홈의 「학생 현황」 버튼으로만 `/admin` 진입
+
+### 시간 기록
+- `/sing2` 레이아웃에서 보이지 않는 하트비트
+- 테이블: `learning_sessions`
+- SQL: `supabase/academy_master.sql` (Supabase SQL Editor에서 실행)
+
+### 범위 밖 (이번 버전 아님)
+- 학부모 앱, 강사 다중 계정, 학습 화면 리디자인
