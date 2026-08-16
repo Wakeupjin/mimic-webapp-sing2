@@ -41,7 +41,7 @@ interface LessonDataType {
   video_id: number;
   mimic_data: any[];
   guessing_data: any[];
-  watching_data: any;
+  watching_data?: any;
 }
 
 interface MimicSentence {

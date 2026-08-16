@@ -8,6 +8,14 @@ export type LessonSummary = {
   video_id: number;
 };
 
+export type LessonRecord = LessonSummary & {
+  mimic_data: any;
+  guessing_data: any;
+  word_data: any;
+  watch_start_sec: number;
+  watch_end_sec: number;
+};
+
 export function parseLessonNumber(movieId: string): number {
   const parts = movieId.split(':');
   return parseInt(parts[parts.length - 1] || '', 10);
@@ -31,15 +39,21 @@ function parseJsonField(value: unknown) {
   return value ?? [];
 }
 
-function normalizeLesson(row: Record<string, unknown>, lessonNumber: number) {
+function asNumber(value: unknown, fallback: number): number {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : fallback;
+}
+
+function normalizeLesson(row: Record<string, unknown>, lessonNumber: number): LessonRecord {
   return {
-    ...row,
-    id: row.id ?? lessonNumber,
-    lesson_number: row.lesson_number ?? lessonNumber,
-    video_id: row.video_id ?? 1,
+    id: asNumber(row.id, lessonNumber),
+    lesson_number: asNumber(row.lesson_number, lessonNumber),
+    video_id: asNumber(row.video_id, 1) || 1,
     mimic_data: parseJsonField(row.mimic_data),
     guessing_data: parseJsonField(row.guessing_data),
     word_data: parseJsonField(row.word_data),
+    watch_start_sec: asNumber(row.watch_start_sec, 0),
+    watch_end_sec: asNumber(row.watch_end_sec, 0),
   };
 }
 
@@ -62,7 +76,7 @@ function useLocalLessons() {
   return process.env.NEXT_PUBLIC_USE_LOCAL_LESSONS === 'true';
 }
 
-export async function fetchLessonData(lessonNumber: number) {
+export async function fetchLessonData(lessonNumber: number): Promise<LessonRecord | null> {
   if (useLocalLessons()) {
     const local = await fetchLessonFromJson(lessonNumber);
     if (!local) {

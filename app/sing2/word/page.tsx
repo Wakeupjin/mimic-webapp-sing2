@@ -38,7 +38,7 @@ interface LessonDataType {
   lesson_number: number;
   video_id: number;
   word_data: any[];
-  watching_data: any;
+  watching_data?: any;
 }
 
 function WordPageContent() {

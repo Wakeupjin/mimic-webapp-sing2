@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, Dispatch, SetStateAction } from 'react';
 import { srtTimeToSeconds } from '../utils/srt';
 
 interface GuessingGameState {
@@ -27,8 +27,8 @@ interface GuessingGameActions {
   setCurrentIndex: (index: number) => void;
   setCurrentQuestionIndex: (index: number) => void;
   setTotalQuestions: (total: number) => void;
-  setVideoPlayCount: (count: number) => void;
-  setUserAnswers: (answers: string[]) => void;
+  setVideoPlayCount: Dispatch<SetStateAction<number>>;
+  setUserAnswers: Dispatch<SetStateAction<string[]>>;
   setShowResults: (show: boolean) => void;
   setShowIntro: (show: boolean) => void;
   setIsGuessingStarted: (started: boolean) => void;
@@ -42,7 +42,7 @@ interface GuessingGameActions {
   setShowAgain: (show: boolean) => void;
   setAllOptionsPlayed: (played: boolean) => void;
   setIsGuessingComplete: (complete: boolean) => void;
-  setCorrectCount: (count: number) => void;
+  setCorrectCount: Dispatch<SetStateAction<number>>;
   loadGuessingData: (data: any[]) => void;
   startGuessing: () => void;
   playAudio: (option: any) => void;
