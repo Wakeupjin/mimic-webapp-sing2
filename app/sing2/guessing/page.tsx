@@ -593,10 +593,6 @@ function GuessingPageContent() {
   // 게싱 게임 화면
   return (
     <main className="min-h-screen px-4 py-4 flex flex-col">
-      {/* 모바일 가로화면 안내 */}
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-yellow-600 text-black text-center py-2 text-sm font-bold">
-        📱 모바일에서는 가로화면으로 자동 변경됩니다
-      </div>
       <div className="mb-4 flex items-center justify-between group">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
         <div className="flex items-center gap-3">
