@@ -6,6 +6,7 @@ import { setupVideoForScreenshot } from "../utils/screenshot";
 import { setupVideoCors, addCorsToVideoUrl } from "../utils/videoCors";
 import { setupVideoCorsOnLoad, forceVideoCors } from "../utils/corsProxy";
 import { getVideoSource } from "../utils/videoSource";
+import { applyInlinePlayback } from "../utils/device";
 import {
   VIDEO_SEGMENT_END_CHECK_INTERVAL,
   VIDEO_ONPLAY_TIMEOUT,
@@ -251,6 +252,7 @@ const VideoPlayer = memo(function VideoPlayer({
                       // 게싱 모드에서는 CORS 설정을 최소화하여 비디오 재생에 영향 주지 않도록
                       videoElement.crossOrigin = 'anonymous';
                       videoElement.setAttribute('crossorigin', 'anonymous');
+                      applyInlinePlayback(videoElement);
                       console.log('✅ 비디오 CORS 최소 설정 완료');
                     }
                   }
@@ -296,7 +298,14 @@ const VideoPlayer = memo(function VideoPlayer({
             muted={muted}
             config={{
               youtube: { playerVars: { modestbranding: 1 } },
-              file: { attributes: { preload: "metadata" } },
+              file: {
+                attributes: {
+                  preload: "metadata",
+                  playsInline: true,
+                  "webkit-playsinline": "true",
+                  "x5-playsinline": "true",
+                },
+              },
             }}
           />
         

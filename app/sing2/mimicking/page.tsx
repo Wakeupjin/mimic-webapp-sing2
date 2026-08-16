@@ -17,6 +17,7 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 import { getVideoSource } from "../../utils/videoSource";
+import { requestAppFullscreen } from "../../utils/device";
 
 function MimickingPageContent() {
   const { user, loading } = useAuth();
@@ -228,9 +229,7 @@ function MimickingPageContent() {
     
     if (shouldMaintainFullscreen) {
       // 풀스크린 유지
-      document.documentElement.requestFullscreen().catch((err) => {
-        console.error('풀스크린 복원 실패:', err);
-      });
+      requestAppFullscreen();
       sessionStorage.removeItem('maintainFullscreen');
     }
     
@@ -284,7 +283,7 @@ function MimickingPageContent() {
         e.preventDefault();
         e.stopPropagation();
         // 풀스크린 재진입
-        document.documentElement.requestFullscreen();
+        requestAppFullscreen();
       }
     };
 

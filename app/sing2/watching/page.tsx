@@ -18,6 +18,7 @@ import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '../../dataS
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { getVideoSource } from '../../utils/videoSource';
+import { applyInlinePlayback } from '../../utils/device';
 
 // 데이터 타입 정의
 type LessonDataType = {
@@ -399,6 +400,7 @@ function WatchingPageContent() {
               preload="auto"
               onLoadedData={(e) => {
                 const video = e.currentTarget;
+                applyInlinePlayback(video);
                 const startAt = savedProgress?.current_position || Number(lessonData?.watch_start_sec) || 0;
                 if (isFinite(startAt) && startAt >= 0) {
                   video.currentTime = startAt;

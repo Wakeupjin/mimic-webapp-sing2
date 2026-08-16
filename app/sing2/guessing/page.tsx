@@ -17,6 +17,7 @@ import { captureVideoScreenshotCorsFree, captureVideoScreenshotCorsFreeAsync } f
 import { captureVideoScreenshotUltimate, setupVideoCorsOnLoad } from "../../utils/corsProxy";
 import { getVideoSource } from "../../utils/videoSource";
 import { playTimedSegment, unlockMediaPlayback } from "../../utils/playTimedSegment";
+import { requestAppFullscreen, applyInlinePlayback } from "../../utils/device";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
@@ -163,33 +164,6 @@ function GuessingPageContent() {
     }
   }, [movieId]);
 
-  // 모바일 가로화면 자동 변경 (넷플릭스 스타일)
-  useEffect(() => {
-    const handleOrientationChange = () => {
-      if (window.innerWidth < 768) { // 모바일 화면
-        if (window.orientation === 0 || window.orientation === 180) { // 세로화면
-          // 가로화면으로 강제 변경
-          (screen.orientation as any)?.lock('landscape').catch(() => {
-            // orientation lock이 지원되지 않는 경우
-            console.log('Orientation lock not supported');
-          });
-        }
-      }
-    };
-
-    // 초기 로드 시 체크
-    handleOrientationChange();
-
-    // 화면 회전 시 체크
-    window.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleOrientationChange);
-
-    return () => {
-      window.removeEventListener('orientationchange', handleOrientationChange);
-      window.removeEventListener('resize', handleOrientationChange);
-    };
-  }, []);
-
   // 풀스크린 복원 useEffect
   useEffect(() => {
     const shouldMaintainFullscreen = sessionStorage.getItem('maintainFullscreen') === 'true';
@@ -197,11 +171,9 @@ function GuessingPageContent() {
     
     if (shouldMaintainFullscreen && mimickingComplete) {
       setTimeout(() => {
-        document.documentElement.requestFullscreen().then(() => {
+        requestAppFullscreen().then(() => {
           sessionStorage.removeItem('maintainFullscreen');
           sessionStorage.removeItem('mimickingComplete');
-        }).catch((err) => {
-          console.error('Fullscreen restore failed:', err);
         });
       }, FULLSCREEN_RESTORE_RETRY_2);
     }
@@ -217,7 +189,7 @@ function GuessingPageContent() {
       if (isFullscreen && !document.fullscreenElement) {
         e.preventDefault();
         e.stopPropagation();
-        document.documentElement.requestFullscreen();
+        requestAppFullscreen();
       }
     };
 
@@ -741,6 +713,7 @@ function GuessingPageContent() {
                 muted={false}
                 preload="auto"
                 playsInline
+                onLoadedMetadata={(e) => applyInlinePlayback(e.currentTarget)}
               />
 
               {!isGuessingStarted && currentQuestion && (
