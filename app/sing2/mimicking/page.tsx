@@ -21,6 +21,7 @@ import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
 import { getVideoSource } from "../../utils/videoSource";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
+import { CaptionsIcon, FullscreenIcon, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
 
 function MimickingPageContent() {
   const { user, loading } = useAuth();
@@ -466,31 +467,15 @@ function MimickingPageContent() {
       videoHighlight={activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)}
       extraActions={
         <>
-          <button onClick={() => setIsTextVisible((v) => !v)} className="flex h-7 w-7 items-center justify-center" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="24" fill={isTextVisible ? "#60D96C" : "#9CA3AF"}/>
-              <text x="24" y="34" textAnchor="middle" fontSize="20" fontWeight="bold" fill="black" style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '-1px' }}>CC</text>
-            </svg>
-          </button>
-          <button onClick={() => setIsSidebarOpen((v) => !v)} className="flex h-7 w-7 items-center justify-center" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
-              <circle cx="29" cy="29" r="29" fill={isSidebarOpen ? "#60D96C" : "#9CA3AF"}/>
-              <path d="M16 16L42 16" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M16 29L42 29" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M16 42L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-            </svg>
-          </button>
-          <button onClick={toggleFullscreen} className="flex h-7 w-7 items-center justify-center" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="24" fill={isFullscreen ? "#60D96C" : "#9CA3AF"}/>
-              <g transform="scale(0.7) translate(10.3, 10.3)">
-                <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-              </g>
-            </svg>
-          </button>
+          <HeaderIconButton label={isTextVisible ? "자막 끄기" : "자막 켜기"} onClick={() => setIsTextVisible((v) => !v)}>
+            <CaptionsIcon active={isTextVisible} />
+          </HeaderIconButton>
+          <HeaderIconButton label={isSidebarOpen ? "목록 숨기기" : "목록 보기"} onClick={() => setIsSidebarOpen((v) => !v)}>
+            <ListIcon active={isSidebarOpen} />
+          </HeaderIconButton>
+          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+            <FullscreenIcon active={isFullscreen} />
+          </HeaderIconButton>
         </>
       }
       video={

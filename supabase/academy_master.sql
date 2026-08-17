@@ -7,7 +7,7 @@
 
 -- 1) 역할: student | academy
 ALTER TABLE public.student_profiles
-  ADD COLUMN IF NOT EXISTS role text NOT NULL DEFAULT 'student';
+  ADD COLUMN IF NOT EXISTS role text NOT NULL DEFAULT 'academy';
 
 ALTER TABLE public.student_profiles
   DROP CONSTRAINT IF EXISTS student_profiles_role_check;
@@ -124,7 +124,7 @@ SELECT
   u.id,
   u.email,
   COALESCE(u.raw_user_meta_data->>'nickname', split_part(u.email, '@', 1)),
-  'student'
+  'academy'
 FROM auth.users u
 WHERE NOT EXISTS (
   SELECT 1 FROM public.student_profiles p WHERE p.id = u.id

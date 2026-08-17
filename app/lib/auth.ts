@@ -24,10 +24,11 @@ export async function signUp(email: string, password: string, nickname: string) 
   if (data.user) {
     const { error: profileError } = await supabase
       .from('student_profiles')
-      .insert({ 
-        id: data.user.id, 
-        email: data.user.email, // email 값 추가!
-        nickname 
+      .insert({
+        id: data.user.id,
+        email: data.user.email,
+        nickname,
+        role: 'academy',
       });
     if (profileError) throw profileError;
   }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, Suspense } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../../contexts/AuthContext';
 import { useFullscreen } from '../../hooks/useFullscreen';
@@ -17,7 +16,8 @@ import {
   isMasterRole,
   type LearnMode,
   type ProgressRow,
-} from '../../lib/progressGate'; 
+} from '../../lib/progressGate';
+import { FullscreenIcon, HeaderCloseLink, HeaderIconButton } from '../../components/HeaderIcons'; 
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -201,46 +201,13 @@ function SelectingPageContent() {
   return (
     <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#000000' }}>
       {/* Header */}
-      <div className="mb-8 flex items-center justify-between group">
+      <div className="mb-8 flex items-center justify-between">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-        {/* ... (Header SVG 및 Link는 기존 코드와 동일) ... */}
-         <div className="flex items-center gap-3">
-          <button 
-            onClick={toggleFullscreen}
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
-            style={{ width: '29px', height: '29px' }}
-          >
-            {isFullscreen ? (
-              // 풀스크린 종료 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#60D96C"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            ) : (
-              // 풀스크린 진입 아이콘
-              <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#9CA3AF"/>
-                <g transform="scale(0.7) translate(10.3, 10.3)">
-                  <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-                </g>
-              </svg>
-            )}
-          </button>
-          <Link href="/" className="flex items-center justify-center cursor-pointer transition-colors duration-200 opacity-10 group-hover:opacity-100 transition-opacity duration-1000" style={{ width: '29px', height: '29px' }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none">
-              <circle cx="29" cy="29" r="29" fill="#60D96C"/>
-              <path d="M16 16L42 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-              <path d="M42 16L16 42" stroke="black" strokeWidth="5" strokeLinecap="round"/>
-            </svg>
-          </Link>
+         <div className="flex items-center gap-1.5">
+          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+            <FullscreenIcon active={isFullscreen} />
+          </HeaderIconButton>
+          <HeaderCloseLink />
         </div>
       </div>
 

@@ -15,6 +15,7 @@ import { useEvaluationLog } from '@/app/lib/evaluation';
 import { useRequireModeAccess } from '@/app/lib/useRequireModeAccess';
 import { getVideoSource } from '@/app/utils/videoSource';
 import LessonShell from '@/app/components/LessonShell';
+import { FullscreenIcon, HeaderIconButton } from '@/app/components/HeaderIcons';
 
 interface WordQuestion {
   question: number;
@@ -582,17 +583,9 @@ function WordPageContent() {
     <LessonShell
       subtitle={`${currentQuestionNumber}/${totalQuestions}`}
       extraActions={
-        <button onClick={toggleFullscreen} className="flex h-7 w-7 items-center justify-center" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="24" fill={isFullscreen ? "#60D96C" : "#9CA3AF"}/>
-            <g transform="scale(0.7) translate(10.3, 10.3)">
-              <path d="M33 6H42V15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M42 33V42H33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M15 42H6V33" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M6 15V6H15" stroke="black" strokeWidth="4.8" strokeLinecap="round" strokeLinejoin="round"/>
-            </g>
-          </svg>
-        </button>
+        <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+          <FullscreenIcon active={isFullscreen} />
+        </HeaderIconButton>
       }
     >
       <div className="flex min-h-0 flex-1 flex-col md:grid md:grid-cols-[120px_minmax(0,1fr)_120px] md:gap-3">

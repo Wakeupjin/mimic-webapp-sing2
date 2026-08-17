@@ -1,17 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { ReactNode } from "react";
-
-function CloseIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 58 58" fill="none" aria-hidden>
-      <circle cx="29" cy="29" r="29" fill="#60D96C" />
-      <path d="M16 16L42 42" stroke="black" strokeWidth="5" strokeLinecap="round" />
-      <path d="M42 16L16 42" stroke="black" strokeWidth="5" strokeLinecap="round" />
-    </svg>
-  );
-}
+import { HeaderCloseLink } from "./HeaderIcons";
 
 type LessonShellProps = {
   title?: string;
@@ -67,10 +57,8 @@ export default function LessonShell({
           ) : null}
         </div>
         <div className="flex shrink-0 items-center gap-2">
-          {extraActions ? <div className="hidden items-center gap-2 md:flex">{extraActions}</div> : null}
-          <Link href={onCloseHref} onClick={onClose} className="flex h-7 w-7 items-center justify-center" aria-label="닫기">
-            <CloseIcon />
-          </Link>
+          {extraActions ? <div className="flex items-center gap-1.5">{extraActions}</div> : null}
+          <HeaderCloseLink href={onCloseHref} onClick={onClose} />
         </div>
       </header>
 
