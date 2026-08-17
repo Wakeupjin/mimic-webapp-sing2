@@ -18,6 +18,7 @@ import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '../../dataS
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { useEvaluationLog } from '../../lib/evaluation';
+import { useRequireModeAccess } from '../../lib/useRequireModeAccess';
 import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
 import LessonShell from '../../components/LessonShell';
@@ -44,7 +45,7 @@ function WatchingPageContent() {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(0);
+  const [lessonNumber, setLessonNumber] = useState<number>(() => parseLessonNumber(movieId) || 1);
 
   // 커스텀 훅들
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -62,6 +63,9 @@ function WatchingPageContent() {
   } = useVideoPlayer();
 
   const evalLog = useEvaluationLog(lessonNumber, 'watching', isVideoStarted);
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'watching');
+  const maxWatchedRef = useRef(0);
+  const watchingDoneRef = useRef(false);
 
   const playSafely = (video: HTMLVideoElement | null) => {
     if (!video) return;
@@ -116,7 +120,10 @@ function WatchingPageContent() {
         const progress = await getProgressByMode(lessonNumber, 'watching');
         if (progress) {
           setSavedProgress(progress);
-          console.log('📚 저장된 진도 불러옴:', progress);
+          if (typeof progress.current_position === 'number') {
+            maxWatchedRef.current = progress.current_position;
+          }
+          watchingDoneRef.current = Boolean(progress.completed);
         }
       } catch (error) {
         console.log('진도 데이터 없음 (첫 학습)');
@@ -265,7 +272,7 @@ function WatchingPageContent() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isFullscreen]);
 
-  if (loading) {
+  if (loading || checking) {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -311,7 +318,11 @@ function WatchingPageContent() {
     // lessonData 사용으로 변경
     if (lessonData) {
       const totalDuration = endTime - startTime;
-      const newTime = startTime + (progress / 100) * totalDuration;
+      let newTime = startTime + (progress / 100) * totalDuration;
+      if (!isMaster && !watchingDoneRef.current) {
+        newTime = Math.min(newTime, maxWatchedRef.current || startTime);
+      }
+      newTime = Math.max(startTime, Math.min(newTime, endTime));
       
       const video = document.querySelector('video') as HTMLVideoElement;
       if (video && isFinite(newTime) && newTime >= 0) {
@@ -405,14 +416,28 @@ function WatchingPageContent() {
               onTimeUpdate={(e) => {
                 const video = e.currentTarget;
                 if (lessonData) {
+                  if (!isMaster && !watchingDoneRef.current && video.currentTime > maxWatchedRef.current + 1.5) {
+                    video.currentTime = maxWatchedRef.current;
+                    return;
+                  }
                   const totalDuration = endTime - startTime;
                   const currentProgress = video.currentTime - startTime;
                   const progress = Math.max(0, (currentProgress / totalDuration) * 100);
                   setVideoProgress(progress);
                   
+                  if (video.currentTime > maxWatchedRef.current) {
+                    maxWatchedRef.current = video.currentTime;
+                  }
                   if (video.currentTime >= endTime) {
+                    if (video.currentTime > endTime + 0.3 && !isMaster && !watchingDoneRef.current) {
+                      video.currentTime = endTime;
+                    }
                     if (!video.paused) {
                       video.pause();
+                    }
+                    if (!watchingDoneRef.current) {
+                      watchingDoneRef.current = true;
+                      void saveProgress(lessonNumber, 'watching', true, endTime);
                     }
                     if (!showNextCta) {
                       setShowNextCta(true);

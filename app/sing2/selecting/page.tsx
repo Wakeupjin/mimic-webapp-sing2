@@ -9,7 +9,15 @@ import { useFullscreen } from '../../hooks/useFullscreen';
 // import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings'; 
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonSummaries } from '../../dataService'; 
+import { fetchLessonSummaries } from '../../dataService';
+import {
+  fetchOwnProgress,
+  canAccessLesson,
+  canAccessMode,
+  isMasterRole,
+  type LearnMode,
+  type ProgressRow,
+} from '../../lib/progressGate'; 
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -25,7 +33,7 @@ const SELECTING_SCROLL_THRESHOLD_PX = 5;
 
 function SelectingPageContent() {
   // 모든 훅을 최상단에 배치 (조건부 호출 방지)
-  const { user, loading } = useAuth();
+  const { user, profile, loading } = useAuth();
   const router = useRouter();
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   
@@ -35,7 +43,9 @@ function SelectingPageContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [canScrollDown, setCanScrollDown] = useState(false); 
+  const [canScrollDown, setCanScrollDown] = useState(false);
+  const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
+  const isMaster = isMasterRole(profile?.role); 
   
   // refs
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -71,6 +81,14 @@ function SelectingPageContent() {
 
     fetchLessons();
   }, []);
+
+  useEffect(() => {
+    if (!user || isMaster) {
+      setProgressRows([]);
+      return;
+    }
+    fetchOwnProgress().then(setProgressRows);
+  }, [user, isMaster]);
   // --- [/SUPABASE 데이터 로딩] ---
 
   // Close dropdown when clicking outside
@@ -132,10 +150,12 @@ function SelectingPageContent() {
     );
   }
 
-  const handleModeSelect = (mode: string) => {
-    setSelectedMode(mode);
-    
+  const handleModeSelect = (mode: LearnMode) => {
     if (!selectedLesson) return;
+    if (!isMaster && !canAccessMode(progressRows, selectedLesson.lesson_number, mode)) {
+      return;
+    }
+    setSelectedMode(mode);
 
     // Supabase에서 가져온 video_id와 lesson_number를 사용
     const movieId = `001:${selectedLesson.lesson_number}`;
@@ -173,6 +193,10 @@ function SelectingPageContent() {
     );
   }
   // --- [/로딩 및 에러 화면] ---
+
+  const lessonNo = selectedLesson?.lesson_number || 1;
+  const modeOpen = (mode: LearnMode) =>
+    isMaster || canAccessMode(progressRows, lessonNo, mode);
 
   return (
     <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#000000' }}>
@@ -266,7 +290,9 @@ function SelectingPageContent() {
                         setSelectedLesson(lesson); // Lesson 객체 전체를 선택
                         setIsDropdownOpen(false);
                       }}
-                      className="w-full px-6 py-3 text-center text-white font-bold text-lg transition-colors duration-200 hover:bg-[#2a2a2a] border-t border-gray-800 first:border-t-0 flex items-center justify-center relative"
+                      className={`w-full px-6 py-3 text-center text-white font-bold text-lg transition-colors duration-200 hover:bg-[#2a2a2a] border-t border-gray-800 first:border-t-0 flex items-center justify-center relative ${
+                        !isMaster && !canAccessLesson(progressRows, lesson.lesson_number) ? 'opacity-40' : ''
+                      }`}
                       style={{ fontFamily: 'Encode Sans, sans-serif' }}
                     >
                       <div className="flex flex-col items-center justify-center flex-1 text-center">
@@ -320,52 +346,52 @@ function SelectingPageContent() {
         <div className="flex gap-8 justify-center">
           <button
             onClick={() => handleModeSelect('watching')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400"
+            disabled={!modeOpen('watching')}
+            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
             style={{
               backgroundColor: 'white', 
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            // ... (hover effects)
           >
             Watch
           </button>
           
           <button
             onClick={() => handleModeSelect('mimicking')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400"
+            disabled={!modeOpen('mimicking')}
+            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
             style={{
               backgroundColor: 'white', 
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            // ... (hover effects)
           >
             Mimic
           </button>
           
           <button
             onClick={() => handleModeSelect('guessing')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400"
+            disabled={!modeOpen('guessing')}
+            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
             style={{
               backgroundColor: 'white', 
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            // ... (hover effects)
           >
             Guess
           </button>
           
           <button
             onClick={() => handleModeSelect('word')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400"
+            disabled={!modeOpen('word')}
+            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
             style={{
               backgroundColor: 'white', 
               fontFamily: 'Encode Sans, sans-serif', 
               fontSize: '1.5rem'
             }}
-            // ... (hover effects)
           >
             Word
           </button>

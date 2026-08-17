@@ -24,6 +24,7 @@ import GuessingOverlays from "../../components/GuessingOverlays";
 import LessonShell from "../../components/LessonShell";
 import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
+import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
 import {
   GUESSING_ANSWER_FEEDBACK_DURATION,
   GUESSING_NEXT_QUESTION_DELAY,
@@ -138,6 +139,8 @@ function GuessingPageContent() {
   } = useGuessingGame();
 
   const evalLog = useEvaluationLog(lessonNumber, 'guessing', isGuessingStarted);
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'guessing');
+  const maxQuestionRef = useRef(0);
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -255,6 +258,10 @@ function GuessingPageContent() {
           const progress = await getProgressByMode(lessonNumber, 'guessing');
           if (progress) {
             setSavedProgress(progress);
+            const idx = Math.max(0, Math.floor(Number(progress.current_position || 0)));
+            setCurrentQuestionIndex(idx);
+            setCurrentIndex(idx);
+            maxQuestionRef.current = idx;
           }
         } catch (error) {
           // 게싱 진도 데이터 없음 (첫 학습)
@@ -452,7 +459,9 @@ function GuessingPageContent() {
       setTimeout(() => {
         missedThisQuestionRef.current = false;
         if (currentQuestionIndex < totalQuestions - 1) {
-          setCurrentQuestionIndex(currentQuestionIndex + 1);
+          const nextIdx = currentQuestionIndex + 1;
+          maxQuestionRef.current = Math.max(maxQuestionRef.current, nextIdx);
+          setCurrentQuestionIndex(nextIdx);
           setCurrentIndex(currentIndex + 1);
           resetQuestionPlayback();
           setShowResults(false);
@@ -478,7 +487,7 @@ function GuessingPageContent() {
     }
   }, [allOptionsPlayed, currentQuestionIndex, totalQuestions, currentIndex, guessingData, handleAnswerSelect, playCorrectSound, playAgainSound, playVideo, resetQuestionPlayback, setCurrentQuestionIndex, setCurrentIndex, setShowResults, setShowIntro, setUserInteracted, setIsGuessingStarted, setUserAnswers, setCorrectCount, setAllOptionsPlayed, evalLog, videoPlayCount]);
   
-  if (loading) {
+  if (loading || checking) {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -824,6 +833,9 @@ function GuessingPageContent() {
                     className="flex items-center justify-center cursor-pointer rounded-lg transition-colors duration-200 hover:animate-heartbeat"
                     onClick={() => {
                       if (currentQuestionIndex < guessingData.length - 1) {
+                        if (!isMaster && currentQuestionIndex >= maxQuestionRef.current) {
+                          return;
+                        }
                         missedThisQuestionRef.current = false;
                         setCurrentQuestionIndex(currentQuestionIndex + 1);
                         setVideoPlayCount(0);
@@ -887,6 +899,12 @@ function GuessingPageContent() {
                     <button
                       key={index}
                       onClick={() => {
+                        if (!isMaster && index > maxQuestionRef.current) {
+                          return;
+                        }
+                        if (isMaster) {
+                          maxQuestionRef.current = Math.max(maxQuestionRef.current, index);
+                        }
                         missedThisQuestionRef.current = false;
                         setCurrentQuestionIndex(index);
                         setCurrentIndex(index);

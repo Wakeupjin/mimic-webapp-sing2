@@ -17,6 +17,7 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
+import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
 import { getVideoSource } from "../../utils/videoSource";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
@@ -84,7 +85,10 @@ function MimickingPageContent() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isMimickingStarted, setIsMimickingStarted] = useState(false);
-  const evalLog = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
+  const { bumpPlay, patch } = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'mimicking');
+  const maxSentenceRef = useRef(0);
+  const lastStartedIndexRef = useRef<number | null>(null);
   const mimickingTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
   const autoSeqIndexRef = useRef<number | null>(null);
   const currentIndexRef = useRef<number>(0);
@@ -92,6 +96,7 @@ function MimickingPageContent() {
 
   // Chapter 0 접근 시 Chapter 1로 리다이렉트
   useEffect(() => {
+    lastStartedIndexRef.current = null;
     if (movieId === '001:0') {
       console.log('🚫 Chapter 0은 존재하지 않습니다. Chapter 1로 리다이렉트');
       window.location.href = '/sing2/mimicking?id=001:1';
@@ -140,7 +145,12 @@ function MimickingPageContent() {
           const progress = await getProgressByMode(lessonNumber, 'mimicking');
           if (progress) {
             setSavedProgress(progress);
-            console.log('📚 저장된 미믹킹 진도 불러옴:', progress);
+            const idx = Math.max(0, Math.floor(Number(progress.current_position || 0)));
+            setCurrentIndex(idx);
+            maxSentenceRef.current = idx;
+            if (idx > 0) {
+              setIsMimickingStarted(true);
+            }
           }
         } catch (error) {
           console.log('미믹킹 진도 데이터 없음 (첫 학습)');
@@ -319,28 +329,32 @@ function MimickingPageContent() {
 
   // 미믹킹 시퀀스 실행 (자동)
   useEffect(() => {
-    if (isMimickingStarted && !isSequenceRunning && scenes[currentIndex]) {
-      const currentScene = scenes[currentIndex];
-      // 시퀀스 자동 시작
-      // console.log(`🔄 useEffect: currentIndex=${currentIndex}, 시퀀스 시작`);
-      // Set autoSeqIndex for first button (button 0)
-      autoSeqIndexRef.current = 0;
-      setAutoSeqIndex(0);
-      setActiveControlIndex(0); // 첫 번째 버튼 즉시 색상 변경
-      // console.log(`🎯 첫 번째 버튼 준비: autoSeqIndex = 0, 즉시 색상 변경`);
-      executeMimickingSequence(currentIndex, playVideo, currentScene);
-      evalLog.bumpPlay(String(currentIndex + 1));
-      const counts = (evalLog.payloadRef.current.playCounts as Record<string, number>) || {};
-      evalLog.patch({
-        totalSentences: scenes.length,
-        sentencesPlayed: Object.keys(counts).length,
-      });
+    if (!isMimickingStarted || isSequenceRunning || !scenes[currentIndex]) {
+      return;
     }
-  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes, evalLog]);
+    if (lastStartedIndexRef.current === currentIndex) {
+      return;
+    }
+    lastStartedIndexRef.current = currentIndex;
+    const currentScene = scenes[currentIndex];
+    autoSeqIndexRef.current = 0;
+    setAutoSeqIndex(0);
+    setActiveControlIndex(0);
+    executeMimickingSequence(currentIndex, playVideo, currentScene);
+    bumpPlay(String(currentIndex + 1));
+    patch({
+      totalSentences: scenes.length,
+      sentencesPlayed: currentIndex + 1,
+    });
+  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes, bumpPlay, patch]);
 
   const handlePrev = useCallback(() => {
-    if (!isSequenceRunning) {
-      setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : currentIndex);
+    if (isSequenceRunning && !isMaster) {
+      return;
+    }
+    setIsSequenceRunning(false);
+    lastStartedIndexRef.current = null;
+    setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : currentIndex);
       setShowNextCta(false);
       
       // 필요한 상태만 리셋
@@ -359,25 +373,36 @@ function MimickingPageContent() {
       if (currentIndex === 1) {
         setIsMimickingStarted(false);
       }
-    }
-  }, [isSequenceRunning, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta]);
+  }, [isSequenceRunning, isMaster, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta]);
 
   const handleNext = useCallback(() => {
-    if (!isSequenceRunning) {
-      if (currentIndex < scenes.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-      } else {
-        // 마지막 씬이면 게싱 모드로 전환
+    if (isSequenceRunning && !isMaster) {
+      return;
+    }
+    if (!isMaster && currentIndex >= maxSentenceRef.current) {
+      return;
+    }
+    setIsSequenceRunning(false);
+    lastStartedIndexRef.current = null;
+    if (currentIndex < scenes.length - 1) {
+      const nextIdx = currentIndex + 1;
+      if (isMaster) {
+        maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIdx);
+      }
+      setCurrentIndex(nextIdx);
+    } else {
+        if (!isMaster && !isMimickingComplete) {
+          return;
+        }
         const isCurrentlyFullscreen = document.fullscreenElement !== null;
         if (isCurrentlyFullscreen) {
           sessionStorage.setItem('maintainFullscreen', 'true');
         }
         sessionStorage.setItem('mimickingComplete', 'true');
         window.location.href = `/sing2/guessing?id=${movieId}`;
-      }
-      setShowNextCta(false);
     }
-  }, [currentIndex, scenes.length, isSequenceRunning, movieId, setCurrentIndex, setPlayNonce, setShowNextCta]);
+    setShowNextCta(false);
+  }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, setCurrentIndex, setShowNextCta]);
 
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
     // console.log(`🎮 handlePlay: muted=${m}, slotIndex=${slotIndex}`);
@@ -388,7 +413,7 @@ function MimickingPageContent() {
 
   const currentScene = scenes[currentIndex];
 
-  if (loading) {
+  if (loading || checking) {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -527,16 +552,17 @@ function MimickingPageContent() {
                       const currentIdx = currentIndexRef.current;
                       if (currentIdx < 29) { // 30개 문장 (0-29)
                         const nextIdx = currentIdx + 1;
-                        // console.log(`다음 문장으로 자동 진행: ${currentIdx} → ${nextIdx}`);
-
                         setTimeout(() => {
-                          // console.log(`⏭️ currentIndex 업데이트: ${currentIdx} → ${nextIdx}`);
-                          setMuted(false); // 다음 문장 시작 전 무음 해제
-                          setActiveControlIndex(null); // 활성 버튼 초기화
-                          setIsSequenceRunning(false); // 이동 직전에 시퀀스 종료
-                          pendingButtonIndexRef.current = null; // Clear pending button ref to prevent stale data
-                          autoSeqIndexRef.current = null; // Clear auto sequence ref to prevent stale data
-                          setCurrentIndex(nextIdx); // useEffect가 자동으로 시퀀스 시작
+                          setMuted(false);
+                          setActiveControlIndex(null);
+                          setIsSequenceRunning(false);
+                          pendingButtonIndexRef.current = null;
+                          autoSeqIndexRef.current = null;
+                          if (isMaster) {
+                            return;
+                          }
+                          maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIdx);
+                          setCurrentIndex(nextIdx);
                         }, 1000);
                       } else {
                         // 30번째 문장이면 게싱 모드로 전환
@@ -639,12 +665,19 @@ function MimickingPageContent() {
                       if (index === 0 && !isMimickingStarted) {
                         return;
                       }
+                      if (!isMaster && index > maxSentenceRef.current) {
+                        return;
+                      }
+                      if (isMaster) {
+                        maxSentenceRef.current = Math.max(maxSentenceRef.current, index);
+                      }
                       clearTimeouts();
                       setAutoSeqIndex(null);
                       setActiveControlIndex(null);
                       setMuted(false);
                       setIsSequenceRunning(false);
                       setPlayNonce(0);
+                      lastStartedIndexRef.current = null;
                       setCurrentIndex(index);
                     }}
                     isSequenceRunning={isSequenceRunning}

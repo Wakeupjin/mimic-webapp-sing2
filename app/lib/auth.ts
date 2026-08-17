@@ -55,19 +55,20 @@ export async function getCurrentUser() {
   return user;
 }
 
-export async function getStudentProfile(userId: string): Promise<StudentProfile> {
+export async function getStudentProfile(userId: string): Promise<StudentProfile | null> {
   const { data, error } = await supabase
     .from('student_profiles')
     .select('*')
     .eq('id', userId)
-    .single();
-  
+    .maybeSingle();
+
   if (error) throw error;
-  const role = data?.role === 'academy' ? 'academy' : 'student';
+  if (!data) return null;
+
   return {
     id: data.id,
     email: data.email ?? null,
     nickname: data.nickname ?? null,
-    role,
+    role: data.role === 'academy' ? 'academy' : 'student',
   };
 }

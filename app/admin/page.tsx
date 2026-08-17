@@ -140,9 +140,14 @@ export default function AdminPage() {
       router.replace('/auth/login');
       return;
     }
-    if (!profile || profile.role !== 'academy') {
-      router.replace('/');
+    if (profile?.role === 'academy') return;
+    if (!profile) {
+      const timer = window.setTimeout(() => {
+        router.replace('/');
+      }, 2000);
+      return () => window.clearTimeout(timer);
     }
+    router.replace('/');
   }, [loading, user, profile, router]);
 
   useEffect(() => {

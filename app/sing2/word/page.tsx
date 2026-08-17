@@ -12,6 +12,7 @@ import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
 import { useEvaluationLog } from '@/app/lib/evaluation';
+import { useRequireModeAccess } from '@/app/lib/useRequireModeAccess';
 import { getVideoSource } from '@/app/utils/videoSource';
 import LessonShell from '@/app/components/LessonShell';
 
@@ -88,6 +89,7 @@ function WordPageContent() {
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const totalQuestions = 10;
   const evalLog = useEvaluationLog(lessonNumber, 'word', isStarted);
+  const { checking } = useRequireModeAccess(lessonNumber, 'word');
 
   // Extract current chapter number from movieId (e.g., "001:1" -> 1)
   const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
@@ -127,7 +129,10 @@ function WordPageContent() {
           const progress = await getProgressByMode(lessonNumber, 'word');
           if (progress) {
             setSavedProgress(progress);
-            console.log('📚 저장된 워드 진도 불러옴:', progress);
+            const q = Math.max(1, Math.floor(Number(progress.current_position || 1)));
+            if (q <= totalQuestions) {
+              setCurrentQuestionNumber(q);
+            }
           }
         } catch (error) {
           console.log('워드 진도 데이터 없음 (첫 학습)');
@@ -535,7 +540,7 @@ function WordPageContent() {
     }
   };
 
-  if (loading) {
+  if (loading || checking) {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">

@@ -23,53 +23,54 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let cancelled = false;
+
     const loadProfile = async (nextUser: User | null) => {
       if (!nextUser) {
-        setProfile(null);
+        if (!cancelled) setProfile(null);
         return;
       }
       try {
         const nextProfile = await getStudentProfile(nextUser.id);
-        setProfile(nextProfile);
+        if (!cancelled) setProfile(nextProfile);
       } catch (error) {
         console.error('Profile load error:', error);
-        setProfile(null);
+        if (!cancelled) setProfile(null);
       }
     };
 
     const initializeAuth = async () => {
       try {
         const currentUser = await getCurrentUser();
+        if (cancelled) return;
         setUser(currentUser);
-        await loadProfile(currentUser);
+        setLoading(false);
+        void loadProfile(currentUser);
       } catch (error) {
         console.error('Auth initialization error:', error);
-        setUser(null);
-        setProfile(null);
-      } finally {
-        setLoading(false);
+        if (!cancelled) {
+          setUser(null);
+          setProfile(null);
+          setLoading(false);
+        }
       }
     };
 
     initializeAuth();
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, session) => {
-        try {
-          const nextUser = session?.user ?? null;
-          setUser(nextUser);
-          await loadProfile(nextUser);
-        } catch (error) {
-          console.error('Auth state change error:', error);
-          setUser(null);
-          setProfile(null);
-        } finally {
-          setLoading(false);
-        }
+      (_event, session) => {
+        const nextUser = session?.user ?? null;
+        setUser(nextUser);
+        setLoading(false);
+        void loadProfile(nextUser);
       }
     );
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      subscription.unsubscribe();
+    };
   }, []);
 
   return (

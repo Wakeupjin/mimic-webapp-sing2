@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { supabase } from '../supabaseClient';
 import type { TrackedMode } from './sessions';
 
@@ -134,5 +134,8 @@ export function useEvaluationLog(
     };
   }, [active, lessonNumber, flush]);
 
-  return { patch, addAttempt, bumpPlay, flush, payloadRef };
+  return useMemo(
+    () => ({ patch, addAttempt, bumpPlay, flush, payloadRef }),
+    [patch, addAttempt, bumpPlay, flush]
+  );
 }
