@@ -14,7 +14,7 @@ import PauseOverlay from "../../components/PauseOverlay";
 import AgainNextButtons from "../../components/AgainNextButtons";
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '../../dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, resolveVideoUrl } from '../../dataService';
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { useEvaluationLog } from '../../lib/evaluation';
@@ -46,7 +46,7 @@ function WatchingPageContent() {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(() => parseLessonNumber(movieId) || 1);
+  const [lessonNumber, setLessonNumber] = useState<number>(() => parseProgressLesson(movieId) || 1);
 
   // 커스텀 훅들
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -96,15 +96,16 @@ function WatchingPageContent() {
       setIsLoading(true);
 
       // 1. Lesson ID 추출 ("001:5" -> 5)
-      const lessonNumber = parseLessonNumber(movieId);
-      setLessonNumber(lessonNumber);
+      const contentLesson = parseLessonNumber(movieId);
+      const pack = parsePack(movieId);
+      setLessonNumber(parseProgressLesson(movieId));
 
-      if (isNaN(lessonNumber) || lessonNumber < 1 || lessonNumber > 12) {
+      if (isNaN(contentLesson) || contentLesson < 1 || (pack <= 1 && contentLesson > 12)) {
         setIsLoading(false);
         return; 
       }
 
-      const lesson = await fetchLessonData(lessonNumber);
+      const lesson = await fetchLessonData(contentLesson, pack);
 
       if (!lesson) {
         setIsLoading(false);

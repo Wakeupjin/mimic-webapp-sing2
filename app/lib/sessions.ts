@@ -9,6 +9,16 @@ export function parseLessonNumber(movieId: string | null): number {
   return Number.isFinite(n) && n > 0 ? n : 1;
 }
 
+export function parseProgressLesson(movieId: string | null): number {
+  if (!movieId) return 1;
+  const [packPart, lessonPart] = movieId.split(':');
+  const pack = parseInt(packPart || '1', 10);
+  const lesson = parseInt(lessonPart || '1', 10);
+  const safePack = Number.isFinite(pack) && pack > 0 ? pack : 1;
+  const safeLesson = Number.isFinite(lesson) && lesson > 0 ? lesson : 1;
+  return safePack <= 1 ? safeLesson : safePack * 100 + safeLesson;
+}
+
 export function parseTrackedMode(pathname: string): TrackedMode | null {
   const segment = pathname.split('/').filter(Boolean).pop() || '';
   if (

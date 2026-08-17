@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "../../contexts/AuthContext";
-import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from "../../dataService";
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, resolveVideoUrl } from "../../dataService";
 import VideoPlayer from "../../components/VideoPlayer";
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
@@ -67,7 +67,7 @@ function GuessingPageContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [guessingData, setGuessingData] = useState<any[]>([]);
   const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(1);
+  const [lessonNumber, setLessonNumber] = useState<number>(() => parseProgressLesson(movieId));
   
   // 커스텀 훅 사용
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -227,16 +227,17 @@ function GuessingPageContent() {
         setIsLoading(true);
         dataLoadedRef.current = true; // 로딩 시작 시 바로 플래그 설정
 
-        const lessonNumber = parseLessonNumber(movieId);
-        setLessonNumber(lessonNumber);
+        const contentLesson = parseLessonNumber(movieId);
+        const pack = parsePack(movieId);
+        setLessonNumber(parseProgressLesson(movieId));
 
-        if (isNaN(lessonNumber)) {
+        if (isNaN(contentLesson)) {
           console.error('❌ Invalid lesson number:', movieId);
           setIsLoading(false);
           return;
         }
 
-        const lesson = await fetchLessonData(lessonNumber);
+        const lesson = await fetchLessonData(contentLesson, pack);
 
         if (!lesson) {
           console.error('❌ No lesson data found');

@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useEffect, useRef, Suspense } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '../../contexts/AuthContext';
 import { useFullscreen } from '../../hooks/useFullscreen';
 // 기존 상수 제거 (Supabase에서 데이터 수를 가져옴)
 // import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings'; 
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonSummaries } from '../../dataService';
+import { fetchLessonSummaries, formatMovieId, parsePack } from '../../dataService';
 import {
   fetchOwnProgress,
   canAccessLesson,
@@ -35,6 +35,8 @@ function SelectingPageContent() {
   // 모든 훅을 최상단에 배치 (조건부 호출 방지)
   const { user, profile, loading } = useAuth();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const pack = parsePack(searchParams.get('id') || '001:1');
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   
   // 상태 관리
@@ -65,7 +67,10 @@ function SelectingPageContent() {
       setIsLoading(true);
       
       try {
-        const lessonList = await fetchLessonSummaries();
+        const lessonList =
+          pack >= 2
+            ? [{ id: 1, lesson_number: 1, video_id: 1 }]
+            : await fetchLessonSummaries();
         setLessons(lessonList);
 
         const lessonOne = lessonList.find((lesson) => lesson.lesson_number === 1) || lessonList[0];
@@ -80,7 +85,7 @@ function SelectingPageContent() {
     };
 
     fetchLessons();
-  }, []);
+  }, [pack]);
 
   useEffect(() => {
     if (!user || isMaster) {
@@ -158,7 +163,7 @@ function SelectingPageContent() {
     setSelectedMode(mode);
 
     // Supabase에서 가져온 video_id와 lesson_number를 사용
-    const movieId = `001:${selectedLesson.lesson_number}`;
+    const movieId = formatMovieId(pack, selectedLesson.lesson_number);
     
     if (mode === 'mimicking') {
       window.location.href = `/sing2/mimicking?id=${movieId}`;
@@ -202,7 +207,9 @@ function SelectingPageContent() {
     <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#000000' }}>
       {/* Header */}
       <div className="mb-8 flex items-center justify-between">
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+          {pack >= 2 ? 'SING 2 · Hard' : 'SING 2'}
+        </h1>
          <div className="flex items-center gap-1.5">
           <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
             <FullscreenIcon active={isFullscreen} />

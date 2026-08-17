@@ -25,6 +25,7 @@ export function isModeCompleted(rows: ProgressRow[] | null | undefined, lessonNu
 
 export function canAccessLesson(rows: ProgressRow[] | null | undefined, lessonNumber: number) {
   if (lessonNumber <= 1) return true;
+  if (lessonNumber >= 100 && lessonNumber % 100 <= 1) return true;
   return isModeCompleted(rows, lessonNumber - 1, 'word');
 }
 

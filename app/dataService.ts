@@ -18,7 +18,26 @@ export type LessonRecord = LessonSummary & {
 
 export function parseLessonNumber(movieId: string): number {
   const parts = movieId.split(':');
-  return parseInt(parts[parts.length - 1] || '', 10);
+  const n = parseInt(parts[parts.length - 1] || '', 10);
+  return Number.isFinite(n) && n > 0 ? n : 1;
+}
+
+export function parsePack(movieId: string): number {
+  const parts = movieId.split(':');
+  if (parts.length < 2) return 1;
+  const pack = parseInt(parts[0], 10);
+  return Number.isFinite(pack) && pack > 0 ? pack : 1;
+}
+
+/** 진도·평가용. 002:1 → 201 이라 쉬운 레슨 1과 안 섞인다. */
+export function parseProgressLesson(movieId: string): number {
+  const pack = parsePack(movieId);
+  const lesson = parseLessonNumber(movieId);
+  return pack <= 1 ? lesson : pack * 100 + lesson;
+}
+
+export function formatMovieId(pack: number, lesson: number): string {
+  return `${String(pack).padStart(3, '0')}:${lesson}`;
 }
 
 type RawLessonJson = {
@@ -57,8 +76,12 @@ function normalizeLesson(row: Record<string, unknown>, lessonNumber: number): Le
   };
 }
 
-async function fetchLessonFromJson(lessonNumber: number) {
-  const response = await fetch(`/movies/sing2/lesson-${lessonNumber}.json`);
+async function fetchLessonFromJson(lessonNumber: number, pack = 1) {
+  const path =
+    pack >= 2
+      ? `/movies/sing2/hard/lesson-${lessonNumber}.json`
+      : `/movies/sing2/lesson-${lessonNumber}.json`;
+  const response = await fetch(path);
   if (!response.ok) {
     return null;
   }
@@ -76,7 +99,18 @@ function useLocalLessons() {
   return process.env.NEXT_PUBLIC_USE_LOCAL_LESSONS === 'true';
 }
 
-export async function fetchLessonData(lessonNumber: number): Promise<LessonRecord | null> {
+export async function fetchLessonData(
+  lessonNumber: number,
+  pack = 1
+): Promise<LessonRecord | null> {
+  if (pack >= 2) {
+    const local = await fetchLessonFromJson(lessonNumber, pack);
+    if (!local) {
+      console.error(`Hard lesson ${pack}:${lessonNumber} not found`);
+    }
+    return local;
+  }
+
   if (useLocalLessons()) {
     const local = await fetchLessonFromJson(lessonNumber);
     if (!local) {

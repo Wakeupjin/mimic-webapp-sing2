@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import {
   endLearningSession,
   heartbeatLearningSession,
-  parseLessonNumber,
+  parseProgressLesson,
   parseTrackedMode,
   startLearningSession,
 } from '../lib/sessions';
@@ -22,7 +22,7 @@ export default function LearningSessionTracker() {
 
   useEffect(() => {
     const mode = parseTrackedMode(pathname || '');
-    const lessonNumber = parseLessonNumber(movieId);
+    const lessonNumber = parseProgressLesson(movieId);
     let cancelled = false;
 
     const close = async () => {

@@ -7,7 +7,7 @@ import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
 import WordCompleteButtons from '@/app/components/WordCompleteButtons';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
-import { fetchLessonData, parseLessonNumber, resolveVideoUrl } from '@/app/dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId, resolveVideoUrl } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import Link from 'next/link';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
@@ -56,7 +56,7 @@ function WordPageContent() {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [savedProgress, setSavedProgress] = useState<any>(null);
-  const [lessonNumber, setLessonNumber] = useState<number>(1);
+  const [lessonNumber, setLessonNumber] = useState<number>(() => parseProgressLesson(movieId));
   const [playCount, setPlayCount] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
 
@@ -94,7 +94,8 @@ function WordPageContent() {
 
   // Extract current chapter number from movieId (e.g., "001:1" -> 1)
   const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
-  const hasNextChapter = currentChapter < 12; // Assuming 12 chapters total
+  const pack = parsePack(movieId);
+  const hasNextChapter = pack <= 1 && currentChapter < 12;
 
   // Supabase 데이터 로드
   useEffect(() => {
@@ -103,16 +104,17 @@ function WordPageContent() {
     const loadDataFromSupabase = async () => {
       setIsLoading(true);
 
-      const lessonNumber = parseLessonNumber(movieId);
-      setLessonNumber(lessonNumber);
+      const contentLesson = parseLessonNumber(movieId);
+      const pack = parsePack(movieId);
+      setLessonNumber(parseProgressLesson(movieId));
 
-      if (isNaN(lessonNumber)) {
+      if (isNaN(contentLesson)) {
         setIsLoading(false);
         return;
       }
 
       try {
-        const lesson = await fetchLessonData(lessonNumber); 
+        const lesson = await fetchLessonData(contentLesson, pack); 
 
         if (!lesson) {
           setIsLoading(false);
@@ -468,8 +470,8 @@ function WordPageContent() {
   const handleNext = () => {
     // Navigate to next chapter
     const nextChapter = currentChapter + 1;
-    if (nextChapter <= 12) {
-      window.location.href = `/sing2/word?id=001:${nextChapter}`;
+    if (pack <= 1 && nextChapter <= 12) {
+      window.location.href = `/sing2/word?id=${formatMovieId(pack, nextChapter)}`;
     }
   };
 
