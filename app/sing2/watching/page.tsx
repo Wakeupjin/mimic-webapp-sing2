@@ -247,8 +247,18 @@ function WatchingPageContent() {
   const [isDragging, setIsDragging] = useState(false);
   const [showProgressTooltip, setShowProgressTooltip] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState(0);
+  const [tooltipPlacement, setTooltipPlacement] = useState<"above" | "below">("above");
   const [showNextCta, setShowNextCta] = useState(false);
   const [isTextVisible, setIsTextVisible] = useState(false);
+
+  // 진행 바 아래 공간이 부족하면(맥북처럼) 위로, 여유 있으면 아래로
+  const updateTooltipPlacement = (bar: HTMLElement) => {
+    const rect = bar.getBoundingClientRect();
+    const tooltipHeight = 44;
+    const gap = 12;
+    const spaceBelow = window.innerHeight - rect.bottom;
+    setTooltipPlacement(spaceBelow >= tooltipHeight + gap ? "below" : "above");
+  };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -464,11 +474,11 @@ function WatchingPageContent() {
                 <div className="absolute inset-0 bg-black/80"></div>
                 
                 {/* Button container */}
-                <div className="relative flex items-center gap-8 pointer-events-auto">
+                <div className="cta-row relative z-10 pointer-events-auto">
                   {/* Again Button */}
                   <button 
-                    className="rounded-2xl border-8 border-gray-300 px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
-                    style={{ backgroundColor: 'white', fontFamily: 'Encode Sans, sans-serif', fontSize: '1.5rem' }}
+                    className="cta-btn border-gray-300 text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
+                    style={{ backgroundColor: 'white' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = '#f8f8f8';
                     }}
@@ -494,11 +504,9 @@ function WatchingPageContent() {
                   
                   {/* Next Button */}
                   <button 
-                    className="relative rounded-2xl border-8 border-[#60D96C] px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
+                    className="cta-btn relative border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
                     style={{
-                      backgroundColor: 'white',
-                      fontFamily: 'Encode Sans, sans-serif',
-                      fontSize: '1.5rem'
+                      backgroundColor: 'white'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = '#f8f8f8';
@@ -524,8 +532,7 @@ function WatchingPageContent() {
                     <img 
                       src="/Subject.png" 
                       alt="Chameleon" 
-                      className="absolute -top-12 left-1/2 transform -translate-x-1/2 pointer-events-none"
-                      style={{ maxWidth: '80px', height: 'auto' }}
+                      className="cta-mascot"
                     />
                     Next
                   </button>
@@ -536,13 +543,14 @@ function WatchingPageContent() {
       }
       controls={
         !showNextCta ? (
-          <div className="w-full px-2 md:px-8">
+          <div className="relative z-50 w-full overflow-visible px-2 md:px-8">
             <div 
-              className="relative w-full h-2 cursor-pointer"
+              className="relative w-full h-2 cursor-pointer overflow-visible"
               onClick={handleProgressClick}
               onMouseDown={handleProgressMouseDown}
               onMouseUp={handleProgressMouseUp}
-              onMouseEnter={() => {
+              onMouseEnter={(e) => {
+                updateTooltipPlacement(e.currentTarget);
                 setShowProgressTooltip(true);
               }}
               onMouseLeave={() => {
@@ -551,6 +559,7 @@ function WatchingPageContent() {
               }}
               onMouseMove={(e) => {
                 const progressBar = e.currentTarget;
+                updateTooltipPlacement(progressBar);
                 const rect = progressBar.getBoundingClientRect();
                 const mouseX = e.clientX - rect.left;
                 const progress = (mouseX / rect.width) * 100;
@@ -573,7 +582,9 @@ function WatchingPageContent() {
               />
               {showProgressTooltip && (
                 <div 
-                  className="absolute top-9 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg pointer-events-none whitespace-nowrap z-50"
+                  className={`absolute text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg pointer-events-none whitespace-nowrap z-50 ${
+                    tooltipPlacement === "above" ? "bottom-6" : "top-9"
+                  }`}
                   style={{ 
                     backgroundColor: 'rgb(32, 30, 30)',
                     left: `${tooltipPosition}%`,
@@ -581,12 +592,22 @@ function WatchingPageContent() {
                   }}
                 >
                   <div 
-                    className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-0 h-0"
-                    style={{
-                      borderLeft: '8px solid transparent',
-                      borderRight: '8px solid transparent',
-                      borderBottom: '16px solid rgb(32, 30, 30)'
-                    }}
+                    className={`absolute left-1/2 transform -translate-x-1/2 w-0 h-0 ${
+                      tooltipPlacement === "above" ? "-bottom-3" : "-top-3"
+                    }`}
+                    style={
+                      tooltipPlacement === "above"
+                        ? {
+                            borderLeft: '8px solid transparent',
+                            borderRight: '8px solid transparent',
+                            borderTop: '16px solid rgb(32, 30, 30)'
+                          }
+                        : {
+                            borderLeft: '8px solid transparent',
+                            borderRight: '8px solid transparent',
+                            borderBottom: '16px solid rgb(32, 30, 30)'
+                          }
+                    }
                   ></div>
                   {formatTime(startTime + (tooltipPosition / 100) * (endTime - startTime))} / {formatTime(endTime - startTime)} 
                 </div>

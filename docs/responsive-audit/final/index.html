@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mimic 반응형 레이아웃 · final</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #0b0b0b;
+      color: #f3f3f3;
+      line-height: 1.5;
+    }
+    header.page {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #111;
+      border-bottom: 1px solid #333;
+      padding: 16px 20px;
+    }
+    h1 { margin: 0 0 6px; font-size: 22px; color: #60D96C; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    nav a {
+      color: #111;
+      background: #60D96C;
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+    }
+    article {
+      padding: 24px 20px;
+      border-bottom: 1px solid #222;
+    }
+    article h2 { margin: 0; color: #60D96C; }
+    .route { color: #9ca3af; font-family: ui-monospace, monospace; font-size: 13px; }
+    .analysis { background: #1a1a1a; border-left: 3px solid #60D96C; padding: 10px 12px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    figure { margin: 0; background: #141414; border-radius: 12px; overflow: hidden; }
+    figcaption {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      font-size: 13px;
+      background: #1f1f1f;
+    }
+    figcaption span { color: #9ca3af; }
+    img { width: 100%; height: auto; display: block; background: #000; }
+    .missing { height: 180px; display: grid; place-items: center; color: #777; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page">
+    <h1>Mimic 화면 레이아웃 · final</h1>
+    <p>같은 화면을 모바일 / 태블릿 / PC 로 나란히 보면, 어디에 글자나 버튼이 넘치는지 한눈에 볼 수 있습니다.</p>
+    <nav>
+      <a href="#home-live">홈</a><a href="#home-menu">홈 메뉴</a><a href="#login-live">로그인</a><a href="#signup-live">회원가입</a><a href="#selecting">레슨 선택</a><a href="#watching">워칭</a><a href="#mimicking">미믹킹</a><a href="#guessing">게싱</a><a href="#guess-result">게싱 결과</a><a href="#word">워드</a><a href="#admin">학생 현황</a>
+    </nav>
+  </header>
+  
+    <article id="home-live">
+      <header>
+        <h2>홈</h2>
+        <p class="route">/</p>
+        <p>영화 포스터와 로그인 버튼이 있는 첫 화면</p>
+        <p class="analysis">모바일에서는 포스터가 화면 너비를 채우고 세로 가운데에 옵니다. PC에서는 기존처럼 시네마 비율입니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="home-live__mobile.png" alt="홈 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="home-live__tablet.png" alt="홈 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="home-live__pc.png" alt="홈 PC" />
+        </figure></div>
+    </article>
+
+    <article id="home-menu">
+      <header>
+        <h2>홈 메뉴</h2>
+        <p class="route">/</p>
+        <p>왼쪽 초록 버튼을 눌렀을 때 열리는 전체 메뉴</p>
+        <p class="analysis">모바일은 메뉴 글자만 보이고, PC는 오른쪽에 QR이 붙습니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="home-menu__mobile.png" alt="홈 메뉴 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="home-menu__tablet.png" alt="홈 메뉴 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="home-menu__pc.png" alt="홈 메뉴 PC" />
+        </figure></div>
+    </article>
+
+    <article id="login-live">
+      <header>
+        <h2>로그인</h2>
+        <p class="route">/auth/login</p>
+        <p>이메일과 비밀번호로 들어가는 화면</p>
+        <p class="analysis">작은 화면에서도 카드 좌우 여백이 있습니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="login-live__mobile.png" alt="로그인 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="login-live__tablet.png" alt="로그인 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="login-live__pc.png" alt="로그인 PC" />
+        </figure></div>
+    </article>
+
+    <article id="signup-live">
+      <header>
+        <h2>회원가입</h2>
+        <p class="route">/auth/signup</p>
+        <p>새 계정을 만드는 화면</p>
+        <p class="analysis">로그인과 같은 여백입니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="signup-live__mobile.png" alt="회원가입 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="signup-live__tablet.png" alt="회원가입 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="signup-live__pc.png" alt="회원가입 PC" />
+        </figure></div>
+    </article>
+
+    <article id="selecting">
+      <header>
+        <h2>레슨 선택</h2>
+        <p class="route">/sing2/selecting</p>
+        <p>Watch / Mimic / Guess / Word 를 고르는 화면</p>
+        <p class="analysis">모바일·태블릿은 2×2, PC는 Watch Mimic Guess Word 한 줄입니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="selecting__mobile.png" alt="레슨 선택 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="selecting__tablet.png" alt="레슨 선택 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="selecting__pc.png" alt="레슨 선택 PC" />
+        </figure></div>
+    </article>
+
+    <article id="watching">
+      <header>
+        <h2>워칭</h2>
+        <p class="route">/sing2/watching</p>
+        <p>영상을 보는 학습 화면</p>
+        <p class="analysis">헤더와 진행 바를 제외한 남은 공간을 영상이 채웁니다. PC 교실 화면에서도 크게 보입니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="watching__mobile.png" alt="워칭 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="watching__tablet.png" alt="워칭 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="watching__pc.png" alt="워칭 PC" />
+        </figure></div>
+    </article>
+
+    <article id="mimicking">
+      <header>
+        <h2>미믹킹</h2>
+        <p class="route">/sing2/mimicking</p>
+        <p>따라 말하기 8단계 버튼이 있는 화면</p>
+        <p class="analysis">영상은 남은 공간을 채우고, 8단계 버튼은 화면 너비에 맞춰 줄어듭니다. 문장 목록은 PC 옆칸, 모바일은 목록 아이콘으로 엽니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="mimicking__mobile.png" alt="미믹킹 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="mimicking__tablet.png" alt="미믹킹 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="mimicking__pc.png" alt="미믹킹 PC" />
+        </figure></div>
+    </article>
+
+    <article id="guessing">
+      <header>
+        <h2>게싱</h2>
+        <p class="route">/sing2/guessing</p>
+        <p>A B C 중에서 고르는 화면</p>
+        <p class="analysis">A B C가 화면 안에 들어옵니다. 문제 목록은 PC 옆칸입니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="guessing__mobile.png" alt="게싱 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="guessing__tablet.png" alt="게싱 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="guessing__pc.png" alt="게싱 PC" />
+        </figure></div>
+    </article>
+
+    <article id="guess-result">
+      <header>
+        <h2>게싱 결과</h2>
+        <p class="route">/sing2/guessing (완료)</p>
+        <p>맞힌 개수를 보여주는 화면</p>
+        <p class="analysis">결과 글자와 Next 버튼이 작은 화면에서도 잘리지 않습니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="guess-result__mobile.png" alt="게싱 결과 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="guess-result__tablet.png" alt="게싱 결과 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="guess-result__pc.png" alt="게싱 결과 PC" />
+        </figure></div>
+    </article>
+
+    <article id="word">
+      <header>
+        <h2>워드</h2>
+        <p class="route">/sing2/word</p>
+        <p>단어를 순서대로 맞추는 화면</p>
+        <p class="analysis">모바일은 영상 아래 단어 칩, 태블릿·PC는 양옆 단어 칸입니다. 하단 버튼은 화면 너비에 맞춥니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="word__mobile.png" alt="워드 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="word__tablet.png" alt="워드 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="word__pc.png" alt="워드 PC" />
+        </figure></div>
+    </article>
+
+    <article id="admin">
+      <header>
+        <h2>학생 현황</h2>
+        <p class="route">/admin</p>
+        <p>학원 원장이 학생 진도를 보는 화면</p>
+        <p class="analysis">표가 넓으면 좌우로 밀어 봅니다. 상세 창은 모바일에서 아래에서 올라옵니다.</p>
+      </header>
+      <div class="grid">
+        <figure>
+          <figcaption>모바일<span>390 × 844</span></figcaption>
+          <img src="admin__mobile.png" alt="학생 현황 모바일" />
+        </figure>
+        <figure>
+          <figcaption>태블릿<span>768 × 1024</span></figcaption>
+          <img src="admin__tablet.png" alt="학생 현황 태블릿" />
+        </figure>
+        <figure>
+          <figcaption>PC<span>1440 × 900</span></figcaption>
+          <img src="admin__pc.png" alt="학생 현황 PC" />
+        </figure></div>
+    </article>
+</body>
+</html>

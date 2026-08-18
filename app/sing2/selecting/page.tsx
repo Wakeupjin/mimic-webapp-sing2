@@ -203,10 +203,13 @@ function SelectingPageContent() {
   const modeOpen = (mode: LearnMode) =>
     isMaster || canAccessMode(progressRows, lessonNo, mode);
 
+  const modeButtonClass =
+  "rounded-2xl border-4 border-gray-300 px-4 py-4 text-lg font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100 sm:text-xl lg:border-8 lg:px-8 lg:py-5 lg:text-2xl";
+
   return (
-    <main className="min-h-screen px-4 py-4" style={{ backgroundColor: '#000000' }}>
+    <main className="flex min-h-dvh flex-col px-4 py-4" style={{ backgroundColor: '#000000' }}>
       {/* Header */}
-      <div className="mb-8 flex items-center justify-between">
+      <div className="mb-6 flex items-center justify-between md:mb-8">
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
           {pack >= 2 ? 'SING 2 · Hard' : 'SING 2'}
         </h1>
@@ -219,15 +222,14 @@ function SelectingPageContent() {
       </div>
 
       {/* Lesson dropdown (Chapter 대신 Lesson 번호와 제목 사용) */}
-      <div className="flex justify-center mb-8">
-        <div className="relative" ref={dropdownRef}>
+      <div className="mb-6 flex justify-center md:mb-8">
+        <div className="relative w-full max-w-xs sm:max-w-sm" ref={dropdownRef}>
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex items-center gap-3 px-6 py-3 rounded-xl text-white font-bold text-xl transition-all duration-200 hover:bg-[#2a2a2a] cursor-pointer"
+            className="flex w-full items-center gap-3 px-6 py-3 rounded-xl text-white font-bold text-xl transition-all duration-200 hover:bg-[#2a2a2a] cursor-pointer"
             style={{
               backgroundColor: '#201E1E',
               fontFamily: 'Encode Sans, sans-serif',
-              minWidth: '320px', // Dropdown 너비를 넓힘
               justifyContent: 'center'
             }}
           >
@@ -314,18 +316,17 @@ function SelectingPageContent() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center" style={{ height: 'calc(100vh - 220px)' }}>
-        <div className="text-center">
+      <div className="flex flex-1 items-center justify-center py-4">
+        <div className="w-full text-center">
         
-        <div className="flex gap-8 justify-center">
+        <div className="mx-auto grid w-full max-w-xl grid-cols-2 gap-3 sm:gap-4 lg:flex lg:max-w-none lg:justify-center lg:gap-6">
           <button
             onClick={() => handleModeSelect('watching')}
             disabled={!modeOpen('watching')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
+            className={modeButtonClass}
             style={{
               backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif', 
-              fontSize: '1.5rem'
+              fontFamily: 'Encode Sans, sans-serif'
             }}
           >
             Watch
@@ -334,11 +335,10 @@ function SelectingPageContent() {
           <button
             onClick={() => handleModeSelect('mimicking')}
             disabled={!modeOpen('mimicking')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
+            className={modeButtonClass}
             style={{
               backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif', 
-              fontSize: '1.5rem'
+              fontFamily: 'Encode Sans, sans-serif'
             }}
           >
             Mimic
@@ -347,11 +347,10 @@ function SelectingPageContent() {
           <button
             onClick={() => handleModeSelect('guessing')}
             disabled={!modeOpen('guessing')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
+            className={modeButtonClass}
             style={{
               backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif', 
-              fontSize: '1.5rem'
+              fontFamily: 'Encode Sans, sans-serif'
             }}
           >
             Guess
@@ -360,11 +359,10 @@ function SelectingPageContent() {
           <button
             onClick={() => handleModeSelect('word')}
             disabled={!modeOpen('word')}
-            className="rounded-2xl border-8 border-gray-300 px-8 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100"
+            className={modeButtonClass}
             style={{
               backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif', 
-              fontSize: '1.5rem'
+              fontFamily: 'Encode Sans, sans-serif'
             }}
           >
             Word

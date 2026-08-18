@@ -13,22 +13,17 @@ export default function AgainNextButtons({
 }: AgainNextButtonsProps) {
   return (
     <div className={`absolute inset-0 flex items-center justify-center pointer-events-none ${className}`}>
-      {/* Dimmed overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
-      
-      {/* Again/Next 버튼 */}
-      <div className="relative z-10 flex gap-8 pointer-events-auto">
+      <div className="cta-row relative z-10 pointer-events-auto">
         <button
           onClick={onAgain}
-          className="px-8 py-4 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors text-xl font-bold"
-          style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          className="cta-btn bg-gray-600 text-white hover:bg-gray-700 transition-colors"
         >
           Again
         </button>
         <button
           onClick={onNext}
-          className="px-8 py-4 bg-[#60D96C] text-black rounded-lg hover:bg-[#4CAF50] transition-colors text-xl font-bold"
-          style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          className="cta-btn bg-[#60D96C] text-black hover:bg-[#4CAF50] transition-colors"
         >
           Next
         </button>

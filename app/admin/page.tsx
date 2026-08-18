@@ -173,12 +173,12 @@ export default function AdminPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white p-6 md:p-10">
+    <main className="min-h-dvh bg-black text-white p-4 sm:p-6 md:p-10">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <div>
             <p className="text-[#60D96C] text-sm mb-1">학생 현황</p>
-            <h1 className="text-3xl font-bold">진도 · 학습 시간</h1>
+            <h1 className="text-2xl font-bold sm:text-3xl">진도 · 학습 시간</h1>
             <p className="text-gray-400 mt-2 text-sm">
               홈에서 원장도 학생처럼 공부할 수 있습니다. 여기에는 워칭·미믹·게싱·워드에 머문 시간만 모입니다.
             </p>

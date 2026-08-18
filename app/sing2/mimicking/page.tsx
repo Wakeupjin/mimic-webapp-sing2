@@ -22,6 +22,7 @@ import { getVideoSource } from "../../utils/videoSource";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
 import { CaptionsIcon, FullscreenIcon, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
+import PauseOverlay from "../../components/PauseOverlay";
 
 function MimickingPageContent() {
   const { user, loading } = useAuth();
@@ -83,9 +84,14 @@ function MimickingPageContent() {
   } = useMimickingSequence();
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  useEffect(() => {
+    setIsSidebarOpen(window.matchMedia("(min-width: 1024px)").matches);
+  }, []);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isMimickingStarted, setIsMimickingStarted] = useState(false);
+  const [isSequencePaused, setIsSequencePaused] = useState(false);
+  const [nudgeNext, setNudgeNext] = useState(false);
   const { bumpPlay, patch } = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
   const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'mimicking');
   const maxSentenceRef = useRef(0);
@@ -94,6 +100,21 @@ function MimickingPageContent() {
   const autoSeqIndexRef = useRef<number | null>(null);
   const currentIndexRef = useRef<number>(0);
   const pendingButtonIndexRef = useRef<number | null>(null);
+  const stepTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isSequencePausedRef = useRef(false);
+
+  const clearStepTimeout = useCallback(() => {
+    if (stepTimeoutRef.current) {
+      clearTimeout(stepTimeoutRef.current);
+      stepTimeoutRef.current = null;
+    }
+  }, []);
+
+  const pauseActualVideo = useCallback(() => {
+    document.querySelectorAll("video").forEach((video) => {
+      video.pause();
+    });
+  }, []);
 
   // Chapter 0 접근 시 Chapter 1로 리다이렉트
   useEffect(() => {
@@ -175,13 +196,15 @@ function MimickingPageContent() {
   // autoSeqIndex가 변경될 때마다 ref 업데이트
   useEffect(() => {
     autoSeqIndexRef.current = autoSeqIndex;
-    // console.log(`📌 autoSeqIndex 업데이트: ${autoSeqIndex}`);
   }, [autoSeqIndex]);
+
+  useEffect(() => {
+    isSequencePausedRef.current = isSequencePaused;
+  }, [isSequencePaused]);
   
   // currentIndex가 변경될 때마다 ref 업데이트
   useEffect(() => {
     currentIndexRef.current = currentIndex;
-    // console.log(`📌 currentIndex 업데이트: ${currentIndex}`);
   }, [currentIndex]);
 
   // 미믹킹 진도 저장 useEffect
@@ -308,14 +331,6 @@ function MimickingPageContent() {
         e.preventDefault();
         e.stopPropagation();
       }
-      // 화살표 키로 이전/다음 씬 이동
-      else if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        handlePrev();
-      } else if (e.key === "ArrowRight") {
-        e.preventDefault();
-        handleNext();
-      }
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -339,6 +354,10 @@ function MimickingPageContent() {
     }
     lastStartedIndexRef.current = currentIndex;
     const currentScene = scenes[currentIndex];
+    setIsSequencePaused(false);
+    isSequencePausedRef.current = false;
+    setNudgeNext(false);
+    clearStepTimeout();
     autoSeqIndexRef.current = 0;
     setAutoSeqIndex(0);
     setActiveControlIndex(0);
@@ -348,12 +367,50 @@ function MimickingPageContent() {
       totalSentences: scenes.length,
       sentencesPlayed: currentIndex + 1,
     });
-  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes, bumpPlay, patch]);
+  }, [isMimickingStarted, currentIndex, executeMimickingSequence, playVideo, isSequenceRunning, scenes, bumpPlay, patch, clearStepTimeout]);
 
-  const handlePrev = useCallback(() => {
-    if (isSequenceRunning && !isMaster) {
+  const toggleSequencePause = useCallback(() => {
+    if (!isMimickingStarted || showNextCta) return;
+    if (autoSeqIndexRef.current === null && !isSequenceRunning && !isSequencePaused) return;
+
+    if (isSequencePaused) {
+      setIsSequencePaused(false);
+      isSequencePausedRef.current = false;
+      const step = autoSeqIndexRef.current;
+      if (step !== null) {
+        setMuted([3, 5, 7].includes(step));
+        setActiveControlIndex(step);
+      }
+      playVideo();
       return;
     }
+
+    clearStepTimeout();
+    setIsSequencePaused(true);
+    isSequencePausedRef.current = true;
+    pauseVideo();
+    pauseActualVideo();
+  }, [
+    isMimickingStarted,
+    showNextCta,
+    isSequenceRunning,
+    isSequencePaused,
+    clearStepTimeout,
+    playVideo,
+    pauseVideo,
+    pauseActualVideo,
+    setMuted,
+    setActiveControlIndex,
+  ]);
+
+  const handlePrev = useCallback(() => {
+    if (isSequenceRunning && !isMaster && !nudgeNext) {
+      return;
+    }
+    clearStepTimeout();
+    setIsSequencePaused(false);
+    isSequencePausedRef.current = false;
+    setNudgeNext(false);
     setIsSequenceRunning(false);
     lastStartedIndexRef.current = null;
     setCurrentIndex(currentIndex > 0 ? currentIndex - 1 : currentIndex);
@@ -375,20 +432,24 @@ function MimickingPageContent() {
       if (currentIndex === 1) {
         setIsMimickingStarted(false);
       }
-  }, [isSequenceRunning, isMaster, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta]);
+  }, [isSequenceRunning, isMaster, nudgeNext, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
 
   const handleNext = useCallback(() => {
-    if (isSequenceRunning && !isMaster) {
+    if (isSequenceRunning && !isMaster && !nudgeNext) {
       return;
     }
-    if (!isMaster && currentIndex >= maxSentenceRef.current) {
+    if (!isMaster && currentIndex >= maxSentenceRef.current && !nudgeNext) {
       return;
     }
+    clearStepTimeout();
+    setIsSequencePaused(false);
+    isSequencePausedRef.current = false;
+    setNudgeNext(false);
     setIsSequenceRunning(false);
     lastStartedIndexRef.current = null;
     if (currentIndex < scenes.length - 1) {
       const nextIdx = currentIndex + 1;
-      if (isMaster) {
+      if (isMaster || nudgeNext) {
         maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIdx);
       }
       setCurrentIndex(nextIdx);
@@ -404,14 +465,37 @@ function MimickingPageContent() {
         window.location.href = `/sing2/guessing?id=${movieId}`;
     }
     setShowNextCta(false);
-  }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, setCurrentIndex, setShowNextCta]);
+  }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
 
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
-    // console.log(`🎮 handlePlay: muted=${m}, slotIndex=${slotIndex}`);
+    clearStepTimeout();
+    setIsSequencePaused(false);
+    isSequencePausedRef.current = false;
+    setNudgeNext(false);
     setMuted(m);
     setActiveControlIndex(slotIndex);
+    setAutoSeqIndex(slotIndex);
+    autoSeqIndexRef.current = slotIndex;
+    setIsSequenceRunning(true);
     playVideo();
-  }, [playVideo, setActiveControlIndex, setMuted]);
+  }, [playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === "Space") {
+        e.preventDefault();
+        toggleSequencePause();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        handlePrev();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [toggleSequencePause, handlePrev, handleNext]);
 
   const currentScene = scenes[currentIndex];
 
@@ -465,6 +549,7 @@ function MimickingPageContent() {
     <LessonShell
       subtitle={`${currentIndex + 1}/30`}
       onClose={stopAllMedia}
+      onAsideDismiss={() => setIsSidebarOpen(false)}
       videoHighlight={activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)}
       extraActions={
         <>
@@ -490,9 +575,14 @@ function MimickingPageContent() {
                 showText={isTextVisible}
                 text={currentScene.text}
                 playNonce={isMimickingStarted && playNonce > 0 ? playNonce : 0}
-                playing={isMimickingStarted}
-                hidePauseOverlay={autoSeqIndex !== null}
+                playing={isMimickingStarted && !isSequencePaused}
+                hidePauseOverlay={true}
                 activeControlIndex={activeControlIndex}
+                onClick={() => {
+                  if (isMimickingStarted && !showNextCta) {
+                    toggleSequencePause();
+                  }
+                }}
                 onPlay={() => {
                   // Video started playing - no need to change button color here
                   // Button color is already set when sequence starts
@@ -509,6 +599,9 @@ function MimickingPageContent() {
                   }
                 }}
                 onEndedSegment={() => {
+                  if (isSequencePausedRef.current) {
+                    return;
+                  }
                   const currentAutoSeqIndex = autoSeqIndexRef.current;
                   // console.log(`🏁 비디오 재생 완료: autoSeqIndex=${currentAutoSeqIndex}`);
                   setActiveControlIndex(null);
@@ -520,7 +613,9 @@ function MimickingPageContent() {
                     
                     if (next <= 7) {
                       // 다음 버튼으로 진행
-                      setTimeout(() => {
+                      clearStepTimeout();
+                      stepTimeoutRef.current = setTimeout(() => {
+                        if (isSequencePausedRef.current) return;
                         const isMuted = [3, 5, 7].includes(next);
                         // console.log(`🎯 버튼 ${next} 준비: muted=${isMuted} (색상 즉시 변경)`);
                         setAutoSeqIndex(next);
@@ -530,30 +625,32 @@ function MimickingPageContent() {
                         playVideo();
                       }, 1000);
                     } else {
-                      // 8개 완료 → 시퀀스 종료
-                      // console.log(`✅ 8단계 완료`);
+                      // 8개 완료 → 다음 문장 안내
+                      clearStepTimeout();
                       setAutoSeqIndex(null);
-                      
-                      // 다음 문장으로 자동 진행
+                      autoSeqIndexRef.current = null;
+                      setIsSequenceRunning(false);
+                      setIsSequencePaused(false);
+                      isSequencePausedRef.current = false;
+                      setNudgeNext(true);
+
                       const currentIdx = currentIndexRef.current;
-                      if (currentIdx < 29) { // 30개 문장 (0-29)
-                        const nextIdx = currentIdx + 1;
-                        setTimeout(() => {
-                          setMuted(false);
-                          setActiveControlIndex(null);
-                          setIsSequenceRunning(false);
-                          pendingButtonIndexRef.current = null;
-                          autoSeqIndexRef.current = null;
-                          if (isMaster) {
-                            return;
-                          }
-                          maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIdx);
-                          setCurrentIndex(nextIdx);
-                        }, 1000);
+                      if (currentIdx < 29) {
+                        // 원장: 직접 다음을 누를 때까지 대기 / 학생: 잠깐 안내 후 자동 이동
+                        if (!isMaster) {
+                          stepTimeoutRef.current = setTimeout(() => {
+                            const nextIdx = currentIdx + 1;
+                            maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIdx);
+                            setNudgeNext(false);
+                            setMuted(false);
+                            setActiveControlIndex(null);
+                            pendingButtonIndexRef.current = null;
+                            setCurrentIndex(nextIdx);
+                          }, 1600);
+                        }
                       } else {
                         // 30번째 문장이면 게싱 모드로 전환
-                        // console.log(`30번째 문장 완료 - 게싱 모드로 전환`);
-                        setIsSequenceRunning(false);
+                        setNudgeNext(false);
                         setIsMimickingComplete(true);
                         setShowNextCta(true);
                         pauseVideo();
@@ -575,6 +672,8 @@ function MimickingPageContent() {
                   }}
                 />
               )}
+
+              {isSequencePaused && !showNextCta && <PauseOverlay />}
         
             {showNextCta && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -582,11 +681,11 @@ function MimickingPageContent() {
                 <div className="absolute inset-0 bg-black/80"></div>
                 
                 {/* Button container */}
-                <div className="relative flex items-center gap-8 pointer-events-auto">
+                <div className="cta-row relative z-10 pointer-events-auto">
                   {/* Again Button */}
                   <button 
-                    className="rounded-2xl border-8 border-gray-300 px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
-                    style={{ backgroundColor: 'white', fontFamily: 'Encode Sans, sans-serif', fontSize: '1.5rem' }}
+                    className="cta-btn border-gray-300 text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
+                    style={{ backgroundColor: 'white' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = '#f8f8f8';
                     }}
@@ -602,11 +701,9 @@ function MimickingPageContent() {
                   
                   {/* Next Button */}
                   <button 
-                    className="relative rounded-2xl border-8 border-[#60D96C] px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]" 
+                    className="cta-btn relative border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]" 
                     style={{ 
-                      backgroundColor: 'white', 
-                      fontFamily: 'Encode Sans, sans-serif', 
-                      fontSize: '1.5rem'
+                      backgroundColor: 'white'
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = '#f8f8f8';
@@ -620,8 +717,7 @@ function MimickingPageContent() {
                     <img 
                       src="/Subject.png" 
                       alt="카멜레온" 
-                      className="absolute -top-12 left-1/2 transform -translate-x-1/2 pointer-events-none"
-                      style={{ maxWidth: '80px', height: 'auto' }}
+                      className="cta-mascot"
                     />
                     Next
                   </button>
@@ -632,9 +728,14 @@ function MimickingPageContent() {
       }
       controls={
         !showNextCta ? (
-          <div className="origin-bottom scale-75 md:scale-100">
-            <PlaybackControls onPrev={handlePrev} onNext={handleNext} onPlay={handlePlay} activeIndex={activeControlIndex} isFullscreen={false} />
-          </div>
+          <PlaybackControls
+            onPrev={handlePrev}
+            onNext={handleNext}
+            onPlay={handlePlay}
+            activeIndex={activeControlIndex}
+            isFullscreen={false}
+            highlightNext={nudgeNext}
+          />
         ) : null
       }
       aside={
@@ -658,6 +759,10 @@ function MimickingPageContent() {
                         maxSentenceRef.current = Math.max(maxSentenceRef.current, index);
                       }
                       clearTimeouts();
+                      clearStepTimeout();
+                      setIsSequencePaused(false);
+                      isSequencePausedRef.current = false;
+                      setNudgeNext(false);
                       setAutoSeqIndex(null);
                       setActiveControlIndex(null);
                       setMuted(false);

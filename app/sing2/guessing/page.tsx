@@ -22,6 +22,8 @@ import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
 import LessonShell from "../../components/LessonShell";
 import { FullscreenIcon, HeaderCloseLink, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
+import ControlTriangle from "../../components/ControlTriangle";
+import PauseOverlay from "../../components/PauseOverlay";
 import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
 import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
@@ -143,10 +145,16 @@ function GuessingPageContent() {
   const maxQuestionRef = useRef(0);
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  useEffect(() => {
+    setIsSidebarOpen(window.matchMedia("(min-width: 1024px)").matches);
+  }, []);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [muted, setMuted] = useState(false);
   const [activeControlIndex, setActiveControlIndex] = useState<number | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [nudgeNext, setNudgeNext] = useState(false);
+  const [lockHint, setLockHint] = useState(false);
   const videoPlayCountRef = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const autoPlayIndexRef = useRef(0);
@@ -156,10 +164,43 @@ function GuessingPageContent() {
   const stopAudioSegmentRef = useRef<(() => void) | null>(null);
   const missedThisQuestionRef = useRef(false);
   const [isClipPlaying, setIsClipPlaying] = useState(false);
+  const isPausedRef = useRef(false);
+  const stepTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lockHintTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const abcIndexRef = useRef(0);
+  const abcRunningRef = useRef(false);
+  const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const longPressFiredRef = useRef(false);
+
+  const clearStepTimeout = useCallback(() => {
+    if (stepTimeoutRef.current) {
+      clearTimeout(stepTimeoutRef.current);
+      stepTimeoutRef.current = null;
+    }
+  }, []);
+
+  const showLockHint = useCallback(() => {
+    setLockHint(true);
+    if (lockHintTimeoutRef.current) clearTimeout(lockHintTimeoutRef.current);
+    lockHintTimeoutRef.current = setTimeout(() => setLockHint(false), 1600);
+  }, []);
+
+  const pauseActualMedia = useCallback(() => {
+    document.querySelectorAll("video").forEach((video) => video.pause());
+    stopAudioSegmentRef.current?.();
+    stopAudioSegmentRef.current = null;
+  }, []);
+
+  useEffect(() => {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
 
   useEffect(() => {
     return () => {
       stopAudioSegmentRef.current?.();
+      if (lockHintTimeoutRef.current) clearTimeout(lockHintTimeoutRef.current);
+      if (longPressTimerRef.current) clearTimeout(longPressTimerRef.current);
+      if (stepTimeoutRef.current) clearTimeout(stepTimeoutRef.current);
     };
   }, []);
 
@@ -396,27 +437,39 @@ function GuessingPageContent() {
   }, [playVideo]);
 
   // Play A/B/C options sequentially
-  const playABCSequence = useCallback((question: any, onAllPlayed?: () => void) => {
+  const playABCSequence = useCallback((question: any, onAllPlayed?: () => void, fromIndex = 0) => {
+    abcRunningRef.current = true;
     const playNextOption = (idx: number) => {
+      if (isPausedRef.current) {
+        abcIndexRef.current = idx;
+        return;
+      }
+      abcIndexRef.current = idx;
       if (idx < GUESSING_OPTION_LABELS.length && question) {
         const currentLabel = GUESSING_OPTION_LABELS[idx];
         const currentOption = question.options.find((opt: any) => opt.label === currentLabel);
-      if (currentOption) {
+        if (currentOption) {
           playAudioDirect(currentOption, question, () => {
+            if (isPausedRef.current) {
+              abcIndexRef.current = idx + 1;
+              return;
+            }
             playNextOption(idx + 1);
           });
         } else {
           playNextOption(idx + 1);
         }
       } else {
+        abcRunningRef.current = false;
         if (onAllPlayed) onAllPlayed();
       }
     };
-    playNextOption(0);
+    playNextOption(fromIndex);
   }, [playAudioDirect]);
 
   const resetQuestionPlayback = useCallback(() => {
     stopAudioSegmentRef.current?.();
+    clearStepTimeout();
     setVideoPlayCount(0);
     videoPlayCountRef.current = 0;
     setPlayingAudio(null);
@@ -426,11 +479,181 @@ function GuessingPageContent() {
     setScreenshot(null);
     setScreenshotTaken(false);
     setIsClipPlaying(false);
-  }, [setVideoPlayCount, setPlayingAudio, setAllOptionsPlayed, setCurrentAutoIndex, setScreenshot, setScreenshotTaken]);
+    setIsPaused(false);
+    isPausedRef.current = false;
+    setNudgeNext(false);
+    abcRunningRef.current = false;
+    abcIndexRef.current = 0;
+  }, [setVideoPlayCount, setPlayingAudio, setAllOptionsPlayed, setCurrentAutoIndex, setScreenshot, setScreenshotTaken, clearStepTimeout]);
+
+  const goToNextQuestion = useCallback(() => {
+    clearStepTimeout();
+    setNudgeNext(false);
+    setIsPaused(false);
+    isPausedRef.current = false;
+    if (currentQuestionIndex >= totalQuestions - 1) {
+      setShowResults(true);
+      return;
+    }
+    const nextIdx = currentQuestionIndex + 1;
+    maxQuestionRef.current = Math.max(maxQuestionRef.current, nextIdx);
+    missedThisQuestionRef.current = false;
+    setCurrentQuestionIndex(nextIdx);
+    setCurrentIndex(nextIdx);
+    resetQuestionPlayback();
+    setShowResults(false);
+    setShowIntro(false);
+    setUserInteracted(true);
+    setIsGuessingStarted(true);
+    setShowCorrect(false);
+    setShowAgain(false);
+    stepTimeoutRef.current = setTimeout(() => {
+      playVideo();
+    }, GUESSING_NEXT_QUESTION_DELAY);
+  }, [
+    clearStepTimeout,
+    currentQuestionIndex,
+    totalQuestions,
+    resetQuestionPlayback,
+    setShowResults,
+    setCurrentQuestionIndex,
+    setCurrentIndex,
+    setShowIntro,
+    setUserInteracted,
+    setIsGuessingStarted,
+    setShowCorrect,
+    setShowAgain,
+    playVideo,
+  ]);
+
+  const togglePause = useCallback(() => {
+    if (!isGuessingStarted || showCorrect || showAgain || showResults || nudgeNext) return;
+
+    if (isPaused) {
+      setIsPaused(false);
+      isPausedRef.current = false;
+      // 고르는 단계면 영상/ABC를 다시 틀지 않음
+      if (allOptionsPlayed) return;
+      // ABC 중간이면 이어서, 무음 영상이면 현재 클립부터 다시
+      if (abcRunningRef.current || videoPlayCountRef.current >= GUESSING_VIDEO_PLAYS) {
+        const q = guessingData[currentQuestionIndex];
+        if (q) {
+          playABCSequence(q, () => setAllOptionsPlayed(true), abcIndexRef.current);
+        }
+      } else {
+        playVideo();
+      }
+      return;
+    }
+
+    clearStepTimeout();
+    setIsPaused(true);
+    isPausedRef.current = true;
+    setIsClipPlaying(false);
+    pauseVideo();
+    pauseActualMedia();
+    setPlayingAudio(null);
+  }, [
+    isGuessingStarted,
+    showCorrect,
+    showAgain,
+    showResults,
+    nudgeNext,
+    isPaused,
+    allOptionsPlayed,
+    guessingData,
+    currentQuestionIndex,
+    playABCSequence,
+    playVideo,
+    pauseVideo,
+    pauseActualMedia,
+    clearStepTimeout,
+    setPlayingAudio,
+    setAllOptionsPlayed,
+  ]);
+
+  const replayOption = useCallback((option: any) => {
+    if (!allOptionsPlayed || isPaused || showCorrect || showAgain || nudgeNext) return;
+    const q = guessingData[currentQuestionIndex];
+    if (!q) return;
+    playAudioDirect(option, q);
+  }, [allOptionsPlayed, isPaused, showCorrect, showAgain, nudgeNext, guessingData, currentQuestionIndex, playAudioDirect]);
+
+  const clearLongPress = useCallback(() => {
+    if (longPressTimerRef.current) {
+      clearTimeout(longPressTimerRef.current);
+      longPressTimerRef.current = null;
+    }
+  }, []);
+
+  const jumpToQuestion = useCallback((idx: number) => {
+    clearStepTimeout();
+    clearLongPress();
+    missedThisQuestionRef.current = false;
+    setNudgeNext(false);
+    setCurrentQuestionIndex(idx);
+    setCurrentIndex(idx);
+    resetQuestionPlayback();
+    setShowCorrect(false);
+    setShowAgain(false);
+    setShowIntro(false);
+    setShowResults(false);
+    setUserInteracted(true);
+    setIsGuessingStarted(true);
+    stepTimeoutRef.current = setTimeout(() => {
+      playVideo();
+    }, GUESSING_NEXT_QUESTION_DELAY);
+  }, [
+    clearStepTimeout,
+    clearLongPress,
+    resetQuestionPlayback,
+    playVideo,
+    setCurrentQuestionIndex,
+    setCurrentIndex,
+    setShowCorrect,
+    setShowAgain,
+    setShowIntro,
+    setShowResults,
+    setUserInteracted,
+    setIsGuessingStarted,
+  ]);
+
+  const handlePrevQuestion = useCallback(() => {
+    if (nudgeNext) return;
+    if (currentQuestionIndex > 0) {
+      jumpToQuestion(currentQuestionIndex - 1);
+      return;
+    }
+    stopAllMedia();
+    window.location.href = `/sing2/mimicking?id=${movieId}`;
+  }, [nudgeNext, currentQuestionIndex, jumpToQuestion, stopAllMedia, movieId]);
+
+  const handleNextQuestion = useCallback(() => {
+    if (nudgeNext) {
+      goToNextQuestion();
+      return;
+    }
+    if (currentQuestionIndex >= guessingData.length - 1) return;
+    if (!isMaster && currentQuestionIndex >= maxQuestionRef.current) {
+      showLockHint();
+      return;
+    }
+    jumpToQuestion(currentQuestionIndex + 1);
+  }, [
+    nudgeNext,
+    goToNextQuestion,
+    currentQuestionIndex,
+    guessingData.length,
+    isMaster,
+    jumpToQuestion,
+    showLockHint,
+  ]);
+
+  const canSelectAnswer = allOptionsPlayed && !isPaused && !showCorrect && !showAgain && !nudgeNext;
 
   // 답안 선택 처리
   const handleAnswerSelection = useCallback((selectedAnswer: string) => {
-    if (!allOptionsPlayed) return;
+    if (!allOptionsPlayed || isPaused || nudgeNext) return;
 
     const currentQuestion = guessingData[currentQuestionIndex];
     const correctAnswer = currentQuestion.correctAnswer;
@@ -457,22 +680,16 @@ function GuessingPageContent() {
       setUserAnswers((prev) => [...prev, selectedAnswer]);
       playCorrectSound();
 
-      setTimeout(() => {
-        missedThisQuestionRef.current = false;
+      clearStepTimeout();
+      stepTimeoutRef.current = setTimeout(() => {
         if (currentQuestionIndex < totalQuestions - 1) {
-          const nextIdx = currentQuestionIndex + 1;
-          maxQuestionRef.current = Math.max(maxQuestionRef.current, nextIdx);
-          setCurrentQuestionIndex(nextIdx);
-          setCurrentIndex(currentIndex + 1);
-          resetQuestionPlayback();
-          setShowResults(false);
-          setShowIntro(false);
-          setUserInteracted(true);
-          setIsGuessingStarted(true);
-
-          setTimeout(() => {
-            playVideo();
-          }, GUESSING_NEXT_QUESTION_DELAY);
+          setNudgeNext(true);
+          // 학생: 잠깐 안내 후 자동 / 원장: 화살표로 직접
+          if (!isMaster) {
+            stepTimeoutRef.current = setTimeout(() => {
+              goToNextQuestion();
+            }, 1600);
+          }
         } else {
           setShowResults(true);
         }
@@ -481,13 +698,34 @@ function GuessingPageContent() {
       missedThisQuestionRef.current = true;
       playAgainSound();
 
-      setTimeout(() => {
+      clearStepTimeout();
+      stepTimeoutRef.current = setTimeout(() => {
         resetQuestionPlayback();
         playVideo();
       }, GUESSING_ANSWER_FEEDBACK_DURATION);
     }
-  }, [allOptionsPlayed, currentQuestionIndex, totalQuestions, currentIndex, guessingData, handleAnswerSelect, playCorrectSound, playAgainSound, playVideo, resetQuestionPlayback, setCurrentQuestionIndex, setCurrentIndex, setShowResults, setShowIntro, setUserInteracted, setIsGuessingStarted, setUserAnswers, setCorrectCount, setAllOptionsPlayed, evalLog, videoPlayCount]);
-  
+  }, [
+    allOptionsPlayed,
+    isPaused,
+    nudgeNext,
+    currentQuestionIndex,
+    totalQuestions,
+    guessingData,
+    handleAnswerSelect,
+    playCorrectSound,
+    playAgainSound,
+    playVideo,
+    resetQuestionPlayback,
+    setUserAnswers,
+    setCorrectCount,
+    setAllOptionsPlayed,
+    setShowResults,
+    evalLog,
+    videoPlayCount,
+    isMaster,
+    goToNextQuestion,
+    clearStepTimeout,
+  ]); 
   if (loading || checking) {
     return (
       <main className="min-h-screen flex items-center justify-center">
@@ -589,6 +827,7 @@ function GuessingPageContent() {
       subtitle={`${currentQuestionIndex + 1}/${totalQuestions}`}
       onClose={stopAllMedia}
       onCloseHref="/"
+      onAsideDismiss={() => setIsSidebarOpen(false)}
       videoHighlight={isClipPlaying}
       extraActions={
         <>
@@ -601,7 +840,7 @@ function GuessingPageContent() {
         </>
       }
       video={
-        <div className="h-full w-full">
+        <div className="relative h-full w-full">
               {isGuessingStarted && currentQuestion && (
                 <VideoPlayer
                   key="guessing-player"
@@ -611,11 +850,17 @@ function GuessingPageContent() {
                   muted={true}
                   showText={false}
                   text=""
-                  playing={isPlaying}
+                  playing={isPlaying && !isPaused}
                   playNonce={playNonce}
                   hidePauseOverlay={true}
                   activeControlIndex={3}
+                  onClick={() => {
+                    if (isGuessingStarted && !showCorrect && !showAgain && !nudgeNext) {
+                      togglePause();
+                    }
+                  }}
                   onEndedSegment={() => {
+                    if (isPausedRef.current) return;
                     setIsClipPlaying(false);
                     videoPlayCountRef.current += 1;
                     const currentCount = videoPlayCountRef.current;
@@ -623,11 +868,15 @@ function GuessingPageContent() {
 
                     if (currentCount >= GUESSING_VIDEO_PLAYS) {
                       pauseVideo();
-                      setTimeout(() => {
+                      clearStepTimeout();
+                      stepTimeoutRef.current = setTimeout(() => {
+                        if (isPausedRef.current) return;
                         playABCSequence(currentQuestion, () => setAllOptionsPlayed(true));
                       }, GUESSING_AUTO_PLAY_DELAY);
                     } else {
-                      setTimeout(() => {
+                      clearStepTimeout();
+                      stepTimeoutRef.current = setTimeout(() => {
+                        if (isPausedRef.current) return;
                         playVideo();
                       }, GUESSING_VIDEO_REPLAY_DELAY);
                     }
@@ -662,117 +911,89 @@ function GuessingPageContent() {
                 />
               )}
 
+            {isPaused && !showCorrect && !showAgain && !nudgeNext && <PauseOverlay />}
+
             <GuessingOverlays
               screenshot={screenshot}
               videoPlayCount={videoPlayCount}
               showCorrect={showCorrect}
               showAgain={showAgain}
             />
+
+            {lockHint && (
+              <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-lg bg-black/80 px-4 py-2 text-sm font-semibold text-white sm:text-base" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+                아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.
+              </div>
+            )}
         </div>
       }
       controls={
-          <div className="origin-bottom scale-90 md:scale-100">
-            <div 
-              className="flex w-full max-w-4xl items-center justify-center rounded-lg mx-auto"
-              style={{ 
-                backgroundColor: '#201E1E', 
-                gap: '10px', 
-                paddingTop: '4px', 
-                paddingBottom: '4px', 
-                paddingLeft: '8px', 
-                paddingRight: '8px'
-              }}
+          <div className="w-full overflow-x-auto">
+            <div
+              className="mx-auto flex w-max max-w-full items-center justify-center rounded-lg bg-[#201E1E] px-1 py-1 sm:px-2"
+              style={{ gap: "var(--ctrl-gap)" }}
             >
               {currentQuestion && (
                 <>
-                  <div 
-                    className="flex items-center justify-center cursor-pointer rounded-lg transition-colors duration-200 hover:animate-heartbeat"
-                    onClick={() => {
-                      if (currentQuestionIndex > 0) {
-                        missedThisQuestionRef.current = false;
-                        setCurrentQuestionIndex(currentQuestionIndex - 1);
-                        setVideoPlayCount(0);
-                        setScreenshot(null);
-                        setScreenshotTaken(false);
-                        setPlayingAudio(null);
-                        setAutoPlaySequence([]);
-                        setCurrentAutoIndex(0);
-                        setUserInteracted(false);
-                        setShowCorrect(false);
-                        setShowAgain(false);
-                        setAllOptionsPlayed(false);
-                      } else {
-                        const audioElements = document.querySelectorAll('audio');
-                        audioElements.forEach(audio => {
-                          audio.pause();
-                          audio.currentTime = 0;
-                        });
-                        
-                        window.location.href = `/sing2/mimicking?id=${movieId}`;
-                      }
-                    }}
-                    style={{
-                      width: '50px',
-                      height: '50px',
-                      backgroundColor: '#201E1E'
-                    }}
-                    onMouseEnter={(e) => {
-                      const triangle = e.currentTarget.querySelector('div');
-                      if (triangle) {
-                        triangle.style.borderRight = '70px solid #777777';
-                        triangle.style.borderTop = '50px solid transparent';
-                        triangle.style.borderBottom = '50px solid transparent';
-                        triangle.style.transition = 'all 0.6s ease-in-out';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      const triangle = e.currentTarget.querySelector('div');
-                      if (triangle) {
-                        triangle.style.borderRight = '60px solid #666666';
-                        triangle.style.borderTop = '45px solid transparent';
-                        triangle.style.borderBottom = '45px solid transparent';
-                      }
-                    }}
-                  >
-                    <div 
-                      style={{
-                        width: 0,
-                        height: 0,
-                        borderRight: '60px solid #666666',
-                        borderTop: '45px solid transparent',
-                        borderBottom: '45px solid transparent'
-                      }}
-                    />
-                  </div>
+                  <ControlTriangle
+                    direction="left"
+                    label="이전 문제"
+                    onClick={handlePrevQuestion}
+                  />
 
                   {currentQuestion.options
                     .sort((a: any, b: any) => a.label.localeCompare(b.label))
                     .map((option: any) => (
                     <button
                       key={option.label}
-                      className={`rounded-2xl border-8 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg px-3 py-2 text-sm sm:px-6 sm:py-4 sm:text-base ${
+                      type="button"
+                      aria-label={canSelectAnswer ? `${option.label} 선택 (길게 누르면 다시 듣기)` : `${option.label} (아직 고를 수 없음)`}
+                      disabled={!allOptionsPlayed}
+                      className={`min-w-[2.6rem] flex-1 rounded-xl border-4 px-3 py-2 text-sm font-bold text-black transition-all duration-200 sm:min-w-[3.5rem] sm:flex-none sm:rounded-2xl sm:border-8 sm:px-6 sm:py-4 sm:text-lg disabled:pointer-events-none disabled:opacity-40 disabled:hover:scale-100 disabled:active:scale-100 ${
+                        !canSelectAnswer
+                          ? 'cursor-not-allowed opacity-40'
+                          : 'hover:scale-105 hover:shadow-lg'
+                      } ${
                         playingAudio === option.label && !isPlaying
-                          ? 'border-[#60D96C] animate-pulse-playing' 
-                          : 'border-gray-300 hover:border-gray-400'
-                      } ${allOptionsPlayed ? 'animate-pulse-button' : ''}`}
+                          ? 'border-[#60D96C] animate-pulse-playing'
+                          : canSelectAnswer
+                            ? 'border-gray-300 hover:border-gray-400'
+                            : 'border-gray-300'
+                      } ${canSelectAnswer ? 'animate-pulse-button' : ''}`}
                       style={{
-                        backgroundColor: 'white', 
-                        fontFamily: 'Encode Sans, sans-serif', 
-                        fontSize: isFullscreen ? '1.5rem' : '1.25rem',
+                        backgroundColor: 'white',
+                        fontFamily: 'Encode Sans, sans-serif',
                         borderColor: playingAudio === option.label && !isPlaying ? '#60D96C' : undefined
                       }}
-                      onMouseEnter={(e) => { 
+                      onPointerDown={() => {
+                        if (!canSelectAnswer) return;
+                        longPressFiredRef.current = false;
+                        clearLongPress();
+                        longPressTimerRef.current = setTimeout(() => {
+                          longPressFiredRef.current = true;
+                          replayOption(option);
+                        }, 500);
+                      }}
+                      onPointerUp={clearLongPress}
+                      onPointerLeave={clearLongPress}
+                      onPointerCancel={clearLongPress}
+                      onMouseEnter={(e) => {
+                        if (!canSelectAnswer) return;
                         if (playingAudio !== option.label) {
-                          e.currentTarget.style.backgroundColor = '#f8f8f8'; 
+                          e.currentTarget.style.backgroundColor = '#f8f8f8';
                         }
                       }}
-                      onMouseLeave={(e) => { 
+                      onMouseLeave={(e) => {
                         if (playingAudio !== option.label) {
-                          e.currentTarget.style.backgroundColor = 'white'; 
+                          e.currentTarget.style.backgroundColor = 'white';
                         }
                       }}
                       onClick={() => {
-                        if (allOptionsPlayed) {
+                        if (longPressFiredRef.current) {
+                          longPressFiredRef.current = false;
+                          return;
+                        }
+                        if (canSelectAnswer) {
                           handleAnswerSelection(option.label);
                         }
                       }}
@@ -781,60 +1002,12 @@ function GuessingPageContent() {
                     </button>
                   ))}
 
-                  <div 
-                    className="flex items-center justify-center cursor-pointer rounded-lg transition-colors duration-200 hover:animate-heartbeat"
-                    onClick={() => {
-                      if (currentQuestionIndex < guessingData.length - 1) {
-                        if (!isMaster && currentQuestionIndex >= maxQuestionRef.current) {
-                          return;
-                        }
-                        missedThisQuestionRef.current = false;
-                        setCurrentQuestionIndex(currentQuestionIndex + 1);
-                        setVideoPlayCount(0);
-                        setScreenshot(null);
-                        setScreenshotTaken(false);
-                        setPlayingAudio(null);
-                        setAutoPlaySequence([]);
-                        setCurrentAutoIndex(0);
-                        setUserInteracted(false);
-                        setShowCorrect(false);
-                        setShowAgain(false);
-                        setAllOptionsPlayed(false);
-                      }
-                    }}
-                    style={{
-                      width: '50px',
-                      height: '50px',
-                      backgroundColor: '#201E1E'
-                    }}
-                    onMouseEnter={(e) => {
-                      const triangle = e.currentTarget.querySelector('div');
-                      if (triangle) {
-                        triangle.style.borderLeft = '70px solid #777777';
-                        triangle.style.borderTop = '50px solid transparent';
-                        triangle.style.borderBottom = '50px solid transparent';
-                        triangle.style.transition = 'all 0.6s ease-in-out';
-                      }
-                    }}
-                    onMouseLeave={(e) => {
-                      const triangle = e.currentTarget.querySelector('div');
-                      if (triangle) {
-                        triangle.style.borderLeft = '60px solid #666666';
-                        triangle.style.borderTop = '45px solid transparent';
-                        triangle.style.borderBottom = '45px solid transparent';
-                      }
-                    }}
-                  >
-                    <div 
-                      style={{
-                        width: 0,
-                        height: 0,
-                        borderLeft: '60px solid #666666',
-                        borderTop: '45px solid transparent',
-                        borderBottom: '45px solid transparent'
-                      }}
-                    />
-                  </div>
+                  <ControlTriangle
+                    direction="right"
+                    label="다음 문제"
+                    highlight={nudgeNext}
+                    onClick={handleNextQuestion}
+                  />
                 </>
               )}
             </div>
@@ -847,41 +1020,34 @@ function GuessingPageContent() {
                   QUESTIONS
                 </h3>
                 <div className="custom-scrollbar flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
-                  {guessingData.map((question, index) => (
+                  {guessingData.map((question, index) => {
+                    const locked = !isMaster && index > maxQuestionRef.current;
+                    return (
                     <button
                       key={index}
                       onClick={() => {
-                        if (!isMaster && index > maxQuestionRef.current) {
+                        if (locked) {
+                          showLockHint();
                           return;
                         }
                         if (isMaster) {
                           maxQuestionRef.current = Math.max(maxQuestionRef.current, index);
                         }
-                        missedThisQuestionRef.current = false;
-                        setCurrentQuestionIndex(index);
-                        setCurrentIndex(index);
-                        setVideoPlayCount(0);
-                        setScreenshot(null);
-                        setScreenshotTaken(false);
-                        setPlayingAudio(null);
-                        setAutoPlaySequence([]);
-                        setCurrentAutoIndex(0);
-                        setUserInteracted(false);
-                        setShowCorrect(false);
-                        setShowAgain(false);
-                        setAllOptionsPlayed(false);
-                        setShowIntro(true);
+                        jumpToQuestion(index);
                       }}
                       className={`rounded px-3 py-3 text-sm font-medium transition-colors ${
                         currentQuestionIndex === index
                           ? 'bg-[#60D96C] text-black'
-                          : 'bg-[#2a2a2a] text-gray-400 hover:bg-[#3a3a3a]'
+                          : locked
+                            ? 'cursor-not-allowed bg-[#2a2a2a] text-gray-600 opacity-50'
+                            : 'bg-[#2a2a2a] text-gray-400 hover:bg-[#3a3a3a]'
                       }`}
                       style={{ fontFamily: 'Encode Sans, sans-serif' }}
                     >
                       Question {index + 1}
                     </button>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
         ) : null

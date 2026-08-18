@@ -10,11 +10,11 @@ export default function MimickingCompleteButtons({ onAgain, onNext }: MimickingC
       <div className="absolute inset-0 bg-black/80"></div>
       
       {/* Button container */}
-      <div className="relative flex items-center gap-8 pointer-events-auto">
+      <div className="cta-row relative px-3 pointer-events-auto">
         {/* Again Button */}
         <button 
-          className="rounded-2xl border-8 border-gray-300 px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
-          style={{ backgroundColor: 'white', fontFamily: 'Encode Sans, sans-serif', fontSize: '1.5rem' }}
+          className="cta-btn border-gray-300 text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
+          style={{ backgroundColor: 'white' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = '#f8f8f8';
           }}
@@ -28,12 +28,9 @@ export default function MimickingCompleteButtons({ onAgain, onNext }: MimickingC
         
         {/* Next Button */}
         <div 
-          className="relative rounded-2xl border-8 border-[#60D96C] px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50] cursor-pointer"
+          className="cta-btn relative cursor-pointer border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
           style={{
             backgroundColor: 'white',
-            fontFamily: 'Encode Sans, sans-serif',
-            fontSize: '1.5rem',
-            position: 'relative',
             zIndex: 99999,
             pointerEvents: 'auto',
             display: 'inline-block'
@@ -75,8 +72,7 @@ export default function MimickingCompleteButtons({ onAgain, onNext }: MimickingC
           <img 
             src="/Subject.png" 
             alt="카멜레온" 
-            className="absolute -top-12 left-1/2 transform -translate-x-1/2 pointer-events-none"
-            style={{ maxWidth: '80px', height: 'auto' }}
+            className="cta-mascot"
           />
           Next
         </div>

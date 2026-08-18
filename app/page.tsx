@@ -55,14 +55,14 @@ export default function Home() {
               {/* 상단 메뉴 영역 */}
               <div className="flex flex-1">
                 {/* 왼쪽 메뉴 */}
-                <div className="flex-1 p-8 flex flex-col pt-8 mr-80 overflow-y-auto" style={{ height: '100vh', maxHeight: '100vh' }}>
+                <div className="flex min-h-0 flex-1 flex-col overflow-y-auto p-4 pt-8 sm:p-8 lg:mr-80" style={{ height: '100vh', maxHeight: '100vh' }}>
                   {/* 상단 메뉴 항목들 */}
                   <div className="p-4">
                     <nav className="space-y-0">
                       <div className="relative">
                         <a
                           href="#"
-                          className={`block py-4 text-6xl flex items-center justify-between pl-8`}
+                          className={`block py-4 text-2xl flex items-center justify-between pl-2 sm:pl-8 sm:text-4xl lg:text-6xl`}
                           onMouseEnter={() => setIsHovering(true)}
                           onMouseLeave={() => setIsHovering(false)}
                           onClick={(e) => { e.preventDefault(); setActiveModal(activeModal === 'menu1' ? null : 'menu1'); }}
@@ -83,7 +83,7 @@ export default function Home() {
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: isHovering ? '600ms' : '0ms' }}>세</span>
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: isHovering ? '650ms' : '0ms' }}>상</span>
                           </span>
-                          <span className="text-[#60D96C] text-8xl mr-4 transition-all duration-300">{activeModal === 'menu1' ? '×' : '+'}</span>
+                          <span className="text-[#60D96C] mr-2 text-4xl transition-all duration-300 lg:mr-4 lg:text-8xl">{activeModal === 'menu1' ? '×' : '+'}</span>
                         </a>
                         <div
                           className="w-full bg-black rounded-lg shadow-lg mt-2 overflow-hidden transition-[max-height] duration-[1000ms]"
@@ -135,7 +135,7 @@ export default function Home() {
                       <div className="relative">
                         <a
                           href="#"
-                          className="block py-4 text-6xl text-white flex items-center justify-between pl-8"
+                          className="block py-4 text-2xl text-white flex items-center justify-between pl-2 sm:pl-8 sm:text-4xl lg:text-6xl"
                           onClick={(e) => { e.preventDefault(); setActiveModal(activeModal === 'menu2' ? null : 'menu2'); }}
                         >
                           <span className="text-white group" style={{ fontFamily: 'var(--font-bm-hanna-pro), sans-serif', fontWeight: '300' }}>
@@ -154,7 +154,7 @@ export default function Home() {
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: '600ms' }}>텐</span>
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: '650ms' }}>츠</span>
                           </span>
-                          <span className="text-white text-8xl mr-4 transition-all duration-300">{activeModal === 'menu2' ? '×' : '+'}</span>
+                          <span className="text-white mr-2 text-4xl transition-all duration-300 lg:mr-4 lg:text-8xl">{activeModal === 'menu2' ? '×' : '+'}</span>
                         </a>
                         <div
                           className="w-full bg-black rounded-lg shadow-lg mt-2 overflow-hidden transition-[max-height] duration-500"
@@ -204,7 +204,7 @@ export default function Home() {
                       <div className="relative">
                         <a
                           href="#"
-                          className="block py-4 text-6xl text-white flex items-center justify-between pl-8"
+                          className="block py-4 text-2xl text-white flex items-center justify-between pl-2 sm:pl-8 sm:text-4xl lg:text-6xl"
                           onClick={(e) => { e.preventDefault(); setActiveModal(activeModal === 'menu3' ? null : 'menu3'); }}
                         >
                           <span className="text-white group" style={{ fontFamily: 'var(--font-bm-hanna-pro), sans-serif', fontWeight: '300' }}>
@@ -226,7 +226,7 @@ export default function Home() {
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: '750ms' }}>좋</span>
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: '800ms' }}>아</span>
                           </span>
-                          <span className="text-white text-8xl mr-4 transition-all duration-300">{activeModal === 'menu3' ? '×' : '+'}</span>
+                          <span className="text-white mr-2 text-4xl transition-all duration-300 lg:mr-4 lg:text-8xl">{activeModal === 'menu3' ? '×' : '+'}</span>
                         </a>
                         <div
                           className="w-full bg-black rounded-lg shadow-lg mt-2 overflow-hidden transition-[max-height] duration-[1000ms]"
@@ -277,7 +277,7 @@ export default function Home() {
                       <div className="relative">
                         <a
                           href="#"
-                          className="block py-4 text-6xl text-white flex items-center justify-between pl-8"
+                          className="block py-4 text-2xl text-white flex items-center justify-between pl-2 sm:pl-8 sm:text-4xl lg:text-6xl"
                           onClick={(e) => { e.preventDefault(); setActiveModal(activeModal === 'menu4' ? null : 'menu4'); }}
                         >
                           <span className="text-white group" style={{ fontFamily: 'var(--font-bm-hanna-pro), sans-serif', fontWeight: '300' }}>
@@ -294,7 +294,7 @@ export default function Home() {
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: '500ms' }}>이</span>
                             <span className="inline-block group-hover:scale-110 group-hover:animate-bounce transition-transform duration-200" style={{ transitionDelay: '550ms' }}>스</span>
                           </span>
-                          <span className="text-white text-8xl mr-4 transition-all duration-300">{activeModal === 'menu4' ? '×' : '+'}</span>
+                          <span className="text-white mr-2 text-4xl transition-all duration-300 lg:mr-4 lg:text-8xl">{activeModal === 'menu4' ? '×' : '+'}</span>
                         </a>
                         <div
                           className="w-full bg-black rounded-lg shadow-lg mt-2 overflow-hidden transition-[max-height] duration-[1000ms]"
@@ -373,7 +373,7 @@ export default function Home() {
                 </div>
 
                 {/* 오른쪽 QR코드 섹션 */}
-                <div className="fixed right-0 top-0 w-80 h-full p-6 border-l-2 border-[rgb(32,30,30)] flex flex-col items-center justify-center bg-black z-40">
+                <div className="fixed right-0 top-0 z-40 hidden h-full w-80 flex-col items-center justify-center border-l-2 border-[rgb(32,30,30)] bg-black p-6 lg:flex">
                   <div className="text-center">
                     <h3
                       className="text-white font-bold mb-6"
@@ -496,13 +496,13 @@ export default function Home() {
       {/* ⬆️ 여기가 햄버거 메뉴 오버레이 닫는 태그! */}
 
       {/* 메인 콘텐츠 - 오버레이 밖으로 이동 */}
-      <main className="min-h-screen px-6 py-10 bg-black">
+      <main className="flex min-h-dvh flex-col bg-black px-4 py-6 sm:px-6 sm:py-10">
           {/* 헤더 - 로그인/햄버거 버튼만 */}
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-6 flex shrink-0 items-center justify-between gap-3 sm:mb-8">
           {/* 햄버거 버튼 - 왼쪽 */}
           <button
             className="flex items-center justify-center cursor-pointer transition-colors duration-200"
-            style={{ width: '32px', height: '32px', transform: 'translateY(-20px)' }}
+            style={{ width: '32px', height: '32px' }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
@@ -514,7 +514,7 @@ export default function Home() {
           </button>
 
           {/* 로그인/로그아웃 버튼 - 오른쪽 */}
-          <div className="flex items-center gap-3" style={{ transform: 'translateY(-20px)' }}>
+          <div className="flex min-w-0 flex-wrap items-center justify-end gap-2 sm:gap-3">
             {profile?.role === 'academy' && (
               <button
                 type="button"
@@ -559,7 +559,7 @@ export default function Home() {
                 <span className="inline-block animate-bounce" style={{ animationDelay: '2250ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>!</span>
               </span>
             ) : user ? (
-              <span className="text-white text-lg font-bold" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
+              <span className="hidden max-w-[36vw] truncate text-white text-lg font-bold sm:inline" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>H</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '150ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>i</span>
                 <span className="inline-block animate-bounce" style={{ animationDelay: '300ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>,</span>
@@ -595,9 +595,9 @@ export default function Home() {
         </div>
 
       {/* 중앙 영화 화면 */}
-        <div className="mt-0 flex justify-center">
+        <div className="flex flex-1 items-center justify-center">
         <div 
-            className="relative w-[70%] aspect-video rounded-lg overflow-hidden border-8 border-[#555555] hover:border-[#60D96C] transition-all duration-300 cursor-pointer group"
+            className="relative aspect-video w-full max-w-3xl overflow-hidden rounded-lg border-4 border-[#555555] transition-all duration-300 cursor-pointer group hover:border-[#60D96C] sm:border-8 md:w-[75%] lg:w-[70%]"
           onClick={() => {
             if (!user) {
               router.push('/auth/login');
@@ -615,7 +615,7 @@ export default function Home() {
           />
           {/* 호버링 시 미믹킹 시작 메시지 */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="text-white text-2xl font-bold text-center" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+            <div className="text-white text-lg font-bold text-center sm:text-2xl" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
               미믹킹을 시작할까요?
             </div>
           </div>

@@ -11,10 +11,10 @@ export default function WordCompleteButtons({ onAgain, onNext, hasNextChapter }:
       <div className="absolute inset-0 bg-black/80"></div>
 
       {/* Completion message and buttons */}
-      <div className="relative flex flex-col items-center gap-8 pointer-events-auto">
+      <div className="relative flex flex-col items-center gap-4 px-3 pointer-events-auto md:gap-8">
         {/* Completion text */}
         <div
-          className="text-6xl font-bold"
+          className="text-center text-2xl font-bold sm:text-4xl md:text-6xl"
           style={{
             fontFamily: 'Encode Sans, sans-serif',
             color: '#60D96C',
@@ -26,11 +26,11 @@ export default function WordCompleteButtons({ onAgain, onNext, hasNextChapter }:
         </div>
 
         {/* Button container */}
-        <div className="flex items-center gap-8">
+        <div className="cta-row">
           {/* Again Button */}
           <button
-            className="rounded-2xl border-8 border-gray-300 px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400"
-            style={{ backgroundColor: 'white', fontFamily: 'Encode Sans, sans-serif', fontSize: '1.5rem' }}
+            className="cta-btn border-gray-300 text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400"
+            style={{ backgroundColor: 'white' }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#f8f8f8';
             }}
@@ -45,16 +45,13 @@ export default function WordCompleteButtons({ onAgain, onNext, hasNextChapter }:
           {/* Next Button (only if there's a next chapter) */}
           {hasNextChapter && (
             <div
-              className="relative rounded-2xl border-8 border-[#60D96C] px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50] cursor-pointer"
-              style={{
-                backgroundColor: 'white',
-                fontFamily: 'Encode Sans, sans-serif',
-                fontSize: '1.5rem',
-                position: 'relative',
-                zIndex: 99999,
-                pointerEvents: 'auto',
-                display: 'inline-block'
-              }}
+            className="cta-btn relative cursor-pointer border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
+            style={{
+              backgroundColor: 'white',
+              zIndex: 99999,
+              pointerEvents: 'auto',
+              display: 'inline-block'
+            }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#f8f8f8';
               }}
@@ -84,8 +81,7 @@ export default function WordCompleteButtons({ onAgain, onNext, hasNextChapter }:
               <img
                 src="/Subject.png"
                 alt="카멜레온"
-                className="absolute -top-12 left-1/2 transform -translate-x-1/2 pointer-events-none"
-                style={{ maxWidth: '80px', height: 'auto' }}
+              className="cta-mascot"
               />
               Next
             </div>
@@ -94,16 +90,13 @@ export default function WordCompleteButtons({ onAgain, onNext, hasNextChapter }:
           {/* Home Button (if no next chapter) */}
           {!hasNextChapter && (
             <div
-              className="relative rounded-2xl border-8 border-[#60D96C] px-10 py-5 text-black font-bold transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50] cursor-pointer"
-              style={{
-                backgroundColor: 'white',
-                fontFamily: 'Encode Sans, sans-serif',
-                fontSize: '1.5rem',
-                position: 'relative',
-                zIndex: 99999,
-                pointerEvents: 'auto',
-                display: 'inline-block'
-              }}
+            className="cta-btn relative cursor-pointer border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
+            style={{
+              backgroundColor: 'white',
+              zIndex: 99999,
+              pointerEvents: 'auto',
+              display: 'inline-block'
+            }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#f8f8f8';
               }}
@@ -119,8 +112,7 @@ export default function WordCompleteButtons({ onAgain, onNext, hasNextChapter }:
               <img
                 src="/Subject.png"
                 alt="카멜레온"
-                className="absolute -top-12 left-1/2 transform -translate-x-1/2 pointer-events-none"
-                style={{ maxWidth: '80px', height: 'auto' }}
+              className="cta-mascot"
               />
               Home
             </div>

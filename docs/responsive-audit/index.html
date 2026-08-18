@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mimic 반응형 레이아웃 보고서</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      background: #0b0b0b;
+      color: #f3f3f3;
+      line-height: 1.55;
+    }
+    .page-head {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #111;
+      border-bottom: 1px solid #333;
+      padding: 16px 20px;
+    }
+    h1 { margin: 0 0 8px; color: #60D96C; font-size: 22px; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+    .links a {
+      color: #111;
+      background: #60D96C;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+    .note { max-width: 52rem; color: #d1d5db; }
+    article { padding: 28px 20px; border-bottom: 1px solid #222; }
+    h2 { margin: 0 0 8px; color: #60D96C; }
+    .meta { color: #9ca3af; font-family: ui-monospace, monospace; font-size: 13px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    figure { margin: 0; background: #141414; border-radius: 12px; overflow: hidden; }
+    figcaption {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      font-size: 13px;
+      background: #1f1f1f;
+    }
+    figcaption span { color: #9ca3af; }
+    img { width: 100%; height: auto; display: block; background: #000; }
+    h3 { margin: 18px 0 8px; font-size: 15px; color: #e5e7eb; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="page-head">
+    <h1>Mimic 반응형 레이아웃 보고서</h1>
+    <p class="note">
+      같은 화면을 모바일(390×844) / 태블릿(768×1024) / PC(1440×900)으로 찍었습니다.
+      아래는 개선이 끝난 최종본입니다. 고치기 전과 비교하려면 위 버튼을 누르세요.
+    </p>
+    <div class="links">
+      <a href="./final/index.html">최종본만 보기</a>
+      <a href="./before/index.html">고치기 전</a>
+      <a href="./after/index.html">중간 개선본</a>
+    </div>
+    <div class="links">
+      <a href="#home-live">홈</a>
+      <a href="#home-menu">홈 메뉴</a>
+      <a href="#login-live">로그인</a>
+      <a href="#signup-live">회원가입</a>
+      <a href="#selecting">레슨 선택</a>
+      <a href="#watching">워칭</a>
+      <a href="#mimicking">미믹킹</a>
+      <a href="#guessing">게싱</a>
+      <a href="#guess-result">게싱 결과</a>
+      <a href="#word">워드</a>
+      <a href="#admin">학생 현황</a>
+    </div>
+  </header>
+
+  <article>
+    <h2>화면 목록과 대응 방식</h2>
+    <p class="note">앱에는 학습 흐름 화면이 11개입니다. 인증이 필요한 학습 화면은 실제 레이아웃과 같은 미리보기 화면으로 찍었습니다.</p>
+    <ul>
+      <li><b>홈</b> — 포스터를 눌러 레슨으로 들어갑니다.</li>
+      <li><b>홈 메뉴</b> — 왼쪽 초록 동그라미를 누르면 열립니다.</li>
+      <li><b>로그인 / 회원가입</b> — 가운데 카드입니다.</li>
+      <li><b>레슨 선택</b> — Watch, Mimic, Guess, Word 를 고릅니다.</li>
+      <li><b>워칭</b> — 영상을 봅니다.</li>
+      <li><b>미믹킹</b> — 따라 말하기 8단계 버튼이 있습니다.</li>
+      <li><b>게싱 / 게싱 결과</b> — A B C 고르기와 점수 화면입니다.</li>
+      <li><b>워드</b> — 단어를 순서대로 맞춥니다.</li>
+      <li><b>학생 현황</b> — 학원 원장만 보는 표입니다.</li>
+    </ul>
+  </article>
+
+  <script>
+    const screens = [
+      ["home-live", "홈", "/", "모바일에서 포스터가 넓게, 세로로는 가운데에 옵니다."],
+      ["home-menu", "홈 메뉴", "/", "모바일은 메뉴 글자, PC는 오른쪽 QR입니다."],
+      ["login-live", "로그인", "/auth/login", "카드 좌우에 여백이 있습니다."],
+      ["signup-live", "회원가입", "/auth/signup", "로그인과 같은 여백입니다."],
+      ["selecting", "레슨 선택", "/sing2/selecting", "모바일·태블릿 2×2, PC는 한 줄입니다."],
+      ["watching", "워칭", "/sing2/watching", "헤더와 진행 바를 빼고 영상이 남은 공간을 채웁니다."],
+      ["mimicking", "미믹킹", "/sing2/mimicking", "8단계 버튼이 화면 너비에 맞습니다. 목록은 PC 옆칸입니다."],
+      ["guessing", "게싱", "/sing2/guessing", "A B C가 화면 안에 들어옵니다. 목록은 PC 옆칸입니다."],
+      ["guess-result", "게싱 결과", "게싱 완료 화면", "글자와 Next 버튼이 잘리지 않습니다."],
+      ["word", "워드", "/sing2/word", "모바일은 아래 단어 칩, 태블릿·PC는 양옆 칸입니다."],
+      ["admin", "학생 현황", "/admin", "표가 넓으면 좌우로 밀어 봅니다."]
+    ];
+    const devices = [
+      ["mobile", "모바일", "390 × 844"],
+      ["tablet", "태블릿", "768 × 1024"],
+      ["pc", "PC", "1440 × 900"]
+    ];
+    const root = document.body;
+    screens.forEach(([id, title, route, note]) => {
+      const article = document.createElement("article");
+      article.id = id;
+      article.innerHTML = `
+        <h2>${title}</h2>
+        <p class="meta">${route}</p>
+        <p>${note}</p>
+        <h3>최종</h3>
+        <div class="grid">
+          ${devices.map(([did, dtitle, size]) => `
+            <figure>
+              <figcaption>${dtitle}<span>${size}</span></figcaption>
+              <img src="./final/${id}__${did}.png" alt="${title} ${dtitle} 최종" />
+            </figure>
+          `).join("")}
+        </div>
+        <h3>고치기 전 (비교)</h3>
+        <div class="grid">
+          ${devices.map(([did, dtitle, size]) => `
+            <figure>
+              <figcaption>${dtitle}<span>${size}</span></figcaption>
+              <img src="./before/${id}__${did}.png" alt="${title} ${dtitle} 이전" />
+            </figure>
+          `).join("")}
+        </div>
+      `;
+      root.appendChild(article);
+    });
+  </script>
+</body>
+</html>

@@ -205,8 +205,8 @@ const VideoPlayer = memo(function VideoPlayer({
   }, [playNonce, src, startTime]); // muted removed from deps - muted prop is passed directly to ReactPlayer
 
   return (
-    <div className="relative w-full" onClick={onClick}>
-      <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden">
+    <div className="relative h-full min-h-0 w-full" onClick={onClick}>
+      <div className="absolute inset-0 overflow-hidden bg-black">
         {/* Loading state overlay */}
         {isLoading && (
           <div className="absolute inset-0 bg-black flex items-center justify-center z-10">

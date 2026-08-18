@@ -28,9 +28,9 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-black">
-      <div className="w-full max-w-md p-8 bg-gray-900 rounded-2xl">
-        <h1 className="text-3xl font-bold text-[#60D96C] mb-6 text-center">
+    <main className="flex min-h-dvh items-center justify-center bg-black px-4 py-8">
+      <div className="w-full max-w-md rounded-2xl bg-gray-900 p-6 sm:p-8">
+        <h1 className="mb-6 text-center text-2xl font-bold text-[#60D96C] sm:text-3xl">
           로그인
         </h1>
         
