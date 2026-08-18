@@ -595,7 +595,7 @@ export default function Home() {
         </div>
 
       {/* 중앙 영화 화면 */}
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-1 flex-col items-center justify-center gap-4 sm:gap-5">
         <div 
             className="relative aspect-video w-full max-w-3xl overflow-hidden rounded-lg border-4 border-[#555555] transition-all duration-300 cursor-pointer group hover:border-[#60D96C] sm:border-8 md:w-[75%] lg:w-[70%]"
           onClick={() => {
@@ -603,7 +603,7 @@ export default function Home() {
               router.push('/auth/login');
               return;
             }
-            window.location.href = '/sing2/selecting';
+            window.location.href = '/sing2/selecting?id=001:1';
           }}
         >
           <Image
@@ -620,6 +620,43 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="flex w-full max-w-3xl flex-wrap items-center justify-center gap-3 md:w-[75%] lg:w-[70%]">
+          <button
+            type="button"
+            onClick={() => {
+              if (!user) {
+                router.push('/auth/login');
+                return;
+              }
+              window.location.href = '/sing2/selecting?id=001:1';
+            }}
+            className="min-w-[9.5rem] rounded-full bg-[#60D96C] px-5 py-2.5 text-base font-semibold text-black transition-transform hover:scale-105 sm:text-lg"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            SING 2
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              if (!user) {
+                router.push('/auth/login');
+                return;
+              }
+              window.location.href = '/sing2/selecting?id=002:1';
+            }}
+            className="min-w-[9.5rem] rounded-full border-2 border-[#60D96C] bg-transparent px-5 py-2.5 text-base font-semibold text-[#60D96C] transition-transform hover:scale-105 hover:bg-[#60D96C]/15 sm:text-lg"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            SING 2 · Hard
+          </button>
+        </div>
+        <p
+          className="text-center text-xs text-gray-500 sm:text-sm"
+          style={{ fontFamily: 'Encode Sans, sans-serif' }}
+        >
+          초록 = 기본 12회차 · 테두리 = Hard 테스트
+        </p>
       </div>
     </main>
     </div>
