@@ -5,14 +5,36 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from './contexts/AuthContext';
 import { signOut } from './lib/auth';
+import ControlTriangle from './components/ControlTriangle';
+import { MONTH_FEATURES, MONTH_LABEL_EN } from './lib/monthCatalog';
+
+type FeatureId = (typeof MONTH_FEATURES)[number]['id'];
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const [selectedId, setSelectedId] = useState<FeatureId>('movie');
   const { user, profile, loading } = useAuth();
   const router = useRouter();
+
+  const selected =
+    MONTH_FEATURES.find((item) => item.id === selectedId) ?? MONTH_FEATURES[0];
+
+  const openSelected = () => {
+    if (!user) {
+      router.push('/auth/login');
+      return;
+    }
+    window.location.href = selected.href;
+  };
+
+  const selectByOffset = (offset: number) => {
+    const index = MONTH_FEATURES.findIndex((item) => item.id === selectedId);
+    const next = (index + offset + MONTH_FEATURES.length) % MONTH_FEATURES.length;
+    setSelectedId(MONTH_FEATURES[next].id);
+  };
 
   return (
     <div className="relative">
@@ -496,30 +518,29 @@ export default function Home() {
       {/* ⬆️ 여기가 햄버거 메뉴 오버레이 닫는 태그! */}
 
       {/* 메인 콘텐츠 - 오버레이 밖으로 이동 */}
-      <main className="flex min-h-dvh flex-col bg-black px-4 py-6 sm:px-6 sm:py-10">
-          {/* 헤더 - 로그인/햄버거 버튼만 */}
-        <div className="mb-6 flex shrink-0 items-center justify-between gap-3 sm:mb-8">
-          {/* 햄버거 버튼 - 왼쪽 */}
-          <button
-            className="flex items-center justify-center cursor-pointer transition-colors duration-200"
-            style={{ width: '32px', height: '32px' }}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+      <main className="flex min-h-dvh flex-col bg-black px-4 py-5 sm:px-6 sm:py-8">
+        {/* 헤더: 로고 · THIS MONTH · 로그인+메뉴 */}
+        <div className="relative mb-4 flex shrink-0 items-center justify-between gap-3 sm:mb-6">
+          <p
+            className="shrink-0 text-2xl text-[#60D96C] sm:text-3xl"
+            style={{ fontFamily: '"Jolly Lodger", cursive', lineHeight: 1 }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <circle cx="16" cy="16" r="16" fill="#60D96C" />
-              <path d="M9 11H23" stroke="black" strokeWidth="2" strokeLinecap="round" />
-              <path d="M9 16H23" stroke="black" strokeWidth="2" strokeLinecap="round" />
-              <path d="M9 21H23" stroke="black" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </button>
+            MimiC
+          </p>
 
-          {/* 로그인/로그아웃 버튼 - 오른쪽 */}
+          <h1
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-xl font-bold tracking-[0.12em] text-white sm:text-3xl md:text-4xl"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            {MONTH_LABEL_EN}
+          </h1>
+
           <div className="flex min-w-0 flex-wrap items-center justify-end gap-2 sm:gap-3">
             {profile?.role === 'academy' && (
               <button
                 type="button"
                 onClick={() => router.push('/admin')}
-                className="px-4 bg-gray-800 hover:bg-gray-700 transition-all duration-200 flex items-center justify-center text-[#60D96C]"
+                className="hidden px-4 bg-gray-800 hover:bg-gray-700 transition-all duration-200 items-center justify-center text-[#60D96C] sm:flex"
                 style={{
                   height: '30px',
                   borderRadius: '50px',
@@ -534,38 +555,18 @@ export default function Home() {
             {loading ? (
               <div className="w-20 h-6 bg-gray-700 rounded animate-pulse"></div>
             ) : isLoggingOut && user ? (
-              <span 
-                className="text-white text-lg font-bold" 
-                style={{ 
+              <span
+                className="hidden text-white text-lg font-bold md:inline"
+                style={{
                   fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
                   animation: 'fadeOut 4s ease-out forwards'
                 }}
               >
-                <span className="inline-block animate-bounce" style={{ animationDelay: '0ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>S</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '150ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>e</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '300ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>e</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '450ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '600ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>y</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '750ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>o</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '900ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>u</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1050ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1200ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>s</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1350ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>o</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1500ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>o</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1650ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>n</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1800ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>,</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '1950ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>&nbsp;</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '2100ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>{user.email?.split('@')[0] || 'User'}</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '2250ms', animationDuration: '2s', animationIterationCount: 'infinite' }}>!</span>
+                See you soon!
               </span>
             ) : user ? (
-              <span className="hidden max-w-[36vw] truncate text-white text-lg font-bold sm:inline" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '0ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>H</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '150ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>i</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '300ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>,</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '450ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>&nbsp;</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '600ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>{user.email?.split('@')[0] || 'User'}</span>
-                <span className="inline-block animate-bounce" style={{ animationDelay: '750ms', animationDuration: '1s', animationIterationCount: 'infinite' }}>!</span>
+              <span className="hidden max-w-[20vw] truncate text-white text-base font-bold lg:inline" style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif' }}>
+                Hi, {user.email?.split('@')[0] || 'User'}!
               </span>
             ) : null}
             <button
@@ -580,85 +581,228 @@ export default function Home() {
                   router.push('/auth/login');
                 }
               }}
-              className="px-4 bg-[#60D96C] hover:bg-[#4CAF50] transition-all duration-200 flex items-center justify-center text-black"
+              className="px-4 btn-mimic transition-all duration-200 flex items-center justify-center"
               style={{
                 height: '30px',
                 borderRadius: '50px',
                 fontFamily: 'var(--font-bm-hanna-pro), sans-serif',
-                fontSize: '22px',
+                fontSize: '20px',
                 fontWeight: '200'
               }}
             >
               {loading ? '...' : user ? '로그아웃' : '로그인'}
             </button>
+            <button
+              type="button"
+              className="flex items-center justify-center cursor-pointer transition-colors duration-200"
+              style={{ width: '32px', height: '32px' }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="메뉴 열기"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="16" fill="#60D96C" />
+                <path d="M9 11H23" stroke="black" strokeWidth="2" strokeLinecap="round" />
+                <path d="M9 16H23" stroke="black" strokeWidth="2" strokeLinecap="round" />
+                <path d="M9 21H23" stroke="black" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
           </div>
         </div>
 
-      {/* 중앙 영화 화면 */}
-        <div className="flex flex-1 flex-col items-center justify-center gap-4 sm:gap-5">
-        <div 
-            className="relative aspect-video w-full max-w-3xl overflow-hidden rounded-lg border-4 border-[#555555] transition-all duration-300 cursor-pointer group hover:border-[#60D96C] sm:border-8 md:w-[75%] lg:w-[70%]"
-          onClick={() => {
-            if (!user) {
-              router.push('/auth/login');
-              return;
-            }
-            window.location.href = '/sing2/selecting?id=001:1';
-          }}
-        >
-          <Image
-            src="/sing2Poster.jpg"
-            alt="Sing 2 영화 포스터"
-            fill
-            className="object-cover group-hover:opacity-50 transition-opacity duration-300"
-            priority={true}
-          />
-          {/* 호버링 시 미믹킹 시작 메시지 */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="text-white text-lg font-bold text-center sm:text-2xl" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-              미믹킹을 시작할까요?
+        {/* 히어로 + 캐러셀 */}
+        <div className="flex flex-1 flex-col items-center justify-center gap-5 sm:gap-7">
+          <div className="relative w-full max-w-4xl px-2 sm:px-8">
+            {/* 스포트라이트 */}
+            <div
+              className="pointer-events-none absolute -bottom-2 left-[8%] h-40 w-40 rounded-full opacity-70 blur-2xl sm:h-56 sm:w-56"
+              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.35) 0%, transparent 70%)' }}
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute -bottom-2 right-[8%] h-40 w-40 rounded-full opacity-70 blur-2xl sm:h-56 sm:w-56"
+              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.35) 0%, transparent 70%)' }}
+              aria-hidden
+            />
+
+            <button
+              type="button"
+              onClick={openSelected}
+              className="group relative mx-auto block w-full max-w-3xl overflow-hidden rounded-2xl border border-[#4a4a4a] bg-[#111] shadow-[0_0_40px_rgba(96,217,108,0.08)] transition-transform duration-300 hover:scale-[1.01] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#60D96C]"
+              aria-label={`${selected.title} 시작하기`}
+            >
+              <div
+                className={`relative w-full overflow-hidden ${
+                  selected.kind === 'book'
+                    ? 'mx-auto aspect-[3/4] max-h-[52vh] max-w-sm sm:max-h-[56vh]'
+                    : 'aspect-video max-h-[52vh] sm:max-h-[56vh]'
+                }`}
+              >
+                <Image
+                  key={selected.coverSrc}
+                  src={selected.coverSrc}
+                  alt={selected.coverAlt}
+                  fill
+                  className="object-cover transition-opacity duration-300 group-hover:opacity-80"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/35 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <span
+                    className="px-4 text-center text-lg font-bold text-white sm:text-2xl"
+                    style={{ fontFamily: 'Encode Sans, sans-serif' }}
+                  >
+                    {selected.hint}
+                  </span>
+                </div>
+              </div>
+
+              {/* 초록 리본 */}
+              <span
+                className="pointer-events-none absolute right-0 top-0 h-0 w-0 border-l-[28px] border-t-[28px] border-l-transparent border-t-[#60D96C] sm:border-l-[36px] sm:border-t-[36px]"
+                aria-hidden
+              />
+            </button>
+
+            {/* 카멜레온 마스코트 */}
+            <Image
+              src="/Subject.png"
+              alt=""
+              width={72}
+              height={72}
+              className="pointer-events-none absolute bottom-[-6px] left-[2%] z-10 h-12 w-12 object-contain sm:bottom-[-10px] sm:left-[4%] sm:h-16 sm:w-16 md:h-[72px] md:w-[72px]"
+              aria-hidden
+            />
+            <Image
+              src="/Subject.png"
+              alt=""
+              width={72}
+              height={72}
+              className="pointer-events-none absolute bottom-[-6px] right-[2%] z-10 h-12 w-12 scale-x-[-1] object-contain sm:bottom-[-10px] sm:right-[4%] sm:h-16 sm:w-16 md:h-[72px] md:w-[72px]"
+              aria-hidden
+            />
+          </div>
+
+          {/* 콘텐츠 선택 바 — 미믹킹 PlaybackControls와 동일 토큰/스타일 */}
+          <div className="w-full max-w-3xl overflow-x-auto px-2 md:px-8">
+            <div
+              className="mx-auto flex w-max max-w-full items-center justify-center rounded-lg bg-[var(--bar)] px-1 py-1 sm:px-2"
+              style={{ gap: 'var(--ctrl-gap)' }}
+            >
+              <ControlTriangle
+                direction="left"
+                onClick={() => selectByOffset(-1)}
+                label="이전 콘텐츠"
+              />
+              {MONTH_FEATURES.map((item) => {
+                const isActive = item.id === selectedId;
+                return (
+                  <button
+                    key={item.id}
+                    type="button"
+                    aria-label={item.title}
+                    aria-pressed={isActive}
+                    onClick={() => setSelectedId(item.id)}
+                    className={`flex shrink-0 items-center justify-center rounded-[10px] transition-transform duration-200 hover:scale-105 ${
+                      isActive ? 'scale-105' : ''
+                    }`}
+                    style={{
+                      width: 'var(--ctrl-size)',
+                      height: 'var(--ctrl-size)',
+                      background: isActive ? 'var(--mimic)' : 'var(--mute)',
+                    }}
+                  >
+                    {item.icon === 'play' ? (
+                      <span className="ctrl-play-icon" aria-hidden />
+                    ) : (
+                      <span className="ctrl-mute-letter" aria-hidden>
+                        m
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+              <ControlTriangle
+                direction="right"
+                onClick={() => selectByOffset(1)}
+                label="다음 콘텐츠"
+              />
             </div>
           </div>
+
+          <p
+            className="text-center text-base font-semibold text-white sm:text-lg"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            {selected.title}
+          </p>
+
+          {profile?.role === 'academy' && (
+            <button
+              type="button"
+              onClick={() => {
+                window.location.href = '/sing2/selecting?id=002:1';
+              }}
+              className="text-xs text-gray-500 underline-offset-2 hover:text-[#60D96C] hover:underline sm:text-sm"
+              style={{ fontFamily: 'Encode Sans, sans-serif' }}
+            >
+              Hard 테스트 (원장)
+            </button>
+          )}
+
+          <button
+            type="button"
+            onClick={() => {
+              document.getElementById('home-start')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-[#60D96C] transition hover:scale-105"
+            aria-label="아래로 스크롤"
+          >
+            <span
+              className="mt-[-2px] block h-0 w-0 border-x-[7px] border-t-[10px] border-x-transparent border-t-black"
+              aria-hidden
+            />
+          </button>
         </div>
 
-        <div className="flex w-full max-w-3xl flex-wrap items-center justify-center gap-3 md:w-[75%] lg:w-[70%]">
-          <button
-            type="button"
-            onClick={() => {
-              if (!user) {
-                router.push('/auth/login');
-                return;
-              }
-              window.location.href = '/sing2/selecting?id=001:1';
-            }}
-            className="min-w-[9.5rem] rounded-full bg-[#60D96C] px-5 py-2.5 text-base font-semibold text-black transition-transform hover:scale-105 sm:text-lg"
-            style={{ fontFamily: 'Encode Sans, sans-serif' }}
-          >
-            SING 2
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              if (!user) {
-                router.push('/auth/login');
-                return;
-              }
-              window.location.href = '/sing2/selecting?id=002:1';
-            }}
-            className="min-w-[9.5rem] rounded-full border-2 border-[#60D96C] bg-transparent px-5 py-2.5 text-base font-semibold text-[#60D96C] transition-transform hover:scale-105 hover:bg-[#60D96C]/15 sm:text-lg"
-            style={{ fontFamily: 'Encode Sans, sans-serif' }}
-          >
-            SING 2 · Hard
-          </button>
-        </div>
-        <p
-          className="text-center text-xs text-gray-500 sm:text-sm"
-          style={{ fontFamily: 'Encode Sans, sans-serif' }}
+        {/* 스크롤 아래: 시작 CTA */}
+        <section
+          id="home-start"
+          className="mt-10 flex min-h-[40vh] flex-col items-center justify-center gap-4 border-t border-[#222] pb-10 pt-12"
         >
-          초록 = 기본 12회차 · 테두리 = Hard 테스트
-        </p>
-      </div>
-    </main>
+          <p
+            className="text-sm tracking-[0.2em] text-gray-500"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            {selected.caption}
+          </p>
+          <h2
+            className="text-3xl font-bold text-white sm:text-4xl"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            {selected.title}
+          </h2>
+          <p
+            className="max-w-md text-center text-gray-400"
+            style={{ fontFamily: 'Encode Sans, sans-serif' }}
+          >
+            {selected.hint}
+          </p>
+          <button
+            type="button"
+            onClick={openSelected}
+            className="mt-2 px-8 btn-mimic transition-all duration-200"
+            style={{
+              height: '44px',
+              borderRadius: '50px',
+              fontFamily: 'var(--font-bm-hanna-pro), sans-serif',
+              fontSize: '22px',
+              fontWeight: '200'
+            }}
+          >
+            시작하기
+          </button>
+        </section>
+      </main>
     </div>
   );
 }

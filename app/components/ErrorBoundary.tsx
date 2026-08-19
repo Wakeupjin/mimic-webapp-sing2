@@ -40,7 +40,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             <div className="space-x-4">
               <button
                 onClick={() => this.setState({ hasError: false, error: undefined })}
-                className="px-4 py-2 bg-[#60D96C] text-black rounded hover:bg-[#4CAF50] transition-colors"
+                className="px-4 py-2 btn-mimic rounded transition-colors"
                 style={{ fontFamily: 'Encode Sans, sans-serif' }}
               >
                 다시 시도
@@ -105,7 +105,7 @@ export function ErrorBoundaryWrapper({ children }: { children: ReactNode }) {
                 setHasError(false);
                 setError(null);
               }}
-              className="px-4 py-2 bg-[#60D96C] text-black rounded hover:bg-[#4CAF50] transition-colors"
+              className="px-4 py-2 btn-mimic rounded transition-colors"
               style={{ fontFamily: 'Encode Sans, sans-serif' }}
             >
               다시 시도

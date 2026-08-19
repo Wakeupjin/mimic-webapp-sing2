@@ -81,7 +81,7 @@ export default function SignupPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-[#60D96C] hover:bg-[#4CAF50] text-black font-bold rounded-lg transition-colors disabled:opacity-50"
+            className="w-full py-3 btn-mimic font-bold rounded-lg transition-colors disabled:opacity-50"
           >
             {loading ? '가입 중...' : '회원가입'}
           </button>

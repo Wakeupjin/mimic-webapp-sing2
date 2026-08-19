@@ -29,7 +29,7 @@ body {
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid #1f2937; /* gray-800 */
+  outline: 2px solid var(--mimic);
   outline-offset: 2px;
 }
 
@@ -173,6 +173,12 @@ body {
 }
 
 :root {
+  --mimic: #60D96C;
+  --ink: #0a0a0a;
+  --bar: #201E1E;
+  --mute: #666666;
+  --card: #ffffff;
+  --card-hover: #f4f4f4;
   --ctrl-size: clamp(2rem, 7.8vw, 3.55rem);
   --ctrl-nav: clamp(1.7rem, 6.4vw, 3.1rem);
   --ctrl-gap: clamp(0.15rem, 0.7vw, 0.45rem);
@@ -194,6 +200,31 @@ body {
   font-weight: 700;
   font-family: "Encode Sans", sans-serif;
   line-height: 1.1;
+  background: var(--card);
+  color: #111;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: var(--card-hover);
+  transform: scale(1.05);
+}
+
+.cta-ghost {
+  border-color: #d1d5db;
+}
+
+.cta-primary {
+  border-color: var(--mimic);
+}
+
+.btn-mimic {
+  background: var(--mimic);
+  color: #111;
+}
+
+.btn-mimic:hover {
+  filter: brightness(0.95);
 }
 
 .cta-mascot {
@@ -233,13 +264,13 @@ body {
 .tri-left {
   border-top: calc(var(--ctrl-nav) * 0.36) solid transparent;
   border-bottom: calc(var(--ctrl-nav) * 0.36) solid transparent;
-  border-right: calc(var(--ctrl-nav) * 0.48) solid #666666;
+  border-right: calc(var(--ctrl-nav) * 0.48) solid var(--mute);
 }
 
 .tri-right {
   border-top: calc(var(--ctrl-nav) * 0.36) solid transparent;
   border-bottom: calc(var(--ctrl-nav) * 0.36) solid transparent;
-  border-left: calc(var(--ctrl-nav) * 0.48) solid #666666;
+  border-left: calc(var(--ctrl-nav) * 0.48) solid var(--mute);
 }
 
 .ctrl-play-icon {

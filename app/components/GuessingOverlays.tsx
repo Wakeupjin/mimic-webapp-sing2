@@ -5,6 +5,7 @@ interface GuessingOverlaysProps {
   videoPlayCount: number;
   showCorrect: boolean;
   showAgain: boolean;
+  listeningAbc?: boolean;
 }
 
 export default function GuessingOverlays({
@@ -12,40 +13,30 @@ export default function GuessingOverlays({
   videoPlayCount,
   showCorrect,
   showAgain,
+  listeningAbc = false,
 }: GuessingOverlaysProps) {
   return (
     <>
-      {/* 정답 선택 안내 오버레이 */}
-      {videoPlayCount >= 3 && !showCorrect && !showAgain && (
-        <div className="absolute inset-x-0 bottom-0 z-10 flex items-end justify-center bg-gradient-to-t from-black/80 to-transparent p-3 md:inset-0 md:items-center md:bg-black/50 md:bg-none md:p-0">
-          {screenshot ? (
-            <div
-              className="absolute inset-0 hidden bg-cover bg-center bg-no-repeat md:block"
-              style={{ backgroundImage: `url(${screenshot})` }}
-            />
-          ) : null}
-          <div className="absolute inset-0 hidden bg-black/70 md:block" />
-          <div className="relative z-10 text-center text-white">
-            <p className="text-sm font-semibold md:mb-4 md:text-2xl md:font-bold" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-              ABC를 듣고 정답을 선택하세요
-            </p>
-          </div>
+      {listeningAbc && videoPlayCount >= 3 && !showCorrect && !showAgain && (
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center p-3">
+          <p
+            className="rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white sm:text-sm"
+            style={{ fontFamily: "Encode Sans, sans-serif" }}
+          >
+            A · B · C 듣는 중
+          </p>
         </div>
       )}
 
-      {/* Correct 표시 오버레이 */}
       {showCorrect && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          {/* 스크린샷 배경 */}
           {screenshot && (
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${screenshot})` }}
             />
           )}
-          {/* 검정색 오버레이 */}
           <div className="absolute inset-0 bg-black/70" />
-          {/* Correct 텍스트 */}
           <div className="relative z-10 text-center">
             <div
               className="text-6xl font-bold animate-pulse"
@@ -63,19 +54,15 @@ export default function GuessingOverlays({
         </div>
       )}
 
-      {/* Again 표시 오버레이 */}
       {showAgain && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          {/* 스크린샷 배경 */}
           {screenshot && (
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${screenshot})` }}
             />
           )}
-          {/* 검정색 오버레이 */}
           <div className="absolute inset-0 bg-black/70" />
-          {/* Again 텍스트 */}
           <div className="relative z-10 text-center">
             <div
               className="text-6xl font-bold animate-pulse"

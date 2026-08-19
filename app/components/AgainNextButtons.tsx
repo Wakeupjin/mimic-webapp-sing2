@@ -6,25 +6,20 @@ interface AgainNextButtonsProps {
   className?: string;
 }
 
-export default function AgainNextButtons({ 
-  onAgain, 
+export default function AgainNextButtons({
+  onAgain,
   onNext,
-  className = ""
+  className = "",
 }: AgainNextButtonsProps) {
   return (
     <div className={`absolute inset-0 flex items-center justify-center pointer-events-none ${className}`}>
       <div className="absolute inset-0 bg-black/30"></div>
       <div className="cta-row relative z-10 pointer-events-auto">
-        <button
-          onClick={onAgain}
-          className="cta-btn bg-gray-600 text-white hover:bg-gray-700 transition-colors"
-        >
+        <button type="button" onClick={onAgain} className="cta-btn cta-ghost">
           Again
         </button>
-        <button
-          onClick={onNext}
-          className="cta-btn bg-[#60D96C] text-black hover:bg-[#4CAF50] transition-colors"
-        >
+        <button type="button" onClick={onNext} className="cta-btn cta-primary relative">
+          <img src="/Subject.png" alt="" className="cta-mascot" />
           Next
         </button>
       </div>

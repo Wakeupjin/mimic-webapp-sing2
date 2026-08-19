@@ -476,15 +476,9 @@ function WatchingPageContent() {
                 {/* Button container */}
                 <div className="cta-row relative z-10 pointer-events-auto">
                   {/* Again Button */}
-                  <button 
-                    className="cta-btn border-gray-300 text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400" 
-                    style={{ backgroundColor: 'white' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#f8f8f8';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'white';
-                    }}
+                  <button
+                    type="button"
+                    className="cta-btn cta-ghost"
                     onClick={() => {
                       const video = document.querySelector('video') as HTMLVideoElement;
                       if (video) {
@@ -503,17 +497,9 @@ function WatchingPageContent() {
                   </button>
                   
                   {/* Next Button */}
-                  <button 
-                    className="cta-btn relative border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
-                    style={{
-                      backgroundColor: 'white'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#f8f8f8';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'white';
-                    }}
+                  <button
+                    type="button"
+                    className="cta-btn cta-primary relative"
                     onClick={() => {
                       // Switch to mimicking mode (maintain fullscreen)
                       const isCurrentlyFullscreen = document.fullscreenElement !== null;

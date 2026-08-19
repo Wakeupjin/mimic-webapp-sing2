@@ -918,6 +918,14 @@ function GuessingPageContent() {
               videoPlayCount={videoPlayCount}
               showCorrect={showCorrect}
               showAgain={showAgain}
+              listeningAbc={
+                videoPlayCount >= 3 &&
+                !allOptionsPlayed &&
+                !nudgeNext &&
+                !isPaused &&
+                !showCorrect &&
+                !showAgain
+              }
             />
 
             {lockHint && (

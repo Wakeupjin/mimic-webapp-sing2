@@ -10,7 +10,7 @@ function glyph(active: boolean) {
 function Chip({ active, children }: { active?: boolean; children: ReactNode }) {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden>
-      <circle cx="16" cy="16" r="16" fill={active ? "#60D96C" : "#3F3F46"} />
+      <circle cx="16" cy="16" r="16" fill={active ? "#60D96C" : "#666666"} />
       {children}
     </svg>
   );

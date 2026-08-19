@@ -54,16 +54,7 @@ export default function GuessingResultScreen({
           </p>
           <button
             type="button"
-            className="cta-btn relative border-[#60D96C] text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-[#4CAF50]"
-            style={{
-              backgroundColor: 'white',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#f8f8f8';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'white';
-            }}
+            className="cta-btn cta-primary relative"
             onClick={onNext}
           >
             <img

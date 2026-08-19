@@ -795,8 +795,8 @@ function WordPageContent() {
                 style={{
                   background:
                     playCount === 0 && gamePhase === 'playing' && isStarted && !isPaused
-                      ? '#60D96C'
-                      : '#666666',
+                      ? 'var(--mimic)'
+                      : 'var(--mute)',
                   borderRadius: '10px',
                   width: 'var(--ctrl-size)',
                   height: 'var(--ctrl-size)',
@@ -812,8 +812,8 @@ function WordPageContent() {
                 style={{
                   background:
                     playCount === 1 && gamePhase === 'playing' && isStarted && !isPaused
-                      ? '#60D96C'
-                      : '#666666',
+                      ? 'var(--mimic)'
+                      : 'var(--mute)',
                   borderRadius: '10px',
                   width: 'var(--ctrl-size)',
                   height: 'var(--ctrl-size)',
@@ -829,8 +829,8 @@ function WordPageContent() {
                 style={{
                   background:
                     playCount === 2 && gamePhase === 'playing' && isStarted && !isPaused
-                      ? '#60D96C'
-                      : '#666666',
+                      ? 'var(--mimic)'
+                      : 'var(--mute)',
                   borderRadius: '10px',
                   width: 'var(--ctrl-size)',
                   height: 'var(--ctrl-size)',
@@ -902,7 +902,7 @@ function WordPageContent() {
               type="button"
               onClick={() => handleRemoveAt(index)}
               disabled={!canArrange}
-              className="rounded-lg bg-green-500 px-3 py-1 text-sm font-bold text-white transition-transform hover:scale-105 disabled:cursor-default md:px-5 md:py-3 md:text-lg"
+              className="rounded-lg bg-[#60D96C] px-3 py-1 text-sm font-bold text-black transition-transform hover:scale-105 disabled:cursor-default md:px-5 md:py-3 md:text-lg"
               style={{ fontFamily: WORD_CHIP_FONT }}
               aria-label={`${word} 제거`}
             >
