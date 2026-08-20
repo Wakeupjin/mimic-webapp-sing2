@@ -463,7 +463,7 @@ function WordPageContent() {
   const handleNext = () => {
     const nextChapter = currentChapter + 1;
     if (pack <= 1 && nextChapter <= 12) {
-      window.location.href = `/sing2/word?id=${formatMovieId(pack, nextChapter)}`;
+      window.location.href = `/sing2/selecting?id=${formatMovieId(pack, nextChapter)}`;
       return;
     }
     window.location.href = '/';
