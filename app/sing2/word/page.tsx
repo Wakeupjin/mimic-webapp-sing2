@@ -9,6 +9,7 @@ import PauseOverlay from '@/app/components/PauseOverlay';
 import MimicLineList from '@/app/components/MimicLineList';
 import Link from 'next/link';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
+import { useSoundEffects } from '@/app/hooks/useSoundEffects';
 import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId, resolveVideoUrl } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
@@ -89,6 +90,7 @@ function WordPageContent() {
   const gamePhaseRef = useRef(gamePhase);
 
   const { isFullscreen, toggleFullscreen } = useFullscreen();
+  const { playCorrectSound, playAgainSound } = useSoundEffects();
   const totalQuestions = 10;
   const evalLog = useEvaluationLog(lessonNumber, 'word', isStarted);
   const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'word');
@@ -437,70 +439,6 @@ function WordPageContent() {
     setUsedWords([]);
     setHideAllWords(false);
     startListeningSequence();
-  };
-
-  const playCorrectSound = () => {
-    try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-
-      const createCorrectSound = (ctx: AudioContext) => {
-        const frequencies = [523.25, 659.25, 783.99];
-        const duration = 0.3;
-        frequencies.forEach((freq, index) => {
-          const oscillator = ctx.createOscillator();
-          const gainNode = ctx.createGain();
-          oscillator.connect(gainNode);
-          gainNode.connect(ctx.destination);
-          oscillator.frequency.value = freq;
-          oscillator.type = 'sine';
-          const startTime = ctx.currentTime + index * 0.1;
-          gainNode.gain.setValueAtTime(0.4, startTime);
-          gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
-          oscillator.start(startTime);
-          oscillator.stop(startTime + duration);
-        });
-      };
-
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => createCorrectSound(audioContext));
-      } else {
-        createCorrectSound(audioContext);
-      }
-    } catch (error) {
-      console.error('소리 재생 실패:', error);
-    }
-  };
-
-  const playAgainSound = () => {
-    try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-
-      const createAgainSound = (ctx: AudioContext) => {
-        const frequencies = [783.99, 659.25, 523.25];
-        const duration = 0.4;
-        frequencies.forEach((freq, index) => {
-          const oscillator = ctx.createOscillator();
-          const gainNode = ctx.createGain();
-          oscillator.connect(gainNode);
-          gainNode.connect(ctx.destination);
-          oscillator.frequency.value = freq;
-          oscillator.type = 'sine';
-          const startTime = ctx.currentTime + index * 0.15;
-          gainNode.gain.setValueAtTime(0.4, startTime);
-          gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
-          oscillator.start(startTime);
-          oscillator.stop(startTime + duration);
-        });
-      };
-
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => createAgainSound(audioContext));
-      } else {
-        createAgainSound(audioContext);
-      }
-    } catch (error) {
-      console.error('소리 재생 실패:', error);
-    }
   };
 
   const handleAgain = () => {
