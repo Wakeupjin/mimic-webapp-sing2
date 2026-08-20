@@ -9,7 +9,7 @@ const MODE_LABEL: Record<string, string> = {
   listen: "Listen",
   mimicking: "Mimic",
   guessing: "Guess",
-  word: "Word",
+  word: "Quiz",
 };
 
 function BookComingSoonContent() {
@@ -23,7 +23,7 @@ function BookComingSoonContent() {
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: "Encode Sans, sans-serif" }}>
           {BOOK_MONTH.title}
         </h1>
-        <HeaderCloseLink href="/book/selecting" />
+        <HeaderCloseLink href="/book/selecting?id=003:1" />
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
@@ -37,7 +37,7 @@ function BookComingSoonContent() {
           원서 문장·오디오가 정해지면 이 칸에서 바로 엽니다. 지금은 흐름만 열려 있습니다.
         </p>
         <a
-          href="/book/selecting"
+          href="/book/selecting?id=003:1"
           className="cta-btn cta-primary mt-4 inline-block"
         >
           장면으로 돌아가기

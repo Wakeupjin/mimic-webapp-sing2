@@ -63,7 +63,7 @@ function WatchingPageContent() {
   } = useVideoPlayer();
 
   const evalLog = useEvaluationLog(lessonNumber, 'watching', isVideoStarted);
-  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'watching');
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'watching', movieId);
   const maxWatchedRef = useRef(0);
   const watchingDoneRef = useRef(false);
 

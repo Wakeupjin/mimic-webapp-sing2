@@ -21,6 +21,7 @@ export function parseProgressLesson(movieId: string | null): number {
 
 export function parseTrackedMode(pathname: string): TrackedMode | null {
   const segment = pathname.split('/').filter(Boolean).pop() || '';
+  if (segment === 'listen') return 'watching';
   if (
     segment === 'watching' ||
     segment === 'mimicking' ||

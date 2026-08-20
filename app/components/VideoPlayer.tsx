@@ -38,6 +38,7 @@ interface VideoPlayerProps {
   onClick?: () => void; // 비디오 플레이어 클릭 이벤트
   playing?: boolean; // 강제 재생/정지 제어
   disableOnReadySeek?: boolean; // onReady에서 seekTo 비활성화 (word 페이지용)
+  poster?: string; // 원서 Listen처럼 영상 대신 일러스트를 덮을 때
 }
 
 const VideoPlayer = memo(function VideoPlayer({
@@ -57,6 +58,7 @@ const VideoPlayer = memo(function VideoPlayer({
   onClick,
   playing = true,
   disableOnReadySeek = false,
+  poster,
 }: VideoPlayerProps) {
   const htmlVideoRef = useRef<HTMLVideoElement | null>(null);
   const reactPlayerRef = useRef<any>(null);
@@ -214,6 +216,14 @@ const VideoPlayer = memo(function VideoPlayer({
           </div>
         )}
         
+        {poster ? (
+          <img
+            src={poster}
+            alt=""
+            className="pointer-events-none absolute inset-0 z-[1] h-full w-full object-contain"
+          />
+        ) : null}
+
         {/* Always use ReactPlayer */}
         <ReactPlayer
             ref={reactPlayerRef}
@@ -299,11 +309,13 @@ const VideoPlayer = memo(function VideoPlayer({
             config={{
               youtube: { playerVars: { modestbranding: 1 } },
               file: {
+                forceAudio: Boolean(poster),
                 attributes: {
                   preload: "metadata",
                   playsInline: true,
                   "webkit-playsinline": "true",
                   "x5-playsinline": "true",
+                  ...(poster ? { poster } : {}),
                 },
               },
             }}

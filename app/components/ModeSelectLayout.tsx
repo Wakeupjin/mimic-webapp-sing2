@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import Link from "next/link";
+import { HeaderCloseLink } from "./HeaderIcons";
 
 export type ModeSelectItem = {
   id: string;
@@ -47,12 +47,10 @@ export default function ModeSelectLayout({
 }: ModeSelectLayoutProps) {
   return (
     <main className="select-stage relative flex flex-col overflow-hidden px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
-      <header className="relative z-20 flex shrink-0 items-start justify-end gap-2">
+      <header className="relative z-20 flex shrink-0 items-center justify-end gap-[clamp(0.45rem,1vw,0.75rem)]">
         {badge ? <span className="cinema-pill is-static mr-auto">{badge}</span> : null}
         {extraActions}
-        <Link href="/" className="select-close" aria-label="닫기">
-          <img src="/home/close.svg" alt="" className="h-full w-full" />
-        </Link>
+        <HeaderCloseLink href="/" />
       </header>
 
       <div className="absolute left-1/2 top-[clamp(1.2rem,5.3vh,3.6rem)] z-30 -translate-x-1/2" ref={dropdownRef}>

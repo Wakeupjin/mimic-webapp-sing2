@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../contexts/AuthContext';
 import { signOut } from '../lib/auth';
 import { fetchAcademyDashboard, MODES, TOTAL_SLOTS, type StudentDashboardRow } from '../lib/academy';
+import { CloseIcon, HeaderCloseLink, HeaderIconButton } from '../components/HeaderIcons';
 
 const MODE_LABEL: Record<string, string> = {
   watching: 'Watch',
@@ -197,9 +197,7 @@ export default function AdminPage() {
           >
             로그아웃
           </button>
-          <Link href="/" className="select-close" aria-label="홈으로">
-            <img src="/home/close.svg" alt="" className="h-full w-full" />
-          </Link>
+          <HeaderCloseLink href="/" />
         </div>
       </header>
 
@@ -260,14 +258,9 @@ export default function AdminPage() {
                 <p className="admin-name">{selected.nickname}</p>
                 <p className="admin-mail">{selected.email}</p>
               </div>
-              <button
-                type="button"
-                className="select-close"
-                aria-label="닫기"
-                onClick={() => setSelected(null)}
-              >
-                <img src="/home/close.svg" alt="" className="h-full w-full" />
-              </button>
+              <HeaderIconButton label="닫기" onClick={() => setSelected(null)}>
+                <CloseIcon />
+              </HeaderIconButton>
             </div>
 
             <p className="admin-eval mb-3">

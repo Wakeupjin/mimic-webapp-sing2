@@ -852,6 +852,22 @@ body {
   cursor: default;
 }
 
+.cinema-pill.is-on {
+  background: var(--mimic);
+  color: #111;
+}
+
+.home-picks {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.45rem, 1.2vw, 0.85rem);
+  margin-top: 0.75rem;
+}
+
 .admin-stage {
   display: flex;
   min-height: 100dvh;
@@ -1072,11 +1088,6 @@ body {
   }
 }
 
-.home-menu {
-  width: clamp(36px, 3.02vw, 58px);
-  height: clamp(36px, 3.02vw, 58px);
-}
-
 .home-cover {
   position: absolute;
   inset-inline: 0;
@@ -1138,7 +1149,19 @@ body {
   background: #000;
 }
 
-.select-close {
+.select-close,
+.home-menu {
+  width: clamp(36px, 3.02vw, 58px);
+  height: clamp(36px, 3.02vw, 58px);
+}
+
+.cinema-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.select-stage .cinema-icon,
+.admin-stage .cinema-icon {
   width: clamp(36px, 3.02vw, 58px);
   height: clamp(36px, 3.02vw, 58px);
 }
@@ -1377,6 +1400,14 @@ body {
     height: 28px;
     font-size: 0.85rem;
     padding: 0 0.7rem;
+  }
+
+  .select-close,
+  .home-menu,
+  .select-stage .cinema-icon,
+  .admin-stage .cinema-icon {
+    width: 28px;
+    height: 28px;
   }
 
   .admin-title {

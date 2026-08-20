@@ -10,12 +10,12 @@ import MimicLineList from '@/app/components/MimicLineList';
 import Link from 'next/link';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
 import { useSoundEffects } from '@/app/hooks/useSoundEffects';
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId, resolveVideoUrl } from '@/app/dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
 import { useEvaluationLog } from '@/app/lib/evaluation';
 import { useRequireModeAccess } from '@/app/lib/useRequireModeAccess';
-import { getVideoSource } from '@/app/utils/videoSource';
+import { getLessonMedia, lessonSelectHref, BOOK_SCENE_COUNT, isBookId } from '@/app/lib/lessonMedia';
 import LessonShell from '@/app/components/LessonShell';
 import { FullscreenIcon, HeaderIconButton } from '@/app/components/HeaderIcons';
 import ControlTriangle from '@/app/components/ControlTriangle';
@@ -52,6 +52,7 @@ function WordPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+  const media = getLessonMedia(movieId);
 
   const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
@@ -93,7 +94,7 @@ function WordPageContent() {
   const { playCorrectSound, playAgainSound } = useSoundEffects();
   const totalQuestions = 10;
   const evalLog = useEvaluationLog(lessonNumber, 'word', isStarted);
-  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'word');
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'word', movieId);
   const maxQuestionRef = useRef(1);
   const lockHintTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isLineListOpen, setIsLineListOpen] = useState(false);
@@ -166,9 +167,8 @@ function WordPageContent() {
           return;
         }
 
-        const resolvedVideoUrl = await resolveVideoUrl(lesson.video_id);
         setSupabaseLessonData(lesson as LessonDataType);
-        setVideoUrl(resolvedVideoUrl);
+        setVideoUrl(getLessonMedia(movieId).src);
         setLessonData({ word: lesson.word_data || [] });
         setIsLoading(false);
 
@@ -462,6 +462,14 @@ function WordPageContent() {
 
   const handleNext = () => {
     const nextChapter = currentChapter + 1;
+    if (isBookId(movieId)) {
+      if (nextChapter <= BOOK_SCENE_COUNT) {
+        window.location.href = lessonSelectHref(formatMovieId(pack, nextChapter));
+        return;
+      }
+      window.location.href = '/';
+      return;
+    }
     if (pack <= 1 && nextChapter <= 12) {
       window.location.href = `/sing2/selecting?id=${formatMovieId(pack, nextChapter)}`;
       return;
@@ -663,7 +671,8 @@ function WordPageContent() {
                 {currentQuestion && (
                   <VideoPlayer
                     key="word-player"
-                    src={getVideoSource()}
+                    src={media.src}
+                    poster={media.poster}
                     startTime={currentQuestion.startTime}
                     endTime={currentQuestion.endTime}
                     onEndedSegment={handleVideoEnd}
@@ -697,7 +706,7 @@ function WordPageContent() {
               </div>
 
               <Link
-                href={`/sing2/selecting?id=${movieId}`}
+                href={lessonSelectHref(movieId)}
                 className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
                 aria-label="뒤로"
               >

@@ -19,13 +19,13 @@ export const BOOK_MONTH = {
   title: "Pinocchio",
   caption: "이번 달 원서",
   hint: "이 장면부터 들을까요?",
-  href: "/book/selecting",
+  href: "/book/selecting?id=003:1",
   coverSrc: "/pinocchio.jpeg",
   coverAlt: "Pinocchio 원서 표지",
   icon: "m" as const,
 };
 
-/** 홈 히어로 캐러셀: 선택하면 가운데 표지가 바뀜 */
+/** 홈에서 고르는 이번 달 영화 / 원서 */
 export const MONTH_FEATURES = [MOVIE_MONTH, BOOK_MONTH] as const;
 
 export const BOOK_SCENES = [

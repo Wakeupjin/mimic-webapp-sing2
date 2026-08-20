@@ -40,9 +40,11 @@ export function formatMovieId(pack: number, lesson: number): string {
   return `${String(pack).padStart(3, '0')}:${lesson}`;
 }
 
-/** 화면에 쓰는 회차 이름. 진도 번호(201)와 섞지 않는다. */
+/** 화면에 쓰는 회차 이름. 진도 번호(201, 301)와 섞지 않는다. */
 export function formatChapterLabel(pack: number, lesson: number): string {
-  return pack >= 2 ? `HARD ${lesson}` : `CHAPTER ${lesson}`;
+  if (pack >= 3) return `SCENE ${lesson}`;
+  if (pack >= 2) return `HARD ${lesson}`;
+  return `CHAPTER ${lesson}`;
 }
 
 type RawLessonJson = {
@@ -83,9 +85,11 @@ function normalizeLesson(row: Record<string, unknown>, lessonNumber: number): Le
 
 async function fetchLessonFromJson(lessonNumber: number, pack = 1) {
   const path =
-    pack >= 2
-      ? `/movies/sing2/hard/lesson-${lessonNumber}.json`
-      : `/movies/sing2/lesson-${lessonNumber}.json`;
+    pack >= 3
+      ? `/books/pinocchio/scene-${lessonNumber}.json`
+      : pack >= 2
+        ? `/movies/sing2/hard/lesson-${lessonNumber}.json`
+        : `/movies/sing2/lesson-${lessonNumber}.json`;
   const response = await fetch(path);
   if (!response.ok) {
     return null;
@@ -111,7 +115,7 @@ export async function fetchLessonData(
   if (pack >= 2) {
     const local = await fetchLessonFromJson(lessonNumber, pack);
     if (!local) {
-      console.error(`Hard lesson ${pack}:${lessonNumber} not found`);
+      console.error(`Lesson ${pack}:${lessonNumber} not found`);
     }
     return local;
   }

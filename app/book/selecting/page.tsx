@@ -5,33 +5,55 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "../../contexts/AuthContext";
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { BOOK_SCENES } from "../../lib/monthCatalog";
-import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
+import { formatChapterLabel, formatMovieId, parseLessonNumber, parseProgressLesson } from "../../dataService";
+import {
+  fetchOwnProgress,
+  canAccessMode,
+  isMasterRole,
+  isModeCompleted,
+  MODE_ORDER,
+  type LearnMode,
+  type ProgressRow,
+} from "../../lib/progressGate";
+import { BOOK_PACK, bookSceneHasContent, lessonPath } from "../../lib/lessonMedia";
+import { FullscreenIcon, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
 import ModeSelectLayout from "../../components/ModeSelectLayout";
 
-type BookMode = "listen" | "mimicking" | "guessing" | "word";
-
-const BOOK_MODES: Array<{ id: BookMode; label: string }> = [
-  { id: "listen", label: "Listen" },
-  { id: "mimicking", label: "Mimic" },
-  { id: "guessing", label: "Guess" },
-  { id: "word", label: "Quiz" },
+const BOOK_MODES: Array<{ learn: LearnMode; label: string }> = [
+  { learn: "watching", label: "Listen" },
+  { learn: "mimicking", label: "Mimic" },
+  { learn: "guessing", label: "Guess" },
+  { learn: "word", label: "Quiz" },
 ];
 
 function BookSelectingContent() {
-  const { user, loading } = useAuth();
+  const { user, profile, loading } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const initialScene = Math.max(1, Math.min(BOOK_SCENES.length, Number(searchParams.get("scene") || 1)));
+  const requestedId = searchParams.get("id") || formatMovieId(BOOK_PACK, 1);
+  const pack = BOOK_PACK;
   const { isFullscreen, toggleFullscreen } = useFullscreen();
-  const [sceneIndex, setSceneIndex] = useState(initialScene - 1);
+  const [sceneIndex, setSceneIndex] = useState(() =>
+    Math.max(0, Math.min(BOOK_SCENES.length - 1, parseLessonNumber(requestedId) - 1))
+  );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const isMaster = isMasterRole(profile?.role);
 
   useEffect(() => {
     if (!loading && !user) {
       router.push("/auth/login");
     }
   }, [user, loading, router]);
+
+  useEffect(() => {
+    if (!user) {
+      setProgressRows([]);
+      return;
+    }
+    fetchOwnProgress().then(setProgressRows);
+  }, [user]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -45,9 +67,22 @@ function BookSelectingContent() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isDropdownOpen]);
 
-  const openMode = (mode: BookMode) => {
-    const scene = sceneIndex + 1;
-    window.location.href = `/book/coming-soon?mode=${mode}&scene=${scene}`;
+  const scene = sceneIndex + 1;
+  const movieId = formatMovieId(pack, scene);
+  const progressLesson = parseProgressLesson(movieId);
+  const hasContent = bookSceneHasContent(scene);
+  const modeOpen = (mode: LearnMode) =>
+    hasContent && (isMaster || canAccessMode(progressRows, progressLesson, mode));
+  const hereMode =
+    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode)) ?? "word";
+
+  const openMode = (mode: LearnMode) => {
+    if (!modeOpen(mode)) return;
+    if (!hasContent) {
+      window.location.href = `/book/coming-soon?mode=${mode === "watching" ? "listen" : mode}&scene=${scene}`;
+      return;
+    }
+    window.location.href = lessonPath(movieId, mode);
   };
 
   if (loading) {
@@ -68,33 +103,45 @@ function BookSelectingContent() {
 
   return (
     <ModeSelectLayout
-      chapterLabel={`CHAPTER ${sceneIndex + 1}`}
+      badge={isMaster ? "원장" : undefined}
+      chapterLabel={formatChapterLabel(pack, scene)}
       dropdownOpen={isDropdownOpen}
       onToggleDropdown={() => setIsDropdownOpen((open) => !open)}
       dropdownRef={dropdownRef}
       extraActions={
-        <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-          <FullscreenIcon active={isFullscreen} />
-        </HeaderIconButton>
+        <>
+          {isMaster && (
+            <HeaderIconButton label="학생 현황" onClick={() => router.push("/admin")}>
+              <ListIcon active />
+            </HeaderIconButton>
+          )}
+          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+            <FullscreenIcon active={isFullscreen} />
+          </HeaderIconButton>
+        </>
       }
-      chapters={BOOK_SCENES.map((label, index) => ({
-        id: label,
-        label: `CHAPTER ${index + 1}`,
-        locked: false,
-        selected: index === sceneIndex,
-        done: false,
-        onSelect: () => {
-          setSceneIndex(index);
-          setIsDropdownOpen(false);
-        },
-      }))}
-      modes={BOOK_MODES.map((mode, index) => ({
-        id: mode.id,
+      chapters={BOOK_SCENES.map((label, index) => {
+        const n = index + 1;
+        return {
+          id: label,
+          label: formatChapterLabel(pack, n),
+          locked: !bookSceneHasContent(n),
+          selected: index === sceneIndex,
+          done: isModeCompleted(progressRows, parseProgressLesson(formatMovieId(pack, n)), "word"),
+          onSelect: () => {
+            setSceneIndex(index);
+            setIsDropdownOpen(false);
+          },
+        };
+      })}
+      modes={BOOK_MODES.map((mode) => ({
+        id: mode.learn,
         label: mode.label,
-        locked: false,
-        done: false,
-        here: index === 0,
-        onSelect: () => openMode(mode.id),
+        locked: !modeOpen(mode.learn),
+        done: hasContent && isModeCompleted(progressRows, progressLesson, mode.learn),
+        here: hasContent && hereMode === mode.learn,
+        open: isMaster && hasContent,
+        onSelect: () => openMode(mode.learn),
       }))}
     />
   );

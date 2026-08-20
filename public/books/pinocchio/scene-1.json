@@ -1,0 +1,502 @@
+{
+  "watching": {
+    "start": "00:00:00,000",
+    "end": "00:00:57,114"
+  },
+  "mimicking": [
+    {
+      "start": "00:00:00,000",
+      "end": "00:00:02,220",
+      "text": "Once upon a time there was a piece of wood."
+    },
+    {
+      "start": "00:00:02,620",
+      "end": "00:00:04,300",
+      "text": "It was not a fine piece of wood."
+    },
+    {
+      "start": "00:00:04,700",
+      "end": "00:00:06,473",
+      "text": "It was just an ordinary piece."
+    },
+    {
+      "start": "00:00:06,873",
+      "end": "00:00:08,658",
+      "text": "A carpenter found it in his shop."
+    },
+    {
+      "start": "00:00:09,058",
+      "end": "00:00:10,586",
+      "text": "His name was Master Cherry."
+    },
+    {
+      "start": "00:00:10,986",
+      "end": "00:00:12,747",
+      "text": "He wanted to make a table leg."
+    },
+    {
+      "start": "00:00:13,147",
+      "end": "00:00:14,515",
+      "text": "Then he heard a little voice."
+    },
+    {
+      "start": "00:00:14,915",
+      "end": "00:00:16,597",
+      "text": "Please do not hit me so hard."
+    },
+    {
+      "start": "00:00:16,997",
+      "end": "00:00:18,681",
+      "text": "The carpenter looked around the room."
+    },
+    {
+      "start": "00:00:19,081",
+      "end": "00:00:20,170",
+      "text": "There was nobody there."
+    },
+    {
+      "start": "00:00:20,570",
+      "end": "00:00:21,855",
+      "text": "He looked under the bench."
+    },
+    {
+      "start": "00:00:22,255",
+      "end": "00:00:23,621",
+      "text": "He looked inside the cupboard."
+    },
+    {
+      "start": "00:00:24,021",
+      "end": "00:00:25,259",
+      "text": "Who is speaking to me?"
+    },
+    {
+      "start": "00:00:25,659",
+      "end": "00:00:27,294",
+      "text": "Then he gave the wood to Geppetto."
+    },
+    {
+      "start": "00:00:27,694",
+      "end": "00:00:29,418",
+      "text": "Geppetto lived in a tiny room."
+    },
+    {
+      "start": "00:00:29,818",
+      "end": "00:00:31,300",
+      "text": "He wanted to make a puppet."
+    },
+    {
+      "start": "00:00:31,700",
+      "end": "00:00:33,217",
+      "text": "I will call him Pinocchio."
+    },
+    {
+      "start": "00:00:33,617",
+      "end": "00:00:35,517",
+      "text": "He took his tools and began to work."
+    },
+    {
+      "start": "00:00:35,917",
+      "end": "00:00:37,091",
+      "text": "First he made the hair."
+    },
+    {
+      "start": "00:00:37,491",
+      "end": "00:00:38,592",
+      "text": "Then he made the forehead."
+    },
+    {
+      "start": "00:00:38,992",
+      "end": "00:00:40,453",
+      "text": "Then he made two little eyes."
+    },
+    {
+      "start": "00:00:40,853",
+      "end": "00:00:42,141",
+      "text": "The eyes looked right at him."
+    },
+    {
+      "start": "00:00:42,541",
+      "end": "00:00:43,607",
+      "text": "Then he made the nose."
+    },
+    {
+      "start": "00:00:44,007",
+      "end": "00:00:45,413",
+      "text": "The nose began to grow."
+    },
+    {
+      "start": "00:00:45,813",
+      "end": "00:00:46,868",
+      "text": "Then he made the mouth."
+    },
+    {
+      "start": "00:00:47,268",
+      "end": "00:00:48,615",
+      "text": "The mouth started to laugh."
+    },
+    {
+      "start": "00:00:49,015",
+      "end": "00:00:51,083",
+      "text": "Stop laughing, said Geppetto."
+    },
+    {
+      "start": "00:00:51,483",
+      "end": "00:00:53,074",
+      "text": "The puppet kicked him in the shin."
+    },
+    {
+      "start": "00:00:53,474",
+      "end": "00:00:54,895",
+      "text": "You are a naughty wooden boy."
+    },
+    {
+      "start": "00:00:55,295",
+      "end": "00:00:57,114",
+      "text": "And that is how Pinocchio began."
+    }
+  ],
+  "guessing": [
+    {
+      "question": 1,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Once upon a time there was a piece of wood.",
+          "start": "00:00:00,000",
+          "end": "00:00:02,220"
+        },
+        {
+          "label": "B",
+          "text": "It was not a fine piece of wood.",
+          "start": "00:00:02,620",
+          "end": "00:00:04,300"
+        },
+        {
+          "label": "C",
+          "text": "Then he heard a little voice.",
+          "start": "00:00:13,147",
+          "end": "00:00:14,515"
+        }
+      ],
+      "video": {
+        "start": "00:00:00,000",
+        "end": "00:00:02,220"
+      }
+    },
+    {
+      "question": 2,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text": "Please do not hit me so hard.",
+          "start": "00:00:14,915",
+          "end": "00:00:16,597"
+        },
+        {
+          "label": "B",
+          "text": "Then he made two little eyes.",
+          "start": "00:00:38,992",
+          "end": "00:00:40,453"
+        },
+        {
+          "label": "C",
+          "text": "It was just an ordinary piece.",
+          "start": "00:00:04,700",
+          "end": "00:00:06,473"
+        }
+      ],
+      "video": {
+        "start": "00:00:04,700",
+        "end": "00:00:06,473"
+      }
+    },
+    {
+      "question": 3,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text": "Who is speaking to me?",
+          "start": "00:00:24,021",
+          "end": "00:00:25,259"
+        },
+        {
+          "label": "B",
+          "text": "He wanted to make a table leg.",
+          "start": "00:00:10,986",
+          "end": "00:00:12,747"
+        },
+        {
+          "label": "C",
+          "text": "I will call him Pinocchio.",
+          "start": "00:00:31,700",
+          "end": "00:00:33,217"
+        }
+      ],
+      "video": {
+        "start": "00:00:10,986",
+        "end": "00:00:12,747"
+      }
+    },
+    {
+      "question": 4,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "The carpenter looked around the room.",
+          "start": "00:00:16,997",
+          "end": "00:00:18,681"
+        },
+        {
+          "label": "B",
+          "text": "The mouth started to laugh.",
+          "start": "00:00:47,268",
+          "end": "00:00:48,615"
+        },
+        {
+          "label": "C",
+          "text": "A carpenter found it in his shop.",
+          "start": "00:00:06,873",
+          "end": "00:00:08,658"
+        }
+      ],
+      "video": {
+        "start": "00:00:16,997",
+        "end": "00:00:18,681"
+      }
+    },
+    {
+      "question": 5,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text": "His name was Master Cherry.",
+          "start": "00:00:09,058",
+          "end": "00:00:10,586"
+        },
+        {
+          "label": "B",
+          "text": "The mouth started to laugh.",
+          "start": "00:00:47,268",
+          "end": "00:00:48,615"
+        },
+        {
+          "label": "C",
+          "text": "He looked inside the cupboard.",
+          "start": "00:00:22,255",
+          "end": "00:00:23,621"
+        }
+      ],
+      "video": {
+        "start": "00:00:22,255",
+        "end": "00:00:23,621"
+      }
+    },
+    {
+      "question": 6,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text": "He took his tools and began to work.",
+          "start": "00:00:33,617",
+          "end": "00:00:35,517"
+        },
+        {
+          "label": "B",
+          "text": "Geppetto lived in a tiny room.",
+          "start": "00:00:27,694",
+          "end": "00:00:29,418"
+        },
+        {
+          "label": "C",
+          "text": "Then he gave the wood to Geppetto.",
+          "start": "00:00:25,659",
+          "end": "00:00:27,294"
+        }
+      ],
+      "video": {
+        "start": "00:00:27,694",
+        "end": "00:00:29,418"
+      }
+    },
+    {
+      "question": 7,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "He took his tools and began to work.",
+          "start": "00:00:33,617",
+          "end": "00:00:35,517"
+        },
+        {
+          "label": "B",
+          "text": "The nose began to grow.",
+          "start": "00:00:44,007",
+          "end": "00:00:45,413"
+        },
+        {
+          "label": "C",
+          "text": "The carpenter looked around the room.",
+          "start": "00:00:16,997",
+          "end": "00:00:18,681"
+        }
+      ],
+      "video": {
+        "start": "00:00:33,617",
+        "end": "00:00:35,517"
+      }
+    },
+    {
+      "question": 8,
+      "correctAnswer": "C",
+      "options": [
+        {
+          "label": "A",
+          "text": "It was just an ordinary piece.",
+          "start": "00:00:04,700",
+          "end": "00:00:06,473"
+        },
+        {
+          "label": "B",
+          "text": "Once upon a time there was a piece of wood.",
+          "start": "00:00:00,000",
+          "end": "00:00:02,220"
+        },
+        {
+          "label": "C",
+          "text": "Then he made two little eyes.",
+          "start": "00:00:38,992",
+          "end": "00:00:40,453"
+        }
+      ],
+      "video": {
+        "start": "00:00:38,992",
+        "end": "00:00:40,453"
+      }
+    },
+    {
+      "question": 9,
+      "correctAnswer": "B",
+      "options": [
+        {
+          "label": "A",
+          "text": "The eyes looked right at him.",
+          "start": "00:00:40,853",
+          "end": "00:00:42,141"
+        },
+        {
+          "label": "B",
+          "text": "The nose began to grow.",
+          "start": "00:00:44,007",
+          "end": "00:00:45,413"
+        },
+        {
+          "label": "C",
+          "text": "He looked inside the cupboard.",
+          "start": "00:00:22,255",
+          "end": "00:00:23,621"
+        }
+      ],
+      "video": {
+        "start": "00:00:44,007",
+        "end": "00:00:45,413"
+      }
+    },
+    {
+      "question": 10,
+      "correctAnswer": "A",
+      "options": [
+        {
+          "label": "A",
+          "text": "Stop laughing, said Geppetto.",
+          "start": "00:00:49,015",
+          "end": "00:00:51,083"
+        },
+        {
+          "label": "B",
+          "text": "Then he made two little eyes.",
+          "start": "00:00:38,992",
+          "end": "00:00:40,453"
+        },
+        {
+          "label": "C",
+          "text": "Then he gave the wood to Geppetto.",
+          "start": "00:00:25,659",
+          "end": "00:00:27,294"
+        }
+      ],
+      "video": {
+        "start": "00:00:49,015",
+        "end": "00:00:51,083"
+      }
+    }
+  ],
+  "word": [
+    {
+      "question": 1,
+      "start": "00:00:00,000",
+      "end": "00:00:02,220",
+      "text": "Once upon a time there was a piece of wood."
+    },
+    {
+      "question": 2,
+      "start": "00:00:02,620",
+      "end": "00:00:04,300",
+      "text": "It was not a fine piece of wood."
+    },
+    {
+      "question": 3,
+      "start": "00:00:06,873",
+      "end": "00:00:08,658",
+      "text": "A carpenter found it in his shop."
+    },
+    {
+      "question": 4,
+      "start": "00:00:09,058",
+      "end": "00:00:10,586",
+      "text": "His name was Master Cherry."
+    },
+    {
+      "question": 5,
+      "start": "00:00:10,986",
+      "end": "00:00:12,747",
+      "text": "He wanted to make a table leg."
+    },
+    {
+      "question": 6,
+      "start": "00:00:14,915",
+      "end": "00:00:16,597",
+      "text": "Please do not hit me so hard."
+    },
+    {
+      "question": 7,
+      "start": "00:00:20,570",
+      "end": "00:00:21,855",
+      "text": "He looked under the bench."
+    },
+    {
+      "question": 8,
+      "start": "00:00:31,700",
+      "end": "00:00:33,217",
+      "text": "I will call him Pinocchio."
+    },
+    {
+      "question": 9,
+      "start": "00:00:37,491",
+      "end": "00:00:38,592",
+      "text": "Then he made the forehead."
+    },
+    {
+      "question": 10,
+      "start": "00:00:51,483",
+      "end": "00:00:53,074",
+      "text": "The puppet kicked him in the shin."
+    }
+  ]
+}

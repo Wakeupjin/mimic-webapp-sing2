@@ -9,7 +9,7 @@ function glyph(active: boolean) {
 
 function Chip({ active, children }: { active?: boolean; children: ReactNode }) {
   return (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden>
+    <svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" aria-hidden>
       <circle cx="16" cy="16" r="16" fill={active ? "#60D96C" : "#666666"} />
       {children}
     </svg>
@@ -79,7 +79,7 @@ export function CloseIcon() {
 }
 
 const buttonClass =
-  "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition duration-150 hover:scale-105 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#60D96C]";
+  "cinema-icon inline-flex shrink-0 items-center justify-center rounded-full transition duration-150 hover:scale-105 hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#60D96C]";
 
 export function HeaderIconButton({
   label,

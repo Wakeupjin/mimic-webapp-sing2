@@ -16,7 +16,6 @@ export default function Home() {
   const [isHovering, setIsHovering] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [selectedId, setSelectedId] = useState<FeatureId>('movie');
-  const [activeSlot, setActiveSlot] = useState(3);
   const { user, profile, loading } = useAuth();
   const router = useRouter();
 
@@ -29,14 +28,6 @@ export default function Home() {
       return;
     }
     window.location.href = selected.href;
-  };
-
-  const selectByOffset = (offset: number) => {
-    const index = MONTH_FEATURES.findIndex((item) => item.id === selectedId);
-    const next = (index + offset + MONTH_FEATURES.length) % MONTH_FEATURES.length;
-    const nextId = MONTH_FEATURES[next].id;
-    setSelectedId(nextId);
-    setActiveSlot(nextId === 'book' ? 3 : 0);
   };
 
   return (
@@ -525,14 +516,9 @@ export default function Home() {
           coverSrc={selected.coverSrc}
           coverAlt={selected.coverAlt}
           hint={selected.hint}
-          activeSlot={activeSlot}
+          selectedId={selectedId}
+          onSelect={setSelectedId}
           onOpen={openSelected}
-          onPrev={() => selectByOffset(-1)}
-          onNext={() => selectByOffset(1)}
-          onSlot={(muted, slotIndex) => {
-            setSelectedId(muted ? 'book' : 'movie');
-            setActiveSlot(slotIndex);
-          }}
           onLogin={() => {
             if (user) {
               setIsLoggingOut(true);

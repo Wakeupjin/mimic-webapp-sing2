@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "../../contexts/AuthContext";
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, resolveVideoUrl } from "../../dataService";
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson } from "../../dataService";
 import { timeStringToSeconds } from "../../utils/timeConverter";
 import Link from "next/link";
 import VideoPlayer from "../../components/VideoPlayer";
@@ -17,7 +17,7 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
 import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
-import { getVideoSource } from "../../utils/videoSource";
+import { getLessonMedia, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
 import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
@@ -28,6 +28,7 @@ function MimickingPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+  const media = getLessonMedia(movieId);
   // console.log('🎬 미믹킹 현재 movieId:', movieId);
 
   // 모든 훅을 최상단으로 이동
@@ -88,7 +89,7 @@ function MimickingPageContent() {
   const [isSequencePaused, setIsSequencePaused] = useState(false);
   const [nudgeNext, setNudgeNext] = useState(false);
   const { bumpPlay, patch } = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
-  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'mimicking');
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'mimicking', movieId);
   const maxSentenceRef = useRef(0);
   const lastStartedIndexRef = useRef<number | null>(null);
   const mimickingTimeoutsRef = useRef<NodeJS.Timeout[]>([]);
@@ -106,8 +107,8 @@ function MimickingPageContent() {
   }, []);
 
   const pauseActualVideo = useCallback(() => {
-    document.querySelectorAll("video").forEach((video) => {
-      video.pause();
+    document.querySelectorAll("video, audio").forEach((el) => {
+      (el as HTMLMediaElement).pause();
     });
   }, []);
 
@@ -141,10 +142,8 @@ function MimickingPageContent() {
           return;
         }
 
-        const resolvedVideoUrl = await resolveVideoUrl(lesson.video_id);
-        
         setLessonData(lesson);
-        setVideoUrl(resolvedVideoUrl);
+        setVideoUrl(getLessonMedia(movieId).src);
         
         // mimic_data가 JSON 배열인 경우 파싱
         let mimicData = [];
@@ -457,7 +456,7 @@ function MimickingPageContent() {
           sessionStorage.setItem('maintainFullscreen', 'true');
         }
         sessionStorage.setItem('mimickingComplete', 'true');
-        window.location.href = `/sing2/guessing?id=${movieId}`;
+        window.location.href = lessonPath(movieId, 'guessing');
     }
     setShowNextCta(false);
   }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
@@ -602,7 +601,8 @@ function MimickingPageContent() {
               <div className={`absolute inset-0 ${showNextCta ? "opacity-10" : ""}`}>
               <VideoPlayer
                 key="mimicking-player"
-                src={getVideoSource()}
+                src={media.src}
+                poster={media.poster}
                 startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
                 endTime={currentScene?.end ? timeStringToSeconds(currentScene.end) : 0}
                 muted={muted}
@@ -669,7 +669,7 @@ function MimickingPageContent() {
                       setNudgeNext(true);
 
                       const currentIdx = currentIndexRef.current;
-                      if (currentIdx < 29) {
+                      if (currentIdx < scenes.length - 1) {
                         // 원장: 직접 다음을 누를 때까지 대기 / 학생: 잠깐 안내 후 자동 이동
                         if (!isMaster) {
                           stepTimeoutRef.current = setTimeout(() => {
@@ -696,7 +696,7 @@ function MimickingPageContent() {
               </div>
 
               <Link
-                href={`/sing2/selecting?id=${movieId}`}
+                href={lessonSelectHref(movieId)}
                 className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
                 aria-label="뒤로"
                 onClick={stopAllMedia}

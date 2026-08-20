@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useAuth } from "../../contexts/AuthContext";
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, resolveVideoUrl } from "../../dataService";
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson } from "../../dataService";
 import VideoPlayer from "../../components/VideoPlayer";
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
@@ -14,7 +14,8 @@ import { srtTimeToSeconds } from "../../utils/srt";
 import { captureVideoScreenshot, captureVideoScreenshotWithFallback, captureSimpleScreenshot, captureVideoScreenshotBypass, shouldCaptureScreenshot } from "../../utils/screenshot";
 import { captureVideoScreenshotCorsFree, captureVideoScreenshotCorsFreeAsync } from "../../utils/videoCors";
 import { captureVideoScreenshotUltimate, setupVideoCorsOnLoad } from "../../utils/corsProxy";
-import { getVideoSource } from "../../utils/videoSource";
+import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
+import { getLessonMedia, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
 import { playTimedSegment, unlockMediaPlayback } from "../../utils/playTimedSegment";
 import { requestAppFullscreen, applyInlinePlayback } from "../../utils/device";
 import Link from "next/link";
@@ -27,7 +28,6 @@ import ControlTriangle from "../../components/ControlTriangle";
 import PauseOverlay from "../../components/PauseOverlay";
 import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
-import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
 import {
   GUESSING_ANSWER_FEEDBACK_DURATION,
   GUESSING_NEXT_QUESTION_DELAY,
@@ -63,6 +63,7 @@ function GuessingPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
+  const media = getLessonMedia(movieId);
   
   // 모든 훅을 최상단으로 이동
   const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
@@ -142,7 +143,7 @@ function GuessingPageContent() {
   } = useGuessingGame();
 
   const evalLog = useEvaluationLog(lessonNumber, 'guessing', isGuessingStarted);
-  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'guessing');
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'guessing', movieId);
   const maxQuestionRef = useRef(0);
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
@@ -283,11 +284,9 @@ function GuessingPageContent() {
           return;
         }
 
-        const resolvedVideoUrl = await resolveVideoUrl(lesson.video_id);
         const guessingDataArray = lesson.guessing_data || [];
-        
         setLessonData(lesson as LessonDataType);
-        setVideoUrl(resolvedVideoUrl);
+        setVideoUrl(getLessonMedia(movieId).src);
         setGuessingData(guessingDataArray);
         setTotalQuestions(guessingDataArray.length);
         setIsLoading(false);
@@ -395,7 +394,7 @@ function GuessingPageContent() {
 
   // 게싱 A/B/C 소리: 미믹킹과 같은 mp4를 쓰고, seek가 끝난 뒤 재생한다.
   const playAudioDirect = useCallback((option: any, currentQuestion: any, onComplete?: () => void) => {
-    const audioVideo = document.getElementById('audio-video') as HTMLVideoElement;
+    const audioVideo = document.getElementById('audio-video') as HTMLMediaElement | null;
     if (!audioVideo) {
       console.error('audio-video 요소를 찾을 수 없습니다');
       if (onComplete) onComplete();
@@ -622,7 +621,7 @@ function GuessingPageContent() {
       return;
     }
     stopAllMedia();
-    window.location.href = `/sing2/mimicking?id=${movieId}`;
+    window.location.href = lessonPath(movieId, 'mimicking');
   }, [nudgeNext, currentQuestionIndex, jumpToQuestion, stopAllMedia, movieId]);
 
   const handleNextQuestion = useCallback(() => {
@@ -803,7 +802,8 @@ function GuessingPageContent() {
               {isGuessingStarted && currentQuestion && (
                 <VideoPlayer
                   key="guessing-player"
-                  src={getVideoSource()}
+                  src={media.src}
+                  poster={media.poster}
                   startTime={srtTimeToSeconds(currentQuestion.video.start)}
                   endTime={srtTimeToSeconds(currentQuestion.video.end)}
                   muted={true}
@@ -848,18 +848,27 @@ function GuessingPageContent() {
               )}
               </div>
 
-              <video
-                id="audio-video"
-                src={getVideoSource()}
-                style={{ display: 'none' }}
-                muted={false}
-                preload="auto"
-                playsInline
-                onLoadedMetadata={(e) => applyInlinePlayback(e.currentTarget)}
-              />
+              {media.poster ? (
+                <audio
+                  id="audio-video"
+                  src={media.src}
+                  className="hidden"
+                  preload="auto"
+                />
+              ) : (
+                <video
+                  id="audio-video"
+                  src={media.src}
+                  style={{ display: 'none' }}
+                  muted={false}
+                  preload="auto"
+                  playsInline
+                  onLoadedMetadata={(e) => applyInlinePlayback(e.currentTarget)}
+                />
+              )}
 
               <Link
-                href={`/sing2/selecting?id=${movieId}`}
+                href={lessonSelectHref(movieId)}
                 className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
                 aria-label="뒤로"
                 onClick={stopAllMedia}
@@ -899,7 +908,7 @@ function GuessingPageContent() {
               {!isGuessingStarted && currentQuestion && (
                 <ClickToStartOverlay
                   onClick={() => {
-                    const audioVideo = document.getElementById('audio-video') as HTMLVideoElement | null;
+                    const audioVideo = document.getElementById('audio-video') as HTMLMediaElement | null;
                     if (audioVideo) {
                       unlockMediaPlayback(audioVideo);
                     }
@@ -943,7 +952,7 @@ function GuessingPageContent() {
                         if (document.fullscreenElement) {
                           sessionStorage.setItem("maintainFullscreen", "true");
                         }
-                        window.location.href = `/sing2/word?id=${movieId}`;
+                        window.location.href = lessonPath(movieId, 'word');
                       }}
                     >
                       <img src="/home/chameleon.png" alt="" className="select-chameleon" />

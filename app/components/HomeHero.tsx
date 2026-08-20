@@ -1,33 +1,34 @@
 "use client";
 
 import Image from "next/image";
-import PlaybackControls from "./PlaybackControls";
-import { MONTH_LABEL_EN } from "../lib/monthCatalog";
+import { MONTH_FEATURES, MONTH_LABEL_EN } from "../lib/monthCatalog";
+
+type FeatureId = (typeof MONTH_FEATURES)[number]["id"];
 
 type HomeHeroProps = {
   coverSrc: string;
   coverAlt: string;
   hint: string;
-  activeSlot: number;
+  selectedId: FeatureId;
+  onSelect: (id: FeatureId) => void;
   onOpen: () => void;
-  onPrev: () => void;
-  onNext: () => void;
-  onSlot: (muted: boolean, slotIndex: number) => void;
   onLogin: () => void;
   onMenu: () => void;
   loginLabel: string;
   onAdmin?: () => void;
 };
 
+function pickLabel(item: (typeof MONTH_FEATURES)[number]) {
+  return item.kind === "book" ? `원서 ${item.title}` : `영화 ${item.title}`;
+}
+
 export default function HomeHero({
   coverSrc,
   coverAlt,
   hint,
-  activeSlot,
+  selectedId,
+  onSelect,
   onOpen,
-  onPrev,
-  onNext,
-  onSlot,
   onLogin,
   onMenu,
   loginLabel,
@@ -80,15 +81,22 @@ export default function HomeHero({
           </span>
         </button>
 
-        <div className="home-mimic-bar relative z-20 mt-3">
-          <PlaybackControls
-            onPrev={onPrev}
-            onNext={onNext}
-            onPlay={onSlot}
-            activeIndex={activeSlot}
-            prevLabel="이전 콘텐츠"
-            nextLabel="다음 콘텐츠"
-          />
+        <div className="home-picks" role="tablist" aria-label="이번 달 콘텐츠">
+          {MONTH_FEATURES.map((item) => {
+            const on = item.id === selectedId;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                role="tab"
+                aria-selected={on}
+                className={`cinema-pill ${on ? "is-on" : ""}`}
+                onClick={() => onSelect(item.id)}
+              >
+                {pickLabel(item)}
+              </button>
+            );
+          })}
         </div>
       </div>
 
