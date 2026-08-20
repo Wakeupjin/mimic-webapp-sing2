@@ -7,21 +7,20 @@ import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, res
 import { timeStringToSeconds } from "../../utils/timeConverter";
 import Link from "next/link";
 import VideoPlayer from "../../components/VideoPlayer";
-import Sidebar from "../../components/Sidebar";
 import PlaybackControls from "../../components/PlaybackControls";
+import MimicLineList from "../../components/MimicLineList";
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
 import { useVideoPlayer } from "../../hooks/useVideoPlayer";
 import { useMimickingSequence } from "../../hooks/useMimickingSequence";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
-import SceneList from "../../components/SceneList";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
 import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
 import { getVideoSource } from "../../utils/videoSource";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
-import { CaptionsIcon, FullscreenIcon, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
+import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import PauseOverlay from "../../components/PauseOverlay";
 
 function MimickingPageContent() {
@@ -84,11 +83,7 @@ function MimickingPageContent() {
   } = useMimickingSequence();
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  useEffect(() => {
-    setIsSidebarOpen(window.matchMedia("(min-width: 1024px)").matches);
-  }, []);
-  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isLineListOpen, setIsLineListOpen] = useState(false);
   const [isMimickingStarted, setIsMimickingStarted] = useState(false);
   const [isSequencePaused, setIsSequencePaused] = useState(false);
   const [nudgeNext, setNudgeNext] = useState(false);
@@ -467,7 +462,57 @@ function MimickingPageContent() {
     setShowNextCta(false);
   }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
 
+  const skipLine = useCallback(() => {
+    if (showNextCta) return;
+    if (currentIndex < scenes.length - 1) {
+      handleNext();
+      return;
+    }
+    clearStepTimeout();
+    setIsSequenceRunning(false);
+    setIsMimickingComplete(true);
+    setShowNextCta(true);
+    pauseVideo();
+  }, [showNextCta, currentIndex, scenes.length, handleNext, clearStepTimeout, setIsSequenceRunning, setIsMimickingComplete, setShowNextCta, pauseVideo]);
+
+  const handleSceneSelect = useCallback((index: number) => {
+    if (index === 0 && !isMimickingStarted) {
+      return;
+    }
+    if (!isMaster && index > maxSentenceRef.current) {
+      return;
+    }
+    if (isMaster) {
+      maxSentenceRef.current = Math.max(maxSentenceRef.current, index);
+    }
+    clearTimeouts();
+    clearStepTimeout();
+    setIsSequencePaused(false);
+    isSequencePausedRef.current = false;
+    setNudgeNext(false);
+    setAutoSeqIndex(null);
+    setActiveControlIndex(null);
+    setMuted(false);
+    setIsSequenceRunning(false);
+    setPlayNonce(0);
+    lastStartedIndexRef.current = null;
+    setIsLineListOpen(false);
+    setCurrentIndex(index);
+  }, [
+    isMimickingStarted,
+    isMaster,
+    clearTimeouts,
+    clearStepTimeout,
+    setAutoSeqIndex,
+    setActiveControlIndex,
+    setMuted,
+    setIsSequenceRunning,
+    setPlayNonce,
+    setCurrentIndex,
+  ]);
+
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
+    if (showNextCta) return;
     clearStepTimeout();
     setIsSequencePaused(false);
     isSequencePausedRef.current = false;
@@ -478,7 +523,7 @@ function MimickingPageContent() {
     autoSeqIndexRef.current = slotIndex;
     setIsSequenceRunning(true);
     playVideo();
-  }, [playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
+  }, [showNextCta, playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -545,34 +590,23 @@ function MimickingPageContent() {
     // console.log(`  - Text: "${currentScene.text}"`);
   }
 
+  const lineTotal = scenes.length || 30;
+  const lineCurrent = String(Math.min(currentIndex + 1, lineTotal)).padStart(2, "0");
+  const lineTotalLabel = String(lineTotal).padStart(2, "0");
+
   return (
     <LessonShell
-      subtitle={`${currentIndex + 1}/30`}
-      onClose={stopAllMedia}
-      onAsideDismiss={() => setIsSidebarOpen(false)}
-      videoHighlight={activeControlIndex !== null && [3, 5, 7].includes(activeControlIndex)}
-      extraActions={
-        <>
-          <HeaderIconButton label={isTextVisible ? "자막 끄기" : "자막 켜기"} onClick={() => setIsTextVisible((v) => !v)}>
-            <CaptionsIcon active={isTextVisible} />
-          </HeaderIconButton>
-          <HeaderIconButton label={isSidebarOpen ? "목록 숨기기" : "목록 보기"} onClick={() => setIsSidebarOpen((v) => !v)}>
-            <ListIcon active={isSidebarOpen} />
-          </HeaderIconButton>
-          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-            <FullscreenIcon active={isFullscreen} />
-          </HeaderIconButton>
-        </>
-      }
+      hideHeader
       video={
             <div className="relative h-full w-full">
+              <div className={`absolute inset-0 ${showNextCta ? "opacity-10" : ""}`}>
               <VideoPlayer
                 key="mimicking-player"
                 src={getVideoSource()}
                 startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
                 endTime={currentScene?.end ? timeStringToSeconds(currentScene.end) : 0}
                 muted={muted}
-                showText={isTextVisible}
+                showText={false}
                 text={currentScene.text}
                 playNonce={isMimickingStarted && playNonce > 0 ? playNonce : 0}
                 playing={isMimickingStarted && !isSequencePaused}
@@ -659,6 +693,35 @@ function MimickingPageContent() {
                   }
                 }}
               />
+              </div>
+
+              <Link
+                href={`/sing2/selecting?id=${movieId}`}
+                className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
+                aria-label="뒤로"
+                onClick={stopAllMedia}
+              >
+                <img src="/home/back.svg" alt="" className="h-full w-full" />
+              </Link>
+              <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+                <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+                  <FullscreenIcon active={isFullscreen} />
+                </HeaderIconButton>
+                {isMaster && !showNextCta && (
+                  <button type="button" className="watch-skip" onClick={skipLine}>
+                    SKIP
+                  </button>
+                )}
+              </div>
+
+              {isLineListOpen && !showNextCta && (
+                <MimicLineList
+                  total={lineTotal}
+                  currentIndex={currentIndex}
+                  canOpen={(index) => isMaster || index <= maxSentenceRef.current}
+                  onSelect={handleSceneSelect}
+                />
+              )}
               
               {/* 시작을 위한 클릭 오버레이 */}
               {!isMimickingStarted && currentIndex === 0 && (
@@ -676,92 +739,59 @@ function MimickingPageContent() {
               {isSequencePaused && !showNextCta && <PauseOverlay />}
         
             {showNextCta && (
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                {/* Dimmed overlay */}
-                <div className="absolute inset-0 bg-black/80"></div>
-                
-                {/* Button container */}
-                <div className="cta-row relative z-10 pointer-events-auto">
-                  {/* Again Button */}
-                  <button
-                    type="button"
-                    className="cta-btn cta-ghost"
-                    onClick={() => {
-                      execute30thMimickingSequence();
-                    }}
-                  >
-                    Again
-                  </button>
-                  
-                  {/* Next Button */}
-                  <button
-                    type="button"
-                    className="cta-btn cta-primary relative"
-                    onClick={handleNext}
-                  >
-                    {/* 카멜레온 이미지 오버레이 */}
-                    <img 
-                      src="/Subject.png" 
-                      alt="카멜레온" 
-                      className="cta-mascot"
-                    />
-                    Next
-                  </button>
+              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
+                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <button
+                      type="button"
+                      className="select-mode"
+                      onClick={() => {
+                        execute30thMimickingSequence();
+                      }}
+                    >
+                      Again
+                    </button>
+                    <p className="select-here" style={{ visibility: "hidden" }}>Let’s go</p>
+                  </div>
+                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <button
+                      type="button"
+                      className="select-mode is-open"
+                      onClick={handleNext}
+                    >
+                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      Next
+                    </button>
+                    <p className="cta-go">Let’s go</p>
+                  </div>
                 </div>
               </div>
             )}
           </div>
       }
       controls={
-        !showNextCta ? (
-          <PlaybackControls
-            onPrev={handlePrev}
-            onNext={handleNext}
-            onPlay={handlePlay}
-            activeIndex={activeControlIndex}
-            isFullscreen={false}
-            highlightNext={nudgeNext}
-          />
-        ) : null
-      }
-      aside={
-        isSidebarOpen ? (
-              <div className="flex h-full flex-col rounded-lg bg-[#1a1a1a] p-3">
-                <h3 className="mb-3 text-sm font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-                  SCENES
-                </h3>
-                <div className="custom-scrollbar flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
-                  <SceneList
-                    scenes={scenes as any}
-                    currentIndex={currentIndex}
-                    onSceneClick={(index) => {
-                      if (index === 0 && !isMimickingStarted) {
-                        return;
-                      }
-                      if (!isMaster && index > maxSentenceRef.current) {
-                        return;
-                      }
-                      if (isMaster) {
-                        maxSentenceRef.current = Math.max(maxSentenceRef.current, index);
-                      }
-                      clearTimeouts();
-                      clearStepTimeout();
-                      setIsSequencePaused(false);
-                      isSequencePausedRef.current = false;
-                      setNudgeNext(false);
-                      setAutoSeqIndex(null);
-                      setActiveControlIndex(null);
-                      setMuted(false);
-                      setIsSequenceRunning(false);
-                      setPlayNonce(0);
-                      lastStartedIndexRef.current = null;
-                      setCurrentIndex(index);
-                    }}
-                    isSequenceRunning={isSequenceRunning}
-                  />
-                </div>
-              </div>
-        ) : null
+          <div className="mimic-dock">
+            <PlaybackControls
+              variant="cinema"
+              onPrev={handlePrev}
+              onNext={handleNext}
+              onPlay={handlePlay}
+              activeIndex={activeControlIndex}
+              isFullscreen={false}
+              highlightNext={nudgeNext}
+            />
+            <button
+              type="button"
+              className="mimic-count"
+              aria-expanded={isLineListOpen}
+              aria-label="문장 목록"
+              onClick={() => setIsLineListOpen((open) => !open)}
+            >
+              <span>{lineCurrent} / </span>
+              <span className="mimic-count-total">{lineTotalLabel}</span>
+              <img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+            </button>
+          </div>
       }
     />
   );

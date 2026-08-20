@@ -5,8 +5,9 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import { useAuth } from '@/app/contexts/AuthContext';
 import VideoPlayer from '@/app/components/VideoPlayer';
 import ClickToStartOverlay from '@/app/components/ClickToStartOverlay';
-import WordCompleteButtons from '@/app/components/WordCompleteButtons';
 import PauseOverlay from '@/app/components/PauseOverlay';
+import MimicLineList from '@/app/components/MimicLineList';
+import Link from 'next/link';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
 import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId, resolveVideoUrl } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
@@ -44,8 +45,6 @@ interface LessonDataType {
   word_data: any[];
   watching_data?: any;
 }
-
-const WORD_CHIP_FONT = 'Encode Sans, sans-serif';
 
 function WordPageContent() {
   const { user, loading } = useAuth();
@@ -92,11 +91,14 @@ function WordPageContent() {
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const totalQuestions = 10;
   const evalLog = useEvaluationLog(lessonNumber, 'word', isStarted);
-  const { checking } = useRequireModeAccess(lessonNumber, 'word');
+  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'word');
+  const maxQuestionRef = useRef(1);
+  const lockHintTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isLineListOpen, setIsLineListOpen] = useState(false);
+  const [lockHint, setLockHint] = useState(false);
 
   const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
   const pack = parsePack(movieId);
-  const hasNextChapter = pack <= 1 && currentChapter < 12;
 
   const clearStepTimeout = useCallback(() => {
     if (stepTimeoutRef.current) {
@@ -114,6 +116,12 @@ function WordPageContent() {
     }, delay);
   }, [clearStepTimeout]);
 
+  const showLockHint = useCallback(() => {
+    setLockHint(true);
+    if (lockHintTimeoutRef.current) clearTimeout(lockHintTimeoutRef.current);
+    lockHintTimeoutRef.current = setTimeout(() => setLockHint(false), 1600);
+  }, []);
+
   useEffect(() => {
     isPausedRef.current = isPaused;
   }, [isPaused]);
@@ -127,7 +135,10 @@ function WordPageContent() {
   }, [isReplayingClip]);
 
   useEffect(() => {
-    return () => clearStepTimeout();
+    return () => {
+      clearStepTimeout();
+      if (lockHintTimeoutRef.current) clearTimeout(lockHintTimeoutRef.current);
+    };
   }, [clearStepTimeout]);
 
   useEffect(() => {
@@ -494,6 +505,8 @@ function WordPageContent() {
 
   const handleAgain = () => {
     clearStepTimeout();
+    maxQuestionRef.current = 1;
+    setIsLineListOpen(false);
     setShowCompletion(false);
     setCurrentQuestionNumber(1);
     playCountRef.current = 0;
@@ -513,7 +526,41 @@ function WordPageContent() {
     const nextChapter = currentChapter + 1;
     if (pack <= 1 && nextChapter <= 12) {
       window.location.href = `/sing2/word?id=${formatMovieId(pack, nextChapter)}`;
+      return;
     }
+    window.location.href = '/';
+  };
+
+  const goToQuestion = (n: number) => {
+    if (n < 1 || n > totalQuestions) return;
+    if (!isMaster && n > maxQuestionRef.current) {
+      showLockHint();
+      return;
+    }
+    if (isMaster) {
+      maxQuestionRef.current = Math.max(maxQuestionRef.current, n);
+    }
+    clearStepTimeout();
+    setIsLineListOpen(false);
+    setShowCompletion(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    setSelectedWords([]);
+    setUsedWords([]);
+    setHideAllWords(false);
+    setCurrentQuestionNumber(n);
+    setIsStarted(true);
+    setShowStartOverlay(false);
+    startListeningSequence();
+  };
+
+  const skipQuestion = () => {
+    if (showCompletion) return;
+    if (currentQuestionNumber >= totalQuestions) {
+      setShowCompletion(true);
+      return;
+    }
+    goToQuestion(currentQuestionNumber + 1);
   };
 
   const handleSubmit = () => {
@@ -554,7 +601,9 @@ function WordPageContent() {
           setPlayCount(0);
           setIsMuted(false);
           setGamePhase('playing');
-          setCurrentQuestionNumber((prev) => prev + 1);
+          const nextNum = currentQuestionNumber + 1;
+          maxQuestionRef.current = Math.max(maxQuestionRef.current, nextNum);
+          setCurrentQuestionNumber(nextNum);
           scheduleStep(() => setPlayNonce((prev) => prev + 1), 200);
         }
       }, 2000);
@@ -589,21 +638,10 @@ function WordPageContent() {
         key={index}
         type="button"
         onClick={() => handleWordClick(word, index)}
-        className={`break-words border-gray-300 bg-white text-center font-bold text-black shadow-lg transition-all ${
-          compact
-            ? 'rounded-xl border-2 px-3 py-1.5 text-sm'
-            : 'w-full rounded-xl border-4 px-2 py-2 text-xs lg:rounded-2xl lg:px-4 lg:py-4 lg:text-lg'
-        } ${
-          shouldHide
-            ? 'pointer-events-none scale-75 opacity-0'
-            : !canArrange || cannotAddMore
-              ? 'pointer-events-none cursor-not-allowed opacity-40'
-              : 'hover:scale-105 hover:bg-gray-100 hover:shadow-xl'
+        className={`word-chip ${compact ? 'is-compact' : ''} ${
+          shouldHide ? 'pointer-events-none scale-75 opacity-0' : !canArrange || cannotAddMore ? 'opacity-40' : ''
         }`}
-        style={{
-          fontFamily: WORD_CHIP_FONT,
-          transition: 'opacity 0.4s ease, transform 0.4s ease',
-        }}
+        style={{ transition: 'opacity 0.4s ease, transform 0.4s ease' }}
         disabled={shouldHide || !canArrange || cannotAddMore}
       >
         {word}
@@ -657,32 +695,31 @@ function WordPageContent() {
     );
   }
 
+  const slotActive = (index: number) =>
+    playCount === index && gamePhase === 'playing' && isStarted && !isPaused;
+  const videoHighlight = slotActive(2);
+  const lineCurrent = String(currentQuestionNumber).padStart(2, '0');
+  const lineTotalLabel = String(totalQuestions).padStart(2, '0');
+  const showSentence =
+    gamePhase === 'guessing' &&
+    selectedWords.length > 0 &&
+    !showCorrect &&
+    !showAgain &&
+    !showCompletion;
+
   return (
-    <LessonShell
-      subtitle={`${currentQuestionNumber}/${totalQuestions}`}
-      onCloseHref="/"
-      extraActions={
-        <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
-          <FullscreenIcon active={isFullscreen} />
-        </HeaderIconButton>
-      }
-    >
-      <div className="flex min-h-0 flex-1 flex-col md:grid md:grid-cols-[minmax(5.5rem,0.9fr)_minmax(0,1.7fr)_minmax(5.5rem,0.9fr)] md:gap-3 lg:grid-cols-[minmax(7.5rem,1fr)_minmax(0,2.2fr)_minmax(7.5rem,1fr)]">
-        <div className="hidden min-h-0 flex-col gap-2 overflow-y-auto md:flex">
-          {gamePhase === 'guessing' &&
-            leftWords.map((word, i) => renderWordChip(word, i))}
+    <LessonShell hideHeader compactStage>
+      <div className="word-board">
+        <div className="word-chips-side">
+          {gamePhase === 'guessing' && leftWords.map((word, i) => renderWordChip(word, i))}
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col items-center">
-          <div className="flex w-full shrink-0 items-center justify-center md:min-h-0 md:flex-1">
+          <div className="flex w-full min-h-0 flex-1 items-center justify-center">
             <div
-              className="relative aspect-video w-full overflow-hidden rounded-xl border-4 md:h-full md:rounded-3xl md:border-8 md:aspect-auto"
-              style={{
-                borderColor:
-                  playCount === 2 && gamePhase === 'playing' && isStarted && !isPaused
-                    ? '#60D96C'
-                    : '#201E1E',
-              }}
+              className={`word-video watch-frame relative aspect-video w-full max-h-full overflow-hidden ${
+                videoHighlight ? 'is-live' : ''
+              }`}
             >
               <div className="absolute inset-0">
                 {currentQuestion && (
@@ -721,133 +758,113 @@ function WordPageContent() {
                 )}
               </div>
 
+              <Link
+                href={`/sing2/selecting?id=${movieId}`}
+                className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
+                aria-label="뒤로"
+              >
+                <img src="/home/back.svg" alt="" className="h-full w-full" />
+              </Link>
+              <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+                <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
+                  <FullscreenIcon active={isFullscreen} />
+                </HeaderIconButton>
+                {isMaster && !showCompletion && (
+                  <button type="button" className="watch-skip" onClick={skipQuestion}>
+                    SKIP
+                  </button>
+                )}
+              </div>
+
+              {isLineListOpen && !showCompletion && (
+                <MimicLineList
+                  total={totalQuestions}
+                  currentIndex={currentQuestionNumber - 1}
+                  canOpen={(index) => isMaster || index < maxQuestionRef.current}
+                  onSelect={(index) => goToQuestion(index + 1)}
+                />
+              )}
+
               {showStartOverlay && <ClickToStartOverlay onClick={handleStart} />}
 
               {isPaused && !showCorrect && !showAgain && !showCompletion && <PauseOverlay />}
 
-              {showCorrect && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                  <div className="absolute inset-0 bg-black/70" />
-                  <div className="relative z-10 text-center">
-                    <div
-                      className="animate-pulse text-3xl font-bold sm:text-6xl"
-                      style={{
-                        fontFamily: 'Encode Sans, sans-serif',
-                        color: '#60D96C',
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-                        fontWeight: '900',
-                      }}
+              {showSentence && (
+                <div className="word-sentence">
+                  {selectedWords.map((word, index) => (
+                    <button
+                      key={`${word}-${index}`}
+                      type="button"
+                      className="word-sentence-item"
+                      onClick={() => handleRemoveAt(index)}
+                      disabled={!canArrange}
+                      aria-label={`${word} 제거`}
                     >
-                      Correct
-                    </div>
-                  </div>
+                      {word}
+                    </button>
+                  ))}
                 </div>
               )}
 
-              {showAgain && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                  <div className="absolute inset-0 bg-black/70" />
-                  <div className="relative z-10 text-center">
-                    <div
-                      className="animate-pulse text-3xl font-bold sm:text-6xl"
-                      style={{
-                        fontFamily: 'Encode Sans, sans-serif',
-                        color: '#9CA3AF',
-                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-                        fontWeight: '900',
-                      }}
-                    >
-                      Again
-                    </div>
-                  </div>
+              {showCorrect && <p className="guess-banner is-correct">Correct</p>}
+              {showAgain && <p className="guess-banner is-again">Again</p>}
+
+              {lockHint && (
+                <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-lg bg-black/80 px-4 py-2 text-sm font-semibold text-white sm:text-base" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+                  아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.
                 </div>
               )}
 
               {showCompletion && (
-                <WordCompleteButtons
-                  onAgain={handleAgain}
-                  onNext={handleNext}
-                  hasNextChapter={hasNextChapter}
-                />
+                <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                  <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
+                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                      <button type="button" className="select-mode" onClick={handleAgain}>
+                        Again
+                      </button>
+                      <p className="select-here" style={{ visibility: 'hidden' }}>Let’s go</p>
+                    </div>
+                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                      <button type="button" className="select-mode is-open" onClick={handleNext}>
+                        <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                        Next
+                      </button>
+                      <p className="cta-go">Let’s go</p>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           </div>
 
-          <div className="mt-2 flex max-h-[22vh] flex-wrap justify-center gap-1 overflow-y-auto md:hidden">
+          <div className="word-chips-mobile">
             {gamePhase === 'guessing' &&
               shuffled.map((word, index) => renderWordChip(word, index, true))}
           </div>
 
-          <div className="relative z-50 mt-auto w-full overflow-x-auto pt-1">
-            <div
-              className="mx-auto flex w-max max-w-full items-center justify-center rounded-lg bg-[#201E1E] px-1 py-1 sm:px-2"
-              style={{ gap: 'var(--ctrl-gap)' }}
-            >
+          <div className="word-dock relative z-20 mt-2 w-full justify-center overflow-x-auto pt-1">
+            <div className="word-bar">
               <ControlTriangle
                 direction="left"
                 label="다시 듣기"
                 disabled={controlsLocked}
                 onClick={handleReplayOnce}
               />
-
-              <div
-                className="flex items-center justify-center text-lg font-bold text-black transition-transform duration-300"
-                style={{
-                  background:
-                    playCount === 0 && gamePhase === 'playing' && isStarted && !isPaused
-                      ? 'var(--mimic)'
-                      : 'var(--mute)',
-                  borderRadius: '10px',
-                  width: 'var(--ctrl-size)',
-                  height: 'var(--ctrl-size)',
-                  pointerEvents: 'none',
-                }}
-                aria-hidden
-              >
+              <div className={`ctrl-slot is-listen ${slotActive(0) ? 'is-active' : ''}`} style={{ width: 'var(--ctrl-size)', height: 'var(--ctrl-size)' }} aria-hidden>
                 <span className="ctrl-play-icon" />
               </div>
-
-              <div
-                className="flex items-center justify-center text-lg font-bold text-black transition-transform duration-300"
-                style={{
-                  background:
-                    playCount === 1 && gamePhase === 'playing' && isStarted && !isPaused
-                      ? 'var(--mimic)'
-                      : 'var(--mute)',
-                  borderRadius: '10px',
-                  width: 'var(--ctrl-size)',
-                  height: 'var(--ctrl-size)',
-                  pointerEvents: 'none',
-                }}
-                aria-hidden
-              >
+              <div className={`ctrl-slot is-listen ${slotActive(1) ? 'is-active' : ''}`} style={{ width: 'var(--ctrl-size)', height: 'var(--ctrl-size)' }} aria-hidden>
                 <span className="ctrl-play-icon" />
               </div>
-
-              <div
-                className="flex items-center justify-center text-lg font-bold text-black transition-transform duration-300"
-                style={{
-                  background:
-                    playCount === 2 && gamePhase === 'playing' && isStarted && !isPaused
-                      ? 'var(--mimic)'
-                      : 'var(--mute)',
-                  borderRadius: '10px',
-                  width: 'var(--ctrl-size)',
-                  height: 'var(--ctrl-size)',
-                  pointerEvents: 'none',
-                }}
-                aria-hidden
-              >
+              <div className={`ctrl-slot is-mimic ${slotActive(2) ? 'is-active' : ''}`} style={{ width: 'var(--ctrl-size)', height: 'var(--ctrl-size)' }} aria-hidden>
                 <span className="ctrl-mute-letter">m</span>
               </div>
-
               <ControlTriangle
                 direction="right"
                 label="전체 다시 듣기"
                 disabled={controlsLocked}
                 onClick={handleReplayAll}
               />
-
               <button
                 type="button"
                 onClick={handleDeleteLast}
@@ -857,60 +874,44 @@ function WordPageContent() {
                   width: 'var(--ctrl-size)',
                   height: 'var(--ctrl-size)',
                   backgroundColor: '#2a2a2a',
-                  fontFamily: WORD_CHIP_FONT,
                 }}
                 aria-label="마지막 단어 삭제"
               >
                 ⌫
               </button>
             </div>
+            <button
+              type="button"
+              className="mimic-count"
+              aria-expanded={isLineListOpen}
+              aria-label="문제 목록"
+              onClick={() => setIsLineListOpen((open) => !open)}
+            >
+              <span>{lineCurrent} / </span>
+              <span className="mimic-count-total">{lineTotalLabel}</span>
+              <img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+            </button>
           </div>
 
-          <button
-            type="button"
-            onClick={handleSubmit}
-            disabled={!canSubmit}
-            className={`relative z-50 mb-1 mt-1 h-12 w-12 shrink-0 transition-transform sm:h-16 sm:w-16 md:mb-3 md:h-[88px] md:w-[88px] ${
-              canSubmit
-                ? 'hover:scale-105 animate-pulse-button'
-                : 'cursor-not-allowed opacity-40'
-            }`}
-            style={{ background: 'transparent', border: 'none' }}
-            aria-label="정답 제출"
-          >
-            <img src="/Subject.png" alt="제출" className="h-full w-full object-contain" />
-          </button>
+          {!showCompletion && (
+            <button
+              type="button"
+              onClick={handleSubmit}
+              disabled={!canSubmit}
+              className={`word-submit relative z-20 mb-1 mt-1 shrink-0 ${
+                canSubmit ? 'hover:scale-105 animate-pulse-button' : 'cursor-not-allowed opacity-40'
+              }`}
+              aria-label="정답 제출"
+            >
+              <img src="/home/chameleon.png" alt="" />
+            </button>
+          )}
         </div>
 
-        <div className="hidden min-h-0 flex-col gap-2 overflow-y-auto md:flex">
-          {gamePhase === 'guessing' &&
-            rightWords.map((word, i) => renderWordChip(word, mid + i))}
+        <div className="word-chips-side">
+          {gamePhase === 'guessing' && rightWords.map((word, i) => renderWordChip(word, mid + i))}
         </div>
       </div>
-
-      {(selectedWords.length > 0 || (gamePhase === 'guessing' && neededCount > 0)) && (
-        <div className="mt-2 flex flex-wrap items-center justify-center gap-2 rounded-xl bg-gray-900/95 p-2">
-          <span
-            className="mr-1 text-xs font-semibold text-gray-400 sm:text-sm"
-            style={{ fontFamily: WORD_CHIP_FONT }}
-          >
-            {selectedWords.length}/{neededCount}
-          </span>
-          {selectedWords.map((word, index) => (
-            <button
-              key={`${word}-${index}`}
-              type="button"
-              onClick={() => handleRemoveAt(index)}
-              disabled={!canArrange}
-              className="rounded-lg bg-[#60D96C] px-3 py-1 text-sm font-bold text-black transition-transform hover:scale-105 disabled:cursor-default md:px-5 md:py-3 md:text-lg"
-              style={{ fontFamily: WORD_CHIP_FONT }}
-              aria-label={`${word} 제거`}
-            >
-              {word}
-            </button>
-          ))}
-        </div>
-      )}
     </LessonShell>
   );
 }

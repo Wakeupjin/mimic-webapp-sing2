@@ -14,10 +14,13 @@ import {
   canAccessLesson,
   canAccessMode,
   isMasterRole,
+  isModeCompleted,
+  MODE_ORDER,
   type LearnMode,
   type ProgressRow,
 } from '../../lib/progressGate';
-import { FullscreenIcon, HeaderCloseLink, HeaderIconButton } from '../../components/HeaderIcons'; 
+import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
+import ModeSelectLayout from '../../components/ModeSelectLayout'; 
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -28,9 +31,6 @@ type LessonSummary = {
 // --- [/SUPABASE 연결 및 타입 정의] ---
 
 // 상수 (로컬 상수는 최소화하고 Supabase 데이터를 사용)
-const SELECTING_DROPDOWN_MAX_HEIGHT_PX = 300; 
-const SELECTING_SCROLL_THRESHOLD_PX = 5;
-
 function SelectingPageContent() {
   // 모든 훅을 최상단에 배치 (조건부 호출 방지)
   const { user, profile, loading } = useAuth();
@@ -40,12 +40,10 @@ function SelectingPageContent() {
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   
   // 상태 관리
-  const [selectedMode, setSelectedMode] = useState<string | null>(null);
   const [lessons, setLessons] = useState<LessonSummary[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [canScrollDown, setCanScrollDown] = useState(false);
   const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
   const isMaster = isMasterRole(profile?.role); 
   
@@ -113,25 +111,6 @@ function SelectingPageContent() {
     };
   }, [isDropdownOpen]);
 
-  // Check scrollable state
-  useEffect(() => {
-    const checkScrollable = () => {
-      if (scrollContainerRef.current) {
-        const { scrollTop, scrollHeight, clientHeight } = scrollContainerRef.current;
-        setCanScrollDown(scrollTop < scrollHeight - clientHeight - SELECTING_SCROLL_THRESHOLD_PX);
-      }
-    };
-
-    if (isDropdownOpen && scrollContainerRef.current) {
-      checkScrollable();
-      const container = scrollContainerRef.current;
-      // 초기 렌더링 시 스크롤 가능 여부 확인을 위해 setTimeout 사용
-      setTimeout(checkScrollable, 0); 
-      container.addEventListener('scroll', checkScrollable);
-      return () => container.removeEventListener('scroll', checkScrollable);
-    }
-  }, [isDropdownOpen]);
-
   // 로딩 상태 처리
   if (loading) {
     return (
@@ -160,9 +139,7 @@ function SelectingPageContent() {
     if (!isMaster && !canAccessMode(progressRows, selectedLesson.lesson_number, mode)) {
       return;
     }
-    setSelectedMode(mode);
 
-    // Supabase에서 가져온 video_id와 lesson_number를 사용
     const movieId = formatMovieId(pack, selectedLesson.lesson_number);
     
     if (mode === 'mimicking') {
@@ -202,184 +179,48 @@ function SelectingPageContent() {
   const lessonNo = selectedLesson?.lesson_number || 1;
   const modeOpen = (mode: LearnMode) =>
     isMaster || canAccessMode(progressRows, lessonNo, mode);
+  const hereMode =
+    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, lessonNo, mode)) ?? 'word';
 
-  const modeButtonClass =
-  "rounded-2xl border-4 border-gray-300 px-4 py-4 text-lg font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-lg hover:border-gray-400 disabled:opacity-40 disabled:hover:scale-100 sm:text-xl lg:border-8 lg:px-8 lg:py-5 lg:text-2xl";
+  const MODE_LABEL: Record<LearnMode, string> = {
+    watching: 'Watch',
+    mimicking: 'Mimic',
+    guessing: 'Guess',
+    word: 'Quiz',
+  };
 
   return (
-    <main className="flex min-h-dvh flex-col px-4 py-4" style={{ backgroundColor: '#000000' }}>
-      {/* Header */}
-      <div className="mb-6 flex items-center justify-between md:mb-8">
-        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-          {pack >= 2 ? 'SING 2 · Hard' : 'SING 2'}
-        </h1>
-         <div className="flex items-center gap-1.5">
-          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-            <FullscreenIcon active={isFullscreen} />
-          </HeaderIconButton>
-          <HeaderCloseLink />
-        </div>
-      </div>
-
-      {/* Lesson dropdown (Chapter 대신 Lesson 번호와 제목 사용) */}
-      <div className="mb-6 flex justify-center md:mb-8">
-        <div className="relative w-full max-w-xs sm:max-w-sm" ref={dropdownRef}>
-          <button
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="flex w-full items-center gap-3 px-6 py-3 rounded-xl text-white font-bold text-xl transition-all duration-200 hover:bg-[#2a2a2a] cursor-pointer"
-            style={{
-              backgroundColor: '#201E1E',
-              fontFamily: 'Encode Sans, sans-serif',
-              justifyContent: 'center'
-            }}
-          >
-            <div className="flex flex-col items-center truncate flex-1">
-                <span className="text-base truncate max-w-[250px]">{selectedLesson ? `Lesson ${selectedLesson.lesson_number}` : 'Lesson을 선택하세요'}</span>
-            </div>
-            <div className="absolute right-4">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
-              >
-                <path d="M5 7.5L10 12.5L15 7.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          </button>
-
-          {/* Dropdown menu */}
-          {isDropdownOpen && (
-            <div
-              className="absolute top-full mt-2 w-full rounded-xl overflow-hidden shadow-lg"
-              style={{ backgroundColor: '#201E1E', zIndex: 50, maxHeight: '200px' }}
-            >
-              <div ref={scrollContainerRef} className="overflow-auto custom-scrollbar" style={{ maxHeight: '200px' }}>
-                {lessons.map((lesson) => {
-                  const isSelected = lesson.id === selectedLesson?.id;
-                  return (
-                    <button
-                      key={lesson.id}
-                      onClick={() => {
-                        setSelectedLesson(lesson); // Lesson 객체 전체를 선택
-                        setIsDropdownOpen(false);
-                      }}
-                      className={`w-full px-6 py-3 text-center text-white font-bold text-lg transition-colors duration-200 hover:bg-[#2a2a2a] border-t border-gray-800 first:border-t-0 flex items-center justify-center relative ${
-                        !isMaster && !canAccessLesson(progressRows, lesson.lesson_number) ? 'opacity-40' : ''
-                      }`}
-                      style={{ fontFamily: 'Encode Sans, sans-serif' }}
-                    >
-                      <div className="flex flex-col items-center justify-center flex-1 text-center">
-                        <span className="text-base">Lesson {lesson.lesson_number}</span>
-                      </div>
-                      
-                      {isSelected && (
-                        <div className="absolute right-4">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 38 38" fill="none">
-                            <rect width="38" height="38" rx="10" transform="matrix(-1 0 0 1 38 0)" fill="#60D96C"/>
-                            <path d="M12 15.3942L18.383 25L27 11" stroke="#ECECEC" strokeWidth="5"/>
-                          </svg>
-                        </div>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
-              
-              {/* Small arrow at right end - only show when scrollable */}
-              {canScrollDown && (
-                <div className="absolute right-2 bottom-2 pointer-events-none">
-                  <div className="animate-bounce">
-                    <svg 
-                      width="12" 
-                      height="12" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="text-gray-500"
-                    >
-                      <path 
-                        d="M7 10L12 15L17 10" 
-                        stroke="currentColor" 
-                        strokeWidth="3" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-
-      <div className="flex flex-1 items-center justify-center py-4">
-        <div className="w-full text-center">
-        
-        <div className="mx-auto grid w-full max-w-xl grid-cols-2 gap-3 sm:gap-4 lg:flex lg:max-w-none lg:justify-center lg:gap-6">
-          <button
-            onClick={() => handleModeSelect('watching')}
-            disabled={!modeOpen('watching')}
-            className={modeButtonClass}
-            style={{
-              backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif'
-            }}
-          >
-            Watch
-          </button>
-          
-          <button
-            onClick={() => handleModeSelect('mimicking')}
-            disabled={!modeOpen('mimicking')}
-            className={modeButtonClass}
-            style={{
-              backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif'
-            }}
-          >
-            Mimic
-          </button>
-          
-          <button
-            onClick={() => handleModeSelect('guessing')}
-            disabled={!modeOpen('guessing')}
-            className={modeButtonClass}
-            style={{
-              backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif'
-            }}
-          >
-            Guess
-          </button>
-          
-          <button
-            onClick={() => handleModeSelect('word')}
-            disabled={!modeOpen('word')}
-            className={modeButtonClass}
-            style={{
-              backgroundColor: 'white', 
-              fontFamily: 'Encode Sans, sans-serif'
-            }}
-          >
-            Word
-          </button>
-        </div>
-        
-        {selectedMode && (
-          <p className="mt-6 text-lg text-gray-300">
-            {selectedMode === 'mimicking' ? 'Mimicking' : 
-             selectedMode === 'guessing' ? 'Guessing' : 
-             selectedMode === 'watching' ? 'Watching' : 
-             selectedMode === 'word' ? 'Word' : ''} mode loading...
-          </p>
-        )}
-        </div>
-      </div>
-    </main>
+    <ModeSelectLayout
+      chapterLabel={selectedLesson ? `CHAPTER ${selectedLesson.lesson_number}` : 'CHAPTER'}
+      dropdownOpen={isDropdownOpen}
+      onToggleDropdown={() => setIsDropdownOpen((open) => !open)}
+      dropdownRef={dropdownRef}
+      listRef={scrollContainerRef}
+      extraActions={
+        <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
+          <FullscreenIcon active={isFullscreen} />
+        </HeaderIconButton>
+      }
+      chapters={lessons.map((lesson) => ({
+        id: lesson.id,
+        label: `CHAPTER ${lesson.lesson_number}`,
+        locked: !isMaster && !canAccessLesson(progressRows, lesson.lesson_number),
+        selected: lesson.id === selectedLesson?.id,
+        done: isMaster || isModeCompleted(progressRows, lesson.lesson_number, 'word'),
+        onSelect: () => {
+          setSelectedLesson(lesson);
+          setIsDropdownOpen(false);
+        },
+      }))}
+      modes={MODE_ORDER.map((mode) => ({
+        id: mode,
+        label: MODE_LABEL[mode],
+        locked: !modeOpen(mode),
+        done: isModeCompleted(progressRows, lessonNo, mode),
+        here: hereMode === mode,
+        onSelect: () => handleModeSelect(mode),
+      }))}
+    />
   );
 }
 

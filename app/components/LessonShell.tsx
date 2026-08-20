@@ -10,6 +10,9 @@ type LessonShellProps = {
   onCloseHref?: string;
   onClose?: () => void;
   videoHighlight?: boolean;
+  hideHeader?: boolean;
+  compactStage?: boolean;
+  footer?: ReactNode;
   video?: ReactNode;
   controls?: ReactNode;
   aside?: ReactNode;
@@ -24,28 +27,30 @@ export default function LessonShell({
   onCloseHref = "/",
   onClose,
   videoHighlight = false,
+  hideHeader = false,
+  compactStage = false,
+  footer,
   video,
   controls,
   aside,
   onAsideDismiss,
   children,
 }: LessonShellProps) {
-  const frameClass = `relative overflow-hidden rounded-lg border-2 sm:rounded-xl sm:border-4 md:rounded-2xl md:border-8 ${
-    videoHighlight ? "border-[#60D96C]" : "border-[#201E1E]"
+  const frameClass = `relative overflow-hidden ${
+    hideHeader
+      ? `watch-frame ${videoHighlight ? "is-live" : ""}`
+      : `rounded-lg border-2 sm:rounded-xl sm:border-4 md:rounded-2xl md:border-8 ${
+          videoHighlight ? "border-[#60D96C]" : "border-[#201E1E]"
+        }`
   }`;
 
   return (
     <main
-      className="flex flex-col overflow-hidden bg-[#0a0a0a] text-white"
-      style={{
-        height: "100dvh",
-        paddingTop: "max(0.4rem, env(safe-area-inset-top))",
-        paddingBottom: "max(0.4rem, env(safe-area-inset-bottom))",
-        paddingLeft: "max(0.6rem, env(safe-area-inset-left))",
-        paddingRight: "max(0.6rem, env(safe-area-inset-right))",
-      }}
+      className={`flex flex-col overflow-hidden bg-[#0a0a0a] text-white ${
+        hideHeader ? (compactStage ? "watch-stage is-compact" : "watch-stage") : "lesson-stage"
+      }`}
     >
-      <header className="flex shrink-0 items-center justify-between gap-2 py-1">
+      <header className={`flex shrink-0 items-center justify-between gap-2 py-1 ${hideHeader ? "hidden" : ""}`}>
         <div className="flex min-w-0 items-baseline gap-2">
           <h1
             className="text-base font-semibold text-[#60D96C] md:text-xl"
@@ -79,7 +84,8 @@ export default function LessonShell({
                   <div className="absolute inset-0 bg-black">{video}</div>
                 </div>
               </section>
-              {controls ? <div className="shrink-0 pt-1.5 md:pt-3">{controls}</div> : null}
+              {controls ? <div className="watch-controls">{controls}</div> : null}
+              {footer ? <div className="shrink-0 pb-1 pt-2">{footer}</div> : null}
             </>
           )}
         </div>

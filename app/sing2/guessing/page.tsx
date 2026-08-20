@@ -17,11 +17,12 @@ import { captureVideoScreenshotUltimate, setupVideoCorsOnLoad } from "../../util
 import { getVideoSource } from "../../utils/videoSource";
 import { playTimedSegment, unlockMediaPlayback } from "../../utils/playTimedSegment";
 import { requestAppFullscreen, applyInlinePlayback } from "../../utils/device";
+import Link from "next/link";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
-import GuessingResultScreen from "../../components/GuessingResultScreen";
 import GuessingOverlays from "../../components/GuessingOverlays";
+import MimicLineList from "../../components/MimicLineList";
 import LessonShell from "../../components/LessonShell";
-import { FullscreenIcon, HeaderCloseLink, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
+import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import ControlTriangle from "../../components/ControlTriangle";
 import PauseOverlay from "../../components/PauseOverlay";
 import { saveProgress, getProgressByMode, saveLog, saveResult } from "../../lib/progress";
@@ -145,11 +146,7 @@ function GuessingPageContent() {
   const maxQuestionRef = useRef(0);
 
   // 로컬 상태 (훅으로 교체되지 않은 것들)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  useEffect(() => {
-    setIsSidebarOpen(window.matchMedia("(min-width: 1024px)").matches);
-  }, []);
-  const [isTextVisible, setIsTextVisible] = useState(false);
+  const [isLineListOpen, setIsLineListOpen] = useState(false);
   const [muted, setMuted] = useState(false);
   const [activeControlIndex, setActiveControlIndex] = useState<number | null>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -649,7 +646,14 @@ function GuessingPageContent() {
     showLockHint,
   ]);
 
-  const canSelectAnswer = allOptionsPlayed && !isPaused && !showCorrect && !showAgain && !nudgeNext;
+  const restartGuessing = useCallback(() => {
+    maxQuestionRef.current = 0;
+    setCorrectCount(0);
+    setUserAnswers([]);
+    jumpToQuestion(0);
+  }, [setCorrectCount, setUserAnswers, jumpToQuestion]);
+
+  const canSelectAnswer = allOptionsPlayed && !isPaused && !showCorrect && !showAgain && !nudgeNext && !showResults;
 
   // 답안 선택 처리
   const handleAnswerSelection = useCallback((selectedAnswer: string) => {
@@ -764,83 +768,38 @@ function GuessingPageContent() {
     );
   }
 
-  // 결과 화면
-  if (showResults) {
-    const correctAnswers = correctCount;
-
-    return (
-      <GuessingResultScreen
-        movieTitle="SING 2"
-        correctAnswers={correctAnswers}
-        totalQuestions={totalQuestions}
-        isFullscreen={isFullscreen}
-        toggleFullscreen={toggleFullscreen}
-        onStopAllMedia={stopAllMedia}
-        onNext={() => {
-          stopAllMedia();
-          if (document.fullscreenElement) {
-            sessionStorage.setItem('maintainFullscreen', 'true');
-          }
-          window.location.href = `/sing2/word?id=${movieId}`;
-        }}
-      />
-    );
-  }
-
-  // 안내 화면
-  if (showIntro) {
-    return (
-      <main className="min-h-screen px-4 py-4">
-        <div className="mb-4 flex items-center justify-between">
-          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
-          <div className="flex items-center gap-1.5">
-            <HeaderIconButton label={isSidebarOpen ? "목록 숨기기" : "목록 보기"} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-              <ListIcon active={isSidebarOpen} />
-            </HeaderIconButton>
-            <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-              <FullscreenIcon active={isFullscreen} />
-            </HeaderIconButton>
-            <HeaderCloseLink onClick={stopAllMedia} />
-          </div>
-        </div>
-
-        <div className="flex items-center justify-center" style={{ height: 'calc(100vh - 120px)' }}>
-          <div className="text-center text-white">
-            <h1 className="text-4xl font-bold mb-8" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-              Guessing Game
-            </h1>
-            <p className="text-2xl mb-4" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-              무음 영상을 3번 보고 정답을 클릭하세요
-            </p>
-            <p className="text-lg opacity-70" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-              준비 중...
-            </p>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
   // 게싱 게임 화면
+  const lineTotal = totalQuestions || guessingData.length || 10;
+  const lineCurrent = String(Math.min(currentQuestionIndex + 1, lineTotal)).padStart(2, "0");
+  const lineTotalLabel = String(lineTotal).padStart(2, "0");
+  const remainingPlays =
+    isGuessingStarted &&
+    !isPaused &&
+    !showCorrect &&
+    !showAgain &&
+    !showResults &&
+    videoPlayCount < GUESSING_VIDEO_PLAYS
+      ? GUESSING_VIDEO_PLAYS - videoPlayCount
+      : null;
+  const showListen =
+    isGuessingStarted &&
+    videoPlayCount >= GUESSING_VIDEO_PLAYS &&
+    !allOptionsPlayed &&
+    !nudgeNext &&
+    !isPaused &&
+    !showCorrect &&
+    !showAgain &&
+    !showResults;
+  const showWhich =
+    canSelectAnswer && !showListen;
+
   return (
     <LessonShell
-      subtitle={`${currentQuestionIndex + 1}/${totalQuestions}`}
-      onClose={stopAllMedia}
-      onCloseHref="/"
-      onAsideDismiss={() => setIsSidebarOpen(false)}
-      videoHighlight={isClipPlaying}
-      extraActions={
-        <>
-          <HeaderIconButton label={isSidebarOpen ? "목록 숨기기" : "목록 보기"} onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-            <ListIcon active={isSidebarOpen} />
-          </HeaderIconButton>
-          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-            <FullscreenIcon active={isFullscreen} />
-          </HeaderIconButton>
-        </>
-      }
+      hideHeader
+      videoHighlight={isClipPlaying || Boolean(playingAudio)}
       video={
         <div className="relative h-full w-full">
+              <div className={`absolute inset-0 ${showResults ? "opacity-10" : ""}`}>
               {isGuessingStarted && currentQuestion && (
                 <VideoPlayer
                   key="guessing-player"
@@ -855,7 +814,7 @@ function GuessingPageContent() {
                   hidePauseOverlay={true}
                   activeControlIndex={3}
                   onClick={() => {
-                    if (isGuessingStarted && !showCorrect && !showAgain && !nudgeNext) {
+                    if (isGuessingStarted && !showCorrect && !showAgain && !nudgeNext && !showResults) {
                       togglePause();
                     }
                   }}
@@ -887,6 +846,7 @@ function GuessingPageContent() {
                   }}
                 />
               )}
+              </div>
 
               <video
                 id="audio-video"
@@ -897,6 +857,44 @@ function GuessingPageContent() {
                 playsInline
                 onLoadedMetadata={(e) => applyInlinePlayback(e.currentTarget)}
               />
+
+              <Link
+                href={`/sing2/selecting?id=${movieId}`}
+                className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
+                aria-label="뒤로"
+                onClick={stopAllMedia}
+              >
+                <img src="/home/back.svg" alt="" className="h-full w-full" />
+              </Link>
+              <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+                <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+                  <FullscreenIcon active={isFullscreen} />
+                </HeaderIconButton>
+                {isMaster && !showResults && (
+                  <button type="button" className="watch-skip" onClick={goToNextQuestion}>
+                    SKIP
+                  </button>
+                )}
+              </div>
+
+              {isLineListOpen && !showResults && (
+                <MimicLineList
+                  total={lineTotal}
+                  currentIndex={currentQuestionIndex}
+                  canOpen={(index) => isMaster || index <= maxQuestionRef.current}
+                  onSelect={(index) => {
+                    if (!isMaster && index > maxQuestionRef.current) {
+                      showLockHint();
+                      return;
+                    }
+                    if (isMaster) {
+                      maxQuestionRef.current = Math.max(maxQuestionRef.current, index);
+                    }
+                    setIsLineListOpen(false);
+                    jumpToQuestion(index);
+                  }}
+                />
+              )}
 
               {!isGuessingStarted && currentQuestion && (
                 <ClickToStartOverlay
@@ -911,21 +909,14 @@ function GuessingPageContent() {
                 />
               )}
 
-            {isPaused && !showCorrect && !showAgain && !nudgeNext && <PauseOverlay />}
+            {isPaused && !showCorrect && !showAgain && !nudgeNext && !showResults && <PauseOverlay />}
 
             <GuessingOverlays
-              screenshot={screenshot}
-              videoPlayCount={videoPlayCount}
+              remainingPlays={remainingPlays}
+              showListen={showListen}
+              showWhich={showWhich}
               showCorrect={showCorrect}
               showAgain={showAgain}
-              listeningAbc={
-                videoPlayCount >= 3 &&
-                !allOptionsPlayed &&
-                !nudgeNext &&
-                !isPaused &&
-                !showCorrect &&
-                !showAgain
-              }
             />
 
             {lockHint && (
@@ -933,132 +924,98 @@ function GuessingPageContent() {
                 아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.
               </div>
             )}
+
+            {showResults && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
+                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <button type="button" className="select-mode" onClick={restartGuessing}>
+                      Again
+                    </button>
+                    <p className="select-here" style={{ visibility: "hidden" }}>Let’s go</p>
+                  </div>
+                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <button
+                      type="button"
+                      className="select-mode is-open"
+                      onClick={() => {
+                        stopAllMedia();
+                        if (document.fullscreenElement) {
+                          sessionStorage.setItem("maintainFullscreen", "true");
+                        }
+                        window.location.href = `/sing2/word?id=${movieId}`;
+                      }}
+                    >
+                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      Next
+                    </button>
+                    <p className="cta-go">Let’s go</p>
+                  </div>
+                </div>
+              </div>
+            )}
         </div>
       }
       controls={
-          <div className="w-full overflow-x-auto">
-            <div
-              className="mx-auto flex w-max max-w-full items-center justify-center rounded-lg bg-[#201E1E] px-1 py-1 sm:px-2"
-              style={{ gap: "var(--ctrl-gap)" }}
-            >
-              {currentQuestion && (
-                <>
-                  <ControlTriangle
-                    direction="left"
-                    label="이전 문제"
-                    onClick={handlePrevQuestion}
-                  />
-
-                  {currentQuestion.options
-                    .sort((a: any, b: any) => a.label.localeCompare(b.label))
-                    .map((option: any) => (
-                    <button
-                      key={option.label}
-                      type="button"
-                      aria-label={canSelectAnswer ? `${option.label} 선택 (길게 누르면 다시 듣기)` : `${option.label} (아직 고를 수 없음)`}
-                      disabled={!allOptionsPlayed}
-                      className={`min-w-[2.6rem] flex-1 rounded-xl border-4 px-3 py-2 text-sm font-bold text-black transition-all duration-200 sm:min-w-[3.5rem] sm:flex-none sm:rounded-2xl sm:border-8 sm:px-6 sm:py-4 sm:text-lg disabled:pointer-events-none disabled:opacity-40 disabled:hover:scale-100 disabled:active:scale-100 ${
-                        !canSelectAnswer
-                          ? 'cursor-not-allowed opacity-40'
-                          : 'hover:scale-105 hover:shadow-lg'
-                      } ${
-                        playingAudio === option.label && !isPlaying
-                          ? 'border-[#60D96C] animate-pulse-playing'
-                          : canSelectAnswer
-                            ? 'border-gray-300 hover:border-gray-400'
-                            : 'border-gray-300'
-                      } ${canSelectAnswer ? 'animate-pulse-button' : ''}`}
-                      style={{
-                        backgroundColor: 'white',
-                        fontFamily: 'Encode Sans, sans-serif',
-                        borderColor: playingAudio === option.label && !isPlaying ? '#60D96C' : undefined
-                      }}
-                      onPointerDown={() => {
-                        if (!canSelectAnswer) return;
-                        longPressFiredRef.current = false;
-                        clearLongPress();
-                        longPressTimerRef.current = setTimeout(() => {
-                          longPressFiredRef.current = true;
-                          replayOption(option);
-                        }, 500);
-                      }}
-                      onPointerUp={clearLongPress}
-                      onPointerLeave={clearLongPress}
-                      onPointerCancel={clearLongPress}
-                      onMouseEnter={(e) => {
-                        if (!canSelectAnswer) return;
-                        if (playingAudio !== option.label) {
-                          e.currentTarget.style.backgroundColor = '#f8f8f8';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (playingAudio !== option.label) {
-                          e.currentTarget.style.backgroundColor = 'white';
-                        }
-                      }}
-                      onClick={() => {
-                        if (longPressFiredRef.current) {
-                          longPressFiredRef.current = false;
-                          return;
-                        }
-                        if (canSelectAnswer) {
-                          handleAnswerSelection(option.label);
-                        }
-                      }}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-
-                  <ControlTriangle
-                    direction="right"
-                    label="다음 문제"
-                    highlight={nudgeNext}
-                    onClick={handleNextQuestion}
-                  />
-                </>
-              )}
+          <div className="guess-dock">
+            <div className="guess-abc">
+              <ControlTriangle
+                direction="left"
+                label="이전 문제"
+                onClick={handlePrevQuestion}
+              />
+              {currentQuestion && currentQuestion.options
+                .sort((a: any, b: any) => a.label.localeCompare(b.label))
+                .map((option: any) => (
+                <button
+                  key={option.label}
+                  type="button"
+                  aria-label={canSelectAnswer ? `${option.label} 선택 (길게 누르면 다시 듣기)` : `${option.label} (아직 고를 수 없음)`}
+                  className={`guess-opt ${playingAudio === option.label && !isPlaying ? "is-playing" : ""}`}
+                  onPointerDown={() => {
+                    if (!canSelectAnswer) return;
+                    longPressFiredRef.current = false;
+                    clearLongPress();
+                    longPressTimerRef.current = setTimeout(() => {
+                      longPressFiredRef.current = true;
+                      replayOption(option);
+                    }, 500);
+                  }}
+                  onPointerUp={clearLongPress}
+                  onPointerLeave={clearLongPress}
+                  onPointerCancel={clearLongPress}
+                  onClick={() => {
+                    if (longPressFiredRef.current) {
+                      longPressFiredRef.current = false;
+                      return;
+                    }
+                    if (canSelectAnswer) {
+                      handleAnswerSelection(option.label);
+                    }
+                  }}
+                >
+                  {option.label}
+                </button>
+              ))}
+              <ControlTriangle
+                direction="right"
+                label="다음 문제"
+                highlight={nudgeNext}
+                onClick={handleNextQuestion}
+              />
             </div>
+            <button
+              type="button"
+              className="mimic-count"
+              aria-expanded={isLineListOpen}
+              aria-label="문제 목록"
+              onClick={() => setIsLineListOpen((open) => !open)}
+            >
+              <span>{lineCurrent} / </span>
+              <span className="mimic-count-total">{lineTotalLabel}</span>
+              <img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+            </button>
           </div>
-      }
-      aside={
-        isSidebarOpen ? (
-              <div className="flex h-full flex-col rounded-lg bg-[#1a1a1a] p-3">
-                <h3 className="mb-3 text-sm font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-                  QUESTIONS
-                </h3>
-                <div className="custom-scrollbar flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto">
-                  {guessingData.map((question, index) => {
-                    const locked = !isMaster && index > maxQuestionRef.current;
-                    return (
-                    <button
-                      key={index}
-                      onClick={() => {
-                        if (locked) {
-                          showLockHint();
-                          return;
-                        }
-                        if (isMaster) {
-                          maxQuestionRef.current = Math.max(maxQuestionRef.current, index);
-                        }
-                        jumpToQuestion(index);
-                      }}
-                      className={`rounded px-3 py-3 text-sm font-medium transition-colors ${
-                        currentQuestionIndex === index
-                          ? 'bg-[#60D96C] text-black'
-                          : locked
-                            ? 'cursor-not-allowed bg-[#2a2a2a] text-gray-600 opacity-50'
-                            : 'bg-[#2a2a2a] text-gray-400 hover:bg-[#3a3a3a]'
-                      }`}
-                      style={{ fontFamily: 'Encode Sans, sans-serif' }}
-                    >
-                      Question {index + 1}
-                    </button>
-                    );
-                  })}
-                </div>
-              </div>
-        ) : null
       }
     />
   );

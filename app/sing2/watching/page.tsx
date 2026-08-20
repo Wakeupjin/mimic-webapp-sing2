@@ -11,7 +11,6 @@ import { useVideoPlayer } from "../../hooks/useVideoPlayer";
 import { TRANSITION_DURATION, WATCHING_VIDEO_DURATION_SECONDS, WATCHING_NAVIGATION_DELAY_MS } from "../../constants/timings";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import PauseOverlay from "../../components/PauseOverlay";
-import AgainNextButtons from "../../components/AgainNextButtons";
 
 // --- [SUPABASE 연결 및 타입 정의] ---
 import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, resolveVideoUrl } from '../../dataService';
@@ -22,7 +21,7 @@ import { useRequireModeAccess } from '../../lib/useRequireModeAccess';
 import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
 import LessonShell from '../../components/LessonShell';
-import { CaptionsIcon, FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
+import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
 
 // 데이터 타입 정의
 type LessonDataType = {
@@ -249,7 +248,6 @@ function WatchingPageContent() {
   const [tooltipPosition, setTooltipPosition] = useState(0);
   const [tooltipPlacement, setTooltipPlacement] = useState<"above" | "below">("above");
   const [showNextCta, setShowNextCta] = useState(false);
-  const [isTextVisible, setIsTextVisible] = useState(false);
 
   // 진행 바 아래 공간이 부족하면(맥북처럼) 위로, 여유 있으면 아래로
   const updateTooltipPlacement = (bar: HTMLElement) => {
@@ -267,6 +265,7 @@ function WatchingPageContent() {
         e.stopPropagation();
       } else if (e.code === "Space") {
         e.preventDefault();
+        if (showNextCta) return;
         const video = document.querySelector('video') as HTMLVideoElement;
         if (video) {
           if (video.paused) {
@@ -282,7 +281,7 @@ function WatchingPageContent() {
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isFullscreen]);
+  }, [isFullscreen, showNextCta]);
 
   if (loading || checking) {
     return (
@@ -322,6 +321,7 @@ function WatchingPageContent() {
 
   // Watching mode progress bar drag handlers (기존 로직 수정)
   const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (showNextCta) return;
     const progressBar = e.currentTarget;
     const rect = progressBar.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
@@ -360,31 +360,38 @@ function WatchingPageContent() {
     setIsDragging(false);
   };
 
-  // Time format function (seconds to mm:ss format) - 기존 코드 유지
   const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    const mins = Math.floor(Math.max(0, seconds) / 60);
+    const secs = Math.floor(Math.max(0, seconds) % 60);
+    return `${mins.toString().padStart(2, '0')} : ${secs.toString().padStart(2, '0')}`;
   };
 
+  const skipToEnd = () => {
+    const video = document.querySelector('video') as HTMLVideoElement | null;
+    if (!video) return;
+    video.currentTime = endTime;
+    video.pause();
+    watchingDoneRef.current = true;
+    void saveProgress(lessonNumber, 'watching', true, endTime);
+    setVideoProgress(100);
+    setShowNextCta(true);
+  };
+
+  const clipDuration = Math.max(0, endTime - startTime);
+  const currentClipTime = (videoProgress / 100) * clipDuration;
+  const barPercent = showNextCta ? 100 : videoProgress;
 
   return (
     <LessonShell
-      extraActions={
-        <>
-          <HeaderIconButton label={isTextVisible ? "자막 끄기" : "자막 켜기"} onClick={() => setIsTextVisible((v) => !v)}>
-            <CaptionsIcon active={isTextVisible} />
-          </HeaderIconButton>
-          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-            <FullscreenIcon active={isFullscreen} />
-          </HeaderIconButton>
-        </>
-      }
+      hideHeader
+      footer={<p className="watch-chapter">CHAPTER {lessonNumber}</p>}
       video={
           <div className="relative h-full w-full">
             <video
               src={getVideoSource()}
-              className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 cursor-pointer ${isVideoPaused ? 'opacity-50' : 'opacity-100'}`}
+              className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 cursor-pointer ${
+                showNextCta ? 'opacity-10' : isVideoPaused ? 'opacity-50' : 'opacity-100'
+              }`}
               controls={false}
               autoPlay={false}
               muted={false}
@@ -400,7 +407,7 @@ function WatchingPageContent() {
               }}
               onClick={() => {
                 const video = document.querySelector('video') as HTMLVideoElement;
-                if (!video) return;
+                if (!video || showNextCta) return;
                 if (video.paused) {
                   playSafely(video);
                   setIsVideoPaused(false);
@@ -446,6 +453,23 @@ function WatchingPageContent() {
                 e.preventDefault();
               }}
             />
+            <Link
+              href={`/sing2/selecting?id=${movieId}`}
+              className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4"
+              aria-label="뒤로"
+            >
+              <img src="/home/back.svg" alt="" className="h-full w-full" />
+            </Link>
+            <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+              <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+                <FullscreenIcon active={isFullscreen} />
+              </HeaderIconButton>
+              {isMaster && (
+                <button type="button" className="watch-skip" onClick={skipToEnd}>
+                  SKIP
+                </button>
+              )}
+            </div>
             
             {/* Click overlay to start */}
             {!showNextCta && !isVideoStarted && (
@@ -469,69 +493,59 @@ function WatchingPageContent() {
 
             {/* Watching mode Again/Next button overlay */}
             {showNextCta && (
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                {/* Dimmed overlay */}
-                <div className="absolute inset-0 bg-black/80"></div>
-                
-                {/* Button container */}
-                <div className="cta-row relative z-10 pointer-events-auto">
-                  {/* Again Button */}
-                  <button
-                    type="button"
-                    className="cta-btn cta-ghost"
-                    onClick={() => {
-                      const video = document.querySelector('video') as HTMLVideoElement;
-                      if (video) {
-                        if (isFinite(startTime) && startTime >= 0) {
-                          video.currentTime = startTime;
+              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
+                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <button
+                      type="button"
+                      className="select-mode"
+                      onClick={() => {
+                        const video = document.querySelector('video') as HTMLVideoElement;
+                        if (video) {
+                          if (isFinite(startTime) && startTime >= 0) {
+                            video.currentTime = startTime;
+                          }
+                          playSafely(video);
+                          setShowNextCta(false);
+                          setVideoProgress(0);
+                          setIsVideoPaused(false);
+                          setIsVideoStarted(true);
                         }
-                        playSafely(video);
-                        setShowNextCta(false);
-                        setVideoProgress(0);
-                        setIsVideoPaused(false);
-                        setIsVideoStarted(true);
-                      }
-                    }}
-                  >
-                    Again
-                  </button>
-                  
-                  {/* Next Button */}
-                  <button
-                    type="button"
-                    className="cta-btn cta-primary relative"
-                    onClick={() => {
-                      // Switch to mimicking mode (maintain fullscreen)
-                      const isCurrentlyFullscreen = document.fullscreenElement !== null;
-                      if (isCurrentlyFullscreen) {
-                        sessionStorage.setItem('maintainFullscreen', 'true');
-                      }
-                      sessionStorage.setItem('fromWatching', 'true');
-                      
-                      // Small delay before navigation (ensure sessionStorage is saved)
-                      setTimeout(() => {
-                        window.location.href = `/sing2/mimicking?id=${movieId}`;
-                      }, WATCHING_NAVIGATION_DELAY_MS);
-                    }}
-                  >
-                    {/* Chameleon image overlay */}
-                    <img 
-                      src="/Subject.png" 
-                      alt="Chameleon" 
-                      className="cta-mascot"
-                    />
-                    Next
-                  </button>
+                      }}
+                    >
+                      Again
+                    </button>
+                    <p className="select-here" style={{ visibility: 'hidden' }}>Let’s go</p>
+                  </div>
+                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <button
+                      type="button"
+                      className="select-mode is-open"
+                      onClick={() => {
+                        const isCurrentlyFullscreen = document.fullscreenElement !== null;
+                        if (isCurrentlyFullscreen) {
+                          sessionStorage.setItem('maintainFullscreen', 'true');
+                        }
+                        sessionStorage.setItem('fromWatching', 'true');
+                        setTimeout(() => {
+                          window.location.href = `/sing2/mimicking?id=${movieId}`;
+                        }, WATCHING_NAVIGATION_DELAY_MS);
+                      }}
+                    >
+                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      Next
+                    </button>
+                    <p className="cta-go">Let’s go</p>
+                  </div>
                 </div>
               </div>
             )}
           </div>
       }
       controls={
-        !showNextCta ? (
-          <div className="relative z-50 w-full overflow-visible px-2 md:px-8">
+          <div className="relative z-50 w-full overflow-visible">
             <div 
-              className="relative w-full h-2 cursor-pointer overflow-visible"
+              className="watch-bar"
               onClick={handleProgressClick}
               onMouseDown={handleProgressMouseDown}
               onMouseUp={handleProgressMouseUp}
@@ -553,54 +567,29 @@ function WatchingPageContent() {
                 handleProgressMouseMove(e);
               }}
             >
-              <div className="absolute inset-0 bg-gray-300 rounded-full overflow-hidden"></div>
+              <div className="watch-bar-track"></div>
               <div
-                className="absolute inset-0 h-full bg-[#60D96C] rounded-full transition-all duration-300 ease-out"
-                style={{ width: `${videoProgress}%` }}
+                className="watch-bar-fill transition-all duration-300 ease-out"
+                style={{ width: `${barPercent}%` }}
               />
               <div 
-                className="absolute top-1/2 w-3 h-3 bg-gray-500 rounded-full cursor-pointer transform -translate-y-1/2 shadow-lg"
-                style={{ left: `calc(${videoProgress}% - 6px)` }}
+                className="watch-bar-thumb cursor-pointer"
+                style={{ left: `${barPercent}%` }}
                 onMouseDown={(e) => {
                   e.stopPropagation();
                   setIsDragging(true);
                 }}
               />
-              {showProgressTooltip && (
+              {(showProgressTooltip || isVideoStarted) && (
                 <div 
-                  className={`absolute text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg pointer-events-none whitespace-nowrap z-50 ${
-                    tooltipPlacement === "above" ? "bottom-6" : "top-9"
-                  }`}
-                  style={{ 
-                    backgroundColor: 'rgb(32, 30, 30)',
-                    left: `${tooltipPosition}%`,
-                    transform: 'translateX(-50%)'
-                  }}
+                  className="watch-time"
+                  style={{ left: `${showProgressTooltip ? tooltipPosition : barPercent}%` }}
                 >
-                  <div 
-                    className={`absolute left-1/2 transform -translate-x-1/2 w-0 h-0 ${
-                      tooltipPlacement === "above" ? "-bottom-3" : "-top-3"
-                    }`}
-                    style={
-                      tooltipPlacement === "above"
-                        ? {
-                            borderLeft: '8px solid transparent',
-                            borderRight: '8px solid transparent',
-                            borderTop: '16px solid rgb(32, 30, 30)'
-                          }
-                        : {
-                            borderLeft: '8px solid transparent',
-                            borderRight: '8px solid transparent',
-                            borderBottom: '16px solid rgb(32, 30, 30)'
-                          }
-                    }
-                  ></div>
-                  {formatTime(startTime + (tooltipPosition / 100) * (endTime - startTime))} / {formatTime(endTime - startTime)} 
+                  {formatTime(showProgressTooltip ? startTime + (tooltipPosition / 100) * clipDuration : startTime + currentClipTime)} / {formatTime(clipDuration)}
                 </div>
               )}
             </div>
           </div>
-        ) : null
       }
     />
   );
