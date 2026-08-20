@@ -73,7 +73,7 @@ export default function HomeHero({
           </span>
         </button>
 
-        <div className="home-mimic-bar relative z-20 -mt-[clamp(0.4rem,1vw,0.8rem)]">
+        <div className="home-mimic-bar relative z-20 mt-3">
           <PlaybackControls
             onPrev={onPrev}
             onNext={onNext}

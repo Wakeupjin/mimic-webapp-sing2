@@ -538,15 +538,15 @@ body {
 .word-chip {
   width: 100%;
   min-height: clamp(3.1rem, 6.25vw, 7.5rem);
-  padding: 0.35rem 0.6rem;
+  padding: 0.35rem 0.45rem;
   border: none;
   border-radius: 20px;
   background: #fff;
   color: #111;
   font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
-  font-size: clamp(0.95rem, 2.1vw, 2.35rem);
+  font-size: clamp(1.2rem, 2.6vw, 3rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.05;
   overflow-wrap: anywhere;
   text-align: center;
 }
@@ -1075,10 +1075,10 @@ body {
   }
 
   .word-chip {
-    min-height: clamp(2rem, 14vh, 3.2rem);
-    padding: 0.15rem 0.3rem;
+    min-height: clamp(2.1rem, 15vh, 3.4rem);
+    padding: 0.2rem 0.3rem;
     border-radius: 12px;
-    font-size: clamp(0.7rem, 3.4vh, 1.05rem);
+    font-size: clamp(0.9rem, 4.6vh, 1.4rem);
   }
 
   .select-stage {
