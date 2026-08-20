@@ -9,6 +9,7 @@ export type ModeSelectItem = {
   locked: boolean;
   done: boolean;
   here: boolean;
+  open?: boolean;
   onSelect: () => void;
 };
 
@@ -30,6 +31,7 @@ type ModeSelectLayoutProps = {
   dropdownRef: React.RefObject<HTMLDivElement | null>;
   listRef?: React.RefObject<HTMLDivElement | null>;
   extraActions?: ReactNode;
+  badge?: string;
 };
 
 export default function ModeSelectLayout({
@@ -41,10 +43,12 @@ export default function ModeSelectLayout({
   dropdownRef,
   listRef,
   extraActions,
+  badge,
 }: ModeSelectLayoutProps) {
   return (
     <main className="select-stage relative flex flex-col overflow-hidden px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
       <header className="relative z-20 flex shrink-0 items-start justify-end gap-2">
+        {badge ? <span className="cinema-pill is-static mr-auto">{badge}</span> : null}
         {extraActions}
         <Link href="/" className="select-close" aria-label="닫기">
           <img src="/home/close.svg" alt="" className="h-full w-full" />
@@ -110,7 +114,9 @@ export default function ModeSelectLayout({
                 type="button"
                 onClick={mode.onSelect}
                 disabled={mode.locked}
-                className={`select-mode ${mode.done || mode.here ? "is-open" : ""}`}
+                className={`select-mode ${
+                  !mode.locked && (mode.open || mode.done || mode.here) ? "is-open" : ""
+                }`}
               >
                 {mode.here && (
                   <img src="/home/chameleon.png" alt="" className="select-chameleon" />

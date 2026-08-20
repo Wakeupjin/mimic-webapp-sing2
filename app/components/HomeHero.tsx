@@ -16,6 +16,7 @@ type HomeHeroProps = {
   onLogin: () => void;
   onMenu: () => void;
   loginLabel: string;
+  onAdmin?: () => void;
 };
 
 export default function HomeHero({
@@ -30,12 +31,18 @@ export default function HomeHero({
   onLogin,
   onMenu,
   loginLabel,
+  onAdmin,
 }: HomeHeroProps) {
   return (
     <section className="home-stage">
       <header className="relative z-20 flex items-start justify-between px-[clamp(1rem,2.1vw,2.5rem)] pt-[clamp(0.6rem,1.4vw,1rem)]">
         <p className="home-logo">MimiC</p>
         <div className="flex items-center gap-[clamp(0.6rem,1.6vw,2.4rem)]">
+          {onAdmin ? (
+            <button type="button" onClick={onAdmin} className="cinema-pill">
+              학생 현황
+            </button>
+          ) : null}
           <button type="button" onClick={onLogin} className="home-login">
             {loginLabel}
           </button>

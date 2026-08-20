@@ -829,6 +829,249 @@ body {
   cursor: pointer;
 }
 
+.cinema-pill {
+  display: inline-flex;
+  height: clamp(36px, 3.02vw, 58px);
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.05rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--bar);
+  color: var(--mimic);
+  font-family: var(--font-bm-hanna-pro), sans-serif;
+  font-size: clamp(14px, 1.4vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cinema-pill.is-static {
+  cursor: default;
+}
+
+.admin-stage {
+  display: flex;
+  min-height: 100dvh;
+  flex-direction: column;
+  background: #000;
+  padding-top: max(0.8rem, env(safe-area-inset-top));
+  padding-bottom: max(0.8rem, env(safe-area-inset-bottom));
+  padding-left: max(1rem, env(safe-area-inset-left), 2vw);
+  padding-right: max(1rem, env(safe-area-inset-right), 2vw);
+}
+
+.admin-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.admin-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.admin-title {
+  margin: 0.45rem 0 0;
+  color: #fff;
+  font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-align: center;
+}
+
+.admin-sub {
+  margin: 0.4rem 0 1rem;
+  color: var(--mimic);
+  font-family: var(--font-bm-hanna-pro), sans-serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.35rem);
+  text-align: center;
+}
+
+.admin-frame {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  border: 10px solid #201e1e;
+  border-radius: 30px;
+  background: #111;
+  padding: 0.75rem;
+}
+
+.admin-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(8rem, 0.9fr) auto;
+  gap: 0.35rem 1rem;
+  width: 100%;
+  margin-bottom: 0.55rem;
+  padding: 0.9rem 1.15rem;
+  border: none;
+  border-radius: 25px;
+  background: var(--bar);
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-row:hover {
+  background: #2a2828;
+}
+
+.admin-row.is-on {
+  outline: 2px solid var(--mimic);
+}
+
+.admin-name {
+  font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.admin-mail {
+  display: block;
+  margin-top: 0.15rem;
+  color: #9ca3af;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 0.82rem;
+}
+
+.admin-when {
+  color: #d1d5db;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 0.9rem;
+}
+
+.admin-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem 0.9rem;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.admin-done {
+  color: var(--mimic);
+  font-weight: 800;
+}
+
+.admin-note {
+  padding: 1.2rem 0.6rem;
+  color: #9ca3af;
+  font-family: "Encode Sans", sans-serif;
+  text-align: center;
+}
+
+.admin-alert {
+  margin-bottom: 0.75rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  border-radius: 18px;
+  background: rgba(245, 158, 11, 0.1);
+  color: #fde68a;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+}
+
+.admin-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.admin-sheet {
+  width: min(920px, 100%);
+  max-height: min(86vh, 880px);
+  overflow: auto;
+  border: 10px solid #201e1e;
+  border-radius: 30px;
+  background: #111;
+  padding: 1.2rem 1.35rem 1.5rem;
+}
+
+.admin-lesson {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.6rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #2a2a2a;
+}
+
+.admin-lesson-label {
+  width: 7.4rem;
+  color: #fff;
+  font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.admin-mode {
+  height: 2.15rem;
+  min-width: 4.7rem;
+  padding: 0 0.7rem;
+  border: 3px solid #8c8787;
+  border-radius: 20px;
+  background: #fff;
+  color: #111;
+  font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.admin-mode.is-open {
+  border-color: var(--mimic);
+}
+
+.admin-mode.is-on {
+  background: var(--mimic);
+}
+
+.admin-eval {
+  width: 100%;
+  color: #e5e7eb;
+  font-family: "Encode Sans", sans-serif;
+  font-size: 0.88rem;
+}
+
+@media (min-width: 640px) {
+  .admin-frame,
+  .admin-sheet {
+    border-width: 15px;
+  }
+
+  .admin-frame {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stats {
+    justify-content: flex-start;
+  }
+}
+
 .home-menu {
   width: clamp(36px, 3.02vw, 58px);
   height: clamp(36px, 3.02vw, 58px);
@@ -934,12 +1177,13 @@ body {
   position: relative;
   width: clamp(9.5rem, 14.5vw, 17.4rem);
   height: clamp(5.6rem, 9.2vw, 11.06rem);
+  padding: 0 0.5em;
   border-radius: 50px;
   border: clamp(6px, 1.04vw, 20px) solid #8c8787;
   background: #fff;
   color: #111;
   font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
-  font-size: clamp(1.35rem, 4.2vw, 5.06rem);
+  font-size: clamp(1.15rem, 2.55vw, 3.15rem);
   font-weight: 800;
   line-height: 1;
   cursor: pointer;
@@ -1127,6 +1371,31 @@ body {
     --ctrl-size: clamp(1.5rem, 10vh, 2.4rem);
     --ctrl-nav: clamp(1.3rem, 8vh, 2.1rem);
     width: min(962px, 78vw);
+  }
+
+  .cinema-pill {
+    height: 28px;
+    font-size: 0.85rem;
+    padding: 0 0.7rem;
+  }
+
+  .admin-title {
+    font-size: 1.35rem;
+  }
+
+  .admin-sub {
+    margin-bottom: 0.4rem;
+  }
+
+  .admin-frame,
+  .admin-sheet {
+    border-width: 6px;
+    border-radius: 16px;
+  }
+
+  .admin-row {
+    margin-bottom: 0.35rem;
+    padding: 0.45rem 0.7rem;
   }
 }
 

@@ -8,7 +8,7 @@ import { useFullscreen } from '../../hooks/useFullscreen';
 // import { SELECTING_CHAPTER_COUNT, SELECTING_DROPDOWN_MAX_HEIGHT_PX, SELECTING_SCROLL_THRESHOLD_PX } from '../../constants/timings'; 
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonSummaries, formatMovieId, parsePack } from '../../dataService';
+import { fetchLessonSummaries, formatChapterLabel, formatMovieId, parsePack, parseProgressLesson } from '../../dataService';
 import {
   fetchOwnProgress,
   canAccessLesson,
@@ -19,7 +19,7 @@ import {
   type LearnMode,
   type ProgressRow,
 } from '../../lib/progressGate';
-import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
+import { FullscreenIcon, HeaderIconButton, ListIcon } from '../../components/HeaderIcons';
 import ModeSelectLayout from '../../components/ModeSelectLayout'; 
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
@@ -86,12 +86,12 @@ function SelectingPageContent() {
   }, [pack]);
 
   useEffect(() => {
-    if (!user || isMaster) {
+    if (!user) {
       setProgressRows([]);
       return;
     }
     fetchOwnProgress().then(setProgressRows);
-  }, [user, isMaster]);
+  }, [user]);
   // --- [/SUPABASE 데이터 로딩] ---
 
   // Close dropdown when clicking outside
@@ -136,7 +136,14 @@ function SelectingPageContent() {
 
   const handleModeSelect = (mode: LearnMode) => {
     if (!selectedLesson) return;
-    if (!isMaster && !canAccessMode(progressRows, selectedLesson.lesson_number, mode)) {
+    if (
+      !isMaster &&
+      !canAccessMode(
+        progressRows,
+        parseProgressLesson(formatMovieId(pack, selectedLesson.lesson_number)),
+        mode
+      )
+    ) {
       return;
     }
 
@@ -177,10 +184,11 @@ function SelectingPageContent() {
   // --- [/로딩 및 에러 화면] ---
 
   const lessonNo = selectedLesson?.lesson_number || 1;
+  const progressLesson = parseProgressLesson(formatMovieId(pack, lessonNo));
   const modeOpen = (mode: LearnMode) =>
-    isMaster || canAccessMode(progressRows, lessonNo, mode);
+    isMaster || canAccessMode(progressRows, progressLesson, mode);
   const hereMode =
-    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, lessonNo, mode)) ?? 'word';
+    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode)) ?? 'word';
 
   const MODE_LABEL: Record<LearnMode, string> = {
     watching: 'Watch',
@@ -191,33 +199,45 @@ function SelectingPageContent() {
 
   return (
     <ModeSelectLayout
-      chapterLabel={selectedLesson ? `CHAPTER ${selectedLesson.lesson_number}` : 'CHAPTER'}
+      badge={isMaster ? '원장' : undefined}
+      chapterLabel={selectedLesson ? formatChapterLabel(pack, selectedLesson.lesson_number) : formatChapterLabel(pack, 1)}
       dropdownOpen={isDropdownOpen}
       onToggleDropdown={() => setIsDropdownOpen((open) => !open)}
       dropdownRef={dropdownRef}
       listRef={scrollContainerRef}
       extraActions={
-        <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
-          <FullscreenIcon active={isFullscreen} />
-        </HeaderIconButton>
+        <>
+          {isMaster && (
+            <HeaderIconButton label="학생 현황" onClick={() => router.push('/admin')}>
+              <ListIcon active />
+            </HeaderIconButton>
+          )}
+          <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
+            <FullscreenIcon active={isFullscreen} />
+          </HeaderIconButton>
+        </>
       }
-      chapters={lessons.map((lesson) => ({
-        id: lesson.id,
-        label: `CHAPTER ${lesson.lesson_number}`,
-        locked: !isMaster && !canAccessLesson(progressRows, lesson.lesson_number),
-        selected: lesson.id === selectedLesson?.id,
-        done: isMaster || isModeCompleted(progressRows, lesson.lesson_number, 'word'),
-        onSelect: () => {
-          setSelectedLesson(lesson);
-          setIsDropdownOpen(false);
-        },
-      }))}
+      chapters={lessons.map((lesson) => {
+        const chapterProgress = parseProgressLesson(formatMovieId(pack, lesson.lesson_number));
+        return {
+          id: lesson.id,
+          label: formatChapterLabel(pack, lesson.lesson_number),
+          locked: !isMaster && !canAccessLesson(progressRows, chapterProgress),
+          selected: lesson.id === selectedLesson?.id,
+          done: isModeCompleted(progressRows, chapterProgress, 'word'),
+          onSelect: () => {
+            setSelectedLesson(lesson);
+            setIsDropdownOpen(false);
+          },
+        };
+      })}
       modes={MODE_ORDER.map((mode) => ({
         id: mode,
         label: MODE_LABEL[mode],
         locked: !modeOpen(mode),
-        done: isModeCompleted(progressRows, lessonNo, mode),
+        done: isModeCompleted(progressRows, progressLesson, mode),
         here: hereMode === mode,
+        open: isMaster,
         onSelect: () => handleModeSelect(mode),
       }))}
     />

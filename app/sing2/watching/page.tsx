@@ -13,7 +13,7 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import PauseOverlay from "../../components/PauseOverlay";
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, resolveVideoUrl } from '../../dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatChapterLabel, resolveVideoUrl } from '../../dataService';
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { useEvaluationLog } from '../../lib/evaluation';
@@ -384,7 +384,7 @@ function WatchingPageContent() {
   return (
     <LessonShell
       hideHeader
-      footer={<p className="watch-chapter">CHAPTER {lessonNumber}</p>}
+      footer={<p className="watch-chapter">{formatChapterLabel(parsePack(movieId), parseLessonNumber(movieId))}</p>}
       video={
           <div className="relative h-full w-full">
             <video
@@ -585,7 +585,7 @@ function WatchingPageContent() {
                   className="watch-time"
                   style={{ left: `${showProgressTooltip ? tooltipPosition : barPercent}%` }}
                 >
-                  {formatTime(showProgressTooltip ? startTime + (tooltipPosition / 100) * clipDuration : startTime + currentClipTime)} / {formatTime(clipDuration)}
+                  {formatTime(showProgressTooltip ? (tooltipPosition / 100) * clipDuration : currentClipTime)} / {formatTime(clipDuration)}
                 </div>
               )}
             </div>

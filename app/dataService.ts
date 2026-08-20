@@ -40,6 +40,11 @@ export function formatMovieId(pack: number, lesson: number): string {
   return `${String(pack).padStart(3, '0')}:${lesson}`;
 }
 
+/** 화면에 쓰는 회차 이름. 진도 번호(201)와 섞지 않는다. */
+export function formatChapterLabel(pack: number, lesson: number): string {
+  return pack >= 2 ? `HARD ${lesson}` : `CHAPTER ${lesson}`;
+}
+
 type RawLessonJson = {
   watching?: { start: string; end: string };
   mimicking?: unknown[];

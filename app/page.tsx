@@ -546,6 +546,7 @@ export default function Home() {
           }}
           onMenu={() => setIsMenuOpen(!isMenuOpen)}
           loginLabel={loading ? '...' : user ? '로그아웃' : '로그인'}
+          onAdmin={profile?.role === 'academy' ? () => router.push('/admin') : undefined}
         />
 
         <section
@@ -584,28 +585,6 @@ export default function Home() {
           >
             시작하기
           </button>
-          {profile?.role === 'academy' && (
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-              <button
-                type="button"
-                onClick={() => router.push('/admin')}
-                className="text-sm text-[#60D96C] underline-offset-2 hover:underline"
-                style={{ fontFamily: 'Encode Sans, sans-serif' }}
-              >
-                학생 현황
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  window.location.href = '/sing2/selecting?id=002:1';
-                }}
-                className="text-sm text-gray-500 underline-offset-2 hover:text-[#60D96C] hover:underline"
-                style={{ fontFamily: 'Encode Sans, sans-serif' }}
-              >
-                Hard 테스트 (원장)
-              </button>
-            </div>
-          )}
         </section>
       </main>
     </div>
