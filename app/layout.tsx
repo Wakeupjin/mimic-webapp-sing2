@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { AuthProvider } from './contexts/AuthContext';
 import ErrorBoundary, { ErrorBoundaryWrapper } from './components/ErrorBoundary';
+import RotateGate from './components/RotateGate';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +53,7 @@ export default function RootLayout({
         <ErrorBoundaryWrapper>
           <ErrorBoundary>
             <AuthProvider>
+              <RotateGate />
               {children}
             </AuthProvider>
           </ErrorBoundary>
