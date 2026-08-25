@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useRef, Suspense } from "react";
+import { useEffect, useState, useRef, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "../../contexts/AuthContext";
@@ -8,7 +8,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useFullscreen } from "../../hooks/useFullscreen";
 import { useMediaControl } from "../../hooks/useMediaControl";
 import { useVideoPlayer } from "../../hooks/useVideoPlayer";
-import { TRANSITION_DURATION, WATCHING_VIDEO_DURATION_SECONDS, WATCHING_NAVIGATION_DELAY_MS } from "../../constants/timings";
+import { WATCHING_NAVIGATION_DELAY_MS } from "../../constants/timings";
 import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import PauseOverlay from "../../components/PauseOverlay";
 
@@ -18,7 +18,6 @@ import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리�
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { useEvaluationLog } from '../../lib/evaluation';
 import { useRequireModeAccess } from '../../lib/useRequireModeAccess';
-import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
 import LessonShell from '../../components/LessonShell';
 import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
@@ -46,30 +45,33 @@ function WatchingPageContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [savedProgress, setSavedProgress] = useState<any>(null);
   const [lessonNumber, setLessonNumber] = useState<number>(() => parseProgressLesson(movieId) || 1);
+  const [isVideoBuffering, setIsVideoBuffering] = useState(false);
 
   // 커스텀 훅들
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const { stopAllMedia } = useMediaControl();
   const {
-    isPlaying,
-    playNonce,
     isVideoPaused,
     isVideoStarted,
     setIsVideoStarted,
     setIsVideoPaused,
-    playVideo,
-    pauseVideo,
-    resetVideo
+    pauseVideo
   } = useVideoPlayer();
 
   const evalLog = useEvaluationLog(lessonNumber, 'watching', isVideoStarted);
   const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'watching', movieId);
   const maxWatchedRef = useRef(0);
   const watchingDoneRef = useRef(false);
+  const initialSeekAppliedRef = useRef(false);
 
   const playSafely = (video: HTMLVideoElement | null) => {
     if (!video) return;
-    void video.play().catch(() => {});
+    setIsVideoBuffering(true);
+    void video.play().catch((error) => {
+      console.warn('영상 재생 시작 실패:', error);
+      setIsVideoBuffering(false);
+      setIsVideoStarted(false);
+    });
   };
 
   // 인증 체크 - useEffect로 처리
@@ -93,6 +95,12 @@ function WatchingPageContent() {
 
     const loadDataFromSupabase = async () => {
       setIsLoading(true);
+      setSavedProgress(null);
+      setVideoUrl(null);
+      setIsVideoBuffering(false);
+      initialSeekAppliedRef.current = false;
+      maxWatchedRef.current = 0;
+      watchingDoneRef.current = false;
 
       // 1. Lesson ID 추출 ("001:5" -> 5)
       const contentLesson = parseLessonNumber(movieId);
@@ -112,48 +120,23 @@ function WatchingPageContent() {
         return;
       }
 
-      const videoUrl = await resolveVideoUrl(lesson.video_id);
-      setLessonData(lesson as LessonDataType); 
-      setVideoUrl(videoUrl); 
-      setIsLoading(false);
+      // 영상 주소와 저장 진도를 함께 준비한 뒤 한 번만 플레이어를 렌더링한다.
+      const [resolvedVideoUrl, progress] = await Promise.all([
+        resolveVideoUrl(lesson.video_id),
+        getProgressByMode(progressLesson, 'watching').catch(() => null),
+      ]);
 
-      // 5. 저장된 진도 불러오기
-      try {
-        const progress = await getProgressByMode(progressLesson, 'watching');
-        if (progress) {
-          setSavedProgress(progress);
-          if (typeof progress.current_position === 'number') {
-            maxWatchedRef.current = progress.current_position;
-          }
-          watchingDoneRef.current = Boolean(progress.completed);
-        }
-      } catch (error) {
-        console.log('진도 데이터 없음 (첫 학습)');
-      }
+      const initialPosition = Number(progress?.current_position ?? lesson.watch_start_sec ?? 0);
+      maxWatchedRef.current = Number.isFinite(initialPosition) ? initialPosition : 0;
+      watchingDoneRef.current = Boolean(progress?.completed);
+      setSavedProgress(progress);
+      setLessonData(lesson as LessonDataType);
+      setVideoUrl(resolvedVideoUrl);
+      setIsLoading(false);
     };
 
     loadDataFromSupabase();
   }, [movieId]);
-
-
-  // 비디오 시작 시간 설정 useEffect (데이터 로드 후 실행)
-  useEffect(() => {
-    if (lessonData?.watch_start_sec !== undefined && lessonData?.watch_end_sec !== undefined) {
-      const video = document.querySelector('video') as HTMLVideoElement;
-      if (video) {
-        // 저장된 진도가 있으면 그 위치에서 시작, 없으면 기본 시작 시간
-        const startTime = savedProgress?.current_position || Number(lessonData.watch_start_sec);
-        
-        if (isFinite(startTime) && startTime >= 0) {
-          video.currentTime = startTime;
-          console.log('🎬 비디오 시작 시간:', startTime, savedProgress ? '(저장된 위치)' : '(기본 시작)');
-        }
-        
-        setVideoProgress(0);
-      }
-    }
-  }, [lessonData, savedProgress]);
-  // --- [/새로운 상태 및 데이터 로딩] ---
 
   // 진도 저장 useEffect (비디오 재생 중 주기적으로 저장)
   useEffect(() => {
@@ -317,6 +300,7 @@ function WatchingPageContent() {
   // Lesson/Video 데이터가 모두 로드되면 변수에 저장
   const startTime = lessonData.watch_start_sec;
   const endTime = lessonData.watch_end_sec;
+  const initialWatchPosition = Number(savedProgress?.current_position ?? startTime ?? 0);
   // --- [/로딩 및 변수 정의] ---
 
 
@@ -389,7 +373,7 @@ function WatchingPageContent() {
       video={
           <div className="relative h-full w-full">
             <video
-              src={getVideoSource()}
+              src={videoUrl}
               className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 cursor-pointer ${
                 showNextCta ? 'opacity-10' : isVideoPaused ? 'opacity-50' : 'opacity-100'
               }`}
@@ -398,13 +382,24 @@ function WatchingPageContent() {
               muted={false}
               playsInline
               preload="auto"
-              onLoadedData={(e) => {
+              onLoadedMetadata={(e) => {
                 const video = e.currentTarget;
                 applyInlinePlayback(video);
-                const startAt = savedProgress?.current_position || Number(lessonData?.watch_start_sec) || 0;
-                if (isFinite(startAt) && startAt >= 0) {
-                  video.currentTime = startAt;
+                if (!initialSeekAppliedRef.current && isFinite(initialWatchPosition) && initialWatchPosition >= 0) {
+                  initialSeekAppliedRef.current = true;
+                  video.currentTime = initialWatchPosition;
+                  const duration = Math.max(1, endTime - startTime);
+                  const restoredProgress = Math.min(100, Math.max(0, ((initialWatchPosition - startTime) / duration) * 100));
+                  setVideoProgress(restoredProgress);
+                  console.log('🎬 비디오 시작 위치 준비:', initialWatchPosition, savedProgress ? '(저장된 위치)' : '(기본 시작)');
                 }
+              }}
+              onCanPlay={() => {
+                if (isVideoStarted) setIsVideoBuffering(false);
+              }}
+              onPlaying={() => setIsVideoBuffering(false)}
+              onWaiting={() => {
+                if (isVideoStarted) setIsVideoBuffering(true);
               }}
               onClick={() => {
                 const video = document.querySelector('video') as HTMLVideoElement;
@@ -415,6 +410,7 @@ function WatchingPageContent() {
                   setIsVideoStarted(true);
                 } else {
                   video.pause();
+                  setIsVideoBuffering(false);
                   pauseVideo();
                 }
               }}
@@ -486,6 +482,15 @@ function WatchingPageContent() {
                 text="먼저 장면을 보고 흐름을 이해해요"
                 description="영상을 보며 오늘 배울 대사의 맥락을 익혀요."
               />
+            )}
+
+            {isVideoStarted && isVideoBuffering && !showNextCta && (
+              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/65">
+                <div className="rounded-2xl border border-white/20 bg-[#201e1e]/95 px-7 py-6 text-center shadow-2xl">
+                  <div className="mx-auto h-9 w-9 animate-spin rounded-full border-2 border-[#60D96C] border-t-transparent" />
+                  <p className="mt-4 font-bold text-white">영상을 준비하고 있어요</p>
+                </div>
+              </div>
             )}
 
             {/* Watching mode PAUSE overlay */}
