@@ -833,7 +833,7 @@ function MimickingPageContent() {
         
             {showNextCta && (
               <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-4">
-                <div className="pointer-events-auto flex w-full max-w-4xl flex-col items-center gap-6">
+                <div className="pointer-events-auto flex w-full max-w-4xl flex-col items-center">
                   <div className="w-full max-w-2xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl sm:p-7">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">오늘의 복습</p>
                     <h2 className="mt-1 text-xl font-bold text-white sm:text-2xl">어려웠던 문장 TOP 3</h2>
@@ -855,8 +855,8 @@ function MimickingPageContent() {
                       </p>
                     )}
                   </div>
-                  <div className="flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                  <div className="mt-[clamp(4.5rem,9vw,7.5rem)] flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
+                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                     <button
                       type="button"
                       className="select-mode"
@@ -868,7 +868,7 @@ function MimickingPageContent() {
                     </button>
                     <p className="select-here" style={{ visibility: "hidden" }}>Let’s go</p>
                   </div>
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                     <button
                       type="button"
                       className="select-mode is-open"
@@ -878,7 +878,7 @@ function MimickingPageContent() {
                       Next
                     </button>
                     <p className="cta-go">Let’s go</p>
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div>
