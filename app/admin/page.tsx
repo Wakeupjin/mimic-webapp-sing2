@@ -11,7 +11,7 @@ const MODE_LABEL: Record<string, string> = {
   watching: 'Watch',
   mimicking: 'Mimic',
   guessing: 'Guess',
-  word: 'Quiz',
+  word: 'Word',
 };
 
 function formatWhen(iso: string | null) {

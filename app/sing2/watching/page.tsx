@@ -231,6 +231,15 @@ function WatchingPageContent() {
   const [tooltipPlacement, setTooltipPlacement] = useState<"above" | "below">("above");
   const [showNextCta, setShowNextCta] = useState(false);
 
+  useEffect(() => {
+    if (!savedProgress?.completed) return;
+    watchingDoneRef.current = true;
+    setVideoProgress(100);
+    setIsVideoStarted(false);
+    setIsVideoPaused(false);
+    setShowNextCta(true);
+  }, [savedProgress, setIsVideoPaused, setIsVideoStarted]);
+
   // 진행 바 아래 공간이 부족하면(맥북처럼) 위로, 여유 있으면 아래로
   const updateTooltipPlacement = (bar: HTMLElement) => {
     const rect = bar.getBoundingClientRect();
@@ -373,7 +382,7 @@ function WatchingPageContent() {
             <video
               src={videoUrl}
               className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-300 cursor-pointer ${
-                showNextCta ? 'opacity-10' : isVideoPaused ? 'opacity-50' : 'opacity-100'
+                showNextCta ? 'opacity-100' : isVideoPaused ? 'opacity-50' : 'opacity-100'
               }`}
               controls={false}
               autoPlay={false}
@@ -498,7 +507,7 @@ function WatchingPageContent() {
 
             {/* Watching mode Again/Next button overlay */}
             {showNextCta && (
-              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
                 <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
                   <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                     <button
@@ -537,7 +546,7 @@ function WatchingPageContent() {
                         }, WATCHING_NAVIGATION_DELAY_MS);
                       }}
                     >
-                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      <img src="/Subject.png" alt="" className="select-chameleon" />
                       Next
                     </button>
                     <p className="cta-go">Let’s go</p>

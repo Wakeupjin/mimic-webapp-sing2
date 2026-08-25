@@ -113,13 +113,13 @@ export default function HomeHero({
         aria-hidden
       />
       <img
-        src="/home/chameleon.png"
+        src="/Subject.png"
         alt=""
         className="home-chameleon bottom-[clamp(1.5rem,6vh,4.2rem)] left-[clamp(1.2rem,10vw,12rem)] -scale-x-100"
         aria-hidden
       />
       <img
-        src="/home/chameleon.png"
+        src="/Subject.png"
         alt=""
         className="home-chameleon bottom-[clamp(1.5rem,6vh,4.2rem)] right-[clamp(1.2rem,10vw,12rem)]"
         aria-hidden

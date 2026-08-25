@@ -117,12 +117,12 @@ export default function ModeSelectLayout({
                 }`}
               >
                 {mode.here && (
-                  <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                  <img src="/Subject.png" alt="" className="select-chameleon" />
                 )}
                 {mode.label}
               </button>
               <p className="select-here" style={{ visibility: mode.here ? "visible" : "hidden" }}>
-                You are Here
+                현재 단계
               </p>
             </div>
           ))}

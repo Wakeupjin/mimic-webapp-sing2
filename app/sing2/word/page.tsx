@@ -177,9 +177,16 @@ function WordPageContent() {
         try {
           const progress = await getProgressByMode(progressLesson, 'word');
           if (progress) {
-            const q = Math.max(1, Math.floor(Number(progress.current_position || 1)));
+            const q = progress.completed
+              ? totalQuestions
+              : Math.max(1, Math.floor(Number(progress.current_position || 1)));
             if (q <= totalQuestions) {
               setCurrentQuestionNumber(q);
+            }
+            if (progress.completed) {
+              setIsStarted(true);
+              setShowStartOverlay(false);
+              setShowCompletion(true);
             }
           }
         } catch {
@@ -660,7 +667,7 @@ function WordPageContent() {
 
   return (
     <LessonShell hideHeader compactStage>
-      <div className="word-board">
+      <div className={`word-board ${gamePhase === 'guessing' && !showCompletion ? 'is-arranging' : ''}`}>
         <div className="word-chips-side">
           {gamePhase === 'guessing' && leftWords.map((word, i) => renderWordChip(word, i))}
         </div>
@@ -774,7 +781,7 @@ function WordPageContent() {
               )}
 
               {showCompletion && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
                   <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
                     <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                       <button type="button" className="select-mode" onClick={handleAgain}>

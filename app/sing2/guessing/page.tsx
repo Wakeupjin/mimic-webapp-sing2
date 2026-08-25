@@ -297,10 +297,17 @@ function GuessingPageContent() {
           const progress = await getProgressByMode(progressLesson, 'guessing');
           if (progress) {
             setSavedProgress(progress);
-            const idx = Math.max(0, Math.floor(Number(progress.current_position || 0)));
+            const idx = progress.completed
+              ? Math.max(0, guessingDataArray.length - 1)
+              : Math.max(0, Math.floor(Number(progress.current_position || 0)));
             setCurrentQuestionIndex(idx);
             setCurrentIndex(idx);
             maxQuestionRef.current = idx;
+            if (progress.completed) {
+              setIsGuessingStarted(true);
+              setIsGuessingComplete(true);
+              setShowResults(true);
+            }
           }
         } catch (error) {
           // 게싱 진도 데이터 없음 (첫 학습)
@@ -938,7 +945,7 @@ function GuessingPageContent() {
             )}
 
             {showResults && (
-              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
                 <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
                   <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                     <button type="button" className="select-mode" onClick={restartGuessing}>
@@ -958,7 +965,7 @@ function GuessingPageContent() {
                         window.location.href = lessonPath(movieId, 'word');
                       }}
                     >
-                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      <img src="/Subject.png" alt="" className="select-chameleon" />
                       Next
                     </button>
                     <p className="cta-go">Let’s go</p>

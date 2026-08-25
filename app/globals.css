@@ -630,7 +630,7 @@ body {
 .word-submit img {
   width: 100%;
   height: auto;
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
 }
 
 .word-board {
@@ -661,23 +661,27 @@ body {
 }
 
 .word-video {
-  max-width: min(100%, 52.5vw);
+  max-width: min(100%, 88vw, calc((100dvh - 9rem) * 16 / 9));
 }
 
 @media (min-width: 768px), (orientation: landscape) and (min-width: 560px) {
-  .word-board {
+  .word-board.is-arranging {
     display: grid;
     grid-template-columns: minmax(5.5rem, 15.6vw) minmax(0, 1fr) minmax(5.5rem, 15.6vw);
     align-items: stretch;
     gap: 0.75rem;
   }
 
-  .word-chips-side {
+  .word-board.is-arranging .word-chips-side {
     display: flex;
   }
 
-  .word-chips-mobile {
+  .word-board.is-arranging .word-chips-mobile {
     display: none;
+  }
+
+  .word-board.is-arranging .word-video {
+    max-width: min(100%, 52.5vw);
   }
 }
 
@@ -1135,7 +1139,7 @@ body {
   position: absolute;
   width: clamp(72px, 7.8vw, 150px);
   height: auto;
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
 }
 
 .home-scroll {
@@ -1238,7 +1242,7 @@ body {
   height: auto;
   translate: -50% -72%;
   pointer-events: none;
-  mix-blend-mode: lighten;
+  mix-blend-mode: normal;
 }
 
 /* 폰·작은 태블릿 가로: 세가 짧아서 TV용 여백·큰 버튼을 줄입니다. */
@@ -1317,7 +1321,7 @@ body {
     font-size: clamp(1.6rem, 12vh, 3.2rem);
   }
 
-  .word-video {
+  .word-board.is-arranging .word-video {
     max-width: min(100%, 52.5vw);
   }
 

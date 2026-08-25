@@ -20,9 +20,9 @@ export default function ClickToStartOverlay({
       <button
         type="button"
         onClick={onClick}
-        className="w-full max-w-md rounded-2xl border border-white/25 bg-[#201e1e]/95 px-7 py-7 text-center transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#60D96C] sm:px-10 sm:py-9"
+        className="w-full max-w-lg rounded-2xl border border-white/25 bg-[#201e1e]/95 px-7 py-7 text-center transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#60D96C] sm:px-10 sm:py-9"
       >
-        <p className="text-xl font-bold text-white sm:text-3xl" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+        <p className="text-balance break-keep text-xl font-bold leading-tight text-white sm:text-3xl" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
           {text}
         </p>
         {description ? (

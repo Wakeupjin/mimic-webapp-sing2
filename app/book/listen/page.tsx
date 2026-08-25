@@ -477,7 +477,7 @@ function ListenPageContent() {
                       }, WATCHING_NAVIGATION_DELAY_MS);
                     }}
                   >
-                    <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                    <img src="/Subject.png" alt="" className="select-chameleon" />
                     Next
                   </button>
                   <p className="cta-go">Let’s go</p>

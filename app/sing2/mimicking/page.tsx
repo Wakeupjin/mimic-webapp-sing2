@@ -192,10 +192,16 @@ function MimickingPageContent() {
             const restoredFeedback = parseSentenceFeedback(progress.progress_data);
             setSentenceFeedback(restoredFeedback);
             sentenceFeedbackRef.current = restoredFeedback;
-            const idx = Math.max(0, Math.floor(Number(progress.current_position || 0)));
+            const idx = progress.completed
+              ? Math.max(0, mimicData.length - 1)
+              : Math.max(0, Math.floor(Number(progress.current_position || 0)));
             setCurrentIndex(idx);
             maxSentenceRef.current = idx;
-            if (idx > 0) {
+            if (progress.completed) {
+              setIsMimickingStarted(true);
+              setIsMimickingComplete(true);
+              setShowNextCta(true);
+            } else if (idx > 0) {
               setIsMimickingStarted(true);
             }
           }
@@ -832,7 +838,7 @@ function MimickingPageContent() {
               )}
         
             {showNextCta && (
-              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center px-4">
+              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 px-4">
                 <div className="pointer-events-auto flex w-full max-w-4xl flex-col items-center">
                   <div className="w-full max-w-2xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl sm:p-7">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">오늘의 복습</p>
@@ -874,7 +880,7 @@ function MimickingPageContent() {
                       className="select-mode is-open"
                       onClick={handleNext}
                     >
-                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      <img src="/Subject.png" alt="" className="select-chameleon" />
                       Next
                     </button>
                     <p className="cta-go">Let’s go</p>
