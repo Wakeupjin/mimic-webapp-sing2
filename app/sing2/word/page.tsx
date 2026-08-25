@@ -665,8 +665,8 @@ function WordPageContent() {
           {gamePhase === 'guessing' && leftWords.map((word, i) => renderWordChip(word, i))}
         </div>
 
-        <div className="flex min-h-0 flex-1 flex-col items-center">
-          <div className="flex w-full min-h-0 flex-1 items-center justify-center">
+        <div className="word-main-stack flex min-h-0 flex-1 flex-col items-center justify-center">
+          <div className="flex w-full min-h-0 items-center justify-center">
             <div
               className={`word-video watch-frame relative aspect-video w-full max-h-full overflow-hidden ${
                 videoHighlight ? 'is-live' : ''
@@ -784,7 +784,7 @@ function WordPageContent() {
                     </div>
                     <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                       <button type="button" className="select-mode is-open" onClick={handleNext}>
-                        <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                        <img src="/Subject.png" alt="" className="select-chameleon" />
                         Next
                       </button>
                       <p className="cta-go">Let’s go</p>
@@ -800,7 +800,7 @@ function WordPageContent() {
               shuffled.map((word, index) => renderWordChip(word, index, true))}
           </div>
 
-          <div className="word-dock relative z-20 mt-2 w-full justify-center overflow-x-auto pt-1">
+          <div className="word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
             <div className="word-bar">
               <ControlTriangle
                 direction="left"
@@ -870,14 +870,19 @@ function WordPageContent() {
                   {selectedWords.join(' ')}
                 </span>
               )}
-              <img src="/home/chameleon.png" alt="" />
+              <img src="/Subject.png" alt="" />
             </button>
           )}
 
           <style jsx global>{`
+            .word-main-stack {
+              gap: clamp(0.35rem, 1.1vh, 0.85rem);
+            }
+
             .word-submit.is-ready {
-              animation: word-chameleon-nudge 1.15s ease-in-out infinite;
+              animation: word-chameleon-look-around 2.8s ease-in-out infinite;
               filter: drop-shadow(0 0 0.9rem rgba(96, 217, 108, 0.4));
+              transform-origin: center;
             }
 
             .word-submit.is-eating {
@@ -905,9 +910,11 @@ function WordPageContent() {
               animation: word-snack-to-mouth 620ms cubic-bezier(0.4, 0, 0.2, 1) both;
             }
 
-            @keyframes word-chameleon-nudge {
-              0%, 100% { transform: translateX(-9%); }
-              50% { transform: translateX(9%); }
+            @keyframes word-chameleon-look-around {
+              0%, 38%, 100% { transform: scaleX(1); }
+              46% { transform: scaleX(0.08); }
+              54%, 88% { transform: scaleX(-1); }
+              96% { transform: scaleX(-0.08); }
             }
 
             @keyframes word-chameleon-eat {
