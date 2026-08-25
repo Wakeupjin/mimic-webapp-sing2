@@ -29,20 +29,56 @@ export async function saveProgress(
     }
   }
 
+  const identity = {
+    student_id: user.id,
+    lesson_number: lessonNumber,
+    mode,
+  };
+  const resumePayload = {
+    current_position: safeCurrentPosition,
+    progress_data: safeProgressData,
+    updated_at: new Date().toISOString(),
+  };
+
+  if (!completed) {
+    // 재진입·자동 저장은 위치만 갱신한다. 완료한 모드를 다시 잠그지 않는다.
+    const { data, error: updateError } = await supabase
+      .from('learning_progress')
+      .update(resumePayload)
+      .match(identity)
+      .select('student_id');
+
+    if (updateError) throw updateError;
+    if (data && data.length > 0) return;
+
+    // 첫 진도만 미완료 상태로 만든다. 동시 완료 저장과 충돌하면 아래 update로 재시도한다.
+    const { error: insertError } = await supabase
+      .from('learning_progress')
+      .insert({ ...identity, ...resumePayload, completed: false, completed_at: null });
+
+    if (!insertError) return;
+    if (insertError.code !== '23505') throw insertError;
+
+    const { error: retryError } = await supabase
+      .from('learning_progress')
+      .update(resumePayload)
+      .match(identity);
+
+    if (retryError) throw retryError;
+    return;
+  }
+
   const { error } = await supabase
     .from('learning_progress')
-    .upsert({
-      student_id: user.id,
-      lesson_number: lessonNumber,
-      mode,
-      completed,
-      current_position: safeCurrentPosition,
-      progress_data: safeProgressData,
-      completed_at: completed ? new Date().toISOString() : null,
-      updated_at: new Date().toISOString(),
-    }, {
-      onConflict: 'student_id,lesson_number,mode'
-    });
+    .upsert(
+      {
+        ...identity,
+        ...resumePayload,
+        completed: true,
+        completed_at: new Date().toISOString(),
+      },
+      { onConflict: 'student_id,lesson_number,mode' }
+    );
 
   if (error) throw error;
 }

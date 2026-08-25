@@ -97,7 +97,8 @@ function WatchingPageContent() {
       // 1. Lesson ID 추출 ("001:5" -> 5)
       const contentLesson = parseLessonNumber(movieId);
       const pack = parsePack(movieId);
-      setLessonNumber(parseProgressLesson(movieId));
+      const progressLesson = parseProgressLesson(movieId);
+      setLessonNumber(progressLesson);
 
       if (isNaN(contentLesson) || contentLesson < 1 || (pack <= 1 && contentLesson > 12)) {
         setIsLoading(false);
@@ -118,7 +119,7 @@ function WatchingPageContent() {
 
       // 5. 저장된 진도 불러오기
       try {
-        const progress = await getProgressByMode(lessonNumber, 'watching');
+        const progress = await getProgressByMode(progressLesson, 'watching');
         if (progress) {
           setSavedProgress(progress);
           if (typeof progress.current_position === 'number') {
@@ -482,7 +483,8 @@ function WatchingPageContent() {
                     setIsVideoStarted(true);
                   }
                 }}
-                text="Click to start"
+                text="먼저 장면을 보고 흐름을 이해해요"
+                description="영상을 보며 오늘 배울 대사의 맥락을 익혀요."
               />
             )}
 

@@ -152,7 +152,8 @@ function WordPageContent() {
 
       const contentLesson = parseLessonNumber(movieId);
       const packName = parsePack(movieId);
-      setLessonNumber(parseProgressLesson(movieId));
+      const progressLesson = parseProgressLesson(movieId);
+      setLessonNumber(progressLesson);
 
       if (isNaN(contentLesson)) {
         setIsLoading(false);
@@ -173,7 +174,7 @@ function WordPageContent() {
         setIsLoading(false);
 
         try {
-          const progress = await getProgressByMode(lessonNumber, 'word');
+          const progress = await getProgressByMode(progressLesson, 'word');
           if (progress) {
             const q = Math.max(1, Math.floor(Number(progress.current_position || 1)));
             if (q <= totalQuestions) {
@@ -732,7 +733,13 @@ function WordPageContent() {
                 />
               )}
 
-              {showStartOverlay && <ClickToStartOverlay onClick={handleStart} />}
+              {showStartOverlay && (
+                <ClickToStartOverlay
+                  onClick={handleStart}
+                  text="단어를 순서대로 맞춰요"
+                  description="들리는 문장을 떠올리며 단어를 올바른 순서로 배열해요."
+                />
+              )}
 
               {isPaused && !showCorrect && !showAgain && !showCompletion && <PauseOverlay />}
 

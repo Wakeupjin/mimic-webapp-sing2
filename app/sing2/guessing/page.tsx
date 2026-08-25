@@ -268,7 +268,8 @@ function GuessingPageContent() {
 
         const contentLesson = parseLessonNumber(movieId);
         const pack = parsePack(movieId);
-        setLessonNumber(parseProgressLesson(movieId));
+        const progressLesson = parseProgressLesson(movieId);
+        setLessonNumber(progressLesson);
 
         if (isNaN(contentLesson)) {
           console.error('❌ Invalid lesson number:', movieId);
@@ -293,7 +294,7 @@ function GuessingPageContent() {
         
         // 저장된 진도 불러오기
         try {
-          const progress = await getProgressByMode(lessonNumber, 'guessing');
+          const progress = await getProgressByMode(progressLesson, 'guessing');
           if (progress) {
             setSavedProgress(progress);
             const idx = Math.max(0, Math.floor(Number(progress.current_position || 0)));
@@ -915,6 +916,8 @@ function GuessingPageContent() {
                     startGuessing();
                     playVideo();
                   }}
+                  text="무음 장면을 보고 정답을 골라요"
+                  description="장면을 본 뒤, 들리는 대사를 맞혀요."
                 />
               )}
 
