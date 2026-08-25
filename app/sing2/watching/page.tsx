@@ -13,11 +13,12 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import PauseOverlay from "../../components/PauseOverlay";
 
 // --- [SUPABASE 연결 및 타입 정의] ---
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatChapterLabel, resolveVideoUrl } from '../../dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatChapterLabel } from '../../dataService';
 import { notFound } from 'next/navigation'; // 데이터 없을 때 404 처리용
 import { saveProgress, getProgressByMode, saveLog } from '../../lib/progress';
 import { useEvaluationLog } from '../../lib/evaluation';
 import { useRequireModeAccess } from '../../lib/useRequireModeAccess';
+import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
 import LessonShell from '../../components/LessonShell';
 import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
@@ -113,25 +114,22 @@ function WatchingPageContent() {
         return; 
       }
 
-      const lesson = await fetchLessonData(contentLesson, pack);
+      const [lesson, progress] = await Promise.all([
+        fetchLessonData(contentLesson, pack),
+        getProgressByMode(progressLesson, 'watching').catch(() => null),
+      ]);
 
       if (!lesson) {
         setIsLoading(false);
         return;
       }
 
-      // 영상 주소와 저장 진도를 함께 준비한 뒤 한 번만 플레이어를 렌더링한다.
-      const [resolvedVideoUrl, progress] = await Promise.all([
-        resolveVideoUrl(lesson.video_id),
-        getProgressByMode(progressLesson, 'watching').catch(() => null),
-      ]);
-
       const initialPosition = Number(progress?.current_position ?? lesson.watch_start_sec ?? 0);
       maxWatchedRef.current = Number.isFinite(initialPosition) ? initialPosition : 0;
       watchingDoneRef.current = Boolean(progress?.completed);
       setSavedProgress(progress);
       setLessonData(lesson as LessonDataType);
-      setVideoUrl(resolvedVideoUrl);
+      setVideoUrl(getVideoSource());
       setIsLoading(false);
     };
 
