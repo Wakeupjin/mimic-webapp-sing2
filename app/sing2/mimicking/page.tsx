@@ -816,7 +816,7 @@ function MimickingPageContent() {
                   description={
                     isMimickingResume
                       ? `${currentIndex + 1}번째 문장부터 이어서 연습해요.`
-                      : "소리와 무음 반복을 따라 30개 문장을 연습해요."
+                      : `소리와 무음 반복을 따라 ${lineTotal}개 문장을 연습해요.`
                   }
                   actionLabel={isMimickingResume ? "계속하기" : "시작"}
                 />

@@ -120,7 +120,7 @@ function BookSelectingContent() {
         const n = index + 1;
         return {
           id: label,
-          label: formatChapterLabel(pack, n),
+          label: bookSceneHasContent(n) ? formatChapterLabel(pack, n) : `${formatChapterLabel(pack, n)} · 준비 중`,
           locked: !bookSceneHasContent(n),
           selected: index === sceneIndex,
           done: isModeCompleted(progressRows, parseProgressLesson(formatMovieId(pack, n)), "word"),

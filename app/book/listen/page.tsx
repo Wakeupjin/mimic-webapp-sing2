@@ -93,7 +93,6 @@ function ListenPageContent() {
       }
 
       setLessonData(lesson as LessonDataType);
-      setIsLoading(false);
 
       try {
         const progress = await getProgressByMode(parseProgressLesson(movieId), "watching");
@@ -106,6 +105,8 @@ function ListenPageContent() {
         }
       } catch {
         // first listen
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -432,7 +433,13 @@ function ListenPageContent() {
                   setIsVideoStarted(true);
                 }
               }}
-              text="Click to start"
+              text={savedProgress?.current_position > startTime ? "이어서 들어볼까요?" : "원서 낭독을 들어요"}
+              description={
+                savedProgress?.current_position > startTime
+                  ? "멈춘 부분부터 이어서 들어요."
+                  : "실제 낭독으로 Pinocchio Chapter 1을 들어요."
+              }
+              actionLabel={savedProgress?.current_position > startTime ? "계속하기" : "시작"}
             />
           )}
 
