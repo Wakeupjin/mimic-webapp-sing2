@@ -805,6 +805,9 @@ body {
 }
 
 .home-month {
+  position: absolute;
+  left: 50%;
+  top: clamp(0.2rem, 0.4vw, 0.4rem);
   font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
   font-weight: 800;
   font-size: clamp(1.55rem, 5.7vw, 6.875rem);
@@ -812,6 +815,7 @@ body {
   letter-spacing: 0.01em;
   color: #fff;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
 }
 
 .home-login {
@@ -1552,6 +1556,7 @@ body {
     padding-inline: 1rem;
     font-size: clamp(1.9rem, 9vw, 2.55rem);
     white-space: nowrap;
+    translate: none;
     transform: none;
   }
 
