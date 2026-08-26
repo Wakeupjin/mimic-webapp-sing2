@@ -779,6 +779,9 @@ function GuessingPageContent() {
   const lineTotal = totalQuestions || guessingData.length || 10;
   const lineCurrent = String(Math.min(currentQuestionIndex + 1, lineTotal)).padStart(2, "0");
   const lineTotalLabel = String(lineTotal).padStart(2, "0");
+  const isGuessingResume = Boolean(
+    savedProgress && !savedProgress.completed && currentQuestionIndex > 0
+  );
   const remainingPlays =
     isGuessingStarted &&
     !isPaused &&
@@ -923,8 +926,13 @@ function GuessingPageContent() {
                     startGuessing();
                     playVideo();
                   }}
-                  text="무음 장면을 보고 정답을 골라요"
-                  description="장면을 본 뒤, 들리는 대사를 맞혀요."
+                  text={isGuessingResume ? "이어서 정답을 골라볼까요?" : "무음 장면을 보고 정답을 골라요"}
+                  description={
+                    isGuessingResume
+                      ? `${currentQuestionIndex + 1}번째 문제부터 이어서 풀어요.`
+                      : "장면을 본 뒤, 들리는 대사를 맞혀요."
+                  }
+                  actionLabel={isGuessingResume ? "계속하기" : "시작"}
                 />
               )}
 

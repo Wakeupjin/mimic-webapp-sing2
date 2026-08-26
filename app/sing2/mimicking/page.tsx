@@ -202,8 +202,6 @@ function MimickingPageContent() {
               setIsMimickingStarted(true);
               setIsMimickingComplete(true);
               setShowNextCta(true);
-            } else if (idx > 0) {
-              setIsMimickingStarted(true);
             }
           }
         } catch (error) {
@@ -684,6 +682,9 @@ function MimickingPageContent() {
   const lineTotal = scenes.length || 30;
   const lineCurrent = String(Math.min(currentIndex + 1, lineTotal)).padStart(2, "0");
   const lineTotalLabel = String(lineTotal).padStart(2, "0");
+  const isMimickingResume = Boolean(
+    savedProgress && !savedProgress.completed && currentIndex > 0
+  );
 
   return (
     <LessonShell
@@ -799,7 +800,7 @@ function MimickingPageContent() {
               )}
               
               {/* 시작을 위한 클릭 오버레이 */}
-              {!isMimickingStarted && currentIndex === 0 && (
+              {!isMimickingStarted && !showNextCta && (
                 <ClickToStartOverlay
                   onClick={() => {
                     setIsMimickingStarted(true);
@@ -808,8 +809,13 @@ function MimickingPageContent() {
                     setMuted(false);
                     playVideo();
                   }}
-                  text="듣고 따라 말해요"
-                  description="소리와 무음 반복을 따라 30개 문장을 연습해요."
+                  text={isMimickingResume ? "이어서 따라 말할까요?" : "듣고 따라 말해요"}
+                  description={
+                    isMimickingResume
+                      ? `${currentIndex + 1}번째 문장부터 이어서 연습해요.`
+                      : "소리와 무음 반복을 따라 30개 문장을 연습해요."
+                  }
+                  actionLabel={isMimickingResume ? "계속하기" : "시작"}
                 />
               )}
 

@@ -182,6 +182,7 @@ function WordPageContent() {
               : Math.max(1, Math.floor(Number(progress.current_position || 1)));
             if (q <= totalQuestions) {
               setCurrentQuestionNumber(q);
+              maxQuestionRef.current = Math.max(maxQuestionRef.current, q);
             }
             if (progress.completed) {
               setIsStarted(true);
@@ -658,6 +659,7 @@ function WordPageContent() {
   const videoHighlight = slotActive(2);
   const lineCurrent = String(currentQuestionNumber).padStart(2, '0');
   const lineTotalLabel = String(totalQuestions).padStart(2, '0');
+  const isWordResume = currentQuestionNumber > 1 && !showCompletion;
   const showSentence =
     gamePhase === 'guessing' &&
     selectedWords.length > 0 &&
@@ -747,8 +749,13 @@ function WordPageContent() {
               {showStartOverlay && (
                 <ClickToStartOverlay
                   onClick={handleStart}
-                  text="단어를 순서대로 맞춰요"
-                  description="들리는 문장을 떠올리며 단어를 올바른 순서로 배열해요."
+                  text={isWordResume ? "이어서 문장을 완성할까요?" : "단어를 순서대로 맞춰요"}
+                  description={
+                    isWordResume
+                      ? `${currentQuestionNumber}번째 문제부터 이어서 풀어요.`
+                      : "들리는 문장을 떠올리며 단어를 올바른 순서로 배열해요."
+                  }
+                  actionLabel={isWordResume ? "계속하기" : "시작"}
                 />
               )}
 
