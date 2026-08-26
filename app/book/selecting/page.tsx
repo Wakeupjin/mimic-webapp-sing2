@@ -16,8 +16,9 @@ import {
   type ProgressRow,
 } from "../../lib/progressGate";
 import { BOOK_PACK, bookSceneHasContent, lessonPath } from "../../lib/lessonMedia";
-import { FullscreenIcon, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
+import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import ModeSelectLayout from "../../components/ModeSelectLayout";
+import AccountMenu from "../../components/AccountMenu";
 
 const BOOK_MODES: Array<{ learn: LearnMode; label: string }> = [
   { learn: "watching", label: "Listen" },
@@ -74,7 +75,7 @@ function BookSelectingContent() {
   const modeOpen = (mode: LearnMode) =>
     hasContent && (isMaster || canAccessMode(progressRows, progressLesson, mode));
   const hereMode =
-    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode)) ?? "word";
+    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode));
 
   const openMode = (mode: LearnMode) => {
     if (!modeOpen(mode)) return;
@@ -103,18 +104,13 @@ function BookSelectingContent() {
 
   return (
     <ModeSelectLayout
-      badge={isMaster ? "원장" : undefined}
+      badge={<AccountMenu onOpenAdmin={isMaster ? () => router.push("/admin") : undefined} />}
       chapterLabel={formatChapterLabel(pack, scene)}
       dropdownOpen={isDropdownOpen}
       onToggleDropdown={() => setIsDropdownOpen((open) => !open)}
       dropdownRef={dropdownRef}
       extraActions={
         <>
-          {isMaster && (
-            <HeaderIconButton label="학생 현황" onClick={() => router.push("/admin")}>
-              <ListIcon active />
-            </HeaderIconButton>
-          )}
           <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
             <FullscreenIcon active={isFullscreen} />
           </HeaderIconButton>

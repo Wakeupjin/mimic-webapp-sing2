@@ -19,8 +19,9 @@ import {
   type LearnMode,
   type ProgressRow,
 } from '../../lib/progressGate';
-import { FullscreenIcon, HeaderIconButton, ListIcon } from '../../components/HeaderIcons';
+import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
 import ModeSelectLayout from '../../components/ModeSelectLayout'; 
+import AccountMenu from '../../components/AccountMenu';
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -188,7 +189,7 @@ function SelectingPageContent() {
   const modeOpen = (mode: LearnMode) =>
     isMaster || canAccessMode(progressRows, progressLesson, mode);
   const hereMode =
-    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode)) ?? 'word';
+    MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode));
 
   const MODE_LABEL: Record<LearnMode, string> = {
     watching: 'Watch',
@@ -199,7 +200,7 @@ function SelectingPageContent() {
 
   return (
     <ModeSelectLayout
-      badge={isMaster ? '원장' : undefined}
+      badge={<AccountMenu onOpenAdmin={isMaster ? () => router.push('/admin') : undefined} />}
       chapterLabel={selectedLesson ? formatChapterLabel(pack, selectedLesson.lesson_number) : formatChapterLabel(pack, 1)}
       dropdownOpen={isDropdownOpen}
       onToggleDropdown={() => setIsDropdownOpen((open) => !open)}
@@ -207,11 +208,6 @@ function SelectingPageContent() {
       listRef={scrollContainerRef}
       extraActions={
         <>
-          {isMaster && (
-            <HeaderIconButton label="학생 현황" onClick={() => router.push('/admin')}>
-              <ListIcon active />
-            </HeaderIconButton>
-          )}
           <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
             <FullscreenIcon active={isFullscreen} />
           </HeaderIconButton>

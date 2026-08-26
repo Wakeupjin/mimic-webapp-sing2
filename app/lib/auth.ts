@@ -51,6 +51,33 @@ export async function signOut() {
   if (error) throw error;
 }
 
+export async function updateOwnAccount({
+  userId,
+  nickname,
+  password,
+}: {
+  userId: string;
+  nickname: string;
+  password?: string;
+}) {
+  const cleanNickname = nickname.trim();
+  if (!cleanNickname) throw new Error('이름을 입력해주세요.');
+
+  const { error: profileError } = await supabase
+    .from('student_profiles')
+    .update({ nickname: cleanNickname })
+    .eq('id', userId);
+  if (profileError) throw profileError;
+
+  const authPayload: { data: { nickname: string }; password?: string } = {
+    data: { nickname: cleanNickname },
+  };
+  if (password) authPayload.password = password;
+
+  const { error: authError } = await supabase.auth.updateUser(authPayload);
+  if (authError) throw authError;
+}
+
 export async function getCurrentUser() {
   const { data: { user } } = await supabase.auth.getUser();
   return user;
