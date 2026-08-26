@@ -31,7 +31,7 @@ type ModeSelectLayoutProps = {
   dropdownRef: React.RefObject<HTMLDivElement | null>;
   listRef?: React.RefObject<HTMLDivElement | null>;
   extraActions?: ReactNode;
-  badge?: string;
+  badge?: ReactNode;
 };
 
 export default function ModeSelectLayout({
@@ -47,8 +47,8 @@ export default function ModeSelectLayout({
 }: ModeSelectLayoutProps) {
   return (
     <main className="select-stage relative flex flex-col overflow-x-hidden overflow-y-auto px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
-      <header className="relative z-20 flex shrink-0 items-center justify-end gap-[clamp(0.45rem,1vw,0.75rem)]">
-        {badge ? <span className="cinema-pill is-static mr-auto">{badge}</span> : null}
+      <header className="relative z-40 flex shrink-0 items-center justify-end gap-[clamp(0.45rem,1vw,0.75rem)]">
+        {badge ? <div className="mr-auto">{badge}</div> : null}
         {extraActions}
         <HeaderCloseLink href="/" />
       </header>
@@ -113,12 +113,13 @@ export default function ModeSelectLayout({
                 onClick={mode.onSelect}
                 disabled={mode.locked}
                 className={`select-mode ${
-                  !mode.locked && (mode.open || mode.done || mode.here) ? "is-open" : ""
+                  mode.done ? "is-done" : mode.here ? "is-current" : !mode.locked ? "is-open" : ""
                 }`}
               >
                 {mode.here && (
                   <img src="/Subject.png" alt="" className="select-chameleon" />
                 )}
+                {mode.done && <span className="select-done" aria-label="완료">✓</span>}
                 {mode.label}
               </button>
               {mode.here && <p className="select-here">현재 단계</p>}

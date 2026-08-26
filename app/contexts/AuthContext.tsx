@@ -9,18 +9,29 @@ interface AuthContextType {
   user: User | null;
   profile: StudentProfile | null;
   loading: boolean;
+  refreshProfile: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: null,
   profile: null,
   loading: true,
+  refreshProfile: async () => undefined,
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<StudentProfile | null>(null);
   const [loading, setLoading] = useState(true);
+
+  const refreshProfile = async () => {
+    if (!user) {
+      setProfile(null);
+      return;
+    }
+    const nextProfile = await getStudentProfile(user.id);
+    setProfile(nextProfile);
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -74,7 +85,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, profile, loading }}>
+    <AuthContext.Provider value={{ user, profile, loading, refreshProfile }}>
       {children}
     </AuthContext.Provider>
   );
