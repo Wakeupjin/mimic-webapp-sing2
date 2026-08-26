@@ -194,7 +194,7 @@ function SelectingPageContent() {
     watching: 'Watch',
     mimicking: 'Mimic',
     guessing: 'Guess',
-    word: 'Quiz',
+    word: 'Word',
   };
 
   return (

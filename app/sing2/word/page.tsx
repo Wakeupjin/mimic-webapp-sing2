@@ -99,6 +99,7 @@ function WordPageContent() {
   const lockHintTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isLineListOpen, setIsLineListOpen] = useState(false);
   const [lockHint, setLockHint] = useState(false);
+  const [isChameleonEating, setIsChameleonEating] = useState(false);
 
   const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
   const pack = parsePack(movieId);
@@ -152,7 +153,8 @@ function WordPageContent() {
 
       const contentLesson = parseLessonNumber(movieId);
       const packName = parsePack(movieId);
-      setLessonNumber(parseProgressLesson(movieId));
+      const progressLesson = parseProgressLesson(movieId);
+      setLessonNumber(progressLesson);
 
       if (isNaN(contentLesson)) {
         setIsLoading(false);
@@ -173,11 +175,18 @@ function WordPageContent() {
         setIsLoading(false);
 
         try {
-          const progress = await getProgressByMode(lessonNumber, 'word');
+          const progress = await getProgressByMode(progressLesson, 'word');
           if (progress) {
-            const q = Math.max(1, Math.floor(Number(progress.current_position || 1)));
+            const q = progress.completed
+              ? totalQuestions
+              : Math.max(1, Math.floor(Number(progress.current_position || 1)));
             if (q <= totalQuestions) {
               setCurrentQuestionNumber(q);
+            }
+            if (progress.completed) {
+              setIsStarted(true);
+              setShowStartOverlay(false);
+              setShowCompletion(true);
             }
           }
         } catch {
@@ -512,7 +521,10 @@ function WordPageContent() {
   const handleSubmit = () => {
     if (!currentQuestion) return;
     if (selectedWords.length !== currentQuestion.correctWords.length) return;
-    if (showCorrect || showAgain || isPaused) return;
+    if (showCorrect || showAgain || isPaused || isChameleonEating) return;
+
+    setIsChameleonEating(true);
+    window.setTimeout(() => setIsChameleonEating(false), 720);
 
     const isCorrect =
       JSON.stringify(selectedWords) === JSON.stringify(currentQuestion.correctWords);
@@ -655,13 +667,13 @@ function WordPageContent() {
 
   return (
     <LessonShell hideHeader compactStage>
-      <div className="word-board">
+      <div className={`word-board ${gamePhase === 'guessing' && !showCompletion ? 'is-arranging' : ''}`}>
         <div className="word-chips-side">
           {gamePhase === 'guessing' && leftWords.map((word, i) => renderWordChip(word, i))}
         </div>
 
-        <div className="flex min-h-0 flex-1 flex-col items-center">
-          <div className="flex w-full min-h-0 flex-1 items-center justify-center">
+        <div className="word-main-stack flex min-h-0 flex-1 flex-col items-center justify-center">
+          <div className="flex w-full min-h-0 items-center justify-center">
             <div
               className={`word-video watch-frame relative aspect-video w-full max-h-full overflow-hidden ${
                 videoHighlight ? 'is-live' : ''
@@ -732,7 +744,13 @@ function WordPageContent() {
                 />
               )}
 
-              {showStartOverlay && <ClickToStartOverlay onClick={handleStart} />}
+              {showStartOverlay && (
+                <ClickToStartOverlay
+                  onClick={handleStart}
+                  text="단어를 순서대로 맞춰요"
+                  description="들리는 문장을 떠올리며 단어를 올바른 순서로 배열해요."
+                />
+              )}
 
               {isPaused && !showCorrect && !showAgain && !showCompletion && <PauseOverlay />}
 
@@ -763,7 +781,7 @@ function WordPageContent() {
               )}
 
               {showCompletion && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
                   <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
                     <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                       <button type="button" className="select-mode" onClick={handleAgain}>
@@ -773,7 +791,7 @@ function WordPageContent() {
                     </div>
                     <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                       <button type="button" className="select-mode is-open" onClick={handleNext}>
-                        <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                        <img src="/Subject.png" alt="" className="select-chameleon" />
                         Next
                       </button>
                       <p className="cta-go">Let’s go</p>
@@ -789,7 +807,7 @@ function WordPageContent() {
               shuffled.map((word, index) => renderWordChip(word, index, true))}
           </div>
 
-          <div className="word-dock relative z-20 mt-2 w-full justify-center overflow-x-auto pt-1">
+          <div className="word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
             <div className="word-bar">
               <ControlTriangle
                 direction="left"
@@ -844,15 +862,90 @@ function WordPageContent() {
             <button
               type="button"
               onClick={handleSubmit}
-              disabled={!canSubmit}
+              disabled={!canSubmit || isChameleonEating}
               className={`word-submit relative z-20 mb-1 mt-1 shrink-0 ${
-                canSubmit ? 'hover:scale-105 animate-pulse-button' : 'cursor-not-allowed opacity-40'
+                isChameleonEating
+                  ? 'is-eating'
+                  : canSubmit
+                    ? 'is-ready hover:scale-105'
+                    : 'cursor-not-allowed opacity-40'
               }`}
-              aria-label="정답 제출"
+              aria-label="완성한 문장 먹이기"
             >
-              <img src="/home/chameleon.png" alt="" />
+              {isChameleonEating && (
+                <span className="word-snack" aria-hidden="true">
+                  {selectedWords.join(' ')}
+                </span>
+              )}
+              <img src="/Subject.png" alt="" />
             </button>
           )}
+
+          <style jsx global>{`
+            .word-main-stack {
+              gap: clamp(0.35rem, 1.1vh, 0.85rem);
+            }
+
+            .word-submit.is-ready {
+              animation: word-chameleon-look-around 2.8s ease-in-out infinite;
+              filter: drop-shadow(0 0 0.9rem rgba(96, 217, 108, 0.4));
+              transform-origin: center;
+            }
+
+            .word-submit.is-eating {
+              animation: word-chameleon-eat 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+            }
+
+            .word-snack {
+              position: absolute;
+              left: 50%;
+              bottom: 72%;
+              z-index: 2;
+              max-width: min(20rem, 72vw);
+              overflow: hidden;
+              padding: 0.35rem 0.7rem;
+              border-radius: 999px;
+              background: #fff;
+              color: #171717;
+              font-family: "Encode Sans", sans-serif;
+              font-size: clamp(0.72rem, 1.5vw, 1rem);
+              font-weight: 800;
+              line-height: 1;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              box-shadow: 0 0.4rem 1.1rem rgba(0, 0, 0, 0.28);
+              animation: word-snack-to-mouth 620ms cubic-bezier(0.4, 0, 0.2, 1) both;
+            }
+
+            @keyframes word-chameleon-look-around {
+              0%, 38%, 100% { transform: scaleX(1); }
+              46% { transform: scaleX(0.08); }
+              54%, 88% { transform: scaleX(-1); }
+              96% { transform: scaleX(-0.08); }
+            }
+
+            @keyframes word-chameleon-eat {
+              0% { transform: translateX(0) scale(1); }
+              32% { transform: translateY(-8%) scale(1.13, 0.9); }
+              58% { transform: translateY(2%) scale(0.91, 1.12); }
+              78% { transform: translateY(0) scale(1.07, 0.95); }
+              100% { transform: translateY(0) scale(1); }
+            }
+
+            @keyframes word-snack-to-mouth {
+              0% { opacity: 1; transform: translate(-50%, -105%) scale(1); }
+              68% { opacity: 1; transform: translate(-50%, 5%) scale(0.48); }
+              100% { opacity: 0; transform: translate(-50%, 42%) scale(0.08); }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+              .word-submit.is-ready,
+              .word-submit.is-eating,
+              .word-snack {
+                animation: none;
+              }
+            }
+          `}</style>
         </div>
 
         <div className="word-chips-side">

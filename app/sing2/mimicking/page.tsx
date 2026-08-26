@@ -23,6 +23,29 @@ import LessonShell from "../../components/LessonShell";
 import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import PauseOverlay from "../../components/PauseOverlay";
 
+type SentenceFeedback = "easy" | "hard";
+type SentenceFeedbackMap = Record<string, SentenceFeedback>;
+
+function parseSentenceFeedback(progressData: unknown): SentenceFeedbackMap {
+  let parsed = progressData;
+
+  for (let attempt = 0; attempt < 2 && typeof parsed === "string"; attempt += 1) {
+    try {
+      parsed = JSON.parse(parsed);
+    } catch {
+      return {};
+    }
+  }
+
+  if (!parsed || typeof parsed !== "object") return {};
+  const feedback = (parsed as { sentenceFeedback?: unknown }).sentenceFeedback;
+  if (!feedback || typeof feedback !== "object") return {};
+
+  return Object.fromEntries(
+    Object.entries(feedback).filter(([, value]) => value === "easy" || value === "hard")
+  ) as SentenceFeedbackMap;
+}
+
 function MimickingPageContent() {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -88,6 +111,8 @@ function MimickingPageContent() {
   const [isMimickingStarted, setIsMimickingStarted] = useState(false);
   const [isSequencePaused, setIsSequencePaused] = useState(false);
   const [nudgeNext, setNudgeNext] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+  const [sentenceFeedback, setSentenceFeedback] = useState<SentenceFeedbackMap>({});
   const { bumpPlay, patch } = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
   const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'mimicking', movieId);
   const maxSentenceRef = useRef(0);
@@ -98,6 +123,7 @@ function MimickingPageContent() {
   const pendingButtonIndexRef = useRef<number | null>(null);
   const stepTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isSequencePausedRef = useRef(false);
+  const sentenceFeedbackRef = useRef<SentenceFeedbackMap>({});
 
   const clearStepTimeout = useCallback(() => {
     if (stepTimeoutRef.current) {
@@ -129,7 +155,8 @@ function MimickingPageContent() {
         setIsLoading(true);
         const contentLesson = parseLessonNumber(movieId);
         const pack = parsePack(movieId);
-        setLessonNumber(parseProgressLesson(movieId));
+        const progressLesson = parseProgressLesson(movieId);
+        setLessonNumber(progressLesson);
         
         if (isNaN(contentLesson)) {
           setIsLoading(false);
@@ -159,13 +186,22 @@ function MimickingPageContent() {
         
         // 저장된 진도 불러오기
         try {
-          const progress = await getProgressByMode(lessonNumber, 'mimicking');
+          const progress = await getProgressByMode(progressLesson, 'mimicking');
           if (progress) {
             setSavedProgress(progress);
-            const idx = Math.max(0, Math.floor(Number(progress.current_position || 0)));
+            const restoredFeedback = parseSentenceFeedback(progress.progress_data);
+            setSentenceFeedback(restoredFeedback);
+            sentenceFeedbackRef.current = restoredFeedback;
+            const idx = progress.completed
+              ? Math.max(0, mimicData.length - 1)
+              : Math.max(0, Math.floor(Number(progress.current_position || 0)));
             setCurrentIndex(idx);
             maxSentenceRef.current = idx;
-            if (idx > 0) {
+            if (progress.completed) {
+              setIsMimickingStarted(true);
+              setIsMimickingComplete(true);
+              setShowNextCta(true);
+            } else if (idx > 0) {
               setIsMimickingStarted(true);
             }
           }
@@ -201,6 +237,10 @@ function MimickingPageContent() {
     currentIndexRef.current = currentIndex;
   }, [currentIndex]);
 
+  useEffect(() => {
+    sentenceFeedbackRef.current = sentenceFeedback;
+  }, [sentenceFeedback]);
+
   // 미믹킹 진도 저장 useEffect
   useEffect(() => {
     if (!lessonNumber || !isMimickingStarted) return;
@@ -216,6 +256,7 @@ function MimickingPageContent() {
             currentScene: currentIndex,
             totalScenes: scenes.length,
             isComplete: isMimickingComplete,
+            sentenceFeedback,
             lastSaved: new Date().toISOString()
           }
         );
@@ -226,7 +267,7 @@ function MimickingPageContent() {
     }, 10000); // 10초마다 저장
 
     return () => clearInterval(saveProgressInterval);
-  }, [lessonNumber, isMimickingStarted, currentIndex, isMimickingComplete, scenes.length]);
+  }, [lessonNumber, isMimickingStarted, currentIndex, isMimickingComplete, scenes.length, sentenceFeedback]);
 
   // 미믹킹 완료 시 최종 저장
   useEffect(() => {
@@ -237,10 +278,12 @@ function MimickingPageContent() {
             currentScene: currentIndex,
             totalScenes: scenes.length,
             isComplete: true,
+            sentenceFeedback,
             completed_at: new Date().toISOString()
           });
           await saveLog(lessonNumber, 'mimicking', 'mimicking_completed', {
             totalScenes: scenes.length,
+            difficultSentenceCount: Object.values(sentenceFeedback).filter((value) => value === 'hard').length,
             completed_at: new Date().toISOString()
           });
           console.log('🎉 미믹킹 모드 완료!');
@@ -250,7 +293,7 @@ function MimickingPageContent() {
       };
       saveFinalProgress();
     }
-  }, [isMimickingComplete, lessonNumber, currentIndex, scenes.length]);
+  }, [isMimickingComplete, lessonNumber, currentIndex, scenes.length, sentenceFeedback]);
 
   // 풀스크린 복원 로직
   useEffect(() => {
@@ -351,6 +394,7 @@ function MimickingPageContent() {
     setIsSequencePaused(false);
     isSequencePausedRef.current = false;
     setNudgeNext(false);
+    setIsFeedbackOpen(false);
     clearStepTimeout();
     autoSeqIndexRef.current = 0;
     setAutoSeqIndex(0);
@@ -429,6 +473,9 @@ function MimickingPageContent() {
   }, [isSequenceRunning, isMaster, nudgeNext, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
 
   const handleNext = useCallback(() => {
+    if (isFeedbackOpen) {
+      return;
+    }
     if (isSequenceRunning && !isMaster && !nudgeNext) {
       return;
     }
@@ -459,7 +506,7 @@ function MimickingPageContent() {
         window.location.href = lessonPath(movieId, 'guessing');
     }
     setShowNextCta(false);
-  }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
+  }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, isFeedbackOpen, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
 
   const skipLine = useCallback(() => {
     if (showNextCta) return;
@@ -489,6 +536,7 @@ function MimickingPageContent() {
     setIsSequencePaused(false);
     isSequencePausedRef.current = false;
     setNudgeNext(false);
+    setIsFeedbackOpen(false);
     setAutoSeqIndex(null);
     setActiveControlIndex(null);
     setMuted(false);
@@ -511,7 +559,7 @@ function MimickingPageContent() {
   ]);
 
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
-    if (showNextCta) return;
+    if (showNextCta || isFeedbackOpen) return;
     clearStepTimeout();
     setIsSequencePaused(false);
     isSequencePausedRef.current = false;
@@ -522,7 +570,50 @@ function MimickingPageContent() {
     autoSeqIndexRef.current = slotIndex;
     setIsSequenceRunning(true);
     playVideo();
-  }, [showNextCta, playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
+  }, [showNextCta, isFeedbackOpen, playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
+
+  const handleSentenceFeedback = useCallback((feedback: SentenceFeedback) => {
+    const nextFeedback = {
+      ...sentenceFeedbackRef.current,
+      [String(currentIndex)]: feedback,
+    };
+    sentenceFeedbackRef.current = nextFeedback;
+    setSentenceFeedback(nextFeedback);
+    setIsFeedbackOpen(false);
+    setNudgeNext(false);
+
+    const isLastSentence = currentIndex >= scenes.length - 1;
+    void saveProgress(lessonNumber, 'mimicking', isLastSentence, currentIndex, {
+      currentScene: currentIndex,
+      totalScenes: scenes.length,
+      isComplete: isLastSentence,
+      sentenceFeedback: nextFeedback,
+      lastSaved: new Date().toISOString(),
+    }).catch((error) => console.error('문장 평가 저장 실패:', error));
+    void saveLog(lessonNumber, 'mimicking', 'sentence_feedback', {
+      sentenceIndex: currentIndex,
+      feedback,
+      text: scenes[currentIndex]?.text || '',
+    }).catch((error) => console.error('문장 평가 로그 저장 실패:', error));
+
+    clearStepTimeout();
+    setIsSequenceRunning(false);
+    lastStartedIndexRef.current = null;
+
+    if (isLastSentence) {
+      setIsMimickingComplete(true);
+      setShowNextCta(true);
+      pauseVideo();
+      return;
+    }
+
+    const nextIndex = currentIndex + 1;
+    maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIndex);
+    setMuted(false);
+    setActiveControlIndex(null);
+    pendingButtonIndexRef.current = null;
+    setCurrentIndex(nextIndex);
+  }, [currentIndex, scenes, lessonNumber, clearStepTimeout, pauseVideo, setActiveControlIndex, setCurrentIndex, setIsMimickingComplete, setIsSequenceRunning, setMuted, setShowNextCta]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -659,36 +750,15 @@ function MimickingPageContent() {
                         playVideo();
                       }, 1000);
                     } else {
-                      // 8개 완료 → 다음 문장 안내
+                      // 8개 완료 → 문장별 자기평가
                       clearStepTimeout();
                       setAutoSeqIndex(null);
                       autoSeqIndexRef.current = null;
                       setIsSequenceRunning(false);
                       setIsSequencePaused(false);
                       isSequencePausedRef.current = false;
-                      setNudgeNext(true);
-
-                      const currentIdx = currentIndexRef.current;
-                      if (currentIdx < scenes.length - 1) {
-                        // 원장: 직접 다음을 누를 때까지 대기 / 학생: 잠깐 안내 후 자동 이동
-                        if (!isMaster) {
-                          stepTimeoutRef.current = setTimeout(() => {
-                            const nextIdx = currentIdx + 1;
-                            maxSentenceRef.current = Math.max(maxSentenceRef.current, nextIdx);
-                            setNudgeNext(false);
-                            setMuted(false);
-                            setActiveControlIndex(null);
-                            pendingButtonIndexRef.current = null;
-                            setCurrentIndex(nextIdx);
-                          }, 1600);
-                        }
-                      } else {
-                        // 30번째 문장이면 게싱 모드로 전환
-                        setNudgeNext(false);
-                        setIsMimickingComplete(true);
-                        setShowNextCta(true);
-                        pauseVideo();
-                      }
+                      setNudgeNext(false);
+                      setIsFeedbackOpen(true);
                     }
                   }
                 }}
@@ -733,15 +803,66 @@ function MimickingPageContent() {
                     setMuted(false);
                     playVideo();
                   }}
+                  text="듣고 따라 말해요"
+                  description="소리와 무음 반복을 따라 30개 문장을 연습해요."
                 />
               )}
 
               {isSequencePaused && !showNextCta && <PauseOverlay />}
+
+              {isFeedbackOpen && !showNextCta && (
+                <div className="absolute inset-x-0 bottom-5 z-30 flex justify-center px-4 sm:bottom-8">
+                  <div className="w-full max-w-xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-4 text-center shadow-2xl backdrop-blur sm:p-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">
+                      Line {String(currentIndex + 1).padStart(2, '0')}
+                    </p>
+                    <p className="mt-1 text-lg font-bold text-white sm:text-2xl">이 문장은 어땠나요?</p>
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      <button
+                        type="button"
+                        className="rounded-xl border border-white/20 bg-white/10 px-4 py-3 font-bold text-white transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white"
+                        onClick={() => handleSentenceFeedback('easy')}
+                      >
+                        쉬웠어요
+                      </button>
+                      <button
+                        type="button"
+                        className="rounded-xl bg-[#60D96C] px-4 py-3 font-bold text-black transition hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-[#60D96C] focus:ring-offset-2 focus:ring-offset-black"
+                        onClick={() => handleSentenceFeedback('hard')}
+                      >
+                        어려웠어요
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
         
             {showNextCta && (
-              <div className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
-                <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 px-4">
+                <div className="pointer-events-auto flex w-full max-w-4xl flex-col items-center">
+                  <div className="w-full max-w-2xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl sm:p-7">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">오늘의 복습</p>
+                    <h2 className="mt-1 text-xl font-bold text-white sm:text-2xl">어려웠던 문장 TOP 3</h2>
+                    {Object.entries(sentenceFeedback).filter(([, value]) => value === 'hard').length > 0 ? (
+                      <ol className="mt-4 space-y-2 text-left">
+                        {Object.entries(sentenceFeedback)
+                          .filter(([, value]) => value === 'hard')
+                          .slice(0, 3)
+                          .map(([index], rank) => (
+                            <li key={index} className="flex gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm text-white sm:text-base">
+                              <span className="font-bold text-[#60D96C]">{rank + 1}</span>
+                              <span>{scenes[Number(index)]?.text || `Line ${String(Number(index) + 1).padStart(2, '0')}`}</span>
+                            </li>
+                          ))}
+                      </ol>
+                    ) : (
+                      <p className="mt-4 rounded-xl bg-white/10 px-4 py-3 text-sm text-zinc-200 sm:text-base">
+                        어려웠다고 표시한 문장이 없어요. 오늘 연습 완료!
+                      </p>
+                    )}
+                  </div>
+                  <div className="mt-[clamp(4.5rem,9vw,7.5rem)] flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
+                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                     <button
                       type="button"
                       className="select-mode"
@@ -753,16 +874,17 @@ function MimickingPageContent() {
                     </button>
                     <p className="select-here" style={{ visibility: "hidden" }}>Let’s go</p>
                   </div>
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
                     <button
                       type="button"
                       className="select-mode is-open"
                       onClick={handleNext}
                     >
-                      <img src="/home/chameleon.png" alt="" className="select-chameleon" />
+                      <img src="/Subject.png" alt="" className="select-chameleon" />
                       Next
                     </button>
                     <p className="cta-go">Let’s go</p>
+                    </div>
                   </div>
                 </div>
               </div>

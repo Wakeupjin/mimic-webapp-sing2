@@ -9,7 +9,7 @@ const MODE_LABEL: Record<string, string> = {
   listen: "Listen",
   mimicking: "Mimic",
   guessing: "Guess",
-  word: "Quiz",
+  word: "Word",
 };
 
 function BookComingSoonContent() {
