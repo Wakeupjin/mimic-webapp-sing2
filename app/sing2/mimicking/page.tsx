@@ -22,6 +22,7 @@ import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
 import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import PauseOverlay from "../../components/PauseOverlay";
+import { MIMICKING_SEGMENT_TAIL_SECONDS } from "../../constants/timings";
 
 type SentenceFeedback = "easy" | "hard";
 type SentenceFeedbackMap = Record<string, SentenceFeedback>;
@@ -695,7 +696,11 @@ function MimickingPageContent() {
                 src={media.src}
                 poster={media.poster}
                 startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
-                endTime={currentScene?.end ? timeStringToSeconds(currentScene.end) : 0}
+                endTime={
+                  currentScene?.end
+                    ? timeStringToSeconds(currentScene.end) + MIMICKING_SEGMENT_TAIL_SECONDS
+                    : 0
+                }
                 muted={muted}
                 showText={false}
                 text={currentScene.text}
