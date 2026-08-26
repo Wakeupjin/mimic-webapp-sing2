@@ -19,6 +19,24 @@ export async function signUp(email: string, password: string, nickname: string) 
   });
 
   if (error) throw error;
+
+  // DB 자동 프로필 트리거로 전환하는 동안에도 신규 가입이 끊기지 않게 합니다.
+  // 트리거가 이미 프로필을 만들었다면 충돌 없이 그대로 사용합니다.
+  if (data.user) {
+    const { error: profileError } = await supabase
+      .from('student_profiles')
+      .upsert(
+        {
+          id: data.user.id,
+          email: data.user.email,
+          nickname,
+          role: 'student',
+        },
+        { onConflict: 'id', ignoreDuplicates: true }
+      );
+    if (profileError) throw profileError;
+  }
+
   return data;
 }
 
