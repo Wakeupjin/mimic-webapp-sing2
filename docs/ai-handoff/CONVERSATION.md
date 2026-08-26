@@ -1,0 +1,296 @@
+# Shared conversation & decision log
+
+This is an append-only handoff record. Add meaningful user requests, decisions,
+implementation results, test outcomes, and blockers. Keep personal data and
+secrets out of this file.
+
+---
+
+## 2026-08-26 — user / request
+
+Build a harness where GPT and Cursor use the same shared document and can
+continue each other's work when one is rate-limited or stopped.
+
+## 2026-08-26 — GPT / design decision
+
+Use this repository as the canonical bridge: `STATE.md` holds the live,
+resumable snapshot and this file holds the chronological decision trail. Add
+instructions for Codex/GPT and Cursor plus a small dependency-free checkpoint
+CLI. Native chat histories remain private to each product, so they are not
+treated as shared context.
+
+## 2026-08-26 20:15:16 — gpt / checkpoint
+
+Implemented the repository-backed shared context harness.
+
+**Next action:** Cursor should read STATE.md and issue a checkpoint before beginning its next task.
+
+**Validation:** node --check scripts/ai-handoff.mjs; node scripts/ai-handoff.mjs status
+
+**Files:**
+- AGENTS.md
+- .cursor/rules/ai-handoff.mdc
+- docs/ai-handoff/README.md
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
+- scripts/ai-handoff.mjs
+
+**Open risks:** A standalone GPT chat must be given workspace access or these documents as attachments.
+
+## 2026-08-26 20:15:16 — gpt → cursor / handoff
+
+The harness is complete and its checkpoint and handoff commands have been exercised.
+
+**Next action:** Read STATE.md, then use this harness for the next user request.
+
+**Validation:** checkpoint and handoff both updated STATE.md and CONVERSATION.md successfully.
+
+## 2026-08-26 20:15:16 — cursor → gpt / handoff
+
+Round-trip handoff test passed; the shared repository documents remain the canonical cross-agent context.
+
+**Next action:** Use node scripts/ai-handoff.mjs begin before the next unrelated task.
+
+**Validation:** node --check succeeded; status, checkpoint, and two-direction handoff ran successfully.
+
+## 2026-08-26 20:15:16 — gpt / completed
+
+Built and verified the GPT ↔ Cursor shared-context harness.
+
+**Validation:** node --check scripts/ai-handoff.mjs; status, checkpoint, GPT→Cursor, Cursor→GPT, and done commands all completed.
+## 2026-08-26 20:16:07 — gpt / work started
+
+Objective: Create a repository-backed harness so GPT/Codex and Cursor share the same working context and can resume each other's task after a rate limit or handoff.
+
+## 2026-08-26 20:16:07 — gpt / checkpoint
+
+Built the shared state, conversation log, agent rules, and CLI harness.
+
+**Next action:** For the next task, start with npm run handoff -- status and then claim it with begin.
+
+**Validation:** node --check scripts/ai-handoff.mjs; npm run handoff -- begin; checkpoint; handoff; done; status
+
+**Files:**
+- AGENTS.md
+- .cursor/rules/ai-handoff.mdc
+- docs/ai-handoff/README.md
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
+- scripts/ai-handoff.mjs
+- package.json
+
+**Open risks:** A standalone GPT chat must be given workspace access or these documents as attachments.
+
+## 2026-08-26 20:16:07 — gpt → cursor / handoff
+
+GPT-to-Cursor handoff test passed using the repository documents.
+
+**Next action:** Cursor should run npm run handoff -- status, then follow STATE.md.
+
+## 2026-08-26 20:16:07 — cursor → gpt / handoff
+
+Cursor-to-GPT return handoff test passed; both agents have the same durable context.
+
+**Next action:** Mark the setup complete after confirming the current shared state.
+
+## 2026-08-26 20:16:08 — gpt / completed
+
+Built and verified the GPT ↔ Cursor shared-context harness.
+
+**Validation:** node --check passed; the npm wrapper and begin, checkpoint, bidirectional handoff, done, and status commands all completed.
+
+## 2026-08-26 20:16:36 — gpt / validation
+
+Verified the CLI syntax and log-entry separation after the final formatting fix.
+
+
+## 2026-08-26 20:16:50 — gpt / completed
+
+Built and verified the GPT ↔ Cursor shared-context harness, including structured state, conversation logging, automatic agent rules, and the CLI wrapper.
+
+**Validation:** node --check scripts/ai-handoff.mjs; npm handoff begin, checkpoint, GPT→Cursor, Cursor→GPT, done, status, and log commands all completed.
+
+
+## 2026-08-26 22:17:25 — gpt / work started
+
+Objective: Assess whether Mimic can credibly be positioned as an AI-native company based on the repository
+
+
+## 2026-08-26 22:17:25 — user / request
+
+Asked which concrete part of the actual Mimic project makes it an AI company, after requesting repository analysis.
+
+
+## 2026-08-26 22:17:25 — gpt / decision
+
+Repository review found a deterministic movie-learning product with progress and evaluation data collection, but no production AI runtime. Recommend positioning the future AI core as a content-to-curriculum engine plus an adaptive speaking coach; until implemented, describe Mimic as AI-ready rather than AI-native.
+
+
+## 2026-08-26 22:17:25 — gpt / completed
+
+Reviewed product docs, dependencies, curriculum generation, mimicking feedback, and evaluation logging; identified the credible AI-native wedge and current implementation gap.
+
+**Validation:** Read-only repository inspection with rg and targeted source review; no product code changed.
+
+
+## 2026-08-26 22:35:08 — gpt / work started
+
+Objective: Define Mimic's AI-native company thesis and Kangjin's founder positioning
+
+
+## 2026-08-26 22:35:08 — user / request
+
+Decided to make Mimic an AI-native company and position himself as its founder.
+
+
+## 2026-08-26 22:35:08 — gpt / completed
+
+Defined Mimic as an AI-native speaking company whose core loop turns stories into adaptive practice and uses learner speech to personalize the next lesson; positioned Kangjin as founder.
+
+**Validation:** Strategy and positioning decision only; no product code changed.
+
+
+## 2026-08-26 22:37:58 — gpt / work started
+
+Objective: Translate the AI-native thesis into Mimic's concrete product loop and founder execution plan
+
+
+## 2026-08-26 22:37:58 — gpt / decision
+
+Make AI Mimic Coach the first AI-native wedge: record the learner's final imitation, score transcript and delivery against the scene, return one actionable correction, and use accumulated performance to select repeats and future practice. Reuse the existing evaluation JSONB and event logging as the learner-model foundation.
+
+
+## 2026-08-26 22:37:58 — gpt / completed
+
+Mapped the AI-native strategy onto the existing Mimicking and learning_evaluations architecture and defined the founder's immediate product and pilot priorities.
+
+**Validation:** Read-only review of current recording support, evaluation schema, and learning-event logging; no product code changed.
+
+
+## 2026-08-26 22:41:13 — gpt / work started
+
+Objective: Choose whether Mimic should split academy and personal products and define the first AI-native build
+
+
+## 2026-08-26 22:41:13 — user / request
+
+Asked what to do first and whether the existing academy classroom product should run in parallel with a separate personal version.
+
+
+## 2026-08-26 22:41:13 — gpt / decision
+
+Do not create a separate personal product yet. Keep one codebase, content catalog, auth system, and progress model. Preserve academy-led classroom flow and add a student-only AI Coach checkpoint inside Mimicking. Validate one end-to-end vertical slice on Lesson 1 with 10 sentences and a 10-student academy pilot before considering a standalone B2C surface.
+
+
+## 2026-08-26 22:41:13 — gpt / completed
+
+Recommended a single shared product foundation: academy as distribution and classroom experience, student AI Coach as personalized after-class loop. Defined a narrow Lesson 1 recording-feedback pilot as the first build.
+
+**Validation:** Checked existing academy/student roles, progress gating, learning sessions, and evaluation storage; no product code changed.
+
+
+## 2026-08-26 22:44:32 — gpt / work started
+
+Objective: Implement the first student-only AI Mimic Coach vertical slice in Sing 2 Lesson 1
+
+
+## 2026-08-26 22:50:55 — user / request
+
+Approved implementation of the first AI-native Mimic Coach vertical slice.
+
+
+## 2026-08-26 22:50:55 — gpt / work
+
+Implemented a student-only AI Coach for Sing 2 Lesson 1 lines 1-10: browser microphone recording, authenticated server route, OpenAI transcription, structured coaching feedback, transcript and pace scoring, retry/continue UI, evaluation persistence, and fallback to existing self-assessment. Academy flow is unchanged and Mimic does not persist raw audio.
+
+
+## 2026-08-26 22:50:55 — gpt / checkpoint
+
+AI Mimic Coach vertical slice is implemented and production-build clean.
+
+**Next action:** Configure OPENAI_API_KEY, then test microphone recording end-to-end with a student account on Sing 2 Lesson 1 lines 1-10.
+
+**Validation:** npx tsc --noEmit passed; git diff --check passed; npm run build passed outside the sandbox. Live model call not run because OPENAI_API_KEY is not configured.
+
+**Files:**
+- app/api/ai-coach/route.ts, app/components/AiCoachPanel.tsx, app/types/aiCoach.ts, app/sing2/mimicking/page.tsx, docs/ai-coach.md
+
+**Open risks:** Student audio is sent to the configured model provider for analysis; pilot consent and a live mobile-browser microphone test are still required.
+
+
+## 2026-08-26 22:54:58 — user / request
+
+Plans to test AI Coach with a specific existing account converted to student and requested a plain-language explanation of OPENAI_API_KEY setup. Account identifier intentionally omitted from this log.
+
+
+## 2026-08-26 22:54:58 — gpt / checkpoint
+
+Explained that the existing test account must be changed from academy to student and that OPENAI_API_KEY is a private server credential for paid API calls, separate from a ChatGPT subscription.
+
+**Next action:** User creates a standard OpenAI API key, adds it locally without sharing it, changes the chosen Supabase profile role to student, then asks GPT to run the end-to-end test.
+
+**Validation:** Official OpenAI documentation confirms standard API keys should be stored server-side in environment variables and never exposed in browser code.
+
+**Files:**
+- app/api/ai-coach/route.ts, app/components/AiCoachPanel.tsx, app/types/aiCoach.ts, app/sing2/mimicking/page.tsx, docs/ai-coach.md
+
+**Open risks:** Never paste the API key into chat or commit it. The selected account role cannot be verified or changed from the local app because client updates to role are intentionally revoked.
+
+
+## 2026-08-26 22:57:55 — codex / work started
+
+Objective: Create durable cross-prompt project context and preserve the pending mobile portrait Mimicking work
+
+
+## 2026-08-26 22:57:55 — user / request
+
+Asked to summarize the project so other prompts can automatically continue with the same context.
+
+
+## 2026-08-26 22:57:55 — codex / decision
+
+Use repository AGENTS.md plus PROJECT_CONTEXT.md, STATE.md, and CONVERSATION.md as the durable bridge; keep long-lived product rules separate from the live checkpoint.
+
+
+## 2026-08-26 22:57:56 — codex → next-agent / handoff
+
+Refreshed the handoff system with durable product, design, media-timing, Supabase, responsive, and delivery rules. Production includes PR #17; the mobile portrait Mimicking layout remains local, build-verified, and undeployed.
+
+**Next action:** Preserve unrelated dirty and AI Coach files. When the user continues the mobile task, review only the five intended Mimicking layout files, create a separate codex branch, build, preview on an authenticated phone-sized session, and deploy only on explicit request.
+
+**Validation:** npm run build passed for the pending mobile layout; node --check scripts/ai-handoff.mjs pending final verification
+
+**Files:**
+- AGENTS.md
+- docs/ai-handoff/PROJECT_CONTEXT.md
+- docs/ai-handoff/README.md
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
+- scripts/ai-handoff.mjs
+- package.json
+
+**Open risks:** Mobile portrait layout has not been visually verified in an authenticated local session and is not deployed. Unrelated untracked AI Coach work must remain untouched.
+
+
+## 2026-08-26 22:59:44 — gpt / work
+
+Changed the user-designated existing Supabase profile from academy to student and verified one matching row now has the student role. Account identifier intentionally omitted from this log. OpenAI Platform remains blocked at login; no API key has been created.
+
+
+## 2026-08-26 22:59:44 — gpt / checkpoint
+
+Student test account role is now configured and verified in Supabase. OpenAI API setup is paused at the Platform login screen.
+
+**Next action:** User signs in to OpenAI Platform in the open in-app browser tab; GPT then creates a project API key, saves it to .env.local without exposing it, and runs the live AI Coach test.
+
+**Validation:** Supabase SQL result returned exactly one row with role student. OpenAI tab remains at /login?next=/api-keys.
+
+**Files:**
+- app/api/ai-coach/route.ts, app/components/AiCoachPanel.tsx, app/types/aiCoach.ts, app/sing2/mimicking/page.tsx, docs/ai-coach.md
+
+**Open risks:** API key creation is pending user authentication. Never record the account email or API key in shared handoff documents.
+
+
+## 2026-08-26 23:01:13 — codex / decision
+
+Added durable PROJECT_CONTEXT.md and integrated both active workstreams without overwriting the live AI Coach checkpoint: mobile portrait Mimicking remains local and undeployed; AI Coach is build-verified with student role configured and awaits secure API key setup plus mobile microphone testing.

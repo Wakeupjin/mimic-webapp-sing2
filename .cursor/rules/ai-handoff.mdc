@@ -1,0 +1,21 @@
+---
+description: Maintain shared GPT and Cursor task context in the repository
+alwaysApply: true
+---
+
+# GPT ↔ Cursor handoff is mandatory
+
+This project has a shared, repository-backed context system at
+`docs/ai-handoff/`. Cursor's private chat is never sufficient task context.
+
+Before working, read `docs/ai-handoff/STATE.md` and the latest entries in
+`docs/ai-handoff/CONVERSATION.md`. On meaningful user requests, decisions,
+implementation progress, validation, or before a response, write a concise
+log/checkpoint. Use `node scripts/ai-handoff.mjs` where possible.
+
+At a handoff, make the state independently actionable: changed files, exact
+validation result, unresolved risk, and one next action. Never write secrets
+to either context file.
+
+The complete cross-agent procedure is in `AGENTS.md` and
+`docs/ai-handoff/README.md`.
