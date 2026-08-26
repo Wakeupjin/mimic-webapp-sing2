@@ -53,7 +53,7 @@ export default function HomeHero({
         </div>
       </header>
 
-      <h1 className="home-month pointer-events-none absolute left-1/2 top-[clamp(0.2rem,0.4vw,0.4rem)] z-10 -translate-x-1/2 text-center">
+      <h1 className="home-month pointer-events-none z-10 text-center">
         {MONTH_LABEL_EN}
       </h1>
 
