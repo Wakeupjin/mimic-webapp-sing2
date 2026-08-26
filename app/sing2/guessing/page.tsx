@@ -15,7 +15,7 @@ import { captureVideoScreenshot, captureVideoScreenshotWithFallback, captureSimp
 import { captureVideoScreenshotCorsFree, captureVideoScreenshotCorsFreeAsync } from "../../utils/videoCors";
 import { captureVideoScreenshotUltimate, setupVideoCorsOnLoad } from "../../utils/corsProxy";
 import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
-import { getLessonMedia, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
+import { getLessonMedia, isBookId, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
 import { playTimedSegment, unlockMediaPlayback } from "../../utils/playTimedSegment";
 import { requestAppFullscreen, applyInlinePlayback } from "../../utils/device";
 import Link from "next/link";
@@ -64,6 +64,7 @@ function GuessingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   const media = getLessonMedia(movieId);
+  const isBookLesson = isBookId(movieId);
   
   // 모든 훅을 최상단으로 이동
   const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
@@ -766,7 +767,9 @@ function GuessingPageContent() {
     return (
       <main className="min-h-screen px-4 py-4">
         <div className="mb-4 flex items-center justify-between group">
-          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>SING 2</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
+            {isBookLesson ? "PINOCCHIO" : "SING 2"}
+          </h1>
         </div>
         <div className="flex items-center justify-center" style={{ height: 'calc(100vh - 120px)' }}>
           <div className="text-center text-white">
@@ -929,11 +932,19 @@ function GuessingPageContent() {
                     startGuessing();
                     playVideo();
                   }}
-                  text={isGuessingResume ? "이어서 정답을 골라볼까요?" : "무음 장면을 보고 정답을 골라요"}
+                  text={
+                    isGuessingResume
+                      ? "이어서 정답을 골라볼까요?"
+                      : isBookLesson
+                        ? "낭독을 듣고 정답을 골라요"
+                        : "무음 장면을 보고 정답을 골라요"
+                  }
                   description={
                     isGuessingResume
                       ? `${currentQuestionIndex + 1}번째 문제부터 이어서 풀어요.`
-                      : "장면을 본 뒤, 들리는 대사를 맞혀요."
+                      : isBookLesson
+                        ? "원서 문장을 듣고 같은 문장을 찾아요."
+                        : "장면을 본 뒤, 들리는 대사를 맞혀요."
                   }
                   actionLabel={isGuessingResume ? "계속하기" : "시작"}
                 />
