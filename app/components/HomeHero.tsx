@@ -36,9 +36,9 @@ export default function HomeHero({
 }: HomeHeroProps) {
   return (
     <section className="home-stage">
-      <header className="relative z-20 flex items-start justify-between px-[clamp(1rem,2.1vw,2.5rem)] pt-[clamp(0.6rem,1.4vw,1rem)]">
+      <header className="home-header relative z-20 flex items-start justify-between px-[clamp(1rem,2.1vw,2.5rem)] pt-[clamp(0.6rem,1.4vw,1rem)]">
         <p className="home-logo">MimiC</p>
-        <div className="flex items-center gap-[clamp(0.6rem,1.6vw,2.4rem)]">
+        <div className="home-actions flex items-center gap-[clamp(0.6rem,1.6vw,2.4rem)]">
           {onAdmin ? (
             <button type="button" onClick={onAdmin} className="cinema-pill">
               학생 현황
@@ -98,43 +98,11 @@ export default function HomeHero({
             );
           })}
         </div>
+
+        <button type="button" onClick={onOpen} className="home-start-button">
+          학습 시작하기
+        </button>
       </div>
-
-      <img
-        src="/home/spotlight.png"
-        alt=""
-        className="home-spotlight left-[-4%] bottom-[-8%] origin-left -rotate-[28deg]"
-        aria-hidden
-      />
-      <img
-        src="/home/spotlight.png"
-        alt=""
-        className="home-spotlight right-[-4%] bottom-[-8%] origin-right scale-x-[-1] rotate-[28deg]"
-        aria-hidden
-      />
-      <img
-        src="/Subject.png"
-        alt=""
-        className="home-chameleon bottom-[clamp(1.5rem,6vh,4.2rem)] left-[clamp(1.2rem,10vw,12rem)] -scale-x-100"
-        aria-hidden
-      />
-      <img
-        src="/Subject.png"
-        alt=""
-        className="home-chameleon bottom-[clamp(1.5rem,6vh,4.2rem)] right-[clamp(1.2rem,10vw,12rem)]"
-        aria-hidden
-      />
-
-      <button
-        type="button"
-        onClick={() => {
-          document.getElementById("home-start")?.scrollIntoView({ behavior: "smooth" });
-        }}
-        className="home-scroll absolute bottom-[clamp(0.8rem,2.5vh,1.6rem)] left-1/2 z-20 -translate-x-1/2 transition hover:scale-105"
-        aria-label="아래로 스크롤"
-      >
-        <img src="/home/scroll-down.svg" alt="" className="h-full w-full" />
-      </button>
     </section>
   );
 }
