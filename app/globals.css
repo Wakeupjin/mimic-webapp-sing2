@@ -1084,6 +1084,32 @@ body {
   margin-top: 0.75rem;
 }
 
+.home-start-button {
+  position: relative;
+  z-index: 20;
+  display: inline-flex;
+  min-width: 190px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--mimic);
+  color: #111;
+  font-family: var(--font-bm-hanna-pro), sans-serif;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.home-start-button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
 .admin-stage {
   display: flex;
   min-height: 100dvh;
@@ -1337,28 +1363,6 @@ body {
   width: min(962px, 70vw);
 }
 
-.home-spotlight {
-  pointer-events: none;
-  position: absolute;
-  width: min(28vw, 400px);
-  height: auto;
-  mix-blend-mode: screen;
-  opacity: 0.95;
-}
-
-.home-chameleon {
-  pointer-events: none;
-  position: absolute;
-  width: clamp(72px, 7.8vw, 150px);
-  height: auto;
-  mix-blend-mode: normal;
-}
-
-.home-scroll {
-  width: clamp(40px, 3.02vw, 58px);
-  height: clamp(40px, 3.02vw, 58px);
-}
-
 /* 모드 선택 (Figma 1558:2456) */
 .select-stage {
   min-height: 100dvh;
@@ -1504,6 +1508,84 @@ body {
     right: 1rem;
     top: max(4.2rem, calc(env(safe-area-inset-top) + 4rem));
     width: auto;
+  }
+
+  .home-stage {
+    min-height: auto;
+    overflow: visible;
+    padding-bottom: max(2.25rem, env(safe-area-inset-bottom));
+  }
+
+  .home-header {
+    align-items: center;
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+  }
+
+  .home-logo {
+    flex: 0 0 auto;
+    font-size: 2.35rem;
+  }
+
+  .home-actions {
+    gap: 0.55rem;
+  }
+
+  .home-login {
+    min-width: 72px;
+    height: 40px;
+    padding-inline: 0.8rem;
+    font-size: 1.05rem;
+  }
+
+  .home-menu {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-month {
+    position: relative;
+    left: auto;
+    top: auto;
+    z-index: 10;
+    width: 100%;
+    margin: 1.35rem 0 0;
+    padding-inline: 1rem;
+    font-size: clamp(1.9rem, 9vw, 2.55rem);
+    white-space: nowrap;
+    transform: none;
+  }
+
+  .home-cover {
+    position: relative;
+    inset: auto;
+    top: auto;
+    margin-top: 1.5rem;
+    padding-inline: 1rem;
+  }
+
+  .home-poster {
+    width: 100%;
+    max-width: 36rem;
+    border-width: 6px;
+    border-radius: 18px;
+  }
+
+  .home-picks {
+    gap: 0.55rem;
+    margin-top: 0.85rem;
+  }
+
+  .home-picks .cinema-pill {
+    height: 40px;
+    padding-inline: 1rem;
+    font-size: 0.98rem;
+  }
+
+  .home-start-button {
+    width: min(100%, 20rem);
+    height: 50px;
+    margin-top: 1rem;
+    font-size: 1.15rem;
   }
 }
 
