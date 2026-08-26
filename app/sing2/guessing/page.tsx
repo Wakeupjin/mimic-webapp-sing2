@@ -264,6 +264,10 @@ function GuessingPageContent() {
     const loadDataFromSupabase = async () => {
       try {
         setIsLoading(true);
+        setSavedProgress(null);
+        setIsGuessingStarted(false);
+        setIsGuessingComplete(false);
+        setShowResults(false);
         dataLoadedRef.current = true; // 로딩 시작 시 바로 플래그 설정
 
         const contentLesson = parseLessonNumber(movieId);
@@ -290,7 +294,6 @@ function GuessingPageContent() {
         setVideoUrl(getLessonMedia(movieId).src);
         setGuessingData(guessingDataArray);
         setTotalQuestions(guessingDataArray.length);
-        setIsLoading(false);
         
         // 저장된 진도 불러오기
         try {
@@ -304,7 +307,6 @@ function GuessingPageContent() {
             setCurrentIndex(idx);
             maxQuestionRef.current = idx;
             if (progress.completed) {
-              setIsGuessingStarted(true);
               setIsGuessingComplete(true);
               setShowResults(true);
             }
@@ -312,6 +314,7 @@ function GuessingPageContent() {
         } catch (error) {
           // 게싱 진도 데이터 없음 (첫 학습)
         }
+        setIsLoading(false);
       } catch (error) {
         console.error('❌ Supabase data loading error:', error);
         setIsLoading(false);

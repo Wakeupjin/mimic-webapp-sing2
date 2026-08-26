@@ -150,6 +150,9 @@ function WordPageContent() {
 
     const loadDataFromSupabase = async () => {
       setIsLoading(true);
+      setShowStartOverlay(true);
+      setIsStarted(false);
+      setShowCompletion(false);
 
       const contentLesson = parseLessonNumber(movieId);
       const packName = parsePack(movieId);
@@ -172,7 +175,6 @@ function WordPageContent() {
         setSupabaseLessonData(lesson as LessonDataType);
         setVideoUrl(getLessonMedia(movieId).src);
         setLessonData({ word: lesson.word_data || [] });
-        setIsLoading(false);
 
         try {
           const progress = await getProgressByMode(progressLesson, 'word');
@@ -185,7 +187,6 @@ function WordPageContent() {
               maxQuestionRef.current = Math.max(maxQuestionRef.current, q);
             }
             if (progress.completed) {
-              setIsStarted(true);
               setShowStartOverlay(false);
               setShowCompletion(true);
             }
@@ -193,6 +194,7 @@ function WordPageContent() {
         } catch {
           // 첫 학습
         }
+        setIsLoading(false);
       } catch (error) {
         console.error('Supabase data loading error:', error);
         setIsLoading(false);

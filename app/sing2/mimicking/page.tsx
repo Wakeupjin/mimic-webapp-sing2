@@ -154,6 +154,10 @@ function MimickingPageContent() {
     const loadDataFromSupabase = async () => {
       try {
         setIsLoading(true);
+        setSavedProgress(null);
+        setIsMimickingStarted(false);
+        setIsMimickingComplete(false);
+        setShowNextCta(false);
         const contentLesson = parseLessonNumber(movieId);
         const pack = parsePack(movieId);
         const progressLesson = parseProgressLesson(movieId);
@@ -183,7 +187,6 @@ function MimickingPageContent() {
           }
         }
         setScenes(mimicData);
-        setIsLoading(false);
         
         // 저장된 진도 불러오기
         try {
@@ -199,7 +202,6 @@ function MimickingPageContent() {
             setCurrentIndex(idx);
             maxSentenceRef.current = idx;
             if (progress.completed) {
-              setIsMimickingStarted(true);
               setIsMimickingComplete(true);
               setShowNextCta(true);
             }
@@ -213,6 +215,7 @@ function MimickingPageContent() {
         // console.log('🎬 mimic_data 타입:', typeof lesson.mimic_data);
         // console.log('🎬 mimic_data 내용:', lesson.mimic_data);
         console.log(`📚 총 ${mimicData.length}개 미믹킹 씬 로드됨`);
+        setIsLoading(false);
       } catch (error) {
         console.error('❌ Supabase 미믹킹 데이터 로딩 실패:', error);
         setIsLoading(false);
