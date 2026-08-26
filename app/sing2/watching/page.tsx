@@ -308,6 +308,12 @@ function WatchingPageContent() {
   const startTime = lessonData.watch_start_sec;
   const endTime = lessonData.watch_end_sec;
   const initialWatchPosition = Number(savedProgress?.current_position ?? startTime ?? 0);
+  const isWatchingResume = Boolean(
+    savedProgress &&
+      !savedProgress.completed &&
+      Number.isFinite(initialWatchPosition) &&
+      initialWatchPosition > startTime + 0.5
+  );
   // --- [/로딩 및 변수 정의] ---
 
 
@@ -486,8 +492,13 @@ function WatchingPageContent() {
                     setIsVideoStarted(true);
                   }
                 }}
-                text="먼저 장면을 보고 흐름을 이해해요"
-                description="영상을 보며 오늘 배울 대사의 맥락을 익혀요."
+                text={isWatchingResume ? "이어서 장면을 볼까요?" : "먼저 장면을 보고 흐름을 이해해요"}
+                description={
+                  isWatchingResume
+                    ? "저장된 지점부터 오늘의 장면을 이어서 봐요."
+                    : "영상을 보며 오늘 배울 대사의 맥락을 익혀요."
+                }
+                actionLabel={isWatchingResume ? "계속하기" : "시작"}
               />
             )}
 
