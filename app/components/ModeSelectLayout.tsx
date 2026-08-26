@@ -46,14 +46,14 @@ export default function ModeSelectLayout({
   badge,
 }: ModeSelectLayoutProps) {
   return (
-    <main className="select-stage relative flex flex-col overflow-hidden px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
+    <main className="select-stage relative flex flex-col overflow-x-hidden overflow-y-auto px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
       <header className="relative z-20 flex shrink-0 items-center justify-end gap-[clamp(0.45rem,1vw,0.75rem)]">
         {badge ? <span className="cinema-pill is-static mr-auto">{badge}</span> : null}
         {extraActions}
         <HeaderCloseLink href="/" />
       </header>
 
-      <div className="absolute left-1/2 top-[clamp(1.2rem,5.3vh,3.6rem)] z-30 -translate-x-1/2" ref={dropdownRef}>
+      <div className="select-chapter-wrap" ref={dropdownRef}>
         <button type="button" onClick={onToggleDropdown} className="select-chapter" aria-expanded={dropdownOpen}>
           {chapterLabel}
           <svg
@@ -104,10 +104,10 @@ export default function ModeSelectLayout({
         )}
       </div>
 
-      <div className="flex min-h-0 flex-1 items-center justify-center">
+      <div className="select-content">
         <div className="select-modes">
           {modes.map((mode) => (
-            <div key={mode.id} className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
+            <div key={mode.id} className={`select-mode-item ${mode.here ? "is-here" : ""}`}>
               <button
                 type="button"
                 onClick={mode.onSelect}
@@ -121,9 +121,7 @@ export default function ModeSelectLayout({
                 )}
                 {mode.label}
               </button>
-              <p className="select-here" style={{ visibility: mode.here ? "visible" : "hidden" }}>
-                현재 단계
-              </p>
+              {mode.here && <p className="select-here">현재 단계</p>}
             </div>
           ))}
         </div>
