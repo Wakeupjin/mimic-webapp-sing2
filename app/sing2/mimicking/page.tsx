@@ -17,7 +17,7 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import { saveProgress, getProgressByMode, saveLog } from "../../lib/progress";
 import { useEvaluationLog } from "../../lib/evaluation";
 import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
-import { getLessonMedia, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
+import { getLessonMedia, isBookId, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
 import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
@@ -53,6 +53,7 @@ function MimickingPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   const media = getLessonMedia(movieId);
+  const isBookLesson = isBookId(movieId);
   // console.log('🎬 미믹킹 현재 movieId:', movieId);
 
   // 모든 훅을 최상단으로 이동
@@ -702,7 +703,7 @@ function MimickingPageContent() {
                 startTime={currentScene?.start ? timeStringToSeconds(currentScene.start) : 0}
                 endTime={
                   currentScene?.end
-                    ? timeStringToSeconds(currentScene.end) + MIMICKING_SEGMENT_TAIL_SECONDS
+                    ? timeStringToSeconds(currentScene.end) + (isBookLesson ? 0 : MIMICKING_SEGMENT_TAIL_SECONDS)
                     : 0
                 }
                 muted={muted}

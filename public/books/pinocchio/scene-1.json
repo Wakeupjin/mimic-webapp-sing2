@@ -8,179 +8,179 @@
     "text": "Project Gutenberg eBook #500"
   },
   "watching": {
-    "start": "00:00:00,200",
-    "end": "00:04:20,200"
+    "start": "00:00:00,000",
+    "end": "00:04:22,500"
   },
   "mimicking": [
     {
-      "start": "00:00:00,200",
-      "end": "00:00:06,200",
+      "start": "00:00:00,000",
+      "end": "00:00:06,160",
       "text": "Centuries ago there lived—“A king!” my little readers will say immediately."
     },
     {
-      "start": "00:00:06,200",
+      "start": "00:00:06,040",
       "end": "00:00:12,200",
       "text": "No, children, you are mistaken. Once upon a time there was a piece of wood."
     },
     {
-      "start": "00:00:12,200",
-      "end": "00:00:19,200",
-      "text": "It was not an expensive piece of wood. Far from it. Just a common block of firewood."
+      "start": "00:00:12,080",
+      "end": "00:00:16,960",
+      "text": "It was not an expensive piece of wood. Far from it."
     },
     {
-      "start": "00:00:19,200",
-      "end": "00:00:27,200",
-      "text": "One of those thick, solid logs that are put on the fire in winter to make cold rooms cozy and warm."
+      "start": "00:00:16,840",
+      "end": "00:00:27,400",
+      "text": "Just a common block of firewood, one of those thick, solid logs that are put on the fire in the winter, to make cold rooms cozy and warm."
     },
     {
-      "start": "00:00:27,200",
-      "end": "00:00:37,200",
+      "start": "00:00:27,280",
+      "end": "00:00:38,040",
       "text": "I do not know how this really happened, yet the fact remains that one fine day this piece of wood found itself in the shop of an old carpenter."
     },
     {
-      "start": "00:00:37,200",
-      "end": "00:00:43,200",
-      "text": "His real name was Mastro Antonio, but everyone called him Mastro Cherry."
+      "start": "00:00:37,920",
+      "end": "00:00:50,640",
+      "text": "His name was Mastro Antonio, but everybody called him Mastro Cherry, for the tip of his nose was so round and red and shiny that it looked like a ripe cherry."
     },
     {
-      "start": "00:00:43,200",
-      "end": "00:00:50,200",
-      "text": "For the tip of his nose was so round and red and shiny that it looked like a ripe cherry."
+      "start": "00:00:50,520",
+      "end": "00:01:00,600",
+      "text": "As soon as he saw that piece of wood, Mastro Cherry was filled with joy. Rubbing his hands together happily, he mumbled half to himself."
     },
     {
-      "start": "00:00:50,200",
-      "end": "00:01:00,200",
-      "text": "As soon as he saw that piece of wood, Mastro Cherry was filled with joy. Rubbing his hands together happily, he mumbled half to himself:"
-    },
-    {
-      "start": "00:01:00,200",
-      "end": "00:01:06,200",
+      "start": "00:01:00,480",
+      "end": "00:01:06,560",
       "text": "“This has come in the nick of time. I shall use it to make the leg of a table.”"
     },
     {
-      "start": "00:01:06,200",
-      "end": "00:01:11,200",
+      "start": "00:01:06,440",
+      "end": "00:01:11,880",
       "text": "He grasped the hatchet quickly to peel off the bark and shape the wood."
     },
     {
-      "start": "00:01:11,200",
-      "end": "00:01:22,200",
-      "text": "But as he was about to give it the first blow, he stood still with arm uplifted, for he had heard a wee, little voice say in a beseeching tone:"
+      "start": "00:01:11,760",
+      "end": "00:01:22,800",
+      "text": "But as he was about to give it the first blow, he stood still with arm uplifted, for he had heard a wee little voice say in a beseeching tone."
     },
     {
-      "start": "00:01:22,200",
-      "end": "00:01:26,200",
-      "text": "“Please be careful! Do not hit me so hard!”"
+      "start": "00:01:22,680",
+      "end": "00:01:26,960",
+      "text": "“Please be careful. Do not hit me so hard.”"
     },
     {
-      "start": "00:01:26,200",
-      "end": "00:01:34,200",
-      "text": "What a look of surprise shone on Mastro Cherry’s face! His funny face became still funnier."
+      "start": "00:01:26,840",
+      "end": "00:01:35,440",
+      "text": "With a look of surprise shone on Mastro Cherry’s face, his funny face became funnier still."
     },
     {
-      "start": "00:01:34,200",
-      "end": "00:01:43,200",
-      "text": "He turned frightened eyes about the room to find out where that wee, little voice had come from and he saw no one!"
+      "start": "00:01:35,320",
+      "end": "00:01:43,920",
+      "text": "He turned frightened eyes about the room to find out where that wee little voice had come from, and he saw no one."
     },
     {
-      "start": "00:01:43,200",
-      "end": "00:01:52,200",
-      "text": "He looked under the bench—no one! He peeped inside the closet—no one! He searched among the shavings—no one!"
+      "start": "00:01:43,800",
+      "end": "00:01:53,120",
+      "text": "He looked under the bench—no one. He peeped inside the closet—no one. He searched among the shavings—no one."
     },
     {
-      "start": "00:01:52,200",
-      "end": "00:01:57,200",
-      "text": "He opened the door to look up and down the street—and still no one!"
+      "start": "00:01:53,000",
+      "end": "00:01:57,920",
+      "text": "He opened the door to look up and down the street—and still no one."
     },
     {
-      "start": "00:01:57,200",
-      "end": "00:02:10,200",
-      "text": "“Oh, I see!” he then said, laughing and scratching his wig. “It can easily be seen that I only thought I heard the tiny voice say the words! Well, well—to work once more.”"
+      "start": "00:01:57,800",
+      "end": "00:02:10,540",
+      "text": "“Oh, I see,” he said, laughing and scratching his wig. “It can easily be seen that I only thought I heard the tiny voice say the words. Well, well—to work once more.”"
     },
     {
-      "start": "00:02:10,200",
-      "end": "00:02:18,200",
-      "text": "He struck a most solemn blow upon the piece of wood. “Oh, oh! You hurt!” cried the same far-away little voice."
+      "start": "00:02:10,420",
+      "end": "00:02:19,480",
+      "text": "He struck a most solemn blow upon the piece of wood. “Oh, oh, you hurt!” cried the same far-away little voice."
     },
     {
-      "start": "00:02:18,200",
-      "end": "00:02:28,200",
-      "text": "Mastro Cherry grew dumb, his eyes popped out of his head, his mouth opened wide, and his tongue hung down on his chin."
+      "start": "00:02:19,360",
+      "end": "00:02:28,900",
+      "text": "Mastro Cherry grew dumb. His eyes popped out of his head, his mouth wide open, and his tongue hung down on his chin."
     },
     {
-      "start": "00:02:28,200",
-      "end": "00:02:35,200",
-      "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright:"
+      "start": "00:02:28,780",
+      "end": "00:02:35,840",
+      "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright."
     },
     {
-      "start": "00:02:35,200",
-      "end": "00:02:39,200",
+      "start": "00:02:35,720",
+      "end": "00:02:40,120",
       "text": "“Where did that voice come from, when there is no one around?"
     },
     {
-      "start": "00:02:39,200",
-      "end": "00:02:47,200",
+      "start": "00:02:40,000",
+      "end": "00:02:47,640",
       "text": "Might it be that this piece of wood has learned to weep and cry like a child? I can hardly believe it."
     },
     {
-      "start": "00:02:47,200",
-      "end": "00:02:58,200",
+      "start": "00:02:47,520",
+      "end": "00:02:58,360",
       "text": "Here it is—a piece of common firewood, good only to burn in the stove, the same as any other. Yet—might someone be hidden in it?"
     },
     {
-      "start": "00:02:58,200",
-      "end": "00:03:02,200",
+      "start": "00:02:58,240",
+      "end": "00:03:02,560",
       "text": "If so, the worse for him. I’ll fix him!”"
     },
     {
-      "start": "00:03:02,200",
-      "end": "00:03:08,200",
+      "start": "00:03:02,440",
+      "end": "00:03:08,660",
       "text": "With these words, he grabbed the log with both hands and started to knock it about unmercifully."
     },
     {
-      "start": "00:03:08,200",
-      "end": "00:03:14,200",
+      "start": "00:03:08,540",
+      "end": "00:03:14,760",
       "text": "He threw it to the floor, against the walls of the room, and even up to the ceiling."
     },
     {
-      "start": "00:03:14,200",
-      "end": "00:03:24,200",
+      "start": "00:03:14,640",
+      "end": "00:03:24,400",
       "text": "He listened for the tiny voice to moan and cry. He waited two minutes—nothing; five minutes—nothing; ten minutes—nothing."
     },
     {
-      "start": "00:03:24,200",
-      "end": "00:03:38,200",
-      "text": "“Oh, I see,” he said, trying bravely to laugh and ruffling up his wig with his hand. “It can easily be seen I only imagined I heard the tiny voice! Well, well—to work once more!”"
+      "start": "00:03:24,280",
+      "end": "00:03:39,040",
+      "text": "“Oh, I see,” he said, trying bravely to laugh and ruffling up his wig with his hand. “It can easily be seen I only imagined I heard the tiny voice. Well, well—to work once more.”"
     },
     {
-      "start": "00:03:38,200",
-      "end": "00:03:45,200",
+      "start": "00:03:38,920",
+      "end": "00:03:45,720",
       "text": "The poor fellow was scared half to death, so he tried to sing a gay song in order to gain courage."
     },
     {
-      "start": "00:03:45,200",
-      "end": "00:03:51,200",
-      "text": "He set aside the hatchet and picked up the plane to make the wood smooth and even,"
+      "start": "00:03:45,600",
+      "end": "00:03:58,720",
+      "text": "He set aside the hatchet and picked up the plane to make the wood smooth and even, but as he drew it to and fro, he heard the same tiny voice. This time it giggled as it spoke."
     },
     {
-      "start": "00:03:51,200",
-      "end": "00:03:55,200",
-      "text": "but as he drew it to and fro, he heard the same tiny voice."
+      "start": "00:03:58,600",
+      "end": "00:04:04,360",
+      "text": "“Ha, ha, stop it, stop it! Ha, ha, you tickle my stomach.”"
     },
     {
-      "start": "00:03:55,200",
-      "end": "00:04:03,200",
-      "text": "This time it giggled as it spoke: “Stop it! Oh, stop it! Ha, ha, ha! You tickle my stomach.”"
+      "start": "00:04:04,240",
+      "end": "00:04:08,720",
+      "text": "This time poor Mastro Cherry fell as if shot."
     },
     {
-      "start": "00:04:03,200",
-      "end": "00:04:12,200",
-      "text": "This time poor Mastro Cherry fell as if shot. When he opened his eyes, he found himself sitting on the floor."
+      "start": "00:04:08,600",
+      "end": "00:04:12,640",
+      "text": "When he opened his eyes, he found himself sitting on the floor."
     },
     {
-      "start": "00:04:12,200",
-      "end": "00:04:20,200",
-      "text": "His face had changed; fright had turned even the tip of his nose from red to deepest purple."
+      "start": "00:04:12,520",
+      "end": "00:04:14,680",
+      "text": "His face had changed."
+    },
+    {
+      "start": "00:04:14,560",
+      "end": "00:04:22,500",
+      "text": "Fright had turned even the tip of his nose from red to deepest purple."
     }
   ],
   "guessing": [
@@ -191,25 +191,25 @@
         {
           "label": "A",
           "text": "Centuries ago there lived—“A king!” my little readers will say immediately.",
-          "start": "00:00:00,200",
-          "end": "00:00:06,200"
+          "start": "00:00:00,000",
+          "end": "00:00:06,160"
         },
         {
           "label": "B",
           "text": "I do not know how this really happened, yet the fact remains that one fine day this piece of wood found itself in the shop of an old carpenter.",
-          "start": "00:00:27,200",
-          "end": "00:00:37,200"
+          "start": "00:00:27,280",
+          "end": "00:00:38,040"
         },
         {
           "label": "C",
-          "text": "“This has come in the nick of time. I shall use it to make the leg of a table.”",
-          "start": "00:01:00,200",
-          "end": "00:01:06,200"
+          "text": "He grasped the hatchet quickly to peel off the bark and shape the wood.",
+          "start": "00:01:06,440",
+          "end": "00:01:11,880"
         }
       ],
       "video": {
-        "start": "00:00:00,200",
-        "end": "00:00:06,200"
+        "start": "00:00:00,000",
+        "end": "00:00:06,160"
       }
     },
     {
@@ -218,26 +218,26 @@
       "options": [
         {
           "label": "A",
-          "text": "With these words, he grabbed the log with both hands and started to knock it about unmercifully.",
-          "start": "00:03:02,200",
-          "end": "00:03:08,200"
+          "text": "He threw it to the floor, against the walls of the room, and even up to the ceiling.",
+          "start": "00:03:08,540",
+          "end": "00:03:14,760"
         },
         {
           "label": "B",
-          "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright:",
-          "start": "00:02:28,200",
-          "end": "00:02:35,200"
+          "text": "“Where did that voice come from, when there is no one around?",
+          "start": "00:02:35,720",
+          "end": "00:02:40,120"
         },
         {
           "label": "C",
           "text": "I do not know how this really happened, yet the fact remains that one fine day this piece of wood found itself in the shop of an old carpenter.",
-          "start": "00:00:27,200",
-          "end": "00:00:37,200"
+          "start": "00:00:27,280",
+          "end": "00:00:38,040"
         }
       ],
       "video": {
-        "start": "00:00:27,200",
-        "end": "00:00:37,200"
+        "start": "00:00:27,280",
+        "end": "00:00:38,040"
       }
     },
     {
@@ -246,26 +246,26 @@
       "options": [
         {
           "label": "A",
-          "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright:",
-          "start": "00:02:28,200",
-          "end": "00:02:35,200"
+          "text": "“Where did that voice come from, when there is no one around?",
+          "start": "00:02:35,720",
+          "end": "00:02:40,120"
         },
         {
           "label": "B",
-          "text": "As soon as he saw that piece of wood, Mastro Cherry was filled with joy. Rubbing his hands together happily, he mumbled half to himself:",
-          "start": "00:00:50,200",
-          "end": "00:01:00,200"
+          "text": "“This has come in the nick of time. I shall use it to make the leg of a table.”",
+          "start": "00:01:00,480",
+          "end": "00:01:06,560"
         },
         {
           "label": "C",
-          "text": "His real name was Mastro Antonio, but everyone called him Mastro Cherry.",
-          "start": "00:00:37,200",
-          "end": "00:00:43,200"
+          "text": "His name was Mastro Antonio, but everybody called him Mastro Cherry, for the tip of his nose was so round and red and shiny that it looked like a ripe cherry.",
+          "start": "00:00:37,920",
+          "end": "00:00:50,640"
         }
       ],
       "video": {
-        "start": "00:00:50,200",
-        "end": "00:01:00,200"
+        "start": "00:01:00,480",
+        "end": "00:01:06,560"
       }
     },
     {
@@ -274,26 +274,26 @@
       "options": [
         {
           "label": "A",
-          "text": "But as he was about to give it the first blow, he stood still with arm uplifted, for he had heard a wee, little voice say in a beseeching tone:",
-          "start": "00:01:11,200",
-          "end": "00:01:22,200"
+          "text": "“Please be careful. Do not hit me so hard.”",
+          "start": "00:01:22,680",
+          "end": "00:01:26,960"
         },
         {
           "label": "B",
-          "text": "Might it be that this piece of wood has learned to weep and cry like a child? I can hardly believe it.",
-          "start": "00:02:39,200",
-          "end": "00:02:47,200"
+          "text": "Here it is—a piece of common firewood, good only to burn in the stove, the same as any other. Yet—might someone be hidden in it?",
+          "start": "00:02:47,520",
+          "end": "00:02:58,360"
         },
         {
           "label": "C",
-          "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright:",
-          "start": "00:02:28,200",
-          "end": "00:02:35,200"
+          "text": "“Where did that voice come from, when there is no one around?",
+          "start": "00:02:35,720",
+          "end": "00:02:40,120"
         }
       ],
       "video": {
-        "start": "00:01:11,200",
-        "end": "00:01:22,200"
+        "start": "00:01:22,680",
+        "end": "00:01:26,960"
       }
     },
     {
@@ -302,26 +302,26 @@
       "options": [
         {
           "label": "A",
-          "text": "It was not an expensive piece of wood. Far from it. Just a common block of firewood.",
-          "start": "00:00:12,200",
-          "end": "00:00:19,200"
+          "text": "It was not an expensive piece of wood. Far from it.",
+          "start": "00:00:12,080",
+          "end": "00:00:16,960"
         },
         {
           "label": "B",
-          "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright:",
-          "start": "00:02:28,200",
-          "end": "00:02:35,200"
+          "text": "“Where did that voice come from, when there is no one around?",
+          "start": "00:02:35,720",
+          "end": "00:02:40,120"
         },
         {
           "label": "C",
-          "text": "He turned frightened eyes about the room to find out where that wee, little voice had come from and he saw no one!",
-          "start": "00:01:34,200",
-          "end": "00:01:43,200"
+          "text": "He looked under the bench—no one. He peeped inside the closet—no one. He searched among the shavings—no one.",
+          "start": "00:01:43,800",
+          "end": "00:01:53,120"
         }
       ],
       "video": {
-        "start": "00:01:34,200",
-        "end": "00:01:43,200"
+        "start": "00:01:43,800",
+        "end": "00:01:53,120"
       }
     },
     {
@@ -330,26 +330,26 @@
       "options": [
         {
           "label": "A",
-          "text": "but as he drew it to and fro, he heard the same tiny voice.",
-          "start": "00:03:51,200",
-          "end": "00:03:55,200"
+          "text": "This time poor Mastro Cherry fell as if shot.",
+          "start": "00:04:04,240",
+          "end": "00:04:08,720"
         },
         {
           "label": "B",
-          "text": "He struck a most solemn blow upon the piece of wood. “Oh, oh! You hurt!” cried the same far-away little voice.",
-          "start": "00:02:10,200",
-          "end": "00:02:18,200"
+          "text": "Mastro Cherry grew dumb. His eyes popped out of his head, his mouth wide open, and his tongue hung down on his chin.",
+          "start": "00:02:19,360",
+          "end": "00:02:28,900"
         },
         {
           "label": "C",
-          "text": "If so, the worse for him. I’ll fix him!”",
-          "start": "00:02:58,200",
-          "end": "00:03:02,200"
+          "text": "With these words, he grabbed the log with both hands and started to knock it about unmercifully.",
+          "start": "00:03:02,440",
+          "end": "00:03:08,660"
         }
       ],
       "video": {
-        "start": "00:02:10,200",
-        "end": "00:02:18,200"
+        "start": "00:02:19,360",
+        "end": "00:02:28,900"
       }
     },
     {
@@ -358,26 +358,26 @@
       "options": [
         {
           "label": "A",
-          "text": "Might it be that this piece of wood has learned to weep and cry like a child? I can hardly believe it.",
-          "start": "00:02:39,200",
-          "end": "00:02:47,200"
+          "text": "Here it is—a piece of common firewood, good only to burn in the stove, the same as any other. Yet—might someone be hidden in it?",
+          "start": "00:02:47,520",
+          "end": "00:02:58,360"
         },
         {
           "label": "B",
-          "text": "He grasped the hatchet quickly to peel off the bark and shape the wood.",
-          "start": "00:01:06,200",
-          "end": "00:01:11,200"
+          "text": "But as he was about to give it the first blow, he stood still with arm uplifted, for he had heard a wee little voice say in a beseeching tone.",
+          "start": "00:01:11,760",
+          "end": "00:01:22,800"
         },
         {
           "label": "C",
-          "text": "As soon as he saw that piece of wood, Mastro Cherry was filled with joy. Rubbing his hands together happily, he mumbled half to himself:",
-          "start": "00:00:50,200",
-          "end": "00:01:00,200"
+          "text": "“This has come in the nick of time. I shall use it to make the leg of a table.”",
+          "start": "00:01:00,480",
+          "end": "00:01:06,560"
         }
       ],
       "video": {
-        "start": "00:02:39,200",
-        "end": "00:02:47,200"
+        "start": "00:02:47,520",
+        "end": "00:02:58,360"
       }
     },
     {
@@ -386,26 +386,26 @@
       "options": [
         {
           "label": "A",
-          "text": "but as he drew it to and fro, he heard the same tiny voice.",
-          "start": "00:03:51,200",
-          "end": "00:03:55,200"
+          "text": "This time poor Mastro Cherry fell as if shot.",
+          "start": "00:04:04,240",
+          "end": "00:04:08,720"
         },
         {
           "label": "B",
-          "text": "Mastro Cherry grew dumb, his eyes popped out of his head, his mouth opened wide, and his tongue hung down on his chin.",
-          "start": "00:02:18,200",
-          "end": "00:02:28,200"
+          "text": "As soon as he regained the use of his senses, he said, trembling and stuttering from fright.",
+          "start": "00:02:28,780",
+          "end": "00:02:35,840"
         },
         {
           "label": "C",
-          "text": "He threw it to the floor, against the walls of the room, and even up to the ceiling.",
-          "start": "00:03:08,200",
-          "end": "00:03:14,200"
+          "text": "He listened for the tiny voice to moan and cry. He waited two minutes—nothing; five minutes—nothing; ten minutes—nothing.",
+          "start": "00:03:14,640",
+          "end": "00:03:24,400"
         }
       ],
       "video": {
-        "start": "00:03:08,200",
-        "end": "00:03:14,200"
+        "start": "00:03:14,640",
+        "end": "00:03:24,400"
       }
     },
     {
@@ -414,26 +414,26 @@
       "options": [
         {
           "label": "A",
-          "text": "but as he drew it to and fro, he heard the same tiny voice.",
-          "start": "00:03:51,200",
-          "end": "00:03:55,200"
+          "text": "This time poor Mastro Cherry fell as if shot.",
+          "start": "00:04:04,240",
+          "end": "00:04:08,720"
         },
         {
           "label": "B",
-          "text": "He set aside the hatchet and picked up the plane to make the wood smooth and even,",
-          "start": "00:03:45,200",
-          "end": "00:03:51,200"
+          "text": "“Ha, ha, stop it, stop it! Ha, ha, you tickle my stomach.”",
+          "start": "00:03:58,600",
+          "end": "00:04:04,360"
         },
         {
           "label": "C",
-          "text": "“Oh, I see!” he then said, laughing and scratching his wig. “It can easily be seen that I only thought I heard the tiny voice say the words! Well, well—to work once more.”",
-          "start": "00:01:57,200",
-          "end": "00:02:10,200"
+          "text": "He struck a most solemn blow upon the piece of wood. “Oh, oh, you hurt!” cried the same far-away little voice.",
+          "start": "00:02:10,420",
+          "end": "00:02:19,480"
         }
       ],
       "video": {
-        "start": "00:03:45,200",
-        "end": "00:03:51,200"
+        "start": "00:03:58,600",
+        "end": "00:04:04,360"
       }
     },
     {
@@ -442,89 +442,89 @@
       "options": [
         {
           "label": "A",
-          "text": "This time poor Mastro Cherry fell as if shot. When he opened his eyes, he found himself sitting on the floor.",
-          "start": "00:04:03,200",
-          "end": "00:04:12,200"
+          "text": "His face had changed.",
+          "start": "00:04:12,520",
+          "end": "00:04:14,680"
         },
         {
           "label": "B",
-          "text": "This time it giggled as it spoke: “Stop it! Oh, stop it! Ha, ha, ha! You tickle my stomach.”",
-          "start": "00:03:55,200",
-          "end": "00:04:03,200"
+          "text": "When he opened his eyes, he found himself sitting on the floor.",
+          "start": "00:04:08,600",
+          "end": "00:04:12,640"
         },
         {
           "label": "C",
-          "text": "He set aside the hatchet and picked up the plane to make the wood smooth and even,",
-          "start": "00:03:45,200",
-          "end": "00:03:51,200"
+          "text": "“Ha, ha, stop it, stop it! Ha, ha, you tickle my stomach.”",
+          "start": "00:03:58,600",
+          "end": "00:04:04,360"
         }
       ],
       "video": {
-        "start": "00:04:03,200",
-        "end": "00:04:12,200"
+        "start": "00:04:12,520",
+        "end": "00:04:14,680"
       }
     }
   ],
   "word": [
     {
       "question": 1,
-      "start": "00:00:06,200",
+      "start": "00:00:06,040",
       "end": "00:00:12,200",
       "text": "No, children, you are mistaken. Once upon a time there was a piece of wood."
     },
     {
       "question": 2,
-      "start": "00:00:19,200",
-      "end": "00:00:27,200",
-      "text": "One of those thick, solid logs that are put on the fire in winter to make cold rooms cozy and warm."
+      "start": "00:00:16,840",
+      "end": "00:00:27,400",
+      "text": "Just a common block of firewood, one of those thick, solid logs that are put on the fire in the winter, to make cold rooms cozy and warm."
     },
     {
       "question": 3,
-      "start": "00:00:37,200",
-      "end": "00:00:43,200",
-      "text": "His real name was Mastro Antonio, but everyone called him Mastro Cherry."
+      "start": "00:00:37,920",
+      "end": "00:00:50,640",
+      "text": "His name was Mastro Antonio, but everybody called him Mastro Cherry, for the tip of his nose was so round and red and shiny that it looked like a ripe cherry."
     },
     {
       "question": 4,
-      "start": "00:01:00,200",
-      "end": "00:01:06,200",
-      "text": "“This has come in the nick of time. I shall use it to make the leg of a table.”"
+      "start": "00:01:06,440",
+      "end": "00:01:11,880",
+      "text": "He grasped the hatchet quickly to peel off the bark and shape the wood."
     },
     {
       "question": 5,
-      "start": "00:01:22,200",
-      "end": "00:01:26,200",
-      "text": "“Please be careful! Do not hit me so hard!”"
+      "start": "00:01:26,840",
+      "end": "00:01:35,440",
+      "text": "With a look of surprise shone on Mastro Cherry’s face, his funny face became funnier still."
     },
     {
       "question": 6,
-      "start": "00:01:52,200",
-      "end": "00:01:57,200",
-      "text": "He opened the door to look up and down the street—and still no one!"
+      "start": "00:01:57,800",
+      "end": "00:02:10,540",
+      "text": "“Oh, I see,” he said, laughing and scratching his wig. “It can easily be seen that I only thought I heard the tiny voice say the words. Well, well—to work once more.”"
     },
     {
       "question": 7,
-      "start": "00:02:35,200",
-      "end": "00:02:39,200",
-      "text": "“Where did that voice come from, when there is no one around?"
+      "start": "00:02:40,000",
+      "end": "00:02:47,640",
+      "text": "Might it be that this piece of wood has learned to weep and cry like a child? I can hardly believe it."
     },
     {
       "question": 8,
-      "start": "00:02:58,200",
-      "end": "00:03:02,200",
-      "text": "If so, the worse for him. I’ll fix him!”"
+      "start": "00:03:02,440",
+      "end": "00:03:08,660",
+      "text": "With these words, he grabbed the log with both hands and started to knock it about unmercifully."
     },
     {
       "question": 9,
-      "start": "00:03:38,200",
-      "end": "00:03:45,200",
-      "text": "The poor fellow was scared half to death, so he tried to sing a gay song in order to gain courage."
+      "start": "00:03:45,600",
+      "end": "00:03:58,720",
+      "text": "He set aside the hatchet and picked up the plane to make the wood smooth and even, but as he drew it to and fro, he heard the same tiny voice. This time it giggled as it spoke."
     },
     {
       "question": 10,
-      "start": "00:04:12,200",
-      "end": "00:04:20,200",
-      "text": "His face had changed; fright had turned even the tip of his nose from red to deepest purple."
+      "start": "00:04:14,560",
+      "end": "00:04:22,500",
+      "text": "Fright had turned even the tip of his nose from red to deepest purple."
     }
   ]
 }
