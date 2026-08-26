@@ -20,16 +20,20 @@ export async function signUp(email: string, password: string, nickname: string) 
 
   if (error) throw error;
 
-  // Insert profile data into student_profiles table
+  // DB 자동 프로필 트리거로 전환하는 동안에도 신규 가입이 끊기지 않게 합니다.
+  // 트리거가 이미 프로필을 만들었다면 충돌 없이 그대로 사용합니다.
   if (data.user) {
     const { error: profileError } = await supabase
       .from('student_profiles')
-      .insert({
-        id: data.user.id,
-        email: data.user.email,
-        nickname,
-        role: 'academy',
-      });
+      .upsert(
+        {
+          id: data.user.id,
+          email: data.user.email,
+          nickname,
+          role: 'student',
+        },
+        { onConflict: 'id', ignoreDuplicates: true }
+      );
     if (profileError) throw profileError;
   }
 
@@ -48,6 +52,17 @@ export async function signIn(email: string, password: string) {
 
 export async function signOut() {
   const { error } = await supabase.auth.signOut();
+  if (error) throw error;
+}
+
+export async function requestPasswordReset(email: string) {
+  const redirectTo = `${window.location.origin}/auth/reset-password`;
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo });
+  if (error) throw error;
+}
+
+export async function updatePassword(password: string) {
+  const { error } = await supabase.auth.updateUser({ password });
   if (error) throw error;
 }
 

@@ -20,7 +20,7 @@ export default function SignupPage() {
 
     try {
       await signUp(email, password, nickname);
-      alert('회원가입 성공! 이메일을 확인해주세요.');
+      alert('회원가입이 완료됐어요. 이메일 확인이 필요하면 받은 편지를 확인해주세요.');
       router.push('/auth/login');
     } catch (err: any) {
       setError(err.message || '회원가입 실패');
@@ -33,8 +33,11 @@ export default function SignupPage() {
     <main className="flex min-h-dvh items-center justify-center bg-black px-4 py-8">
       <div className="w-full max-w-md rounded-2xl bg-gray-900 p-6 sm:p-8">
         <h1 className="mb-6 text-center text-2xl font-bold text-[#60D96C] sm:text-3xl">
-          회원가입
+          학생 회원가입
         </h1>
+        <p className="mb-6 text-center text-sm text-gray-400">
+          가입하면 학생 계정으로 학습을 시작합니다.
+        </p>
         
         {error && (
           <div className="mb-4 p-3 bg-red-500/20 border border-red-500 rounded-lg text-red-500 text-sm">
