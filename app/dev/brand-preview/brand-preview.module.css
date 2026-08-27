@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Mimic Korean";
+  src: url("/fonts/NotoSansKR-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
 .page {
   --paper: #070907;
   --ink: #f4f1e8;
@@ -10,7 +16,7 @@
   overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-family: "Mimic Korean", var(--font-geist-sans), Arial, sans-serif;
   background-image:
     linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
@@ -43,6 +49,18 @@
 .desktopNav a:hover { text-decoration: underline 3px; text-underline-offset: 6px; }
 
 .headerActions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.languageSwitch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #767d76;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: .76rem;
+  font-weight: 800;
+}
+.languageSwitch button { padding: 5px 2px; color: #767d76; background: transparent; }
+.languageSwitch button:hover { color: var(--ink); }
+.languageSwitch button.isActive { color: var(--green); text-decoration: underline 2px; text-underline-offset: 4px; }
 .login {
   padding: 11px 19px 10px;
   border: 2px solid var(--green);
@@ -74,6 +92,7 @@
 .hero h1 { max-width: 1120px; margin: clamp(38px, 6vw, 72px) 0 48px; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(3.35rem, 8.5vw, 9.2rem); font-weight: 400; line-height: .84; letter-spacing: -.055em; }
 .hero h1 span, .hero h1 em { display: block; }
 .hero h1 em { position: relative; font-size: .9em; font-style: normal; color: var(--green); text-shadow: 5px 5px 0 #17361d; }
+.englishDisplay { font-family: "Arial Black", "Arial Narrow", var(--font-geist-sans), sans-serif !important; letter-spacing: -.055em !important; }
 .heroBottom { display: flex; max-width: 1120px; align-items: end; justify-content: space-between; gap: 28px; }
 .heroBottom p { max-width: 520px; margin: 0; font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 700; line-height: 1.6; }
 .primaryCta { display: flex; min-width: 260px; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 20px; border: 2px solid var(--green); background: var(--green); color: #061007; font-size: 1rem; font-weight: 900; text-decoration: none; box-shadow: 6px 6px 0 #17361d; }
@@ -170,6 +189,8 @@
 @media (max-width: 640px) {
   .header { min-height: 70px; }
   .logo { font-size: 2.75rem; }
+  .headerActions { gap: 7px; }
+  .languageSwitch { gap: 2px; font-size: .7rem; }
   .login { padding: 9px 13px 8px; }
   .menu { width: 42px; height: 42px; }
   .hero { min-height: calc(100svh - 70px); padding: 42px 18px 34px; }
@@ -209,6 +230,7 @@
 @media (max-height: 500px) and (orientation: landscape) {
   .header { min-height: 58px; padding: 7px 32px 6px; }
   .logo { font-size: 2.35rem; }
+  .languageSwitch { font-size: .68rem; }
   .login { min-height: 38px; padding: 7px 16px 6px; }
   .menu { width: 40px; height: 40px; }
   .hero { min-height: calc(100svh - 58px); padding: 20px 58px 18px; }
