@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { signIn } from '../../lib/auth';
+import { getStudentProfile, signIn } from '../../lib/auth';
+import { placementStorageKey } from '../../lib/placement';
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -18,8 +19,13 @@ export default function LoginPage() {
     setError('');
 
     try {
-      await signIn(email, password);
-      router.push('/');
+      const auth = await signIn(email, password);
+      const user = auth.user;
+      if (!user) throw new Error('계정 정보를 불러오지 못했습니다.');
+
+      const profile = await getStudentProfile(user.id);
+      const hasPlacement = window.localStorage.getItem(placementStorageKey(user.id));
+      router.push(profile?.role === 'academy' || hasPlacement ? '/' : '/placement');
     } catch (err: any) {
       setError(err.message || '로그인 실패');
     } finally {

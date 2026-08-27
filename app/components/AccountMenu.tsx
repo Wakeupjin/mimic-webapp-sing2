@@ -4,6 +4,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../contexts/AuthContext";
 import { signOut, updateOwnAccount } from "../lib/auth";
+import { placementStorageKey, type SavedPlacement } from "../lib/placement";
 
 export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void }) {
   const { user, profile, refreshProfile } = useAuth();
@@ -17,6 +18,7 @@ export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void 
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [placementTitle, setPlacementTitle] = useState("");
 
   const email = profile?.email || user?.email || "이메일 정보 없음";
   const name = profile?.nickname || metadataNickname || email.split("@")[0] || "계정";
@@ -26,6 +28,20 @@ export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void 
   useEffect(() => {
     setNickname(profile?.nickname || metadataNickname);
   }, [profile?.nickname, metadataNickname]);
+
+  useEffect(() => {
+    if (!user) {
+      setPlacementTitle("");
+      return;
+    }
+    try {
+      const saved = window.localStorage.getItem(placementStorageKey(user.id));
+      const parsed = saved ? (JSON.parse(saved) as SavedPlacement) : null;
+      setPlacementTitle(parsed?.title || "");
+    } catch {
+      setPlacementTitle("");
+    }
+  }, [user]);
 
   useEffect(() => {
     const close = (event: MouseEvent) => {
@@ -107,7 +123,7 @@ export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void 
             <span>
               <strong>{name}</strong>
               <small>{email}</small>
-              <em>{roleLabel}</em>
+              <em>{placementTitle ? `${roleLabel} · ${placementTitle}` : roleLabel}</em>
             </span>
           </div>
 
@@ -139,6 +155,17 @@ export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void 
           ) : (
             <nav className="account-actions" aria-label="계정 메뉴">
               <button type="button" onClick={() => setEditing(true)}>계정 정보 수정 <span>›</span></button>
+              {profile?.role !== "academy" && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    router.push("/placement?retake=1");
+                  }}
+                >
+                  내 단계 다시 찾기 <span>›</span>
+                </button>
+              )}
               {onOpenAdmin && <button type="button" onClick={onOpenAdmin}>학생 현황 <span>›</span></button>}
               <button type="button" className="is-logout" onClick={handleLogout} disabled={busy}>로그아웃 <span>↗</span></button>
             </nav>
