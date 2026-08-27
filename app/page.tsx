@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from './contexts/AuthContext';
 import { signOut } from './lib/auth';
 import HomeHero from './components/HomeHero';
 import { MONTH_FEATURES } from './lib/monthCatalog';
+import { placementStorageKey } from './lib/placement';
 
 type FeatureId = (typeof MONTH_FEATURES)[number]['id'];
 
@@ -16,19 +17,38 @@ export default function Home() {
   const [isHovering, setIsHovering] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [selectedId, setSelectedId] = useState<FeatureId>('movie');
+  const [hasPlacement, setHasPlacement] = useState(false);
   const { user, profile, loading } = useAuth();
   const router = useRouter();
 
   const selected =
     MONTH_FEATURES.find((item) => item.id === selectedId) ?? MONTH_FEATURES[0];
 
-  const openSelected = () => {
+  useEffect(() => {
     if (!user) {
-      router.push('/auth/login');
+      setHasPlacement(false);
+      return;
+    }
+    setHasPlacement(Boolean(window.localStorage.getItem(placementStorageKey(user.id))));
+  }, [user]);
+
+  const startFromHome = () => {
+    if (!user) {
+      router.push('/auth/login?next=/placement');
+      return;
+    }
+    if (profile?.role !== 'academy' && !hasPlacement) {
+      router.push('/placement');
       return;
     }
     window.location.href = selected.href;
   };
+
+  const startLabel = !user
+    ? '5분 레벨 찾기'
+    : profile?.role !== 'academy' && !hasPlacement
+      ? '5분 레벨 찾기'
+      : '선택한 콘텐츠 열기';
 
   return (
     <div className="relative">
@@ -518,7 +538,8 @@ export default function Home() {
           hint={selected.hint}
           selectedId={selectedId}
           onSelect={setSelectedId}
-          onOpen={openSelected}
+          onStart={startFromHome}
+          startLabel={startLabel}
           onLogin={() => {
             if (user) {
               setIsLoggingOut(true);
@@ -535,43 +556,6 @@ export default function Home() {
           onAdmin={profile?.role === 'academy' ? () => router.push('/admin') : undefined}
         />
 
-        <section
-          id="home-start"
-          className="flex min-h-[40vh] flex-col items-center justify-center gap-4 border-t border-[#222] bg-black pb-10 pt-12"
-        >
-          <p
-            className="text-sm tracking-[0.2em] text-gray-500"
-            style={{ fontFamily: 'Encode Sans, sans-serif' }}
-          >
-            {selected.caption}
-          </p>
-          <h2
-            className="text-3xl font-bold text-white sm:text-4xl"
-            style={{ fontFamily: 'Encode Sans, sans-serif' }}
-          >
-            {selected.title}
-          </h2>
-          <p
-            className="max-w-md text-center text-gray-400"
-            style={{ fontFamily: 'Encode Sans, sans-serif' }}
-          >
-            {selected.hint}
-          </p>
-          <button
-            type="button"
-            onClick={openSelected}
-            className="mt-2 px-8 btn-mimic transition-all duration-200"
-            style={{
-              height: '44px',
-              borderRadius: '50px',
-              fontFamily: 'var(--font-bm-hanna-pro), sans-serif',
-              fontSize: '22px',
-              fontWeight: '200'
-            }}
-          >
-            시작하기
-          </button>
-        </section>
       </main>
     </div>
   );

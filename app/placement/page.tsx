@@ -391,9 +391,9 @@ export default function PlacementPage() {
               <button
                 type="button"
                 className="mt-7 w-full rounded-2xl bg-[#60D96C] px-6 py-4 text-lg font-black text-black"
-                onClick={() => router.push('/sing2/selecting?id=001:1')}
+                onClick={() => router.push('/sing2/watching?id=001:1')}
               >
-                Sing 2 학습 시작하기
+                첫 Watch 시작하기
               </button>
               <button type="button" className="mt-4 text-sm font-bold text-zinc-500 hover:text-white" onClick={reset}>
                 다시 해보기

@@ -11,7 +11,8 @@ type HomeHeroProps = {
   hint: string;
   selectedId: FeatureId;
   onSelect: (id: FeatureId) => void;
-  onOpen: () => void;
+  onStart: () => void;
+  startLabel: string;
   onLogin: () => void;
   onMenu: () => void;
   loginLabel: string;
@@ -28,7 +29,8 @@ export default function HomeHero({
   hint,
   selectedId,
   onSelect,
-  onOpen,
+  onStart,
+  startLabel,
   onLogin,
   onMenu,
   loginLabel,
@@ -58,28 +60,17 @@ export default function HomeHero({
       </h1>
 
       <div className="home-cover">
-        <button
-          type="button"
-          onClick={onOpen}
-          className="home-poster group relative"
-          aria-label={`${coverAlt} 시작하기`}
-        >
+        <div className="home-poster relative" aria-label={coverAlt} role="img">
           <Image
             key={coverSrc}
             src={coverSrc}
             alt={coverAlt}
             fill
-            className="object-cover transition-opacity duration-300 group-hover:opacity-85"
+            className="object-cover"
             priority
             sizes="(max-width: 768px) 90vw, 1000px"
           />
-          <span
-            className="absolute inset-0 flex items-center justify-center bg-black/35 px-4 text-center text-lg font-bold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:text-2xl"
-            style={{ fontFamily: "Encode Sans, sans-serif" }}
-          >
-            {hint}
-          </span>
-        </button>
+        </div>
 
         <div className="home-picks" role="tablist" aria-label="이번 달 콘텐츠">
           {MONTH_FEATURES.map((item) => {
@@ -99,8 +90,10 @@ export default function HomeHero({
           })}
         </div>
 
-        <button type="button" onClick={onOpen} className="home-start-button">
-          학습 시작하기
+        <p className="max-w-md text-center text-sm text-zinc-400 sm:text-base">{hint}</p>
+
+        <button type="button" onClick={onStart} className="home-start-button">
+          {startLabel}
         </button>
       </div>
     </section>
