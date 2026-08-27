@@ -24,7 +24,13 @@ export default function LoginPage() {
       if (!user) throw new Error('계정 정보를 불러오지 못했습니다.');
 
       const profile = await getStudentProfile(user.id);
-      const hasPlacement = window.localStorage.getItem(placementStorageKey(user.id));
+      const storageKey = placementStorageKey(user.id);
+      const isAlwaysNewStudent =
+        profile?.role === 'student' && profile.nickname?.trim() === '강진(학생)';
+
+      if (isAlwaysNewStudent) window.localStorage.removeItem(storageKey);
+
+      const hasPlacement = window.localStorage.getItem(storageKey);
       router.push(profile?.role === 'academy' || hasPlacement ? '/' : '/placement');
     } catch (err: any) {
       setError(err.message || '로그인 실패');
