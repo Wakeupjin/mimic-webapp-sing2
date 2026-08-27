@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from './contexts/AuthContext';
-import { signOut } from './lib/auth';
 import HomeHero from './components/HomeHero';
+import AccountMenu from './components/AccountMenu';
 import { MONTH_FEATURES } from './lib/monthCatalog';
-import { placementStorageKey } from './lib/placement';
+import { placementStorageKey, type SavedPlacement } from './lib/placement';
 
 type FeatureId = (typeof MONTH_FEATURES)[number]['id'];
 
@@ -15,9 +15,9 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeModal, setActiveModal] = useState<string | null>(null);
   const [isHovering, setIsHovering] = useState(false);
-  const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [selectedId, setSelectedId] = useState<FeatureId>('movie');
   const [hasPlacement, setHasPlacement] = useState(false);
+  const [placementLabel, setPlacementLabel] = useState('');
   const { user, profile, loading } = useAuth();
   const router = useRouter();
 
@@ -27,9 +27,16 @@ export default function Home() {
   useEffect(() => {
     if (!user) {
       setHasPlacement(false);
+      setPlacementLabel('');
       return;
     }
-    setHasPlacement(Boolean(window.localStorage.getItem(placementStorageKey(user.id))));
+    const saved = window.localStorage.getItem(placementStorageKey(user.id));
+    setHasPlacement(Boolean(saved));
+    try {
+      setPlacementLabel(saved ? (JSON.parse(saved) as SavedPlacement).title : '');
+    } catch {
+      setPlacementLabel('');
+    }
   }, [user]);
 
   const startFromHome = () => {
@@ -48,7 +55,7 @@ export default function Home() {
     ? '5분 레벨 찾기'
     : profile?.role !== 'academy' && !hasPlacement
       ? '5분 레벨 찾기'
-      : '선택한 콘텐츠 열기';
+      : `${selected.title} 학습 단계 보기`;
 
   return (
     <div className="relative">
@@ -533,27 +540,17 @@ export default function Home() {
 
       <main className="bg-black">
         <HomeHero
-          coverSrc={selected.coverSrc}
-          coverAlt={selected.coverAlt}
-          hint={selected.hint}
           selectedId={selectedId}
           onSelect={setSelectedId}
           onStart={startFromHome}
           startLabel={startLabel}
-          onLogin={() => {
-            if (user) {
-              setIsLoggingOut(true);
-              signOut().then(() => {
-                router.push('/');
-                setTimeout(() => setIsLoggingOut(false), 4000);
-              });
-            } else {
-              router.push('/auth/login');
-            }
-          }}
+          onLogin={() => router.push('/auth/login')}
           onMenu={() => setIsMenuOpen(!isMenuOpen)}
-          loginLabel={loading ? '...' : user ? '로그아웃' : '로그인'}
-          onAdmin={profile?.role === 'academy' ? () => router.push('/admin') : undefined}
+          loginLabel={loading ? '확인 중…' : '로그인'}
+          placementLabel={placementLabel}
+          accountSlot={user ? (
+            <AccountMenu onOpenAdmin={profile?.role === 'academy' ? () => router.push('/admin') : undefined} />
+          ) : undefined}
         />
 
       </main>

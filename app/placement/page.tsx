@@ -193,11 +193,11 @@ export default function PlacementPage() {
   const sceneProgress = Math.min(100, (sceneElapsed / SCENE_DURATION) * 100);
 
   if (loading || !user || profile?.role === 'academy') {
-    return <main className="min-h-dvh bg-black" />;
+    return <main className="placement-stage-v2 min-h-dvh bg-black" />;
   }
 
   return (
-    <main className="min-h-dvh bg-black px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-[max(1.25rem,env(safe-area-inset-top))] text-white sm:px-6">
+    <main className="placement-stage-v2 min-h-dvh bg-black px-4 pb-[max(2rem,env(safe-area-inset-bottom))] pt-[max(1.25rem,env(safe-area-inset-top))] text-white sm:px-6">
       <div className="mx-auto flex min-h-[calc(100dvh-3rem)] w-full max-w-3xl flex-col">
         <header className="flex items-center gap-4">
           <button

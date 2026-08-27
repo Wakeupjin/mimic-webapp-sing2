@@ -1,101 +1,58 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { signUp } from '../../lib/auth';
-import Link from 'next/link';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { signUp } from "../../lib/auth";
+import AuthShell from "../../components/AuthShell";
 
 export default function SignupPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [nickname, setNickname] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     setLoading(true);
-    setError('');
-
+    setError("");
     try {
       await signUp(email, password, nickname);
-      alert('회원가입이 완료됐어요. 이메일 확인이 필요하면 받은 편지를 확인해주세요.');
-      router.push('/auth/login');
-    } catch (err: any) {
-      setError(err.message || '회원가입 실패');
+      alert("회원가입이 완료됐어요. 이메일 확인이 필요하면 받은 편지를 확인해주세요.");
+      router.push("/auth/login");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "회원가입 실패");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <main className="flex min-h-dvh items-center justify-center bg-black px-4 py-8">
-      <div className="w-full max-w-md rounded-2xl bg-gray-900 p-6 sm:p-8">
-        <h1 className="mb-6 text-center text-2xl font-bold text-[#60D96C] sm:text-3xl">
-          학생 회원가입
-        </h1>
-        <p className="mb-6 text-center text-sm text-gray-400">
-          가입하면 학생 계정으로 학습을 시작합니다.
-        </p>
-        
-        {error && (
-          <div className="mb-4 p-3 bg-red-500/20 border border-red-500 rounded-lg text-red-500 text-sm">
-            {error}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-white mb-2">이메일</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#60D96C]"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-white mb-2">비밀번호</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#60D96C]"
-              required
-              minLength={6}
-              autoComplete="new-password"
-            />
-          </div>
-
-          <div>
-            <label className="block text-white mb-2">닉네임</label>
-            <input
-              type="text"
-              value={nickname}
-              onChange={(e) => setNickname(e.target.value)}
-              className="w-full px-4 py-3 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#60D96C]"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-3 btn-mimic font-bold rounded-lg transition-colors disabled:opacity-50"
-          >
-            {loading ? '가입 중...' : '회원가입'}
-          </button>
-        </form>
-
-        <div className="mt-6 text-center">
-          <Link href="/auth/login" className="text-[#60D96C] hover:underline">
-            이미 계정이 있으신가요? 로그인
-          </Link>
-        </div>
-      </div>
-    </main>
+    <AuthShell
+      title="첫 장면을 시작해요"
+      description="가입 후 5분 레벨 찾기로 내 시작점을 정합니다."
+      footer={<Link href="/auth/login">이미 계정이 있나요? <strong>로그인</strong></Link>}
+    >
+      {error ? <div className="auth-alert-v2 is-error">{error}</div> : null}
+      <form onSubmit={handleSubmit} className="auth-form-v2">
+        <label>
+          <span>이름</span>
+          <input type="text" value={nickname} onChange={(event) => setNickname(event.target.value)} placeholder="학습자 이름" required />
+        </label>
+        <label>
+          <span>이메일</span>
+          <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="name@example.com" autoComplete="email" required />
+        </label>
+        <label>
+          <span>비밀번호</span>
+          <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="6자 이상" required minLength={6} autoComplete="new-password" />
+        </label>
+        <button type="submit" disabled={loading} className="auth-submit-v2">
+          {loading ? "계정 만드는 중…" : "계정 만들고 레벨 찾기"}
+        </button>
+      </form>
+    </AuthShell>
   );
 }
