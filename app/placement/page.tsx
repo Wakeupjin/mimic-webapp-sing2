@@ -15,6 +15,7 @@ import type { AiCoachResult } from '@/app/types/aiCoach';
 
 const VIDEO_URL = 'https://mimicsing2.b-cdn.net/sing2.mp4';
 const SCENE = { start: 288.5, end: 342.66 };
+const SCENE_DURATION = SCENE.end - SCENE.start;
 
 const VOICE_TASKS = {
   easy: {
@@ -61,9 +62,12 @@ export default function PlacementPage() {
   const { user, profile, loading } = useAuth();
   const videoRef = useRef<HTMLVideoElement>(null);
   const activeEndRef = useRef<number | null>(null);
+  const sceneAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [step, setStep] = useState<Step>('intro');
   const [gradeBand, setGradeBand] = useState<PlacementGradeBand>('g4-6');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [sceneElapsed, setSceneElapsed] = useState(0);
+  const [sceneComplete, setSceneComplete] = useState(false);
   const [activeCoach, setActiveCoach] = useState<VoiceTaskKey | null>(null);
   const [scores, setScores] = useState<Record<VoiceTaskKey, PlacementVoiceResult>>({
     easy: null,
@@ -85,6 +89,7 @@ export default function PlacementPage() {
   useEffect(() => {
     return () => {
       if (videoRef.current) videoRef.current.pause();
+      if (sceneAdvanceTimerRef.current) clearTimeout(sceneAdvanceTimerRef.current);
     };
   }, []);
 
@@ -104,10 +109,29 @@ export default function PlacementPage() {
   const handleTimeUpdate = () => {
     const video = videoRef.current;
     const activeEnd = activeEndRef.current;
-    if (!video || activeEnd === null || video.currentTime < activeEnd) return;
+    if (!video || activeEnd === null) return;
+
+    if (step === 'watch') {
+      setSceneElapsed(Math.max(0, Math.min(SCENE_DURATION, video.currentTime - SCENE.start)));
+    }
+
+    if (video.currentTime < activeEnd) return;
     video.pause();
     activeEndRef.current = null;
     setIsPlaying(false);
+
+    if (step === 'watch') {
+      setSceneElapsed(SCENE_DURATION);
+      setSceneComplete(true);
+      sceneAdvanceTimerRef.current = setTimeout(() => goToVoiceTask('easy'), 900);
+    }
+  };
+
+  const playScene = () => {
+    if (sceneAdvanceTimerRef.current) clearTimeout(sceneAdvanceTimerRef.current);
+    setSceneElapsed(0);
+    setSceneComplete(false);
+    void playSegment(SCENE.start, SCENE.end);
   };
 
   const goToVoiceTask = (task: VoiceTaskKey) => {
@@ -156,6 +180,8 @@ export default function PlacementPage() {
     setAnswer(null);
     setResult(null);
     setActiveCoach(null);
+    setSceneElapsed(0);
+    setSceneComplete(false);
   };
 
   const stepIndex = STEP_ORDER.indexOf(step);
@@ -163,6 +189,8 @@ export default function PlacementPage() {
   const activeVoiceStep: VoiceTaskKey | null =
     step === 'easy' || step === 'long' || step === 'reading' ? step : null;
   const currentVoiceTask = activeVoiceStep ? VOICE_TASKS[activeVoiceStep] : null;
+  const sceneRemaining = Math.max(0, Math.ceil(SCENE_DURATION - sceneElapsed));
+  const sceneProgress = Math.min(100, (sceneElapsed / SCENE_DURATION) * 100);
 
   if (loading || !user || profile?.role === 'academy') {
     return <main className="min-h-dvh bg-black" />;
@@ -239,23 +267,39 @@ export default function PlacementPage() {
                   onTimeUpdate={handleTimeUpdate}
                   onPause={() => setIsPlaying(false)}
                 />
-                {!isPlaying && (
+                {!isPlaying && !sceneComplete && (
                   <button
                     type="button"
                     className="absolute inset-0 flex items-center justify-center bg-black/35 text-center"
-                    onClick={() => void playSegment(SCENE.start, SCENE.end)}
+                    onClick={playScene}
                   >
-                    <span className="rounded-full bg-[#60D96C] px-7 py-4 text-lg font-black text-black">▶ 장면 보기</span>
+                    <span className="rounded-full bg-[#60D96C] px-7 py-4 text-lg font-black text-black">
+                      ▶ 55초 장면 보기
+                    </span>
                   </button>
                 )}
+                {sceneComplete && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/45">
+                    <span className="rounded-full bg-[#60D96C] px-7 py-4 text-lg font-black text-black">✓ 장면 완료</span>
+                  </div>
+                )}
               </div>
-              <button
-                type="button"
-                className="mt-5 w-full rounded-2xl bg-[#60D96C] px-6 py-4 text-lg font-black text-black"
-                onClick={() => goToVoiceTask('easy')}
-              >
-                장면을 봤어요
-              </button>
+              <div className="mt-5 rounded-2xl border border-white/10 bg-[#201e1e] px-5 py-4">
+                <div className="h-2 overflow-hidden rounded-full bg-white/10">
+                  <div
+                    className="h-full rounded-full bg-[#60D96C] transition-[width] duration-200"
+                    style={{ width: `${sceneProgress}%` }}
+                  />
+                </div>
+                <div className="mt-3 flex items-center justify-between gap-4 text-sm font-bold">
+                  <span className={sceneComplete ? 'text-[#60D96C]' : 'text-white'}>
+                    {sceneComplete ? '장면 완료 · 다음 단계로 이동해요' : isPlaying ? '장면 재생 중' : '재생하면 끝까지 이어져요'}
+                  </span>
+                  <span className="shrink-0 text-zinc-500">
+                    {sceneComplete ? '완료' : `${sceneRemaining}초 남음`}
+                  </span>
+                </div>
+              </div>
             </div>
           )}
 
