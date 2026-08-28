@@ -31,12 +31,11 @@ export default function LoginPage() {
 
       if (isAlwaysNewStudent) window.localStorage.removeItem(storageKey);
 
-      const hasPlacement = window.localStorage.getItem(storageKey);
       const requestedNext = new URLSearchParams(window.location.search).get("next");
       const shouldRunPlacement =
         profile?.role !== "academy" &&
-        (isAlwaysNewStudent || requestedNext === "/placement" || !hasPlacement);
-      router.push(shouldRunPlacement ? "/placement" : "/");
+        (isAlwaysNewStudent || requestedNext === "/placement");
+      router.push(shouldRunPlacement ? "/placement" : (requestedNext || "/"));
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "로그인 실패");
     } finally {

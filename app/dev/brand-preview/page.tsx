@@ -8,7 +8,6 @@ import AccountMenu from "../../components/AccountMenu";
 import { useAuth } from "../../contexts/AuthContext";
 import { formatMovieId } from "../../dataService";
 import { lessonPath } from "../../lib/lessonMedia";
-import { placementStorageKey } from "../../lib/placement";
 import { fetchOwnProgress, MODE_ORDER, type LearnMode, type ProgressRow } from "../../lib/progressGate";
 import styles from "./brand-preview.module.css";
 
@@ -161,7 +160,6 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
 export default function BrandPreviewPage() {
   const [language, setLanguage] = useState<Language>("ko");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hasPlacement, setHasPlacement] = useState(false);
   const [resumeTarget, setResumeTarget] = useState<ResumeTarget | null>(null);
   const [progressLoaded, setProgressLoaded] = useState(false);
   const { user, profile, loading } = useAuth();
@@ -178,12 +176,10 @@ export default function BrandPreviewPage() {
 
   useEffect(() => {
     if (!user) {
-      setHasPlacement(false);
       setResumeTarget(null);
       setProgressLoaded(true);
       return;
     }
-    setHasPlacement(Boolean(window.localStorage.getItem(placementStorageKey(user.id))));
     setProgressLoaded(false);
     void fetchOwnProgress().then((rows) => {
       setResumeTarget(getResumeTarget(rows as HomeProgressRow[]));
@@ -204,11 +200,7 @@ export default function BrandPreviewPage() {
 
   const openCourse = (href: string) => {
     if (!user) {
-      router.push("/auth/login?next=/placement");
-      return;
-    }
-    if (profile?.role !== "academy" && !hasPlacement) {
-      router.push("/placement");
+      router.push(`/auth/login?next=${encodeURIComponent(href)}`);
       return;
     }
     router.push(href);
@@ -222,23 +214,18 @@ export default function BrandPreviewPage() {
     ? { label: t.loadingAction, hint: "", disabled: true }
     : !user
       ? { label: t.startFree, hint: t.startFreeHint, disabled: false }
-      : profile?.role !== "academy" && !hasPlacement
-        ? { label: t.findLevel, hint: t.findLevelHint, disabled: false }
-        : resumeTarget
-          ? { label: t.resume, hint: language === "ko" ? resumeTarget.ko : resumeTarget.en, disabled: false }
-          : { label: t.startCourse, hint: t.startCourseHint, disabled: false };
+      : resumeTarget
+        ? { label: t.resume, hint: language === "ko" ? resumeTarget.ko : resumeTarget.en, disabled: false }
+        : { label: t.startCourse, hint: t.startCourseHint, disabled: false };
 
   const handlePrimaryAction = () => {
     if (primaryAction.disabled) return;
+    const targetHref = resumeTarget?.href || "/sing2/selecting?id=001:1";
     if (!user) {
-      router.push("/auth/login?next=/placement");
+      router.push(`/auth/login?next=${encodeURIComponent(targetHref)}`);
       return;
     }
-    if (profile?.role !== "academy" && !hasPlacement) {
-      router.push("/placement");
-      return;
-    }
-    router.push(resumeTarget?.href || "/sing2/selecting?id=001:1");
+    router.push(targetHref);
   };
 
   return (
