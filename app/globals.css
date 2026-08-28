@@ -1385,9 +1385,9 @@ body {
   display: flex;
   min-height: 0;
   flex: 1;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: clamp(1.5rem, 4vh, 3.5rem) 0 clamp(1rem, 3vh, 2.5rem);
+  padding: clamp(1rem, 2.8vh, 2.25rem) 0 clamp(2rem, 6vh, 4.5rem);
 }
 
 .select-close,
@@ -1453,7 +1453,7 @@ body {
   background: #fff;
   color: #111;
   font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
-  font-size: clamp(1.15rem, 2.55vw, 3.15rem);
+  font-size: clamp(1.25rem, 2.55vw, 3.15rem);
   font-weight: 800;
   line-height: 1;
   cursor: pointer;
@@ -1622,6 +1622,54 @@ body {
   translate: -50% -72%;
   pointer-events: none;
   mix-blend-mode: normal;
+}
+
+/* 휴대폰 세로는 학습 순서가 위→아래로 읽히도록 1열 4단으로 배치합니다. */
+@media (orientation: portrait) and (max-width: 540px) {
+  .select-content {
+    padding: 0.75rem 0 max(2rem, env(safe-area-inset-bottom));
+  }
+
+  .select-modes {
+    width: min(100%, 20.5rem);
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: clamp(1.65rem, 4.6vh, 2.75rem);
+  }
+
+  .select-mode {
+    width: 100%;
+    height: clamp(4.5rem, 10.5vh, 5.5rem);
+    border-radius: 34px;
+    font-size: clamp(1.25rem, 5.8vw, 1.55rem);
+  }
+
+  .select-chapter {
+    min-width: min(74vw, 18rem);
+    height: 3.35rem;
+    font-size: 1.15rem;
+  }
+
+  .select-chameleon {
+    width: clamp(50px, 15vw, 64px);
+    translate: -50% -55%;
+  }
+
+  .select-here {
+    font-size: 0.76rem;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 1100px) and (min-height: 561px) {
+  .select-modes {
+    width: min(100%, 39rem);
+    gap: clamp(1.5rem, 3vh, 2.25rem) clamp(1.25rem, 2.8vw, 2rem);
+  }
+
+  .select-mode {
+    height: clamp(7.5rem, 16vh, 9rem);
+    border-radius: 44px;
+    font-size: clamp(1.65rem, 3.4vw, 2.25rem);
+  }
 }
 
 /* 폰·작은 태블릿 가로: 세가 짧아서 TV용 여백·큰 버튼을 줄입니다. */
