@@ -294,3 +294,48 @@ Student test account role is now configured and verified in Supabase. OpenAI API
 ## 2026-08-26 23:01:13 — codex / decision
 
 Added durable PROJECT_CONTEXT.md and integrated both active workstreams without overwriting the live AI Coach checkpoint: mobile portrait Mimicking remains local and undeployed; AI Coach is build-verified with student role configured and awaits secure API key setup plus mobile microphone testing.
+
+## 2026-08-28 23:00:44 — codex / work started
+
+Objective: Align logged-out landing conversion with signup, add a public Sing 2 clip preview, and eliminate protected-route loading dead ends
+
+
+## 2026-08-28 23:00:44 — user / request
+
+Implement the agreed signup-first landing conversion: account-creation CTA, public short Sing 2 preview, original next-path preservation, and immediate signup redirects without opening guest learning.
+
+## 2026-08-28 23:05:45 — codex / checkpoint
+
+Implemented signup-first landing conversion: account-creation hero CTA with immediate pending state, a public 12-second Sing 2 LISTEN to SAY IT BACK preview, safe next-path preservation through signup/login, and shared auth gates for movie, book, and placement routes.
+
+**Next action:** User reviews the isolated codex/signup-preview branch; only push, open a PR, or deploy after explicit approval.
+
+**Validation:** TypeScript passed; production build passed with 25 routes; browser verified muted preview autoplay and controls, exact signup next paths, 46 ms direct protected-route redirect, and no horizontal overflow at a calibrated 389/390 CSS-pixel mobile viewport.
+
+**Files:**
+- app/dev/brand-preview/page.tsx
+- app/dev/brand-preview/brand-preview.module.css
+- app/components/Sing2Preview.tsx
+- app/components/AuthGate.tsx
+- app/components/AuthGate.module.css
+- app/lib/authRedirect.ts
+- app/auth/login/page.tsx
+- app/auth/signup/page.tsx
+- app/sing2/layout.tsx
+- app/book/layout.tsx
+- app/placement/layout.tsx
+
+**Open risks:** Sing 2 rights/provenance remains unverified in the repository; this change reuses only the already deployed Bunny CDN asset and adds no new media. Work is local and not deployed.
+
+
+## 2026-08-28 23:05:45 — codex / completed
+
+Signup-first landing conversion and public Sing 2 product preview are implemented and browser-verified on an isolated branch; guest learning remains blocked and protected routes preserve their destination through signup.
+
+**Validation:** TypeScript and production build passed; desktop and 390-width browser checks passed; movie, book, placement, and direct learning URLs all reached signup with the correct encoded next path.
+
+## 2026-08-28 23:12:58 — codex / completed
+
+Signup-first landing conversion and public Sing 2 product preview are implemented on top of the latest production copy; guest learning remains blocked and protected routes preserve their destination through signup.
+
+**Validation:** After rebasing onto main/PR #29, TypeScript and production build passed; 389/390-width browser check had no overflow; preview played with mute/pause controls; direct movie URL reached signup with the exact next path in 71 ms.

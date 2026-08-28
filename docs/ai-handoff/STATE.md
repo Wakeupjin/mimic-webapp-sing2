@@ -6,47 +6,57 @@
 ## Active operator
 
 <!-- HANDOFF:ACTIVE_OPERATOR:START -->
-gpt
+codex
 <!-- HANDOFF:ACTIVE_OPERATOR:END -->
 
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-IN PROGRESS
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Create durable cross-prompt project context and preserve the pending mobile portrait Mimicking work
+Align logged-out landing conversion with signup, add a public Sing 2 clip preview, and eliminate protected-route loading dead ends
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Student test account role is now configured and verified in Supabase. OpenAI API setup is paused at the Platform login screen.
+Signup-first landing conversion and public Sing 2 product preview are implemented on top of the latest production copy; guest learning remains blocked and protected routes preserve their destination through signup.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/api/ai-coach/route.ts, app/components/AiCoachPanel.tsx, app/types/aiCoach.ts, app/sing2/mimicking/page.tsx, docs/ai-coach.md
+- app/dev/brand-preview/page.tsx
+- app/dev/brand-preview/brand-preview.module.css
+- app/components/Sing2Preview.tsx
+- app/components/AuthGate.tsx
+- app/components/AuthGate.module.css
+- app/lib/authRedirect.ts
+- app/auth/login/page.tsx
+- app/auth/signup/page.tsx
+- app/sing2/layout.tsx
+- app/book/layout.tsx
+- app/placement/layout.tsx
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Supabase SQL result returned exactly one row with role student. OpenAI tab remains at /login?next=/api-keys.
+After rebasing onto main/PR #29, TypeScript and production build passed; 389/390-width browser check had no overflow; preview played with mute/pause controls; direct movie URL reached signup with the exact next path in 71 ms.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-API key creation is pending user authentication. Never record the account email or API key in shared handoff documents.
+Sing 2 rights/provenance remains unverified in the repository; this change reuses only the already deployed Bunny CDN asset and adds no new media. Work is local and not deployed.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-User signs in to OpenAI Platform in the open in-app browser tab; GPT then creates a project API key, saves it to .env.local without exposing it, and runs the live AI Coach test.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->

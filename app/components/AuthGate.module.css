@@ -1,0 +1,49 @@
+.screen {
+  display: grid;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(96, 217, 108, .14), transparent 34%),
+    #050705;
+  color: #f4f1e8;
+}
+
+.status {
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.mark {
+  color: #60d96c;
+  font-family: "Jolly Lodger", cursive;
+  font-size: clamp(3.2rem, 10vw, 5rem);
+  line-height: .8;
+  transform: rotate(-2deg);
+}
+
+.status p {
+  margin: 0;
+  color: #b9c1ba;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(96, 217, 108, .24);
+  border-top-color: #60d96c;
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation-duration: 1.4s; }
+}
