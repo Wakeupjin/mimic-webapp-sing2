@@ -149,7 +149,7 @@ export default function BrandPreviewPage() {
   return (
     <main className={`${styles.page} home-stage-v2`} lang={language}>
       <header className={styles.header}>
-        <Link className={styles.logo} href="/dev/brand-preview" aria-label="Mimic home">MimiC</Link>
+        <Link className={styles.logo} href="/" aria-label="Mimic home">MimiC</Link>
         <nav className={styles.desktopNav} aria-label="Main navigation">
           <a href="#monthly">{t.nav[0]}</a>
           <a href="#method">{t.nav[1]}</a>
@@ -225,7 +225,7 @@ export default function BrandPreviewPage() {
           </div>
         </article>
 
-        <article className={`${styles.featureCard} ${styles.bookCard}`}>
+        <article className={styles.featureCard}>
           <div className={styles.cardNumber}>02 / BOOK</div>
           <div className={styles.bookCover}>
             <Image src="/pinocchio.jpeg" alt="Pinocchio book cover" fill sizes="(max-width: 760px) 86vw, 33vw" />
@@ -289,7 +289,7 @@ export default function BrandPreviewPage() {
         <div className={styles.footerLinks}>
           <a href="#monthly">{t.nav[0]}</a><a href="#method">{t.nav[1]}</a><a href="#parents">{t.nav[3]}</a><Link href="/auth/login">{t.login}</Link>
         </div>
-        <small>© 2026 MIMIC · BRAND STUDY PREVIEW</small>
+        <small>© 2026 MIMIC · SOUND → STORY → MY VOICE</small>
       </footer>
     </main>
   );
