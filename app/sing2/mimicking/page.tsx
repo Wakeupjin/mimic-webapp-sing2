@@ -103,7 +103,6 @@ function MimickingPageContent() {
     setActiveControlIndex,
     setAutoSeqIndex,
     executeMimickingSequence,
-    execute30thMimickingSequence,
     resetMimickingState,
     clearTimeouts
   } = useMimickingSequence();
@@ -882,7 +881,15 @@ function MimickingPageContent() {
                       type="button"
                       className="select-mode"
                       onClick={() => {
-                        execute30thMimickingSequence();
+                        clearStepTimeout();
+                        pauseVideo();
+                        resetMimickingState();
+                        setIsMimickingStarted(false);
+                        setIsFeedbackOpen(false);
+                        setNudgeNext(false);
+                        maxSentenceRef.current = 0;
+                        sentenceFeedbackRef.current = {};
+                        setSentenceFeedback({});
                       }}
                     >
                       Again
