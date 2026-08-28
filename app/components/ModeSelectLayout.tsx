@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { ReactNode } from "react";
 import { HeaderCloseLink } from "./HeaderIcons";
 
@@ -24,8 +23,6 @@ export type ChapterSelectItem = {
 };
 
 type ModeSelectLayoutProps = {
-  contentTitle?: string;
-  contentType?: "영화" | "원서";
   chapterLabel: string;
   chapters: ChapterSelectItem[];
   modes: ModeSelectItem[];
@@ -37,17 +34,7 @@ type ModeSelectLayoutProps = {
   badge?: ReactNode;
 };
 
-const MODE_COPY: Record<string, { eyebrow: string; description: string }> = {
-  watching: { eyebrow: "01", description: "장면과 소리를 먼저 익혀요" },
-  mimicking: { eyebrow: "02", description: "리듬까지 똑같이 따라 해요" },
-  guessing: { eyebrow: "03", description: "소리만 듣고 문장을 찾아요" },
-  word: { eyebrow: "04", description: "단어를 직접 이어 완성해요" },
-  listen: { eyebrow: "01", description: "이야기와 소리를 먼저 익혀요" },
-};
-
 export default function ModeSelectLayout({
-  contentTitle = "Sing 2",
-  contentType = "영화",
   chapterLabel,
   chapters,
   modes,
@@ -59,80 +46,85 @@ export default function ModeSelectLayout({
   badge,
 }: ModeSelectLayoutProps) {
   return (
-    <main className="select-stage select-stage-v2">
-      <header className="select-header-v2">
-        <Link href="/" className="select-brand-v2" aria-label="MimiC 홈">MimiC</Link>
-        <div className="select-header-actions-v2">
-          {badge}
-          {extraActions}
-          <HeaderCloseLink href="/" />
-        </div>
+    <main className="select-stage relative flex flex-col overflow-x-hidden overflow-y-auto px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
+      <header className="relative z-40 flex shrink-0 items-center justify-end gap-[clamp(0.45rem,1vw,0.75rem)]">
+        {badge ? <div className="mr-auto">{badge}</div> : null}
+        {extraActions}
+        <HeaderCloseLink href="/" />
       </header>
 
-      <section className="select-hero-v2">
-        <div className="select-heading-v2">
-          <p>{contentType} · MONTHLY COURSE</p>
-          <h1>{contentTitle}</h1>
-          <span>한 단계씩 완료하면 다음 학습이 열려요.</span>
-        </div>
+      <div className="select-chapter-wrap" ref={dropdownRef}>
+        <button type="button" onClick={onToggleDropdown} className="select-chapter" aria-expanded={dropdownOpen}>
+          {chapterLabel}
+          <svg
+            width="28"
+            height="16"
+            viewBox="0 0 41 20"
+            fill="none"
+            aria-hidden
+            className={`transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+          >
+            <path d="M2 2L20.5 18L39 2" stroke="white" strokeWidth="5" strokeLinecap="round" />
+          </svg>
+        </button>
 
-        <div className="select-chapter-wrap select-chapter-wrap-v2" ref={dropdownRef}>
-          <span>학습 장면</span>
-          <button type="button" onClick={onToggleDropdown} className="select-chapter select-chapter-v2" aria-expanded={dropdownOpen}>
-            {chapterLabel}
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden className={dropdownOpen ? "is-open" : ""}>
-              <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-
-          {dropdownOpen && (
-            <div className="select-chapter-menu-v2">
-              <div ref={listRef} className="custom-scrollbar">
-                {chapters.map((chapter) => (
-                  <button
-                    key={chapter.id}
-                    type="button"
-                    disabled={chapter.locked}
-                    onClick={chapter.onSelect}
-                    className={`${chapter.selected ? "is-selected" : ""} ${chapter.locked ? "is-locked" : ""}`}
-                  >
-                    <span>{chapter.label}</span>
-                    {chapter.done ? <b aria-label="완료">✓</b> : chapter.locked ? <b aria-label="잠김">⌁</b> : null}
-                  </button>
-                ))}
-              </div>
+        {dropdownOpen && (
+          <div
+            className="absolute left-0 right-0 top-full z-50 mt-2 max-h-[min(50vh,22rem)] overflow-hidden rounded-[25px] shadow-lg"
+            style={{ backgroundColor: "#201E1E" }}
+          >
+            <div ref={listRef} className="custom-scrollbar max-h-[min(50vh,22rem)] overflow-auto">
+              {chapters.map((chapter) => (
+                <button
+                  key={chapter.id}
+                  type="button"
+                  disabled={chapter.locked}
+                  onClick={chapter.onSelect}
+                  className={`relative flex w-full items-center justify-center border-t border-[#333] px-6 py-3 first:border-t-0 disabled:cursor-not-allowed ${
+                    chapter.locked ? "text-[#555]" : "text-white hover:bg-[#2a2a2a]"
+                  }`}
+                  style={{
+                    fontFamily: '"Encode Sans Semi Condensed", "Encode Sans", sans-serif',
+                    fontWeight: 800,
+                    fontSize: "clamp(1rem, 2.2vw, 1.6rem)",
+                  }}
+                >
+                  {chapter.label}
+                  {chapter.done && (
+                    <span className="absolute right-4 flex h-6 w-6 items-center justify-center rounded-md bg-[#60D96C]">
+                      <svg width="14" height="12" viewBox="0 0 18 16" fill="none" aria-hidden>
+                        <path d="M2 7.5L7 13L16 2" stroke="#ECECEC" strokeWidth="2.5" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                  )}
+                </button>
+              ))}
             </div>
-          )}
-        </div>
-      </section>
+          </div>
+        )}
+      </div>
 
-      <section className="select-journey-v2" aria-label="학습 단계">
-        <div className="select-journey-line-v2" aria-hidden />
-        {modes.map((mode, index) => {
-          const copy = MODE_COPY[mode.id] ?? MODE_COPY[mode.label.toLowerCase()] ?? {
-            eyebrow: String(index + 1).padStart(2, "0"),
-            description: "학습을 이어가요",
-          };
-          const state = mode.done ? "완료" : mode.here ? "현재 단계" : mode.locked ? "잠김" : "시작 가능";
-          return (
-            <article key={mode.id} className={`select-step-v2 ${mode.done ? "is-done" : ""} ${mode.here ? "is-current" : ""} ${mode.locked ? "is-locked" : ""}`}>
-              <button type="button" onClick={mode.onSelect} disabled={mode.locked} aria-label={`${mode.label}, ${state}`}>
-                <span className="select-step-number-v2">{copy.eyebrow}</span>
-                <span className="select-step-state-v2">{state}</span>
-                <strong>{mode.label}</strong>
-                <small>{copy.description}</small>
-                <span className="select-step-arrow-v2" aria-hidden>{mode.done ? "✓" : mode.locked ? "·" : "→"}</span>
+      <div className="select-content">
+        <div className="select-modes">
+          {modes.map((mode) => (
+            <div key={mode.id} className={`select-mode-item ${mode.here ? "is-here" : ""}`}>
+              <button
+                type="button"
+                onClick={mode.onSelect}
+                disabled={mode.locked}
+                className={`select-mode ${
+                  mode.done ? "is-done" : mode.here ? "is-current" : !mode.locked ? "is-open" : ""
+                }`}
+              >
+                {mode.here && <img src="/Subject.png" alt="" className="select-chameleon" />}
+                {mode.done && <span className="select-done" aria-label="완료">✓</span>}
+                {mode.label}
               </button>
-            </article>
-          );
-        })}
-      </section>
-
-      <footer className="select-legend-v2">
-        <span><i className="is-current" /> 현재</span>
-        <span><i className="is-done" /> 완료</span>
-        <span><i /> 시작 가능</span>
-      </footer>
+              {mode.here && <p className="select-here">현재 단계</p>}
+            </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
