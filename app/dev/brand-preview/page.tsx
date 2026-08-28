@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import AccountMenu from "../../components/AccountMenu";
+import { useAuth } from "../../contexts/AuthContext";
+import { placementStorageKey } from "../../lib/placement";
 import styles from "./brand-preview.module.css";
 
 type Language = "ko" | "en";
@@ -93,10 +97,57 @@ const noteTones = ["paper", "green", "blue"] as const;
 
 export default function BrandPreviewPage() {
   const [language, setLanguage] = useState<Language>("ko");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [hasPlacement, setHasPlacement] = useState(false);
+  const { user, profile, loading } = useAuth();
+  const router = useRouter();
   const t = copy[language];
 
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("mimic-language");
+    if (savedLanguage === "ko" || savedLanguage === "en") {
+      setLanguage(savedLanguage);
+      document.documentElement.lang = savedLanguage;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!user) {
+      setHasPlacement(false);
+      return;
+    }
+    setHasPlacement(Boolean(window.localStorage.getItem(placementStorageKey(user.id))));
+  }, [user]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
+  const chooseLanguage = (nextLanguage: Language) => {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem("mimic-language", nextLanguage);
+    document.documentElement.lang = nextLanguage;
+  };
+
+  const openCourse = (href: string) => {
+    if (!user) {
+      router.push("/auth/login?next=/placement");
+      return;
+    }
+    if (profile?.role !== "academy" && !hasPlacement) {
+      router.push("/placement");
+      return;
+    }
+    router.push(href);
+  };
+
+  const openPlacement = () => {
+    router.push(user ? "/placement" : "/auth/login?next=/placement");
+  };
+
   return (
-    <main className={styles.page} lang={language}>
+    <main className={`${styles.page} home-stage-v2`} lang={language}>
       <header className={styles.header}>
         <Link className={styles.logo} href="/dev/brand-preview" aria-label="Mimic home">MimiC</Link>
         <nav className={styles.desktopNav} aria-label="Main navigation">
@@ -107,14 +158,38 @@ export default function BrandPreviewPage() {
         </nav>
         <div className={styles.headerActions}>
           <div className={styles.languageSwitch} aria-label="언어 선택">
-            <button type="button" className={language === "ko" ? styles.isActive : ""} onClick={() => setLanguage("ko")} aria-pressed={language === "ko"}>KR</button>
+            <button type="button" className={language === "ko" ? styles.isActive : ""} onClick={() => chooseLanguage("ko")} aria-pressed={language === "ko"}>KR</button>
             <span>/</span>
-            <button type="button" className={language === "en" ? styles.isActive : ""} onClick={() => setLanguage("en")} aria-pressed={language === "en"}>EN</button>
+            <button type="button" className={language === "en" ? styles.isActive : ""} onClick={() => chooseLanguage("en")} aria-pressed={language === "en"}>EN</button>
           </div>
-          <Link href="/auth/login" className={styles.login}>{t.login}</Link>
-          <button className={styles.menu} type="button" aria-label="Open menu"><span /><span /></button>
+          {user ? (
+            <AccountMenu onOpenAdmin={profile?.role === "academy" ? () => router.push("/admin") : undefined} />
+          ) : (
+            <Link href="/auth/login" className={styles.login}>{loading ? "…" : t.login}</Link>
+          )}
+          <button className={styles.menu} type="button" aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(true)}><span /><span /></button>
         </div>
       </header>
+
+      <div className={`${styles.menuOverlay} ${menuOpen ? styles.menuIsOpen : ""}`} aria-hidden={!menuOpen} onClick={() => setMenuOpen(false)}>
+        <aside className={styles.menuPanel} onClick={(event) => event.stopPropagation()}>
+          <div className={styles.menuPanelHead}>
+            <span className={styles.logo}>MimiC</span>
+            <button type="button" onClick={() => setMenuOpen(false)} aria-label="Close menu">×</button>
+          </div>
+          <nav aria-label="Site menu">
+            <a href="#monthly" onClick={() => setMenuOpen(false)}><span>01</span>{t.nav[0]}<b>↘</b></a>
+            <a href="#method" onClick={() => setMenuOpen(false)}><span>02</span>{t.nav[1]}<b>↘</b></a>
+            <a href="#library" onClick={() => setMenuOpen(false)}><span>03</span>{t.nav[2]}<b>↘</b></a>
+            <a href="#parents" onClick={() => setMenuOpen(false)}><span>04</span>{t.nav[3]}<b>↘</b></a>
+          </nav>
+          <div className={styles.menuCourses}>
+            <button type="button" onClick={() => openCourse("/sing2/selecting?id=001:1")}>SING 2 <span>MOVIE →</span></button>
+            <button type="button" onClick={() => openCourse("/book/selecting?id=003:1")}>PINOCCHIO <span>BOOK →</span></button>
+          </div>
+          <p>SOUND → STORY → MY VOICE</p>
+        </aside>
+      </div>
 
       <section className={styles.hero}>
         <div className={styles.heroStamp}>SOUND → STORY → MY VOICE</div>
@@ -146,7 +221,7 @@ export default function BrandPreviewPage() {
           <div className={styles.cardCaption}>
             <div><span>{t.movieLabel}</span><h3>SING 2</h3></div>
             <p>{t.movieBody}</p>
-            <Link href="/sing2/selecting?id=001:1">{t.movieCta} <b>→</b></Link>
+            <button type="button" className={styles.courseLink} onClick={() => openCourse("/sing2/selecting?id=001:1")}>{t.movieCta} <b>→</b></button>
           </div>
         </article>
 
@@ -159,7 +234,7 @@ export default function BrandPreviewPage() {
           <div className={styles.cardCaption}>
             <div><span>{t.bookLabel}</span><h3>PINOCCHIO</h3></div>
             <p>{t.bookBody}</p>
-            <Link href="/book/selecting?id=003:1">{t.bookCta} <b>→</b></Link>
+            <button type="button" className={styles.courseLink} onClick={() => openCourse("/book/selecting?id=003:1")}>{t.bookCta} <b>→</b></button>
           </div>
         </article>
       </section>
@@ -204,7 +279,7 @@ export default function BrandPreviewPage() {
         <div className={styles.trustCopy}>
           <p>{t.trustBody}</p>
           <ul>{t.trustItems.map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}</ul>
-          <Link href="/placement">{t.placement} <span>→</span></Link>
+          <button type="button" className={styles.placementLink} onClick={openPlacement}>{t.placement} <span>→</span></button>
         </div>
       </section>
 

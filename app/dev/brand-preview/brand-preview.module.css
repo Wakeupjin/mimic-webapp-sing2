@@ -74,6 +74,54 @@
 .menu { display: grid; width: 46px; height: 46px; place-content: center; gap: 6px; border: 2px solid var(--line); border-radius: 50%; background: #171a17; }
 .menu span { width: 19px; height: 2px; background: var(--paper); }
 
+.menuOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  visibility: hidden;
+  background: rgba(0, 0, 0, .68);
+  opacity: 0;
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+.menuIsOpen { visibility: visible; opacity: 1; }
+
+.menuPanel {
+  display: flex;
+  width: min(720px, 88vw);
+  height: 100%;
+  overflow-y: auto;
+  flex-direction: column;
+  padding: clamp(22px, 4vw, 56px);
+  border-right: 2px solid var(--green);
+  background: #050605;
+  transform: translateX(-102%);
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+
+.menuIsOpen .menuPanel { transform: translateX(0); }
+.menuPanelHead { display: flex; align-items: center; justify-content: space-between; margin-bottom: clamp(36px, 7vh, 78px); }
+.menuPanelHead > button { display: grid; width: 46px; height: 46px; place-items: center; border: 2px solid var(--green); border-radius: 50%; background: var(--green); color: #061007; font-size: 2rem; line-height: 1; }
+.menuPanel nav { display: grid; border-top: 2px solid var(--line); }
+.menuPanel nav a { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 2px solid var(--line); color: var(--ink); font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(1.8rem, 4vw, 3.6rem); text-decoration: none; }
+.menuPanel nav a span { color: var(--green); font-family: var(--font-geist-mono), monospace; font-size: .72rem; }
+.menuPanel nav a b { color: var(--green); font-size: 1.35rem; }
+.menuCourses { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+.menuCourses button { display: flex; min-height: 88px; flex-direction: column; justify-content: space-between; padding: 16px; border: 2px solid var(--line); background: #101310; color: var(--ink); text-align: left; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: 1.45rem; }
+.menuCourses button:hover { border-color: var(--green); }
+.menuCourses button span { color: var(--green); font-family: var(--font-geist-mono), monospace; font-size: .68rem; }
+.menuPanel > p { margin: auto 0 0; padding-top: 36px; color: var(--green); font-family: var(--font-geist-mono), monospace; font-size: .72rem; font-weight: 800; letter-spacing: .13em; }
+
+.page :global(.account-trigger) {
+  min-height: 46px;
+  max-width: 13rem;
+  padding: .25rem .65rem .25rem .25rem;
+  border: 2px solid var(--line);
+  background: #151815;
+}
+.page :global(.account-avatar) { width: 34px; height: 34px; background: var(--green); color: #061007; font-size: .76rem; }
+.page :global(.account-popover) { right: 0; left: auto; }
+
 .hero {
   position: relative;
   min-height: min(720px, calc(100dvh - 82px));
@@ -120,7 +168,7 @@
 .cardCaption span { font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
 .cardCaption h3 { margin: 3px 0 0; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(2rem, 3vw, 3.6rem); font-weight: 400; line-height: .9; }
 .cardCaption p { min-height: 50px; margin: 0; font-weight: 650; line-height: 1.5; }
-.cardCaption a { display: flex; justify-content: space-between; padding: 14px 0 8px; border-top: 2px solid var(--line); color: var(--green); font-weight: 900; text-decoration: none; }
+.cardCaption a, .courseLink { display: flex; width: 100%; justify-content: space-between; padding: 14px 0 8px; border-top: 2px solid var(--line); color: var(--green); background: transparent; font-weight: 900; text-align: left; text-decoration: none; }
 
 .method { border-bottom: 2px solid var(--line); background: #030403; color: var(--ink); }
 .methodHeading { position: relative; padding: clamp(42px, 6vw, 92px) clamp(20px, 6vw, 96px) 52px; }
@@ -162,7 +210,7 @@
 .trustCopy ul { margin: 28px 0 34px; padding: 0; border-top: 2px solid var(--line); list-style: none; }
 .trustCopy li { display: flex; gap: 18px; padding: 15px 0; border-bottom: 2px solid var(--line); font-weight: 800; }
 .trustCopy li b { min-width: 32px; }
-.trustCopy > a { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; border: 2px solid var(--green); background: var(--green); color: #061007; font-weight: 900; text-decoration: none; box-shadow: 6px 6px 0 #17361d; }
+.trustCopy > a, .placementLink { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 18px 20px; border: 2px solid var(--green); background: var(--green); color: #061007; font-weight: 900; text-align: left; text-decoration: none; box-shadow: 6px 6px 0 #17361d; }
 
 .footer { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 34px; align-items: start; padding: 58px clamp(20px, 5vw, 80px) 28px; background: #030403; }
 .footerLogo { font-size: clamp(4rem, 8vw, 8rem); }
@@ -193,6 +241,12 @@
   .languageSwitch { gap: 2px; font-size: .7rem; }
   .login { padding: 9px 13px 8px; }
   .menu { width: 42px; height: 42px; }
+  .menuPanel { width: 100%; padding: 22px 18px 28px; }
+  .menuPanelHead { margin-bottom: 38px; }
+  .menuCourses { grid-template-columns: 1fr; }
+  .page :global(.account-trigger) { width: 42px; min-height: 42px; justify-content: center; padding: 0; }
+  .page :global(.account-trigger-copy), .page :global(.account-chevron) { display: none; }
+  .page :global(.account-popover) { position: fixed; top: max(4.5rem, calc(env(safe-area-inset-top) + 4rem)); right: 1rem; left: 1rem; width: auto; }
   .hero { min-height: calc(100svh - 70px); padding: 42px 18px 34px; }
   .hero h1 { margin: 54px 0 38px; font-size: clamp(3rem, 13vw, 5.4rem); line-height: .85; }
   .hero h1 em { text-shadow: 3px 3px 0 #17361d; }
