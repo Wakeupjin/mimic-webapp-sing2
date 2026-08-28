@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AccountMenu from "../../components/AccountMenu";
+import Sing2Preview from "../../components/Sing2Preview";
 import { useAuth } from "../../contexts/AuthContext";
 import { formatMovieId } from "../../dataService";
+import { signupPath } from "../../lib/authRedirect";
 import { lessonPath } from "../../lib/lessonMedia";
 import { placementStorageKey } from "../../lib/placement";
 import { fetchOwnProgress, MODE_ORDER, type LearnMode, type ProgressRow } from "../../lib/progressGate";
@@ -21,8 +23,8 @@ const copy = {
     heroTop: "영어를 외우지 말고",
     heroAccent: "장면 속으로.",
     heroBody: ["화면 속 목소리를 따라 하고, 책 속 이야기를 다시 말하며", "내 영어를 만들어 가요."],
-    startFree: "무료로 시작하기",
-    startFreeHint: "로그인하고 내 시작 단계를 찾아요.",
+    createAccount: "계정 만들고 레벨 찾기",
+    createAccountHint: "가입 후 5분 만에 시작 단계를 정해요.",
     findLevel: "내 시작 단계 찾기",
     findLevelHint: "5분이면 나에게 맞는 첫 학습을 찾을 수 있어요.",
     startCourse: "SING 2로 시작하기",
@@ -30,11 +32,13 @@ const copy = {
     resume: "이어서 학습하기",
     browse: "이번 달 콘텐츠 보기",
     loadingAction: "학습 위치 불러오는 중",
+    openingSignup: "가입 화면 여는 중",
+    openingPage: "화면 여는 중",
     movieOrder: "1단계 · 영화",
     bookOrder: "2단계 · 원서",
     monthly: "이번 달,",
     monthlyAccent: "두 작품을 깊게.",
-    monthlyBody: "영화 한 편과 원서 한 권을 보고, 듣고, 따라 말하며 깊이 익혀요.",
+    monthlyBody: "영화에서 소리와 리듬을 익히고, 원서에서 이야기를 내 목소리로 확장해요.",
     movieLabel: "이번 달 영화",
     movieBody: "12개의 장면에서 등장인물의 목소리와 리듬을 익혀요.",
     movieCta: "영화로 학습하기",
@@ -70,8 +74,8 @@ const copy = {
     heroTop: "DON’T MEMORIZE ENGLISH.",
     heroAccent: "STEP INTO THE SCENE.",
     heroBody: ["Follow the voices on screen, retell the stories on the page,", "and make English sound like you."],
-    startFree: "Start free",
-    startFreeHint: "Log in and find the right place to begin.",
+    createAccount: "Create an account",
+    createAccountHint: "Find your starting point in 5 minutes.",
     findLevel: "Find my starting level",
     findLevelHint: "Five minutes to place your first lesson.",
     startCourse: "Start with SING 2",
@@ -79,11 +83,13 @@ const copy = {
     resume: "Continue learning",
     browse: "Browse this month",
     loadingAction: "Finding your last lesson",
+    openingSignup: "Opening sign-up",
+    openingPage: "Opening",
     movieOrder: "STEP 1 · FIRST",
     bookOrder: "STEP 2 · NEXT",
     monthly: "THIS MONTH,",
     monthlyAccent: "TWO STORIES. DEEPLY.",
-    monthlyBody: "No endless catalog. One film and one book—watched, heard, repeated, and made your own.",
+    monthlyBody: "Start with sound and rhythm on screen, then carry the story into your own voice on the page.",
     movieLabel: "This month’s movie",
     movieBody: "Borrow the voices and rhythms of the characters across twelve scenes.",
     movieCta: "Open movie course",
@@ -164,6 +170,7 @@ export default function BrandPreviewPage() {
   const [hasPlacement, setHasPlacement] = useState(false);
   const [resumeTarget, setResumeTarget] = useState<ResumeTarget | null>(null);
   const [progressLoaded, setProgressLoaded] = useState(false);
+  const [pendingAction, setPendingAction] = useState<string | null>(null);
   const { user, profile, loading } = useAuth();
   const router = useRouter();
   const t = copy[language];
@@ -202,26 +209,32 @@ export default function BrandPreviewPage() {
     document.documentElement.lang = nextLanguage;
   };
 
-  const openCourse = (href: string) => {
+  const navigate = (key: string, href: string) => {
+    if (pendingAction) return;
+    setPendingAction(key);
+    window.requestAnimationFrame(() => router.push(href));
+  };
+
+  const openCourse = (key: string, href: string) => {
     if (!user) {
-      router.push("/auth/login?next=/placement");
+      navigate(key, signupPath(href));
       return;
     }
     if (profile?.role !== "academy" && !hasPlacement) {
-      router.push("/placement");
+      navigate(key, "/placement");
       return;
     }
-    router.push(href);
+    navigate(key, href);
   };
 
   const openPlacement = () => {
-    router.push(user ? "/placement" : "/auth/login?next=/placement");
+    navigate("placement", user ? "/placement" : signupPath("/placement"));
   };
 
   const primaryAction = loading || (user && !progressLoaded)
     ? { label: t.loadingAction, hint: "", disabled: true }
     : !user
-      ? { label: t.startFree, hint: t.startFreeHint, disabled: false }
+      ? { label: t.createAccount, hint: t.createAccountHint, disabled: false }
       : profile?.role !== "academy" && !hasPlacement
         ? { label: t.findLevel, hint: t.findLevelHint, disabled: false }
         : resumeTarget
@@ -229,16 +242,16 @@ export default function BrandPreviewPage() {
           : { label: t.startCourse, hint: t.startCourseHint, disabled: false };
 
   const handlePrimaryAction = () => {
-    if (primaryAction.disabled) return;
+    if (primaryAction.disabled || pendingAction) return;
     if (!user) {
-      router.push("/auth/login?next=/placement");
+      navigate("primary", signupPath("/placement"));
       return;
     }
     if (profile?.role !== "academy" && !hasPlacement) {
-      router.push("/placement");
+      navigate("primary", "/placement");
       return;
     }
-    router.push(resumeTarget?.href || "/sing2/selecting?id=001:1");
+    navigate("primary", resumeTarget?.href || "/sing2/selecting?id=001:1");
   };
 
   return (
@@ -279,8 +292,8 @@ export default function BrandPreviewPage() {
             <a href="#parents" onClick={() => setMenuOpen(false)}><span>04</span>{t.nav[3]}<b>↘</b></a>
           </nav>
           <div className={styles.menuCourses}>
-            <button type="button" onClick={() => openCourse("/sing2/selecting?id=001:1")}>SING 2 <span>MOVIE →</span></button>
-            <button type="button" onClick={() => openCourse("/book/selecting?id=003:1")}>PINOCCHIO <span>BOOK →</span></button>
+            <button type="button" disabled={Boolean(pendingAction)} onClick={() => openCourse("menu-movie", "/sing2/selecting?id=001:1")}>SING 2 <span>MOVIE →</span></button>
+            <button type="button" disabled={Boolean(pendingAction)} onClick={() => openCourse("menu-book", "/book/selecting?id=003:1")}>PINOCCHIO <span>BOOK →</span></button>
           </div>
           <p>SOUND → STORY → MY VOICE</p>
         </aside>
@@ -294,12 +307,18 @@ export default function BrandPreviewPage() {
         </h1>
         <div className={styles.heroBottom}>
           <p>{t.heroBody[0]}<br className={styles.desktopOnly} /> {t.heroBody[1]}</p>
-          <div className={styles.heroActions}>
-            <button type="button" className={styles.primaryCta} onClick={handlePrimaryAction} disabled={primaryAction.disabled}>
-              <span className={styles.primaryCtaCopy}><strong>{primaryAction.label}</strong>{primaryAction.hint ? <small>{primaryAction.hint}</small> : null}</span>
-              <b>→</b>
-            </button>
-            <a className={styles.secondaryCta} href="#monthly">{t.browse} ↓</a>
+          <div className={styles.heroConversion}>
+            <div className={styles.heroActions}>
+              <button type="button" className={styles.primaryCta} onClick={handlePrimaryAction} disabled={primaryAction.disabled || Boolean(pendingAction)} aria-busy={pendingAction === "primary"}>
+                <span className={styles.primaryCtaCopy}>
+                  <strong>{pendingAction === "primary" ? (user ? t.openingPage : t.openingSignup) : primaryAction.label}</strong>
+                  {pendingAction !== "primary" && primaryAction.hint ? <small>{primaryAction.hint}</small> : null}
+                </span>
+                {pendingAction === "primary" ? <i className={styles.buttonSpinner} aria-hidden="true" /> : <b>→</b>}
+              </button>
+              <a className={styles.secondaryCta} href="#monthly">{t.browse} ↓</a>
+            </div>
+            <Sing2Preview language={language} compact />
           </div>
         </div>
         <div className={styles.heroScribble} aria-hidden="true">SAY IT<br />LIKE YOU<br />MEAN IT!</div>
@@ -312,17 +331,22 @@ export default function BrandPreviewPage() {
       <section className={styles.monthly} id="monthly">
         <div className={styles.sectionIntro}>
           <span>THIS MONTH / 08</span>
-          <h2 className={language === "en" ? styles.englishDisplay : ""}>{t.monthly}<br />{t.monthlyAccent}</h2>
+          <h2 className={language === "en" ? styles.englishDisplay : ""}>{t.monthly} <br />{t.monthlyAccent}</h2>
           <p>{t.monthlyBody}</p>
         </div>
 
         <article className={`${styles.featureCard} ${styles.movieCard}`}>
           <div className={styles.cardNumber}>{t.movieOrder} · 01 / MOVIE</div>
-          <div className={styles.posterFrame}><Image src="/sing2Poster.jpg" alt="Sing 2 movie poster" fill priority sizes="(max-width: 760px) 92vw, 55vw" /></div>
+          <div className={styles.coursePoster}>
+            <Image src="/sing2Poster.jpg" alt="Sing 2 scene" fill sizes="(max-width: 640px) 90vw, 58vw" />
+            <span>WATCH → MIMIC</span>
+          </div>
           <div className={styles.cardCaption}>
             <div><span>{t.movieLabel}</span><h3>SING 2</h3></div>
             <p>{t.movieBody}</p>
-            <button type="button" className={styles.courseLink} onClick={() => openCourse("/sing2/selecting?id=001:1")}>{t.movieCta} <b>→</b></button>
+            <button type="button" className={styles.courseLink} disabled={Boolean(pendingAction)} onClick={() => openCourse("movie", "/sing2/selecting?id=001:1")}>
+              {pendingAction === "movie" ? (user ? t.openingPage : t.openingSignup) : t.movieCta} <b>{pendingAction === "movie" ? "…" : "→"}</b>
+            </button>
           </div>
         </article>
 
@@ -335,7 +359,9 @@ export default function BrandPreviewPage() {
           <div className={styles.cardCaption}>
             <div><span>{t.bookLabel}</span><h3>PINOCCHIO</h3></div>
             <p>{t.bookBody}</p>
-            <button type="button" className={styles.courseLink} onClick={() => openCourse("/book/selecting?id=003:1")}>{t.bookCta} <b>→</b></button>
+            <button type="button" className={styles.courseLink} disabled={Boolean(pendingAction)} onClick={() => openCourse("book", "/book/selecting?id=003:1")}>
+              {pendingAction === "book" ? (user ? t.openingPage : t.openingSignup) : t.bookCta} <b>{pendingAction === "book" ? "…" : "→"}</b>
+            </button>
           </div>
         </article>
       </section>
@@ -380,7 +406,9 @@ export default function BrandPreviewPage() {
         <div className={styles.trustCopy}>
           <p>{t.trustBody}</p>
           <ul>{t.trustItems.map((item, index) => <li key={item}><b>0{index + 1}</b>{item}</li>)}</ul>
-          <button type="button" className={styles.placementLink} onClick={openPlacement}>{t.placement} <span>→</span></button>
+          <button type="button" className={styles.placementLink} disabled={Boolean(pendingAction)} onClick={openPlacement}>
+            {pendingAction === "placement" ? (user ? t.openingPage : t.openingSignup) : t.placement} <span>{pendingAction === "placement" ? "…" : "→"}</span>
+          </button>
         </div>
       </section>
 

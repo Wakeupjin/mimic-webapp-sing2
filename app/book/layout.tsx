@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import LearningSessionTracker from '../components/LearningSessionTracker';
+import AuthGate from '../components/AuthGate';
 
 export default function BookLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,7 +10,7 @@ export default function BookLayout({ children }: { children: React.ReactNode }) 
       <Suspense fallback={null}>
         <LearningSessionTracker />
       </Suspense>
-      {children}
+      <AuthGate>{children}</AuthGate>
     </>
   );
 }

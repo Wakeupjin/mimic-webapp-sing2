@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { signUp } from "../../lib/auth";
+import { getSafeNextPath, loginPath } from "../../lib/authRedirect";
 import AuthShell from "../../components/AuthShell";
 
 export default function SignupPage() {
@@ -13,15 +14,25 @@ export default function SignupPage() {
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [nextPath, setNextPath] = useState("/placement");
+
+  useEffect(() => {
+    const requestedNext = new URLSearchParams(window.location.search).get("next");
+    setNextPath(getSafeNextPath(requestedNext, "/placement"));
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     setError("");
     try {
-      await signUp(email, password, nickname);
-      alert("회원가입이 완료됐어요. 이메일 확인이 필요하면 받은 편지함을 확인해 주세요.");
-      router.push("/auth/login");
+      const auth = await signUp(email, password, nickname);
+      if (auth.session?.user) {
+        router.replace(nextPath);
+        return;
+      }
+      alert("계정이 만들어졌어요. 이메일 확인 후 로그인하면 선택한 화면으로 이어집니다.");
+      router.replace(loginPath(nextPath));
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "회원가입 실패");
     } finally {
@@ -33,7 +44,7 @@ export default function SignupPage() {
     <AuthShell
       title="첫 장면을 시작해요"
       description="가입하면 5분 테스트로 내 시작 단계를 찾아요."
-      footer={<Link href="/auth/login">이미 계정이 있나요? <strong>로그인</strong></Link>}
+      footer={<Link href={loginPath(nextPath)}>이미 계정이 있나요? <strong>로그인</strong></Link>}
     >
       {error ? <div className="auth-alert-v2 is-error">{error}</div> : null}
       <form onSubmit={handleSubmit} className="auth-form-v2">

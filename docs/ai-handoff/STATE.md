@@ -6,47 +6,47 @@
 ## Active operator
 
 <!-- HANDOFF:ACTIVE_OPERATOR:START -->
-gpt
+codex
 <!-- HANDOFF:ACTIVE_OPERATOR:END -->
 
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-IN PROGRESS
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Create durable cross-prompt project context and preserve the pending mobile portrait Mimicking work
+Move the Sing 2 preview into the hero and simplify the monthly section into a clear movie-to-book path
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Student test account role is now configured and verified in Supabase. OpenAI API setup is paused at the Platform login screen.
+Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/api/ai-coach/route.ts, app/components/AiCoachPanel.tsx, app/types/aiCoach.ts, app/sing2/mimicking/page.tsx, docs/ai-coach.md
+- app/components/Sing2Preview.tsx, app/dev/brand-preview/page.tsx, app/dev/brand-preview/brand-preview.module.css
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Supabase SQL result returned exactly one row with role student. OpenAI tab remains at /login?next=/api-keys.
+Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-API key creation is pending user authentication. Never record the account email or API key in shared handoff documents.
+Logo still uses the pre-existing cursive fallback because Jolly Lodger is not loaded; not changed in this redesign.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-User signs in to OpenAI Platform in the open in-app browser tab; GPT then creates a project API key, saves it to .env.local without exposing it, and runs the live AI Coach test.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->

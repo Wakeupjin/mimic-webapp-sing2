@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getStudentProfile, signIn } from "../../lib/auth";
+import { getSafeNextPath, signupPath } from "../../lib/authRedirect";
 import { placementStorageKey } from "../../lib/placement";
 import AuthShell from "../../components/AuthShell";
 
@@ -13,6 +14,12 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [nextPath, setNextPath] = useState("");
+
+  useEffect(() => {
+    const requestedNext = new URLSearchParams(window.location.search).get("next");
+    setNextPath(getSafeNextPath(requestedNext, ""));
+  }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -32,11 +39,10 @@ export default function LoginPage() {
       if (isAlwaysNewStudent) window.localStorage.removeItem(storageKey);
 
       const hasPlacement = window.localStorage.getItem(storageKey);
-      const requestedNext = new URLSearchParams(window.location.search).get("next");
       const shouldRunPlacement =
         profile?.role !== "academy" &&
-        (isAlwaysNewStudent || requestedNext === "/placement" || !hasPlacement);
-      router.push(shouldRunPlacement ? "/placement" : "/");
+        (isAlwaysNewStudent || !hasPlacement);
+      router.replace(nextPath || (shouldRunPlacement ? "/placement" : "/"));
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "로그인 실패");
     } finally {
@@ -48,7 +54,7 @@ export default function LoginPage() {
     <AuthShell
       title="다시 만나서 반가워요"
       description="계속할 장면이 기다리고 있어요."
-      footer={<Link href="/auth/signup">처음이신가요? <strong>학생 계정 만들기</strong></Link>}
+      footer={<Link href={signupPath(nextPath || "/placement")}>처음이신가요? <strong>학생 계정 만들기</strong></Link>}
     >
       {error ? <div className="auth-alert-v2 is-error">{error}</div> : null}
 
