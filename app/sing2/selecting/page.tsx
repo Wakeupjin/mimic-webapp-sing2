@@ -200,8 +200,6 @@ function SelectingPageContent() {
 
   return (
     <ModeSelectLayout
-      contentTitle="Sing 2"
-      contentType="영화"
       badge={<AccountMenu onOpenAdmin={isMaster ? () => router.push('/admin') : undefined} />}
       chapterLabel={selectedLesson ? formatChapterLabel(pack, selectedLesson.lesson_number) : formatChapterLabel(pack, 1)}
       dropdownOpen={isDropdownOpen}

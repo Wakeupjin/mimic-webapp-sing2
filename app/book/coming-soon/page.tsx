@@ -18,20 +18,28 @@ function BookComingSoonContent() {
   const scene = Math.max(1, Math.min(BOOK_SCENES.length, Number(searchParams.get("scene") || 1)));
 
   return (
-    <main className="status-stage-v2">
-      <div className="status-head-v2">
-        <a href="/" className="select-brand-v2">MimiC</a>
+    <main className="flex min-h-dvh flex-col px-4 py-4" style={{ backgroundColor: "#000000" }}>
+      <div className="mb-6 flex items-center justify-between">
+        <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: "Encode Sans, sans-serif" }}>
+          {BOOK_MONTH.title}
+        </h1>
         <HeaderCloseLink href="/book/selecting?id=003:1" />
       </div>
 
-      <section className="status-card-v2">
-        <p>{BOOK_MONTH.title} · SCENE {scene}</p>
-        <span className="status-number-v2">{String(scene).padStart(2, "0")}</span>
-        <h1>{MODE_LABEL[mode] || "Listen"}</h1>
-        <strong>이 장면은 준비 중이에요.</strong>
-        <small>문장과 오디오가 검수되면 자동으로 학습 단계가 열립니다.</small>
-        <a href="/book/selecting?id=003:1">다른 장면 선택하기 <span>→</span></a>
-      </section>
+      <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
+        <p className="text-sm text-gray-400" style={{ fontFamily: "Encode Sans, sans-serif" }}>
+          Scene {scene}
+        </p>
+        <p className="text-3xl font-bold text-white sm:text-4xl" style={{ fontFamily: "Encode Sans, sans-serif" }}>
+          {MODE_LABEL[mode] || "Listen"}
+        </p>
+        <p className="max-w-md text-base text-gray-400 sm:text-lg" style={{ fontFamily: "Encode Sans, sans-serif" }}>
+          원서 문장·오디오가 정해지면 이 칸에서 바로 엽니다. 지금은 흐름만 열려 있습니다.
+        </p>
+        <a href="/book/selecting?id=003:1" className="cta-btn cta-primary mt-4 inline-block">
+          장면으로 돌아가기
+        </a>
+      </div>
     </main>
   );
 }
