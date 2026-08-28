@@ -104,6 +104,8 @@ function BookSelectingContent() {
 
   return (
     <ModeSelectLayout
+      contentTitle="Pinocchio"
+      contentType="원서"
       badge={<AccountMenu onOpenAdmin={isMaster ? () => router.push("/admin") : undefined} />}
       chapterLabel={formatChapterLabel(pack, scene)}
       dropdownOpen={isDropdownOpen}

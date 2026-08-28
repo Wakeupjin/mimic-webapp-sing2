@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./design-system.css";
 import { AuthProvider } from './contexts/AuthContext';
 import ErrorBoundary, { ErrorBoundaryWrapper } from './components/ErrorBoundary';
 import RotateGate from './components/RotateGate';
@@ -30,8 +31,8 @@ const bmHannaPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mimicking",
-  description: "Learn English with movies",
+  title: "MimiC",
+  description: "영화와 원서로 완성하는 영어 리듬 학습",
 };
 
 export const viewport = {
@@ -46,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bmHannaPro.variable} antialiased`}
       >

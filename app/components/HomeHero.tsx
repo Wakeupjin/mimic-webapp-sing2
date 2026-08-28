@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { MONTH_FEATURES, MONTH_LABEL_EN } from "../lib/monthCatalog";
+import { ReactNode } from "react";
+import { MONTH_FEATURES } from "../lib/monthCatalog";
 
 type FeatureId = (typeof MONTH_FEATURES)[number]["id"];
 
 type HomeHeroProps = {
-  coverSrc: string;
-  coverAlt: string;
-  hint: string;
   selectedId: FeatureId;
   onSelect: (id: FeatureId) => void;
   onStart: () => void;
@@ -16,17 +14,15 @@ type HomeHeroProps = {
   onLogin: () => void;
   onMenu: () => void;
   loginLabel: string;
-  onAdmin?: () => void;
+  accountSlot?: ReactNode;
+  placementLabel?: string;
 };
 
 function pickLabel(item: (typeof MONTH_FEATURES)[number]) {
-  return item.kind === "book" ? `원서 ${item.title}` : `영화 ${item.title}`;
+  return item.kind === "book" ? "원서" : "영화";
 }
 
 export default function HomeHero({
-  coverSrc,
-  coverAlt,
-  hint,
   selectedId,
   onSelect,
   onStart,
@@ -34,67 +30,95 @@ export default function HomeHero({
   onLogin,
   onMenu,
   loginLabel,
-  onAdmin,
+  accountSlot,
+  placementLabel,
 }: HomeHeroProps) {
+  const selected =
+    MONTH_FEATURES.find((item) => item.id === selectedId) ?? MONTH_FEATURES[0];
+
   return (
-    <section className="home-stage">
-      <header className="home-header relative z-20 flex items-start justify-between px-[clamp(1rem,2.1vw,2.5rem)] pt-[clamp(0.6rem,1.4vw,1rem)]">
-        <p className="home-logo">MimiC</p>
-        <div className="home-actions flex items-center gap-[clamp(0.6rem,1.6vw,2.4rem)]">
-          {onAdmin ? (
-            <button type="button" onClick={onAdmin} className="cinema-pill">
-              학생 현황
+    <section className="home-stage home-stage-v2">
+      <header className="home-header-v2">
+        <a href="/" className="home-brand" aria-label="MimiC 홈">
+          MimiC
+        </a>
+        <div className="home-actions-v2">
+          {accountSlot ?? (
+            <button type="button" onClick={onLogin} className="home-login-v2">
+              {loginLabel}
             </button>
-          ) : null}
-          <button type="button" onClick={onLogin} className="home-login">
-            {loginLabel}
-          </button>
-          <button type="button" onClick={onMenu} className="home-menu" aria-label="메뉴 열기">
-            <img src="/home/menu.svg" alt="" className="h-full w-full" />
+          )}
+          <button type="button" onClick={onMenu} className="home-menu-v2" aria-label="메뉴 열기">
+            <span />
+            <span />
+            <span />
           </button>
         </div>
       </header>
 
-      <h1 className="home-month pointer-events-none z-10 text-center">
-        {MONTH_LABEL_EN}
-      </h1>
-
-      <div className="home-cover">
-        <div className="home-poster relative" aria-label={coverAlt} role="img">
-          <Image
-            key={coverSrc}
-            src={coverSrc}
-            alt={coverAlt}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 90vw, 1000px"
-          />
+      <div className="home-hero-v2">
+        <div className="home-heading-v2">
+          <p className="home-kicker-v2">AUGUST · MONTHLY COURSE</p>
+          <h1>이번 달, 한 장면을<br />내 영어로 만드세요.</h1>
+          <p>보고, 따라 하고, 맞히고, 직접 완성하는 하나의 학습 흐름.</p>
         </div>
 
-        <div className="home-picks" role="tablist" aria-label="이번 달 콘텐츠">
-          {MONTH_FEATURES.map((item) => {
-            const on = item.id === selectedId;
-            return (
-              <button
-                key={item.id}
-                type="button"
-                role="tab"
-                aria-selected={on}
-                className={`cinema-pill ${on ? "is-on" : ""}`}
-                onClick={() => onSelect(item.id)}
-              >
-                {pickLabel(item)}
-              </button>
-            );
-          })}
-        </div>
+        <section className="home-feature-v2" aria-label="이번 달 콘텐츠">
+          <div className={`home-art-v2 is-${selected.kind}`}>
+            <div className="home-art-backdrop" aria-hidden>
+              <Image src={selected.coverSrc} alt="" fill sizes="(max-width: 760px) 94vw, 54vw" />
+            </div>
+            <Image
+              key={selected.coverSrc}
+              src={selected.coverSrc}
+              alt={selected.coverAlt}
+              fill
+              className="home-art-image"
+              priority
+              sizes="(max-width: 760px) 94vw, 54vw"
+            />
+            <span className="home-art-label">{selected.kind === "book" ? "BOOK" : "MOVIE"}</span>
+          </div>
 
-        <p className="max-w-md text-center text-sm text-zinc-400 sm:text-base">{hint}</p>
+          <div className="home-detail-v2">
+            <div className="home-picks-v2" role="tablist" aria-label="이번 달 콘텐츠 선택">
+              {MONTH_FEATURES.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={item.id === selectedId}
+                  className={item.id === selectedId ? "is-on" : ""}
+                  onClick={() => onSelect(item.id)}
+                >
+                  <span>{pickLabel(item)}</span>
+                  {item.title}
+                </button>
+              ))}
+            </div>
 
-        <button type="button" onClick={onStart} className="home-start-button">
-          {startLabel}
-        </button>
+            <div className="home-course-copy-v2">
+              <p>{selected.caption}</p>
+              <h2>{selected.title}</h2>
+              <span>{selected.hint}</span>
+            </div>
+
+            <div className="home-route-v2" aria-label="학습 순서">
+              {['Watch', 'Mimic', 'Guess', 'Word'].map((step, index) => (
+                <span key={step}><b>{index + 1}</b>{step}</span>
+              ))}
+            </div>
+
+            {placementLabel ? (
+              <p className="home-level-v2"><span>내 추천 단계</span>{placementLabel}</p>
+            ) : null}
+
+            <button type="button" onClick={onStart} className="home-start-v2">
+              <span>{startLabel}</span>
+              <svg viewBox="0 0 24 24" aria-hidden><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+            </button>
+          </div>
+        </section>
       </div>
     </section>
   );
