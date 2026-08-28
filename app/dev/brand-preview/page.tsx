@@ -6,7 +6,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import AccountMenu from "../../components/AccountMenu";
 import { useAuth } from "../../contexts/AuthContext";
+import { formatMovieId } from "../../dataService";
+import { lessonPath } from "../../lib/lessonMedia";
 import { placementStorageKey } from "../../lib/placement";
+import { fetchOwnProgress, MODE_ORDER, type LearnMode, type ProgressRow } from "../../lib/progressGate";
 import styles from "./brand-preview.module.css";
 
 type Language = "ko" | "en";
@@ -18,7 +21,17 @@ const copy = {
     heroTop: "영어를 외우지 말고",
     heroAccent: "장면 속으로.",
     heroBody: ["화면 속 목소리를 따라 하고, 책 속 이야기를 다시 말하며", "내 영어를 만들어갑니다."],
-    heroCta: "이번 달 장면 보기",
+    startFree: "무료로 시작하기",
+    startFreeHint: "로그인하고 내 시작 단계를 찾아요.",
+    findLevel: "내 시작 단계 찾기",
+    findLevelHint: "5분이면 첫 학습 위치를 정할 수 있어요.",
+    startCourse: "SING 2로 시작하기",
+    startCourseHint: "영화 장면부터 첫 학습을 시작해요.",
+    resume: "이어서 학습하기",
+    browse: "이번 달 콘텐츠 보기",
+    loadingAction: "학습 위치 불러오는 중",
+    movieOrder: "1단계 · 먼저",
+    bookOrder: "2단계 · 다음",
     monthly: "이번 달엔",
     monthlyAccent: "두 작품을 깊게.",
     monthlyBody: "많이 보여주지 않습니다. 영화 한 편과 원서 한 권을 보고, 듣고, 따라 말해 내 것으로 만듭니다.",
@@ -57,7 +70,17 @@ const copy = {
     heroTop: "DON’T MEMORIZE ENGLISH.",
     heroAccent: "STEP INTO THE SCENE.",
     heroBody: ["Follow the voices on screen, retell the stories on the page,", "and make English sound like you."],
-    heroCta: "See this month’s scene",
+    startFree: "Start free",
+    startFreeHint: "Log in and find the right place to begin.",
+    findLevel: "Find my starting level",
+    findLevelHint: "Five minutes to place your first lesson.",
+    startCourse: "Start with SING 2",
+    startCourseHint: "Begin with your first movie scene.",
+    resume: "Continue learning",
+    browse: "Browse this month",
+    loadingAction: "Finding your last lesson",
+    movieOrder: "STEP 1 · FIRST",
+    bookOrder: "STEP 2 · NEXT",
     monthly: "THIS MONTH,",
     monthlyAccent: "TWO STORIES. DEEPLY.",
     monthlyBody: "No endless catalog. One film and one book—watched, heard, repeated, and made your own.",
@@ -95,10 +118,52 @@ const copy = {
 const tones = ["green", "yellow", "blue", "pink"] as const;
 const noteTones = ["paper", "green", "blue"] as const;
 
+type HomeProgressRow = ProgressRow & { updated_at?: string | null };
+type ResumeTarget = { href: string; ko: string; en: string };
+
+function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
+  if (!rows.length) return null;
+  const latest = [...rows].sort((a, b) => {
+    const byTime = Date.parse(b.updated_at || "") - Date.parse(a.updated_at || "");
+    if (Number.isFinite(byTime) && byTime !== 0) return byTime;
+    return b.lesson_number - a.lesson_number;
+  })[0];
+  if (!MODE_ORDER.includes(latest.mode as LearnMode)) return null;
+
+  let lessonNumber = latest.lesson_number;
+  let mode = latest.mode as LearnMode;
+  if (latest.completed) {
+    const nextMode = MODE_ORDER[MODE_ORDER.indexOf(mode) + 1];
+    if (nextMode) mode = nextMode;
+    else {
+      lessonNumber += 1;
+      mode = "watching";
+    }
+  }
+
+  const pack = lessonNumber >= 300 ? 3 : lessonNumber >= 200 ? 2 : 1;
+  const lesson = pack === 1 ? lessonNumber : lessonNumber % 100;
+  const movieId = formatMovieId(pack, Math.max(1, lesson));
+  const content = pack >= 3 ? "PINOCCHIO" : "SING 2";
+  const chapterKo = pack >= 3 ? `SCENE ${lesson}` : pack === 2 ? `HARD ${lesson}` : `CHAPTER ${lesson}`;
+  const modeLabel = mode === "watching" && pack >= 3 ? "LISTEN" : mode === "watching" ? "WATCH" : mode.toUpperCase();
+  const position = !latest.completed && Number(latest.current_position) > 0 && mode !== "watching"
+    ? ` · LINE ${Math.floor(Number(latest.current_position)) + 1}`
+    : "";
+
+  return {
+    href: lessonPath(movieId, mode),
+    ko: `${content} · ${chapterKo} · ${modeLabel}${position}`,
+    en: `${content} · ${chapterKo} · ${modeLabel}${position}`,
+  };
+}
+
 export default function BrandPreviewPage() {
   const [language, setLanguage] = useState<Language>("ko");
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasPlacement, setHasPlacement] = useState(false);
+  const [resumeTarget, setResumeTarget] = useState<ResumeTarget | null>(null);
+  const [progressLoaded, setProgressLoaded] = useState(false);
   const { user, profile, loading } = useAuth();
   const router = useRouter();
   const t = copy[language];
@@ -114,9 +179,16 @@ export default function BrandPreviewPage() {
   useEffect(() => {
     if (!user) {
       setHasPlacement(false);
+      setResumeTarget(null);
+      setProgressLoaded(true);
       return;
     }
     setHasPlacement(Boolean(window.localStorage.getItem(placementStorageKey(user.id))));
+    setProgressLoaded(false);
+    void fetchOwnProgress().then((rows) => {
+      setResumeTarget(getResumeTarget(rows as HomeProgressRow[]));
+      setProgressLoaded(true);
+    });
   }, [user]);
 
   useEffect(() => {
@@ -144,6 +216,29 @@ export default function BrandPreviewPage() {
 
   const openPlacement = () => {
     router.push(user ? "/placement" : "/auth/login?next=/placement");
+  };
+
+  const primaryAction = loading || (user && !progressLoaded)
+    ? { label: t.loadingAction, hint: "", disabled: true }
+    : !user
+      ? { label: t.startFree, hint: t.startFreeHint, disabled: false }
+      : profile?.role !== "academy" && !hasPlacement
+        ? { label: t.findLevel, hint: t.findLevelHint, disabled: false }
+        : resumeTarget
+          ? { label: t.resume, hint: language === "ko" ? resumeTarget.ko : resumeTarget.en, disabled: false }
+          : { label: t.startCourse, hint: t.startCourseHint, disabled: false };
+
+  const handlePrimaryAction = () => {
+    if (primaryAction.disabled) return;
+    if (!user) {
+      router.push("/auth/login?next=/placement");
+      return;
+    }
+    if (profile?.role !== "academy" && !hasPlacement) {
+      router.push("/placement");
+      return;
+    }
+    router.push(resumeTarget?.href || "/sing2/selecting?id=001:1");
   };
 
   return (
@@ -199,7 +294,13 @@ export default function BrandPreviewPage() {
         </h1>
         <div className={styles.heroBottom}>
           <p>{t.heroBody[0]}<br className={styles.desktopOnly} /> {t.heroBody[1]}</p>
-          <a className={styles.primaryCta} href="#monthly">{t.heroCta} <span>↘</span></a>
+          <div className={styles.heroActions}>
+            <button type="button" className={styles.primaryCta} onClick={handlePrimaryAction} disabled={primaryAction.disabled}>
+              <span className={styles.primaryCtaCopy}><strong>{primaryAction.label}</strong>{primaryAction.hint ? <small>{primaryAction.hint}</small> : null}</span>
+              <b>→</b>
+            </button>
+            <a className={styles.secondaryCta} href="#monthly">{t.browse} ↓</a>
+          </div>
         </div>
         <div className={styles.heroScribble} aria-hidden="true">SAY IT<br />LIKE YOU<br />MEAN IT!</div>
       </section>
@@ -216,7 +317,7 @@ export default function BrandPreviewPage() {
         </div>
 
         <article className={`${styles.featureCard} ${styles.movieCard}`}>
-          <div className={styles.cardNumber}>01 / MOVIE</div>
+          <div className={styles.cardNumber}>{t.movieOrder} · 01 / MOVIE</div>
           <div className={styles.posterFrame}><Image src="/sing2Poster.jpg" alt="Sing 2 movie poster" fill priority sizes="(max-width: 760px) 92vw, 55vw" /></div>
           <div className={styles.cardCaption}>
             <div><span>{t.movieLabel}</span><h3>SING 2</h3></div>
@@ -226,7 +327,7 @@ export default function BrandPreviewPage() {
         </article>
 
         <article className={styles.featureCard}>
-          <div className={styles.cardNumber}>02 / BOOK</div>
+          <div className={styles.cardNumber}>{t.bookOrder} · 02 / BOOK</div>
           <div className={styles.bookCover}>
             <Image src="/pinocchio.jpeg" alt="Pinocchio book cover" fill sizes="(max-width: 760px) 86vw, 33vw" />
             <span className={styles.bookTape} aria-hidden="true" />
