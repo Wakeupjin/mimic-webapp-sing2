@@ -89,7 +89,7 @@ function BookSelectingContent() {
   if (loading) {
     return (
       <main className="flex min-h-screen items-center justify-center">
-        <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
       </main>
     );
   }
@@ -97,7 +97,7 @@ function BookSelectingContent() {
   if (!user) {
     return (
       <main className="flex min-h-screen items-center justify-center">
-        <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
       </main>
     );
   }

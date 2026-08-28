@@ -34,7 +34,7 @@ function BookComingSoonContent() {
           {MODE_LABEL[mode] || "Listen"}
         </p>
         <p className="max-w-md text-base text-gray-400 sm:text-lg" style={{ fontFamily: "Encode Sans, sans-serif" }}>
-          원서 문장·오디오가 정해지면 이 칸에서 바로 엽니다. 지금은 흐름만 열려 있습니다.
+          이 장면의 문장과 오디오를 준비하고 있어요. 준비가 끝나면 바로 학습할 수 있어요.
         </p>
         <a href="/book/selecting?id=003:1" className="cta-btn cta-primary mt-4 inline-block">
           장면으로 돌아가기

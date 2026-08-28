@@ -29,10 +29,10 @@ export default function ForgotPasswordPage() {
     <AuthShell
       title="비밀번호를 다시 설정해요"
       description="가입한 이메일로 안전한 재설정 링크를 보내드릴게요."
-      footer={<Link href="/auth/login">기억났나요? <strong>로그인으로 돌아가기</strong></Link>}
+      footer={<Link href="/auth/login">비밀번호가 기억났나요? <strong>로그인으로 돌아가기</strong></Link>}
     >
       {sent ? (
-        <div className="auth-alert-v2 is-success">메일을 보냈습니다. 받은 편지함과 스팸함을 확인해주세요.</div>
+        <div className="auth-alert-v2 is-success">재설정 메일을 보냈어요. 받은 편지함과 스팸함을 확인해 주세요.</div>
       ) : (
         <form onSubmit={handleSubmit} className="auth-form-v2">
           {error ? <div className="auth-alert-v2 is-error">{error}</div> : null}

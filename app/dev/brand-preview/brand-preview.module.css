@@ -216,6 +216,25 @@
 .trustCopy ul { margin: 28px 0 34px; padding: 0; border-top: 2px solid var(--line); list-style: none; }
 .trustCopy li { display: flex; gap: 18px; padding: 15px 0; border-bottom: 2px solid var(--line); font-weight: 800; }
 .trustCopy li b { min-width: 32px; }
+
+.hero h1,
+.heroBottom p,
+.sectionIntro h2,
+.sectionIntro p,
+.cardCaption h3,
+.cardCaption p,
+.methodHeading h2,
+.step p,
+.libraryHead h2,
+.libraryHead p,
+.note h3,
+.trust h2,
+.trustCopy > p,
+.trustCopy li,
+.footer > p {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
 .trustCopy > a, .placementLink { display: flex; width: 100%; align-items: center; justify-content: space-between; padding: 18px 20px; border: 2px solid var(--green); background: var(--green); color: #061007; font-weight: 900; text-align: left; text-decoration: none; box-shadow: 6px 6px 0 #17361d; }
 
 .footer { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 34px; align-items: start; padding: 58px clamp(20px, 5vw, 80px) 28px; background: #030403; }

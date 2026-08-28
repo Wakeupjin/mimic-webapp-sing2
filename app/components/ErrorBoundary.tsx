@@ -32,10 +32,10 @@ export default class ErrorBoundary extends Component<Props, State> {
         <div className="min-h-screen flex items-center justify-center bg-black text-white">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-              오류가 발생했습니다
+              문제가 생겼어요
             </h2>
             <p className="text-gray-300 mb-4">
-              {this.state.error?.message || '페이지를 새로고침하거나 다시 시도해주세요.'}
+              {this.state.error?.message || '페이지를 새로고침하거나 다시 시도해 주세요.'}
             </p>
             <div className="space-x-4">
               <button
@@ -94,10 +94,10 @@ export function ErrorBoundaryWrapper({ children }: { children: ReactNode }) {
       <div className="min-h-screen flex items-center justify-center bg-black text-white">
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-            오류가 발생했습니다
+            문제가 생겼어요
           </h2>
           <p className="text-gray-300 mb-4">
-            {error?.message || '페이지를 새로고침하거나 다시 시도해주세요.'}
+            {error?.message || '페이지를 새로고침하거나 다시 시도해 주세요.'}
           </p>
           <div className="space-x-4">
             <button

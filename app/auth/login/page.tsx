@@ -22,7 +22,7 @@ export default function LoginPage() {
     try {
       const auth = await signIn(email, password);
       const user = auth.user;
-      if (!user) throw new Error("계정 정보를 불러오지 못했습니다.");
+      if (!user) throw new Error("계정 정보를 불러오지 못했어요.");
 
       const profile = await getStudentProfile(user.id);
       const storageKey = placementStorageKey(user.id);
@@ -46,7 +46,7 @@ export default function LoginPage() {
 
   return (
     <AuthShell
-      title="다시 만나 반가워요"
+      title="다시 만나서 반가워요"
       description="계속할 장면이 기다리고 있어요."
       footer={<Link href="/auth/signup">처음이신가요? <strong>학생 계정 만들기</strong></Link>}
     >

@@ -26,8 +26,8 @@ export function placementStorageKey(userId: string): string {
   return `mimic-placement-${PLACEMENT_STORAGE_VERSION}:${userId}`;
 }
 function voiceLabel(result: PlacementVoiceResult, label: string): string {
-  if (!result) return `${label}: 음성 분석 없이 진행했어요`;
-  if (result.overallScore >= 85) return `${label}: 소리와 리듬을 안정적으로 재현했어요`;
+  if (!result) return `${label}: 이번에는 건너뛰었어요`;
+  if (result.overallScore >= 85) return `${label}: 소리와 리듬을 자연스럽게 따라 했어요`;
   if (result.overallScore >= 70) return `${label}: 핵심 소리는 잡았고 조금 더 연습하면 좋아요`;
   return `${label}: 짧게 나눠 따라 하는 연습이 먼저 필요해요`;
 }
@@ -74,8 +74,8 @@ export function evaluatePlacement({
   ) {
     return {
       level: 'studio-ready',
-      title: 'Studio 준비',
-      summary: '긴 문장과 장면 맥락을 안정적으로 처리했어요. 독립 리텔링을 확인하면 Studio 입반을 추천할 수 있어요.',
+      title: 'Studio 준비 단계',
+      summary: '긴 문장을 자연스럽게 따라 하고 장면의 흐름도 잘 이해했어요. 이야기를 직접 요약해 본 뒤 Studio 단계를 시작할 수 있어요.',
       evidence,
     };
   }
@@ -84,7 +84,7 @@ export function evaluatePlacement({
     return {
       level: 'core',
       title: 'Core',
-      summary: '일반 속도 대사를 따라 하고 장면의 핵심을 이해할 수 있어요. 지금 Sing 2 수업에 가장 잘 맞습니다.',
+      summary: '일반 속도 대사를 따라 하고 장면의 핵심도 이해했어요. 지금 Sing 2 수업에 가장 잘 맞아요.',
       evidence,
     };
   }
@@ -92,7 +92,7 @@ export function evaluatePlacement({
   return {
     level: 'foundation',
     title: 'Foundation',
-    summary: '짧은 문장부터 소리와 리듬을 안정적으로 붙이는 연습으로 시작하는 게 가장 빠릅니다.',
+    summary: '짧은 문장부터 소리와 리듬을 차근차근 붙이며 시작하는 게 가장 빨라요.',
     evidence,
   };
 }

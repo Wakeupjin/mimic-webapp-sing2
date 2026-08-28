@@ -746,7 +746,7 @@ function GuessingPageContent() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
         </div>
       </main>
     );
@@ -756,7 +756,7 @@ function GuessingPageContent() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
         </div>
       </main>
     );
@@ -937,14 +937,14 @@ function GuessingPageContent() {
                       ? "이어서 정답을 골라볼까요?"
                       : isBookLesson
                         ? "낭독을 듣고 정답을 골라요"
-                        : "무음 장면을 보고 정답을 골라요"
+                        : "소리 없는 장면을 보고 대사를 골라요"
                   }
                   description={
                     isGuessingResume
                       ? `${currentQuestionIndex + 1}번째 문제부터 이어서 풀어요.`
                       : isBookLesson
                         ? "원서 문장을 듣고 같은 문장을 찾아요."
-                        : "장면을 본 뒤, 들리는 대사를 맞혀요."
+                        : "소리 없는 장면을 보고 알맞은 대사를 골라요."
                   }
                   actionLabel={isGuessingResume ? "계속하기" : "시작"}
                 />

@@ -44,10 +44,10 @@ export default function AiCoachPanel({
   onContinue,
   onFallback,
   eyebrow,
-  promptText = '방금 들은 소리를 그대로 따라 말해보세요.',
+  promptText = '방금 들은 소리를 그대로 따라 말해 보세요.',
   targetPreview,
   continueLabel = '다음 문장',
-  fallbackLabel = '직접 평가로 계속하기',
+  fallbackLabel = '이번에는 건너뛰기',
   showScore = true,
 }: AiCoachPanelProps) {
   const [state, setState] = useState<CoachState>('idle');
@@ -145,7 +145,7 @@ export default function AiCoachPanel({
       const {
         data: { session },
       } = await supabase.auth.getSession();
-      if (!session?.access_token) throw new Error('로그인이 만료되었습니다.');
+      if (!session?.access_token) throw new Error('로그인이 만료됐어요.');
 
       const mimeType = audio.type || 'audio/webm';
       const formData = new FormData();
@@ -165,7 +165,7 @@ export default function AiCoachPanel({
         body: formData,
       });
       const payload = (await response.json()) as AiCoachResult & { error?: string };
-      if (!response.ok) throw new Error(payload.error || '음성을 분석하지 못했습니다.');
+      if (!response.ok) throw new Error(payload.error || '음성을 분석하지 못했어요.');
 
       return payload;
     },
@@ -182,7 +182,7 @@ export default function AiCoachPanel({
     clearRecording();
 
     if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
-      setError('이 브라우저에서는 음성 녹음을 지원하지 않습니다.');
+      setError('이 브라우저에서는 음성 녹음을 사용할 수 없어요.');
       setState('error');
       return;
     }
@@ -226,7 +226,7 @@ export default function AiCoachPanel({
         ]).then(([analysis]) => {
           if (analysis.error || !analysis.payload) {
             setError(
-              analysis.error instanceof Error ? analysis.error.message : '음성을 분석하지 못했습니다.'
+              analysis.error instanceof Error ? analysis.error.message : '음성을 분석하지 못했어요.'
             );
             setState('error');
             return;
@@ -243,7 +243,7 @@ export default function AiCoachPanel({
       stopTimerRef.current = setTimeout(stopRecording, MAX_RECORDING_MS);
     } catch {
       releaseRecorder();
-      setError('마이크 권한을 허용한 뒤 다시 시도해주세요.');
+      setError('마이크 권한을 허용한 뒤 다시 시도해 주세요.');
       setState('error');
     }
   }, [analyze, attempt, clearRecording, onResult, playRecording, releaseRecorder, saveRecording, stopRecording]);
@@ -294,7 +294,7 @@ export default function AiCoachPanel({
               className="mt-4 rounded-full border border-white/30 px-7 py-3 font-bold text-white hover:bg-white/10"
               onClick={stopRecording}
             >
-              말하기 완료
+              말하기 끝
             </button>
           </>
         )}
@@ -336,10 +336,10 @@ export default function AiCoachPanel({
                 <div className="mx-auto mt-5 flex h-20 w-20 items-center justify-center rounded-full border-4 border-[#60D96C] text-2xl font-black text-white">
                   {result.overallScore}
                 </div>
-                <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-zinc-500">대사 재현도</p>
+                <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-zinc-500">따라 말하기 점수</p>
               </>
             ) : (
-              <p className="mt-5 text-2xl font-black text-white">소리를 확인했어요</p>
+              <p className="mt-5 text-2xl font-black text-white">분석이 끝났어요</p>
             )}
             <div className="mt-4 rounded-xl border border-white/15 bg-black/25 px-4 py-4 text-left">
               <p className="text-xs font-bold text-[#60D96C]">AI가 이렇게 들었어요</p>

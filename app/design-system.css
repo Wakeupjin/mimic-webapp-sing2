@@ -445,6 +445,8 @@ a {
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.045em;
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 .select-heading-v2 > span {
@@ -756,6 +758,16 @@ a {
   font-weight: 400;
   line-height: 0.98;
   letter-spacing: -0.05em;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.auth-card-v2 header h2,
+.auth-card-v2 header > span,
+.placement-stage-v2 h1,
+.placement-stage-v2 p {
+  overflow-wrap: break-word;
+  word-break: keep-all;
 }
 
 .auth-intro-v2 > span {

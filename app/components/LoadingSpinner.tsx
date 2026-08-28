@@ -7,7 +7,7 @@ interface LoadingSpinnerProps {
 }
 
 export default function LoadingSpinner({ 
-  message = "로딩 중...", 
+  message = "불러오는 중…",
   size = 'md',
   className = ""
 }: LoadingSpinnerProps) {
