@@ -641,7 +641,7 @@ function MimickingPageContent() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
         </div>
       </main>
     );
@@ -651,7 +651,7 @@ function MimickingPageContent() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
         </div>
       </main>
     );
@@ -661,7 +661,7 @@ function MimickingPageContent() {
   if (isLoading || !lessonData || !videoUrl) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <h1 className="text-xl font-semibold text-[#60D96C]">데이터를 불러오는 중...</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]">학습 내용을 불러오는 중…</h1>
       </main>
     );
   }
@@ -816,7 +816,7 @@ function MimickingPageContent() {
                   description={
                     isMimickingResume
                       ? `${currentIndex + 1}번째 문장부터 이어서 연습해요.`
-                      : `소리와 무음 반복을 따라 ${lineTotal}개 문장을 연습해요.`
+                      : `먼저 듣고, 소리 없이 한 번 더 말하며 ${lineTotal}개 문장을 연습해요.`
                   }
                   actionLabel={isMimickingResume ? "계속하기" : "시작"}
                 />
@@ -871,7 +871,7 @@ function MimickingPageContent() {
                       </ol>
                     ) : (
                       <p className="mt-4 rounded-xl bg-white/10 px-4 py-3 text-sm text-zinc-200 sm:text-base">
-                        어려웠다고 표시한 문장이 없어요. 오늘 연습 완료!
+                        어렵다고 표시한 문장이 없어요. 오늘 연습 끝!
                       </p>
                     )}
                   </div>

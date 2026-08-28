@@ -620,7 +620,7 @@ function WordPageContent() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
         </div>
       </main>
     );
@@ -630,7 +630,7 @@ function WordPageContent() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
         </div>
       </main>
     );
@@ -751,11 +751,11 @@ function WordPageContent() {
               {showStartOverlay && (
                 <ClickToStartOverlay
                   onClick={handleStart}
-                  text={isWordResume ? "이어서 문장을 완성할까요?" : "단어를 순서대로 맞춰요"}
+                  text={isWordResume ? "이어서 문장을 완성할까요?" : "단어를 바르게 배열해요"}
                   description={
                     isWordResume
                       ? `${currentQuestionNumber}번째 문제부터 이어서 풀어요.`
-                      : "들리는 문장을 떠올리며 단어를 올바른 순서로 배열해요."
+                      : "들었던 문장을 떠올리며 단어를 올바른 순서로 놓아 보세요."
                   }
                   actionLabel={isWordResume ? "계속하기" : "시작"}
                 />
@@ -879,7 +879,7 @@ function WordPageContent() {
                     ? 'is-ready hover:scale-105'
                     : 'cursor-not-allowed opacity-40'
               }`}
-              aria-label="완성한 문장 먹이기"
+              aria-label="완성한 문장을 카멜레온에게 먹이기"
             >
               {isChameleonEating && (
                 <span className="word-snack" aria-hidden="true">

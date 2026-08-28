@@ -118,7 +118,7 @@ function SelectingPageContent() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
         </div>
       </main>
     );
@@ -129,7 +129,7 @@ function SelectingPageContent() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
         </div>
       </main>
     );
@@ -166,7 +166,7 @@ function SelectingPageContent() {
   if (isLoading) {
     return (
       <main className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
-        <h1 className="text-xl font-semibold text-[#60D96C]">Lesson 목록을 불러오는 중...</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]">학습 목록을 불러오는 중…</h1>
       </main>
     );
   }
@@ -175,9 +175,8 @@ function SelectingPageContent() {
      return (
       <main className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-red-500 mb-4">등록된 Lesson이 없습니다.</h1>
-          <p className="text-gray-300 mb-2">Supabase 연결을 확인해주세요.</p>
-          <p className="text-gray-400 text-sm">환경변수: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY</p>
+          <h1 className="mb-4 text-xl font-semibold text-white">학습 내용을 찾지 못했어요.</h1>
+          <p className="text-gray-300">잠시 후 다시 시도해 주세요.</p>
         </div>
       </main>
     );

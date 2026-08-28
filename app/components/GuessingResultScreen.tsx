@@ -22,9 +22,9 @@ export default function GuessingResultScreen({
   onNext,
 }: GuessingResultScreenProps) {
   const getMessage = () => {
-    if (correctAnswers >= 8) return '훌륭합니다!';
-    if (correctAnswers >= 6) return '좋습니다!';
-    return '다시 도전해보세요!';
+    if (correctAnswers >= 8) return '아주 잘했어요!';
+    if (correctAnswers >= 6) return '좋아요!';
+    return '한 번 더 도전해 보세요!';
   };
 
   return (
@@ -44,7 +44,7 @@ export default function GuessingResultScreen({
       <div className="flex flex-1 items-center justify-center">
         <div className="px-2 text-center text-white">
           <h1 className="mb-6 text-3xl font-bold sm:text-4xl" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
-            게임 완료!
+            문제 풀이 끝!
           </h1>
           <p className="mb-4 text-xl sm:text-2xl" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
             정답: {correctAnswers}/{totalQuestions}

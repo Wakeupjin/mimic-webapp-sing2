@@ -26,7 +26,7 @@ export default function ClickToStartOverlay({
           {text}
         </p>
         {description ? (
-          <p className="mt-3 text-sm leading-6 text-zinc-300 sm:text-base">{description}</p>
+          <p className="mt-3 break-keep text-sm leading-6 text-zinc-300 sm:text-base">{description}</p>
         ) : null}
         <span className="mt-6 inline-flex min-w-24 items-center justify-center rounded-full bg-[#60D96C] px-5 py-2.5 text-base font-bold text-black">
           {actionLabel}

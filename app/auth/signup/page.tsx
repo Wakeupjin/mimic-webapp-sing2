@@ -20,7 +20,7 @@ export default function SignupPage() {
     setError("");
     try {
       await signUp(email, password, nickname);
-      alert("회원가입이 완료됐어요. 이메일 확인이 필요하면 받은 편지를 확인해주세요.");
+      alert("회원가입이 완료됐어요. 이메일 확인이 필요하면 받은 편지함을 확인해 주세요.");
       router.push("/auth/login");
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : "회원가입 실패");
@@ -32,7 +32,7 @@ export default function SignupPage() {
   return (
     <AuthShell
       title="첫 장면을 시작해요"
-      description="가입 후 5분 레벨 찾기로 내 시작점을 정합니다."
+      description="가입하면 5분 테스트로 내 시작 단계를 찾아요."
       footer={<Link href="/auth/login">이미 계정이 있나요? <strong>로그인</strong></Link>}
     >
       {error ? <div className="auth-alert-v2 is-error">{error}</div> : null}
@@ -50,7 +50,7 @@ export default function SignupPage() {
           <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="6자 이상" required minLength={6} autoComplete="new-password" />
         </label>
         <button type="submit" disabled={loading} className="auth-submit-v2">
-          {loading ? "계정 만드는 중…" : "계정 만들고 레벨 찾기"}
+          {loading ? "계정 만드는 중…" : "계정 만들고 시작 단계 찾기"}
         </button>
       </form>
     </AuthShell>

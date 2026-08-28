@@ -179,12 +179,12 @@ async function createCoachingFeedback({
 
 export async function POST(request: NextRequest) {
   if (!(await authenticate(request))) {
-    return jsonError('로그인이 만료되었습니다. 다시 로그인해주세요.', 401);
+    return jsonError('로그인이 만료됐어요. 다시 로그인해 주세요.', 401);
   }
 
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
-    return jsonError('AI Coach 서버 설정이 아직 완료되지 않았습니다.', 503);
+    return jsonError('AI 코치를 준비하고 있어요. 잠시 후 다시 시도해 주세요.', 503);
   }
 
   const formData = await request.formData();
@@ -197,10 +197,10 @@ export async function POST(request: NextRequest) {
     return jsonError('녹음된 음성을 찾을 수 없습니다.', 400);
   }
   if (audio.size > MAX_AUDIO_BYTES) {
-    return jsonError('녹음이 너무 깁니다. 12초 안으로 다시 말해주세요.', 413);
+    return jsonError('녹음이 너무 길어요. 12초 안으로 다시 말해 주세요.', 413);
   }
   if (!targetText || targetText.length > 300) {
-    return jsonError('연습 문장이 올바르지 않습니다.', 400);
+    return jsonError('연습 문장을 확인하지 못했어요.', 400);
   }
 
   const transcriptionBody = new FormData();
@@ -223,7 +223,7 @@ export async function POST(request: NextRequest) {
 
   if (!transcriptionResponse.ok) {
     console.error('[ai-coach] transcription failed', transcriptionResponse.status);
-    return jsonError('음성을 분석하지 못했습니다. 잠시 후 다시 시도해주세요.', 502);
+    return jsonError('음성을 분석하지 못했어요. 잠시 후 다시 시도해 주세요.', 502);
   }
 
   const transcription = (await transcriptionResponse.json()) as { text?: string };

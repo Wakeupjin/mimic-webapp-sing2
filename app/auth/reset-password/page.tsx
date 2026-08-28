@@ -26,11 +26,11 @@ export default function ResetPasswordPage() {
     event.preventDefault();
     setError("");
     if (password.length < 6) {
-      setError("새 비밀번호는 6자 이상이어야 합니다.");
+      setError("새 비밀번호는 6자 이상이어야 해요.");
       return;
     }
     if (password !== confirmPassword) {
-      setError("비밀번호가 서로 다릅니다.");
+      setError("비밀번호가 서로 달라요.");
       return;
     }
     setLoading(true);
@@ -45,15 +45,15 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <AuthShell title="새 비밀번호 설정" description="앞으로 사용할 비밀번호를 입력해주세요.">
+    <AuthShell title="새 비밀번호 설정" description="새로 사용할 비밀번호를 입력해 주세요.">
       {complete ? (
         <div className="auth-complete-v2">
-          <div className="auth-alert-v2 is-success">비밀번호가 변경됐습니다.</div>
+          <div className="auth-alert-v2 is-success">비밀번호를 변경했어요.</div>
           <Link href="/auth/login" className="auth-submit-v2">새 비밀번호로 로그인</Link>
         </div>
       ) : !ready ? (
         <div className="auth-check-v2">
-          재설정 링크를 확인하고 있어요.<br />링크가 만료됐다면 새 메일을 요청해주세요.
+          재설정 링크를 확인하고 있어요.<br />링크가 만료됐다면 새 메일을 요청해 주세요.
           <Link href="/auth/forgot-password">메일 다시 받기</Link>
         </div>
       ) : (

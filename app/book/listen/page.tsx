@@ -236,7 +236,7 @@ function ListenPageContent() {
       <main className="flex min-h-screen items-center justify-center">
         <div className="text-center">
           <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#60D96C] border-t-transparent"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
         </div>
       </main>
     );
@@ -246,7 +246,7 @@ function ListenPageContent() {
     return (
       <main className="flex min-h-screen items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
         </div>
       </main>
     );
@@ -255,7 +255,7 @@ function ListenPageContent() {
   if (isLoading) {
     return (
       <main className="flex min-h-screen items-center justify-center">
-        <h1 className="text-xl font-semibold text-[#60D96C]">데이터를 불러오는 중...</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]">학습 내용을 불러오는 중…</h1>
       </main>
     );
   }
@@ -264,7 +264,7 @@ function ListenPageContent() {
     const scene = parseLessonNumber(movieId);
     return (
       <main className="flex min-h-screen flex-col items-center justify-center gap-4 px-6 text-center">
-        <p className="text-xl font-semibold text-white">Scene {scene} 낭독이 아직 없어요.</p>
+        <p className="text-xl font-semibold text-white">Scene {scene} 낭독을 준비하고 있어요.</p>
         <Link href={lessonSelectHref(movieId)} className="cta-btn cta-primary">
           장면으로 돌아가기
         </Link>
@@ -437,7 +437,7 @@ function ListenPageContent() {
               description={
                 savedProgress?.current_position > startTime
                   ? "멈춘 부분부터 이어서 들어요."
-                  : "실제 낭독으로 Pinocchio Chapter 1을 들어요."
+                  : "Pinocchio Chapter 1을 처음부터 끝까지 들어요."
               }
               actionLabel={savedProgress?.current_position > startTime ? "계속하기" : "시작"}
             />

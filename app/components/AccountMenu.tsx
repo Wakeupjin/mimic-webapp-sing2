@@ -65,7 +65,7 @@ export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void 
     setError("");
     setMessage("");
     if (password && password.length < 6) {
-      setError("새 비밀번호는 6자 이상이어야 합니다.");
+      setError("새 비밀번호는 6자 이상이어야 해요.");
       return;
     }
     setBusy(true);
@@ -163,7 +163,7 @@ export default function AccountMenu({ onOpenAdmin }: { onOpenAdmin?: () => void 
                     router.push("/placement?retake=1");
                   }}
                 >
-                  내 단계 다시 찾기 <span>›</span>
+                  시작 단계 다시 찾기 <span>›</span>
                 </button>
               )}
               {onOpenAdmin && <button type="button" onClick={onOpenAdmin}>학생 현황 <span>›</span></button>}

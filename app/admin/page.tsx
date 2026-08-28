@@ -168,7 +168,7 @@ export default function AdminPage() {
   if (loading || !user || profile?.role !== 'academy') {
     return (
       <main className="admin-stage items-center justify-center">
-        <p className="admin-note">확인 중...</p>
+        <p className="admin-note">확인 중…</p>
       </main>
     );
   }
@@ -207,7 +207,7 @@ export default function AdminPage() {
       <section className="admin-frame custom-scrollbar">
         {errorMessage && (
           <div className="admin-alert">
-            데이터를 못 읽었습니다. Supabase SQL Editor에서{' '}
+            학생 데이터를 불러오지 못했어요. Supabase SQL Editor에서{' '}
             <code>supabase/academy_master.sql</code> 또는{' '}
             <code>supabase/learning_evaluations.sql</code> 을 실행했는지 확인하세요.
             {'\n'}
@@ -216,7 +216,7 @@ export default function AdminPage() {
         )}
 
         {busy ? (
-          <p className="admin-note">불러오는 중...</p>
+          <p className="admin-note">불러오는 중…</p>
         ) : rows.length === 0 && !errorMessage ? (
           <p className="admin-note">아직 학생 계정이 없습니다.</p>
         ) : (
@@ -265,7 +265,7 @@ export default function AdminPage() {
 
             <p className="admin-eval mb-3">
               이번 주 {selected.weekMinutes}분 · 누적 {selected.totalMinutes}분
-              <span style={{ color: '#9ca3af' }}> · 칸을 누르면 평가가 열립니다</span>
+              <span style={{ color: '#9ca3af' }}> · 학습 칸을 누르면 자세한 기록을 볼 수 있어요</span>
             </p>
 
             {Array.from({ length: 12 }, (_, i) => i + 1).map((lesson) => (

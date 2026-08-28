@@ -279,7 +279,7 @@ function WatchingPageContent() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">로딩 중...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
         </div>
       </main>
     );
@@ -289,7 +289,7 @@ function WatchingPageContent() {
     return (
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요합니다...</h1>
+          <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
         </div>
       </main>
     );
@@ -299,7 +299,7 @@ function WatchingPageContent() {
   if (isLoading || !lessonData || !videoUrl) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <h1 className="text-xl font-semibold text-[#60D96C]">데이터를 불러오는 중...</h1>
+        <h1 className="text-xl font-semibold text-[#60D96C]">학습 내용을 불러오는 중…</h1>
       </main>
     );
   }
@@ -496,7 +496,7 @@ function WatchingPageContent() {
                 description={
                   isWatchingResume
                     ? "저장된 지점부터 오늘의 장면을 이어서 봐요."
-                    : "영상을 보며 오늘 배울 대사의 맥락을 익혀요."
+                    : "등장인물이 언제, 왜 말하는지 살펴봐요."
                 }
                 actionLabel={isWatchingResume ? "계속하기" : "시작"}
               />

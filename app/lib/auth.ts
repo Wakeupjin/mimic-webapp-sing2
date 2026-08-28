@@ -58,7 +58,7 @@ export async function updateOwnAccount({
   password?: string;
 }) {
   const cleanNickname = nickname.trim();
-  if (!cleanNickname) throw new Error('이름을 입력해주세요.');
+  if (!cleanNickname) throw new Error('이름을 입력해 주세요.');
 
   const { error: profileError } = await supabase
     .from('student_profiles')

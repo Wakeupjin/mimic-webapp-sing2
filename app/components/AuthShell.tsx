@@ -17,7 +17,7 @@ export default function AuthShell({
       <Link href="/" className="auth-brand-v2">MimiC</Link>
       <section className="auth-intro-v2">
         <p>WATCH · MIMIC · GUESS · WORD</p>
-        <h1>영어를 공부하지 말고,<br />장면처럼 말해보세요.</h1>
+        <h1>영어를 외우지 말고,<br />장면 속 인물처럼 말해 보세요.</h1>
         <span>한 달에 영화 한 편, 원서 한 권.<br />소리와 리듬이 내 것이 될 때까지.</span>
       </section>
       <section className="auth-card-v2">
