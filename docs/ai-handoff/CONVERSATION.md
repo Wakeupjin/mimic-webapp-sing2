@@ -339,3 +339,32 @@ Signup-first landing conversion and public Sing 2 product preview are implemente
 Signup-first landing conversion and public Sing 2 product preview are implemented on top of the latest production copy; guest learning remains blocked and protected routes preserve their destination through signup.
 
 **Validation:** After rebasing onto main/PR #29, TypeScript and production build passed; 389/390-width browser check had no overflow; preview played with mute/pause controls; direct movie URL reached signup with the exact next path in 71 ms.
+
+## 2026-08-29 00:00:48 — codex / work started
+
+Objective: Move the Sing 2 preview into the hero and simplify the monthly section into a clear movie-to-book path
+
+
+## 2026-08-29 00:00:48 — user / request
+
+Replace the crowded three-column monthly layout by moving the public preview under the hero CTA and showing a cleaner Sing 2 to Pinocchio course path at the existing local preview URL.
+
+## 2026-08-29 00:13:42 — codex / checkpoint
+
+Moved the public Sing 2 preview into the hero conversion area and simplified the monthly story into a clean two-course movie-to-book path.
+
+**Next action:** Keep the refreshed local preview running on port 3004 for user review.
+
+**Validation:** Next production build passes; desktop and 389 CSS px browser QA show no horizontal overflow; EN CTA wraps fully; CTA opens signup with next=/placement; browser console has no errors or warnings.
+
+**Files:**
+- app/components/Sing2Preview.tsx, app/dev/brand-preview/page.tsx, app/dev/brand-preview/brand-preview.module.css
+
+**Open risks:** Logo still uses the pre-existing cursive fallback because Jolly Lodger is not loaded; not changed in this redesign.
+
+
+## 2026-08-29 00:13:49 — codex / completed
+
+Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
+
+**Validation:** Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.

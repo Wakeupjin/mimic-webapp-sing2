@@ -18,41 +18,31 @@ COMPLETE
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Align logged-out landing conversion with signup, add a public Sing 2 clip preview, and eliminate protected-route loading dead ends
+Move the Sing 2 preview into the hero and simplify the monthly section into a clear movie-to-book path
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Signup-first landing conversion and public Sing 2 product preview are implemented on top of the latest production copy; guest learning remains blocked and protected routes preserve their destination through signup.
+Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/dev/brand-preview/page.tsx
-- app/dev/brand-preview/brand-preview.module.css
-- app/components/Sing2Preview.tsx
-- app/components/AuthGate.tsx
-- app/components/AuthGate.module.css
-- app/lib/authRedirect.ts
-- app/auth/login/page.tsx
-- app/auth/signup/page.tsx
-- app/sing2/layout.tsx
-- app/book/layout.tsx
-- app/placement/layout.tsx
+- app/components/Sing2Preview.tsx, app/dev/brand-preview/page.tsx, app/dev/brand-preview/brand-preview.module.css
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-After rebasing onto main/PR #29, TypeScript and production build passed; 389/390-width browser check had no overflow; preview played with mute/pause controls; direct movie URL reached signup with the exact next path in 71 ms.
+Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Sing 2 rights/provenance remains unverified in the repository; this change reuses only the already deployed Bunny CDN asset and adds no new media. Work is local and not deployed.
+Logo still uses the pre-existing cursive fallback because Jolly Lodger is not loaded; not changed in this redesign.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action

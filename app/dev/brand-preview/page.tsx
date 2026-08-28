@@ -38,7 +38,7 @@ const copy = {
     bookOrder: "2단계 · 원서",
     monthly: "이번 달,",
     monthlyAccent: "두 작품을 깊게.",
-    monthlyBody: "영화 한 편과 원서 한 권을 보고, 듣고, 따라 말하며 깊이 익혀요.",
+    monthlyBody: "영화에서 소리와 리듬을 익히고, 원서에서 이야기를 내 목소리로 확장해요.",
     movieLabel: "이번 달 영화",
     movieBody: "12개의 장면에서 등장인물의 목소리와 리듬을 익혀요.",
     movieCta: "영화로 학습하기",
@@ -89,7 +89,7 @@ const copy = {
     bookOrder: "STEP 2 · NEXT",
     monthly: "THIS MONTH,",
     monthlyAccent: "TWO STORIES. DEEPLY.",
-    monthlyBody: "No endless catalog. One film and one book—watched, heard, repeated, and made your own.",
+    monthlyBody: "Start with sound and rhythm on screen, then carry the story into your own voice on the page.",
     movieLabel: "This month’s movie",
     movieBody: "Borrow the voices and rhythms of the characters across twelve scenes.",
     movieCta: "Open movie course",
@@ -307,15 +307,18 @@ export default function BrandPreviewPage() {
         </h1>
         <div className={styles.heroBottom}>
           <p>{t.heroBody[0]}<br className={styles.desktopOnly} /> {t.heroBody[1]}</p>
-          <div className={styles.heroActions}>
-            <button type="button" className={styles.primaryCta} onClick={handlePrimaryAction} disabled={primaryAction.disabled || Boolean(pendingAction)} aria-busy={pendingAction === "primary"}>
-              <span className={styles.primaryCtaCopy}>
-                <strong>{pendingAction === "primary" ? (user ? t.openingPage : t.openingSignup) : primaryAction.label}</strong>
-                {pendingAction !== "primary" && primaryAction.hint ? <small>{primaryAction.hint}</small> : null}
-              </span>
-              {pendingAction === "primary" ? <i className={styles.buttonSpinner} aria-hidden="true" /> : <b>→</b>}
-            </button>
-            <a className={styles.secondaryCta} href="#monthly">{t.browse} ↓</a>
+          <div className={styles.heroConversion}>
+            <div className={styles.heroActions}>
+              <button type="button" className={styles.primaryCta} onClick={handlePrimaryAction} disabled={primaryAction.disabled || Boolean(pendingAction)} aria-busy={pendingAction === "primary"}>
+                <span className={styles.primaryCtaCopy}>
+                  <strong>{pendingAction === "primary" ? (user ? t.openingPage : t.openingSignup) : primaryAction.label}</strong>
+                  {pendingAction !== "primary" && primaryAction.hint ? <small>{primaryAction.hint}</small> : null}
+                </span>
+                {pendingAction === "primary" ? <i className={styles.buttonSpinner} aria-hidden="true" /> : <b>→</b>}
+              </button>
+              <a className={styles.secondaryCta} href="#monthly">{t.browse} ↓</a>
+            </div>
+            <Sing2Preview language={language} compact />
           </div>
         </div>
         <div className={styles.heroScribble} aria-hidden="true">SAY IT<br />LIKE YOU<br />MEAN IT!</div>
@@ -328,13 +331,16 @@ export default function BrandPreviewPage() {
       <section className={styles.monthly} id="monthly">
         <div className={styles.sectionIntro}>
           <span>THIS MONTH / 08</span>
-          <h2 className={language === "en" ? styles.englishDisplay : ""}>{t.monthly}<br />{t.monthlyAccent}</h2>
+          <h2 className={language === "en" ? styles.englishDisplay : ""}>{t.monthly} <br />{t.monthlyAccent}</h2>
           <p>{t.monthlyBody}</p>
         </div>
 
         <article className={`${styles.featureCard} ${styles.movieCard}`}>
           <div className={styles.cardNumber}>{t.movieOrder} · 01 / MOVIE</div>
-          <Sing2Preview language={language} />
+          <div className={styles.coursePoster}>
+            <Image src="/sing2Poster.jpg" alt="Sing 2 scene" fill sizes="(max-width: 640px) 90vw, 58vw" />
+            <span>WATCH → MIMIC</span>
+          </div>
           <div className={styles.cardCaption}>
             <div><span>{t.movieLabel}</span><h3>SING 2</h3></div>
             <p>{t.movieBody}</p>

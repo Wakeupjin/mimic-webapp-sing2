@@ -142,9 +142,10 @@
 .hero h1 span, .hero h1 em { display: block; }
 .hero h1 em { position: relative; font-size: .9em; font-style: normal; color: var(--green); text-shadow: 5px 5px 0 #17361d; }
 .englishDisplay { font-family: "Arial Black", "Arial Narrow", var(--font-geist-sans), sans-serif !important; letter-spacing: -.055em !important; }
-.heroBottom { display: flex; max-width: 1120px; align-items: end; justify-content: space-between; gap: 28px; }
+.heroBottom { display: flex; max-width: 1280px; align-items: start; justify-content: space-between; gap: clamp(32px, 6vw, 88px); }
 .heroBottom p { max-width: 520px; margin: 0; font-size: clamp(1rem, 1.5vw, 1.25rem); font-weight: 700; line-height: 1.6; }
-.heroActions { display: flex; width: min(100%, 390px); flex-direction: column; gap: 14px; }
+.heroConversion { display: flex; width: min(100%, 430px); flex: 0 1 430px; flex-direction: column; gap: 24px; }
+.heroActions { display: flex; width: 100%; flex-direction: column; gap: 14px; }
 .primaryCta { display: flex; width: 100%; min-width: 300px; align-items: center; justify-content: space-between; gap: 24px; padding: 17px 20px; border: 2px solid var(--green); background: var(--green); color: #061007; font: inherit; font-size: 1rem; font-weight: 900; text-align: left; box-shadow: 6px 6px 0 #17361d; cursor: pointer; }
 .primaryCta:disabled { opacity: .62; cursor: wait; }
 .primaryCtaCopy { display: flex; min-width: 0; flex-direction: column; gap: 4px; }
@@ -159,12 +160,12 @@
 .marquee div { width: max-content; padding: 15px 0 13px; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: 1.45rem; animation: crawl 24s linear infinite; }
 @keyframes crawl { to { transform: translateX(-50%); } }
 
-.monthly { display: grid; grid-template-columns: .72fr 1.5fr .92fr; gap: 0; border-bottom: 2px solid var(--line); background: #090b09; }
-.sectionIntro { display: flex; min-height: 700px; flex-direction: column; padding: clamp(28px, 4vw, 64px); border-right: 2px solid var(--line); }
+.monthly { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr); gap: 0; border-bottom: 2px solid var(--line); background: #090b09; }
+.sectionIntro { display: grid; min-height: auto; grid-column: 1 / -1; grid-template-columns: .45fr 1.25fr .9fr; align-items: end; gap: clamp(24px, 4vw, 72px); padding: clamp(36px, 5vw, 76px); border-bottom: 2px solid var(--line); }
 .sectionIntro > span, .libraryHead > span, .trust > div > span, .methodHeading > p { font-size: .76rem; font-weight: 900; letter-spacing: .14em; }
-.sectionIntro h2, .libraryHead h2 { margin: 48px 0 24px; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(2.45rem, 4.4vw, 5rem); font-weight: 400; line-height: .94; letter-spacing: -.04em; }
-.sectionIntro p { max-width: 320px; margin-top: auto; font-size: 1rem; font-weight: 650; line-height: 1.65; }
-.featureCard { position: relative; display: flex; flex-direction: column; min-width: 0; padding: clamp(20px, 2.2vw, 34px); background: #0d100d; }
+.sectionIntro h2, .libraryHead h2 { margin: 0; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(2.45rem, 4.4vw, 5rem); font-weight: 400; line-height: .94; letter-spacing: -.04em; }
+.sectionIntro p { max-width: 440px; margin: 0; font-size: 1rem; font-weight: 650; line-height: 1.65; }
+.featureCard { position: relative; display: flex; min-width: 0; min-height: 660px; flex-direction: column; padding: clamp(24px, 3vw, 48px); background: #0d100d; }
 .movieCard { border-right: 2px solid var(--line); }
 .cardNumber { margin-bottom: 18px; font-size: .75rem; font-weight: 900; letter-spacing: .12em; }
 .preview { margin: 0; overflow: hidden; border: 2px solid var(--line); background: #070907; box-shadow: 7px 7px 0 #1d3521; }
@@ -180,10 +181,19 @@
 .previewControls button:hover { border-color: var(--green); color: var(--green); }
 .previewProgress { height: 3px; overflow: hidden; background: #3c423c; }
 .previewProgress i { display: block; height: 100%; background: var(--green); transition: width .1s linear; }
-.bookCover { position: relative; min-height: 395px; margin: 0 7%; border: 2px solid var(--line); background: #172c51; box-shadow: 7px 7px 0 #1d3521; transform: rotate(1.5deg); }
+.previewCompact { box-shadow: 5px 5px 0 #1d3521; }
+.previewCompact .previewBadge { padding: 6px 8px 5px; font-size: .58rem; }
+.previewCompact .previewCaption { grid-template-columns: minmax(0, 1fr) minmax(160px, .72fr); gap: 10px; padding: 10px; }
+.previewCompact .previewCaption p { font-size: .68rem; }
+.previewCompact .previewControls { grid-template-columns: 32px minmax(52px, 1fr) auto; gap: 7px; }
+.previewCompact .previewControls button { min-height: 32px; padding-inline: 7px; font-size: .57rem; }
+.coursePoster { position: relative; aspect-ratio: 2 / 1; overflow: hidden; border: 2px solid var(--line); background: #111; box-shadow: 7px 7px 0 #1d3521; }
+.coursePoster img { object-fit: cover; }
+.coursePoster span { position: absolute; right: 14px; bottom: 14px; padding: 9px 12px 8px; border: 1px solid rgba(244,241,232,.45); background: rgba(5,6,5,.82); color: var(--ink); font-family: var(--font-geist-mono), monospace; font-size: .68rem; font-weight: 900; letter-spacing: .1em; backdrop-filter: blur(8px); }
+.bookCover { position: relative; width: min(82%, 410px); min-height: 395px; margin: 0 auto; border: 2px solid var(--line); background: #172c51; box-shadow: 7px 7px 0 #1d3521; transform: rotate(1.5deg); }
 .bookCover img { object-fit: cover; }
 .bookTape { position: absolute; top: -18px; left: 35%; width: 80px; height: 35px; background: rgba(246,216,90,.85); transform: rotate(-4deg); }
-.cardCaption { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 30px; }
+.cardCaption { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: auto; padding-top: 34px; }
 .cardCaption span { font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
 .cardCaption h3 { margin: 3px 0 0; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(2rem, 3vw, 3.6rem); font-weight: 400; line-height: .9; }
 .cardCaption p { min-height: 50px; margin: 0; font-weight: 650; line-height: 1.5; }
@@ -262,8 +272,10 @@
   .desktopNav { display: none; }
   .header { grid-template-columns: 1fr auto; }
   .monthly { grid-template-columns: 1fr 1fr; }
-  .sectionIntro { grid-column: 1 / -1; min-height: auto; border-right: 0; border-bottom: 2px solid var(--line); }
-  .sectionIntro p { margin: 35px 0 0; }
+  .sectionIntro { grid-template-columns: 1fr 1fr; }
+  .sectionIntro > span { grid-column: 1 / -1; }
+  .heroBottom { align-items: stretch; flex-direction: column; }
+  .heroConversion { width: min(100%, 620px); flex-basis: auto; }
   .steps { grid-template-columns: 1fr 1fr; }
   .step:nth-child(2) { border-right: 0; }
   .step:nth-child(-n+2) { border-bottom: 2px solid var(--line); }
@@ -286,21 +298,25 @@
   .page :global(.account-trigger) { width: 42px; min-height: 42px; justify-content: center; padding: 0; }
   .page :global(.account-trigger-copy), .page :global(.account-chevron) { display: none; }
   .page :global(.account-popover) { position: fixed; top: max(4.5rem, calc(env(safe-area-inset-top) + 4rem)); right: 1rem; left: 1rem; width: auto; }
-  .hero { min-height: calc(100svh - 70px); padding: 42px 18px 34px; }
+  .hero { min-height: auto; padding: 42px 18px 34px; }
   .hero h1 { margin: 54px 0 38px; font-size: clamp(3rem, 13vw, 5.4rem); line-height: .85; }
   .hero h1 em { text-shadow: 3px 3px 0 #17361d; }
   .heroBottom { align-items: stretch; flex-direction: column; }
   .heroBottom p { font-size: .98rem; }
-  .heroActions { width: 100%; }
+  .heroConversion { width: 100%; }
   .primaryCta { min-width: 0; }
   .heroScribble { top: 21px; right: 17px; }
   .desktopOnly { display: none; }
   .monthly { display: block; }
-  .sectionIntro { padding: 42px 20px; }
+  .sectionIntro { display: block; padding: 42px 20px; }
   .sectionIntro h2 { margin-top: 34px; }
+  .sectionIntro p { margin-top: 24px; }
   .movieCard, .featureCard { border-right: 0; border-bottom: 2px solid var(--line); }
+  .featureCard { min-height: auto; }
+  .coursePoster { aspect-ratio: 16 / 9; }
   .bookCover { min-height: min(104vw, 420px); }
   .previewCaption { grid-template-columns: 1fr; gap: 12px; }
+  .previewCompact .previewCaption { grid-template-columns: 1fr; }
   .bookCover { margin-inline: 8%; }
   .methodHeading { padding: 54px 20px 44px; }
   .guide { right: 15px; bottom: 35px; width: 78px; height: auto; }

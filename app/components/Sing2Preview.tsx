@@ -27,7 +27,13 @@ const previewCopy = {
   },
 } as const;
 
-export default function Sing2Preview({ language }: { language: "ko" | "en" }) {
+export default function Sing2Preview({
+  language,
+  compact = false,
+}: {
+  language: "ko" | "en";
+  compact?: boolean;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
@@ -73,7 +79,7 @@ export default function Sing2Preview({ language }: { language: "ko" | "en" }) {
   };
 
   return (
-    <figure className={styles.preview}>
+    <figure className={`${styles.preview} ${compact ? styles.previewCompact : ""}`}>
       <div className={styles.previewMedia}>
         <video
           ref={videoRef}
