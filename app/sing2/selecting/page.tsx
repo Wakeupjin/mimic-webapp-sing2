@@ -22,6 +22,7 @@ import {
 import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
 import ModeSelectLayout from '../../components/ModeSelectLayout'; 
 import AccountMenu from '../../components/AccountMenu';
+import { lessonPath } from '../../lib/lessonMedia';
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -168,15 +169,7 @@ function SelectingPageContent() {
 
     const movieId = formatMovieId(pack, selectedLesson.lesson_number);
     
-    if (mode === 'mimicking') {
-      window.location.href = `/sing2/mimicking?id=${movieId}`;
-    } else if (mode === 'guessing') {
-      window.location.href = `/sing2/guessing?id=${movieId}`;
-    } else if (mode === 'watching') {
-      window.location.href = `/sing2/watching?id=${movieId}`;
-    } else if (mode === 'word') {
-      window.location.href = `/sing2/word?id=${movieId}`;
-    }
+    window.location.href = lessonPath(movieId, mode);
   };
 
   
@@ -219,6 +212,7 @@ function SelectingPageContent() {
     watching: 'Watch',
     mimicking: 'Mimic',
     guessing: 'Guess',
+    retelling: 'Story',
     word: 'Word',
   };
 
