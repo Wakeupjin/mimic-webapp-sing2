@@ -6,7 +6,7 @@
 ## Active operator
 
 <!-- HANDOFF:ACTIVE_OPERATOR:START -->
-codex
+Codex
 <!-- HANDOFF:ACTIVE_OPERATOR:END -->
 
 ## Status
@@ -18,31 +18,31 @@ COMPLETE
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Diagnose and fix the placement 55-second scene failing to start on iPad after grade selection
+Render Sing 2 selecting only after profile, lesson list, and progress are all ready so the first visible state never repaints
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Placement playback now remains actionable during iPad preload, requests only the needed media time range, avoids a duplicate hidden movie request, and exposes poster/loading/retry/timeout feedback instead of a blank stall.
+Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/placement/page.tsx
+- app/contexts/AuthContext.tsx, app/components/AuthGate.tsx, app/sing2/selecting/page.tsx
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-TypeScript and production build passed after the final duplicate-media cleanup; iPad-sized browser QA played the real segment from 288.5 seconds without a media error.
+Production build passed and delayed-data browser verification passed.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-The automated browser is not Mobile Safari, so one real iPad Safari smoke test remains after deployment. The source is a 950 MB full-movie MP4; a dedicated 55-second CDN clip would be the strongest long-term latency fix.
+The signed-in production account still needs a smoke test after a future deployment; this change has not been deployed.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action

@@ -492,3 +492,33 @@ The initial iPad-sized reproduction showed preload waiting events disabling the 
 Placement playback now remains actionable during iPad preload, requests only the needed media time range, avoids a duplicate hidden movie request, and exposes poster/loading/retry/timeout feedback instead of a blank stall.
 
 **Validation:** TypeScript and production build passed after the final duplicate-media cleanup; iPad-sized browser QA played the real segment from 288.5 seconds without a media error.
+
+## 2026-08-29 12:37:32 — codex / work started
+
+Objective: Render Sing 2 selecting only after profile, lesson list, and progress are all ready so the first visible state never repaints
+
+
+## 2026-08-29 12:37:32 — user / request
+
+Fix the Selecting hydration flash so its final progress, locks, and current-stage marker appear correctly on the first render without changing afterward.
+
+
+## 2026-08-29 12:44:36 — Codex / checkpoint
+
+Selecting now waits for the initial account profile, lesson list, and progress together, then commits and renders the final course state once. Token refreshes do not blank an already loaded profile.
+
+**Next action:** Commit the verified fix locally. Push or deploy only after explicit user instruction.
+
+**Validation:** TypeScript check and Next.js production build passed. A delayed-progress browser fixture showed only the neutral loading screen before data, followed by the correct Watch-complete and Mimic-current state without an intermediate mode DOM.
+
+**Files:**
+- app/contexts/AuthContext.tsx, app/components/AuthGate.tsx, app/sing2/selecting/page.tsx
+
+**Open risks:** The signed-in production account still needs a smoke test after a future deployment; this change has not been deployed.
+
+
+## 2026-08-29 12:44:36 — Codex / completed
+
+Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
+
+**Validation:** Production build passed and delayed-data browser verification passed.
