@@ -12,7 +12,7 @@ Codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-COMPLETE
+IN PROGRESS
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
@@ -24,29 +24,29 @@ Remove Story Finale from production and move it to the product backlog
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-New objective claimed by Codex. No implementation checkpoint has been saved yet.
+Reverted PRs #35, #34, and #33 in reverse order, removing Story Finale UI, routes, progress integration, and the story-conversation API. The app now exactly matches pre-Story commit 8ab9d7b and the concept is documented in the product backlog with re-entry gates.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- None identified yet.
+- docs/product-backlog.md plus reverse reverts of the Story Finale files from PRs #33-#35
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Not run yet.
+npx tsc --noEmit passed; npx next build passed with no /sing2/retelling, /book/retelling, or /api/story-conversation route; app diff against pre-Story commit 8ab9d7b is empty.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-None recorded yet.
+Existing retelling evaluation rows may remain in Supabase but are no longer read or shown; no production data was changed.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Continue the active objective and save a checkpoint before responding or switching agents.
+Commit the backlog note, push a PR, verify Vercel preview, merge, then confirm the production selector and route no longer expose Story Finale.
 <!-- HANDOFF:NEXT_ACTION:END -->
