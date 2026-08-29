@@ -1,0 +1,80 @@
+{
+  "story": {
+    "title": "PINOCCHIO",
+    "scene": "SCENE 1 · THE TALKING WOOD",
+    "source": "Adapted from Carlo Collodi's public-domain story"
+  },
+  "levels": [
+    {
+      "id": "foundation",
+      "label": "Foundation",
+      "step": "START HERE",
+      "summary": "짧은 문장으로 사건의 뼈대를 잡아요.",
+      "goal": "8단어 안팎의 문장을 끊지 않고 말하기",
+      "output": "핵심 사건을 2~3문장으로 다시 말하기",
+      "lines": [
+        "Long ago, there was a simple piece of wood.",
+        "It was only firewood for a warm winter fire.",
+        "One day, the wood arrived at a carpenter's shop.",
+        "The carpenter's name was Mastro Cherry.",
+        "He had a round, red nose.",
+        "He wanted to make a table leg.",
+        "He raised his hatchet over the wood.",
+        "A tiny voice cried, ‘Please don't hit me!’",
+        "Mastro Cherry looked around, but no one was there.",
+        "He hit the wood again.",
+        "‘Ouch! That hurts!’ cried the little voice.",
+        "The wood laughed when he tried to smooth it.",
+        "Mastro Cherry fell to the floor in shock."
+      ]
+    },
+    {
+      "id": "core",
+      "label": "Core",
+      "step": "RECOMMENDED",
+      "summary": "연결된 문장으로 원인과 반응을 따라가요.",
+      "goal": "접속사와 묘사가 있는 문장을 리듬 있게 말하기",
+      "output": "First, But, Finally를 사용해 4~6문장으로 리텔링하기",
+      "lines": [
+        "Centuries ago, there was no king—only an ordinary piece of firewood.",
+        "One day, the wood found itself inside an old carpenter's shop.",
+        "The carpenter was called Mastro Cherry because of his round, red nose.",
+        "Delighted with the wood, he decided to turn it into a table leg.",
+        "As he lifted his hatchet, a tiny voice begged him to be careful.",
+        "Mastro Cherry froze and searched the room, but he found nobody.",
+        "Convinced that he had imagined it, he returned to his work.",
+        "The moment he struck the wood, the voice cried out in pain.",
+        "His eyes widened, and fear left him unable to speak.",
+        "Could an ordinary piece of firewood really cry like a child?",
+        "He grabbed the log and knocked it against the floor and walls.",
+        "When the room stayed silent, he tried to laugh away his fear.",
+        "Then his plane made the wood giggle because it tickled.",
+        "Shocked beyond words, Mastro Cherry collapsed onto the floor."
+      ]
+    },
+    {
+      "id": "studio",
+      "label": "Studio",
+      "step": "STRETCH",
+      "summary": "원문에 가까운 복문으로 분위기와 유머까지 읽어요.",
+      "goal": "긴 문장의 호흡과 서술자의 말투를 살려 읽기",
+      "output": "긴장과 유머가 만들어지는 방식을 설명하고 자기 말로 요약하기",
+      "lines": [
+        "Centuries ago, my little readers might expect a king, but this story begins with a common block of firewood.",
+        "Somehow, that unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round, red nose.",
+        "Seeing the sturdy piece of wood, he happily decided it had arrived just in time to become the leg of a table.",
+        "Yet, as he raised his hatchet for the first blow, a faint voice pleaded with him not to strike so hard.",
+        "Astonished, Mastro Cherry searched beneath the bench, inside the closet, and among the shavings, but discovered no one.",
+        "Embarrassed by his fear, he convinced himself that the mysterious voice had existed only in his imagination.",
+        "No sooner had he struck the wood than the distant little voice cried out that he had hurt it.",
+        "Mastro Cherry stood speechless, with his eyes bulging and his mouth hanging open in disbelief.",
+        "Trembling, he wondered whether an ordinary piece of firewood had somehow learned to weep like a child.",
+        "Determined to uncover the trick, he seized the log and knocked it against the floor, the walls, and even the ceiling.",
+        "After waiting in silence, he forced a laugh and once again blamed his imagination.",
+        "Hoping to recover his courage, the terrified carpenter began to sing while he worked.",
+        "But when he moved the plane across the wood, the hidden voice giggled and complained that its stomach was being tickled.",
+        "At that, poor Mastro Cherry collapsed as though he had been struck, and awoke sitting helplessly on the floor."
+      ]
+    }
+  ]
+}

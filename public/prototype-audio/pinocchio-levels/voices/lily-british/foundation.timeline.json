@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-08-29T05:23:08.698Z",
+  "variant": {
+    "id": "lily-british",
+    "name": "Lily",
+    "gender": "female",
+    "accent": "British",
+    "tone": "Warm, intimate actress",
+    "seed": 2411
+  },
+  "modelId": "eleven_v3",
+  "outputFormat": "mp3_44100_128",
+  "characters": 597,
+  "duration": 41.54,
+  "lines": [
+    {
+      "index": 0,
+      "text": "Long ago, there was a simple piece of wood.",
+      "start": 0.219,
+      "end": 2.92
+    },
+    {
+      "index": 1,
+      "text": "It was only firewood for a warm winter fire.",
+      "start": 2.92,
+      "end": 6.31
+    },
+    {
+      "index": 2,
+      "text": "One day, the wood arrived at a carpenter's shop.",
+      "start": 6.31,
+      "end": 10.08
+    },
+    {
+      "index": 3,
+      "text": "The carpenter's name was Mastro Cherry.",
+      "start": 10.08,
+      "end": 13.494
+    },
+    {
+      "index": 4,
+      "text": "He had a round, red nose.",
+      "start": 13.494,
+      "end": 15.8
+    },
+    {
+      "index": 5,
+      "text": "He wanted to make a table leg.",
+      "start": 15.8,
+      "end": 18.393
+    },
+    {
+      "index": 6,
+      "text": "He raised his hatchet over the wood.",
+      "start": 18.393,
+      "end": 21.384
+    },
+    {
+      "index": 7,
+      "text": "A tiny voice cried, ‘Please don't hit me!’",
+      "start": 21.384,
+      "end": 25.32
+    },
+    {
+      "index": 8,
+      "text": "Mastro Cherry looked around, but no one was there.",
+      "start": 25.32,
+      "end": 28.674
+    },
+    {
+      "index": 9,
+      "text": "He hit the wood again.",
+      "start": 28.674,
+      "end": 30.44
+    },
+    {
+      "index": 10,
+      "text": "‘Ouch! That hurts!’ cried the little voice.",
+      "start": 30.44,
+      "end": 34.715
+    },
+    {
+      "index": 11,
+      "text": "The wood laughed when he tried to smooth it.",
+      "start": 34.715,
+      "end": 37.955
+    },
+    {
+      "index": 12,
+      "text": "Mastro Cherry fell to the floor in shock.",
+      "start": 37.955,
+      "end": 41.54
+    }
+  ]
+}

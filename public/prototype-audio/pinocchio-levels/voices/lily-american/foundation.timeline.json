@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-08-29T05:25:05.642Z",
+  "variant": {
+    "id": "lily-american",
+    "name": "Lily",
+    "gender": "female",
+    "accent": "American",
+    "tone": "Warm, intimate actress",
+    "seed": 2411
+  },
+  "modelId": "eleven_v3",
+  "outputFormat": "mp3_44100_128",
+  "characters": 598,
+  "duration": 41.621,
+  "lines": [
+    {
+      "index": 0,
+      "text": "Long ago, there was a simple piece of wood.",
+      "start": 0.144,
+      "end": 3.227
+    },
+    {
+      "index": 1,
+      "text": "It was only firewood for a warm winter fire.",
+      "start": 3.227,
+      "end": 6.06
+    },
+    {
+      "index": 2,
+      "text": "One day, the wood arrived at a carpenter's shop.",
+      "start": 6.06,
+      "end": 9.6
+    },
+    {
+      "index": 3,
+      "text": "The carpenter's name was Mastro Cherry.",
+      "start": 9.6,
+      "end": 13.186
+    },
+    {
+      "index": 4,
+      "text": "He had a round, red nose.",
+      "start": 13.186,
+      "end": 16.107
+    },
+    {
+      "index": 5,
+      "text": "He wanted to make a table leg.",
+      "start": 16.107,
+      "end": 18.733
+    },
+    {
+      "index": 6,
+      "text": "He raised his hatchet over the wood.",
+      "start": 18.733,
+      "end": 21.476
+    },
+    {
+      "index": 7,
+      "text": "A tiny voice cried, ‘Please don't hit me!’",
+      "start": 21.476,
+      "end": 25.14
+    },
+    {
+      "index": 8,
+      "text": "Mastro Cherry looked around, but no one was there.",
+      "start": 25.14,
+      "end": 29.173
+    },
+    {
+      "index": 9,
+      "text": "He hit the wood again.",
+      "start": 29.173,
+      "end": 31.14
+    },
+    {
+      "index": 10,
+      "text": "‘Ouch! That hurts!’ cried the little voice.",
+      "start": 31.14,
+      "end": 35.035
+    },
+    {
+      "index": 11,
+      "text": "The wood laughed when he tried to smooth it.",
+      "start": 35.035,
+      "end": 38.156
+    },
+    {
+      "index": 12,
+      "text": "Mastro Cherry fell to the floor in shock.",
+      "start": 38.156,
+      "end": 41.621
+    }
+  ]
+}

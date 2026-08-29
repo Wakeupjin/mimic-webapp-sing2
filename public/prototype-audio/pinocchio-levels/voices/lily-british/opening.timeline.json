@@ -1,0 +1,40 @@
+{
+  "generatedAt": "2026-08-29T05:26:36.159Z",
+  "variant": {
+    "id": "lily-british",
+    "name": "Lily",
+    "gender": "female",
+    "accent": "British",
+    "tone": "Warm, intimate actress",
+    "seed": 2411
+  },
+  "modelId": "eleven_v3",
+  "outputFormat": "mp3_44100_128",
+  "characters": 293,
+  "lines": [
+    {
+      "index": 0,
+      "text": "Centuries ago, there was no king—only an ordinary piece of firewood.",
+      "start": 0.429,
+      "end": 5.34
+    },
+    {
+      "index": 1,
+      "text": "One day, the wood found itself inside an old carpenter's shop.",
+      "start": 5.34,
+      "end": 9.37
+    },
+    {
+      "index": 2,
+      "text": "The carpenter was called Mastro Cherry because of his round, red nose.",
+      "start": 9.37,
+      "end": 15.4
+    },
+    {
+      "index": 3,
+      "text": "Delighted with the wood, he decided to turn it into a table leg.",
+      "start": 15.4,
+      "end": 20.34
+    }
+  ]
+}

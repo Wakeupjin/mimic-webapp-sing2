@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-08-29T05:24:37.112Z",
+  "variant": {
+    "id": "lily-british",
+    "name": "Lily",
+    "gender": "female",
+    "accent": "British",
+    "tone": "Warm, intimate actress",
+    "seed": 2411
+  },
+  "modelId": "eleven_v3",
+  "outputFormat": "mp3_44100_128",
+  "characters": 1574,
+  "duration": 111.388,
+  "lines": [
+    {
+      "index": 0,
+      "text": "Centuries ago, my little readers might expect a king, but this story begins with a common block of firewood.",
+      "start": 0.23,
+      "end": 7.801
+    },
+    {
+      "index": 1,
+      "text": "Somehow, that unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round, red nose.",
+      "start": 7.801,
+      "end": 17.058
+    },
+    {
+      "index": 2,
+      "text": "Seeing the sturdy piece of wood, he happily decided it had arrived just in time to become the leg of a table.",
+      "start": 17.058,
+      "end": 25.632
+    },
+    {
+      "index": 3,
+      "text": "Yet, as he raised his hatchet for the first blow, a faint voice pleaded with him not to strike so hard.",
+      "start": 25.632,
+      "end": 33.648
+    },
+    {
+      "index": 4,
+      "text": "Astonished, Mastro Cherry searched beneath the bench, inside the closet, and among the shavings, but discovered no one.",
+      "start": 33.648,
+      "end": 44.363
+    },
+    {
+      "index": 5,
+      "text": "Embarrassed by his fear, he convinced himself that the mysterious voice had existed only in his imagination.",
+      "start": 44.363,
+      "end": 52.428
+    },
+    {
+      "index": 6,
+      "text": "No sooner had he struck the wood than the distant little voice cried out that he had hurt it.",
+      "start": 52.428,
+      "end": 58.328
+    },
+    {
+      "index": 7,
+      "text": "Mastro Cherry stood speechless, with his eyes bulging and his mouth hanging open in disbelief.",
+      "start": 58.328,
+      "end": 65.4
+    },
+    {
+      "index": 8,
+      "text": "Trembling, he wondered whether an ordinary piece of firewood had somehow learned to weep like a child.",
+      "start": 65.4,
+      "end": 73.039
+    },
+    {
+      "index": 9,
+      "text": "Determined to uncover the trick, he seized the log and knocked it against the floor, the walls, and even the ceiling.",
+      "start": 73.039,
+      "end": 81.628
+    },
+    {
+      "index": 10,
+      "text": "After waiting in silence, he forced a laugh and once again blamed his imagination.",
+      "start": 81.628,
+      "end": 88.608
+    },
+    {
+      "index": 11,
+      "text": "Hoping to recover his courage, the terrified carpenter began to sing while he worked.",
+      "start": 88.608,
+      "end": 95.003
+    },
+    {
+      "index": 12,
+      "text": "But when he moved the plane across the wood, the hidden voice giggled and complained that its stomach was being tickled.",
+      "start": 95.003,
+      "end": 102.995
+    },
+    {
+      "index": 13,
+      "text": "At that, poor Mastro Cherry collapsed as though he had been struck, and awoke sitting helplessly on the floor.",
+      "start": 102.995,
+      "end": 111.388
+    }
+  ]
+}

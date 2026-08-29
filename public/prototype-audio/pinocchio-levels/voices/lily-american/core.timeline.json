@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-08-29T05:25:35.673Z",
+  "variant": {
+    "id": "lily-american",
+    "name": "Lily",
+    "gender": "female",
+    "accent": "American",
+    "tone": "Warm, intimate actress",
+    "seed": 2411
+  },
+  "modelId": "eleven_v3",
+  "outputFormat": "mp3_44100_128",
+  "characters": 952,
+  "duration": 69.38,
+  "lines": [
+    {
+      "index": 0,
+      "text": "Centuries ago, there was no king—only an ordinary piece of firewood.",
+      "start": 0.432,
+      "end": 5.79
+    },
+    {
+      "index": 1,
+      "text": "One day, the wood found itself inside an old carpenter's shop.",
+      "start": 5.79,
+      "end": 10.33
+    },
+    {
+      "index": 2,
+      "text": "The carpenter was called Mastro Cherry because of his round, red nose.",
+      "start": 10.33,
+      "end": 15.86
+    },
+    {
+      "index": 3,
+      "text": "Delighted with the wood, he decided to turn it into a table leg.",
+      "start": 15.86,
+      "end": 20.866
+    },
+    {
+      "index": 4,
+      "text": "As he lifted his hatchet, a tiny voice begged him to be careful.",
+      "start": 20.866,
+      "end": 25.74
+    },
+    {
+      "index": 5,
+      "text": "Mastro Cherry froze and searched the room, but he found nobody.",
+      "start": 25.74,
+      "end": 31.4
+    },
+    {
+      "index": 6,
+      "text": "Convinced that he had imagined it, he returned to his work.",
+      "start": 31.4,
+      "end": 36.032
+    },
+    {
+      "index": 7,
+      "text": "The moment he struck the wood, the voice cried out in pain.",
+      "start": 36.032,
+      "end": 41.1
+    },
+    {
+      "index": 8,
+      "text": "His eyes widened, and fear left him unable to speak.",
+      "start": 41.1,
+      "end": 45.44
+    },
+    {
+      "index": 9,
+      "text": "Could an ordinary piece of firewood really cry like a child?",
+      "start": 45.44,
+      "end": 50.08
+    },
+    {
+      "index": 10,
+      "text": "He grabbed the log and knocked it against the floor and walls.",
+      "start": 50.08,
+      "end": 54.648
+    },
+    {
+      "index": 11,
+      "text": "When the room stayed silent, he tried to laugh away his fear.",
+      "start": 54.648,
+      "end": 59.549
+    },
+    {
+      "index": 12,
+      "text": "Then his plane made the wood giggle because it tickled.",
+      "start": 59.549,
+      "end": 64.091
+    },
+    {
+      "index": 13,
+      "text": "Shocked beyond words, Mastro Cherry collapsed onto the floor.",
+      "start": 64.091,
+      "end": 69.38
+    }
+  ]
+}
