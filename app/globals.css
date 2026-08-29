@@ -1468,11 +1468,6 @@ body {
   gap: clamp(1.75rem, 4vh, 3.25rem) clamp(1rem, 3vw, 2.75rem);
 }
 
-.select-modes.has-five .select-mode-item:last-child {
-  grid-column: 1 / -1;
-  width: calc(50% - clamp(0.5rem, 1.5vw, 1.375rem));
-}
-
 .select-mode-item {
   position: relative;
   display: flex;
@@ -1730,11 +1725,6 @@ body {
     row-gap: clamp(1.65rem, 4.6vh, 2.75rem);
   }
 
-  .select-modes.has-five .select-mode-item:last-child {
-    grid-column: auto;
-    width: 100%;
-  }
-
   .select-mode {
     width: 100%;
     height: clamp(4.5rem, 10.5vh, 5.5rem);
@@ -1894,16 +1884,6 @@ body {
     width: min(100%, 44rem);
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(0.4rem, 1.6vw, 0.9rem);
-  }
-
-  .select-modes.has-five {
-    width: min(100%, 54rem);
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .select-modes.has-five .select-mode-item:last-child {
-    grid-column: auto;
-    width: 100%;
   }
 
   .select-chapter {
@@ -2202,7 +2182,6 @@ body {
   }
 
   .learning-stage .lesson-completion-overlay {
-    justify-content: flex-start;
     overflow-y: auto;
     padding: 0.75rem;
   }

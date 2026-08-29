@@ -51,7 +51,6 @@ const copy = {
       ["WATCH", "장면 전체 보기"],
       ["MIMIC", "소리와 리듬 따라 말하기"],
       ["GUESS", "알맞은 표현 고르기"],
-      ["STORY", "내 말로 장면 다시 들려주기"],
       ["WORD", "단어로 문장 완성하기"],
     ],
     libraryTitle: "영어가 내 말이 되는 순간.",
@@ -103,7 +102,6 @@ const copy = {
       ["WATCH", "See the whole scene"],
       ["MIMIC", "Follow sound and rhythm"],
       ["GUESS", "Catch what you heard"],
-      ["STORY", "Retell it in your own voice"],
       ["WORD", "Build the line yourself"],
     ],
     libraryTitle: "WHEN ENGLISH SOUNDS LIKE YOU.",
@@ -376,7 +374,7 @@ export default function BrandPreviewPage() {
         </div>
         <div className={styles.steps}>
           {t.steps.map((step, index) => (
-            <article key={step[0]} className={`${styles.step} ${styles[tones[index % tones.length]]}`}>
+            <article key={step[0]} className={`${styles.step} ${styles[tones[index]]}`}>
               <span>0{index + 1}</span><h3>{step[0]}</h3><p>{step[1]}</p><b aria-hidden="true">↗</b>
             </article>
           ))}

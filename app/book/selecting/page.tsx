@@ -24,7 +24,6 @@ const BOOK_MODES: Array<{ learn: LearnMode; label: string }> = [
   { learn: "watching", label: "Listen" },
   { learn: "mimicking", label: "Mimic" },
   { learn: "guessing", label: "Guess" },
-  { learn: "retelling", label: "Story" },
   { learn: "word", label: "Word" },
 ];
 

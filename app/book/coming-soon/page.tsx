@@ -9,7 +9,6 @@ const MODE_LABEL: Record<string, string> = {
   listen: "Listen",
   mimicking: "Mimic",
   guessing: "Guess",
-  retelling: "Story",
   word: "Word",
 };
 

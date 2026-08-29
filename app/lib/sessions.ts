@@ -1,6 +1,6 @@
 import { supabase } from '../supabaseClient';
 
-export type TrackedMode = 'watching' | 'mimicking' | 'guessing' | 'retelling' | 'word';
+export type TrackedMode = 'watching' | 'mimicking' | 'guessing' | 'word';
 
 export function parseLessonNumber(movieId: string | null): number {
   if (!movieId) return 1;
@@ -26,7 +26,6 @@ export function parseTrackedMode(pathname: string): TrackedMode | null {
     segment === 'watching' ||
     segment === 'mimicking' ||
     segment === 'guessing' ||
-    segment === 'retelling' ||
     segment === 'word'
   ) {
     return segment;

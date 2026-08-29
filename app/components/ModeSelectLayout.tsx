@@ -105,7 +105,7 @@ export default function ModeSelectLayout({
       </div>
 
       <div className="select-content">
-        <div className={`select-modes ${modes.length === 5 ? "has-five" : ""}`}>
+        <div className="select-modes">
           {modes.map((mode) => (
             <div key={mode.id} className={`select-mode-item ${mode.here ? "is-here" : ""}`}>
               <button

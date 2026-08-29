@@ -50,7 +50,7 @@ export type StudentDashboardRow = {
   evaluations: Record<string, Record<string, unknown>>;
 };
 
-const MODES = ['watching', 'mimicking', 'guessing', 'retelling', 'word'] as const;
+const MODES = ['watching', 'mimicking', 'guessing', 'word'] as const;
 const TOTAL_SLOTS = 12 * MODES.length;
 
 function startOfLocalWeek(now = new Date()): Date {
@@ -131,24 +131,6 @@ export async function fetchAcademyDashboard(): Promise<{
         const done = Boolean(row.completed);
         progressByLesson[row.lesson_number][row.mode] = done;
         if (done) completedCount += 1;
-      });
-
-      // Story 도입 전에 Word를 시작한 학생도 학습자 화면과 똑같이 소급 인정한다.
-      myProgress.forEach((row) => {
-        if (row.mode !== 'word' || !progressByLesson[row.lesson_number]) return;
-        if (!progressByLesson[row.lesson_number].retelling) {
-          progressByLesson[row.lesson_number].retelling = true;
-          completedCount += 1;
-        }
-      });
-
-      myEvals.forEach((row) => {
-        if (row.mode !== 'retelling' || !progressByLesson[row.lesson_number]) return;
-        const done = Boolean(row.payload?.completed);
-        if (done && !progressByLesson[row.lesson_number].retelling) {
-          progressByLesson[row.lesson_number].retelling = true;
-          completedCount += 1;
-        }
       });
 
       const totalSeconds = mySessions.reduce(

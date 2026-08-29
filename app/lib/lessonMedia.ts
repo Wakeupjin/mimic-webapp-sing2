@@ -37,7 +37,7 @@ export function lessonSelectHref(movieId: string) {
 
 export function lessonPath(
   movieId: string,
-  mode: "listen" | "watching" | "mimicking" | "guessing" | "retelling" | "word"
+  mode: "listen" | "watching" | "mimicking" | "guessing" | "word"
 ) {
   if (isBookId(movieId)) {
     const bookMode = mode === "watching" ? "listen" : mode;
