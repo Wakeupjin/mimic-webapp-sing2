@@ -7,7 +7,7 @@ import { signupPath } from "../lib/authRedirect";
 import styles from "./AuthGate.module.css";
 
 export default function AuthGate({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
+  const { user, loading, profileLoading } = useAuth();
   const pathname = usePathname();
   const router = useRouter();
 
@@ -17,13 +17,13 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     router.replace(signupPath(requestedPath));
   }, [loading, pathname, router, user]);
 
-  if (loading || !user) {
+  if (loading || !user || profileLoading) {
     return (
       <main className={styles.screen} aria-live="polite">
         <div className={styles.status}>
           <div className={styles.mark}>MimiC</div>
           <div className={styles.spinner} aria-hidden="true" />
-          <p>{loading ? "계정을 확인하고 있어요" : "가입 화면을 열고 있어요"}</p>
+          <p>{loading || (user && profileLoading) ? "계정을 확인하고 있어요" : "가입 화면을 열고 있어요"}</p>
         </div>
       </main>
     );

@@ -421,3 +421,104 @@ Deployment branch is clean, build-verified, and exactly one commit ahead of curr
 - docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
 
 **Open risks:** GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
+
+## 2026-08-29 12:10:56 — codex / work started
+
+Objective: Replace Mimic Check memory prompt with same-segment muted scene replay while never exposing the English sentence
+
+
+## 2026-08-29 12:11:02 — user / request
+
+Implement Mimic Check as sentence-hidden same-scene muted replay, with sound replay available only when needed.
+
+## 2026-08-29 12:18:34 — codex / checkpoint
+
+Mimic Check now replays the exact target video segment muted on entry and again when recording starts; optional sound replay is available, while target and transcript text remain hidden for Mimic tasks.
+
+**Next action:** Keep the branch local for user review; push or deploy only after explicit approval.
+
+**Validation:** TypeScript and production build passed. Browser fixture confirmed muted autoplay, exact segment stop/reset, optional sound replay, no target sentence in DOM, and no horizontal overflow on phone, pad, or desktop.
+
+**Files:**
+- app/components/AiCoachPanel.tsx, app/placement/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
+
+**Open risks:** A real microphone permission and AI response run still requires an authenticated user and was not triggered during automated browser QA.
+
+
+## 2026-08-29 12:18:34 — codex / completed
+
+Mimic Check is now scene-led rather than memory-led: the learner receives the same clip muted, can replay sound only when needed, and never sees the target English sentence or Mimic transcript.
+
+**Validation:** Production build passed; responsive browser QA passed; muted and sound replay behaviors were verified against the real Sing 2 media segment.
+
+## 2026-08-29 12:20:59 — codex / work started
+
+Objective: Diagnose and fix the placement 55-second scene failing to start on iPad after grade selection
+
+
+## 2026-08-29 12:20:59 — user / request
+
+On iPad, the 55-second placement scene does not appear or play regardless of which grade band is selected; diagnose and fix it.
+
+
+## 2026-08-29 12:35:26 — codex / checkpoint
+
+Fixed placement playback gating for iPad-class devices: preload waiting events no longer lock the start button, the 55-second scene uses an MP4 media fragment, a poster remains visible while seeking, and explicit loading/retry/timeout states replace the blank stall.
+
+**Next action:** Keep the combined Mimic Check and iPad playback fixes local until the user explicitly requests preview or production deployment.
+
+**Validation:** TypeScript and production build passed. In a 1024x1366 browser viewport, every grade selection reached an enabled 55-second start action; tapping it played the real Bunny CDN media at 288.5 seconds with no media error or horizontal overflow.
+
+**Files:**
+- app/placement/page.tsx
+
+**Open risks:** The automated browser is not Mobile Safari, so one real iPad Safari smoke test remains after deployment. The source is a 950 MB full-movie MP4; a dedicated 55-second CDN clip would be the strongest long-term latency fix.
+
+
+## 2026-08-29 12:35:26 — codex / completed
+
+Placement no longer mistakes iPad preload delay for active playback: the start action stays usable, gives visible loading/retry feedback, and seeks through a segment-specific media URL.
+
+**Validation:** Build passed; real media playback began at the intended 288.5-second scene in iPad-sized browser QA.
+
+
+## 2026-08-29 12:36:29 — codex / validation
+
+The initial iPad-sized reproduction showed preload waiting events disabling the 55-second start action before any tap. After guarding waiting/seeking behind an active play request, the start action remained enabled and real media played from 288.5 seconds; the redundant hidden full-movie video was also removed from watch/intro states.
+
+
+## 2026-08-29 12:36:29 — codex / completed
+
+Placement playback now remains actionable during iPad preload, requests only the needed media time range, avoids a duplicate hidden movie request, and exposes poster/loading/retry/timeout feedback instead of a blank stall.
+
+**Validation:** TypeScript and production build passed after the final duplicate-media cleanup; iPad-sized browser QA played the real segment from 288.5 seconds without a media error.
+
+## 2026-08-29 12:37:32 — codex / work started
+
+Objective: Render Sing 2 selecting only after profile, lesson list, and progress are all ready so the first visible state never repaints
+
+
+## 2026-08-29 12:37:32 — user / request
+
+Fix the Selecting hydration flash so its final progress, locks, and current-stage marker appear correctly on the first render without changing afterward.
+
+
+## 2026-08-29 12:44:36 — Codex / checkpoint
+
+Selecting now waits for the initial account profile, lesson list, and progress together, then commits and renders the final course state once. Token refreshes do not blank an already loaded profile.
+
+**Next action:** Commit the verified fix locally. Push or deploy only after explicit user instruction.
+
+**Validation:** TypeScript check and Next.js production build passed. A delayed-progress browser fixture showed only the neutral loading screen before data, followed by the correct Watch-complete and Mimic-current state without an intermediate mode DOM.
+
+**Files:**
+- app/contexts/AuthContext.tsx, app/components/AuthGate.tsx, app/sing2/selecting/page.tsx
+
+**Open risks:** The signed-in production account still needs a smoke test after a future deployment; this change has not been deployed.
+
+
+## 2026-08-29 12:44:36 — Codex / completed
+
+Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
+
+**Validation:** Production build passed and delayed-data browser verification passed.

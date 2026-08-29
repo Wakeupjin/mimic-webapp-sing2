@@ -31,21 +31,41 @@ type LessonSummary = {
 };
 // --- [/SUPABASE 연결 및 타입 정의] ---
 
+type SelectingData = {
+  lessons: LessonSummary[];
+  selectedLesson: LessonSummary | null;
+  progressRows: ProgressRow[];
+};
+
+function SelectingLoadingScreen() {
+  return (
+    <main
+      className="flex min-h-screen items-center justify-center"
+      style={{ backgroundColor: '#201E1E' }}
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <div className="text-center">
+        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#60D96C] border-t-transparent" />
+        <h1 className="text-xl font-semibold text-[#60D96C]">학습을 준비하고 있어요…</h1>
+      </div>
+    </main>
+  );
+}
+
 // 상수 (로컬 상수는 최소화하고 Supabase 데이터를 사용)
 function SelectingPageContent() {
   // 모든 훅을 최상단에 배치 (조건부 호출 방지)
-  const { user, profile, loading } = useAuth();
+  const { user, profile, loading, profileLoading } = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
   const pack = parsePack(searchParams.get('id') || '001:1');
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   
   // 상태 관리
-  const [lessons, setLessons] = useState<LessonSummary[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedLesson, setSelectedLesson] = useState<LessonSummary | null>(null); 
+  const [selectingData, setSelectingData] = useState<SelectingData | null>(null);
+  const [loadError, setLoadError] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [progressRows, setProgressRows] = useState<ProgressRow[]>([]);
   const isMaster = isMasterRole(profile?.role); 
   
   // refs
@@ -61,38 +81,43 @@ function SelectingPageContent() {
 
   // --- [SUPABASE 데이터 로딩] ---
   useEffect(() => {
-    const fetchLessons = async () => {
-      // console.log('🔄 Lesson 데이터 로딩 시작...');
-      setIsLoading(true);
-      
-      try {
-        const lessonList =
-          pack >= 2
-            ? [{ id: 1, lesson_number: 1, video_id: 1 }]
-            : await fetchLessonSummaries();
-        setLessons(lessonList);
-
-        const lessonOne = lessonList.find((lesson) => lesson.lesson_number === 1) || lessonList[0];
-        if (lessonOne) {
-          setSelectedLesson(lessonOne);
-        }
-        setIsLoading(false);
-      } catch (err) {
-        console.error('❌ fetchLessons 에러:', err);
-        setIsLoading(false);
-      }
-    };
-
-    fetchLessons();
-  }, [pack]);
-
-  useEffect(() => {
-    if (!user) {
-      setProgressRows([]);
+    const userId = user?.id;
+    if (loading || profileLoading || !userId) {
+      setSelectingData(null);
+      setLoadError('');
       return;
     }
-    fetchOwnProgress().then(setProgressRows);
-  }, [user]);
+
+    let cancelled = false;
+    setSelectingData(null);
+    setLoadError('');
+
+    const lessonRequest =
+      pack >= 2
+        ? Promise.resolve<LessonSummary[]>([{ id: 1, lesson_number: 1, video_id: 1 }])
+        : fetchLessonSummaries();
+
+    void Promise.all([lessonRequest, fetchOwnProgress()])
+      .then(([lessonList, nextProgressRows]) => {
+        if (cancelled) return;
+        const lessonOne =
+          lessonList.find((lesson) => lesson.lesson_number === 1) || lessonList[0] || null;
+        setSelectingData({
+          lessons: lessonList,
+          selectedLesson: lessonOne,
+          progressRows: nextProgressRows,
+        });
+      })
+      .catch((error) => {
+        if (cancelled) return;
+        console.error('Selecting data load error:', error);
+        setLoadError('학습 상태를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.');
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [loading, pack, profileLoading, user?.id]);
   // --- [/SUPABASE 데이터 로딩] ---
 
   // Close dropdown when clicking outside
@@ -113,16 +138,7 @@ function SelectingPageContent() {
   }, [isDropdownOpen]);
 
   // 로딩 상태 처리
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h1 className="text-xl font-semibold text-[#60D96C]">불러오는 중…</h1>
-        </div>
-      </main>
-    );
-  }
+  if (loading || profileLoading) return <SelectingLoadingScreen />;
 
   // 인증되지 않은 경우
   if (!user) {
@@ -136,6 +152,8 @@ function SelectingPageContent() {
   }
 
   const handleModeSelect = (mode: LearnMode) => {
+    const selectedLesson = selectingData?.selectedLesson;
+    const progressRows = selectingData?.progressRows || [];
     if (!selectedLesson) return;
     if (
       !isMaster &&
@@ -163,13 +181,20 @@ function SelectingPageContent() {
 
   
   // --- [로딩 및 에러 화면] ---
-  if (isLoading) {
+  if (loadError) {
     return (
-      <main className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
-        <h1 className="text-xl font-semibold text-[#60D96C]">학습 목록을 불러오는 중…</h1>
+      <main className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#201E1E' }}>
+        <div className="text-center">
+          <h1 className="mb-4 text-xl font-semibold text-white">학습 상태를 불러오지 못했어요.</h1>
+          <p className="text-gray-300">새로고침한 뒤 다시 시도해 주세요.</p>
+        </div>
       </main>
     );
   }
+
+  if (!selectingData) return <SelectingLoadingScreen />;
+
+  const { lessons, selectedLesson, progressRows } = selectingData;
 
   if (lessons.length === 0) {
      return (
@@ -221,7 +246,9 @@ function SelectingPageContent() {
           selected: lesson.id === selectedLesson?.id,
           done: isModeCompleted(progressRows, chapterProgress, 'word'),
           onSelect: () => {
-            setSelectedLesson(lesson);
+            setSelectingData((current) =>
+              current ? { ...current, selectedLesson: lesson } : current
+            );
             setIsDropdownOpen(false);
           },
         };
@@ -241,7 +268,7 @@ function SelectingPageContent() {
 
 export default function SelectingPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<SelectingLoadingScreen />}>
       <SelectingPageContent />
     </Suspense>
   );
