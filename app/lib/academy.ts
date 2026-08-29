@@ -123,7 +123,6 @@ export async function fetchAcademyDashboard(): Promise<{
         for (const mode of MODES) {
           progressByLesson[lesson][mode] = false;
         }
-        progressByLesson[lesson].retelling = false;
       }
 
       let completedCount = 0;
@@ -131,15 +130,7 @@ export async function fetchAcademyDashboard(): Promise<{
         if (!progressByLesson[row.lesson_number]) return;
         const done = Boolean(row.completed);
         progressByLesson[row.lesson_number][row.mode] = done;
-        if (done && MODES.includes(row.mode as (typeof MODES)[number])) completedCount += 1;
-      });
-
-      myEvals.forEach((row) => {
-        if (row.mode !== 'retelling' || !progressByLesson[row.lesson_number]) return;
-        const done = Boolean(row.payload?.completed);
-        if (done && !progressByLesson[row.lesson_number].retelling) {
-          progressByLesson[row.lesson_number].retelling = true;
-        }
+        if (done) completedCount += 1;
       });
 
       const totalSeconds = mySessions.reduce(

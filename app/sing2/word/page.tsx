@@ -10,12 +10,12 @@ import MimicLineList from '@/app/components/MimicLineList';
 import Link from 'next/link';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
 import { useSoundEffects } from '@/app/hooks/useSoundEffects';
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson } from '@/app/dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
-import { fetchEvaluation, useEvaluationLog } from '@/app/lib/evaluation';
+import { useEvaluationLog } from '@/app/lib/evaluation';
 import { useRequireModeAccess } from '@/app/lib/useRequireModeAccess';
-import { getLessonMedia, lessonPath, lessonSelectHref, isBookId } from '@/app/lib/lessonMedia';
+import { getLessonMedia, lessonSelectHref, BOOK_SCENE_COUNT, isBookId } from '@/app/lib/lessonMedia';
 import LessonShell from '@/app/components/LessonShell';
 import LessonCompletionActions from '@/app/components/LessonCompletionActions';
 import { FullscreenIcon, HeaderIconButton } from '@/app/components/HeaderIcons';
@@ -102,9 +102,9 @@ function WordPageContent() {
   const [isLineListOpen, setIsLineListOpen] = useState(false);
   const [lockHint, setLockHint] = useState(false);
   const [isChameleonEating, setIsChameleonEating] = useState(false);
-  const [completionError, setCompletionError] = useState('');
-  const [wordRetryCount, setWordRetryCount] = useState(0);
-  const finalSavePromiseRef = useRef<Promise<void> | null>(null);
+
+  const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
+  const pack = parsePack(movieId);
 
   const clearStepTimeout = useCallback(() => {
     if (stepTimeoutRef.current) {
@@ -155,9 +155,6 @@ function WordPageContent() {
       setShowStartOverlay(true);
       setIsStarted(false);
       setShowCompletion(false);
-      setCompletionError('');
-      setWordRetryCount(0);
-      finalSavePromiseRef.current = null;
 
       const contentLesson = parseLessonNumber(movieId);
       const packName = parsePack(movieId);
@@ -180,12 +177,6 @@ function WordPageContent() {
         setSupabaseLessonData(lesson as LessonDataType);
         setVideoUrl(getLessonMedia(movieId).src);
         setLessonData({ word: lesson.word_data || [] });
-        void fetchEvaluation(progressLesson, 'word').then((payload) => {
-          const attempts = Array.isArray(payload.attempts)
-            ? (payload.attempts as Record<string, unknown>[])
-            : [];
-          setWordRetryCount(attempts.filter((attempt) => !attempt.isCorrect).length);
-        });
 
         try {
           const progress = await getProgressByMode(progressLesson, 'word');
@@ -198,7 +189,6 @@ function WordPageContent() {
               maxQuestionRef.current = Math.max(maxQuestionRef.current, q);
             }
             if (progress.completed) {
-              finalSavePromiseRef.current = Promise.resolve();
               setShowStartOverlay(false);
               setShowCompletion(true);
             }
@@ -242,42 +232,37 @@ function WordPageContent() {
     return () => clearInterval(saveProgressInterval);
   }, [lessonNumber, isStarted, currentQuestionNumber, totalQuestions, selectedWords]);
 
-  const persistWordCompletion = useCallback(() => {
-    if (finalSavePromiseRef.current) return finalSavePromiseRef.current;
-    const completedAt = new Date().toISOString();
-    const performanceScore = Math.round(
-      (totalQuestions / Math.max(totalQuestions, totalQuestions + wordRetryCount)) * 100
-    );
-    const promise = (async () => {
-      await saveProgress(lessonNumber, 'word', true, totalQuestions, {
-        currentQuestion: totalQuestions,
-        totalQuestions,
-        isComplete: true,
-        completed_at: completedAt,
-      });
-      await Promise.allSettled([
-        saveResult(
-          lessonNumber,
-          'word',
-          performanceScore,
-          totalQuestions,
-          totalQuestions + wordRetryCount,
-          Date.now()
-        ),
-        saveLog(lessonNumber, 'word', 'word_completed', {
-          totalQuestions,
-          completed_at: completedAt,
-        }),
-      ]);
-      setCompletionError('');
-    })().catch((error) => {
-      finalSavePromiseRef.current = null;
-      setCompletionError('완료 기록을 저장하지 못했어요. 다시 눌러 주세요.');
-      throw error;
-    });
-    finalSavePromiseRef.current = promise;
-    return promise;
-  }, [lessonNumber, totalQuestions, wordRetryCount]);
+  useEffect(() => {
+    if (currentQuestionNumber > totalQuestions && lessonNumber) {
+      const saveFinalProgress = async () => {
+        try {
+          await saveProgress(lessonNumber, 'word', true, currentQuestionNumber, {
+            currentQuestion: currentQuestionNumber,
+            totalQuestions,
+            isComplete: true,
+            completed_at: new Date().toISOString(),
+          });
+
+          await saveResult(
+            lessonNumber,
+            'word',
+            100,
+            totalQuestions,
+            totalQuestions,
+            Date.now()
+          );
+
+          await saveLog(lessonNumber, 'word', 'word_completed', {
+            totalQuestions,
+            completed_at: new Date().toISOString(),
+          });
+        } catch (error) {
+          console.error('워드 완료 저장 실패:', error);
+        }
+      };
+      saveFinalProgress();
+    }
+  }, [currentQuestionNumber, totalQuestions, lessonNumber]);
 
   const generateQuestion = useCallback(() => {
     if (!lessonData || !lessonData.word) return;
@@ -486,19 +471,24 @@ function WordPageContent() {
     setShowStartOverlay(true);
     setIsStarted(false);
     setIsPaused(false);
-    setCompletionError('');
-    setWordRetryCount(0);
-    finalSavePromiseRef.current = null;
     isPausedRef.current = false;
   };
 
-  const handleNext = async () => {
-    try {
-      await persistWordCompletion();
-    } catch {
+  const handleNext = () => {
+    const nextChapter = currentChapter + 1;
+    if (isBookId(movieId)) {
+      if (nextChapter <= BOOK_SCENE_COUNT) {
+        window.location.href = lessonSelectHref(formatMovieId(pack, nextChapter));
+        return;
+      }
+      window.location.href = '/';
       return;
     }
-    window.location.href = lessonPath(movieId, 'retelling');
+    if (pack <= 1 && nextChapter <= 12) {
+      window.location.href = `/sing2/selecting?id=${formatMovieId(pack, nextChapter)}`;
+      return;
+    }
+    window.location.href = '/';
   };
 
   const goToQuestion = (n: number) => {
@@ -527,7 +517,6 @@ function WordPageContent() {
   const skipQuestion = () => {
     if (showCompletion) return;
     if (currentQuestionNumber >= totalQuestions) {
-      void persistWordCompletion().catch(() => undefined);
       setShowCompletion(true);
       return;
     }
@@ -569,7 +558,6 @@ function WordPageContent() {
         setHideAllWords(false);
 
         if (currentQuestionNumber >= totalQuestions) {
-          void persistWordCompletion().catch(() => undefined);
           setShowCompletion(true);
         } else {
           playCountRef.current = 0;
@@ -583,7 +571,6 @@ function WordPageContent() {
         }
       }, 2000);
     } else {
-      setWordRetryCount((count) => count + 1);
       playAgainSound();
       setShowAgain(true);
 
@@ -809,19 +796,8 @@ function WordPageContent() {
               )}
 
               {showCompletion && (
-                <div className="lesson-completion-overlay absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/60 pointer-events-none">
-                  <div className="word-achievement">
-                    <span>4 CORE MODES COMPLETE</span>
-                    <h2>Word {totalQuestions}문장을 직접 완성했어요</h2>
-                    <p>완성 문장 {totalQuestions}개 · 다시 도전 {wordRetryCount}회</p>
-                  </div>
-                  <LessonCompletionActions
-                    onAgain={handleAgain}
-                    onNext={() => void handleNext()}
-                    nextLabel="Finale"
-                    nextCaption="내 이야기"
-                  />
-                  {completionError && <p className="pointer-events-auto mt-3 rounded-full bg-black/80 px-4 py-2 text-sm font-bold text-rose-300">{completionError}</p>}
+                <div className="lesson-completion-overlay absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
+                  <LessonCompletionActions onAgain={handleAgain} onNext={handleNext} />
                 </div>
               )}
             </div>
@@ -911,41 +887,6 @@ function WordPageContent() {
               gap: clamp(0.35rem, 1.1vh, 0.85rem);
             }
 
-            .word-achievement {
-              width: min(88vw, 37rem);
-              margin-bottom: clamp(0.8rem, 2vh, 1.35rem);
-              border: 1px solid rgba(255, 255, 255, 0.18);
-              border-radius: 1.25rem;
-              background: rgba(10, 10, 10, 0.78);
-              padding: clamp(0.85rem, 2vw, 1.25rem);
-              text-align: center;
-              backdrop-filter: blur(8px);
-            }
-
-            .word-achievement span {
-              color: #60D96C;
-              font-size: 0.72rem;
-              font-weight: 900;
-              letter-spacing: 0.16em;
-            }
-
-            .word-achievement h2 {
-              margin-top: 0.42rem;
-              color: white;
-              font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
-              font-size: clamp(1.15rem, 2.6vw, 2rem);
-              font-weight: 900;
-              line-height: 1.2;
-              word-break: keep-all;
-            }
-
-            .word-achievement p {
-              margin-top: 0.4rem;
-              color: #d4d4d8;
-              font-size: clamp(0.75rem, 1.3vw, 0.95rem);
-              font-weight: 700;
-            }
-
             .word-submit.is-ready {
               animation: word-chameleon-look-around 2.8s ease-in-out infinite;
               filter: drop-shadow(0 0 0.9rem rgba(96, 217, 108, 0.4));
@@ -1003,22 +944,6 @@ function WordPageContent() {
               .word-submit.is-eating,
               .word-snack {
                 animation: none;
-              }
-            }
-
-            @media (orientation: landscape) and (max-height: 540px) {
-              .word-achievement {
-                margin-bottom: 0.35rem;
-                padding: 0.48rem 0.75rem;
-              }
-
-              .word-achievement h2 {
-                font-size: 0.95rem;
-              }
-
-              .word-achievement p {
-                margin-top: 0.2rem;
-                font-size: 0.68rem;
               }
             }
           `}</style>

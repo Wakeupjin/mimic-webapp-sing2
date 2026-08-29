@@ -26,7 +26,6 @@ type ModeSelectLayoutProps = {
   chapterLabel: string;
   chapters: ChapterSelectItem[];
   modes: ModeSelectItem[];
-  finale?: ModeSelectItem;
   dropdownOpen: boolean;
   onToggleDropdown: () => void;
   dropdownRef: React.RefObject<HTMLDivElement | null>;
@@ -39,7 +38,6 @@ export default function ModeSelectLayout({
   chapterLabel,
   chapters,
   modes,
-  finale,
   dropdownOpen,
   onToggleDropdown,
   dropdownRef,
@@ -107,42 +105,24 @@ export default function ModeSelectLayout({
       </div>
 
       <div className="select-content">
-        <div className="select-learning-flow">
-          <div className="select-modes">
-            {modes.map((mode) => (
-              <div key={mode.id} className={`select-mode-item ${mode.here ? "is-here" : ""}`}>
-                <button
-                  type="button"
-                  onClick={mode.onSelect}
-                  disabled={mode.locked}
-                  className={`select-mode ${
-                    mode.done ? "is-done" : mode.here ? "is-current" : !mode.locked ? "is-open" : ""
-                  }`}
-                >
-                  {mode.here && <img src="/Subject.png" alt="" className="select-chameleon" />}
-                  {mode.done && <span className="select-done" aria-label="완료">✓</span>}
-                  {mode.label}
-                </button>
-                {mode.here && <p className="select-here">현재 단계</p>}
-              </div>
-            ))}
-          </div>
-
-          {finale ? (
-            <button
-              type="button"
-              onClick={finale.onSelect}
-              disabled={finale.locked}
-              className={`select-finale ${
-                finale.done ? "is-done" : finale.here ? "is-current" : !finale.locked ? "is-open" : ""
-              }`}
-            >
-              <span>CHAPTER FINALE</span>
-              <strong>{finale.label}</strong>
-              <small>{finale.locked ? "Word 뒤에 열려요" : finale.done ? "내 이야기 완료" : "내 말로 챕터 끝내기"}</small>
-              {finale.done ? <b aria-label="완료">✓</b> : <b aria-hidden>→</b>}
-            </button>
-          ) : null}
+        <div className="select-modes">
+          {modes.map((mode) => (
+            <div key={mode.id} className={`select-mode-item ${mode.here ? "is-here" : ""}`}>
+              <button
+                type="button"
+                onClick={mode.onSelect}
+                disabled={mode.locked}
+                className={`select-mode ${
+                  mode.done ? "is-done" : mode.here ? "is-current" : !mode.locked ? "is-open" : ""
+                }`}
+              >
+                {mode.here && <img src="/Subject.png" alt="" className="select-chameleon" />}
+                {mode.done && <span className="select-done" aria-label="완료">✓</span>}
+                {mode.label}
+              </button>
+              {mode.here && <p className="select-here">현재 단계</p>}
+            </div>
+          ))}
         </div>
       </div>
     </main>

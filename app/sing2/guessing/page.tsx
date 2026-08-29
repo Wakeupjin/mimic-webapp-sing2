@@ -155,7 +155,6 @@ function GuessingPageContent() {
   const [isPaused, setIsPaused] = useState(false);
   const [nudgeNext, setNudgeNext] = useState(false);
   const [lockHint, setLockHint] = useState(false);
-  const [completionError, setCompletionError] = useState('');
   const videoPlayCountRef = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const autoPlayIndexRef = useRef(0);
@@ -172,7 +171,6 @@ function GuessingPageContent() {
   const abcRunningRef = useRef(false);
   const longPressTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressFiredRef = useRef(false);
-  const finalSavePromiseRef = useRef<Promise<void> | null>(null);
 
   const clearStepTimeout = useCallback(() => {
     if (stepTimeoutRef.current) {
@@ -272,8 +270,6 @@ function GuessingPageContent() {
         setIsGuessingStarted(false);
         setIsGuessingComplete(false);
         setShowResults(false);
-        setCompletionError('');
-        finalSavePromiseRef.current = null;
         dataLoadedRef.current = true; // 로딩 시작 시 바로 플래그 설정
 
         const contentLesson = parseLessonNumber(movieId);
@@ -313,7 +309,6 @@ function GuessingPageContent() {
             setCurrentIndex(idx);
             maxQuestionRef.current = idx;
             if (progress.completed) {
-              finalSavePromiseRef.current = Promise.resolve();
               setIsGuessingComplete(true);
               setShowResults(true);
             }
@@ -362,36 +357,46 @@ function GuessingPageContent() {
     return () => clearInterval(saveProgressInterval);
   }, [lessonNumber, isGuessingStarted, currentQuestion, isGuessingComplete, totalQuestions, correctCount]);
 
-  const persistGuessingCompletion = useCallback((finalCorrectCount = correctCount) => {
-    if (finalSavePromiseRef.current) return finalSavePromiseRef.current;
-    const completedAt = new Date().toISOString();
-    const score = Math.round((finalCorrectCount / Math.max(totalQuestions, 1)) * 100);
-    const promise = (async () => {
-      await saveProgress(lessonNumber, 'guessing', true, currentQuestionIndex, {
-        currentQuestion: currentQuestionIndex,
-        totalQuestions,
-        correctCount: finalCorrectCount,
-        isComplete: true,
-        completed_at: completedAt,
-      });
-      await Promise.allSettled([
-        saveResult(lessonNumber, 'guessing', score, finalCorrectCount, totalQuestions, Date.now()),
-        saveLog(lessonNumber, 'guessing', 'guessing_completed', {
-          totalQuestions,
-          correctCount: finalCorrectCount,
-          score,
-          completed_at: completedAt,
-        }),
-      ]);
-      setCompletionError('');
-    })().catch((error) => {
-      finalSavePromiseRef.current = null;
-      setCompletionError('완료 기록을 저장하지 못했어요. 다시 눌러 주세요.');
-      throw error;
-    });
-    finalSavePromiseRef.current = promise;
-    return promise;
-  }, [correctCount, currentQuestionIndex, lessonNumber, totalQuestions]);
+  // 게싱 완료 시 최종 저장
+  useEffect(() => {
+    if (isGuessingComplete && lessonNumber) {
+      const saveFinalProgress = async () => {
+        try {
+          // 진도 저장
+          await saveProgress(lessonNumber, 'guessing', true, currentQuestion, JSON.stringify({
+            currentQuestion: currentQuestion,
+            totalQuestions: totalQuestions,
+            correctCount: correctCount,
+            isComplete: true,
+            completed_at: new Date().toISOString()
+          }));
+          
+          // 결과 저장
+          const score = Math.round((correctCount / totalQuestions) * 100);
+          await saveResult(
+            lessonNumber,
+            'guessing',
+            score,
+            correctCount,
+            totalQuestions,
+            Date.now() // 시간은 임시로 현재 시간 사용
+          );
+          
+          // 로그 저장
+          await saveLog(lessonNumber, 'guessing', 'guessing_completed', {
+            totalQuestions: totalQuestions,
+            correctCount: correctCount,
+            score: score,
+            completed_at: new Date().toISOString()
+          });
+          
+        } catch (error) {
+          console.error('게싱 완료 저장 실패:', error);
+        }
+      };
+      saveFinalProgress();
+    }
+  }, [isGuessingComplete, lessonNumber, currentQuestion, totalQuestions, correctCount]);
 
 
   // 영상 재생 중 중앙 시점에서 스크린샷을 찍는 함수 (비활성화)
@@ -654,14 +659,11 @@ function GuessingPageContent() {
   ]);
 
   const restartGuessing = useCallback(() => {
-    finalSavePromiseRef.current = null;
-    setIsGuessingComplete(false);
-    setCompletionError('');
     maxQuestionRef.current = 0;
     setCorrectCount(0);
     setUserAnswers([]);
     jumpToQuestion(0);
-  }, [setCorrectCount, setIsGuessingComplete, setUserAnswers, jumpToQuestion]);
+  }, [setCorrectCount, setUserAnswers, jumpToQuestion]);
 
   const canSelectAnswer = allOptionsPlayed && !isPaused && !showCorrect && !showAgain && !nudgeNext && !showResults;
 
@@ -688,8 +690,7 @@ function GuessingPageContent() {
     handleAnswerSelect(selectedAnswer, correctAnswer);
 
     if (isCorrect) {
-      const earnsPoint = !missedThisQuestionRef.current;
-      if (earnsPoint) {
+      if (!missedThisQuestionRef.current) {
         setCorrectCount((count) => count + 1);
       }
       setUserAnswers((prev) => [...prev, selectedAnswer]);
@@ -706,9 +707,7 @@ function GuessingPageContent() {
             }, 1600);
           }
         } else {
-          setIsGuessingComplete(true);
           setShowResults(true);
-          void persistGuessingCompletion(correctCount + (earnsPoint ? 1 : 0)).catch(() => undefined);
         }
       }, GUESSING_ANSWER_FEEDBACK_DURATION);
     } else {
@@ -742,8 +741,6 @@ function GuessingPageContent() {
     isMaster,
     goToNextQuestion,
     clearStepTimeout,
-    correctCount,
-    persistGuessingCompletion,
   ]); 
   if (loading || checking) {
     return (
@@ -972,17 +969,10 @@ function GuessingPageContent() {
             )}
 
             {showResults && (
-              <div className="lesson-completion-overlay absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/60 pointer-events-none">
+              <div className="lesson-completion-overlay absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
                 <LessonCompletionActions
                   onAgain={restartGuessing}
-                  onNext={async () => {
-                    try {
-                      await persistGuessingCompletion(correctCount);
-                    } catch (error) {
-                      console.warn('Word 이동 전 진도 저장 실패:', error);
-                      setCompletionError('완료 기록을 저장하지 못했어요. 다시 눌러 주세요.');
-                      return;
-                    }
+                  onNext={() => {
                     stopAllMedia();
                     if (document.fullscreenElement) {
                       sessionStorage.setItem("maintainFullscreen", "true");
@@ -990,7 +980,6 @@ function GuessingPageContent() {
                     window.location.href = lessonPath(movieId, 'word');
                   }}
                 />
-                {completionError && <p className="pointer-events-auto mt-3 rounded-full bg-black/80 px-4 py-2 text-sm font-bold text-rose-300">{completionError}</p>}
               </div>
             )}
         </div>

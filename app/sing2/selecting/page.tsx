@@ -16,14 +16,12 @@ import {
   isMasterRole,
   isModeCompleted,
   MODE_ORDER,
-  type CoreLearnMode,
   type LearnMode,
   type ProgressRow,
 } from '../../lib/progressGate';
 import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
 import ModeSelectLayout from '../../components/ModeSelectLayout'; 
 import AccountMenu from '../../components/AccountMenu';
-import { lessonPath } from '../../lib/lessonMedia';
 
 // Lesson 목록 데이터 타입 (lessons 테이블에서 가져올 정보)
 type LessonSummary = {
@@ -170,7 +168,15 @@ function SelectingPageContent() {
 
     const movieId = formatMovieId(pack, selectedLesson.lesson_number);
     
-    window.location.href = lessonPath(movieId, mode);
+    if (mode === 'mimicking') {
+      window.location.href = `/sing2/mimicking?id=${movieId}`;
+    } else if (mode === 'guessing') {
+      window.location.href = `/sing2/guessing?id=${movieId}`;
+    } else if (mode === 'watching') {
+      window.location.href = `/sing2/watching?id=${movieId}`;
+    } else if (mode === 'word') {
+      window.location.href = `/sing2/word?id=${movieId}`;
+    }
   };
 
   
@@ -209,7 +215,7 @@ function SelectingPageContent() {
   const hereMode =
     MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode));
 
-  const MODE_LABEL: Record<CoreLearnMode, string> = {
+  const MODE_LABEL: Record<LearnMode, string> = {
     watching: 'Watch',
     mimicking: 'Mimic',
     guessing: 'Guess',
@@ -256,16 +262,6 @@ function SelectingPageContent() {
         open: isMaster,
         onSelect: () => handleModeSelect(mode),
       }))}
-      finale={{
-        id: 'retelling',
-        label: 'My Voice',
-        locked: !modeOpen('retelling'),
-        done: isModeCompleted(progressRows, progressLesson, 'retelling'),
-        here: isModeCompleted(progressRows, progressLesson, 'word')
-          && !isModeCompleted(progressRows, progressLesson, 'retelling'),
-        open: isMaster,
-        onSelect: () => handleModeSelect('retelling'),
-      }}
     />
   );
 }

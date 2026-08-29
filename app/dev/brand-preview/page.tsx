@@ -11,7 +11,7 @@ import { formatMovieId } from "../../dataService";
 import { signupPath } from "../../lib/authRedirect";
 import { lessonPath } from "../../lib/lessonMedia";
 import { placementStorageKey } from "../../lib/placement";
-import { fetchOwnProgress, MODE_ORDER, type CoreLearnMode, type ProgressRow } from "../../lib/progressGate";
+import { fetchOwnProgress, MODE_ORDER, type LearnMode, type ProgressRow } from "../../lib/progressGate";
 import styles from "./brand-preview.module.css";
 
 type Language = "ko" | "en";
@@ -53,7 +53,6 @@ const copy = {
       ["GUESS", "알맞은 표현 고르기"],
       ["WORD", "단어로 문장 완성하기"],
     ],
-    finale: ["CHAPTER FINALE", "네 가지 연습이 끝나면, 장면을 내 말로 다시 들려줘요."],
     libraryTitle: "영어가 내 말이 되는 순간.",
     libraryBody: "어떤 장면을 연습했고 어떻게 달라졌는지, 아이의 학습 과정을 기록해요.",
     notes: [
@@ -105,7 +104,6 @@ const copy = {
       ["GUESS", "Catch what you heard"],
       ["WORD", "Build the line yourself"],
     ],
-    finale: ["CHAPTER FINALE", "After the four practices, tell the chapter in your own voice."],
     libraryTitle: "WHEN ENGLISH SOUNDS LIKE YOU.",
     libraryBody: "Field notes on practice, stories, and the small changes that prove real learning is happening.",
     notes: [
@@ -130,15 +128,16 @@ type HomeProgressRow = ProgressRow & { updated_at?: string | null };
 type ResumeTarget = { href: string; ko: string; en: string };
 
 function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
-  const coreRows = rows.filter((row) => MODE_ORDER.includes(row.mode as CoreLearnMode));
-  if (!coreRows.length) return null;
-  const latest = [...coreRows].sort((a, b) => {
+  if (!rows.length) return null;
+  const latest = [...rows].sort((a, b) => {
     const byTime = Date.parse(b.updated_at || "") - Date.parse(a.updated_at || "");
     if (Number.isFinite(byTime) && byTime !== 0) return byTime;
     return b.lesson_number - a.lesson_number;
   })[0];
+  if (!MODE_ORDER.includes(latest.mode as LearnMode)) return null;
+
   let lessonNumber = latest.lesson_number;
-  let mode = latest.mode as CoreLearnMode;
+  let mode = latest.mode as LearnMode;
   if (latest.completed) {
     const nextMode = MODE_ORDER[MODE_ORDER.indexOf(mode) + 1];
     if (nextMode) mode = nextMode;
@@ -375,15 +374,10 @@ export default function BrandPreviewPage() {
         </div>
         <div className={styles.steps}>
           {t.steps.map((step, index) => (
-            <article key={step[0]} className={`${styles.step} ${styles[tones[index % tones.length]]}`}>
+            <article key={step[0]} className={`${styles.step} ${styles[tones[index]]}`}>
               <span>0{index + 1}</span><h3>{step[0]}</h3><p>{step[1]}</p><b aria-hidden="true">↗</b>
             </article>
           ))}
-        </div>
-        <div className={styles.finale}>
-          <span>{t.finale[0]}</span>
-          <p>{t.finale[1]}</p>
-          <b aria-hidden="true">→ MY VOICE</b>
         </div>
       </section>
 

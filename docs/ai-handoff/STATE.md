@@ -18,35 +18,35 @@ IN PROGRESS
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Replace the decorative Story Finale with a meaning-first AI retell conversation and contextual scene hints
+Remove Story Finale from production and move it to the product backlog
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Built a linear meaning-first Story Finale: explicit OpenAI consent, child voice transcription and semantic AI follow-up, contextual scene hints only when needed, and completion metrics without raw audio or transcript persistence.
+Reverted PRs #35, #34, and #33 in reverse order, removing Story Finale UI, routes, progress integration, and the story-conversation API. The app now exactly matches pre-Story commit 8ab9d7b and the concept is documented in the product backlog with re-entry gates.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/sing2/retelling/StoryRetellExperience.tsx, app/sing2/retelling/page.tsx, app/api/story-conversation/route.ts, app/lib/storyConversation.ts, app/types/storyConversation.ts, app/types/storyRetell.ts
+- docs/product-backlog.md plus reverse reverts of the Story Finale files from PRs #33-#35
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-TypeScript and production build passed before final copy refinements; browser QA passed at 1280x720, 390x844, and 320x568 for consent, prompt, response, and scene-hint states.
+npx tsc --noEmit passed; npx next build passed with no /sing2/retelling, /book/retelling, or /api/story-conversation route; app diff against pre-Story commit 8ab9d7b is empty.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Live OpenAI voice-turn smoke testing depends on OPENAI_API_KEY being configured in Vercel; automated QA did not accept microphone permission.
+Existing retelling evaluation rows may remain in Supabase but are no longer read or shown; no production data was changed.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Verify final build, confirm Vercel API key availability, then deploy through a reviewed PR and smoke-test production.
+Commit the backlog note, push a PR, verify Vercel preview, merge, then confirm the production selector and route no longer expose Story Finale.
 <!-- HANDOFF:NEXT_ACTION:END -->

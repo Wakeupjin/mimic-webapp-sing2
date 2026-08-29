@@ -11,7 +11,6 @@ const MODE_LABEL: Record<string, string> = {
   watching: 'Watch',
   mimicking: 'Mimic',
   guessing: 'Guess',
-  retelling: 'Finale',
   word: 'Word',
 };
 
@@ -99,19 +98,6 @@ function EvaluationDetail({
             </li>
           ))}
         </ul>
-      </div>
-    );
-  }
-
-  if (mode === 'retelling') {
-    const usedFallback = Boolean(payload.usedFallback);
-    return (
-      <div className="admin-eval mt-3 space-y-1">
-        <p>{usedFallback ? '마이크 없이 직접 말하기로 완료' : `자기 말로 이야기 ${Number(payload.turnCount || 0)}회 · 말하기 ${formatInvested(payload.speakingSeconds)}`}</p>
-        <p>열린 질문: {Number(payload.questionCount || 0)}회</p>
-        <p className="text-[#9ca3af]">
-          녹음·받아쓰기는 저장하지 않음
-        </p>
       </div>
     );
   }
@@ -300,20 +286,6 @@ export default function AdminPage() {
                       </button>
                     );
                   })}
-                  {(() => {
-                    const mode = 'retelling';
-                    const done = selected.progressByLesson[lesson]?.[mode];
-                    const isOn = openCell?.lesson === lesson && openCell?.mode === mode;
-                    return (
-                      <button
-                        type="button"
-                        onClick={() => setOpenCell(isOn ? null : { lesson, mode })}
-                        className={`admin-mode is-finale ${done ? 'is-open' : ''} ${isOn ? 'is-on' : ''}`}
-                      >
-                        Finale{done ? ' ✓' : ''}
-                      </button>
-                    );
-                  })()}
                 </div>
                 {openCell?.lesson === lesson && (
                   <EvaluationDetail

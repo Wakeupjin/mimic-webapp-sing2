@@ -139,17 +139,6 @@ function BookSelectingContent() {
         open: isMaster && hasContent,
         onSelect: () => openMode(mode.learn),
       }))}
-      finale={{
-        id: "retelling",
-        label: "My Voice",
-        locked: !modeOpen("retelling"),
-        done: hasContent && isModeCompleted(progressRows, progressLesson, "retelling"),
-        here: hasContent
-          && isModeCompleted(progressRows, progressLesson, "word")
-          && !isModeCompleted(progressRows, progressLesson, "retelling"),
-        open: isMaster && hasContent,
-        onSelect: () => openMode("retelling"),
-      }}
     />
   );
 }
