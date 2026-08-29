@@ -550,3 +550,13 @@ Built a linear meaning-first Story Finale: explicit OpenAI consent, child voice 
 - app/sing2/retelling/StoryRetellExperience.tsx, app/sing2/retelling/page.tsx, app/api/story-conversation/route.ts, app/lib/storyConversation.ts, app/types/storyConversation.ts, app/types/storyRetell.ts
 
 **Open risks:** Live OpenAI voice-turn smoke testing depends on OPENAI_API_KEY being configured in Vercel; automated QA did not accept microphone permission.
+
+## 2026-08-29 17:07:29 — Codex / work started
+
+Objective: Remove Story Finale from production and move it to the product backlog
+
+
+## 2026-08-29 17:07:29 — user / request
+
+Remove the current Story Finale from the deployed service and move the concept to the backlog.
+

@@ -18,35 +18,35 @@ IN PROGRESS
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Replace the decorative Story Finale with a meaning-first AI retell conversation and contextual scene hints
+Remove Story Finale from production and move it to the product backlog
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Built a linear meaning-first Story Finale: explicit OpenAI consent, child voice transcription and semantic AI follow-up, contextual scene hints only when needed, and completion metrics without raw audio or transcript persistence.
+New objective claimed by Codex. No implementation checkpoint has been saved yet.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/sing2/retelling/StoryRetellExperience.tsx, app/sing2/retelling/page.tsx, app/api/story-conversation/route.ts, app/lib/storyConversation.ts, app/types/storyConversation.ts, app/types/storyRetell.ts
+- None identified yet.
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-TypeScript and production build passed before final copy refinements; browser QA passed at 1280x720, 390x844, and 320x568 for consent, prompt, response, and scene-hint states.
+Not run yet.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Live OpenAI voice-turn smoke testing depends on OPENAI_API_KEY being configured in Vercel; automated QA did not accept microphone permission.
+None recorded yet.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Verify final build, confirm Vercel API key availability, then deploy through a reviewed PR and smoke-test production.
+Continue the active objective and save a checkpoint before responding or switching agents.
 <!-- HANDOFF:NEXT_ACTION:END -->
