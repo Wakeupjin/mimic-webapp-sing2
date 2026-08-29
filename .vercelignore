@@ -3,6 +3,8 @@ public/videos/
 assets/
 *.mp4
 *.mp3
+!public/prototype-audio/pinocchio-levels/voices/lily-british/*.mp3
+!public/prototype-audio/pinocchio-levels/voices/lily-american/*.mp3
 *.mov
 *.avi
 node_modules/
