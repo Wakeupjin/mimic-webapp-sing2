@@ -33,6 +33,9 @@ sequence. The current MVP uses *Sing 2* video lessons and a public-domain
 - Resume should continue at the saved line, but a completed mode must reopen in
   a deliberate replay state rather than unexpectedly autoplaying its last line.
 - Onboarding timing and language should feel consistent across modes.
+- Mimic and Mimic Check never reveal the target English sentence. Learners
+  listen first, then use the same scene without sound as the speaking cue;
+  replaying the sound is an optional recovery action rather than the default.
 
 ## Product and design rules
 

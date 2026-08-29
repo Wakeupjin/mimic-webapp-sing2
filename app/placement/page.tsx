@@ -425,6 +425,16 @@ export default function PlacementPage() {
             continueLabel="다음으로"
             fallbackLabel="이번에는 건너뛰기"
             showScore={false}
+            showTranscript={activeCoach === 'reading'}
+            mimicCue={
+              activeCoach === 'reading'
+                ? undefined
+                : {
+                    src: VIDEO_URL,
+                    start: VOICE_TASKS[activeCoach].start,
+                    end: VOICE_TASKS[activeCoach].end,
+                  }
+            }
             onResult={() => undefined}
             onContinue={(coachResult) => continueAfterVoice(activeCoach, voiceResult(coachResult))}
             onFallback={() => continueAfterVoice(activeCoach, null)}

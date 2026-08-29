@@ -12,41 +12,41 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-IN PROGRESS
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Deploy the verified movie portrait controls to production through the existing GitHub and Vercel pipeline
+Replace Mimic Check memory prompt with same-segment muted scene replay while never exposing the English sentence
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Deployment branch is clean, build-verified, and exactly one commit ahead of current origin/main with no divergence. Push was not executed because the host requires explicit approval to send the private source branch to the configured GitHub remote.
+Mimic Check is now scene-led rather than memory-led: the learner receives the same clip muted, can replay sound only when needed, and never sees the target English sentence or Mimic transcript.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
+- app/components/AiCoachPanel.tsx, app/placement/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-origin/main fetched successfully; branch divergence is 0 behind and 1 ahead; working tree was clean before the deployment handoff update; production build already passed.
+Production build passed; responsive browser QA passed; muted and sound replay behaviors were verified against the real Sing 2 media segment.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
+A real microphone permission and AI response run still requires an authenticated user and was not triggered during automated browser QA.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-After explicit user approval, commit this handoff checkpoint, push codex/movie-portrait-controls to https://github.com/Wakeupjin/mimic-webapp-sing2.git, create and merge the PR, then verify the production Vercel URL.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->

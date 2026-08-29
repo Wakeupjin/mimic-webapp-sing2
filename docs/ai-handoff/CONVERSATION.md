@@ -421,3 +421,32 @@ Deployment branch is clean, build-verified, and exactly one commit ahead of curr
 - docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
 
 **Open risks:** GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
+
+## 2026-08-29 12:10:56 — codex / work started
+
+Objective: Replace Mimic Check memory prompt with same-segment muted scene replay while never exposing the English sentence
+
+
+## 2026-08-29 12:11:02 — user / request
+
+Implement Mimic Check as sentence-hidden same-scene muted replay, with sound replay available only when needed.
+
+## 2026-08-29 12:18:34 — codex / checkpoint
+
+Mimic Check now replays the exact target video segment muted on entry and again when recording starts; optional sound replay is available, while target and transcript text remain hidden for Mimic tasks.
+
+**Next action:** Keep the branch local for user review; push or deploy only after explicit approval.
+
+**Validation:** TypeScript and production build passed. Browser fixture confirmed muted autoplay, exact segment stop/reset, optional sound replay, no target sentence in DOM, and no horizontal overflow on phone, pad, or desktop.
+
+**Files:**
+- app/components/AiCoachPanel.tsx, app/placement/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
+
+**Open risks:** A real microphone permission and AI response run still requires an authenticated user and was not triggered during automated browser QA.
+
+
+## 2026-08-29 12:18:34 — codex / completed
+
+Mimic Check is now scene-led rather than memory-led: the learner receives the same clip muted, can replay sound only when needed, and never sees the target English sentence or Mimic transcript.
+
+**Validation:** Production build passed; responsive browser QA passed; muted and sound replay behaviors were verified against the real Sing 2 media segment.
