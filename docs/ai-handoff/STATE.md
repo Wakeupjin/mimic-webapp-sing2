@@ -12,41 +12,41 @@ Codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-COMPLETE
+IN PROGRESS
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Render Sing 2 selecting only after profile, lesson list, and progress are all ready so the first visible state never repaints
+Replace the decorative Story Finale with a meaning-first AI retell conversation and contextual scene hints
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
+Built a linear meaning-first Story Finale: explicit OpenAI consent, child voice transcription and semantic AI follow-up, contextual scene hints only when needed, and completion metrics without raw audio or transcript persistence.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/contexts/AuthContext.tsx, app/components/AuthGate.tsx, app/sing2/selecting/page.tsx
+- app/sing2/retelling/StoryRetellExperience.tsx, app/sing2/retelling/page.tsx, app/api/story-conversation/route.ts, app/lib/storyConversation.ts, app/types/storyConversation.ts, app/types/storyRetell.ts
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Production build passed and delayed-data browser verification passed.
+TypeScript and production build passed before final copy refinements; browser QA passed at 1280x720, 390x844, and 320x568 for consent, prompt, response, and scene-hint states.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-The signed-in production account still needs a smoke test after a future deployment; this change has not been deployed.
+Live OpenAI voice-turn smoke testing depends on OPENAI_API_KEY being configured in Vercel; automated QA did not accept microphone permission.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Wait for the next user request. Begin a new objective before making unrelated changes.
+Verify final build, confirm Vercel API key availability, then deploy through a reviewed PR and smoke-test production.
 <!-- HANDOFF:NEXT_ACTION:END -->
