@@ -522,3 +522,31 @@ Selecting now waits for the initial account profile, lesson list, and progress t
 Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
 
 **Validation:** Production build passed and delayed-data browser verification passed.
+
+## 2026-08-29 15:34:46 — Codex / work started
+
+Objective: Replace the decorative Story Finale with a meaning-first AI retell conversation and contextual scene hints
+
+
+## 2026-08-29 15:34:47 — user / request
+
+Replace BEGIN/MIDDLE/END and the decorative Finale with a clear interactive story conversation where component roles are obvious.
+
+
+## 2026-08-29 15:34:47 — user / decision
+
+Explicitly approved sending child recorded audio to the OpenAI API for analysis. Mimic must not persist raw audio or transcripts and must disclose the transfer before recording.
+
+
+## 2026-08-29 15:34:47 — Codex / checkpoint
+
+Built a linear meaning-first Story Finale: explicit OpenAI consent, child voice transcription and semantic AI follow-up, contextual scene hints only when needed, and completion metrics without raw audio or transcript persistence.
+
+**Next action:** Verify final build, confirm Vercel API key availability, then deploy through a reviewed PR and smoke-test production.
+
+**Validation:** TypeScript and production build passed before final copy refinements; browser QA passed at 1280x720, 390x844, and 320x568 for consent, prompt, response, and scene-hint states.
+
+**Files:**
+- app/sing2/retelling/StoryRetellExperience.tsx, app/sing2/retelling/page.tsx, app/api/story-conversation/route.ts, app/lib/storyConversation.ts, app/types/storyConversation.ts, app/types/storyRetell.ts
+
+**Open risks:** Live OpenAI voice-turn smoke testing depends on OPENAI_API_KEY being configured in Vercel; automated QA did not accept microphone permission.
