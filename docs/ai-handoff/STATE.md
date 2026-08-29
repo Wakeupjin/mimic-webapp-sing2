@@ -12,41 +12,41 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-COMPLETE
+IN PROGRESS
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Move the Sing 2 preview into the hero and simplify the monthly section into a clear movie-to-book path
+Deploy the verified movie portrait controls to production through the existing GitHub and Vercel pipeline
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
+Deployment branch is clean, build-verified, and exactly one commit ahead of current origin/main with no divergence. Push was not executed because the host requires explicit approval to send the private source branch to the configured GitHub remote.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/Sing2Preview.tsx, app/dev/brand-preview/page.tsx, app/dev/brand-preview/brand-preview.module.css
+- docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.
+origin/main fetched successfully; branch divergence is 0 behind and 1 ahead; working tree was clean before the deployment handoff update; production build already passed.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Logo still uses the pre-existing cursive fallback because Jolly Lodger is not loaded; not changed in this redesign.
+GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Wait for the next user request. Begin a new objective before making unrelated changes.
+After explicit user approval, commit this handoff checkpoint, push codex/movie-portrait-controls to https://github.com/Wakeupjin/mimic-webapp-sing2.git, create and merge the PR, then verify the production Vercel URL.
 <!-- HANDOFF:NEXT_ACTION:END -->

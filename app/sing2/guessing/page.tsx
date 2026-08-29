@@ -23,6 +23,7 @@ import ClickToStartOverlay from "../../components/ClickToStartOverlay";
 import GuessingOverlays from "../../components/GuessingOverlays";
 import MimicLineList from "../../components/MimicLineList";
 import LessonShell from "../../components/LessonShell";
+import LessonCompletionActions from "../../components/LessonCompletionActions";
 import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import ControlTriangle from "../../components/ControlTriangle";
 import PauseOverlay from "../../components/PauseOverlay";
@@ -812,6 +813,7 @@ function GuessingPageContent() {
   return (
     <LessonShell
       hideHeader
+      stageClassName={`learning-stage learning-stage-guess ${isBookLesson ? "learning-content-book" : "learning-content-movie"}`}
       videoHighlight={isClipPlaying || Boolean(playingAudio)}
       video={
         <div className="relative h-full w-full">
@@ -892,7 +894,7 @@ function GuessingPageContent() {
               >
                 <img src="/home/back.svg" alt="" className="h-full w-full" />
               </Link>
-              <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+              <div className="lesson-top-actions absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
                 <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
                   <FullscreenIcon active={isFullscreen} />
                 </HeaderIconButton>
@@ -967,38 +969,23 @@ function GuessingPageContent() {
             )}
 
             {showResults && (
-              <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
-                <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                    <button type="button" className="select-mode" onClick={restartGuessing}>
-                      Again
-                    </button>
-                    <p className="select-here" style={{ visibility: "hidden" }}>Let’s go</p>
-                  </div>
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                    <button
-                      type="button"
-                      className="select-mode is-open"
-                      onClick={() => {
-                        stopAllMedia();
-                        if (document.fullscreenElement) {
-                          sessionStorage.setItem("maintainFullscreen", "true");
-                        }
-                        window.location.href = lessonPath(movieId, 'word');
-                      }}
-                    >
-                      <img src="/Subject.png" alt="" className="select-chameleon" />
-                      Next
-                    </button>
-                    <p className="cta-go">Let’s go</p>
-                  </div>
-                </div>
+              <div className="lesson-completion-overlay absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
+                <LessonCompletionActions
+                  onAgain={restartGuessing}
+                  onNext={() => {
+                    stopAllMedia();
+                    if (document.fullscreenElement) {
+                      sessionStorage.setItem("maintainFullscreen", "true");
+                    }
+                    window.location.href = lessonPath(movieId, 'word');
+                  }}
+                />
               </div>
             )}
         </div>
       }
       controls={
-          <div className="guess-dock">
+          <div className="lesson-dock guess-dock">
             <div className="guess-abc">
               <ControlTriangle
                 direction="left"

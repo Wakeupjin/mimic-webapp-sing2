@@ -17,6 +17,7 @@ import { useEvaluationLog } from '@/app/lib/evaluation';
 import { useRequireModeAccess } from '@/app/lib/useRequireModeAccess';
 import { getLessonMedia, lessonSelectHref, BOOK_SCENE_COUNT, isBookId } from '@/app/lib/lessonMedia';
 import LessonShell from '@/app/components/LessonShell';
+import LessonCompletionActions from '@/app/components/LessonCompletionActions';
 import { FullscreenIcon, HeaderIconButton } from '@/app/components/HeaderIcons';
 import ControlTriangle from '@/app/components/ControlTriangle';
 
@@ -53,6 +54,7 @@ function WordPageContent() {
   const searchParams = useSearchParams();
   const movieId = searchParams.get('id') || '001:1';
   const media = getLessonMedia(movieId);
+  const isBookLesson = isBookId(movieId);
 
   const [supabaseLessonData, setSupabaseLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
@@ -670,7 +672,11 @@ function WordPageContent() {
     !showCompletion;
 
   return (
-    <LessonShell hideHeader compactStage>
+    <LessonShell
+      hideHeader
+      compactStage
+      stageClassName={`learning-stage learning-stage-word ${isBookLesson ? 'learning-content-book' : 'learning-content-movie'}`}
+    >
       <div className={`word-board ${gamePhase === 'guessing' && !showCompletion ? 'is-arranging' : ''}`}>
         <div className="word-chips-side">
           {gamePhase === 'guessing' && leftWords.map((word, i) => renderWordChip(word, i))}
@@ -728,7 +734,7 @@ function WordPageContent() {
               >
                 <img src="/home/back.svg" alt="" className="h-full w-full" />
               </Link>
-              <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+              <div className="lesson-top-actions absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
                 <HeaderIconButton label={isFullscreen ? '전체화면 종료' : '전체화면'} onClick={toggleFullscreen}>
                   <FullscreenIcon active={isFullscreen} />
                 </HeaderIconButton>
@@ -790,22 +796,8 @@ function WordPageContent() {
               )}
 
               {showCompletion && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
-                  <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
-                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                      <button type="button" className="select-mode" onClick={handleAgain}>
-                        Again
-                      </button>
-                      <p className="select-here" style={{ visibility: 'hidden' }}>Let’s go</p>
-                    </div>
-                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                      <button type="button" className="select-mode is-open" onClick={handleNext}>
-                        <img src="/Subject.png" alt="" className="select-chameleon" />
-                        Next
-                      </button>
-                      <p className="cta-go">Let’s go</p>
-                    </div>
-                  </div>
+                <div className="lesson-completion-overlay absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
+                  <LessonCompletionActions onAgain={handleAgain} onNext={handleNext} />
                 </div>
               )}
             </div>
@@ -816,7 +808,7 @@ function WordPageContent() {
               shuffled.map((word, index) => renderWordChip(word, index, true))}
           </div>
 
-          <div className="word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
+          <div className="lesson-dock word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
             <div className="word-bar">
               <ControlTriangle
                 direction="left"
