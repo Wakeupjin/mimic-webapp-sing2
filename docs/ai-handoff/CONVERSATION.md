@@ -421,3 +421,14 @@ Deployment branch is clean, build-verified, and exactly one commit ahead of curr
 - docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
 
 **Open risks:** GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
+
+## 2026-08-29 11:16:55 — codex / validation
+
+PR #31 merged to main at f0445dc; Vercel production status succeeded; production phone portrait smoke test at 390x844 loaded Watch and Mimic without RotateGate, overflow, or clipped controls.
+
+
+## 2026-08-29 11:16:55 — codex / completed
+
+PR #31 is merged and the mobile portrait movie controls are live in production at https://mimic-webapp-sing2.vercel.app. Watch and Mimic were smoke-tested on the production origin at 390x844 with no rotation gate or document overflow.
+
+**Validation:** Vercel reported Deployment has completed for merge f0445dc; production Watch rendered 371x209 at 16:9; Mimic rendered all 10 navigation/practice buttons plus a separate progress row; browser measurements found no horizontal or vertical overflow.

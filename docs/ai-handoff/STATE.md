@@ -12,7 +12,7 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-IN PROGRESS
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
@@ -24,7 +24,7 @@ Deploy the verified movie portrait controls to production through the existing G
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Deployment branch is clean, build-verified, and exactly one commit ahead of current origin/main with no divergence. Push was not executed because the host requires explicit approval to send the private source branch to the configured GitHub remote.
+PR #31 is merged and the mobile portrait movie controls are live in production at https://mimic-webapp-sing2.vercel.app. Watch and Mimic were smoke-tested on the production origin at 390x844 with no rotation gate or document overflow.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
@@ -36,7 +36,7 @@ Deployment branch is clean, build-verified, and exactly one commit ahead of curr
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-origin/main fetched successfully; branch divergence is 0 behind and 1 ahead; working tree was clean before the deployment handoff update; production build already passed.
+Vercel reported Deployment has completed for merge f0445dc; production Watch rendered 371x209 at 16:9; Mimic rendered all 10 navigation/practice buttons plus a separate progress row; browser measurements found no horizontal or vertical overflow.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
@@ -48,5 +48,5 @@ GitHub push requires explicit user authorization for source-code egress to the c
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-After explicit user approval, commit this handoff checkpoint, push codex/movie-portrait-controls to https://github.com/Wakeupjin/mimic-webapp-sing2.git, create and merge the PR, then verify the production Vercel URL.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->
