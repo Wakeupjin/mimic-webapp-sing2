@@ -522,7 +522,6 @@ Selecting now waits for the initial account profile, lesson list, and progress t
 Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
 
 **Validation:** Production build passed and delayed-data browser verification passed.
-
 ## 2026-08-29 15:34:46 — Codex / work started
 
 Objective: Replace the decorative Story Finale with a meaning-first AI retell conversation and contextual scene hints
@@ -559,4 +558,3 @@ Objective: Remove Story Finale from production and move it to the product backlo
 ## 2026-08-29 17:07:29 — user / request
 
 Remove the current Story Finale from the deployed service and move the concept to the backlog.
-

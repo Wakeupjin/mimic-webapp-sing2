@@ -1,12 +1,9 @@
 export type StoryRetellProgressPayload = {
-  version: 1 | 2;
+  version: 1;
   completed: true;
   turnCount: number;
   speakingSeconds: number;
   questionCount: number;
   usedFallback: boolean;
-  aiTurnCount?: number;
-  hintCount?: number;
-  coveredBeatCount?: number;
   completedAt: string;
 };

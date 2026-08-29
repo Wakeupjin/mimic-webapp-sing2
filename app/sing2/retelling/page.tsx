@@ -561,12 +561,10 @@ function StoryRetellContent() {
   );
 }
 
-function LegacyStoryRetellPage() {
+export default function StoryRetellPage() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-black" />}>
       <StoryRetellContent />
     </Suspense>
   );
 }
-
-export { default } from './StoryRetellExperience';
