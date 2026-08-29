@@ -398,3 +398,26 @@ Removed the movie-only portrait rotation gate; normalized the four movie modes a
 Movie learning now works in portrait with consistent stage ratios and control hierarchy across all four modes; book portrait behavior remains intentionally distinct where its static cover benefits from it.
 
 **Validation:** TypeScript and Next.js production build passed; responsive browser checks found no horizontal or vertical document overflow at tested phone, tablet, landscape, and desktop sizes.
+
+## 2026-08-29 11:02:34 — codex / work started
+
+Objective: Deploy the verified movie portrait controls to production through the existing GitHub and Vercel pipeline
+
+
+## 2026-08-29 11:02:34 — user / request
+
+Deploy the verified mobile portrait and standardized movie controls change to production.
+
+
+## 2026-08-29 11:02:35 — codex / checkpoint
+
+Deployment branch is clean, build-verified, and exactly one commit ahead of current origin/main with no divergence. Push was not executed because the host requires explicit approval to send the private source branch to the configured GitHub remote.
+
+**Next action:** After explicit user approval, commit this handoff checkpoint, push codex/movie-portrait-controls to https://github.com/Wakeupjin/mimic-webapp-sing2.git, create and merge the PR, then verify the production Vercel URL.
+
+**Validation:** origin/main fetched successfully; branch divergence is 0 behind and 1 ahead; working tree was clean before the deployment handoff update; production build already passed.
+
+**Files:**
+- docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
+
+**Open risks:** GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
