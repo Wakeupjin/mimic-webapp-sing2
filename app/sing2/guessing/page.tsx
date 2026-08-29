@@ -979,7 +979,7 @@ function GuessingPageContent() {
                     try {
                       await persistGuessingCompletion(correctCount);
                     } catch (error) {
-                      console.warn('Word 이동 전 진도 저장 실패:', error);
+                      console.warn('Story 이동 전 진도 저장 실패:', error);
                       setCompletionError('완료 기록을 저장하지 못했어요. 다시 눌러 주세요.');
                       return;
                     }
@@ -987,7 +987,7 @@ function GuessingPageContent() {
                     if (document.fullscreenElement) {
                       sessionStorage.setItem("maintainFullscreen", "true");
                     }
-                    window.location.href = lessonPath(movieId, 'word');
+                    window.location.href = lessonPath(movieId, 'retelling');
                   }}
                 />
                 {completionError && <p className="pointer-events-auto mt-3 rounded-full bg-black/80 px-4 py-2 text-sm font-bold text-rose-300">{completionError}</p>}

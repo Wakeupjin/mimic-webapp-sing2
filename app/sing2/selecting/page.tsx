@@ -16,7 +16,6 @@ import {
   isMasterRole,
   isModeCompleted,
   MODE_ORDER,
-  type CoreLearnMode,
   type LearnMode,
   type ProgressRow,
 } from '../../lib/progressGate';
@@ -209,10 +208,11 @@ function SelectingPageContent() {
   const hereMode =
     MODE_ORDER.find((mode) => !isModeCompleted(progressRows, progressLesson, mode));
 
-  const MODE_LABEL: Record<CoreLearnMode, string> = {
+  const MODE_LABEL: Record<LearnMode, string> = {
     watching: 'Watch',
     mimicking: 'Mimic',
     guessing: 'Guess',
+    retelling: 'Story',
     word: 'Word',
   };
 
@@ -256,16 +256,6 @@ function SelectingPageContent() {
         open: isMaster,
         onSelect: () => handleModeSelect(mode),
       }))}
-      finale={{
-        id: 'retelling',
-        label: 'My Voice',
-        locked: !modeOpen('retelling'),
-        done: isModeCompleted(progressRows, progressLesson, 'retelling'),
-        here: isModeCompleted(progressRows, progressLesson, 'word')
-          && !isModeCompleted(progressRows, progressLesson, 'retelling'),
-        open: isMaster,
-        onSelect: () => handleModeSelect('retelling'),
-      }}
     />
   );
 }

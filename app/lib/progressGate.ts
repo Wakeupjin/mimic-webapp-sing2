@@ -3,9 +3,7 @@ import { fetchRetellProgressRows } from './storyRetellProgress';
 
 export type LearnMode = 'watching' | 'mimicking' | 'guessing' | 'retelling' | 'word';
 
-export type CoreLearnMode = Exclude<LearnMode, 'retelling'>;
-
-export const MODE_ORDER: CoreLearnMode[] = ['watching', 'mimicking', 'guessing', 'word'];
+export const MODE_ORDER: LearnMode[] = ['watching', 'mimicking', 'guessing', 'retelling', 'word'];
 
 export type ProgressRow = {
   lesson_number: number;
@@ -39,10 +37,6 @@ export function canAccessMode(
   mode: LearnMode
 ) {
   if (!canAccessLesson(rows, lessonNumber)) return false;
-  // Story는 코어 모드가 아니라 Word를 마친 뒤 여는 챕터 피날레다.
-  if (mode === 'retelling') {
-    return isModeCompleted(rows, lessonNumber, 'word');
-  }
   // 이미 시작한 기존 학습은 새 단계가 생겨도 다시 잠그지 않는다.
   if (rows?.some((row) => row.lesson_number === lessonNumber && row.mode === mode)) {
     return true;
@@ -60,5 +54,18 @@ export async function fetchOwnProgress() {
   ]);
   const progress = progressRows as ProgressRow[];
   const retells = retellRows as ProgressRow[];
-  return [...progress, ...retells] as ProgressRow[];
+  const retoldLessons = new Set(retells.map((row) => row.lesson_number));
+
+  // Story 도입 전 Word를 시작한 학습자는 그대로 이어 간다.
+  const grandfatheredRetells = progress
+    .filter((row) => row.mode === 'word' && !retoldLessons.has(row.lesson_number))
+    .map((row) => ({
+      lesson_number: row.lesson_number,
+      mode: 'retelling',
+      completed: true,
+      current_position: 1,
+      updated_at: row.updated_at,
+    }));
+
+  return [...progress, ...retells, ...grandfatheredRetells] as ProgressRow[];
 }

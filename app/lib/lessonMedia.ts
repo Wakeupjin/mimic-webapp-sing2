@@ -1,4 +1,4 @@
-import { formatMovieId, parseLessonNumber, parsePack } from "../dataService";
+import { parseLessonNumber, parsePack } from "../dataService";
 import { getVideoSource } from "../utils/videoSource";
 
 /** 원서 Pinocchio. 영화 1 / Hard 2 와 진도가 안 섞인다. */
@@ -45,21 +45,4 @@ export function lessonPath(
   }
   const movieMode = mode === "listen" ? "watching" : mode;
   return `/sing2/${movieMode}?id=${movieId}`;
-}
-
-export function nextChapterHref(movieId: string) {
-  const pack = parsePack(movieId);
-  const nextChapter = parseLessonNumber(movieId) + 1;
-
-  if (isBookId(movieId)) {
-    return nextChapter <= BOOK_SCENE_COUNT
-      ? lessonSelectHref(formatMovieId(pack, nextChapter))
-      : '/';
-  }
-
-  if (pack <= 1 && nextChapter <= 12) {
-    return lessonSelectHref(formatMovieId(pack, nextChapter));
-  }
-
-  return '/';
 }

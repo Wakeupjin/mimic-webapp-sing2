@@ -11,7 +11,7 @@ const MODE_LABEL: Record<string, string> = {
   watching: 'Watch',
   mimicking: 'Mimic',
   guessing: 'Guess',
-  retelling: 'Finale',
+  retelling: 'Story',
   word: 'Word',
 };
 
@@ -300,20 +300,6 @@ export default function AdminPage() {
                       </button>
                     );
                   })}
-                  {(() => {
-                    const mode = 'retelling';
-                    const done = selected.progressByLesson[lesson]?.[mode];
-                    const isOn = openCell?.lesson === lesson && openCell?.mode === mode;
-                    return (
-                      <button
-                        type="button"
-                        onClick={() => setOpenCell(isOn ? null : { lesson, mode })}
-                        className={`admin-mode is-finale ${done ? 'is-open' : ''} ${isOn ? 'is-on' : ''}`}
-                      >
-                        Finale{done ? ' ✓' : ''}
-                      </button>
-                    );
-                  })()}
                 </div>
                 {openCell?.lesson === lesson && (
                   <EvaluationDetail

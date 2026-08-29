@@ -82,7 +82,7 @@ export async function saveStoryRetellProgress(
   } = await supabase.auth.getUser();
   if (!user) return false;
 
-  // 네트워크가 흔들려도 같은 기기에서는 Finale 완료를 복구할 수 있게 먼저 표시한다.
+  // 네트워크가 흔들려도 같은 기기에서는 Word로 이어 갈 수 있게 먼저 표시한다.
   let savedLocally = false;
   if (typeof window !== 'undefined') {
     try {
