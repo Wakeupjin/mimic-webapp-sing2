@@ -1,0 +1,983 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-11",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 11,
+    "slug": "pinocchios-brave-choice",
+    "titleEn": "Pinocchio's Brave Choice",
+    "titleKo": "피노키오의 용기 있는 선택",
+    "synopsisKo": "불먹보는 피노키오 대신 할리퀸을 태우려 하지만, 피노키오가 친구를 위해 자신을 내놓자 감동해 모두를 살려 준다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Balance Fire Eater's comic sneezing with real moral tension. Pinocchio's offer must sound clear and brave, not melodramatic, and the ending should release into warm communal celebration.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-11.png",
+    "artBrief": "The theater kitchen and stage in one wide paper set: huge Fire Eater in a chair near the low fire, Pinocchio and frightened Harlequin at center, two wooden officers nearby, and bright stage lanterns waiting on the far side for the final celebration.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "연민의 재채기",
+        "summaryKo": "불먹보가 피노키오를 불쌍히 여기며 재채기한다.",
+        "focus": "Fire Eater sneezing into his long beard",
+        "camera": "medium comic reveal around the chair",
+        "mood": "fear mixed with hope",
+        "performanceTag": "[with comic warmth]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "대신 잡힌 할리퀸",
+        "summaryKo": "피노키오는 살지만 친구가 불로 끌려간다.",
+        "focus": "wooden officers beside collapsed Harlequin",
+        "camera": "pan from relieved Pinocchio to terrified friend",
+        "mood": "moral reversal",
+        "performanceTag": "[gravely]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "자비를 구하다",
+        "summaryKo": "피노키오는 단장 앞에 엎드려 친구를 살려 달라고 한다.",
+        "focus": "Pinocchio at Fire Eater's boots",
+        "camera": "low close two-shot emphasizing scale",
+        "mood": "urgent compassion",
+        "performanceTag": "[pleading]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "나를 태우세요",
+        "summaryKo": "친구 대신 자신을 내놓는 선택을 한다.",
+        "focus": "Pinocchio standing upright between fire and Harlequin",
+        "camera": "slow push to centered brave pose",
+        "mood": "clear courage",
+        "performanceTag": "[bravely]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "녹아내린 마음",
+        "summaryKo": "불먹보가 감동해 두 인형 모두를 용서한다.",
+        "focus": "Fire Eater opening his arms to Pinocchio",
+        "camera": "rise from stern face to warm embrace",
+        "mood": "emotional release",
+        "performanceTag": "[tenderly]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "새벽까지 축제",
+        "summaryKo": "모두가 무대로 돌아가 춤추고 노래한다.",
+        "focus": "full marionette troupe under glowing lanterns",
+        "camera": "wide celebratory pullback",
+        "mood": "joyful community",
+        "performanceTag": "[joyfully]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Fire Eater felt sorry for Pinocchio."
+        },
+        {
+          "id": "line-02",
+          "text": "Whenever he felt sad, he sneezed loudly."
+        },
+        {
+          "id": "line-03",
+          "text": "He decided not to burn Pinocchio."
+        },
+        {
+          "id": "line-04",
+          "text": "Instead, he ordered Harlequin into the fire."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio begged him to spare his friend."
+        },
+        {
+          "id": "line-06",
+          "text": "He offered to take Harlequin's place."
+        },
+        {
+          "id": "line-07",
+          "text": "Fire Eater admired Pinocchio's courage."
+        },
+        {
+          "id": "line-08",
+          "text": "He freed them both, and the puppets celebrated."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Fire Eater felt sorry for Pinocchio."
+          },
+          {
+            "lineIndex": 1,
+            "text": "Whenever he felt sad, he sneezed loudly."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He decided not to burn Pinocchio."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Instead, he ordered Harlequin into the fire."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Pinocchio begged him to spare his friend."
+          },
+          {
+            "lineIndex": 5,
+            "text": "He offered to take Harlequin's place."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Fire Eater admired Pinocchio's courage."
+          },
+          {
+            "lineIndex": 7,
+            "text": "He freed them both, and the puppets celebrated."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "Whenever he felt sad, he sneezed loudly."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "Instead, he ordered Harlequin into the fire."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "Fire Eater admired Pinocchio's courage."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "Pinocchio begged him to spare his friend."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "He freed them both, and the puppets celebrated."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "He decided not to burn Pinocchio."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He decided not to burn Pinocchio."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "He offered to take Harlequin's place."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "He freed them both, and the puppets celebrated."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Fire Eater admired Pinocchio's courage."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Fire Eater felt sorry for Pinocchio."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Instead, he ordered Harlequin into the fire."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "Whenever he felt sad, he sneezed loudly.",
+            "tokens": [
+              "Whenever",
+              "he",
+              "felt",
+              "sad",
+              ",",
+              "he",
+              "sneezed",
+              "loudly",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "He decided not to burn Pinocchio.",
+            "tokens": [
+              "He",
+              "decided",
+              "not",
+              "to",
+              "burn",
+              "Pinocchio",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "He offered to take Harlequin's place.",
+            "tokens": [
+              "He",
+              "offered",
+              "to",
+              "take",
+              "Harlequin's",
+              "place",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "Fire Eater admired Pinocchio's courage.",
+            "tokens": [
+              "Fire",
+              "Eater",
+              "admired",
+              "Pinocchio's",
+              "courage",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 할리퀸을 구하기 위해 어떤 선택을 했는지 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 52,
+        "characters": 324
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Fire Eater began sneezing because Pinocchio's fear made him feel sorry."
+        },
+        {
+          "id": "line-02",
+          "text": "The other marionettes knew that each sneeze revealed his softer heart."
+        },
+        {
+          "id": "line-03",
+          "text": "He spared Pinocchio but still needed wood to finish his dinner."
+        },
+        {
+          "id": "line-04",
+          "text": "Therefore, he ordered two officers to throw Harlequin into the fire."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio fell at the director's feet and begged for his friend's life."
+        },
+        {
+          "id": "line-06",
+          "text": "Fire Eater refused because someone had to replace the missing firewood."
+        },
+        {
+          "id": "line-07",
+          "text": "Pinocchio stood up and offered himself rather than let Harlequin die."
+        },
+        {
+          "id": "line-08",
+          "text": "His brave choice moved every wooden actor, including the officers."
+        },
+        {
+          "id": "line-09",
+          "text": "Fire Eater softened, embraced Pinocchio, and pardoned Harlequin too."
+        },
+        {
+          "id": "line-10",
+          "text": "With everyone safe, the marionettes danced and sang until dawn."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Fire Eater began sneezing because Pinocchio's fear made him feel sorry."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The other marionettes knew that each sneeze revealed his softer heart."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He spared Pinocchio but still needed wood to finish his dinner."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Therefore, he ordered two officers to throw Harlequin into the fire."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Pinocchio fell at the director's feet and begged for his friend's life."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Fire Eater refused because someone had to replace the missing firewood."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Pinocchio stood up and offered himself rather than let Harlequin die."
+          },
+          {
+            "lineIndex": 7,
+            "text": "His brave choice moved every wooden actor, including the officers."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Fire Eater softened, embraced Pinocchio, and pardoned Harlequin too."
+          },
+          {
+            "lineIndex": 9,
+            "text": "With everyone safe, the marionettes danced and sang until dawn."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The other marionettes knew that each sneeze revealed his softer heart."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "Pinocchio fell at the director's feet and begged for his friend's life."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "His brave choice moved every wooden actor, including the officers."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Pinocchio stood up and offered himself rather than let Harlequin die."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "With everyone safe, the marionettes danced and sang until dawn."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Therefore, he ordered two officers to throw Harlequin into the fire."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He spared Pinocchio but still needed wood to finish his dinner."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "Pinocchio stood up and offered himself rather than let Harlequin die."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "With everyone safe, the marionettes danced and sang until dawn."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Fire Eater softened, embraced Pinocchio, and pardoned Harlequin too."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "The other marionettes knew that each sneeze revealed his softer heart."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "Pinocchio fell at the director's feet and begged for his friend's life."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The other marionettes knew that each sneeze revealed his softer heart.",
+            "tokens": [
+              "The",
+              "other",
+              "marionettes",
+              "knew",
+              "that",
+              "each",
+              "sneeze",
+              "revealed",
+              "his",
+              "softer",
+              "heart",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Therefore, he ordered two officers to throw Harlequin into the fire.",
+            "tokens": [
+              "Therefore",
+              ",",
+              "he",
+              "ordered",
+              "two",
+              "officers",
+              "to",
+              "throw",
+              "Harlequin",
+              "into",
+              "the",
+              "fire",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "Pinocchio stood up and offered himself rather than let Harlequin die.",
+            "tokens": [
+              "Pinocchio",
+              "stood",
+              "up",
+              "and",
+              "offered",
+              "himself",
+              "rather",
+              "than",
+              "let",
+              "Harlequin",
+              "die",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Fire Eater softened, embraced Pinocchio, and pardoned Harlequin too.",
+            "tokens": [
+              "Fire",
+              "Eater",
+              "softened",
+              ",",
+              "embraced",
+              "Pinocchio",
+              ",",
+              "and",
+              "pardoned",
+              "Harlequin",
+              "too",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "불먹보의 마음이 두 번 바뀐 이유를 원인과 결과로 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 107,
+        "characters": 689
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Despite his terrifying appearance, Fire Eater weakened when Pinocchio's cries awakened genuine pity in him."
+        },
+        {
+          "id": "line-02",
+          "text": "His compassion revealed itself through enormous sneezes, a habit the frightened marionettes recognized as hopeful news."
+        },
+        {
+          "id": "line-03",
+          "text": "He agreed to spare Pinocchio, yet immediately transferred the danger to Harlequin so that his supper could finish cooking."
+        },
+        {
+          "id": "line-04",
+          "text": "The wooden officers seized Harlequin, whose fear made his legs collapse beneath him."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio abandoned self-preservation and pleaded repeatedly for mercy on behalf of his innocent friend."
+        },
+        {
+          "id": "line-06",
+          "text": "When Fire Eater insisted that a substitute must burn, the marionette rose and made his duty clear."
+        },
+        {
+          "id": "line-07",
+          "text": "He offered his own body to the flames rather than accept a rescue purchased by Harlequin's death."
+        },
+        {
+          "id": "line-08",
+          "text": "The courage of that choice dissolved the director's remaining hardness and moved the entire wooden company to tears."
+        },
+        {
+          "id": "line-09",
+          "text": "Fire Eater embraced Pinocchio, granted Harlequin a pardon, and accepted an imperfectly cooked dinner."
+        },
+        {
+          "id": "line-10",
+          "text": "Relief transformed the stage into a festival, where the reunited marionettes danced and sang until morning."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Despite his terrifying appearance, Fire Eater weakened when Pinocchio's cries awakened genuine pity in him."
+          },
+          {
+            "lineIndex": 1,
+            "text": "His compassion revealed itself through enormous sneezes, a habit the frightened marionettes recognized as hopeful news."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He agreed to spare Pinocchio, yet immediately transferred the danger to Harlequin so that his supper could finish cooking."
+          },
+          {
+            "lineIndex": 3,
+            "text": "The wooden officers seized Harlequin, whose fear made his legs collapse beneath him."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Pinocchio abandoned self-preservation and pleaded repeatedly for mercy on behalf of his innocent friend."
+          },
+          {
+            "lineIndex": 5,
+            "text": "When Fire Eater insisted that a substitute must burn, the marionette rose and made his duty clear."
+          },
+          {
+            "lineIndex": 6,
+            "text": "He offered his own body to the flames rather than accept a rescue purchased by Harlequin's death."
+          },
+          {
+            "lineIndex": 7,
+            "text": "The courage of that choice dissolved the director's remaining hardness and moved the entire wooden company to tears."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Fire Eater embraced Pinocchio, granted Harlequin a pardon, and accepted an imperfectly cooked dinner."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Relief transformed the stage into a festival, where the reunited marionettes danced and sang until morning."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "His compassion revealed itself through enormous sneezes, a habit the frightened marionettes recognized as hopeful news."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "Pinocchio abandoned self-preservation and pleaded repeatedly for mercy on behalf of his innocent friend."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "The courage of that choice dissolved the director's remaining hardness and moved the entire wooden company to tears."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "He offered his own body to the flames rather than accept a rescue purchased by Harlequin's death."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Relief transformed the stage into a festival, where the reunited marionettes danced and sang until morning."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "The wooden officers seized Harlequin, whose fear made his legs collapse beneath him."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He agreed to spare Pinocchio, yet immediately transferred the danger to Harlequin so that his supper could finish cooking."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "He offered his own body to the flames rather than accept a rescue purchased by Harlequin's death."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Relief transformed the stage into a festival, where the reunited marionettes danced and sang until morning."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Fire Eater embraced Pinocchio, granted Harlequin a pardon, and accepted an imperfectly cooked dinner."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "His compassion revealed itself through enormous sneezes, a habit the frightened marionettes recognized as hopeful news."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "Pinocchio abandoned self-preservation and pleaded repeatedly for mercy on behalf of his innocent friend."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "His compassion revealed itself through enormous sneezes, a habit the frightened marionettes recognized as hopeful news.",
+            "tokens": [
+              "His",
+              "compassion",
+              "revealed",
+              "itself",
+              "through",
+              "enormous",
+              "sneezes",
+              ",",
+              "a",
+              "habit",
+              "the",
+              "frightened",
+              "marionettes",
+              "recognized",
+              "as",
+              "hopeful",
+              "news",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "The wooden officers seized Harlequin, whose fear made his legs collapse beneath him.",
+            "tokens": [
+              "The",
+              "wooden",
+              "officers",
+              "seized",
+              "Harlequin",
+              ",",
+              "whose",
+              "fear",
+              "made",
+              "his",
+              "legs",
+              "collapse",
+              "beneath",
+              "him",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "He offered his own body to the flames rather than accept a rescue purchased by Harlequin's death.",
+            "tokens": [
+              "He",
+              "offered",
+              "his",
+              "own",
+              "body",
+              "to",
+              "the",
+              "flames",
+              "rather",
+              "than",
+              "accept",
+              "a",
+              "rescue",
+              "purchased",
+              "by",
+              "Harlequin's",
+              "death",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Fire Eater embraced Pinocchio, granted Harlequin a pardon, and accepted an imperfectly cooked dinner.",
+            "tokens": [
+              "Fire",
+              "Eater",
+              "embraced",
+              "Pinocchio",
+              ",",
+              "granted",
+              "Harlequin",
+              "a",
+              "pardon",
+              ",",
+              "and",
+              "accepted",
+              "an",
+              "imperfectly",
+              "cooked",
+              "dinner",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 처음으로 충동이 아니라 도덕적 책임에 따라 행동한 장면인 이유를 분석하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 159,
+        "characters": 1064
+      }
+    }
+  },
+  "checksum": "3ea04e2dc84ed4c997c5a4c51b0fee42c747b29d726667f9d4867857ea44582a"
+}

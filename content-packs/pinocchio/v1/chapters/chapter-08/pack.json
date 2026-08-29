@@ -1,0 +1,1009 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-08",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 8,
+    "slug": "new-feet-and-the-abc-book",
+    "titleEn": "New Feet and an A-B-C Book",
+    "titleKo": "새 발과 알파벳 책",
+    "synopsisKo": "제페토는 피노키오에게 새 발과 옷을 만들어 주고, 추운 날 자신의 외투를 팔아 학교에 필요한 알파벳 책까지 마련한다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Let Pinocchio's promises sound eager but immature, make the crafting sequence bright and tactile, and slow down for the coat revelation so Geppetto's sacrifice lands without sentimentality.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-08.png",
+    "artBrief": "A warm workshop-home panorama: unfinished wooden feet and glue on the table, Pinocchio jumping in a paper suit with bark shoes, a water bowl used as a mirror, an empty coat hook, and Geppetto returning through a cold doorway with the A-B-C book.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "새 발의 약속",
+        "summaryKo": "피노키오는 공부하고 효도하겠다며 새 발을 부탁한다.",
+        "focus": "Pinocchio pleading beside the worktable",
+        "camera": "balanced two-shot with unfinished wood between them",
+        "mood": "earnest but uncertain",
+        "performanceTag": "[earnestly]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "장인의 손",
+        "summaryKo": "제페토가 두 발을 정교하게 깎고 붙인다.",
+        "focus": "Geppetto carving two slender wooden feet",
+        "camera": "close tracking across tools and glue",
+        "mood": "patient craftsmanship",
+        "performanceTag": "[carefully]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "다시 뛰다",
+        "summaryKo": "새 발을 얻은 피노키오가 방 안을 뛰어다닌다.",
+        "focus": "Pinocchio leaping from the table",
+        "camera": "lively follow through the room",
+        "mood": "bright joy",
+        "performanceTag": "[joyfully]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "종이 신사",
+        "summaryKo": "종이 옷과 나무껍질 신발을 입고 거울을 본다.",
+        "focus": "Pinocchio reflected in a bowl of water",
+        "camera": "tilt from handmade clothes to reflection",
+        "mood": "proud innocence",
+        "performanceTag": "[proudly]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "사라진 외투",
+        "summaryKo": "제페토는 외투 없이 책만 들고 돌아온다.",
+        "focus": "A-B-C book in Geppetto's cold hands",
+        "camera": "slow push from empty coat hook to book",
+        "mood": "quiet sacrifice",
+        "performanceTag": "[softly]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "깨달은 포옹",
+        "summaryKo": "피노키오가 희생을 알아차리고 아버지를 끌어안는다.",
+        "focus": "Pinocchio hugging Geppetto",
+        "camera": "warm close-up, then gentle pullback",
+        "mood": "gratitude",
+        "performanceTag": "[tenderly]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio begged for two new feet."
+        },
+        {
+          "id": "line-02",
+          "text": "He promised to study and behave."
+        },
+        {
+          "id": "line-03",
+          "text": "Geppetto carved and glued the feet."
+        },
+        {
+          "id": "line-04",
+          "text": "Pinocchio jumped happily around the room."
+        },
+        {
+          "id": "line-05",
+          "text": "Geppetto made him simple paper clothes."
+        },
+        {
+          "id": "line-06",
+          "text": "But Pinocchio still needed a schoolbook."
+        },
+        {
+          "id": "line-07",
+          "text": "Geppetto sold his only coat to buy it."
+        },
+        {
+          "id": "line-08",
+          "text": "Pinocchio understood and hugged his father."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio begged for two new feet."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He promised to study and behave."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Geppetto carved and glued the feet."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Pinocchio jumped happily around the room."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Geppetto made him simple paper clothes."
+          },
+          {
+            "lineIndex": 5,
+            "text": "But Pinocchio still needed a schoolbook."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Geppetto sold his only coat to buy it."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Pinocchio understood and hugged his father."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He promised to study and behave."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "Pinocchio jumped happily around the room."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "Geppetto sold his only coat to buy it."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "Geppetto made him simple paper clothes."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "Pinocchio understood and hugged his father."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "Geppetto carved and glued the feet."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Geppetto carved and glued the feet."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "But Pinocchio still needed a schoolbook."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Pinocchio understood and hugged his father."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Geppetto sold his only coat to buy it."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Pinocchio begged for two new feet."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Pinocchio jumped happily around the room."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He promised to study and behave.",
+            "tokens": [
+              "He",
+              "promised",
+              "to",
+              "study",
+              "and",
+              "behave",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "Geppetto carved and glued the feet.",
+            "tokens": [
+              "Geppetto",
+              "carved",
+              "and",
+              "glued",
+              "the",
+              "feet",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "But Pinocchio still needed a schoolbook.",
+            "tokens": [
+              "But",
+              "Pinocchio",
+              "still",
+              "needed",
+              "a",
+              "schoolbook",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "Geppetto sold his only coat to buy it.",
+            "tokens": [
+              "Geppetto",
+              "sold",
+              "his",
+              "only",
+              "coat",
+              "to",
+              "buy",
+              "it",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "제페토가 피노키오의 학교 준비를 위해 만든 것과 판 것을 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 50,
+        "characters": 309
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "After eating, Pinocchio begged Geppetto to replace his burned feet."
+        },
+        {
+          "id": "line-02",
+          "text": "He promised to attend school, study hard, and care for his father."
+        },
+        {
+          "id": "line-03",
+          "text": "Although he doubted the familiar promises, Geppetto's heart softened."
+        },
+        {
+          "id": "line-04",
+          "text": "He carved two strong new feet and attached them with melted glue."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio leaped around the room, delighted to stand again."
+        },
+        {
+          "id": "line-06",
+          "text": "Because they were poor, Geppetto made clothes from paper, bark, and dough."
+        },
+        {
+          "id": "line-07",
+          "text": "The proud puppet admired himself, then remembered he needed an A-B-C book."
+        },
+        {
+          "id": "line-08",
+          "text": "Neither father nor son had any money to buy one."
+        },
+        {
+          "id": "line-09",
+          "text": "Geppetto went outside and returned with the book but without his coat."
+        },
+        {
+          "id": "line-10",
+          "text": "Realizing the sacrifice, Pinocchio embraced and kissed his father."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "After eating, Pinocchio begged Geppetto to replace his burned feet."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He promised to attend school, study hard, and care for his father."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Although he doubted the familiar promises, Geppetto's heart softened."
+          },
+          {
+            "lineIndex": 3,
+            "text": "He carved two strong new feet and attached them with melted glue."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Pinocchio leaped around the room, delighted to stand again."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Because they were poor, Geppetto made clothes from paper, bark, and dough."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The proud puppet admired himself, then remembered he needed an A-B-C book."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Neither father nor son had any money to buy one."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Geppetto went outside and returned with the book but without his coat."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Realizing the sacrifice, Pinocchio embraced and kissed his father."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He promised to attend school, study hard, and care for his father."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "Pinocchio leaped around the room, delighted to stand again."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Neither father nor son had any money to buy one."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The proud puppet admired himself, then remembered he needed an A-B-C book."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Realizing the sacrifice, Pinocchio embraced and kissed his father."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "He carved two strong new feet and attached them with melted glue."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Although he doubted the familiar promises, Geppetto's heart softened."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "The proud puppet admired himself, then remembered he needed an A-B-C book."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Realizing the sacrifice, Pinocchio embraced and kissed his father."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Geppetto went outside and returned with the book but without his coat."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "He promised to attend school, study hard, and care for his father."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "Pinocchio leaped around the room, delighted to stand again."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He promised to attend school, study hard, and care for his father.",
+            "tokens": [
+              "He",
+              "promised",
+              "to",
+              "attend",
+              "school",
+              ",",
+              "study",
+              "hard",
+              ",",
+              "and",
+              "care",
+              "for",
+              "his",
+              "father",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "He carved two strong new feet and attached them with melted glue.",
+            "tokens": [
+              "He",
+              "carved",
+              "two",
+              "strong",
+              "new",
+              "feet",
+              "and",
+              "attached",
+              "them",
+              "with",
+              "melted",
+              "glue",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "The proud puppet admired himself, then remembered he needed an A-B-C book.",
+            "tokens": [
+              "The",
+              "proud",
+              "puppet",
+              "admired",
+              "himself",
+              ",",
+              "then",
+              "remembered",
+              "he",
+              "needed",
+              "an",
+              "A",
+              "-",
+              "B",
+              "-",
+              "C",
+              "book",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Geppetto went outside and returned with the book but without his coat.",
+            "tokens": [
+              "Geppetto",
+              "went",
+              "outside",
+              "and",
+              "returned",
+              "with",
+              "the",
+              "book",
+              "but",
+              "without",
+              "his",
+              "coat",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오의 약속과 제페토의 실제 행동을 비교해 요약하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 107,
+        "characters": 667
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Once his hunger was satisfied, Pinocchio immediately began to demand a new pair of feet."
+        },
+        {
+          "id": "line-02",
+          "text": "He promised school, study, honest work, and lifelong support with all the confidence of a child who wanted something."
+        },
+        {
+          "id": "line-03",
+          "text": "Geppetto recognized the familiar performance, yet the sight of his unhappy son softened every attempt at sternness."
+        },
+        {
+          "id": "line-04",
+          "text": "With an artist's care, he carved two nimble feet and joined them so neatly that the seams almost disappeared."
+        },
+        {
+          "id": "line-05",
+          "text": "The restored marionette sprang from the table and celebrated as though joy itself had entered his wooden legs."
+        },
+        {
+          "id": "line-06",
+          "text": "Lacking money, Geppetto fashioned a suit from flowered paper, shoes from bark, and a tiny cap from dough."
+        },
+        {
+          "id": "line-07",
+          "text": "Pinocchio admired the gentleman in his water-bowl reflection before remembering the schoolbook his promises required."
+        },
+        {
+          "id": "line-08",
+          "text": "The simple request exposed their poverty, for neither of them possessed even a single coin."
+        },
+        {
+          "id": "line-09",
+          "text": "Geppetto returned from the winter street carrying the A-B-C book while his patched coat had vanished."
+        },
+        {
+          "id": "line-10",
+          "text": "When he claimed the day was too warm, Pinocchio understood the loving lie and covered his father with grateful kisses."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Once his hunger was satisfied, Pinocchio immediately began to demand a new pair of feet."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He promised school, study, honest work, and lifelong support with all the confidence of a child who wanted something."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Geppetto recognized the familiar performance, yet the sight of his unhappy son softened every attempt at sternness."
+          },
+          {
+            "lineIndex": 3,
+            "text": "With an artist's care, he carved two nimble feet and joined them so neatly that the seams almost disappeared."
+          },
+          {
+            "lineIndex": 4,
+            "text": "The restored marionette sprang from the table and celebrated as though joy itself had entered his wooden legs."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Lacking money, Geppetto fashioned a suit from flowered paper, shoes from bark, and a tiny cap from dough."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Pinocchio admired the gentleman in his water-bowl reflection before remembering the schoolbook his promises required."
+          },
+          {
+            "lineIndex": 7,
+            "text": "The simple request exposed their poverty, for neither of them possessed even a single coin."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Geppetto returned from the winter street carrying the A-B-C book while his patched coat had vanished."
+          },
+          {
+            "lineIndex": 9,
+            "text": "When he claimed the day was too warm, Pinocchio understood the loving lie and covered his father with grateful kisses."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He promised school, study, honest work, and lifelong support with all the confidence of a child who wanted something."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "The restored marionette sprang from the table and celebrated as though joy itself had entered his wooden legs."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "The simple request exposed their poverty, for neither of them possessed even a single coin."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Pinocchio admired the gentleman in his water-bowl reflection before remembering the schoolbook his promises required."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "When he claimed the day was too warm, Pinocchio understood the loving lie and covered his father with grateful kisses."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "With an artist's care, he carved two nimble feet and joined them so neatly that the seams almost disappeared."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Geppetto recognized the familiar performance, yet the sight of his unhappy son softened every attempt at sternness."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "Pinocchio admired the gentleman in his water-bowl reflection before remembering the schoolbook his promises required."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "When he claimed the day was too warm, Pinocchio understood the loving lie and covered his father with grateful kisses."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Geppetto returned from the winter street carrying the A-B-C book while his patched coat had vanished."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "He promised school, study, honest work, and lifelong support with all the confidence of a child who wanted something."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "The restored marionette sprang from the table and celebrated as though joy itself had entered his wooden legs."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He promised school, study, honest work, and lifelong support with all the confidence of a child who wanted something.",
+            "tokens": [
+              "He",
+              "promised",
+              "school",
+              ",",
+              "study",
+              ",",
+              "honest",
+              "work",
+              ",",
+              "and",
+              "lifelong",
+              "support",
+              "with",
+              "all",
+              "the",
+              "confidence",
+              "of",
+              "a",
+              "child",
+              "who",
+              "wanted",
+              "something",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "With an artist's care, he carved two nimble feet and joined them so neatly that the seams almost disappeared.",
+            "tokens": [
+              "With",
+              "an",
+              "artist's",
+              "care",
+              ",",
+              "he",
+              "carved",
+              "two",
+              "nimble",
+              "feet",
+              "and",
+              "joined",
+              "them",
+              "so",
+              "neatly",
+              "that",
+              "the",
+              "seams",
+              "almost",
+              "disappeared",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "Pinocchio admired the gentleman in his water-bowl reflection before remembering the schoolbook his promises required.",
+            "tokens": [
+              "Pinocchio",
+              "admired",
+              "the",
+              "gentleman",
+              "in",
+              "his",
+              "water",
+              "-",
+              "bowl",
+              "reflection",
+              "before",
+              "remembering",
+              "the",
+              "schoolbook",
+              "his",
+              "promises",
+              "required",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Geppetto returned from the winter street carrying the A-B-C book while his patched coat had vanished.",
+            "tokens": [
+              "Geppetto",
+              "returned",
+              "from",
+              "the",
+              "winter",
+              "street",
+              "carrying",
+              "the",
+              "A",
+              "-",
+              "B",
+              "-",
+              "C",
+              "book",
+              "while",
+              "his",
+              "patched",
+              "coat",
+              "had",
+              "vanished",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "제페토의 마지막 거짓말이 왜 오히려 그의 사랑을 더 분명하게 보여 주는지 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 172,
+        "characters": 1080
+      }
+    }
+  },
+  "checksum": "dfc146229b03bcf986ef307e2fa259a04c489d8d167d60c949721cae19d6eb39"
+}

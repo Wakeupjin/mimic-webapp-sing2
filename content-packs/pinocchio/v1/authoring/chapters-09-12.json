@@ -1,0 +1,236 @@
+{
+  "chapters": [
+    {
+      "number": 9,
+      "slug": "the-sold-schoolbook",
+      "titleEn": "The Schoolbook Is Sold",
+      "titleKo": "팔려 버린 알파벳 책",
+      "synopsisKo": "학교로 가던 피노키오는 인형극 음악에 마음을 빼앗겨, 제페토가 외투를 팔아 마련한 책을 입장료와 바꾼다.",
+      "narrationDirection": "Begin with sincere hopeful plans, let the distant music become increasingly irresistible, and end with a sober reminder of Geppetto shivering at home.",
+      "artBrief": "A wide village-road panorama linking the school path to a colorful but original wooden marionette theater. Pinocchio carries the A-B-C book, musicians and a small crowd draw him sideways, and a ragpicker waits near the ticket entrance while a cold path points back toward Geppetto's home.",
+      "levels": {
+        "foundation": [
+          "Pinocchio walked to school with his new book.",
+          "He dreamed of helping Geppetto one day.",
+          "Then he heard pipes and drums nearby.",
+          "The music came from a puppet theater.",
+          "A ticket cost four pennies.",
+          "Pinocchio had no money for the show.",
+          "He sold his A-B-C book to a ragpicker.",
+          "At home, Geppetto still shivered without his coat."
+        ],
+        "core": [
+          "Pinocchio hurried toward school with the new A-B-C book under his arm.",
+          "He imagined learning quickly and buying Geppetto a magnificent coat.",
+          "Distant pipes and drums interrupted those generous plans.",
+          "He discovered that the music announced a Great Marionette Theater.",
+          "Although school waited in the other direction, curiosity pulled him toward the crowd.",
+          "The ticket cost four pennies, and Pinocchio did not own even one.",
+          "He tried to sell his paper coat, bark shoes, and dough cap.",
+          "When nobody wanted them, he finally offered the A-B-C book.",
+          "A ragpicker paid four pennies, and Pinocchio entered the theater.",
+          "Meanwhile, Geppetto shivered at home after selling his coat for that very book."
+        ],
+        "studio": [
+          "Pinocchio set out for school rehearsing splendid plans to learn, earn money, and reward Geppetto with a jeweled coat.",
+          "His gratitude sounded sincere until the distant rhythm of pipes and drums introduced a more immediate temptation.",
+          "At the crossing, school demanded patience in one direction while the marionette theater promised excitement in the other.",
+          "Pinocchio postponed responsibility with the convenient belief that tomorrow would always provide enough time for study.",
+          "He reached a brilliant wooden theater whose performance was beginning behind a crowd of eager spectators.",
+          "The entrance fee was only four pennies, yet it exceeded everything the penniless marionette owned.",
+          "His flowered-paper coat, bark shoes, and dough cap proved too useless even for another child to buy.",
+          "After hesitation, curiosity defeated gratitude and he offered the A-B-C book purchased through his father's sacrifice.",
+          "A ragpicker exchanged four pennies for the book, turning Geppetto's winter coat into a single afternoon of entertainment.",
+          "As Pinocchio rushed inside, the narrator leaves us with the image of his father shivering at home in shirt sleeves."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 학교 대신 극장에 가게 된 과정을 말해 보세요.",
+        "core": "피노키오의 아침 계획과 실제 선택이 어떻게 달라졌는지 비교하세요.",
+        "studio": "‘내일 공부하면 된다’는 생각이 책임을 미루는 장치가 되는 과정을 설명하세요."
+      },
+      "beats": [
+        {"titleKo": "학교로 가는 꿈", "summaryKo": "피노키오는 공부해 아버지에게 멋진 외투를 사 주겠다고 상상한다.", "focus": "Pinocchio walking with the book held proudly", "camera": "forward track along the school road", "mood": "hopeful sincerity", "performanceTag": "[hopefully]"},
+        {"titleKo": "멀리서 온 음악", "summaryKo": "피리와 북소리가 피노키오의 걸음을 멈춘다.", "focus": "Pinocchio turning toward musical notes suggested by motion", "camera": "slow pan away from school toward the square", "mood": "growing curiosity", "performanceTag": "[curiously]"},
+        {"titleKo": "두 갈래 길", "summaryKo": "학교와 극장 사이에서 오늘만 미루기로 한다.", "focus": "forked path between school and theater", "camera": "wide symmetrical choice framing", "mood": "temptation", "performanceTag": "[hesitantly]"},
+        {"titleKo": "네 푼의 입장료", "summaryKo": "화려한 인형극은 가깝지만 돈은 없다.", "focus": "theater entrance and four coins in another child's hand", "camera": "push toward ticket window, then back to empty palm", "mood": "frustrated desire", "performanceTag": "[eagerly]"},
+        {"titleKo": "책을 팔다", "summaryKo": "팔리지 않는 옷 대신 소중한 책을 내놓는다.", "focus": "A-B-C book passing to the ragpicker", "camera": "tight hold on the exchange", "mood": "costly decision", "performanceTag": "[quietly]"},
+        {"titleKo": "추위 속의 제페토", "summaryKo": "피노키오가 극장으로 들어가는 동안 아버지는 외투 없이 기다린다.", "focus": "cold road leading back toward the tiny house", "camera": "slow pull away from theater lights toward distant home", "mood": "ironic sorrow", "performanceTag": "[somberly]"}
+      ]
+    },
+    {
+      "number": 10,
+      "slug": "the-marionette-theater",
+      "titleEn": "The Marionette Theater",
+      "titleKo": "인형극장의 소동",
+      "synopsisKo": "극장의 인형들은 피노키오를 형제로 환영하지만 공연이 엉망이 되고, 무서운 단장 불먹보가 그를 불쏘시개로 쓰려 한다.",
+      "narrationDirection": "Make the reunion exuberant and musical, then cut the warmth sharply when Fire Eater appears. His threat should feel theatrical and frightening without becoming graphic.",
+      "artBrief": "An original traveling marionette theater shown as a wide stage-and-backstage panorama: Harlequin and Pulcinella under warm footlights, Pinocchio leaping from audience to stage, a cheering wooden troupe, and a dark kitchen arch where the enormous bearded Fire Eater appears beside a cooking fire.",
+      "levels": {
+        "foundation": [
+          "Pinocchio entered the crowded puppet theater.",
+          "The wooden actors recognized him as a brother.",
+          "They stopped the play and cheered loudly.",
+          "Pinocchio jumped onto the stage with them.",
+          "Then the frightening director appeared.",
+          "His name was Fire Eater.",
+          "He needed more wood for his cooking fire.",
+          "Fire Eater ordered the puppets to bring Pinocchio."
+        ],
+        "core": [
+          "Pinocchio slipped inside while Harlequin and Pulcinella performed onstage.",
+          "The wooden actors suddenly recognized him and called him their brother.",
+          "Their joyful welcome stopped the play and angered the waiting audience.",
+          "Pinocchio leaped across the seats and joined the celebration onstage.",
+          "The noise ended when the theater's enormous director appeared.",
+          "Fire Eater had a black beard, burning eyes, and a dangerous whip.",
+          "After the show, he went to the kitchen where a lamb cooked over a fire.",
+          "Because the fire needed wood, he remembered the newly arrived marionette.",
+          "He ordered Harlequin and Pulcinella to carry Pinocchio into the kitchen.",
+          "Terrified, Pinocchio cried for Geppetto and begged not to die."
+        ],
+        "studio": [
+          "Pinocchio entered the theater while Harlequin and Pulcinella exchanged their usual comic threats beneath the stage lights.",
+          "The performance stopped the instant the wooden actors recognized a living marionette among the spectators.",
+          "Calling him their brother, the entire company abandoned the script and invited Pinocchio into a thunderous reunion.",
+          "He bounded from audience to orchestra to stage, where the delighted troupe carried him around in triumph.",
+          "The celebration vanished when the director emerged with a floor-length black beard, glowing eyes, and an enormous whip.",
+          "Fire Eater's presence reduced the noisy theater to a silence so complete that even a passing fly might be heard.",
+          "When the show ended, the director returned to a kitchen where his supper still turned above an underfed fire.",
+          "Needing seasoned wood, he decided that the unexpected marionette would make excellent fuel.",
+          "Harlequin and Pulcinella obeyed in fear and carried their struggling new brother toward the fire.",
+          "The chapter closes with Pinocchio calling desperately for the father whose gift he had abandoned."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "극장에서 피노키오를 반긴 인물들과 그를 위협한 인물을 말해 보세요.",
+        "core": "기쁨으로 시작한 장면이 어떻게 위험으로 바뀌었는지 설명하세요.",
+        "studio": "무대의 밝은 공동체와 무대 뒤 권력의 대비가 긴장을 만드는 방식을 분석하세요."
+      },
+      "beats": [
+        {"titleKo": "공연 중인 형제들", "summaryKo": "할리퀸과 풀치넬라가 관객 앞에서 연기한다.", "focus": "two marionette actors under footlights", "camera": "slow theatrical push from audience to stage", "mood": "comic performance", "performanceTag": "[brightly]"},
+        {"titleKo": "피노키오 발견", "summaryKo": "배우들이 객석의 피노키오를 알아본다.", "focus": "Harlequin pointing toward Pinocchio", "camera": "rack focus from stage to rear audience", "mood": "astonished joy", "performanceTag": "[excitedly]"},
+        {"titleKo": "무대 위의 환영", "summaryKo": "피노키오는 뛰어올라 나무 형제들의 환영을 받는다.", "focus": "Pinocchio lifted on the troupe's shoulders", "camera": "lively arc across the celebrating company", "mood": "belonging and celebration", "performanceTag": "[joyfully]"},
+        {"titleKo": "불먹보의 등장", "summaryKo": "거대한 단장이 나타나 극장을 침묵시킨다.", "focus": "Fire Eater filling the dark backstage arch", "camera": "low-angle reveal from boots to beard", "mood": "sudden dread", "performanceTag": "[ominously]"},
+        {"titleKo": "꺼져 가는 불", "summaryKo": "주방의 불이 약해지자 불먹보는 새 장작을 찾는다.", "focus": "low cooking fire beneath the turning spit", "camera": "pan from fading embers to Pinocchio's wooden body", "mood": "threatening calculation", "performanceTag": "[darkly]"},
+        {"titleKo": "주방으로", "summaryKo": "친구들이 명령에 따라 피노키오를 데려간다.", "focus": "Harlequin and Pulcinella carrying frightened Pinocchio", "camera": "slow track into backstage shadow", "mood": "fear and helplessness", "performanceTag": "[fearfully]"}
+      ]
+    },
+    {
+      "number": 11,
+      "slug": "pinocchios-brave-choice",
+      "titleEn": "Pinocchio's Brave Choice",
+      "titleKo": "피노키오의 용기 있는 선택",
+      "synopsisKo": "불먹보는 피노키오 대신 할리퀸을 태우려 하지만, 피노키오가 친구를 위해 자신을 내놓자 감동해 모두를 살려 준다.",
+      "narrationDirection": "Balance Fire Eater's comic sneezing with real moral tension. Pinocchio's offer must sound clear and brave, not melodramatic, and the ending should release into warm communal celebration.",
+      "artBrief": "The theater kitchen and stage in one wide paper set: huge Fire Eater in a chair near the low fire, Pinocchio and frightened Harlequin at center, two wooden officers nearby, and bright stage lanterns waiting on the far side for the final celebration.",
+      "levels": {
+        "foundation": [
+          "Fire Eater felt sorry for Pinocchio.",
+          "Whenever he felt sad, he sneezed loudly.",
+          "He decided not to burn Pinocchio.",
+          "Instead, he ordered Harlequin into the fire.",
+          "Pinocchio begged him to spare his friend.",
+          "He offered to take Harlequin's place.",
+          "Fire Eater admired Pinocchio's courage.",
+          "He freed them both, and the puppets celebrated."
+        ],
+        "core": [
+          "Fire Eater began sneezing because Pinocchio's fear made him feel sorry.",
+          "The other marionettes knew that each sneeze revealed his softer heart.",
+          "He spared Pinocchio but still needed wood to finish his dinner.",
+          "Therefore, he ordered two officers to throw Harlequin into the fire.",
+          "Pinocchio fell at the director's feet and begged for his friend's life.",
+          "Fire Eater refused because someone had to replace the missing firewood.",
+          "Pinocchio stood up and offered himself rather than let Harlequin die.",
+          "His brave choice moved every wooden actor, including the officers.",
+          "Fire Eater softened, embraced Pinocchio, and pardoned Harlequin too.",
+          "With everyone safe, the marionettes danced and sang until dawn."
+        ],
+        "studio": [
+          "Despite his terrifying appearance, Fire Eater weakened when Pinocchio's cries awakened genuine pity in him.",
+          "His compassion revealed itself through enormous sneezes, a habit the frightened marionettes recognized as hopeful news.",
+          "He agreed to spare Pinocchio, yet immediately transferred the danger to Harlequin so that his supper could finish cooking.",
+          "The wooden officers seized Harlequin, whose fear made his legs collapse beneath him.",
+          "Pinocchio abandoned self-preservation and pleaded repeatedly for mercy on behalf of his innocent friend.",
+          "When Fire Eater insisted that a substitute must burn, the marionette rose and made his duty clear.",
+          "He offered his own body to the flames rather than accept a rescue purchased by Harlequin's death.",
+          "The courage of that choice dissolved the director's remaining hardness and moved the entire wooden company to tears.",
+          "Fire Eater embraced Pinocchio, granted Harlequin a pardon, and accepted an imperfectly cooked dinner.",
+          "Relief transformed the stage into a festival, where the reunited marionettes danced and sang until morning."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 할리퀸을 구하기 위해 어떤 선택을 했는지 말해 보세요.",
+        "core": "불먹보의 마음이 두 번 바뀐 이유를 원인과 결과로 설명하세요.",
+        "studio": "피노키오가 처음으로 충동이 아니라 도덕적 책임에 따라 행동한 장면인 이유를 분석하세요."
+      },
+      "beats": [
+        {"titleKo": "연민의 재채기", "summaryKo": "불먹보가 피노키오를 불쌍히 여기며 재채기한다.", "focus": "Fire Eater sneezing into his long beard", "camera": "medium comic reveal around the chair", "mood": "fear mixed with hope", "performanceTag": "[with comic warmth]"},
+        {"titleKo": "대신 잡힌 할리퀸", "summaryKo": "피노키오는 살지만 친구가 불로 끌려간다.", "focus": "wooden officers beside collapsed Harlequin", "camera": "pan from relieved Pinocchio to terrified friend", "mood": "moral reversal", "performanceTag": "[gravely]"},
+        {"titleKo": "자비를 구하다", "summaryKo": "피노키오는 단장 앞에 엎드려 친구를 살려 달라고 한다.", "focus": "Pinocchio at Fire Eater's boots", "camera": "low close two-shot emphasizing scale", "mood": "urgent compassion", "performanceTag": "[pleading]"},
+        {"titleKo": "나를 태우세요", "summaryKo": "친구 대신 자신을 내놓는 선택을 한다.", "focus": "Pinocchio standing upright between fire and Harlequin", "camera": "slow push to centered brave pose", "mood": "clear courage", "performanceTag": "[bravely]"},
+        {"titleKo": "녹아내린 마음", "summaryKo": "불먹보가 감동해 두 인형 모두를 용서한다.", "focus": "Fire Eater opening his arms to Pinocchio", "camera": "rise from stern face to warm embrace", "mood": "emotional release", "performanceTag": "[tenderly]"},
+        {"titleKo": "새벽까지 축제", "summaryKo": "모두가 무대로 돌아가 춤추고 노래한다.", "focus": "full marionette troupe under glowing lanterns", "camera": "wide celebratory pullback", "mood": "joyful community", "performanceTag": "[joyfully]"}
+      ]
+    },
+    {
+      "number": 12,
+      "slug": "the-fox-and-the-cat",
+      "titleEn": "The Fox, the Cat, and Five Gold Pieces",
+      "titleKo": "여우와 고양이, 그리고 금화 다섯 닢",
+      "synopsisKo": "아버지에게 줄 금화를 받은 피노키오는 여우와 고양이의 거짓 투자 이야기에 속아 집으로 돌아가려던 결심을 버린다.",
+      "narrationDirection": "Open with generous relief, make the Fox smooth and persuasive and the Cat's repetition faintly comic, sharpen the Blackbird warning, and end with the uneasy confidence of a successful con.",
+      "artBrief": "A wide country-road panorama from the theater gate toward Geppetto's distant home: Pinocchio holds five gold pieces, a limping russet Fox and supposedly blind gray Cat flank him, a Blackbird warns from a fence, and an imagined golden tree glows like a tempting paper cutout on the horizon.",
+      "levels": {
+        "foundation": [
+          "Fire Eater gave Pinocchio five gold pieces.",
+          "The money was a gift for Geppetto.",
+          "On the road, Pinocchio met a Fox and Cat.",
+          "They pretended to be lame and blind.",
+          "A Blackbird warned Pinocchio not to listen.",
+          "The Fox promised a tree full of gold.",
+          "Pinocchio wanted to make his money grow.",
+          "He forgot Geppetto and followed the strangers."
+        ],
+        "core": [
+          "Fire Eater gave Pinocchio five gold pieces to carry home to Geppetto.",
+          "Pinocchio planned to buy his father a coat and replace the schoolbook.",
+          "Along the road, he met a limping Fox and a supposedly blind Cat.",
+          "The sight of the coins briefly made the Fox's paw and the Cat's eyes work.",
+          "A Blackbird warned Pinocchio that their advice would bring regret.",
+          "The Fox claimed that buried coins could grow into a tree of gold.",
+          "At first, Pinocchio refused because his father was waiting at home.",
+          "The Fox described thousands of coins and mocked the choice to study.",
+          "Greed made the impossible promise sound reasonable to the inexperienced puppet.",
+          "Forgetting his father and every good resolution, Pinocchio followed the pair."
+        ],
+        "studio": [
+          "The next morning, Fire Eater learned of Geppetto's poverty and entrusted Pinocchio with five gold pieces for his father.",
+          "The delighted marionette set out planning both a warm coat for Geppetto and a new A-B-C book for himself.",
+          "Before he had traveled far, a limping Fox and a blind Cat greeted him with suspicious knowledge of his family.",
+          "The ring of gold momentarily restored the Fox's lame paw and opened the Cat's supposedly sightless eyes, though Pinocchio noticed neither clue.",
+          "A Blackbird delivered a direct warning, but the Cat silenced the honest voice and immediately resumed the performance of blindness.",
+          "The Fox then offered an effortless fortune: coins planted in the Field of Wonders would grow into a tree heavy with gold.",
+          "Pinocchio initially remembered Geppetto, the lost schoolbook, and the pain already caused by disobedience.",
+          "Yet the promise of thousands of coins transformed caution into calculation and greed into imagined generosity.",
+          "The Fox pretended to want nothing for himself, while the Cat echoed every lie as though repetition were proof.",
+          "Convinced that the swindlers were good people, Pinocchio turned away from home and placed himself in their hands."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 금화를 받은 이유와 결국 누구를 따라갔는지 말해 보세요.",
+        "core": "피노키오가 처음에는 거절했다가 마음을 바꾼 이유를 설명하세요.",
+        "studio": "여우와 고양이가 탐욕을 효도처럼 보이게 만들어 피노키오를 설득하는 방식을 분석하세요."
+      },
+      "beats": [
+        {"titleKo": "아버지를 위한 금화", "summaryKo": "불먹보가 제페토에게 전하라며 금화 다섯 닢을 준다.", "focus": "five gold pieces placed in Pinocchio's hands", "camera": "warm close-up, then open toward the road home", "mood": "generous hope", "performanceTag": "[warmly]"},
+        {"titleKo": "수상한 여행자", "summaryKo": "절뚝이는 여우와 눈먼 척하는 고양이가 접근한다.", "focus": "Fox and Cat greeting Pinocchio on the road", "camera": "slow side pan revealing both strangers", "mood": "polite unease", "performanceTag": "[smoothly]"},
+        {"titleKo": "드러난 거짓말", "summaryKo": "금화 소리에 여우의 발과 고양이의 눈이 잠시 정상으로 돌아온다.", "focus": "Fox paw reaching and Cat eye peeking", "camera": "tight alternating clues Pinocchio misses", "mood": "dramatic irony", "performanceTag": "[knowingly]"},
+        {"titleKo": "검은새의 경고", "summaryKo": "검은새가 속지 말라고 외치지만 곧 침묵한다.", "focus": "Blackbird on fence above the three travelers", "camera": "tilt to warning bird, then snap back to Cat", "mood": "sharp danger", "performanceTag": "[warning]"},
+        {"titleKo": "황금나무의 환상", "summaryKo": "여우는 땅에 묻은 금화가 수천 닢으로 자란다고 유혹한다.", "focus": "imagined paper-cut golden tree on the horizon", "camera": "dreamlike push into shimmering imagined branches", "mood": "seductive fantasy", "performanceTag": "[temptingly]"},
+        {"titleKo": "집을 등지다", "summaryKo": "피노키오는 좋은 결심을 잊고 두 사기꾼을 따라간다.", "focus": "three figures walking away from Geppetto's distant home", "camera": "long pullback showing the wrong direction", "mood": "uneasy surrender", "performanceTag": "[quietly ominous]"}
+      ]
+    }
+  ]
+}

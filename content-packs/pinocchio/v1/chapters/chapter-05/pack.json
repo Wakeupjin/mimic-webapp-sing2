@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-05",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 5,
+    "slug": "the-flying-omelet",
+    "titleEn": "The Omelet That Flew Away",
+    "titleKo": "날아가 버린 오믈렛",
+    "synopsisKo": "배고픈 피노키오는 집 안을 뒤져 달걀 하나를 찾지만, 껍질에서 병아리가 태어나 날아가자 자신의 선택을 후회한다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Play the hunger with growing physical comedy, make the discovery of the egg feel miraculous, give the chick bright polite confidence, and end with sincere regret rather than mockery.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-05.png",
+    "artBrief": "Geppetto's humble kitchen-room in a wide paper-theatre panorama: painted fireplace and painted pot, empty drawers, one white egg in the sweepings, a small pan over coals, and an open window through which a yellow chick can fly.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "커지는 배고픔",
+        "summaryKo": "밤이 되자 피노키오의 허기가 점점 커진다.",
+        "focus": "Pinocchio holding his hollow wooden stomach",
+        "camera": "slow push across the darkening room",
+        "mood": "comic discomfort",
+        "performanceTag": "[hungrily]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "그림 속 냄비",
+        "summaryKo": "먹음직스러운 냄비가 벽에 그린 그림일 뿐임을 알게 된다.",
+        "focus": "painted fireplace and Pinocchio's reaching hand",
+        "camera": "rack focus from hand to flat painted surface",
+        "mood": "deflated surprise",
+        "performanceTag": "[disappointed]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "마지막 달걀",
+        "summaryKo": "방 구석에서 흰 달걀 하나를 발견한다.",
+        "focus": "white egg glowing among gray sweepings",
+        "camera": "low glide toward the egg",
+        "mood": "sudden hope",
+        "performanceTag": "[with delight]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "오믈렛의 꿈",
+        "summaryKo": "피노키오는 작은 팬을 달구며 요리를 상상한다.",
+        "focus": "egg held over a tiny steaming pan",
+        "camera": "gentle overhead circle",
+        "mood": "eager anticipation",
+        "performanceTag": "[excitedly]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "병아리의 인사",
+        "summaryKo": "껍질에서 병아리가 나와 정중히 감사한다.",
+        "focus": "yellow chick standing in the broken shell",
+        "camera": "tight reveal, then follow toward the window",
+        "mood": "bright wonder",
+        "performanceTag": "[brightly]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "빈 껍질",
+        "summaryKo": "병아리는 날아가고 피노키오는 아버지를 그리워한다.",
+        "focus": "empty shell halves in Pinocchio's hands",
+        "camera": "slow pullback from hands to lonely room",
+        "mood": "hunger and regret",
+        "performanceTag": "[softly]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Night came, and Pinocchio became very hungry."
+        },
+        {
+          "id": "line-02",
+          "text": "The pot over the fire was only painted."
+        },
+        {
+          "id": "line-03",
+          "text": "He searched every drawer, but found no food."
+        },
+        {
+          "id": "line-04",
+          "text": "At last, he discovered one white egg."
+        },
+        {
+          "id": "line-05",
+          "text": "He put the egg into a hot pan."
+        },
+        {
+          "id": "line-06",
+          "text": "A yellow chick jumped out of the shell."
+        },
+        {
+          "id": "line-07",
+          "text": "The chick thanked him and flew away."
+        },
+        {
+          "id": "line-08",
+          "text": "Still hungry, Pinocchio wished Geppetto were home."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Night came, and Pinocchio became very hungry."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The pot over the fire was only painted."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He searched every drawer, but found no food."
+          },
+          {
+            "lineIndex": 3,
+            "text": "At last, he discovered one white egg."
+          },
+          {
+            "lineIndex": 4,
+            "text": "He put the egg into a hot pan."
+          },
+          {
+            "lineIndex": 5,
+            "text": "A yellow chick jumped out of the shell."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The chick thanked him and flew away."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Still hungry, Pinocchio wished Geppetto were home."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The pot over the fire was only painted."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "At last, he discovered one white egg."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "The chick thanked him and flew away."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "He put the egg into a hot pan."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "Still hungry, Pinocchio wished Geppetto were home."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "He searched every drawer, but found no food."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He searched every drawer, but found no food."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "A yellow chick jumped out of the shell."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Still hungry, Pinocchio wished Geppetto were home."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The chick thanked him and flew away."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Night came, and Pinocchio became very hungry."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "At last, he discovered one white egg."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The pot over the fire was only painted.",
+            "tokens": [
+              "The",
+              "pot",
+              "over",
+              "the",
+              "fire",
+              "was",
+              "only",
+              "painted",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "He searched every drawer, but found no food.",
+            "tokens": [
+              "He",
+              "searched",
+              "every",
+              "drawer",
+              ",",
+              "but",
+              "found",
+              "no",
+              "food",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "A yellow chick jumped out of the shell.",
+            "tokens": [
+              "A",
+              "yellow",
+              "chick",
+              "jumped",
+              "out",
+              "of",
+              "the",
+              "shell",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "The chick thanked him and flew away.",
+            "tokens": [
+              "The",
+              "chick",
+              "thanked",
+              "him",
+              "and",
+              "flew",
+              "away",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 음식을 찾은 과정과 달걀에서 나온 것을 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 60,
+        "characters": 327
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "As darkness arrived, Pinocchio's empty stomach became painfully hungry."
+        },
+        {
+          "id": "line-02",
+          "text": "He reached for the pot above the fire, only to discover it was painted."
+        },
+        {
+          "id": "line-03",
+          "text": "He searched boxes, drawers, and even under the bed without finding food."
+        },
+        {
+          "id": "line-04",
+          "text": "Just when he felt hopeless, he spotted a white egg among the sweepings."
+        },
+        {
+          "id": "line-05",
+          "text": "Delighted, he planned the perfect omelet and heated a small pan."
+        },
+        {
+          "id": "line-06",
+          "text": "When the shell cracked, a cheerful yellow chick appeared instead of breakfast."
+        },
+        {
+          "id": "line-07",
+          "text": "The chick politely thanked Pinocchio for opening its shell."
+        },
+        {
+          "id": "line-08",
+          "text": "Then it spread its wings and escaped through the open window."
+        },
+        {
+          "id": "line-09",
+          "text": "Pinocchio stared at the empty shell while his hunger grew worse."
+        },
+        {
+          "id": "line-10",
+          "text": "Remembering the Cricket's warning, he regretted leaving his father."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "As darkness arrived, Pinocchio's empty stomach became painfully hungry."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He reached for the pot above the fire, only to discover it was painted."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He searched boxes, drawers, and even under the bed without finding food."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Just when he felt hopeless, he spotted a white egg among the sweepings."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Delighted, he planned the perfect omelet and heated a small pan."
+          },
+          {
+            "lineIndex": 5,
+            "text": "When the shell cracked, a cheerful yellow chick appeared instead of breakfast."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The chick politely thanked Pinocchio for opening its shell."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Then it spread its wings and escaped through the open window."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Pinocchio stared at the empty shell while his hunger grew worse."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Remembering the Cricket's warning, he regretted leaving his father."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He reached for the pot above the fire, only to discover it was painted."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "Delighted, he planned the perfect omelet and heated a small pan."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Then it spread its wings and escaped through the open window."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The chick politely thanked Pinocchio for opening its shell."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Remembering the Cricket's warning, he regretted leaving his father."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Just when he felt hopeless, he spotted a white egg among the sweepings."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He searched boxes, drawers, and even under the bed without finding food."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "The chick politely thanked Pinocchio for opening its shell."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Remembering the Cricket's warning, he regretted leaving his father."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Pinocchio stared at the empty shell while his hunger grew worse."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "He reached for the pot above the fire, only to discover it was painted."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "Delighted, he planned the perfect omelet and heated a small pan."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He reached for the pot above the fire, only to discover it was painted.",
+            "tokens": [
+              "He",
+              "reached",
+              "for",
+              "the",
+              "pot",
+              "above",
+              "the",
+              "fire",
+              ",",
+              "only",
+              "to",
+              "discover",
+              "it",
+              "was",
+              "painted",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Just when he felt hopeless, he spotted a white egg among the sweepings.",
+            "tokens": [
+              "Just",
+              "when",
+              "he",
+              "felt",
+              "hopeless",
+              ",",
+              "he",
+              "spotted",
+              "a",
+              "white",
+              "egg",
+              "among",
+              "the",
+              "sweepings",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "The chick politely thanked Pinocchio for opening its shell.",
+            "tokens": [
+              "The",
+              "chick",
+              "politely",
+              "thanked",
+              "Pinocchio",
+              "for",
+              "opening",
+              "its",
+              "shell",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Pinocchio stared at the empty shell while his hunger grew worse.",
+            "tokens": [
+              "Pinocchio",
+              "stared",
+              "at",
+              "the",
+              "empty",
+              "shell",
+              "while",
+              "his",
+              "hunger",
+              "grew",
+              "worse",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "기대했던 오믈렛이 왜 후회로 바뀌었는지 순서대로 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 111,
+        "characters": 687
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Nightfall replaced Pinocchio's brief guilt with a hunger that swelled until it seemed as fierce as a bear."
+        },
+        {
+          "id": "line-02",
+          "text": "He hurried to the steaming pot above the fireplace, only to learn that both flame and supper were painted illusions."
+        },
+        {
+          "id": "line-03",
+          "text": "Boxes, drawers, and the space beneath the bed yielded nothing—not even a crust that a dog might refuse."
+        },
+        {
+          "id": "line-04",
+          "text": "Then, among the sweepings, he discovered a single white egg and greeted it as though fortune had returned."
+        },
+        {
+          "id": "line-05",
+          "text": "He debated every possible recipe before settling proudly on an omelet cooked in his tiny pan."
+        },
+        {
+          "id": "line-06",
+          "text": "But when the shell opened, a fluffy yellow chick stepped out in place of the expected white and yolk."
+        },
+        {
+          "id": "line-07",
+          "text": "With perfect manners, the chick thanked Pinocchio for saving it the work of breaking free."
+        },
+        {
+          "id": "line-08",
+          "text": "It flew through the window, leaving the marionette frozen with two empty shell halves in his hands."
+        },
+        {
+          "id": "line-09",
+          "text": "His imagined feast had vanished, and the hunger he had tried to outsmart now felt more severe than ever."
+        },
+        {
+          "id": "line-10",
+          "text": "For the first time that night, Pinocchio admitted that obedience and his father's care might have protected him."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Nightfall replaced Pinocchio's brief guilt with a hunger that swelled until it seemed as fierce as a bear."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He hurried to the steaming pot above the fireplace, only to learn that both flame and supper were painted illusions."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Boxes, drawers, and the space beneath the bed yielded nothing—not even a crust that a dog might refuse."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Then, among the sweepings, he discovered a single white egg and greeted it as though fortune had returned."
+          },
+          {
+            "lineIndex": 4,
+            "text": "He debated every possible recipe before settling proudly on an omelet cooked in his tiny pan."
+          },
+          {
+            "lineIndex": 5,
+            "text": "But when the shell opened, a fluffy yellow chick stepped out in place of the expected white and yolk."
+          },
+          {
+            "lineIndex": 6,
+            "text": "With perfect manners, the chick thanked Pinocchio for saving it the work of breaking free."
+          },
+          {
+            "lineIndex": 7,
+            "text": "It flew through the window, leaving the marionette frozen with two empty shell halves in his hands."
+          },
+          {
+            "lineIndex": 8,
+            "text": "His imagined feast had vanished, and the hunger he had tried to outsmart now felt more severe than ever."
+          },
+          {
+            "lineIndex": 9,
+            "text": "For the first time that night, Pinocchio admitted that obedience and his father's care might have protected him."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He hurried to the steaming pot above the fireplace, only to learn that both flame and supper were painted illusions."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "He debated every possible recipe before settling proudly on an omelet cooked in his tiny pan."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "It flew through the window, leaving the marionette frozen with two empty shell halves in his hands."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "With perfect manners, the chick thanked Pinocchio for saving it the work of breaking free."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "For the first time that night, Pinocchio admitted that obedience and his father's care might have protected him."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Then, among the sweepings, he discovered a single white egg and greeted it as though fortune had returned."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Boxes, drawers, and the space beneath the bed yielded nothing—not even a crust that a dog might refuse."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "With perfect manners, the chick thanked Pinocchio for saving it the work of breaking free."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "For the first time that night, Pinocchio admitted that obedience and his father's care might have protected him."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "His imagined feast had vanished, and the hunger he had tried to outsmart now felt more severe than ever."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "He hurried to the steaming pot above the fireplace, only to learn that both flame and supper were painted illusions."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "He debated every possible recipe before settling proudly on an omelet cooked in his tiny pan."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He hurried to the steaming pot above the fireplace, only to learn that both flame and supper were painted illusions.",
+            "tokens": [
+              "He",
+              "hurried",
+              "to",
+              "the",
+              "steaming",
+              "pot",
+              "above",
+              "the",
+              "fireplace",
+              ",",
+              "only",
+              "to",
+              "learn",
+              "that",
+              "both",
+              "flame",
+              "and",
+              "supper",
+              "were",
+              "painted",
+              "illusions",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Then, among the sweepings, he discovered a single white egg and greeted it as though fortune had returned.",
+            "tokens": [
+              "Then",
+              ",",
+              "among",
+              "the",
+              "sweepings",
+              ",",
+              "he",
+              "discovered",
+              "a",
+              "single",
+              "white",
+              "egg",
+              "and",
+              "greeted",
+              "it",
+              "as",
+              "though",
+              "fortune",
+              "had",
+              "returned",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "With perfect manners, the chick thanked Pinocchio for saving it the work of breaking free.",
+            "tokens": [
+              "With",
+              "perfect",
+              "manners",
+              ",",
+              "the",
+              "chick",
+              "thanked",
+              "Pinocchio",
+              "for",
+              "saving",
+              "it",
+              "the",
+              "work",
+              "of",
+              "breaking",
+              "free",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "His imagined feast had vanished, and the hunger he had tried to outsmart now felt more severe than ever.",
+            "tokens": [
+              "His",
+              "imagined",
+              "feast",
+              "had",
+              "vanished",
+              ",",
+              "and",
+              "the",
+              "hunger",
+              "he",
+              "had",
+              "tried",
+              "to",
+              "outsmart",
+              "now",
+              "felt",
+              "more",
+              "severe",
+              "than",
+              "ever",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "이 장에서 가짜 난로와 진짜 생명이 피노키오의 기대를 어떻게 뒤집는지 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 178,
+        "characters": 1039
+      }
+    }
+  },
+  "checksum": "5e1cb299124e8d6df7507c112e9e956f59293b73f55c6506fc888436462b5038"
+}

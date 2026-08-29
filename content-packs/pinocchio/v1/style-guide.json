@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "artDirection": {
+    "name": "Living Storybook Paper Theatre",
+    "medium": "layered cut-paper and gouache illustration with subtle woodgrain and visible paper fibers",
+    "palette": ["#0B1510", "#1F4A36", "#D6A13D", "#B9543A", "#E9DFC4", "#243B4A"],
+    "stage": "wide 16:9 theatrical panorama with two or three connected depth planes and safe camera crops",
+    "lighting": "warm amber practical light against deep green-blue shadows",
+    "constraints": [
+      "original character designs only",
+      "no Disney character design, costume, typography, logo, or composition",
+      "no text, captions, signage, logos, or watermark inside the image",
+      "keep faces and clothing consistent across all chapters",
+      "use one coherent chapter stage rather than a montage and show each recurring character only once",
+      "leave uncluttered negative space for learning UI overlays"
+    ]
+  },
+  "characters": {
+    "pinocchio": {
+      "description": "a slim handcrafted maple-wood marionette child with visible carved joints, short dark-brown carved hair, a long pointed wooden nose, a cream collarless shirt, forest-green vest, rust-orange knee shorts, and bare wooden feet",
+      "avoid": "no hat, feather, blue bow, white gloves, yellow shirt, or Disney-like facial proportions"
+    },
+    "geppetto": {
+      "description": "a thin elderly Italian woodcarver with kind tired eyes, wavy white hair, a small yellow-corn-colored cap, patched brown trousers, a faded ochre shirt, and a charcoal apron"
+    },
+    "mastroCherry": {
+      "description": "a short sturdy elderly carpenter with a round shiny red nose, short white moustache, burgundy vest, beige rolled-sleeve shirt, dark leather apron, and expressive eyebrows"
+    },
+    "talkingCricket": {
+      "description": "a small olive-brown cricket rendered as a wise natural creature, expressive through pose rather than human clothing"
+    },
+    "fireEater": {
+      "description": "a huge theatrical director with a floor-length charcoal beard, plum coat, broad leather belt, heavy boots, and a stern face that softens when he sneezes"
+    },
+    "fox": {
+      "description": "a lean russet fox traveler in a worn moss-green waistcoat, pretending to limp with a crooked walking stick"
+    },
+    "cat": {
+      "description": "a charcoal-gray cat traveler in a patched indigo shawl, pretending to be blind while peeking at valuables"
+    }
+  }
+}

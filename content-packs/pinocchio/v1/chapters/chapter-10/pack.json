@@ -1,0 +1,993 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-10",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 10,
+    "slug": "the-marionette-theater",
+    "titleEn": "The Marionette Theater",
+    "titleKo": "인형극장의 소동",
+    "synopsisKo": "극장의 인형들은 피노키오를 형제로 환영하지만 공연이 엉망이 되고, 무서운 단장 불먹보가 그를 불쏘시개로 쓰려 한다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Make the reunion exuberant and musical, then cut the warmth sharply when Fire Eater appears. His threat should feel theatrical and frightening without becoming graphic.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-10.png",
+    "artBrief": "An original traveling marionette theater shown as a wide stage-and-backstage panorama: Harlequin and Pulcinella under warm footlights, Pinocchio leaping from audience to stage, a cheering wooden troupe, and a dark kitchen arch where the enormous bearded Fire Eater appears beside a cooking fire.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "공연 중인 형제들",
+        "summaryKo": "할리퀸과 풀치넬라가 관객 앞에서 연기한다.",
+        "focus": "two marionette actors under footlights",
+        "camera": "slow theatrical push from audience to stage",
+        "mood": "comic performance",
+        "performanceTag": "[brightly]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "피노키오 발견",
+        "summaryKo": "배우들이 객석의 피노키오를 알아본다.",
+        "focus": "Harlequin pointing toward Pinocchio",
+        "camera": "rack focus from stage to rear audience",
+        "mood": "astonished joy",
+        "performanceTag": "[excitedly]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "무대 위의 환영",
+        "summaryKo": "피노키오는 뛰어올라 나무 형제들의 환영을 받는다.",
+        "focus": "Pinocchio lifted on the troupe's shoulders",
+        "camera": "lively arc across the celebrating company",
+        "mood": "belonging and celebration",
+        "performanceTag": "[joyfully]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "불먹보의 등장",
+        "summaryKo": "거대한 단장이 나타나 극장을 침묵시킨다.",
+        "focus": "Fire Eater filling the dark backstage arch",
+        "camera": "low-angle reveal from boots to beard",
+        "mood": "sudden dread",
+        "performanceTag": "[ominously]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "꺼져 가는 불",
+        "summaryKo": "주방의 불이 약해지자 불먹보는 새 장작을 찾는다.",
+        "focus": "low cooking fire beneath the turning spit",
+        "camera": "pan from fading embers to Pinocchio's wooden body",
+        "mood": "threatening calculation",
+        "performanceTag": "[darkly]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "주방으로",
+        "summaryKo": "친구들이 명령에 따라 피노키오를 데려간다.",
+        "focus": "Harlequin and Pulcinella carrying frightened Pinocchio",
+        "camera": "slow track into backstage shadow",
+        "mood": "fear and helplessness",
+        "performanceTag": "[fearfully]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio entered the crowded puppet theater."
+        },
+        {
+          "id": "line-02",
+          "text": "The wooden actors recognized him as a brother."
+        },
+        {
+          "id": "line-03",
+          "text": "They stopped the play and cheered loudly."
+        },
+        {
+          "id": "line-04",
+          "text": "Pinocchio jumped onto the stage with them."
+        },
+        {
+          "id": "line-05",
+          "text": "Then the frightening director appeared."
+        },
+        {
+          "id": "line-06",
+          "text": "His name was Fire Eater."
+        },
+        {
+          "id": "line-07",
+          "text": "He needed more wood for his cooking fire."
+        },
+        {
+          "id": "line-08",
+          "text": "Fire Eater ordered the puppets to bring Pinocchio."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio entered the crowded puppet theater."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The wooden actors recognized him as a brother."
+          },
+          {
+            "lineIndex": 2,
+            "text": "They stopped the play and cheered loudly."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Pinocchio jumped onto the stage with them."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Then the frightening director appeared."
+          },
+          {
+            "lineIndex": 5,
+            "text": "His name was Fire Eater."
+          },
+          {
+            "lineIndex": 6,
+            "text": "He needed more wood for his cooking fire."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Fire Eater ordered the puppets to bring Pinocchio."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The wooden actors recognized him as a brother."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "Pinocchio jumped onto the stage with them."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "He needed more wood for his cooking fire."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "Then the frightening director appeared."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "Fire Eater ordered the puppets to bring Pinocchio."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "They stopped the play and cheered loudly."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "They stopped the play and cheered loudly."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "His name was Fire Eater."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Fire Eater ordered the puppets to bring Pinocchio."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "He needed more wood for his cooking fire."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Pinocchio entered the crowded puppet theater."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Pinocchio jumped onto the stage with them."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The wooden actors recognized him as a brother.",
+            "tokens": [
+              "The",
+              "wooden",
+              "actors",
+              "recognized",
+              "him",
+              "as",
+              "a",
+              "brother",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "They stopped the play and cheered loudly.",
+            "tokens": [
+              "They",
+              "stopped",
+              "the",
+              "play",
+              "and",
+              "cheered",
+              "loudly",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "His name was Fire Eater.",
+            "tokens": [
+              "His",
+              "name",
+              "was",
+              "Fire",
+              "Eater",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "He needed more wood for his cooking fire.",
+            "tokens": [
+              "He",
+              "needed",
+              "more",
+              "wood",
+              "for",
+              "his",
+              "cooking",
+              "fire",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "극장에서 피노키오를 반긴 인물들과 그를 위협한 인물을 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 54,
+        "characters": 335
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio slipped inside while Harlequin and Pulcinella performed onstage."
+        },
+        {
+          "id": "line-02",
+          "text": "The wooden actors suddenly recognized him and called him their brother."
+        },
+        {
+          "id": "line-03",
+          "text": "Their joyful welcome stopped the play and angered the waiting audience."
+        },
+        {
+          "id": "line-04",
+          "text": "Pinocchio leaped across the seats and joined the celebration onstage."
+        },
+        {
+          "id": "line-05",
+          "text": "The noise ended when the theater's enormous director appeared."
+        },
+        {
+          "id": "line-06",
+          "text": "Fire Eater had a black beard, burning eyes, and a dangerous whip."
+        },
+        {
+          "id": "line-07",
+          "text": "After the show, he went to the kitchen where a lamb cooked over a fire."
+        },
+        {
+          "id": "line-08",
+          "text": "Because the fire needed wood, he remembered the newly arrived marionette."
+        },
+        {
+          "id": "line-09",
+          "text": "He ordered Harlequin and Pulcinella to carry Pinocchio into the kitchen."
+        },
+        {
+          "id": "line-10",
+          "text": "Terrified, Pinocchio cried for Geppetto and begged not to die."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio slipped inside while Harlequin and Pulcinella performed onstage."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The wooden actors suddenly recognized him and called him their brother."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Their joyful welcome stopped the play and angered the waiting audience."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Pinocchio leaped across the seats and joined the celebration onstage."
+          },
+          {
+            "lineIndex": 4,
+            "text": "The noise ended when the theater's enormous director appeared."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Fire Eater had a black beard, burning eyes, and a dangerous whip."
+          },
+          {
+            "lineIndex": 6,
+            "text": "After the show, he went to the kitchen where a lamb cooked over a fire."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Because the fire needed wood, he remembered the newly arrived marionette."
+          },
+          {
+            "lineIndex": 8,
+            "text": "He ordered Harlequin and Pulcinella to carry Pinocchio into the kitchen."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Terrified, Pinocchio cried for Geppetto and begged not to die."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The wooden actors suddenly recognized him and called him their brother."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "The noise ended when the theater's enormous director appeared."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Because the fire needed wood, he remembered the newly arrived marionette."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "After the show, he went to the kitchen where a lamb cooked over a fire."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Terrified, Pinocchio cried for Geppetto and begged not to die."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Pinocchio leaped across the seats and joined the celebration onstage."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Their joyful welcome stopped the play and angered the waiting audience."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "After the show, he went to the kitchen where a lamb cooked over a fire."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Terrified, Pinocchio cried for Geppetto and begged not to die."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "He ordered Harlequin and Pulcinella to carry Pinocchio into the kitchen."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "The wooden actors suddenly recognized him and called him their brother."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "The noise ended when the theater's enormous director appeared."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The wooden actors suddenly recognized him and called him their brother.",
+            "tokens": [
+              "The",
+              "wooden",
+              "actors",
+              "suddenly",
+              "recognized",
+              "him",
+              "and",
+              "called",
+              "him",
+              "their",
+              "brother",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Pinocchio leaped across the seats and joined the celebration onstage.",
+            "tokens": [
+              "Pinocchio",
+              "leaped",
+              "across",
+              "the",
+              "seats",
+              "and",
+              "joined",
+              "the",
+              "celebration",
+              "onstage",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "After the show, he went to the kitchen where a lamb cooked over a fire.",
+            "tokens": [
+              "After",
+              "the",
+              "show",
+              ",",
+              "he",
+              "went",
+              "to",
+              "the",
+              "kitchen",
+              "where",
+              "a",
+              "lamb",
+              "cooked",
+              "over",
+              "a",
+              "fire",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "He ordered Harlequin and Pulcinella to carry Pinocchio into the kitchen.",
+            "tokens": [
+              "He",
+              "ordered",
+              "Harlequin",
+              "and",
+              "Pulcinella",
+              "to",
+              "carry",
+              "Pinocchio",
+              "into",
+              "the",
+              "kitchen",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "기쁨으로 시작한 장면이 어떻게 위험으로 바뀌었는지 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 109,
+        "characters": 699
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio entered the theater while Harlequin and Pulcinella exchanged their usual comic threats beneath the stage lights."
+        },
+        {
+          "id": "line-02",
+          "text": "The performance stopped the instant the wooden actors recognized a living marionette among the spectators."
+        },
+        {
+          "id": "line-03",
+          "text": "Calling him their brother, the entire company abandoned the script and invited Pinocchio into a thunderous reunion."
+        },
+        {
+          "id": "line-04",
+          "text": "He bounded from audience to orchestra to stage, where the delighted troupe carried him around in triumph."
+        },
+        {
+          "id": "line-05",
+          "text": "The celebration vanished when the director emerged with a floor-length black beard, glowing eyes, and an enormous whip."
+        },
+        {
+          "id": "line-06",
+          "text": "Fire Eater's presence reduced the noisy theater to a silence so complete that even a passing fly might be heard."
+        },
+        {
+          "id": "line-07",
+          "text": "When the show ended, the director returned to a kitchen where his supper still turned above an underfed fire."
+        },
+        {
+          "id": "line-08",
+          "text": "Needing seasoned wood, he decided that the unexpected marionette would make excellent fuel."
+        },
+        {
+          "id": "line-09",
+          "text": "Harlequin and Pulcinella obeyed in fear and carried their struggling new brother toward the fire."
+        },
+        {
+          "id": "line-10",
+          "text": "The chapter closes with Pinocchio calling desperately for the father whose gift he had abandoned."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio entered the theater while Harlequin and Pulcinella exchanged their usual comic threats beneath the stage lights."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The performance stopped the instant the wooden actors recognized a living marionette among the spectators."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Calling him their brother, the entire company abandoned the script and invited Pinocchio into a thunderous reunion."
+          },
+          {
+            "lineIndex": 3,
+            "text": "He bounded from audience to orchestra to stage, where the delighted troupe carried him around in triumph."
+          },
+          {
+            "lineIndex": 4,
+            "text": "The celebration vanished when the director emerged with a floor-length black beard, glowing eyes, and an enormous whip."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Fire Eater's presence reduced the noisy theater to a silence so complete that even a passing fly might be heard."
+          },
+          {
+            "lineIndex": 6,
+            "text": "When the show ended, the director returned to a kitchen where his supper still turned above an underfed fire."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Needing seasoned wood, he decided that the unexpected marionette would make excellent fuel."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Harlequin and Pulcinella obeyed in fear and carried their struggling new brother toward the fire."
+          },
+          {
+            "lineIndex": 9,
+            "text": "The chapter closes with Pinocchio calling desperately for the father whose gift he had abandoned."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The performance stopped the instant the wooden actors recognized a living marionette among the spectators."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "The celebration vanished when the director emerged with a floor-length black beard, glowing eyes, and an enormous whip."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Needing seasoned wood, he decided that the unexpected marionette would make excellent fuel."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "When the show ended, the director returned to a kitchen where his supper still turned above an underfed fire."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "The chapter closes with Pinocchio calling desperately for the father whose gift he had abandoned."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "He bounded from audience to orchestra to stage, where the delighted troupe carried him around in triumph."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Calling him their brother, the entire company abandoned the script and invited Pinocchio into a thunderous reunion."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "When the show ended, the director returned to a kitchen where his supper still turned above an underfed fire."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "The chapter closes with Pinocchio calling desperately for the father whose gift he had abandoned."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Harlequin and Pulcinella obeyed in fear and carried their struggling new brother toward the fire."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "The performance stopped the instant the wooden actors recognized a living marionette among the spectators."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "The celebration vanished when the director emerged with a floor-length black beard, glowing eyes, and an enormous whip."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The performance stopped the instant the wooden actors recognized a living marionette among the spectators.",
+            "tokens": [
+              "The",
+              "performance",
+              "stopped",
+              "the",
+              "instant",
+              "the",
+              "wooden",
+              "actors",
+              "recognized",
+              "a",
+              "living",
+              "marionette",
+              "among",
+              "the",
+              "spectators",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "He bounded from audience to orchestra to stage, where the delighted troupe carried him around in triumph.",
+            "tokens": [
+              "He",
+              "bounded",
+              "from",
+              "audience",
+              "to",
+              "orchestra",
+              "to",
+              "stage",
+              ",",
+              "where",
+              "the",
+              "delighted",
+              "troupe",
+              "carried",
+              "him",
+              "around",
+              "in",
+              "triumph",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "When the show ended, the director returned to a kitchen where his supper still turned above an underfed fire.",
+            "tokens": [
+              "When",
+              "the",
+              "show",
+              "ended",
+              ",",
+              "the",
+              "director",
+              "returned",
+              "to",
+              "a",
+              "kitchen",
+              "where",
+              "his",
+              "supper",
+              "still",
+              "turned",
+              "above",
+              "an",
+              "underfed",
+              "fire",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Harlequin and Pulcinella obeyed in fear and carried their struggling new brother toward the fire.",
+            "tokens": [
+              "Harlequin",
+              "and",
+              "Pulcinella",
+              "obeyed",
+              "in",
+              "fear",
+              "and",
+              "carried",
+              "their",
+              "struggling",
+              "new",
+              "brother",
+              "toward",
+              "the",
+              "fire",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "무대의 밝은 공동체와 무대 뒤 권력의 대비가 긴장을 만드는 방식을 분석하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 166,
+        "characters": 1082
+      }
+    }
+  },
+  "checksum": "7c575d1b30cb99316c79337d744e9fdac1bcdf287d619913390f8a53cda4ab11"
+}

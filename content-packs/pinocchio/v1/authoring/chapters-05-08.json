@@ -1,0 +1,236 @@
+{
+  "chapters": [
+    {
+      "number": 5,
+      "slug": "the-flying-omelet",
+      "titleEn": "The Omelet That Flew Away",
+      "titleKo": "날아가 버린 오믈렛",
+      "synopsisKo": "배고픈 피노키오는 집 안을 뒤져 달걀 하나를 찾지만, 껍질에서 병아리가 태어나 날아가자 자신의 선택을 후회한다.",
+      "narrationDirection": "Play the hunger with growing physical comedy, make the discovery of the egg feel miraculous, give the chick bright polite confidence, and end with sincere regret rather than mockery.",
+      "artBrief": "Geppetto's humble kitchen-room in a wide paper-theatre panorama: painted fireplace and painted pot, empty drawers, one white egg in the sweepings, a small pan over coals, and an open window through which a yellow chick can fly.",
+      "levels": {
+        "foundation": [
+          "Night came, and Pinocchio became very hungry.",
+          "The pot over the fire was only painted.",
+          "He searched every drawer, but found no food.",
+          "At last, he discovered one white egg.",
+          "He put the egg into a hot pan.",
+          "A yellow chick jumped out of the shell.",
+          "The chick thanked him and flew away.",
+          "Still hungry, Pinocchio wished Geppetto were home."
+        ],
+        "core": [
+          "As darkness arrived, Pinocchio's empty stomach became painfully hungry.",
+          "He reached for the pot above the fire, only to discover it was painted.",
+          "He searched boxes, drawers, and even under the bed without finding food.",
+          "Just when he felt hopeless, he spotted a white egg among the sweepings.",
+          "Delighted, he planned the perfect omelet and heated a small pan.",
+          "When the shell cracked, a cheerful yellow chick appeared instead of breakfast.",
+          "The chick politely thanked Pinocchio for opening its shell.",
+          "Then it spread its wings and escaped through the open window.",
+          "Pinocchio stared at the empty shell while his hunger grew worse.",
+          "Remembering the Cricket's warning, he regretted leaving his father."
+        ],
+        "studio": [
+          "Nightfall replaced Pinocchio's brief guilt with a hunger that swelled until it seemed as fierce as a bear.",
+          "He hurried to the steaming pot above the fireplace, only to learn that both flame and supper were painted illusions.",
+          "Boxes, drawers, and the space beneath the bed yielded nothing—not even a crust that a dog might refuse.",
+          "Then, among the sweepings, he discovered a single white egg and greeted it as though fortune had returned.",
+          "He debated every possible recipe before settling proudly on an omelet cooked in his tiny pan.",
+          "But when the shell opened, a fluffy yellow chick stepped out in place of the expected white and yolk.",
+          "With perfect manners, the chick thanked Pinocchio for saving it the work of breaking free.",
+          "It flew through the window, leaving the marionette frozen with two empty shell halves in his hands.",
+          "His imagined feast had vanished, and the hunger he had tried to outsmart now felt more severe than ever.",
+          "For the first time that night, Pinocchio admitted that obedience and his father's care might have protected him."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 음식을 찾은 과정과 달걀에서 나온 것을 말해 보세요.",
+        "core": "기대했던 오믈렛이 왜 후회로 바뀌었는지 순서대로 설명하세요.",
+        "studio": "이 장에서 가짜 난로와 진짜 생명이 피노키오의 기대를 어떻게 뒤집는지 설명하세요."
+      },
+      "beats": [
+        {"titleKo": "커지는 배고픔", "summaryKo": "밤이 되자 피노키오의 허기가 점점 커진다.", "focus": "Pinocchio holding his hollow wooden stomach", "camera": "slow push across the darkening room", "mood": "comic discomfort", "performanceTag": "[hungrily]"},
+        {"titleKo": "그림 속 냄비", "summaryKo": "먹음직스러운 냄비가 벽에 그린 그림일 뿐임을 알게 된다.", "focus": "painted fireplace and Pinocchio's reaching hand", "camera": "rack focus from hand to flat painted surface", "mood": "deflated surprise", "performanceTag": "[disappointed]"},
+        {"titleKo": "마지막 달걀", "summaryKo": "방 구석에서 흰 달걀 하나를 발견한다.", "focus": "white egg glowing among gray sweepings", "camera": "low glide toward the egg", "mood": "sudden hope", "performanceTag": "[with delight]"},
+        {"titleKo": "오믈렛의 꿈", "summaryKo": "피노키오는 작은 팬을 달구며 요리를 상상한다.", "focus": "egg held over a tiny steaming pan", "camera": "gentle overhead circle", "mood": "eager anticipation", "performanceTag": "[excitedly]"},
+        {"titleKo": "병아리의 인사", "summaryKo": "껍질에서 병아리가 나와 정중히 감사한다.", "focus": "yellow chick standing in the broken shell", "camera": "tight reveal, then follow toward the window", "mood": "bright wonder", "performanceTag": "[brightly]"},
+        {"titleKo": "빈 껍질", "summaryKo": "병아리는 날아가고 피노키오는 아버지를 그리워한다.", "focus": "empty shell halves in Pinocchio's hands", "camera": "slow pullback from hands to lonely room", "mood": "hunger and regret", "performanceTag": "[softly]"}
+      ]
+    },
+    {
+      "number": 6,
+      "slug": "the-burned-feet",
+      "titleEn": "The Night of the Burned Feet",
+      "titleKo": "타 버린 두 발",
+      "synopsisKo": "폭풍우 속에서 먹을 것을 구하지 못한 피노키오는 젖은 채 돌아와 난로에 발을 올리고 잠들었다가 두 발을 모두 잃는다.",
+      "narrationDirection": "Make the storm vivid but storybook-safe, keep the cold-water prank brisk, then slow down during the dangerous sleep so the consequence feels inevitable rather than graphic.",
+      "artBrief": "A connected night panorama: stormy village street on one side, an old man's high window at center, and Geppetto's dark room with a small stove on the other. Lightning, pouring water, wet wooden footprints, and the first dawn light guide the camera.",
+      "levels": {
+        "foundation": [
+          "Pinocchio went outside to find bread.",
+          "The night was dark, cold, and stormy.",
+          "He rang a village doorbell for help.",
+          "An old man poured cold water on him.",
+          "Pinocchio returned home wet and tired.",
+          "He put his wooden feet near the stove.",
+          "He fell asleep, and his feet burned away.",
+          "At dawn, Geppetto knocked on the door."
+        ],
+        "core": [
+          "Although the storm frightened him, hunger drove Pinocchio toward the village.",
+          "The streets were dark, empty, and shaken by thunder and wind.",
+          "He rang a bell and begged an old man for a piece of bread.",
+          "Thinking it was a prank, the man poured icy water from the window.",
+          "Pinocchio reached home soaked, exhausted, and hungrier than before.",
+          "He sat beside the stove and stretched out his wooden feet to dry.",
+          "Weariness overcame him, and he fell into a deep sleep.",
+          "While he snored, the wooden feet slowly blackened and turned to ash.",
+          "He slept through the danger without understanding what he had lost.",
+          "At sunrise, a familiar knock and Geppetto's voice woke him."
+        ],
+        "studio": [
+          "A violent storm darkened the village, yet Pinocchio's hunger proved stronger than his fear of thunder and lightning.",
+          "He crossed the deserted streets until he found a house whose bell he could pull in desperation.",
+          "From a high window, an old man heard his request for bread but mistook him for a midnight troublemaker.",
+          "Instead of food, a sheet of icy water fell over Pinocchio's wooden head and shoulders.",
+          "He stumbled home soaked, weak, and no closer to quieting his empty stomach.",
+          "Unable to remain standing, he rested his wooden feet beside the little stove and surrendered to sleep.",
+          "The warmth that first seemed comforting became dangerous while the exhausted marionette continued to snore.",
+          "Slowly, his feet blackened and crumbled into ash, though he noticed nothing at all.",
+          "The night ended with a consequence produced not by magic, but by hunger, carelessness, and fatigue.",
+          "At dawn, a knock brought the voice Pinocchio most needed to hear: Geppetto had returned."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 밖에 나간 이유와 두 발을 잃은 이유를 말해 보세요.",
+        "core": "폭풍, 찬물, 피로가 어떻게 차례로 위험한 결과를 만들었는지 설명하세요.",
+        "studio": "마지막 결과가 우연처럼 보이지만 사실 여러 선택의 연속인 이유를 분석하세요."
+      },
+      "beats": [
+        {"titleKo": "폭풍 속으로", "summaryKo": "배고픔이 두려움을 이겨 피노키오를 밖으로 내몬다.", "focus": "Pinocchio running beneath lightning", "camera": "track low along the windblown road", "mood": "urgent and stormy", "performanceTag": "[urgently]"},
+        {"titleKo": "죽은 듯한 마을", "summaryKo": "가게와 창문이 모두 닫힌 빈 거리를 달린다.", "focus": "tiny figure in a deserted village square", "camera": "wide pullback emphasizing emptiness", "mood": "lonely fear", "performanceTag": "[hushed]"},
+        {"titleKo": "빵 대신 찬물", "summaryKo": "도움을 청했지만 차가운 물만 뒤집어쓴다.", "focus": "water pouring from the high window", "camera": "tilt from nightcap figure down to drenched puppet", "mood": "sharp comic misery", "performanceTag": "[startled]"},
+        {"titleKo": "젖은 귀가", "summaryKo": "피노키오는 힘없이 집으로 돌아온다.", "focus": "wet footprints leading into the room", "camera": "slow follow through the doorway", "mood": "exhaustion", "performanceTag": "[wearily]"},
+        {"titleKo": "위험한 온기", "summaryKo": "난로에 발을 올린 채 깊이 잠든다.", "focus": "wooden feet near the glowing stove", "camera": "gradual push toward stove while the room darkens", "mood": "quiet danger", "performanceTag": "[slowly]"},
+        {"titleKo": "새벽의 노크", "summaryKo": "발은 사라졌고 문밖에서 제페토의 목소리가 들린다.", "focus": "ash beneath the stool and dawn-lit door", "camera": "rack focus from ashes to knocking door", "mood": "loss turning to hope", "performanceTag": "[with relief]"}
+      ]
+    },
+    {
+      "number": 7,
+      "slug": "geppettos-breakfast",
+      "titleEn": "Geppetto Shares His Breakfast",
+      "titleKo": "제페토의 아침 식사",
+      "synopsisKo": "제페토는 발을 잃고 굶주린 피노키오를 돌보며 자신의 아침인 배 세 개를 모두 나누어 주고, 피노키오는 아끼는 법을 배운다.",
+      "narrationDirection": "Start with clumsy physical comedy, then make Geppetto's care unmistakably tender. Let the pear sequence stay playful while revealing sacrifice and gratitude.",
+      "artBrief": "Geppetto's morning room with the locked door and small window, Pinocchio on the floor without feet, Geppetto climbing in, and a table holding three pears, their skins, and their cores. Warm sunrise should replace the previous chapter's storm shadows.",
+      "levels": {
+        "foundation": [
+          "Pinocchio tried to open the door.",
+          "Without feet, he fell to the floor.",
+          "Geppetto climbed through the window.",
+          "He felt sorry and held his wooden son.",
+          "Geppetto gave him three breakfast pears.",
+          "Pinocchio demanded that he peel them.",
+          "Soon he ate the skins and cores too.",
+          "He learned not to waste simple food."
+        ],
+        "core": [
+          "Hearing Geppetto outside, Pinocchio tried to stand and fell heavily.",
+          "Because he could not open the door, his father climbed through the window.",
+          "Geppetto's anger disappeared when he saw that the wooden feet were truly gone.",
+          "Pinocchio poured out the entire confused story of his terrible night.",
+          "Understanding only that his son was hungry, Geppetto offered three pears.",
+          "They had been his own breakfast, but he gave them away gladly.",
+          "Pinocchio refused the fruit until his patient father peeled it.",
+          "After eating the pears, he discovered that he was still hungry.",
+          "With no other food available, he ate every skin and core he had rejected.",
+          "Geppetto reminded him that simple things may become precious when life changes."
+        ],
+        "studio": [
+          "Pinocchio heard his father's knock and tried to leap up, only to crash to the floor because his feet were gone.",
+          "Convinced at first that another trick was delaying him, Geppetto climbed through the window to enter the house.",
+          "The sight of his helpless wooden son dissolved his anger into sorrow and immediate tenderness.",
+          "Pinocchio then poured the storm, the Cricket, the chick, and the stove into one breathless and confused confession.",
+          "Geppetto understood little of the explanation except the fact that the child before him was desperately hungry.",
+          "He produced three pears intended for his own breakfast and offered all of them without hesitation.",
+          "Still fussy, Pinocchio insisted that each pear be peeled and pushed the skins and cores aside.",
+          "Hunger soon defeated pride, and he gradually ate every part he had declared useless.",
+          "The small meal revealed the difference between Geppetto's practical love and Pinocchio's changing appetite.",
+          "Once satisfied, the marionette finally understood why nothing simple should be wasted or despised."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "제페토가 피노키오를 도운 두 가지 방법과 피노키오가 배운 것을 말해 보세요.",
+        "core": "배 세 개가 제페토의 사랑과 피노키오의 태도 변화를 어떻게 보여 주는지 설명하세요.",
+        "studio": "피노키오의 긴 변명과 제페토의 짧은 행동을 비교해 사랑이 어떻게 표현되는지 분석하세요."
+      },
+      "beats": [
+        {"titleKo": "발 없는 추락", "summaryKo": "문을 열려던 피노키오가 발이 없어 넘어지고 만다.", "focus": "Pinocchio fallen beside the locked door", "camera": "drop from door latch to floor", "mood": "clumsy distress", "performanceTag": "[startled]"},
+        {"titleKo": "창문으로 온 아버지", "summaryKo": "제페토는 창문으로 들어와 진실을 확인한다.", "focus": "Geppetto climbing through the small window", "camera": "pan from street to interior", "mood": "urgent concern", "performanceTag": "[quickly]"},
+        {"titleKo": "긴 변명", "summaryKo": "피노키오는 밤새 일어난 일을 한꺼번에 쏟아낸다.", "focus": "Pinocchio gesturing wildly while Geppetto listens", "camera": "gentle comic orbit around the pair", "mood": "breathless confession", "performanceTag": "[breathlessly]"},
+        {"titleKo": "세 개의 배", "summaryKo": "제페토는 자신의 아침을 모두 건넨다.", "focus": "three pears in Geppetto's open hands", "camera": "warm close-up on the offered fruit", "mood": "quiet generosity", "performanceTag": "[tenderly]"},
+        {"titleKo": "껍질과 씨", "summaryKo": "피노키오는 거절했던 부분까지 모두 먹는다.", "focus": "pear skins and cores disappearing from the table", "camera": "playful overhead sequence", "mood": "humble comedy", "performanceTag": "[lightly]"},
+        {"titleKo": "아끼는 마음", "summaryKo": "삶이 바뀌면 하찮아 보이던 것도 소중해진다는 말을 듣는다.", "focus": "Geppetto and satisfied Pinocchio at the small table", "camera": "slow warm pullback", "mood": "contented reflection", "performanceTag": "[reflectively]"}
+      ]
+    },
+    {
+      "number": 8,
+      "slug": "new-feet-and-the-abc-book",
+      "titleEn": "New Feet and an A-B-C Book",
+      "titleKo": "새 발과 알파벳 책",
+      "synopsisKo": "제페토는 피노키오에게 새 발과 옷을 만들어 주고, 추운 날 자신의 외투를 팔아 학교에 필요한 알파벳 책까지 마련한다.",
+      "narrationDirection": "Let Pinocchio's promises sound eager but immature, make the crafting sequence bright and tactile, and slow down for the coat revelation so Geppetto's sacrifice lands without sentimentality.",
+      "artBrief": "A warm workshop-home panorama: unfinished wooden feet and glue on the table, Pinocchio jumping in a paper suit with bark shoes, a water bowl used as a mirror, an empty coat hook, and Geppetto returning through a cold doorway with the A-B-C book.",
+      "levels": {
+        "foundation": [
+          "Pinocchio begged for two new feet.",
+          "He promised to study and behave.",
+          "Geppetto carved and glued the feet.",
+          "Pinocchio jumped happily around the room.",
+          "Geppetto made him simple paper clothes.",
+          "But Pinocchio still needed a schoolbook.",
+          "Geppetto sold his only coat to buy it.",
+          "Pinocchio understood and hugged his father."
+        ],
+        "core": [
+          "After eating, Pinocchio begged Geppetto to replace his burned feet.",
+          "He promised to attend school, study hard, and care for his father.",
+          "Although he doubted the familiar promises, Geppetto's heart softened.",
+          "He carved two strong new feet and attached them with melted glue.",
+          "Pinocchio leaped around the room, delighted to stand again.",
+          "Because they were poor, Geppetto made clothes from paper, bark, and dough.",
+          "The proud puppet admired himself, then remembered he needed an A-B-C book.",
+          "Neither father nor son had any money to buy one.",
+          "Geppetto went outside and returned with the book but without his coat.",
+          "Realizing the sacrifice, Pinocchio embraced and kissed his father."
+        ],
+        "studio": [
+          "Once his hunger was satisfied, Pinocchio immediately began to demand a new pair of feet.",
+          "He promised school, study, honest work, and lifelong support with all the confidence of a child who wanted something.",
+          "Geppetto recognized the familiar performance, yet the sight of his unhappy son softened every attempt at sternness.",
+          "With an artist's care, he carved two nimble feet and joined them so neatly that the seams almost disappeared.",
+          "The restored marionette sprang from the table and celebrated as though joy itself had entered his wooden legs.",
+          "Lacking money, Geppetto fashioned a suit from flowered paper, shoes from bark, and a tiny cap from dough.",
+          "Pinocchio admired the gentleman in his water-bowl reflection before remembering the schoolbook his promises required.",
+          "The simple request exposed their poverty, for neither of them possessed even a single coin.",
+          "Geppetto returned from the winter street carrying the A-B-C book while his patched coat had vanished.",
+          "When he claimed the day was too warm, Pinocchio understood the loving lie and covered his father with grateful kisses."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "제페토가 피노키오의 학교 준비를 위해 만든 것과 판 것을 말해 보세요.",
+        "core": "피노키오의 약속과 제페토의 실제 행동을 비교해 요약하세요.",
+        "studio": "제페토의 마지막 거짓말이 왜 오히려 그의 사랑을 더 분명하게 보여 주는지 설명하세요."
+      },
+      "beats": [
+        {"titleKo": "새 발의 약속", "summaryKo": "피노키오는 공부하고 효도하겠다며 새 발을 부탁한다.", "focus": "Pinocchio pleading beside the worktable", "camera": "balanced two-shot with unfinished wood between them", "mood": "earnest but uncertain", "performanceTag": "[earnestly]"},
+        {"titleKo": "장인의 손", "summaryKo": "제페토가 두 발을 정교하게 깎고 붙인다.", "focus": "Geppetto carving two slender wooden feet", "camera": "close tracking across tools and glue", "mood": "patient craftsmanship", "performanceTag": "[carefully]"},
+        {"titleKo": "다시 뛰다", "summaryKo": "새 발을 얻은 피노키오가 방 안을 뛰어다닌다.", "focus": "Pinocchio leaping from the table", "camera": "lively follow through the room", "mood": "bright joy", "performanceTag": "[joyfully]"},
+        {"titleKo": "종이 신사", "summaryKo": "종이 옷과 나무껍질 신발을 입고 거울을 본다.", "focus": "Pinocchio reflected in a bowl of water", "camera": "tilt from handmade clothes to reflection", "mood": "proud innocence", "performanceTag": "[proudly]"},
+        {"titleKo": "사라진 외투", "summaryKo": "제페토는 외투 없이 책만 들고 돌아온다.", "focus": "A-B-C book in Geppetto's cold hands", "camera": "slow push from empty coat hook to book", "mood": "quiet sacrifice", "performanceTag": "[softly]"},
+        {"titleKo": "깨달은 포옹", "summaryKo": "피노키오가 희생을 알아차리고 아버지를 끌어안는다.", "focus": "Pinocchio hugging Geppetto", "camera": "warm close-up, then gentle pullback", "mood": "gratitude", "performanceTag": "[tenderly]"}
+      ]
+    }
+  ]
+}

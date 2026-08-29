@@ -12,41 +12,46 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-COMPLETE
+CONTENT READY — AUDIO PENDING
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Move the Sing 2 preview into the hero and simplify the monthly section into a clear movie-to-book path
+Freeze the Pinocchio Chapters 1–12 v1 content pack for later main-thread integration
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
+Completed Pinocchio v1 Chapters 1–12 as a versioned content pack: 36 leveled retellings, 336 master lines, 144 Guess items, 144 Word items, 36 retell prompts, 72 timestamp-ready story beats, 12 original Living Storybook stages, source/rights metadata, QA rules, compiler, validator, and a paid-plan-guarded ElevenLabs same-take generator. Audio masters remain intentionally ungenerated until a durable narrator and paid commercial plan are selected.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/Sing2Preview.tsx, app/dev/brand-preview/page.tsx, app/dev/brand-preview/brand-preview.module.css
+- content-packs/pinocchio/v1/
+- scripts/build-pinocchio-content-packs.mjs
+- scripts/validate-pinocchio-content-packs.mjs
+- scripts/generate-pinocchio-content-pack-audio.mjs
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.
+Compiler and validator pass: 12 chapters, 336 lines, 4,024 words, 24,632 script characters, 72 beats, and 12 production-size 16:9 PNGs. ElevenLabs estimate mode reports 36 continuous requests, 27,815 billed characters including performance tags, and a 1,268-character largest request. All three scripts pass Node syntax checks and git diff whitespace checks.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Logo still uses the pre-existing cursive fallback because Jolly Lodger is not loaded; not changed in this redesign.
+Operational audio is blocked on a durable narrator and paid ElevenLabs commercial plan; Lily expires on 2026-12-31 and must not be the permanent voice. Korean-market public-domain status still requires confirmation. This R&D thread must not deploy production; the main thread must integrate the frozen pack without silently rewriting scripts or assets.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Wait for the next user request. Begin a new objective before making unrelated changes.
+After the user approves this pack, select a durable narrator on a paid ElevenLabs plan, generate/listen through the 36 masters, then hand the frozen commit and acceptance criteria to the main development thread for Preview integration.
 <!-- HANDOFF:NEXT_ACTION:END -->

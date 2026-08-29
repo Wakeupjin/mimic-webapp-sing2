@@ -1,0 +1,1013 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-12",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 12,
+    "slug": "the-fox-and-the-cat",
+    "titleEn": "The Fox, the Cat, and Five Gold Pieces",
+    "titleKo": "여우와 고양이, 그리고 금화 다섯 닢",
+    "synopsisKo": "아버지에게 줄 금화를 받은 피노키오는 여우와 고양이의 거짓 투자 이야기에 속아 집으로 돌아가려던 결심을 버린다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Open with generous relief, make the Fox smooth and persuasive and the Cat's repetition faintly comic, sharpen the Blackbird warning, and end with the uneasy confidence of a successful con.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-12.png",
+    "artBrief": "A wide country-road panorama from the theater gate toward Geppetto's distant home: Pinocchio holds five gold pieces, a limping russet Fox and supposedly blind gray Cat flank him, a Blackbird warns from a fence, and an imagined golden tree glows like a tempting paper cutout on the horizon.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "아버지를 위한 금화",
+        "summaryKo": "불먹보가 제페토에게 전하라며 금화 다섯 닢을 준다.",
+        "focus": "five gold pieces placed in Pinocchio's hands",
+        "camera": "warm close-up, then open toward the road home",
+        "mood": "generous hope",
+        "performanceTag": "[warmly]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "수상한 여행자",
+        "summaryKo": "절뚝이는 여우와 눈먼 척하는 고양이가 접근한다.",
+        "focus": "Fox and Cat greeting Pinocchio on the road",
+        "camera": "slow side pan revealing both strangers",
+        "mood": "polite unease",
+        "performanceTag": "[smoothly]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "드러난 거짓말",
+        "summaryKo": "금화 소리에 여우의 발과 고양이의 눈이 잠시 정상으로 돌아온다.",
+        "focus": "Fox paw reaching and Cat eye peeking",
+        "camera": "tight alternating clues Pinocchio misses",
+        "mood": "dramatic irony",
+        "performanceTag": "[knowingly]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "검은새의 경고",
+        "summaryKo": "검은새가 속지 말라고 외치지만 곧 침묵한다.",
+        "focus": "Blackbird on fence above the three travelers",
+        "camera": "tilt to warning bird, then snap back to Cat",
+        "mood": "sharp danger",
+        "performanceTag": "[warning]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "황금나무의 환상",
+        "summaryKo": "여우는 땅에 묻은 금화가 수천 닢으로 자란다고 유혹한다.",
+        "focus": "imagined paper-cut golden tree on the horizon",
+        "camera": "dreamlike push into shimmering imagined branches",
+        "mood": "seductive fantasy",
+        "performanceTag": "[temptingly]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "집을 등지다",
+        "summaryKo": "피노키오는 좋은 결심을 잊고 두 사기꾼을 따라간다.",
+        "focus": "three figures walking away from Geppetto's distant home",
+        "camera": "long pullback showing the wrong direction",
+        "mood": "uneasy surrender",
+        "performanceTag": "[quietly ominous]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Fire Eater gave Pinocchio five gold pieces."
+        },
+        {
+          "id": "line-02",
+          "text": "The money was a gift for Geppetto."
+        },
+        {
+          "id": "line-03",
+          "text": "On the road, Pinocchio met a Fox and Cat."
+        },
+        {
+          "id": "line-04",
+          "text": "They pretended to be lame and blind."
+        },
+        {
+          "id": "line-05",
+          "text": "A Blackbird warned Pinocchio not to listen."
+        },
+        {
+          "id": "line-06",
+          "text": "The Fox promised a tree full of gold."
+        },
+        {
+          "id": "line-07",
+          "text": "Pinocchio wanted to make his money grow."
+        },
+        {
+          "id": "line-08",
+          "text": "He forgot Geppetto and followed the strangers."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Fire Eater gave Pinocchio five gold pieces."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The money was a gift for Geppetto."
+          },
+          {
+            "lineIndex": 2,
+            "text": "On the road, Pinocchio met a Fox and Cat."
+          },
+          {
+            "lineIndex": 3,
+            "text": "They pretended to be lame and blind."
+          },
+          {
+            "lineIndex": 4,
+            "text": "A Blackbird warned Pinocchio not to listen."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The Fox promised a tree full of gold."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Pinocchio wanted to make his money grow."
+          },
+          {
+            "lineIndex": 7,
+            "text": "He forgot Geppetto and followed the strangers."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The money was a gift for Geppetto."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "They pretended to be lame and blind."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "Pinocchio wanted to make his money grow."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "A Blackbird warned Pinocchio not to listen."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "He forgot Geppetto and followed the strangers."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "On the road, Pinocchio met a Fox and Cat."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "On the road, Pinocchio met a Fox and Cat."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "The Fox promised a tree full of gold."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "He forgot Geppetto and followed the strangers."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Pinocchio wanted to make his money grow."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Fire Eater gave Pinocchio five gold pieces."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "They pretended to be lame and blind."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The money was a gift for Geppetto.",
+            "tokens": [
+              "The",
+              "money",
+              "was",
+              "a",
+              "gift",
+              "for",
+              "Geppetto",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "On the road, Pinocchio met a Fox and Cat.",
+            "tokens": [
+              "On",
+              "the",
+              "road",
+              ",",
+              "Pinocchio",
+              "met",
+              "a",
+              "Fox",
+              "and",
+              "Cat",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "The Fox promised a tree full of gold.",
+            "tokens": [
+              "The",
+              "Fox",
+              "promised",
+              "a",
+              "tree",
+              "full",
+              "of",
+              "gold",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "Pinocchio wanted to make his money grow.",
+            "tokens": [
+              "Pinocchio",
+              "wanted",
+              "to",
+              "make",
+              "his",
+              "money",
+              "grow",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 금화를 받은 이유와 결국 누구를 따라갔는지 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 59,
+        "characters": 327
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Fire Eater gave Pinocchio five gold pieces to carry home to Geppetto."
+        },
+        {
+          "id": "line-02",
+          "text": "Pinocchio planned to buy his father a coat and replace the schoolbook."
+        },
+        {
+          "id": "line-03",
+          "text": "Along the road, he met a limping Fox and a supposedly blind Cat."
+        },
+        {
+          "id": "line-04",
+          "text": "The sight of the coins briefly made the Fox's paw and the Cat's eyes work."
+        },
+        {
+          "id": "line-05",
+          "text": "A Blackbird warned Pinocchio that their advice would bring regret."
+        },
+        {
+          "id": "line-06",
+          "text": "The Fox claimed that buried coins could grow into a tree of gold."
+        },
+        {
+          "id": "line-07",
+          "text": "At first, Pinocchio refused because his father was waiting at home."
+        },
+        {
+          "id": "line-08",
+          "text": "The Fox described thousands of coins and mocked the choice to study."
+        },
+        {
+          "id": "line-09",
+          "text": "Greed made the impossible promise sound reasonable to the inexperienced puppet."
+        },
+        {
+          "id": "line-10",
+          "text": "Forgetting his father and every good resolution, Pinocchio followed the pair."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Fire Eater gave Pinocchio five gold pieces to carry home to Geppetto."
+          },
+          {
+            "lineIndex": 1,
+            "text": "Pinocchio planned to buy his father a coat and replace the schoolbook."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Along the road, he met a limping Fox and a supposedly blind Cat."
+          },
+          {
+            "lineIndex": 3,
+            "text": "The sight of the coins briefly made the Fox's paw and the Cat's eyes work."
+          },
+          {
+            "lineIndex": 4,
+            "text": "A Blackbird warned Pinocchio that their advice would bring regret."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The Fox claimed that buried coins could grow into a tree of gold."
+          },
+          {
+            "lineIndex": 6,
+            "text": "At first, Pinocchio refused because his father was waiting at home."
+          },
+          {
+            "lineIndex": 7,
+            "text": "The Fox described thousands of coins and mocked the choice to study."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Greed made the impossible promise sound reasonable to the inexperienced puppet."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Forgetting his father and every good resolution, Pinocchio followed the pair."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "Pinocchio planned to buy his father a coat and replace the schoolbook."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "A Blackbird warned Pinocchio that their advice would bring regret."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "The Fox described thousands of coins and mocked the choice to study."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "At first, Pinocchio refused because his father was waiting at home."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Forgetting his father and every good resolution, Pinocchio followed the pair."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "The sight of the coins briefly made the Fox's paw and the Cat's eyes work."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Along the road, he met a limping Fox and a supposedly blind Cat."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "At first, Pinocchio refused because his father was waiting at home."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Forgetting his father and every good resolution, Pinocchio followed the pair."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Greed made the impossible promise sound reasonable to the inexperienced puppet."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "Pinocchio planned to buy his father a coat and replace the schoolbook."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "A Blackbird warned Pinocchio that their advice would bring regret."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "Pinocchio planned to buy his father a coat and replace the schoolbook.",
+            "tokens": [
+              "Pinocchio",
+              "planned",
+              "to",
+              "buy",
+              "his",
+              "father",
+              "a",
+              "coat",
+              "and",
+              "replace",
+              "the",
+              "schoolbook",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "The sight of the coins briefly made the Fox's paw and the Cat's eyes work.",
+            "tokens": [
+              "The",
+              "sight",
+              "of",
+              "the",
+              "coins",
+              "briefly",
+              "made",
+              "the",
+              "Fox's",
+              "paw",
+              "and",
+              "the",
+              "Cat's",
+              "eyes",
+              "work",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "At first, Pinocchio refused because his father was waiting at home.",
+            "tokens": [
+              "At",
+              "first",
+              ",",
+              "Pinocchio",
+              "refused",
+              "because",
+              "his",
+              "father",
+              "was",
+              "waiting",
+              "at",
+              "home",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Greed made the impossible promise sound reasonable to the inexperienced puppet.",
+            "tokens": [
+              "Greed",
+              "made",
+              "the",
+              "impossible",
+              "promise",
+              "sound",
+              "reasonable",
+              "to",
+              "the",
+              "inexperienced",
+              "puppet",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 처음에는 거절했다가 마음을 바꾼 이유를 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 120,
+        "characters": 708
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "The next morning, Fire Eater learned of Geppetto's poverty and entrusted Pinocchio with five gold pieces for his father."
+        },
+        {
+          "id": "line-02",
+          "text": "The delighted marionette set out planning both a warm coat for Geppetto and a new A-B-C book for himself."
+        },
+        {
+          "id": "line-03",
+          "text": "Before he had traveled far, a limping Fox and a blind Cat greeted him with suspicious knowledge of his family."
+        },
+        {
+          "id": "line-04",
+          "text": "The ring of gold momentarily restored the Fox's lame paw and opened the Cat's supposedly sightless eyes, though Pinocchio noticed neither clue."
+        },
+        {
+          "id": "line-05",
+          "text": "A Blackbird delivered a direct warning, but the Cat silenced the honest voice and immediately resumed the performance of blindness."
+        },
+        {
+          "id": "line-06",
+          "text": "The Fox then offered an effortless fortune: coins planted in the Field of Wonders would grow into a tree heavy with gold."
+        },
+        {
+          "id": "line-07",
+          "text": "Pinocchio initially remembered Geppetto, the lost schoolbook, and the pain already caused by disobedience."
+        },
+        {
+          "id": "line-08",
+          "text": "Yet the promise of thousands of coins transformed caution into calculation and greed into imagined generosity."
+        },
+        {
+          "id": "line-09",
+          "text": "The Fox pretended to want nothing for himself, while the Cat echoed every lie as though repetition were proof."
+        },
+        {
+          "id": "line-10",
+          "text": "Convinced that the swindlers were good people, Pinocchio turned away from home and placed himself in their hands."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "The next morning, Fire Eater learned of Geppetto's poverty and entrusted Pinocchio with five gold pieces for his father."
+          },
+          {
+            "lineIndex": 1,
+            "text": "The delighted marionette set out planning both a warm coat for Geppetto and a new A-B-C book for himself."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Before he had traveled far, a limping Fox and a blind Cat greeted him with suspicious knowledge of his family."
+          },
+          {
+            "lineIndex": 3,
+            "text": "The ring of gold momentarily restored the Fox's lame paw and opened the Cat's supposedly sightless eyes, though Pinocchio noticed neither clue."
+          },
+          {
+            "lineIndex": 4,
+            "text": "A Blackbird delivered a direct warning, but the Cat silenced the honest voice and immediately resumed the performance of blindness."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The Fox then offered an effortless fortune: coins planted in the Field of Wonders would grow into a tree heavy with gold."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Pinocchio initially remembered Geppetto, the lost schoolbook, and the pain already caused by disobedience."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Yet the promise of thousands of coins transformed caution into calculation and greed into imagined generosity."
+          },
+          {
+            "lineIndex": 8,
+            "text": "The Fox pretended to want nothing for himself, while the Cat echoed every lie as though repetition were proof."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Convinced that the swindlers were good people, Pinocchio turned away from home and placed himself in their hands."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "The delighted marionette set out planning both a warm coat for Geppetto and a new A-B-C book for himself."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "A Blackbird delivered a direct warning, but the Cat silenced the honest voice and immediately resumed the performance of blindness."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Yet the promise of thousands of coins transformed caution into calculation and greed into imagined generosity."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Pinocchio initially remembered Geppetto, the lost schoolbook, and the pain already caused by disobedience."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Convinced that the swindlers were good people, Pinocchio turned away from home and placed himself in their hands."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "The ring of gold momentarily restored the Fox's lame paw and opened the Cat's supposedly sightless eyes, though Pinocchio noticed neither clue."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Before he had traveled far, a limping Fox and a blind Cat greeted him with suspicious knowledge of his family."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "Pinocchio initially remembered Geppetto, the lost schoolbook, and the pain already caused by disobedience."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Convinced that the swindlers were good people, Pinocchio turned away from home and placed himself in their hands."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "The Fox pretended to want nothing for himself, while the Cat echoed every lie as though repetition were proof."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "The delighted marionette set out planning both a warm coat for Geppetto and a new A-B-C book for himself."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "A Blackbird delivered a direct warning, but the Cat silenced the honest voice and immediately resumed the performance of blindness."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "The delighted marionette set out planning both a warm coat for Geppetto and a new A-B-C book for himself.",
+            "tokens": [
+              "The",
+              "delighted",
+              "marionette",
+              "set",
+              "out",
+              "planning",
+              "both",
+              "a",
+              "warm",
+              "coat",
+              "for",
+              "Geppetto",
+              "and",
+              "a",
+              "new",
+              "A",
+              "-",
+              "B",
+              "-",
+              "C",
+              "book",
+              "for",
+              "himself",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "The ring of gold momentarily restored the Fox's lame paw and opened the Cat's supposedly sightless eyes, though Pinocchio noticed neither clue.",
+            "tokens": [
+              "The",
+              "ring",
+              "of",
+              "gold",
+              "momentarily",
+              "restored",
+              "the",
+              "Fox's",
+              "lame",
+              "paw",
+              "and",
+              "opened",
+              "the",
+              "Cat's",
+              "supposedly",
+              "sightless",
+              "eyes",
+              ",",
+              "though",
+              "Pinocchio",
+              "noticed",
+              "neither",
+              "clue",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "Pinocchio initially remembered Geppetto, the lost schoolbook, and the pain already caused by disobedience.",
+            "tokens": [
+              "Pinocchio",
+              "initially",
+              "remembered",
+              "Geppetto",
+              ",",
+              "the",
+              "lost",
+              "schoolbook",
+              ",",
+              "and",
+              "the",
+              "pain",
+              "already",
+              "caused",
+              "by",
+              "disobedience",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "The Fox pretended to want nothing for himself, while the Cat echoed every lie as though repetition were proof.",
+            "tokens": [
+              "The",
+              "Fox",
+              "pretended",
+              "to",
+              "want",
+              "nothing",
+              "for",
+              "himself",
+              ",",
+              "while",
+              "the",
+              "Cat",
+              "echoed",
+              "every",
+              "lie",
+              "as",
+              "though",
+              "repetition",
+              "were",
+              "proof",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "여우와 고양이가 탐욕을 효도처럼 보이게 만들어 피노키오를 설득하는 방식을 분석하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 189,
+        "characters": 1178
+      }
+    }
+  },
+  "checksum": "2f93e9fbcd035e2d231f7b7fe54e547241cc9e7fdf605a8fd3f2008d53b6ca5c"
+}

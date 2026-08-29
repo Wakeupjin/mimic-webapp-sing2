@@ -1,0 +1,997 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-01",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 1,
+    "slug": "the-talking-wood",
+    "titleEn": "The Talking Piece of Wood",
+    "titleKo": "말하고 웃는 나무토막",
+    "synopsisKo": "목수 마스트로 체리는 평범한 장작에서 아이의 목소리가 들리자 공포와 호기심 사이를 오간다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Begin as a playful fireside storyteller, build quiet suspense around the first voice, let the wood sound tiny and mischievous, and end with comic disbelief.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-01.png",
+    "artBrief": "A wide cross-section of Mastro Cherry's old workshop: workbench and ordinary log at center, hatchet and wood plane nearby, closet and street door at the edges, curls of wood shavings on the floor. The six beats must be readable through camera pans from log to tools to the carpenter's shocked reaction.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "평범한 장작",
+        "summaryKo": "이야기의 주인공처럼 보이지 않는 나무토막이 목공소에 놓인다.",
+        "focus": "the plain log on the workbench",
+        "camera": "slow push from the warm stove toward the log",
+        "mood": "cozy and playfully ordinary",
+        "performanceTag": "[warmly]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "목수의 계획",
+        "summaryKo": "체리는 나무를 탁자 다리로 만들기로 한다.",
+        "focus": "Mastro Cherry measuring the log",
+        "camera": "medium pan across ruler, hands, and pleased face",
+        "mood": "practical delight",
+        "performanceTag": "[cheerfully]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "첫 목소리",
+        "summaryKo": "도끼가 내려오기 직전 작은 목소리가 살려 달라고 한다.",
+        "focus": "raised hatchet above the log",
+        "camera": "tight upward tilt that stops before impact",
+        "mood": "sudden suspense",
+        "performanceTag": "[with quiet suspense]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "아무도 없다",
+        "summaryKo": "체리는 목공소 구석구석을 뒤지지만 아무도 찾지 못한다.",
+        "focus": "bench, closet, shavings, and open door",
+        "camera": "searching pan through four empty hiding places",
+        "mood": "nervous comic confusion",
+        "performanceTag": "[puzzled]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "나무의 비명",
+        "summaryKo": "목수가 다시 치자 나무가 아프다고 외친다.",
+        "focus": "the log and Mastro Cherry's frozen face",
+        "camera": "snap focus from struck log to bulging eyes",
+        "mood": "shock",
+        "performanceTag": "[startled]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "간지러운 대패",
+        "summaryKo": "대패질에 나무가 웃고, 체리는 바닥에 주저앉는다.",
+        "focus": "wood plane, curling shaving, collapsed carpenter",
+        "camera": "track the plane, then pull wide for the fall",
+        "mood": "mischievous comic release",
+        "performanceTag": "[mischievously]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Long ago, there was a simple piece of wood."
+        },
+        {
+          "id": "line-02",
+          "text": "It arrived at Mastro Cherry's carpenter shop."
+        },
+        {
+          "id": "line-03",
+          "text": "He wanted to make a table leg."
+        },
+        {
+          "id": "line-04",
+          "text": "He lifted his hatchet over the wood."
+        },
+        {
+          "id": "line-05",
+          "text": "A tiny voice begged him to stop."
+        },
+        {
+          "id": "line-06",
+          "text": "Mastro Cherry searched, but found nobody."
+        },
+        {
+          "id": "line-07",
+          "text": "The wood cried when he struck it."
+        },
+        {
+          "id": "line-08",
+          "text": "Then it giggled, and the carpenter fell down."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Long ago, there was a simple piece of wood."
+          },
+          {
+            "lineIndex": 1,
+            "text": "It arrived at Mastro Cherry's carpenter shop."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He wanted to make a table leg."
+          },
+          {
+            "lineIndex": 3,
+            "text": "He lifted his hatchet over the wood."
+          },
+          {
+            "lineIndex": 4,
+            "text": "A tiny voice begged him to stop."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Mastro Cherry searched, but found nobody."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The wood cried when he struck it."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Then it giggled, and the carpenter fell down."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "It arrived at Mastro Cherry's carpenter shop."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "He lifted his hatchet over the wood."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "The wood cried when he struck it."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "A tiny voice begged him to stop."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "Then it giggled, and the carpenter fell down."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "He wanted to make a table leg."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He wanted to make a table leg."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "Mastro Cherry searched, but found nobody."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Then it giggled, and the carpenter fell down."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The wood cried when he struck it."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Long ago, there was a simple piece of wood."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "He lifted his hatchet over the wood."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "It arrived at Mastro Cherry's carpenter shop.",
+            "tokens": [
+              "It",
+              "arrived",
+              "at",
+              "Mastro",
+              "Cherry's",
+              "carpenter",
+              "shop",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "He wanted to make a table leg.",
+            "tokens": [
+              "He",
+              "wanted",
+              "to",
+              "make",
+              "a",
+              "table",
+              "leg",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "Mastro Cherry searched, but found nobody.",
+            "tokens": [
+              "Mastro",
+              "Cherry",
+              "searched",
+              ",",
+              "but",
+              "found",
+              "nobody",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "The wood cried when he struck it.",
+            "tokens": [
+              "The",
+              "wood",
+              "cried",
+              "when",
+              "he",
+              "struck",
+              "it",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "나무토막이 평범하지 않다는 것을 보여 준 세 가지 일을 순서대로 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 58,
+        "characters": 312
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "This story begins with an ordinary block of winter firewood."
+        },
+        {
+          "id": "line-02",
+          "text": "One day, it appeared in the workshop of Mastro Cherry."
+        },
+        {
+          "id": "line-03",
+          "text": "The carpenter happily decided to turn it into a table leg."
+        },
+        {
+          "id": "line-04",
+          "text": "As he raised his hatchet, a tiny voice begged for care."
+        },
+        {
+          "id": "line-05",
+          "text": "He searched under the bench and inside the closet, but found no one."
+        },
+        {
+          "id": "line-06",
+          "text": "Certain that he had imagined the voice, he struck the wood."
+        },
+        {
+          "id": "line-07",
+          "text": "The unseen speaker cried out, and Mastro Cherry froze in fear."
+        },
+        {
+          "id": "line-08",
+          "text": "He knocked the log against the floor and walls, yet it stayed silent."
+        },
+        {
+          "id": "line-09",
+          "text": "When he used a plane, the wood complained that it tickled."
+        },
+        {
+          "id": "line-10",
+          "text": "The terrified carpenter collapsed, his red nose turning purple."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "This story begins with an ordinary block of winter firewood."
+          },
+          {
+            "lineIndex": 1,
+            "text": "One day, it appeared in the workshop of Mastro Cherry."
+          },
+          {
+            "lineIndex": 2,
+            "text": "The carpenter happily decided to turn it into a table leg."
+          },
+          {
+            "lineIndex": 3,
+            "text": "As he raised his hatchet, a tiny voice begged for care."
+          },
+          {
+            "lineIndex": 4,
+            "text": "He searched under the bench and inside the closet, but found no one."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Certain that he had imagined the voice, he struck the wood."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The unseen speaker cried out, and Mastro Cherry froze in fear."
+          },
+          {
+            "lineIndex": 7,
+            "text": "He knocked the log against the floor and walls, yet it stayed silent."
+          },
+          {
+            "lineIndex": 8,
+            "text": "When he used a plane, the wood complained that it tickled."
+          },
+          {
+            "lineIndex": 9,
+            "text": "The terrified carpenter collapsed, his red nose turning purple."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "One day, it appeared in the workshop of Mastro Cherry."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "He searched under the bench and inside the closet, but found no one."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "He knocked the log against the floor and walls, yet it stayed silent."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The unseen speaker cried out, and Mastro Cherry froze in fear."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "The terrified carpenter collapsed, his red nose turning purple."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "As he raised his hatchet, a tiny voice begged for care."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "The carpenter happily decided to turn it into a table leg."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "The unseen speaker cried out, and Mastro Cherry froze in fear."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "The terrified carpenter collapsed, his red nose turning purple."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "When he used a plane, the wood complained that it tickled."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "One day, it appeared in the workshop of Mastro Cherry."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "He searched under the bench and inside the closet, but found no one."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "One day, it appeared in the workshop of Mastro Cherry.",
+            "tokens": [
+              "One",
+              "day",
+              ",",
+              "it",
+              "appeared",
+              "in",
+              "the",
+              "workshop",
+              "of",
+              "Mastro",
+              "Cherry",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "As he raised his hatchet, a tiny voice begged for care.",
+            "tokens": [
+              "As",
+              "he",
+              "raised",
+              "his",
+              "hatchet",
+              ",",
+              "a",
+              "tiny",
+              "voice",
+              "begged",
+              "for",
+              "care",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "The unseen speaker cried out, and Mastro Cherry froze in fear.",
+            "tokens": [
+              "The",
+              "unseen",
+              "speaker",
+              "cried",
+              "out",
+              ",",
+              "and",
+              "Mastro",
+              "Cherry",
+              "froze",
+              "in",
+              "fear",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "When he used a plane, the wood complained that it tickled.",
+            "tokens": [
+              "When",
+              "he",
+              "used",
+              "a",
+              "plane",
+              ",",
+              "the",
+              "wood",
+              "complained",
+              "that",
+              "it",
+              "tickled",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "Mastro Cherry가 목소리를 들을 때마다 어떻게 설명하고 반응했는지 First, But, Finally로 말해 보세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 110,
+        "characters": 615
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Although readers may expect a king, the tale opens with a common block of firewood."
+        },
+        {
+          "id": "line-02",
+          "text": "Somehow, the unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round red nose."
+        },
+        {
+          "id": "line-03",
+          "text": "Delighted by its sturdy shape, he decided that it had arrived just in time to become a table leg."
+        },
+        {
+          "id": "line-04",
+          "text": "Yet, as he lifted his hatchet, a faint voice pleaded with him not to strike so hard."
+        },
+        {
+          "id": "line-05",
+          "text": "Astonished, he searched beneath the bench, inside the closet, and among the shavings, but discovered no one."
+        },
+        {
+          "id": "line-06",
+          "text": "Embarrassed by his fear, he blamed his imagination and delivered a solemn blow."
+        },
+        {
+          "id": "line-07",
+          "text": "The distant voice cried in pain, leaving the carpenter speechless and trembling."
+        },
+        {
+          "id": "line-08",
+          "text": "Determined to expose the trick, he knocked the log against the floor, walls, and ceiling, but heard nothing."
+        },
+        {
+          "id": "line-09",
+          "text": "When his plane slid across the wood, the hidden voice giggled that its stomach was being tickled."
+        },
+        {
+          "id": "line-10",
+          "text": "At that impossible complaint, poor Mastro Cherry collapsed as though he had been struck."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Although readers may expect a king, the tale opens with a common block of firewood."
+          },
+          {
+            "lineIndex": 1,
+            "text": "Somehow, the unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round red nose."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Delighted by its sturdy shape, he decided that it had arrived just in time to become a table leg."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Yet, as he lifted his hatchet, a faint voice pleaded with him not to strike so hard."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Astonished, he searched beneath the bench, inside the closet, and among the shavings, but discovered no one."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Embarrassed by his fear, he blamed his imagination and delivered a solemn blow."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The distant voice cried in pain, leaving the carpenter speechless and trembling."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Determined to expose the trick, he knocked the log against the floor, walls, and ceiling, but heard nothing."
+          },
+          {
+            "lineIndex": 8,
+            "text": "When his plane slid across the wood, the hidden voice giggled that its stomach was being tickled."
+          },
+          {
+            "lineIndex": 9,
+            "text": "At that impossible complaint, poor Mastro Cherry collapsed as though he had been struck."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "Somehow, the unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round red nose."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "Astonished, he searched beneath the bench, inside the closet, and among the shavings, but discovered no one."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Determined to expose the trick, he knocked the log against the floor, walls, and ceiling, but heard nothing."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The distant voice cried in pain, leaving the carpenter speechless and trembling."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "At that impossible complaint, poor Mastro Cherry collapsed as though he had been struck."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Yet, as he lifted his hatchet, a faint voice pleaded with him not to strike so hard."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Delighted by its sturdy shape, he decided that it had arrived just in time to become a table leg."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "The distant voice cried in pain, leaving the carpenter speechless and trembling."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "At that impossible complaint, poor Mastro Cherry collapsed as though he had been struck."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "When his plane slid across the wood, the hidden voice giggled that its stomach was being tickled."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "Somehow, the unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round red nose."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "Astonished, he searched beneath the bench, inside the closet, and among the shavings, but discovered no one."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "Somehow, the unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round red nose.",
+            "tokens": [
+              "Somehow",
+              ",",
+              "the",
+              "unremarkable",
+              "log",
+              "found",
+              "its",
+              "way",
+              "into",
+              "the",
+              "workshop",
+              "of",
+              "Mastro",
+              "Cherry",
+              ",",
+              "an",
+              "old",
+              "carpenter",
+              "with",
+              "a",
+              "round",
+              "red",
+              "nose",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Yet, as he lifted his hatchet, a faint voice pleaded with him not to strike so hard.",
+            "tokens": [
+              "Yet",
+              ",",
+              "as",
+              "he",
+              "lifted",
+              "his",
+              "hatchet",
+              ",",
+              "a",
+              "faint",
+              "voice",
+              "pleaded",
+              "with",
+              "him",
+              "not",
+              "to",
+              "strike",
+              "so",
+              "hard",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "The distant voice cried in pain, leaving the carpenter speechless and trembling.",
+            "tokens": [
+              "The",
+              "distant",
+              "voice",
+              "cried",
+              "in",
+              "pain",
+              ",",
+              "leaving",
+              "the",
+              "carpenter",
+              "speechless",
+              "and",
+              "trembling",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "When his plane slid across the wood, the hidden voice giggled that its stomach was being tickled.",
+            "tokens": [
+              "When",
+              "his",
+              "plane",
+              "slid",
+              "across",
+              "the",
+              "wood",
+              ",",
+              "the",
+              "hidden",
+              "voice",
+              "giggled",
+              "that",
+              "its",
+              "stomach",
+              "was",
+              "being",
+              "tickled",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "이 장면에서 긴장과 유머가 동시에 생기는 방식을 서술자의 말투와 목수의 반응을 들어 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 163,
+        "characters": 952
+      }
+    }
+  },
+  "checksum": "e839c474112cbc65aa6183735c1e77031fb7a605723a9db515337d94d7353c61"
+}

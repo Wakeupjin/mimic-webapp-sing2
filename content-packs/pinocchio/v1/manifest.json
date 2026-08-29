@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentSetId": "pinocchio-v1-chapters-01-12",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "styleGuide": "style-guide.json",
+  "imagePromptRecord": "IMAGE_PROMPTS.md",
+  "overviewImage": "assets/chapters-overview.jpg",
+  "audioGeneration": {
+    "script": "../../../scripts/generate-pinocchio-content-pack-audio.mjs",
+    "model": "eleven_v3",
+    "continuousMasters": 36,
+    "status": "awaiting-durable-paid-voice-selection"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "contentId": "pinocchio-v1-chapter-01",
+      "slug": "the-talking-wood",
+      "titleEn": "The Talking Piece of Wood",
+      "titleKo": "말하고 웃는 나무토막",
+      "path": "chapters/chapter-01/pack.json",
+      "checksum": "e839c474112cbc65aa6183735c1e77031fb7a605723a9db515337d94d7353c61",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 58,
+          "characters": 312
+        },
+        "core": {
+          "lines": 10,
+          "words": 110,
+          "characters": 615
+        },
+        "studio": {
+          "lines": 10,
+          "words": 163,
+          "characters": 952
+        }
+      }
+    },
+    {
+      "number": 2,
+      "contentId": "pinocchio-v1-chapter-02",
+      "slug": "geppetto-gets-the-wood",
+      "titleEn": "Geppetto Receives the Wood",
+      "titleKo": "제페토에게 간 나무토막",
+      "path": "chapters/chapter-02/pack.json",
+      "checksum": "12400ebc462b4abeb3767d5830a0e6542f0666af26320725c61c7d23f50df727",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 55,
+          "characters": 326
+        },
+        "core": {
+          "lines": 10,
+          "words": 104,
+          "characters": 625
+        },
+        "studio": {
+          "lines": 10,
+          "words": 159,
+          "characters": 977
+        }
+      }
+    },
+    {
+      "number": 3,
+      "contentId": "pinocchio-v1-chapter-03",
+      "slug": "pinocchio-is-made",
+      "titleEn": "Pinocchio Is Made",
+      "titleKo": "피노키오가 태어나다",
+      "path": "chapters/chapter-03/pack.json",
+      "checksum": "89a47e6172f43791da7353bcef7f3c2cf40fad2d988796b8975dbacf687f5a36",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 55,
+          "characters": 309
+        },
+        "core": {
+          "lines": 10,
+          "words": 115,
+          "characters": 713
+        },
+        "studio": {
+          "lines": 10,
+          "words": 173,
+          "characters": 1075
+        }
+      }
+    },
+    {
+      "number": 4,
+      "contentId": "pinocchio-v1-chapter-04",
+      "slug": "the-talking-cricket",
+      "titleEn": "The Talking Cricket's Warning",
+      "titleKo": "말하는 귀뚜라미의 경고",
+      "path": "chapters/chapter-04/pack.json",
+      "checksum": "0286496077eb1c429b5856fbf2461cae9c4545f03cca5cae3d8fabd42143ed2e",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 62,
+          "characters": 347
+        },
+        "core": {
+          "lines": 10,
+          "words": 113,
+          "characters": 696
+        },
+        "studio": {
+          "lines": 10,
+          "words": 162,
+          "characters": 1073
+        }
+      }
+    },
+    {
+      "number": 5,
+      "contentId": "pinocchio-v1-chapter-05",
+      "slug": "the-flying-omelet",
+      "titleEn": "The Omelet That Flew Away",
+      "titleKo": "날아가 버린 오믈렛",
+      "path": "chapters/chapter-05/pack.json",
+      "checksum": "5e1cb299124e8d6df7507c112e9e956f59293b73f55c6506fc888436462b5038",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 60,
+          "characters": 327
+        },
+        "core": {
+          "lines": 10,
+          "words": 111,
+          "characters": 687
+        },
+        "studio": {
+          "lines": 10,
+          "words": 178,
+          "characters": 1039
+        }
+      }
+    },
+    {
+      "number": 6,
+      "contentId": "pinocchio-v1-chapter-06",
+      "slug": "the-burned-feet",
+      "titleEn": "The Night of the Burned Feet",
+      "titleKo": "타 버린 두 발",
+      "path": "chapters/chapter-06/pack.json",
+      "checksum": "0dee8fb6bc67733a24d8eaa20e107665fed2960fd464ec594e68f59d726c277d",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 57,
+          "characters": 308
+        },
+        "core": {
+          "lines": 10,
+          "words": 114,
+          "characters": 651
+        },
+        "studio": {
+          "lines": 10,
+          "words": 159,
+          "characters": 963
+        }
+      }
+    },
+    {
+      "number": 7,
+      "contentId": "pinocchio-v1-chapter-07",
+      "slug": "geppettos-breakfast",
+      "titleEn": "Geppetto Shares His Breakfast",
+      "titleKo": "제페토의 아침 식사",
+      "path": "chapters/chapter-07/pack.json",
+      "checksum": "3c7192acb8e52111c8856570bd066b41789676cde68fb4d58567d0f7335d6708",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 53,
+          "characters": 298
+        },
+        "core": {
+          "lines": 10,
+          "words": 117,
+          "characters": 711
+        },
+        "studio": {
+          "lines": 10,
+          "words": 163,
+          "characters": 1032
+        }
+      }
+    },
+    {
+      "number": 8,
+      "contentId": "pinocchio-v1-chapter-08",
+      "slug": "new-feet-and-the-abc-book",
+      "titleEn": "New Feet and an A-B-C Book",
+      "titleKo": "새 발과 알파벳 책",
+      "path": "chapters/chapter-08/pack.json",
+      "checksum": "dfc146229b03bcf986ef307e2fa259a04c489d8d167d60c949721cae19d6eb39",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 50,
+          "characters": 309
+        },
+        "core": {
+          "lines": 10,
+          "words": 107,
+          "characters": 667
+        },
+        "studio": {
+          "lines": 10,
+          "words": 172,
+          "characters": 1080
+        }
+      }
+    },
+    {
+      "number": 9,
+      "contentId": "pinocchio-v1-chapter-09",
+      "slug": "the-sold-schoolbook",
+      "titleEn": "The Schoolbook Is Sold",
+      "titleKo": "팔려 버린 알파벳 책",
+      "path": "chapters/chapter-09/pack.json",
+      "checksum": "d52bbfe7dd09a2cc84b30288cab17971bb228b7904fa4ccbade20590e6f9bc35",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 57,
+          "characters": 316
+        },
+        "core": {
+          "lines": 10,
+          "words": 110,
+          "characters": 682
+        },
+        "studio": {
+          "lines": 10,
+          "words": 172,
+          "characters": 1136
+        }
+      }
+    },
+    {
+      "number": 10,
+      "contentId": "pinocchio-v1-chapter-10",
+      "slug": "the-marionette-theater",
+      "titleEn": "The Marionette Theater",
+      "titleKo": "인형극장의 소동",
+      "path": "chapters/chapter-10/pack.json",
+      "checksum": "7c575d1b30cb99316c79337d744e9fdac1bcdf287d619913390f8a53cda4ab11",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 54,
+          "characters": 335
+        },
+        "core": {
+          "lines": 10,
+          "words": 109,
+          "characters": 699
+        },
+        "studio": {
+          "lines": 10,
+          "words": 166,
+          "characters": 1082
+        }
+      }
+    },
+    {
+      "number": 11,
+      "contentId": "pinocchio-v1-chapter-11",
+      "slug": "pinocchios-brave-choice",
+      "titleEn": "Pinocchio's Brave Choice",
+      "titleKo": "피노키오의 용기 있는 선택",
+      "path": "chapters/chapter-11/pack.json",
+      "checksum": "3ea04e2dc84ed4c997c5a4c51b0fee42c747b29d726667f9d4867857ea44582a",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 52,
+          "characters": 324
+        },
+        "core": {
+          "lines": 10,
+          "words": 107,
+          "characters": 689
+        },
+        "studio": {
+          "lines": 10,
+          "words": 159,
+          "characters": 1064
+        }
+      }
+    },
+    {
+      "number": 12,
+      "contentId": "pinocchio-v1-chapter-12",
+      "slug": "the-fox-and-the-cat",
+      "titleEn": "The Fox, the Cat, and Five Gold Pieces",
+      "titleKo": "여우와 고양이, 그리고 금화 다섯 닢",
+      "path": "chapters/chapter-12/pack.json",
+      "checksum": "2f93e9fbcd035e2d231f7b7fe54e547241cc9e7fdf605a8fd3f2008d53b6ca5c",
+      "stats": {
+        "foundation": {
+          "lines": 8,
+          "words": 59,
+          "characters": 327
+        },
+        "core": {
+          "lines": 10,
+          "words": 120,
+          "characters": 708
+        },
+        "studio": {
+          "lines": 10,
+          "words": 189,
+          "characters": 1178
+        }
+      }
+    }
+  ],
+  "checksum": "b936f4eff94f70fd49f3a03121a222c190d62ee3fca263b81b639b7ac8dac8d5"
+}

@@ -1,0 +1,993 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-04",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 4,
+    "slug": "the-talking-cricket",
+    "titleEn": "The Talking Cricket's Warning",
+    "titleKo": "말하는 귀뚜라미의 경고",
+    "synopsisKo": "혼자 남은 피노키오는 공부와 일을 하라는 귀뚜라미의 충고를 거부하고 분노 끝에 돌이킬 수 없는 행동을 한다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Let the Cricket sound calm, patient, and old; let Pinocchio's impatience sharpen gradually. Do not sensationalize the final blow—land it as a sudden, regretful silence.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-04.png",
+    "artBrief": "Geppetto's dim room after the chase: Pinocchio sprawled proudly on the floor, a small olive-brown cricket climbing the wall, the workbench and hammer in the foreground, and the open countryside visible beyond the door as a memory of escape.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "혼자 얻은 자유",
+        "summaryKo": "피노키오는 아버지가 잡혀간 뒤 혼자 집으로 돌아온다.",
+        "focus": "Pinocchio alone on the floor",
+        "camera": "push through the half-open door toward his proud pose",
+        "mood": "reckless relief",
+        "performanceTag": "[lightly]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "벽 위의 목소리",
+        "summaryKo": "백 년을 산 귀뚜라미가 모습을 드러낸다.",
+        "focus": "small cricket climbing the wall",
+        "camera": "slow rack focus from Pinocchio to the wall",
+        "mood": "quiet curiosity",
+        "performanceTag": "[curiously]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "부모와 학교",
+        "summaryKo": "귀뚜라미는 집을 떠나고 공부를 피하면 불행해진다고 말한다.",
+        "focus": "Cricket facing Pinocchio from above",
+        "camera": "balanced two-shot across the room",
+        "mood": "patient warning",
+        "performanceTag": "[calmly]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "놀기만 하는 직업",
+        "summaryKo": "피노키오는 먹고 자고 노는 삶만 원한다고 우긴다.",
+        "focus": "Pinocchio gesturing toward the open countryside",
+        "camera": "pan toward imagined trees and butterflies",
+        "mood": "careless fantasy",
+        "performanceTag": "[boastfully]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "분노",
+        "summaryKo": "나무 머리라는 말에 피노키오가 망치를 든다.",
+        "focus": "Pinocchio's hand closing around the hammer",
+        "camera": "tight downward push to the hammer",
+        "mood": "rising danger",
+        "performanceTag": "[angrily]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "갑작스러운 침묵",
+        "summaryKo": "망치가 귀뚜라미를 맞히고 마지막 울음이 사라진다.",
+        "focus": "fallen hammer and empty wall shadow",
+        "camera": "hold still, then slowly widen",
+        "mood": "regretful silence",
+        "performanceTag": "[quietly]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio ran home after Geppetto's arrest."
+        },
+        {
+          "id": "line-02",
+          "text": "A Talking Cricket lived in the room."
+        },
+        {
+          "id": "line-03",
+          "text": "The Cricket told him to obey his father."
+        },
+        {
+          "id": "line-04",
+          "text": "It said he should study or learn a job."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio only wanted to eat and play."
+        },
+        {
+          "id": "line-06",
+          "text": "The Cricket warned that this path brings trouble."
+        },
+        {
+          "id": "line-07",
+          "text": "Pinocchio grew angry and threw a hammer."
+        },
+        {
+          "id": "line-08",
+          "text": "The hammer hit the Cricket, and the room became silent."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio ran home after Geppetto's arrest."
+          },
+          {
+            "lineIndex": 1,
+            "text": "A Talking Cricket lived in the room."
+          },
+          {
+            "lineIndex": 2,
+            "text": "The Cricket told him to obey his father."
+          },
+          {
+            "lineIndex": 3,
+            "text": "It said he should study or learn a job."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Pinocchio only wanted to eat and play."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The Cricket warned that this path brings trouble."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Pinocchio grew angry and threw a hammer."
+          },
+          {
+            "lineIndex": 7,
+            "text": "The hammer hit the Cricket, and the room became silent."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "A Talking Cricket lived in the room."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "It said he should study or learn a job."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "Pinocchio grew angry and threw a hammer."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "Pinocchio only wanted to eat and play."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "The hammer hit the Cricket, and the room became silent."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "The Cricket told him to obey his father."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "The Cricket told him to obey his father."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "The Cricket warned that this path brings trouble."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "The hammer hit the Cricket, and the room became silent."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Pinocchio grew angry and threw a hammer."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Pinocchio ran home after Geppetto's arrest."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "It said he should study or learn a job."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "A Talking Cricket lived in the room.",
+            "tokens": [
+              "A",
+              "Talking",
+              "Cricket",
+              "lived",
+              "in",
+              "the",
+              "room",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "The Cricket told him to obey his father.",
+            "tokens": [
+              "The",
+              "Cricket",
+              "told",
+              "him",
+              "to",
+              "obey",
+              "his",
+              "father",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "The Cricket warned that this path brings trouble.",
+            "tokens": [
+              "The",
+              "Cricket",
+              "warned",
+              "that",
+              "this",
+              "path",
+              "brings",
+              "trouble",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "Pinocchio grew angry and threw a hammer.",
+            "tokens": [
+              "Pinocchio",
+              "grew",
+              "angry",
+              "and",
+              "threw",
+              "a",
+              "hammer",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "귀뚜라미가 한 두 가지 충고와 피노키오의 반응을 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 62,
+        "characters": 347
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "After Geppetto's arrest, Pinocchio raced home and celebrated his freedom."
+        },
+        {
+          "id": "line-02",
+          "text": "A Talking Cricket appeared and said he had lived there for a hundred years."
+        },
+        {
+          "id": "line-03",
+          "text": "He warned that children who abandon their parents cannot remain happy."
+        },
+        {
+          "id": "line-04",
+          "text": "Pinocchio answered that school and study sounded like a miserable life."
+        },
+        {
+          "id": "line-05",
+          "text": "The Cricket urged him to learn an honest trade instead."
+        },
+        {
+          "id": "line-06",
+          "text": "Pinocchio claimed that eating, sleeping, and wandering were the only work he wanted."
+        },
+        {
+          "id": "line-07",
+          "text": "The patient Cricket warned that such a life ends in trouble."
+        },
+        {
+          "id": "line-08",
+          "text": "Angry at being called wooden-headed, Pinocchio reached for a hammer."
+        },
+        {
+          "id": "line-09",
+          "text": "He threw it, perhaps without expecting to strike his adviser."
+        },
+        {
+          "id": "line-10",
+          "text": "The hammer hit the Cricket, whose final weak cry left the room silent."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "After Geppetto's arrest, Pinocchio raced home and celebrated his freedom."
+          },
+          {
+            "lineIndex": 1,
+            "text": "A Talking Cricket appeared and said he had lived there for a hundred years."
+          },
+          {
+            "lineIndex": 2,
+            "text": "He warned that children who abandon their parents cannot remain happy."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Pinocchio answered that school and study sounded like a miserable life."
+          },
+          {
+            "lineIndex": 4,
+            "text": "The Cricket urged him to learn an honest trade instead."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Pinocchio claimed that eating, sleeping, and wandering were the only work he wanted."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The patient Cricket warned that such a life ends in trouble."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Angry at being called wooden-headed, Pinocchio reached for a hammer."
+          },
+          {
+            "lineIndex": 8,
+            "text": "He threw it, perhaps without expecting to strike his adviser."
+          },
+          {
+            "lineIndex": 9,
+            "text": "The hammer hit the Cricket, whose final weak cry left the room silent."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "A Talking Cricket appeared and said he had lived there for a hundred years."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "The Cricket urged him to learn an honest trade instead."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Angry at being called wooden-headed, Pinocchio reached for a hammer."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The patient Cricket warned that such a life ends in trouble."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "The hammer hit the Cricket, whose final weak cry left the room silent."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Pinocchio answered that school and study sounded like a miserable life."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "He warned that children who abandon their parents cannot remain happy."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "The patient Cricket warned that such a life ends in trouble."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "The hammer hit the Cricket, whose final weak cry left the room silent."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "He threw it, perhaps without expecting to strike his adviser."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "A Talking Cricket appeared and said he had lived there for a hundred years."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "The Cricket urged him to learn an honest trade instead."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "A Talking Cricket appeared and said he had lived there for a hundred years.",
+            "tokens": [
+              "A",
+              "Talking",
+              "Cricket",
+              "appeared",
+              "and",
+              "said",
+              "he",
+              "had",
+              "lived",
+              "there",
+              "for",
+              "a",
+              "hundred",
+              "years",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Pinocchio answered that school and study sounded like a miserable life.",
+            "tokens": [
+              "Pinocchio",
+              "answered",
+              "that",
+              "school",
+              "and",
+              "study",
+              "sounded",
+              "like",
+              "a",
+              "miserable",
+              "life",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "The patient Cricket warned that such a life ends in trouble.",
+            "tokens": [
+              "The",
+              "patient",
+              "Cricket",
+              "warned",
+              "that",
+              "such",
+              "a",
+              "life",
+              "ends",
+              "in",
+              "trouble",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "He threw it, perhaps without expecting to strike his adviser.",
+            "tokens": [
+              "He",
+              "threw",
+              "it",
+              ",",
+              "perhaps",
+              "without",
+              "expecting",
+              "to",
+              "strike",
+              "his",
+              "adviser",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 자유를 어떻게 이해했고, 귀뚜라미는 책임을 어떻게 설명했는지 비교하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 113,
+        "characters": 696
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "While Geppetto was taken to prison, Pinocchio bounded home and congratulated himself on escaping every restraint."
+        },
+        {
+          "id": "line-02",
+          "text": "His triumph was interrupted by a century-old Talking Cricket, who refused to leave before speaking an uncomfortable truth."
+        },
+        {
+          "id": "line-03",
+          "text": "The Cricket warned that children who reject their parents eventually discover that freedom without responsibility brings sorrow."
+        },
+        {
+          "id": "line-04",
+          "text": "Pinocchio dismissed school as a prison and preferred butterflies, trees, birds' nests, and endless play."
+        },
+        {
+          "id": "line-05",
+          "text": "When urged to learn a trade, he declared that eating, drinking, sleeping, and wandering suited him perfectly."
+        },
+        {
+          "id": "line-06",
+          "text": "Still calm, the Cricket explained that people who choose such a life often finish in a hospital or a prison."
+        },
+        {
+          "id": "line-07",
+          "text": "Rather than examine the warning, Pinocchio treated every correction as an insult."
+        },
+        {
+          "id": "line-08",
+          "text": "The Cricket's final remark about his wooden head sent the marionette into a sudden fury."
+        },
+        {
+          "id": "line-09",
+          "text": "Pinocchio hurled a hammer, apparently without imagining that his reckless gesture would truly land."
+        },
+        {
+          "id": "line-10",
+          "text": "The blow silenced the Cricket and transformed a childish argument into a consequence that could not be recalled."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "While Geppetto was taken to prison, Pinocchio bounded home and congratulated himself on escaping every restraint."
+          },
+          {
+            "lineIndex": 1,
+            "text": "His triumph was interrupted by a century-old Talking Cricket, who refused to leave before speaking an uncomfortable truth."
+          },
+          {
+            "lineIndex": 2,
+            "text": "The Cricket warned that children who reject their parents eventually discover that freedom without responsibility brings sorrow."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Pinocchio dismissed school as a prison and preferred butterflies, trees, birds' nests, and endless play."
+          },
+          {
+            "lineIndex": 4,
+            "text": "When urged to learn a trade, he declared that eating, drinking, sleeping, and wandering suited him perfectly."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Still calm, the Cricket explained that people who choose such a life often finish in a hospital or a prison."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Rather than examine the warning, Pinocchio treated every correction as an insult."
+          },
+          {
+            "lineIndex": 7,
+            "text": "The Cricket's final remark about his wooden head sent the marionette into a sudden fury."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Pinocchio hurled a hammer, apparently without imagining that his reckless gesture would truly land."
+          },
+          {
+            "lineIndex": 9,
+            "text": "The blow silenced the Cricket and transformed a childish argument into a consequence that could not be recalled."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "His triumph was interrupted by a century-old Talking Cricket, who refused to leave before speaking an uncomfortable truth."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "When urged to learn a trade, he declared that eating, drinking, sleeping, and wandering suited him perfectly."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "The Cricket's final remark about his wooden head sent the marionette into a sudden fury."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Rather than examine the warning, Pinocchio treated every correction as an insult."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "The blow silenced the Cricket and transformed a childish argument into a consequence that could not be recalled."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Pinocchio dismissed school as a prison and preferred butterflies, trees, birds' nests, and endless play."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "The Cricket warned that children who reject their parents eventually discover that freedom without responsibility brings sorrow."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "Rather than examine the warning, Pinocchio treated every correction as an insult."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "The blow silenced the Cricket and transformed a childish argument into a consequence that could not be recalled."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Pinocchio hurled a hammer, apparently without imagining that his reckless gesture would truly land."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "His triumph was interrupted by a century-old Talking Cricket, who refused to leave before speaking an uncomfortable truth."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "When urged to learn a trade, he declared that eating, drinking, sleeping, and wandering suited him perfectly."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "His triumph was interrupted by a century-old Talking Cricket, who refused to leave before speaking an uncomfortable truth.",
+            "tokens": [
+              "His",
+              "triumph",
+              "was",
+              "interrupted",
+              "by",
+              "a",
+              "century",
+              "-",
+              "old",
+              "Talking",
+              "Cricket",
+              ",",
+              "who",
+              "refused",
+              "to",
+              "leave",
+              "before",
+              "speaking",
+              "an",
+              "uncomfortable",
+              "truth",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Pinocchio dismissed school as a prison and preferred butterflies, trees, birds' nests, and endless play.",
+            "tokens": [
+              "Pinocchio",
+              "dismissed",
+              "school",
+              "as",
+              "a",
+              "prison",
+              "and",
+              "preferred",
+              "butterflies",
+              ",",
+              "trees",
+              ",",
+              "birds",
+              "nests",
+              ",",
+              "and",
+              "endless",
+              "play",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "Rather than examine the warning, Pinocchio treated every correction as an insult.",
+            "tokens": [
+              "Rather",
+              "than",
+              "examine",
+              "the",
+              "warning",
+              ",",
+              "Pinocchio",
+              "treated",
+              "every",
+              "correction",
+              "as",
+              "an",
+              "insult",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Pinocchio hurled a hammer, apparently without imagining that his reckless gesture would truly land.",
+            "tokens": [
+              "Pinocchio",
+              "hurled",
+              "a",
+              "hammer",
+              ",",
+              "apparently",
+              "without",
+              "imagining",
+              "that",
+              "his",
+              "reckless",
+              "gesture",
+              "would",
+              "truly",
+              "land",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 충고의 내용이 아니라 충고받는 감정에 반응하면서 갈등이 커지는 과정을 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 162,
+        "characters": 1073
+      }
+    }
+  },
+  "checksum": "0286496077eb1c429b5856fbf2461cae9c4545f03cca5cae3d8fabd42143ed2e"
+}

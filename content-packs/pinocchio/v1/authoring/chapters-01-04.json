@@ -1,0 +1,236 @@
+{
+  "chapters": [
+    {
+      "number": 1,
+      "slug": "the-talking-wood",
+      "titleEn": "The Talking Piece of Wood",
+      "titleKo": "말하고 웃는 나무토막",
+      "synopsisKo": "목수 마스트로 체리는 평범한 장작에서 아이의 목소리가 들리자 공포와 호기심 사이를 오간다.",
+      "narrationDirection": "Begin as a playful fireside storyteller, build quiet suspense around the first voice, let the wood sound tiny and mischievous, and end with comic disbelief.",
+      "artBrief": "A wide cross-section of Mastro Cherry's old workshop: workbench and ordinary log at center, hatchet and wood plane nearby, closet and street door at the edges, curls of wood shavings on the floor. The six beats must be readable through camera pans from log to tools to the carpenter's shocked reaction.",
+      "levels": {
+        "foundation": [
+          "Long ago, there was a simple piece of wood.",
+          "It arrived at Mastro Cherry's carpenter shop.",
+          "He wanted to make a table leg.",
+          "He lifted his hatchet over the wood.",
+          "A tiny voice begged him to stop.",
+          "Mastro Cherry searched, but found nobody.",
+          "The wood cried when he struck it.",
+          "Then it giggled, and the carpenter fell down."
+        ],
+        "core": [
+          "This story begins with an ordinary block of winter firewood.",
+          "One day, it appeared in the workshop of Mastro Cherry.",
+          "The carpenter happily decided to turn it into a table leg.",
+          "As he raised his hatchet, a tiny voice begged for care.",
+          "He searched under the bench and inside the closet, but found no one.",
+          "Certain that he had imagined the voice, he struck the wood.",
+          "The unseen speaker cried out, and Mastro Cherry froze in fear.",
+          "He knocked the log against the floor and walls, yet it stayed silent.",
+          "When he used a plane, the wood complained that it tickled.",
+          "The terrified carpenter collapsed, his red nose turning purple."
+        ],
+        "studio": [
+          "Although readers may expect a king, the tale opens with a common block of firewood.",
+          "Somehow, the unremarkable log found its way into the workshop of Mastro Cherry, an old carpenter with a round red nose.",
+          "Delighted by its sturdy shape, he decided that it had arrived just in time to become a table leg.",
+          "Yet, as he lifted his hatchet, a faint voice pleaded with him not to strike so hard.",
+          "Astonished, he searched beneath the bench, inside the closet, and among the shavings, but discovered no one.",
+          "Embarrassed by his fear, he blamed his imagination and delivered a solemn blow.",
+          "The distant voice cried in pain, leaving the carpenter speechless and trembling.",
+          "Determined to expose the trick, he knocked the log against the floor, walls, and ceiling, but heard nothing.",
+          "When his plane slid across the wood, the hidden voice giggled that its stomach was being tickled.",
+          "At that impossible complaint, poor Mastro Cherry collapsed as though he had been struck."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "나무토막이 평범하지 않다는 것을 보여 준 세 가지 일을 순서대로 말해 보세요.",
+        "core": "Mastro Cherry가 목소리를 들을 때마다 어떻게 설명하고 반응했는지 First, But, Finally로 말해 보세요.",
+        "studio": "이 장면에서 긴장과 유머가 동시에 생기는 방식을 서술자의 말투와 목수의 반응을 들어 설명하세요."
+      },
+      "beats": [
+        {"titleKo": "평범한 장작", "summaryKo": "이야기의 주인공처럼 보이지 않는 나무토막이 목공소에 놓인다.", "focus": "the plain log on the workbench", "camera": "slow push from the warm stove toward the log", "mood": "cozy and playfully ordinary", "performanceTag": "[warmly]"},
+        {"titleKo": "목수의 계획", "summaryKo": "체리는 나무를 탁자 다리로 만들기로 한다.", "focus": "Mastro Cherry measuring the log", "camera": "medium pan across ruler, hands, and pleased face", "mood": "practical delight", "performanceTag": "[cheerfully]"},
+        {"titleKo": "첫 목소리", "summaryKo": "도끼가 내려오기 직전 작은 목소리가 살려 달라고 한다.", "focus": "raised hatchet above the log", "camera": "tight upward tilt that stops before impact", "mood": "sudden suspense", "performanceTag": "[with quiet suspense]"},
+        {"titleKo": "아무도 없다", "summaryKo": "체리는 목공소 구석구석을 뒤지지만 아무도 찾지 못한다.", "focus": "bench, closet, shavings, and open door", "camera": "searching pan through four empty hiding places", "mood": "nervous comic confusion", "performanceTag": "[puzzled]"},
+        {"titleKo": "나무의 비명", "summaryKo": "목수가 다시 치자 나무가 아프다고 외친다.", "focus": "the log and Mastro Cherry's frozen face", "camera": "snap focus from struck log to bulging eyes", "mood": "shock", "performanceTag": "[startled]"},
+        {"titleKo": "간지러운 대패", "summaryKo": "대패질에 나무가 웃고, 체리는 바닥에 주저앉는다.", "focus": "wood plane, curling shaving, collapsed carpenter", "camera": "track the plane, then pull wide for the fall", "mood": "mischievous comic release", "performanceTag": "[mischievously]"}
+      ]
+    },
+    {
+      "number": 2,
+      "slug": "geppetto-gets-the-wood",
+      "titleEn": "Geppetto Receives the Wood",
+      "titleKo": "제페토에게 간 나무토막",
+      "synopsisKo": "제페토가 인형을 만들 나무를 구하러 오자, 나무토막은 두 노인을 속여 싸우게 한 뒤 제페토와 함께 떠난다.",
+      "narrationDirection": "Use brisk comic timing for the two old friends, make the hidden voice sly rather than frightening, and let the quarrels feel like exaggerated storybook slapstick.",
+      "artBrief": "Mastro Cherry's workshop as a comic paper-theatre panorama: Geppetto enters from the street door, the talking log sits on the bench, two loose wigs and missing coat buttons signal the quarrels, and the final path leads toward Geppetto's small house.",
+      "levels": {
+        "foundation": [
+          "Geppetto came to visit Mastro Cherry.",
+          "He wanted wood for a dancing puppet.",
+          "The hidden voice called him a rude nickname.",
+          "Geppetto blamed Mastro Cherry, and they fought.",
+          "Then Mastro Cherry offered the strange log.",
+          "The log jumped and hit Geppetto's legs.",
+          "The two friends fought once more.",
+          "At last, Geppetto carried the wood home."
+        ],
+        "core": [
+          "A knock brought Geppetto into Mastro Cherry's workshop.",
+          "He asked for wood to build a puppet that could perform around the world.",
+          "The tiny hidden voice called Geppetto by a nickname he hated.",
+          "Believing Mastro Cherry had insulted him, Geppetto began a ridiculous fight.",
+          "After trading wigs and tempers, the old friends made peace.",
+          "Mastro Cherry gladly offered the mysterious piece of wood.",
+          "Before he could hand it over, the log sprang into Geppetto's legs.",
+          "Each man blamed the other, and a second quarrel exploded.",
+          "Once their anger passed, they shook hands again.",
+          "Geppetto thanked his friend and limped home with the lively log."
+        ],
+        "studio": [
+          "While Mastro Cherry still sat stunned on the floor, his quick-tempered friend Geppetto knocked at the door.",
+          "Geppetto announced his plan to build a marvelous marionette that could dance, fence, and earn their living abroad.",
+          "From nowhere, the tiny voice praised him using Polendina, the nickname he could not bear.",
+          "Convinced that Mastro Cherry had mocked him, Geppetto traded accusations, scratches, and even wigs with his friend.",
+          "The two old men restored their dignity, shook hands, and returned to the purpose of the visit.",
+          "Eager to be rid of the frightening log, Mastro Cherry offered it as the perfect wood for a puppet.",
+          "The moment he lifted it, the wood jerked free and struck Geppetto sharply across the legs.",
+          "The trick revived every insult, and another noisy brawl ended with scratches and missing buttons.",
+          "Having somehow settled their accounts, the friends once again swore eternal peace.",
+          "Geppetto finally tucked the troublesome gift under his arm and limped toward home."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "나무토막 때문에 두 친구가 두 번 싸운 이유를 말해 보세요.",
+        "core": "제페토의 계획, 첫 싸움, 두 번째 싸움, 마지막 선택을 연결해 요약하세요.",
+        "studio": "숨은 목소리가 두 노인의 자존심을 이용해 갈등을 만드는 과정을 설명하세요."
+      },
+      "beats": [
+        {"titleKo": "제페토의 방문", "summaryKo": "제페토가 인형을 만들 나무를 구하러 온다.", "focus": "Geppetto framed in the workshop doorway", "camera": "pan from exhausted carpenter to lively visitor", "mood": "comic recovery", "performanceTag": "[briskly]"},
+        {"titleKo": "위대한 인형 계획", "summaryKo": "춤추고 검술하고 재주넘는 인형의 꿈을 설명한다.", "focus": "Geppetto gesturing as if a puppet performs", "camera": "gentle orbit around his animated hands", "mood": "hopeful ambition", "performanceTag": "[excitedly]"},
+        {"titleKo": "폴렌디나", "summaryKo": "나무가 싫어하는 별명을 부르고 두 노인이 싸운다.", "focus": "the log between two offended old men", "camera": "quick cuts between red faces and exchanged wigs", "mood": "slapstick outrage", "performanceTag": "[with comic outrage]"},
+        {"titleKo": "수상한 선물", "summaryKo": "체리는 무서운 나무를 제페토에게 건넨다.", "focus": "hands reaching for the log over the bench", "camera": "slow push toward the suspicious handoff", "mood": "sly anticipation", "performanceTag": "[cautiously]"},
+        {"titleKo": "나무의 발차기", "summaryKo": "나무가 튀어 올라 제페토의 다리를 친다.", "focus": "airborne log and Geppetto's thin legs", "camera": "fast lateral snap following the log", "mood": "comic surprise", "performanceTag": "[startled]"},
+        {"titleKo": "집으로", "summaryKo": "두 번째 화해 뒤 제페토가 나무를 가져간다.", "focus": "Geppetto leaving with the log under one arm", "camera": "wide pullback through the open door", "mood": "uneasy but hopeful", "performanceTag": "[lightly]"}
+      ]
+    },
+    {
+      "number": 3,
+      "slug": "pinocchio-is-made",
+      "titleEn": "Pinocchio Is Made",
+      "titleKo": "피노키오가 태어나다",
+      "synopsisKo": "제페토가 나무 인형 피노키오를 만들지만, 완성되기도 전부터 장난을 치고 달아나 결국 제페토가 대신 감옥에 간다.",
+      "narrationDirection": "Keep the making sequence magical and mischievous, accelerate as each body part comes alive, then turn the street chase into lively chaos and end on Geppetto's quiet heartbreak.",
+      "artBrief": "A wide connected paper-theatre set showing Geppetto's tiny room on the left and the village street on the right. The worktable, painted fireplace, open door, running wooden child, gathered townspeople, and Carabineer must remain available as camera focus zones.",
+      "levels": {
+        "foundation": [
+          "Geppetto began to carve a wooden puppet.",
+          "He named the puppet Pinocchio.",
+          "Its eyes moved before it was finished.",
+          "Its nose grew longer and longer.",
+          "Pinocchio stole Geppetto's yellow cap.",
+          "As soon as he had feet, he ran away.",
+          "A policeman caught him by the nose.",
+          "The crowd freed Pinocchio, but Geppetto went to jail."
+        ],
+        "core": [
+          "Inside his tiny home, Geppetto began carving a marionette from the strange wood.",
+          "He chose the lucky name Pinocchio for his new wooden son.",
+          "The unfinished eyes stared, the nose stretched, and the mouth mocked him.",
+          "Pinocchio even snatched Geppetto's yellow cap before he had legs.",
+          "Once his stiff feet could walk, the puppet raced through the open door.",
+          "Geppetto chased him while the villagers laughed at the noisy wooden feet.",
+          "A Carabineer stopped Pinocchio by grabbing his extremely long nose.",
+          "When Geppetto threatened discipline, Pinocchio fell down and refused to move.",
+          "The crowd assumed the old man was cruel and demanded the puppet's freedom.",
+          "Pinocchio escaped, while the innocent Geppetto was taken to prison."
+        ],
+        "studio": [
+          "In his poor but tidy room, Geppetto began shaping the enchanted wood into the marionette he had imagined.",
+          "He named the puppet Pinocchio, hoping that the supposedly fortunate name would guide his future.",
+          "Yet the carved eyes immediately stared, the nose lengthened without end, and the new mouth laughed at its maker.",
+          "Before his body was complete, Pinocchio stole Geppetto's yellow cap and answered affection with shameless tricks.",
+          "The moment his wooden legs learned their first steps, he bounded through the open door and into the street.",
+          "Geppetto pursued him desperately while the clatter of wooden feet turned the chase into a public spectacle.",
+          "A Carabineer finally captured the runaway by seizing the very nose that Geppetto could never shorten.",
+          "Rather than return home, Pinocchio threw himself down and made the gathered townspeople suspect his father.",
+          "Moved by appearances instead of truth, the crowd persuaded the officer to release the marionette and arrest Geppetto.",
+          "As Pinocchio ran free, his creator was led away grieving the ingratitude of the son he had just made."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오의 몸이 만들어질 때 일어난 장난 네 가지를 말해 보세요.",
+        "core": "피노키오의 탈출이 왜 제페토의 체포로 이어졌는지 원인과 결과로 설명하세요.",
+        "studio": "이 장에서 겉으로 보이는 상황과 실제 진실이 어떻게 뒤바뀌는지 분석하세요."
+      },
+      "beats": [
+        {"titleKo": "작은 집", "summaryKo": "제페토가 가난하지만 정돈된 집에서 작업을 시작한다.", "focus": "Geppetto's small room and worktable", "camera": "slow establishing pan across sparse furniture", "mood": "humble warmth", "performanceTag": "[warmly]"},
+        {"titleKo": "살아나는 얼굴", "summaryKo": "눈과 코와 입이 차례로 제멋대로 움직인다.", "focus": "unfinished wooden face on the bench", "camera": "tight sequence across eyes, growing nose, and laughing mouth", "mood": "magical mischief", "performanceTag": "[playfully]"},
+        {"titleKo": "첫 장난", "summaryKo": "피노키오가 제페토의 모자를 빼앗고 코를 찬다.", "focus": "yellow cap in Pinocchio's hand", "camera": "quick tilt from cap to Geppetto's hurt expression", "mood": "mischief turning sad", "performanceTag": "[disappointed]"},
+        {"titleKo": "첫걸음과 탈출", "summaryKo": "걷기를 배우자마자 문밖으로 달아난다.", "focus": "open door and running Pinocchio", "camera": "accelerating track from room into street", "mood": "wild freedom", "performanceTag": "[quickening]"},
+        {"titleKo": "긴 코로 체포", "summaryKo": "경찰이 긴 코를 붙잡아 피노키오를 멈춘다.", "focus": "Carabineer holding the long wooden nose", "camera": "wide comic tableau in the village street", "mood": "chaotic comedy", "performanceTag": "[with comic surprise]"},
+        {"titleKo": "뒤바뀐 죄", "summaryKo": "사람들은 피노키오를 풀어 주고 제페토를 데려간다.", "focus": "Geppetto led away while Pinocchio watches", "camera": "slow pull focus from free puppet to grieving father", "mood": "unfair and sorrowful", "performanceTag": "[softly]"}
+      ]
+    },
+    {
+      "number": 4,
+      "slug": "the-talking-cricket",
+      "titleEn": "The Talking Cricket's Warning",
+      "titleKo": "말하는 귀뚜라미의 경고",
+      "synopsisKo": "혼자 남은 피노키오는 공부와 일을 하라는 귀뚜라미의 충고를 거부하고 분노 끝에 돌이킬 수 없는 행동을 한다.",
+      "narrationDirection": "Let the Cricket sound calm, patient, and old; let Pinocchio's impatience sharpen gradually. Do not sensationalize the final blow—land it as a sudden, regretful silence.",
+      "artBrief": "Geppetto's dim room after the chase: Pinocchio sprawled proudly on the floor, a small olive-brown cricket climbing the wall, the workbench and hammer in the foreground, and the open countryside visible beyond the door as a memory of escape.",
+      "levels": {
+        "foundation": [
+          "Pinocchio ran home after Geppetto's arrest.",
+          "A Talking Cricket lived in the room.",
+          "The Cricket told him to obey his father.",
+          "It said he should study or learn a job.",
+          "Pinocchio only wanted to eat and play.",
+          "The Cricket warned that this path brings trouble.",
+          "Pinocchio grew angry and threw a hammer.",
+          "The hammer hit the Cricket, and the room became silent."
+        ],
+        "core": [
+          "After Geppetto's arrest, Pinocchio raced home and celebrated his freedom.",
+          "A Talking Cricket appeared and said he had lived there for a hundred years.",
+          "He warned that children who abandon their parents cannot remain happy.",
+          "Pinocchio answered that school and study sounded like a miserable life.",
+          "The Cricket urged him to learn an honest trade instead.",
+          "Pinocchio claimed that eating, sleeping, and wandering were the only work he wanted.",
+          "The patient Cricket warned that such a life ends in trouble.",
+          "Angry at being called wooden-headed, Pinocchio reached for a hammer.",
+          "He threw it, perhaps without expecting to strike his adviser.",
+          "The hammer hit the Cricket, whose final weak cry left the room silent."
+        ],
+        "studio": [
+          "While Geppetto was taken to prison, Pinocchio bounded home and congratulated himself on escaping every restraint.",
+          "His triumph was interrupted by a century-old Talking Cricket, who refused to leave before speaking an uncomfortable truth.",
+          "The Cricket warned that children who reject their parents eventually discover that freedom without responsibility brings sorrow.",
+          "Pinocchio dismissed school as a prison and preferred butterflies, trees, birds' nests, and endless play.",
+          "When urged to learn a trade, he declared that eating, drinking, sleeping, and wandering suited him perfectly.",
+          "Still calm, the Cricket explained that people who choose such a life often finish in a hospital or a prison.",
+          "Rather than examine the warning, Pinocchio treated every correction as an insult.",
+          "The Cricket's final remark about his wooden head sent the marionette into a sudden fury.",
+          "Pinocchio hurled a hammer, apparently without imagining that his reckless gesture would truly land.",
+          "The blow silenced the Cricket and transformed a childish argument into a consequence that could not be recalled."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "귀뚜라미가 한 두 가지 충고와 피노키오의 반응을 말해 보세요.",
+        "core": "피노키오가 자유를 어떻게 이해했고, 귀뚜라미는 책임을 어떻게 설명했는지 비교하세요.",
+        "studio": "피노키오가 충고의 내용이 아니라 충고받는 감정에 반응하면서 갈등이 커지는 과정을 설명하세요."
+      },
+      "beats": [
+        {"titleKo": "혼자 얻은 자유", "summaryKo": "피노키오는 아버지가 잡혀간 뒤 혼자 집으로 돌아온다.", "focus": "Pinocchio alone on the floor", "camera": "push through the half-open door toward his proud pose", "mood": "reckless relief", "performanceTag": "[lightly]"},
+        {"titleKo": "벽 위의 목소리", "summaryKo": "백 년을 산 귀뚜라미가 모습을 드러낸다.", "focus": "small cricket climbing the wall", "camera": "slow rack focus from Pinocchio to the wall", "mood": "quiet curiosity", "performanceTag": "[curiously]"},
+        {"titleKo": "부모와 학교", "summaryKo": "귀뚜라미는 집을 떠나고 공부를 피하면 불행해진다고 말한다.", "focus": "Cricket facing Pinocchio from above", "camera": "balanced two-shot across the room", "mood": "patient warning", "performanceTag": "[calmly]"},
+        {"titleKo": "놀기만 하는 직업", "summaryKo": "피노키오는 먹고 자고 노는 삶만 원한다고 우긴다.", "focus": "Pinocchio gesturing toward the open countryside", "camera": "pan toward imagined trees and butterflies", "mood": "careless fantasy", "performanceTag": "[boastfully]"},
+        {"titleKo": "분노", "summaryKo": "나무 머리라는 말에 피노키오가 망치를 든다.", "focus": "Pinocchio's hand closing around the hammer", "camera": "tight downward push to the hammer", "mood": "rising danger", "performanceTag": "[angrily]"},
+        {"titleKo": "갑작스러운 침묵", "summaryKo": "망치가 귀뚜라미를 맞히고 마지막 울음이 사라진다.", "focus": "fallen hammer and empty wall shadow", "camera": "hold still, then slowly widen", "mood": "regretful silence", "performanceTag": "[quietly]"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,995 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-02",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 2,
+    "slug": "geppetto-gets-the-wood",
+    "titleEn": "Geppetto Receives the Wood",
+    "titleKo": "제페토에게 간 나무토막",
+    "synopsisKo": "제페토가 인형을 만들 나무를 구하러 오자, 나무토막은 두 노인을 속여 싸우게 한 뒤 제페토와 함께 떠난다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Use brisk comic timing for the two old friends, make the hidden voice sly rather than frightening, and let the quarrels feel like exaggerated storybook slapstick.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-02.png",
+    "artBrief": "Mastro Cherry's workshop as a comic paper-theatre panorama: Geppetto enters from the street door, the talking log sits on the bench, two loose wigs and missing coat buttons signal the quarrels, and the final path leads toward Geppetto's small house.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "제페토의 방문",
+        "summaryKo": "제페토가 인형을 만들 나무를 구하러 온다.",
+        "focus": "Geppetto framed in the workshop doorway",
+        "camera": "pan from exhausted carpenter to lively visitor",
+        "mood": "comic recovery",
+        "performanceTag": "[briskly]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "위대한 인형 계획",
+        "summaryKo": "춤추고 검술하고 재주넘는 인형의 꿈을 설명한다.",
+        "focus": "Geppetto gesturing as if a puppet performs",
+        "camera": "gentle orbit around his animated hands",
+        "mood": "hopeful ambition",
+        "performanceTag": "[excitedly]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "폴렌디나",
+        "summaryKo": "나무가 싫어하는 별명을 부르고 두 노인이 싸운다.",
+        "focus": "the log between two offended old men",
+        "camera": "quick cuts between red faces and exchanged wigs",
+        "mood": "slapstick outrage",
+        "performanceTag": "[with comic outrage]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "수상한 선물",
+        "summaryKo": "체리는 무서운 나무를 제페토에게 건넨다.",
+        "focus": "hands reaching for the log over the bench",
+        "camera": "slow push toward the suspicious handoff",
+        "mood": "sly anticipation",
+        "performanceTag": "[cautiously]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "나무의 발차기",
+        "summaryKo": "나무가 튀어 올라 제페토의 다리를 친다.",
+        "focus": "airborne log and Geppetto's thin legs",
+        "camera": "fast lateral snap following the log",
+        "mood": "comic surprise",
+        "performanceTag": "[startled]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "집으로",
+        "summaryKo": "두 번째 화해 뒤 제페토가 나무를 가져간다.",
+        "focus": "Geppetto leaving with the log under one arm",
+        "camera": "wide pullback through the open door",
+        "mood": "uneasy but hopeful",
+        "performanceTag": "[lightly]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Geppetto came to visit Mastro Cherry."
+        },
+        {
+          "id": "line-02",
+          "text": "He wanted wood for a dancing puppet."
+        },
+        {
+          "id": "line-03",
+          "text": "The hidden voice called him a rude nickname."
+        },
+        {
+          "id": "line-04",
+          "text": "Geppetto blamed Mastro Cherry, and they fought."
+        },
+        {
+          "id": "line-05",
+          "text": "Then Mastro Cherry offered the strange log."
+        },
+        {
+          "id": "line-06",
+          "text": "The log jumped and hit Geppetto's legs."
+        },
+        {
+          "id": "line-07",
+          "text": "The two friends fought once more."
+        },
+        {
+          "id": "line-08",
+          "text": "At last, Geppetto carried the wood home."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Geppetto came to visit Mastro Cherry."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He wanted wood for a dancing puppet."
+          },
+          {
+            "lineIndex": 2,
+            "text": "The hidden voice called him a rude nickname."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Geppetto blamed Mastro Cherry, and they fought."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Then Mastro Cherry offered the strange log."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The log jumped and hit Geppetto's legs."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The two friends fought once more."
+          },
+          {
+            "lineIndex": 7,
+            "text": "At last, Geppetto carried the wood home."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He wanted wood for a dancing puppet."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "Geppetto blamed Mastro Cherry, and they fought."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "The two friends fought once more."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "Then Mastro Cherry offered the strange log."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "At last, Geppetto carried the wood home."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "The hidden voice called him a rude nickname."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "The hidden voice called him a rude nickname."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "The log jumped and hit Geppetto's legs."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "At last, Geppetto carried the wood home."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The two friends fought once more."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Geppetto came to visit Mastro Cherry."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Geppetto blamed Mastro Cherry, and they fought."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He wanted wood for a dancing puppet.",
+            "tokens": [
+              "He",
+              "wanted",
+              "wood",
+              "for",
+              "a",
+              "dancing",
+              "puppet",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "The hidden voice called him a rude nickname.",
+            "tokens": [
+              "The",
+              "hidden",
+              "voice",
+              "called",
+              "him",
+              "a",
+              "rude",
+              "nickname",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "The log jumped and hit Geppetto's legs.",
+            "tokens": [
+              "The",
+              "log",
+              "jumped",
+              "and",
+              "hit",
+              "Geppetto's",
+              "legs",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "The two friends fought once more.",
+            "tokens": [
+              "The",
+              "two",
+              "friends",
+              "fought",
+              "once",
+              "more",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "나무토막 때문에 두 친구가 두 번 싸운 이유를 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 55,
+        "characters": 326
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "A knock brought Geppetto into Mastro Cherry's workshop."
+        },
+        {
+          "id": "line-02",
+          "text": "He asked for wood to build a puppet that could perform around the world."
+        },
+        {
+          "id": "line-03",
+          "text": "The tiny hidden voice called Geppetto by a nickname he hated."
+        },
+        {
+          "id": "line-04",
+          "text": "Believing Mastro Cherry had insulted him, Geppetto began a ridiculous fight."
+        },
+        {
+          "id": "line-05",
+          "text": "After trading wigs and tempers, the old friends made peace."
+        },
+        {
+          "id": "line-06",
+          "text": "Mastro Cherry gladly offered the mysterious piece of wood."
+        },
+        {
+          "id": "line-07",
+          "text": "Before he could hand it over, the log sprang into Geppetto's legs."
+        },
+        {
+          "id": "line-08",
+          "text": "Each man blamed the other, and a second quarrel exploded."
+        },
+        {
+          "id": "line-09",
+          "text": "Once their anger passed, they shook hands again."
+        },
+        {
+          "id": "line-10",
+          "text": "Geppetto thanked his friend and limped home with the lively log."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "A knock brought Geppetto into Mastro Cherry's workshop."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He asked for wood to build a puppet that could perform around the world."
+          },
+          {
+            "lineIndex": 2,
+            "text": "The tiny hidden voice called Geppetto by a nickname he hated."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Believing Mastro Cherry had insulted him, Geppetto began a ridiculous fight."
+          },
+          {
+            "lineIndex": 4,
+            "text": "After trading wigs and tempers, the old friends made peace."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Mastro Cherry gladly offered the mysterious piece of wood."
+          },
+          {
+            "lineIndex": 6,
+            "text": "Before he could hand it over, the log sprang into Geppetto's legs."
+          },
+          {
+            "lineIndex": 7,
+            "text": "Each man blamed the other, and a second quarrel exploded."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Once their anger passed, they shook hands again."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Geppetto thanked his friend and limped home with the lively log."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He asked for wood to build a puppet that could perform around the world."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "After trading wigs and tempers, the old friends made peace."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "Each man blamed the other, and a second quarrel exploded."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "Before he could hand it over, the log sprang into Geppetto's legs."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Geppetto thanked his friend and limped home with the lively log."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Believing Mastro Cherry had insulted him, Geppetto began a ridiculous fight."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "The tiny hidden voice called Geppetto by a nickname he hated."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "Before he could hand it over, the log sprang into Geppetto's legs."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Geppetto thanked his friend and limped home with the lively log."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Once their anger passed, they shook hands again."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "He asked for wood to build a puppet that could perform around the world."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "After trading wigs and tempers, the old friends made peace."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He asked for wood to build a puppet that could perform around the world.",
+            "tokens": [
+              "He",
+              "asked",
+              "for",
+              "wood",
+              "to",
+              "build",
+              "a",
+              "puppet",
+              "that",
+              "could",
+              "perform",
+              "around",
+              "the",
+              "world",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Believing Mastro Cherry had insulted him, Geppetto began a ridiculous fight.",
+            "tokens": [
+              "Believing",
+              "Mastro",
+              "Cherry",
+              "had",
+              "insulted",
+              "him",
+              ",",
+              "Geppetto",
+              "began",
+              "a",
+              "ridiculous",
+              "fight",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "Before he could hand it over, the log sprang into Geppetto's legs.",
+            "tokens": [
+              "Before",
+              "he",
+              "could",
+              "hand",
+              "it",
+              "over",
+              ",",
+              "the",
+              "log",
+              "sprang",
+              "into",
+              "Geppetto's",
+              "legs",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Once their anger passed, they shook hands again.",
+            "tokens": [
+              "Once",
+              "their",
+              "anger",
+              "passed",
+              ",",
+              "they",
+              "shook",
+              "hands",
+              "again",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "제페토의 계획, 첫 싸움, 두 번째 싸움, 마지막 선택을 연결해 요약하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 104,
+        "characters": 625
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "While Mastro Cherry still sat stunned on the floor, his quick-tempered friend Geppetto knocked at the door."
+        },
+        {
+          "id": "line-02",
+          "text": "Geppetto announced his plan to build a marvelous marionette that could dance, fence, and earn their living abroad."
+        },
+        {
+          "id": "line-03",
+          "text": "From nowhere, the tiny voice praised him using Polendina, the nickname he could not bear."
+        },
+        {
+          "id": "line-04",
+          "text": "Convinced that Mastro Cherry had mocked him, Geppetto traded accusations, scratches, and even wigs with his friend."
+        },
+        {
+          "id": "line-05",
+          "text": "The two old men restored their dignity, shook hands, and returned to the purpose of the visit."
+        },
+        {
+          "id": "line-06",
+          "text": "Eager to be rid of the frightening log, Mastro Cherry offered it as the perfect wood for a puppet."
+        },
+        {
+          "id": "line-07",
+          "text": "The moment he lifted it, the wood jerked free and struck Geppetto sharply across the legs."
+        },
+        {
+          "id": "line-08",
+          "text": "The trick revived every insult, and another noisy brawl ended with scratches and missing buttons."
+        },
+        {
+          "id": "line-09",
+          "text": "Having somehow settled their accounts, the friends once again swore eternal peace."
+        },
+        {
+          "id": "line-10",
+          "text": "Geppetto finally tucked the troublesome gift under his arm and limped toward home."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "While Mastro Cherry still sat stunned on the floor, his quick-tempered friend Geppetto knocked at the door."
+          },
+          {
+            "lineIndex": 1,
+            "text": "Geppetto announced his plan to build a marvelous marionette that could dance, fence, and earn their living abroad."
+          },
+          {
+            "lineIndex": 2,
+            "text": "From nowhere, the tiny voice praised him using Polendina, the nickname he could not bear."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Convinced that Mastro Cherry had mocked him, Geppetto traded accusations, scratches, and even wigs with his friend."
+          },
+          {
+            "lineIndex": 4,
+            "text": "The two old men restored their dignity, shook hands, and returned to the purpose of the visit."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Eager to be rid of the frightening log, Mastro Cherry offered it as the perfect wood for a puppet."
+          },
+          {
+            "lineIndex": 6,
+            "text": "The moment he lifted it, the wood jerked free and struck Geppetto sharply across the legs."
+          },
+          {
+            "lineIndex": 7,
+            "text": "The trick revived every insult, and another noisy brawl ended with scratches and missing buttons."
+          },
+          {
+            "lineIndex": 8,
+            "text": "Having somehow settled their accounts, the friends once again swore eternal peace."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Geppetto finally tucked the troublesome gift under his arm and limped toward home."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "Geppetto announced his plan to build a marvelous marionette that could dance, fence, and earn their living abroad."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "The two old men restored their dignity, shook hands, and returned to the purpose of the visit."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "The trick revived every insult, and another noisy brawl ended with scratches and missing buttons."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "The moment he lifted it, the wood jerked free and struck Geppetto sharply across the legs."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Geppetto finally tucked the troublesome gift under his arm and limped toward home."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Convinced that Mastro Cherry had mocked him, Geppetto traded accusations, scratches, and even wigs with his friend."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "From nowhere, the tiny voice praised him using Polendina, the nickname he could not bear."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "The moment he lifted it, the wood jerked free and struck Geppetto sharply across the legs."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Geppetto finally tucked the troublesome gift under his arm and limped toward home."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "Having somehow settled their accounts, the friends once again swore eternal peace."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "Geppetto announced his plan to build a marvelous marionette that could dance, fence, and earn their living abroad."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "The two old men restored their dignity, shook hands, and returned to the purpose of the visit."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "Geppetto announced his plan to build a marvelous marionette that could dance, fence, and earn their living abroad.",
+            "tokens": [
+              "Geppetto",
+              "announced",
+              "his",
+              "plan",
+              "to",
+              "build",
+              "a",
+              "marvelous",
+              "marionette",
+              "that",
+              "could",
+              "dance",
+              ",",
+              "fence",
+              ",",
+              "and",
+              "earn",
+              "their",
+              "living",
+              "abroad",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Convinced that Mastro Cherry had mocked him, Geppetto traded accusations, scratches, and even wigs with his friend.",
+            "tokens": [
+              "Convinced",
+              "that",
+              "Mastro",
+              "Cherry",
+              "had",
+              "mocked",
+              "him",
+              ",",
+              "Geppetto",
+              "traded",
+              "accusations",
+              ",",
+              "scratches",
+              ",",
+              "and",
+              "even",
+              "wigs",
+              "with",
+              "his",
+              "friend",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "The moment he lifted it, the wood jerked free and struck Geppetto sharply across the legs.",
+            "tokens": [
+              "The",
+              "moment",
+              "he",
+              "lifted",
+              "it",
+              ",",
+              "the",
+              "wood",
+              "jerked",
+              "free",
+              "and",
+              "struck",
+              "Geppetto",
+              "sharply",
+              "across",
+              "the",
+              "legs",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "Having somehow settled their accounts, the friends once again swore eternal peace.",
+            "tokens": [
+              "Having",
+              "somehow",
+              "settled",
+              "their",
+              "accounts",
+              ",",
+              "the",
+              "friends",
+              "once",
+              "again",
+              "swore",
+              "eternal",
+              "peace",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "숨은 목소리가 두 노인의 자존심을 이용해 갈등을 만드는 과정을 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 159,
+        "characters": 977
+      }
+    }
+  },
+  "checksum": "12400ebc462b4abeb3767d5830a0e6542f0666af26320725c61c7d23f50df727"
+}

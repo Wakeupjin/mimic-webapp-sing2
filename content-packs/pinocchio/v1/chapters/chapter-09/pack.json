@@ -1,0 +1,1000 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v1-chapter-09",
+  "version": "1.0.0",
+  "status": "content-ready-audio-pending",
+  "story": {
+    "title": "The Adventures of Pinocchio",
+    "chapter": 9,
+    "slug": "the-sold-schoolbook",
+    "titleEn": "The Schoolbook Is Sold",
+    "titleKo": "팔려 버린 알파벳 책",
+    "synopsisKo": "학교로 가던 피노키오는 인형극 음악에 마음을 빼앗겨, 제페토가 외투를 팔아 마련한 책을 입장료와 바꾼다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic educational retelling, version 1.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "Each level preserves the complete event sequence, motivations, consequence, and chapter ending.",
+    "foundation": "Concrete 6–11 word sentences, one main action per line, minimal subordinate clauses.",
+    "core": "Connected 10–18 word sentences with cause, contrast, and reaction.",
+    "studio": "Literary but speakable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic slapstick and peril are described without adding graphic detail. Harmful actions retain their consequences and are not presented as desirable.",
+    "narration": "Dialogue is acted with restraint inside one continuous chapter-level performance; no independent sentence generations."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Begin with sincere hopeful plans, let the distant music become increasingly irresistible, and end with a sober reminder of Geppetto shivering at home.",
+    "productionRule": "Generate one continuous master per level and derive sentence timestamps from that same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "styleGuide": "../../style-guide.json",
+    "panorama": "../../assets/chapter-09.png",
+    "artBrief": "A wide village-road panorama linking the school path to a colorful but original wooden marionette theater. Pinocchio carries the A-B-C book, musicians and a small crowd draw him sideways, and a ragpicker waits near the ticket entrance while a cold path points back toward Geppetto's home.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "학교로 가는 꿈",
+        "summaryKo": "피노키오는 공부해 아버지에게 멋진 외투를 사 주겠다고 상상한다.",
+        "focus": "Pinocchio walking with the book held proudly",
+        "camera": "forward track along the school road",
+        "mood": "hopeful sincerity",
+        "performanceTag": "[hopefully]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            0
+          ],
+          "core": [
+            0,
+            0
+          ],
+          "studio": [
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "멀리서 온 음악",
+        "summaryKo": "피리와 북소리가 피노키오의 걸음을 멈춘다.",
+        "focus": "Pinocchio turning toward musical notes suggested by motion",
+        "camera": "slow pan away from school toward the square",
+        "mood": "growing curiosity",
+        "performanceTag": "[curiously]",
+        "lineRanges": {
+          "foundation": [
+            1,
+            1
+          ],
+          "core": [
+            1,
+            2
+          ],
+          "studio": [
+            1,
+            2
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "두 갈래 길",
+        "summaryKo": "학교와 극장 사이에서 오늘만 미루기로 한다.",
+        "focus": "forked path between school and theater",
+        "camera": "wide symmetrical choice framing",
+        "mood": "temptation",
+        "performanceTag": "[hesitantly]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            3,
+            4
+          ],
+          "studio": [
+            3,
+            4
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "네 푼의 입장료",
+        "summaryKo": "화려한 인형극은 가깝지만 돈은 없다.",
+        "focus": "theater entrance and four coins in another child's hand",
+        "camera": "push toward ticket window, then back to empty palm",
+        "mood": "frustrated desire",
+        "performanceTag": "[eagerly]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            4
+          ],
+          "core": [
+            5,
+            5
+          ],
+          "studio": [
+            5,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "책을 팔다",
+        "summaryKo": "팔리지 않는 옷 대신 소중한 책을 내놓는다.",
+        "focus": "A-B-C book passing to the ragpicker",
+        "camera": "tight hold on the exchange",
+        "mood": "costly decision",
+        "performanceTag": "[quietly]",
+        "lineRanges": {
+          "foundation": [
+            5,
+            5
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "추위 속의 제페토",
+        "summaryKo": "피노키오가 극장으로 들어가는 동안 아버지는 외투 없이 기다린다.",
+        "focus": "cold road leading back toward the tiny house",
+        "camera": "slow pull away from theater lights toward distant home",
+        "mood": "ironic sorrow",
+        "performanceTag": "[somberly]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건 순서를 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio walked to school with his new book."
+        },
+        {
+          "id": "line-02",
+          "text": "He dreamed of helping Geppetto one day."
+        },
+        {
+          "id": "line-03",
+          "text": "Then he heard pipes and drums nearby."
+        },
+        {
+          "id": "line-04",
+          "text": "The music came from a puppet theater."
+        },
+        {
+          "id": "line-05",
+          "text": "A ticket cost four pennies."
+        },
+        {
+          "id": "line-06",
+          "text": "Pinocchio had no money for the show."
+        },
+        {
+          "id": "line-07",
+          "text": "He sold his A-B-C book to a ragpicker."
+        },
+        {
+          "id": "line-08",
+          "text": "At home, Geppetto still shivered without his coat."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio walked to school with his new book."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He dreamed of helping Geppetto one day."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Then he heard pipes and drums nearby."
+          },
+          {
+            "lineIndex": 3,
+            "text": "The music came from a puppet theater."
+          },
+          {
+            "lineIndex": 4,
+            "text": "A ticket cost four pennies."
+          },
+          {
+            "lineIndex": 5,
+            "text": "Pinocchio had no money for the show."
+          },
+          {
+            "lineIndex": 6,
+            "text": "He sold his A-B-C book to a ragpicker."
+          },
+          {
+            "lineIndex": 7,
+            "text": "At home, Geppetto still shivered without his coat."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He dreamed of helping Geppetto one day."
+              },
+              {
+                "label": "B",
+                "lineIndex": 3,
+                "text": "The music came from a puppet theater."
+              },
+              {
+                "label": "C",
+                "lineIndex": 6,
+                "text": "He sold his A-B-C book to a ragpicker."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 2,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 4,
+                "text": "A ticket cost four pennies."
+              },
+              {
+                "label": "B",
+                "lineIndex": 7,
+                "text": "At home, Geppetto still shivered without his coat."
+              },
+              {
+                "label": "C",
+                "lineIndex": 2,
+                "text": "Then he heard pipes and drums nearby."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 5,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Then he heard pipes and drums nearby."
+              },
+              {
+                "label": "B",
+                "lineIndex": 5,
+                "text": "Pinocchio had no money for the show."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "At home, Geppetto still shivered without his coat."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 6,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "He sold his A-B-C book to a ragpicker."
+              },
+              {
+                "label": "B",
+                "lineIndex": 0,
+                "text": "Pinocchio walked to school with his new book."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "The music came from a puppet theater."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He dreamed of helping Geppetto one day.",
+            "tokens": [
+              "He",
+              "dreamed",
+              "of",
+              "helping",
+              "Geppetto",
+              "one",
+              "day",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 2,
+            "text": "Then he heard pipes and drums nearby.",
+            "tokens": [
+              "Then",
+              "he",
+              "heard",
+              "pipes",
+              "and",
+              "drums",
+              "nearby",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 5,
+            "text": "Pinocchio had no money for the show.",
+            "tokens": [
+              "Pinocchio",
+              "had",
+              "no",
+              "money",
+              "for",
+              "the",
+              "show",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 6,
+            "text": "He sold his A-B-C book to a ragpicker.",
+            "tokens": [
+              "He",
+              "sold",
+              "his",
+              "A",
+              "-",
+              "B",
+              "-",
+              "C",
+              "book",
+              "to",
+              "a",
+              "ragpicker",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오가 학교 대신 극장에 가게 된 과정을 말해 보세요."
+      },
+      "stats": {
+        "lines": 8,
+        "words": 57,
+        "characters": 316
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인과 반응을 연결해 자연스러운 리듬으로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio hurried toward school with the new A-B-C book under his arm."
+        },
+        {
+          "id": "line-02",
+          "text": "He imagined learning quickly and buying Geppetto a magnificent coat."
+        },
+        {
+          "id": "line-03",
+          "text": "Distant pipes and drums interrupted those generous plans."
+        },
+        {
+          "id": "line-04",
+          "text": "He discovered that the music announced a Great Marionette Theater."
+        },
+        {
+          "id": "line-05",
+          "text": "Although school waited in the other direction, curiosity pulled him toward the crowd."
+        },
+        {
+          "id": "line-06",
+          "text": "The ticket cost four pennies, and Pinocchio did not own even one."
+        },
+        {
+          "id": "line-07",
+          "text": "He tried to sell his paper coat, bark shoes, and dough cap."
+        },
+        {
+          "id": "line-08",
+          "text": "When nobody wanted them, he finally offered the A-B-C book."
+        },
+        {
+          "id": "line-09",
+          "text": "A ragpicker paid four pennies, and Pinocchio entered the theater."
+        },
+        {
+          "id": "line-10",
+          "text": "Meanwhile, Geppetto shivered at home after selling his coat for that very book."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio hurried toward school with the new A-B-C book under his arm."
+          },
+          {
+            "lineIndex": 1,
+            "text": "He imagined learning quickly and buying Geppetto a magnificent coat."
+          },
+          {
+            "lineIndex": 2,
+            "text": "Distant pipes and drums interrupted those generous plans."
+          },
+          {
+            "lineIndex": 3,
+            "text": "He discovered that the music announced a Great Marionette Theater."
+          },
+          {
+            "lineIndex": 4,
+            "text": "Although school waited in the other direction, curiosity pulled him toward the crowd."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The ticket cost four pennies, and Pinocchio did not own even one."
+          },
+          {
+            "lineIndex": 6,
+            "text": "He tried to sell his paper coat, bark shoes, and dough cap."
+          },
+          {
+            "lineIndex": 7,
+            "text": "When nobody wanted them, he finally offered the A-B-C book."
+          },
+          {
+            "lineIndex": 8,
+            "text": "A ragpicker paid four pennies, and Pinocchio entered the theater."
+          },
+          {
+            "lineIndex": 9,
+            "text": "Meanwhile, Geppetto shivered at home after selling his coat for that very book."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "He imagined learning quickly and buying Geppetto a magnificent coat."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "Although school waited in the other direction, curiosity pulled him toward the crowd."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "When nobody wanted them, he finally offered the A-B-C book."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "He tried to sell his paper coat, bark shoes, and dough cap."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "Meanwhile, Geppetto shivered at home after selling his coat for that very book."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "He discovered that the music announced a Great Marionette Theater."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "Distant pipes and drums interrupted those generous plans."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "He tried to sell his paper coat, bark shoes, and dough cap."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "Meanwhile, Geppetto shivered at home after selling his coat for that very book."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "A ragpicker paid four pennies, and Pinocchio entered the theater."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "He imagined learning quickly and buying Geppetto a magnificent coat."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "Although school waited in the other direction, curiosity pulled him toward the crowd."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "He imagined learning quickly and buying Geppetto a magnificent coat.",
+            "tokens": [
+              "He",
+              "imagined",
+              "learning",
+              "quickly",
+              "and",
+              "buying",
+              "Geppetto",
+              "a",
+              "magnificent",
+              "coat",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "He discovered that the music announced a Great Marionette Theater.",
+            "tokens": [
+              "He",
+              "discovered",
+              "that",
+              "the",
+              "music",
+              "announced",
+              "a",
+              "Great",
+              "Marionette",
+              "Theater",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "He tried to sell his paper coat, bark shoes, and dough cap.",
+            "tokens": [
+              "He",
+              "tried",
+              "to",
+              "sell",
+              "his",
+              "paper",
+              "coat",
+              ",",
+              "bark",
+              "shoes",
+              ",",
+              "and",
+              "dough",
+              "cap",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "A ragpicker paid four pennies, and Pinocchio entered the theater.",
+            "tokens": [
+              "A",
+              "ragpicker",
+              "paid",
+              "four",
+              "pennies",
+              ",",
+              "and",
+              "Pinocchio",
+              "entered",
+              "the",
+              "theater",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "피노키오의 아침 계획과 실제 선택이 어떻게 달라졌는지 비교하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 110,
+        "characters": 682
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "복문, 분위기, 서술자의 유머를 살려 읽고 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio set out for school rehearsing splendid plans to learn, earn money, and reward Geppetto with a jeweled coat."
+        },
+        {
+          "id": "line-02",
+          "text": "His gratitude sounded sincere until the distant rhythm of pipes and drums introduced a more immediate temptation."
+        },
+        {
+          "id": "line-03",
+          "text": "At the crossing, school demanded patience in one direction while the marionette theater promised excitement in the other."
+        },
+        {
+          "id": "line-04",
+          "text": "Pinocchio postponed responsibility with the convenient belief that tomorrow would always provide enough time for study."
+        },
+        {
+          "id": "line-05",
+          "text": "He reached a brilliant wooden theater whose performance was beginning behind a crowd of eager spectators."
+        },
+        {
+          "id": "line-06",
+          "text": "The entrance fee was only four pennies, yet it exceeded everything the penniless marionette owned."
+        },
+        {
+          "id": "line-07",
+          "text": "His flowered-paper coat, bark shoes, and dough cap proved too useless even for another child to buy."
+        },
+        {
+          "id": "line-08",
+          "text": "After hesitation, curiosity defeated gratitude and he offered the A-B-C book purchased through his father's sacrifice."
+        },
+        {
+          "id": "line-09",
+          "text": "A ragpicker exchanged four pennies for the book, turning Geppetto's winter coat into a single afternoon of entertainment."
+        },
+        {
+          "id": "line-10",
+          "text": "As Pinocchio rushed inside, the narrator leaves us with the image of his father shivering at home in shirt sleeves."
+        }
+      ],
+      "activities": {
+        "mimic": [
+          {
+            "lineIndex": 0,
+            "text": "Pinocchio set out for school rehearsing splendid plans to learn, earn money, and reward Geppetto with a jeweled coat."
+          },
+          {
+            "lineIndex": 1,
+            "text": "His gratitude sounded sincere until the distant rhythm of pipes and drums introduced a more immediate temptation."
+          },
+          {
+            "lineIndex": 2,
+            "text": "At the crossing, school demanded patience in one direction while the marionette theater promised excitement in the other."
+          },
+          {
+            "lineIndex": 3,
+            "text": "Pinocchio postponed responsibility with the convenient belief that tomorrow would always provide enough time for study."
+          },
+          {
+            "lineIndex": 4,
+            "text": "He reached a brilliant wooden theater whose performance was beginning behind a crowd of eager spectators."
+          },
+          {
+            "lineIndex": 5,
+            "text": "The entrance fee was only four pennies, yet it exceeded everything the penniless marionette owned."
+          },
+          {
+            "lineIndex": 6,
+            "text": "His flowered-paper coat, bark shoes, and dough cap proved too useless even for another child to buy."
+          },
+          {
+            "lineIndex": 7,
+            "text": "After hesitation, curiosity defeated gratitude and he offered the A-B-C book purchased through his father's sacrifice."
+          },
+          {
+            "lineIndex": 8,
+            "text": "A ragpicker exchanged four pennies for the book, turning Geppetto's winter coat into a single afternoon of entertainment."
+          },
+          {
+            "lineIndex": 9,
+            "text": "As Pinocchio rushed inside, the narrator leaves us with the image of his father shivering at home in shirt sleeves."
+          }
+        ],
+        "guess": [
+          {
+            "id": "guess-01",
+            "audioLineIndex": 1,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 1,
+                "text": "His gratitude sounded sincere until the distant rhythm of pipes and drums introduced a more immediate temptation."
+              },
+              {
+                "label": "B",
+                "lineIndex": 4,
+                "text": "He reached a brilliant wooden theater whose performance was beginning behind a crowd of eager spectators."
+              },
+              {
+                "label": "C",
+                "lineIndex": 7,
+                "text": "After hesitation, curiosity defeated gratitude and he offered the A-B-C book purchased through his father's sacrifice."
+              }
+            ]
+          },
+          {
+            "id": "guess-02",
+            "audioLineIndex": 3,
+            "correctAnswer": "C",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 6,
+                "text": "His flowered-paper coat, bark shoes, and dough cap proved too useless even for another child to buy."
+              },
+              {
+                "label": "B",
+                "lineIndex": 9,
+                "text": "As Pinocchio rushed inside, the narrator leaves us with the image of his father shivering at home in shirt sleeves."
+              },
+              {
+                "label": "C",
+                "lineIndex": 3,
+                "text": "Pinocchio postponed responsibility with the convenient belief that tomorrow would always provide enough time for study."
+              }
+            ]
+          },
+          {
+            "id": "guess-03",
+            "audioLineIndex": 6,
+            "correctAnswer": "B",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 2,
+                "text": "At the crossing, school demanded patience in one direction while the marionette theater promised excitement in the other."
+              },
+              {
+                "label": "B",
+                "lineIndex": 6,
+                "text": "His flowered-paper coat, bark shoes, and dough cap proved too useless even for another child to buy."
+              },
+              {
+                "label": "C",
+                "lineIndex": 9,
+                "text": "As Pinocchio rushed inside, the narrator leaves us with the image of his father shivering at home in shirt sleeves."
+              }
+            ]
+          },
+          {
+            "id": "guess-04",
+            "audioLineIndex": 8,
+            "correctAnswer": "A",
+            "options": [
+              {
+                "label": "A",
+                "lineIndex": 8,
+                "text": "A ragpicker exchanged four pennies for the book, turning Geppetto's winter coat into a single afternoon of entertainment."
+              },
+              {
+                "label": "B",
+                "lineIndex": 1,
+                "text": "His gratitude sounded sincere until the distant rhythm of pipes and drums introduced a more immediate temptation."
+              },
+              {
+                "label": "C",
+                "lineIndex": 4,
+                "text": "He reached a brilliant wooden theater whose performance was beginning behind a crowd of eager spectators."
+              }
+            ]
+          }
+        ],
+        "word": [
+          {
+            "id": "word-01",
+            "lineIndex": 1,
+            "text": "His gratitude sounded sincere until the distant rhythm of pipes and drums introduced a more immediate temptation.",
+            "tokens": [
+              "His",
+              "gratitude",
+              "sounded",
+              "sincere",
+              "until",
+              "the",
+              "distant",
+              "rhythm",
+              "of",
+              "pipes",
+              "and",
+              "drums",
+              "introduced",
+              "a",
+              "more",
+              "immediate",
+              "temptation",
+              "."
+            ]
+          },
+          {
+            "id": "word-02",
+            "lineIndex": 3,
+            "text": "Pinocchio postponed responsibility with the convenient belief that tomorrow would always provide enough time for study.",
+            "tokens": [
+              "Pinocchio",
+              "postponed",
+              "responsibility",
+              "with",
+              "the",
+              "convenient",
+              "belief",
+              "that",
+              "tomorrow",
+              "would",
+              "always",
+              "provide",
+              "enough",
+              "time",
+              "for",
+              "study",
+              "."
+            ]
+          },
+          {
+            "id": "word-03",
+            "lineIndex": 6,
+            "text": "His flowered-paper coat, bark shoes, and dough cap proved too useless even for another child to buy.",
+            "tokens": [
+              "His",
+              "flowered",
+              "-",
+              "paper",
+              "coat",
+              ",",
+              "bark",
+              "shoes",
+              ",",
+              "and",
+              "dough",
+              "cap",
+              "proved",
+              "too",
+              "useless",
+              "even",
+              "for",
+              "another",
+              "child",
+              "to",
+              "buy",
+              "."
+            ]
+          },
+          {
+            "id": "word-04",
+            "lineIndex": 8,
+            "text": "A ragpicker exchanged four pennies for the book, turning Geppetto's winter coat into a single afternoon of entertainment.",
+            "tokens": [
+              "A",
+              "ragpicker",
+              "exchanged",
+              "four",
+              "pennies",
+              "for",
+              "the",
+              "book",
+              ",",
+              "turning",
+              "Geppetto's",
+              "winter",
+              "coat",
+              "into",
+              "a",
+              "single",
+              "afternoon",
+              "of",
+              "entertainment",
+              "."
+            ]
+          }
+        ],
+        "retellPromptKo": "‘내일 공부하면 된다’는 생각이 책임을 미루는 장치가 되는 과정을 설명하세요."
+      },
+      "stats": {
+        "lines": 10,
+        "words": 172,
+        "characters": 1136
+      }
+    }
+  },
+  "checksum": "d52bbfe7dd09a2cc84b30288cab17971bb228b7904fa4ccbade20590e6f9bc35"
+}
