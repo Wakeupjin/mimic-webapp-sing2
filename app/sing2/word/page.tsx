@@ -10,17 +10,16 @@ import MimicLineList from '@/app/components/MimicLineList';
 import Link from 'next/link';
 import { useFullscreen } from '@/app/hooks/useFullscreen';
 import { useSoundEffects } from '@/app/hooks/useSoundEffects';
-import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson, formatMovieId } from '@/app/dataService';
+import { fetchLessonData, parseLessonNumber, parsePack, parseProgressLesson } from '@/app/dataService';
 import { srtTimeToSeconds } from '@/app/utils/timeUtils';
 import { saveProgress, getProgressByMode, saveLog, saveResult } from '@/app/lib/progress';
 import { fetchEvaluation, useEvaluationLog } from '@/app/lib/evaluation';
 import { useRequireModeAccess } from '@/app/lib/useRequireModeAccess';
-import { getLessonMedia, lessonSelectHref, BOOK_SCENE_COUNT, isBookId } from '@/app/lib/lessonMedia';
+import { getLessonMedia, lessonPath, lessonSelectHref, isBookId } from '@/app/lib/lessonMedia';
 import LessonShell from '@/app/components/LessonShell';
 import LessonCompletionActions from '@/app/components/LessonCompletionActions';
 import { FullscreenIcon, HeaderIconButton } from '@/app/components/HeaderIcons';
 import ControlTriangle from '@/app/components/ControlTriangle';
-import { fetchRetellProgressRows } from '@/app/lib/storyRetellProgress';
 
 interface WordQuestion {
   question: number;
@@ -104,12 +103,8 @@ function WordPageContent() {
   const [lockHint, setLockHint] = useState(false);
   const [isChameleonEating, setIsChameleonEating] = useState(false);
   const [completionError, setCompletionError] = useState('');
-  const [hasStoryProof, setHasStoryProof] = useState(false);
   const [wordRetryCount, setWordRetryCount] = useState(0);
   const finalSavePromiseRef = useRef<Promise<void> | null>(null);
-
-  const currentChapter = parseInt(movieId.split(':')[1] || '1', 10);
-  const pack = parsePack(movieId);
 
   const clearStepTimeout = useCallback(() => {
     if (stepTimeoutRef.current) {
@@ -161,7 +156,6 @@ function WordPageContent() {
       setIsStarted(false);
       setShowCompletion(false);
       setCompletionError('');
-      setHasStoryProof(false);
       setWordRetryCount(0);
       finalSavePromiseRef.current = null;
 
@@ -186,9 +180,6 @@ function WordPageContent() {
         setSupabaseLessonData(lesson as LessonDataType);
         setVideoUrl(getLessonMedia(movieId).src);
         setLessonData({ word: lesson.word_data || [] });
-        void fetchRetellProgressRows().then((rows) => {
-          setHasStoryProof(rows.some((row) => row.lesson_number === progressLesson && row.completed));
-        });
         void fetchEvaluation(progressLesson, 'word').then((payload) => {
           const attempts = Array.isArray(payload.attempts)
             ? (payload.attempts as Record<string, unknown>[])
@@ -507,20 +498,7 @@ function WordPageContent() {
     } catch {
       return;
     }
-    const nextChapter = currentChapter + 1;
-    if (isBookId(movieId)) {
-      if (nextChapter <= BOOK_SCENE_COUNT) {
-        window.location.href = lessonSelectHref(formatMovieId(pack, nextChapter));
-        return;
-      }
-      window.location.href = '/';
-      return;
-    }
-    if (pack <= 1 && nextChapter <= 12) {
-      window.location.href = `/sing2/selecting?id=${formatMovieId(pack, nextChapter)}`;
-      return;
-    }
-    window.location.href = '/';
+    window.location.href = lessonPath(movieId, 'retelling');
   };
 
   const goToQuestion = (n: number) => {
@@ -833,15 +811,16 @@ function WordPageContent() {
               {showCompletion && (
                 <div className="lesson-completion-overlay absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/60 pointer-events-none">
                   <div className="word-achievement">
-                    <span>{hasStoryProof ? 'STORY + WORD' : 'WORD COMPLETE'}</span>
-                    <h2>
-                      {hasStoryProof
-                        ? `내 말로 이야기하고, Word ${totalQuestions}문장을 완성했어요`
-                        : `Word ${totalQuestions}문장을 직접 완성했어요`}
-                    </h2>
+                    <span>4 CORE MODES COMPLETE</span>
+                    <h2>Word {totalQuestions}문장을 직접 완성했어요</h2>
                     <p>완성 문장 {totalQuestions}개 · 다시 도전 {wordRetryCount}회</p>
                   </div>
-                  <LessonCompletionActions onAgain={handleAgain} onNext={() => void handleNext()} />
+                  <LessonCompletionActions
+                    onAgain={handleAgain}
+                    onNext={() => void handleNext()}
+                    nextLabel="Finale"
+                    nextCaption="내 이야기"
+                  />
                   {completionError && <p className="pointer-events-auto mt-3 rounded-full bg-black/80 px-4 py-2 text-sm font-bold text-rose-300">{completionError}</p>}
                 </div>
               )}

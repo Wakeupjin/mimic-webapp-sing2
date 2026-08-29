@@ -24,7 +24,6 @@ const BOOK_MODES: Array<{ learn: LearnMode; label: string }> = [
   { learn: "watching", label: "Listen" },
   { learn: "mimicking", label: "Mimic" },
   { learn: "guessing", label: "Guess" },
-  { learn: "retelling", label: "Story" },
   { learn: "word", label: "Word" },
 ];
 
@@ -140,6 +139,17 @@ function BookSelectingContent() {
         open: isMaster && hasContent,
         onSelect: () => openMode(mode.learn),
       }))}
+      finale={{
+        id: "retelling",
+        label: "My Voice",
+        locked: !modeOpen("retelling"),
+        done: hasContent && isModeCompleted(progressRows, progressLesson, "retelling"),
+        here: hasContent
+          && isModeCompleted(progressRows, progressLesson, "word")
+          && !isModeCompleted(progressRows, progressLesson, "retelling"),
+        open: isMaster && hasContent,
+        onSelect: () => openMode("retelling"),
+      }}
     />
   );
 }
