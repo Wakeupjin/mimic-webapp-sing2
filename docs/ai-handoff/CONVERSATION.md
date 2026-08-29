@@ -368,3 +368,33 @@ Moved the public Sing 2 preview into the hero conversion area and simplified the
 Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
 
 **Validation:** Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.
+
+## 2026-08-29 10:30:36 — codex / work started
+
+Objective: Allow movie learning in mobile portrait and standardize control layout across Watch, Mimic, Guess, and Word without changing the existing MimiC visual language
+
+
+## 2026-08-29 10:48:58 — user / request
+
+Allow Sing 2 learning in mobile portrait and remove irregular control sizing, ordering, spacing, and completion actions across Watch, Mimic, Guess, and Word while preserving the established MimiC design.
+
+
+## 2026-08-29 10:48:58 — codex / checkpoint
+
+Removed the movie-only portrait rotation gate; normalized the four movie modes around one 16:9 portrait stage; standardized top actions, start overlays, Again/Next completion actions, and portrait control docks; kept book-specific portrait media behavior separate; added a development layout fixture for responsive QA.
+
+**Next action:** Commit the isolated branch and wait for explicit approval before preview or production deployment.
+
+**Validation:** TypeScript passed; Next.js production build passed; browser QA covered 320x568 and 390x844 phone portrait, phone landscape, 820x1180 pad portrait, pad landscape, and desktop across Watch/Mimic/Guess/Word with no document overflow or clipped controls.
+
+**Files:**
+- app/layout.tsx, app/components/RotateGate.tsx, app/components/LessonShell.tsx, app/components/ClickToStartOverlay.tsx, app/components/LessonCompletionActions.tsx, app/globals.css, app/sing2/watching/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/guessing/page.tsx, app/sing2/word/page.tsx, app/dev/layout-lab/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
+
+**Open risks:** Authenticated production media flows were not exercised on this clean local origin; the responsive fixture mirrors production class structures, while event-handler behavior remains unchanged except removal of RotateGate.
+
+
+## 2026-08-29 10:48:58 — codex / completed
+
+Movie learning now works in portrait with consistent stage ratios and control hierarchy across all four modes; book portrait behavior remains intentionally distinct where its static cover benefits from it.
+
+**Validation:** TypeScript and Next.js production build passed; responsive browser checks found no horizontal or vertical document overflow at tested phone, tablet, landscape, and desktop sizes.

@@ -18,31 +18,31 @@ COMPLETE
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Move the Sing 2 preview into the hero and simplify the monthly section into a clear movie-to-book path
+Allow movie learning in mobile portrait and standardize control layout across Watch, Mimic, Guess, and Word without changing the existing MimiC visual language
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Hero-led Sing 2 preview and simplified Sing 2-to-Pinocchio monthly layout are complete and available at http://127.0.0.1:3004/.
+Movie learning now works in portrait with consistent stage ratios and control hierarchy across all four modes; book portrait behavior remains intentionally distinct where its static cover benefits from it.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/Sing2Preview.tsx, app/dev/brand-preview/page.tsx, app/dev/brand-preview/brand-preview.module.css
+- app/layout.tsx, app/components/RotateGate.tsx, app/components/LessonShell.tsx, app/components/ClickToStartOverlay.tsx, app/components/LessonCompletionActions.tsx, app/globals.css, app/sing2/watching/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/guessing/page.tsx, app/sing2/word/page.tsx, app/dev/layout-lab/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Production build passed; 1422px desktop and 389px mobile verified; body width matches viewport; EN CTA is not truncated; signup navigation is correct; no console errors or warnings.
+TypeScript and Next.js production build passed; responsive browser checks found no horizontal or vertical document overflow at tested phone, tablet, landscape, and desktop sizes.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Logo still uses the pre-existing cursive fallback because Jolly Lodger is not loaded; not changed in this redesign.
+Authenticated production media flows were not exercised on this clean local origin; the responsive fixture mirrors production class structures, while event-handler behavior remains unchanged except removal of RotateGate.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action

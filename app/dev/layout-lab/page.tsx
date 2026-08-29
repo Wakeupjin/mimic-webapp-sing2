@@ -4,7 +4,7 @@ import { notFound, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import LessonShell from "../../components/LessonShell";
 import PlaybackControls from "../../components/PlaybackControls";
-import { CaptionsIcon, FullscreenIcon, HeaderCloseLink, HeaderIconButton, ListIcon } from "../../components/HeaderIcons";
+import { FullscreenIcon, HeaderCloseLink, HeaderIconButton } from "../../components/HeaderIcons";
 import SceneList from "../../components/SceneList";
 import GuessingResultScreen from "../../components/GuessingResultScreen";
 import ControlTriangle from "../../components/ControlTriangle";
@@ -15,10 +15,19 @@ const SCENES = Array.from({ length: 8 }, (_, i) => ({
   text: `Line ${i + 1}`,
 }));
 
-function VideoStub({ label }: { label: string }) {
+function VideoStub({ label, skip = true }: { label: string; skip?: boolean }) {
   return (
-    <div className="flex h-full w-full items-center justify-center bg-[#141414] text-sm text-gray-400" style={{ fontFamily: "Encode Sans, sans-serif" }}>
-      {label}
+    <div className="relative flex h-full w-full items-center justify-center bg-[#141414] text-sm text-gray-400" style={{ fontFamily: "Encode Sans, sans-serif" }}>
+      <span>{label}</span>
+      <button type="button" className="watch-back absolute left-3 top-3 z-20 sm:left-4 sm:top-4" aria-label="뒤로">
+        <img src="/home/back.svg" alt="" className="h-full w-full" />
+      </button>
+      <div className="lesson-top-actions absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+        <HeaderIconButton label="전체화면" onClick={() => undefined}>
+          <FullscreenIcon />
+        </HeaderIconButton>
+        {skip ? <button type="button" className="watch-skip">SKIP</button> : null}
+      </div>
     </div>
   );
 }
@@ -26,22 +35,18 @@ function VideoStub({ label }: { label: string }) {
 function LabWatching() {
   return (
     <LessonShell
-      subtitle="Watch"
-      extraActions={
-        <>
-          <HeaderIconButton label="자막" onClick={() => undefined}>
-            <CaptionsIcon />
-          </HeaderIconButton>
-          <HeaderIconButton label="전체화면" onClick={() => undefined}>
-            <FullscreenIcon />
-          </HeaderIconButton>
-        </>
-      }
+      hideHeader
+      stageClassName="learning-stage learning-stage-watch learning-content-movie"
+      footer={<p className="watch-chapter">CHAPTER 1</p>}
       video={<VideoStub label="Watching video" />}
       controls={
-        <div className="w-full px-2 md:px-8">
-          <div className="relative h-2 w-full rounded-full bg-gray-300">
-            <div className="absolute inset-y-0 left-0 w-1/3 rounded-full bg-[#60D96C]" />
+        <div className="watch-progress-control relative z-50 w-full overflow-visible">
+          <div className="watch-bar">
+            <div className="watch-bar-track">
+              <div className="watch-bar-fill" style={{ width: "35%" }} />
+            </div>
+            <div className="watch-bar-thumb" style={{ left: "35%" }} />
+            <span className="watch-time" style={{ left: "35%" }}>00:12 / 00:34</span>
           </div>
         </div>
       }
@@ -56,23 +61,19 @@ function LabMimicking() {
   }, []);
   return (
     <LessonShell
-      subtitle="3/30"
+      hideHeader
+      stageClassName="learning-stage learning-stage-mimic learning-content-movie"
       onAsideDismiss={() => setOpen(false)}
-      extraActions={
-        <>
-          <HeaderIconButton label="자막" onClick={() => undefined}>
-            <CaptionsIcon active />
-          </HeaderIconButton>
-          <HeaderIconButton label="목록" onClick={() => setOpen((v) => !v)}>
-            <ListIcon active={open} />
-          </HeaderIconButton>
-          <HeaderIconButton label="전체화면" onClick={() => undefined}>
-            <FullscreenIcon />
-          </HeaderIconButton>
-        </>
-      }
       video={<VideoStub label="Mimicking video" />}
-      controls={<PlaybackControls onPrev={() => undefined} onNext={() => undefined} onPlay={() => undefined} activeIndex={2} />}
+      controls={
+        <div className="lesson-dock mimic-dock">
+          <PlaybackControls variant="cinema" onPrev={() => undefined} onNext={() => undefined} onPlay={() => undefined} activeIndex={2} />
+          <button type="button" className="mimic-count" onClick={() => setOpen((v) => !v)}>
+            <span>03 / </span><span className="mimic-count-total">30</span>
+            <img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+          </button>
+        </div>
+      }
       aside={
         open ? (
           <div className="flex h-full flex-col rounded-lg bg-[#1a1a1a] p-3">
@@ -94,38 +95,29 @@ function LabGuessing() {
   }, []);
   return (
     <LessonShell
-      subtitle="2/10"
+      hideHeader
+      stageClassName="learning-stage learning-stage-guess learning-content-movie"
       onAsideDismiss={() => setOpen(false)}
-      extraActions={
-        <>
-          <HeaderIconButton label="목록" onClick={() => setOpen((v) => !v)}>
-            <ListIcon active={open} />
-          </HeaderIconButton>
-          <HeaderIconButton label="전체화면" onClick={() => undefined}>
-            <FullscreenIcon />
-          </HeaderIconButton>
-        </>
-      }
       video={<VideoStub label="Guessing video" />}
       controls={
-        <div className="w-full overflow-x-auto">
-          <div
-            className="mx-auto flex w-max max-w-full items-center justify-center rounded-lg bg-[#201E1E] px-1 py-1 sm:px-2"
-            style={{ gap: "var(--ctrl-gap)" }}
-          >
+        <div className="lesson-dock guess-dock">
+          <div className="guess-abc">
             <ControlTriangle direction="left" label="이전" onClick={() => undefined} />
             {["A", "B", "C"].map((label) => (
               <button
                 key={label}
                 type="button"
-                className="min-w-[2.6rem] rounded-xl border-4 border-gray-300 bg-white px-3 py-2 text-sm font-bold text-black sm:min-w-[3.5rem] sm:rounded-2xl sm:border-8 sm:px-6 sm:py-4 sm:text-lg"
-                style={{ fontFamily: "Encode Sans, sans-serif" }}
+                className="guess-opt"
               >
                 {label}
               </button>
             ))}
             <ControlTriangle direction="right" label="다음" onClick={() => undefined} />
           </div>
+          <button type="button" className="mimic-count" onClick={() => setOpen((v) => !v)}>
+            <span>02 / </span><span className="mimic-count-total">10</span>
+            <img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+          </button>
         </div>
       }
       aside={
@@ -148,38 +140,33 @@ function LabWord() {
   const words = ["ordinary", "school", "girl", "discovers", "world", "stage", "dream", "moon", "theater", "show"];
   return (
     <LessonShell
-      subtitle="1/10"
-      extraActions={
-        <HeaderIconButton label="전체화면" onClick={() => undefined}>
-          <FullscreenIcon />
-        </HeaderIconButton>
-      }
+      hideHeader
+      compactStage
+      stageClassName="learning-stage learning-stage-word learning-content-movie"
     >
-      <div className="flex min-h-0 flex-1 flex-col md:grid md:grid-cols-[minmax(5.5rem,0.9fr)_minmax(0,1.7fr)_minmax(5.5rem,0.9fr)] md:gap-3 lg:grid-cols-[minmax(7.5rem,1fr)_minmax(0,2.2fr)_minmax(7.5rem,1fr)]">
-        <div className="hidden flex-col gap-2 overflow-y-auto md:flex">
+      <div className="word-board is-arranging">
+        <div className="word-chips-side">
           {words.slice(0, 5).map((word) => (
-            <button key={word} type="button" className="w-full break-words rounded-xl border-4 border-gray-300 bg-white px-2 py-2 text-xs font-bold text-black lg:rounded-2xl lg:px-4 lg:py-4 lg:text-lg">
+            <button key={word} type="button" className="word-chip">
               {word}
             </button>
           ))}
         </div>
-        <div className="flex min-h-0 flex-1 flex-col items-center">
+        <div className="word-main-stack flex min-h-0 flex-1 flex-col items-center">
           <div className="flex w-full shrink-0 items-center justify-center md:min-h-0 md:flex-1">
-            <div
-              className="relative aspect-video w-full overflow-hidden rounded-xl border-4 border-[#201E1E] md:h-full md:aspect-auto md:rounded-3xl md:border-8"
-            >
-              <VideoStub label="Word video" />
+            <div className="word-video watch-frame relative aspect-video w-full overflow-hidden md:h-full md:aspect-auto">
+              <VideoStub label="Word video" skip={false} />
             </div>
           </div>
-          <div className="mt-2 flex max-h-[22vh] flex-wrap justify-center gap-1 overflow-y-auto md:hidden">
+          <div className="word-chips-mobile">
             {words.map((word) => (
-              <button key={word} type="button" className="rounded-xl border-2 border-gray-300 bg-white px-3 py-1.5 text-sm font-bold text-black">
+              <button key={word} type="button" className="word-chip is-compact">
                 {word}
               </button>
             ))}
           </div>
-          <div className="relative z-50 mt-auto w-full overflow-x-auto pt-1">
-            <div className="mx-auto flex w-max max-w-full items-center justify-center rounded-lg bg-[#201E1E] px-1 py-1" style={{ gap: "var(--ctrl-gap)" }}>
+          <div className="lesson-dock word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
+            <div className="word-bar">
               <ControlTriangle direction="left" label="이전" onClick={() => undefined} />
               <div className="flex shrink-0 items-center justify-center rounded-[10px]" style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)", background: "#60D96C" }}>
                 <span className="ctrl-play-icon" />
@@ -192,11 +179,18 @@ function LabWord() {
               </div>
               <ControlTriangle direction="right" label="다음" onClick={() => undefined} />
             </div>
+            <button type="button" className="mimic-count">
+              <span>01 / </span><span className="mimic-count-total">10</span>
+              <img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+            </button>
           </div>
+          <button type="button" className="word-submit is-ready relative z-20 mb-1 mt-1 shrink-0" aria-label="문장 완성">
+            <img src="/Subject.png" alt="" />
+          </button>
         </div>
-        <div className="hidden flex-col gap-2 overflow-y-auto md:flex">
+        <div className="word-chips-side">
           {words.slice(5).map((word) => (
-            <button key={word} type="button" className="w-full break-words rounded-xl border-4 border-gray-300 bg-white px-2 py-2 text-xs font-bold text-black lg:rounded-2xl lg:px-4 lg:py-4 lg:text-lg">
+            <button key={word} type="button" className="word-chip">
               {word}
             </button>
           ))}
