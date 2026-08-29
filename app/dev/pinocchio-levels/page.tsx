@@ -215,7 +215,7 @@ export default function PinocchioLevelsPreview() {
           <span>LOCAL LAB · 01</span>
           <strong>한 이야기, 세 가지 영어</strong>
         </div>
-        <div className={styles.localBadge}><i /> 배포되지 않은 로컬 실험</div>
+        <div className={styles.localBadge}><i /> 공개 전 검토용 프로토타입</div>
       </header>
 
       <section className={styles.layout}>
