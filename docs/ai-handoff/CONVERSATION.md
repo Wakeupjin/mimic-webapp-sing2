@@ -450,3 +450,45 @@ Mimic Check now replays the exact target video segment muted on entry and again 
 Mimic Check is now scene-led rather than memory-led: the learner receives the same clip muted, can replay sound only when needed, and never sees the target English sentence or Mimic transcript.
 
 **Validation:** Production build passed; responsive browser QA passed; muted and sound replay behaviors were verified against the real Sing 2 media segment.
+
+## 2026-08-29 12:20:59 — codex / work started
+
+Objective: Diagnose and fix the placement 55-second scene failing to start on iPad after grade selection
+
+
+## 2026-08-29 12:20:59 — user / request
+
+On iPad, the 55-second placement scene does not appear or play regardless of which grade band is selected; diagnose and fix it.
+
+
+## 2026-08-29 12:35:26 — codex / checkpoint
+
+Fixed placement playback gating for iPad-class devices: preload waiting events no longer lock the start button, the 55-second scene uses an MP4 media fragment, a poster remains visible while seeking, and explicit loading/retry/timeout states replace the blank stall.
+
+**Next action:** Keep the combined Mimic Check and iPad playback fixes local until the user explicitly requests preview or production deployment.
+
+**Validation:** TypeScript and production build passed. In a 1024x1366 browser viewport, every grade selection reached an enabled 55-second start action; tapping it played the real Bunny CDN media at 288.5 seconds with no media error or horizontal overflow.
+
+**Files:**
+- app/placement/page.tsx
+
+**Open risks:** The automated browser is not Mobile Safari, so one real iPad Safari smoke test remains after deployment. The source is a 950 MB full-movie MP4; a dedicated 55-second CDN clip would be the strongest long-term latency fix.
+
+
+## 2026-08-29 12:35:26 — codex / completed
+
+Placement no longer mistakes iPad preload delay for active playback: the start action stays usable, gives visible loading/retry feedback, and seeks through a segment-specific media URL.
+
+**Validation:** Build passed; real media playback began at the intended 288.5-second scene in iPad-sized browser QA.
+
+
+## 2026-08-29 12:36:29 — codex / validation
+
+The initial iPad-sized reproduction showed preload waiting events disabling the 55-second start action before any tap. After guarding waiting/seeking behind an active play request, the start action remained enabled and real media played from 288.5 seconds; the redundant hidden full-movie video was also removed from watch/intro states.
+
+
+## 2026-08-29 12:36:29 — codex / completed
+
+Placement playback now remains actionable during iPad preload, requests only the needed media time range, avoids a duplicate hidden movie request, and exposes poster/loading/retry/timeout feedback instead of a blank stall.
+
+**Validation:** TypeScript and production build passed after the final duplicate-media cleanup; iPad-sized browser QA played the real segment from 288.5 seconds without a media error.

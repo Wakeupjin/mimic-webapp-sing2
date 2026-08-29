@@ -18,31 +18,31 @@ COMPLETE
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Replace Mimic Check memory prompt with same-segment muted scene replay while never exposing the English sentence
+Diagnose and fix the placement 55-second scene failing to start on iPad after grade selection
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Mimic Check is now scene-led rather than memory-led: the learner receives the same clip muted, can replay sound only when needed, and never sees the target English sentence or Mimic transcript.
+Placement playback now remains actionable during iPad preload, requests only the needed media time range, avoids a duplicate hidden movie request, and exposes poster/loading/retry/timeout feedback instead of a blank stall.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/AiCoachPanel.tsx, app/placement/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
+- app/placement/page.tsx
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Production build passed; responsive browser QA passed; muted and sound replay behaviors were verified against the real Sing 2 media segment.
+TypeScript and production build passed after the final duplicate-media cleanup; iPad-sized browser QA played the real segment from 288.5 seconds without a media error.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-A real microphone permission and AI response run still requires an authenticated user and was not triggered during automated browser QA.
+The automated browser is not Mobile Safari, so one real iPad Safari smoke test remains after deployment. The source is a 950 MB full-movie MP4; a dedicated 55-second CDN clip would be the strongest long-term latency fix.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
