@@ -7,18 +7,26 @@
   "channel": "production",
   "levels": ["foundation"],
   "authorizedBy": "이강진 (Product Owner)",
-  "authorizedAt": "2026-08-30T21:00:00+09:00",
+  "authorizedAt": "2026-08-30T23:16:25+09:00",
   "expiresAt": null,
   "revokedAt": null,
-  "authorizationEvidence": "After Codex explicitly disclosed that final Forced Alignment, twelve-Chapter human listen/editorial/learning review, and named final legal approval remain pending, the product owner replied '승인' on 2026-08-30 and authorized an actual-service Foundation public-beta deployment.",
-  "scope": "Public beta availability for Pinocchio Foundation Chapters 1–12 only. This does not convert pending legal, editorial, learning, audio, alignment, or final release reviews into approvals.",
+  "authorizationEvidence": "After Codex explicitly disclosed that final Forced Alignment, twelve-Chapter human listen/editorial/learning review, named final legal approval, visual review, mobile-crop review, and input-reference provenance review remain pending, the product owner replied '승인' on 2026-08-30 and authorized an actual-service Foundation public-beta deployment using the exact visuals.json catalog recorded below.",
+  "scope": "Public beta availability for Pinocchio Foundation Chapters 1–12 and the exact pending visuals.json catalog recorded below. This does not convert pending legal, editorial, learning, audio, alignment, visual, mobile-crop, provenance, or final release reviews into approvals.",
   "acknowledgedOpenGates": [
     "The Story Pack manifest and Chapter QA/production records remain draft or human-review-pending rather than release-approved.",
     "Per-Chapter and full-master Forced Alignment remain pending.",
     "Named editorial, learning, voice, audio, rights, and final release reviews remain pending across the twelve Chapters.",
     "Commercial-rights approval and named target-territory legal review remain pending even though the public-domain and paid-generation bases are recorded.",
+    "Named human visual, mobile-crop, and input-reference provenance review remain pending for the twelve Chapter panoramas.",
     "The release must remain visibly labeled Beta until the normal release gate passes."
   ],
+  "visualCatalogApproval": {
+    "catalog": "visuals.json",
+    "catalogSha256": "sha256:54b09ee8733fd4fd13f319e54f174d9c82022457c410fb9612c8bcb1780141ec",
+    "decision": "explicitly-approved-for-production-public-beta",
+    "reviewStateAtAuthorization": "pending",
+    "evidence": "The product owner explicitly replied '승인' after the pending visual, mobile-crop, and input-reference provenance gates were disclosed and requested the complete production deployment."
+  },
   "rollback": {
     "environmentVariable": "PINOCCHIO_PRODUCTION_RELEASE",
     "value": "v2",

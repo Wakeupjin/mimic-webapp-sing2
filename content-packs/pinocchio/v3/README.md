@@ -52,15 +52,15 @@ and 1672×941 dimensions. Human visual, mobile-crop, and rights review remain
 pending, and the registry explicitly describes the current limitation: one
 static panorama per Chapter, not eight independently timed scenes.
 
-The 2026-08-30 beta authorization predates this visual catalog and is not
-silently extended to it. Production public-beta publishing now requires a new,
-manifest-pinned authorization whose `visualCatalogApproval` names
-`visuals.json`, binds its exact SHA-256 digest, records the review state seen at
-authorization time, explicitly approves that exact catalog for Production
-public beta, and acknowledges the pending visual, mobile-crop, and input-reference
-provenance reviews together. The historical `release-beta.json` is preserved
-unchanged, so the current pending catalog remains valid for Preview but blocked
-from Production until the product owner gives that new deploy approval.
+The original 2026-08-30 beta authorization predated this visual catalog and was
+not silently extended to it. After the pending visual, mobile-crop, and
+input-reference provenance reviews were explicitly disclosed, the product
+owner separately approved Production public beta for the exact catalog. The
+updated manifest-pinned `release-beta.json` now names `visuals.json`, binds its
+exact SHA-256 digest, records the pending review state seen at authorization
+time, and preserves all three visual gates as unresolved blockers. Any later
+catalog change invalidates this exception until a new digest-bound approval is
+recorded.
 
 Visual review has one atomic state transition. `pending` requires the catalog,
 rendering record, and all twelve Chapter records to remain pending and continues

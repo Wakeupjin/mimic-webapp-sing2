@@ -15,7 +15,7 @@ const packRoot = path.join(root, "content-packs", "pinocchio", "v3");
 const visualFile = await readFile(path.join(packRoot, "visuals.json"));
 const currentVisuals = JSON.parse(visualFile.toString("utf8"));
 const currentVisualDigest = sha256Digest(visualFile);
-const legacyAuthorization = JSON.parse(await readFile(path.join(packRoot, "release-beta.json"), "utf8"));
+const checkedAuthorization = JSON.parse(await readFile(path.join(packRoot, "release-beta.json"), "utf8"));
 
 function approvedCatalog() {
   const catalog = structuredClone(currentVisuals);
@@ -58,18 +58,21 @@ test("approved and mixed review claims fail without named date-and-evidence proo
   assert.ok(inconsistent.errors.some((error) => /mixed review states/.test(error)));
 });
 
-test("the historical beta approval cannot authorize the newly added visuals", () => {
-  const result = validateVisualPublicBetaBinding(legacyAuthorization, {
+test("the checked-in public-beta approval binds the exact pending visual catalog", () => {
+  const result = validateVisualPublicBetaBinding(checkedAuthorization, {
     catalogReference: "visuals.json",
     catalogSha256: currentVisualDigest,
     reviewState: "pending",
   });
-  assert.equal(result.valid, false);
-  assert.ok(result.errors.some((error) => /does not explicitly approve the visual catalog/.test(error)));
+  assert.equal(result.valid, true);
+  assert.equal(result.binding.catalogSha256, currentVisualDigest);
 });
 
 test("a new public-beta approval must bind the exact catalog digest and every pending visual-review disclosure", () => {
-  const authorization = structuredClone(legacyAuthorization);
+  const authorization = structuredClone(checkedAuthorization);
+  authorization.acknowledgedOpenGates = authorization.acknowledgedOpenGates.filter((gate) => (
+    !/visual|mobile[- ]crop|input[- ]reference|provenance/i.test(gate)
+  ));
   authorization.visualCatalogApproval = {
     catalog: "visuals.json",
     catalogSha256: currentVisualDigest,

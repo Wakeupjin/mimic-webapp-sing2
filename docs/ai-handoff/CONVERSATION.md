@@ -1218,3 +1218,13 @@ Removed the exact English phrase caption from Mimic so the learner receives the 
 ## 2026-08-30 — codex / local checkpoint ready
 
 Committed the complete Sing2-parity implementation locally on `codex/pinocchio-sing2-parity`. Uploading the branch to the configured external GitHub remote was not authorized by the execution policy, so no remote branch, PR, Vercel Preview, merge, or Production deployment was created. The next operator must obtain explicit user approval for that external branch upload before continuing.
+
+## 2026-08-30 — user / exact visual public-beta approval
+
+After the assistant disclosed that named visual review, mobile-crop review, and input-reference provenance review remain pending, the product owner replied `승인` and authorized the complete Production deployment.
+
+## 2026-08-30 — codex / production authorization bound
+
+Bound that approval to the exact pending `visuals.json` SHA-256 digest in `release-beta.json`, added the three visual gates to the acknowledged unresolved blockers, and pinned the updated authorization digest in the v3 manifest. This exception permits only the current Foundation visual catalog and does not mark any pending review complete.
+
+**Validation:** `env VERCEL_ENV=production npm run publish:pinocchio-v3-web` published 12/12 as `production-public-beta`; the Vercel-equivalent 101-page Production build, Story Pack validation, UI parity 9/9, visual release gate 5/5, TypeScript, and diff checks passed.
