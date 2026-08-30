@@ -12,47 +12,44 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-IN PROGRESS
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Create Mimic company operating record and Pinocchio v3 Story Pack with an eight-minute Core Golden Chapter
+Produce Pinocchio v3 Core Chapter 1 Golden audiobook master, sentence alignment, and reproducible ElevenLabs media provenance
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Recorded the AI-native company/Content Studio operating model and created Pinocchio v3 Story Pack draft. Core Chapter 1 now has a 1,028-word, 105-sentence canonical master estimated at 481.9 seconds at 128 wpm, eight beats, and exact 30 Mimic/10 Guess/10 Word selections. Added registry, manifest schema, persistent Content Studio AI rule, rights record, Story Bible, twelve-Chapter season map, production/QA records, and a generic validator.
+Pinocchio v3 Core Chapter 1 Golden audiobook master, sentence/Mimic alignment, and reproducible ElevenLabs provenance are complete. Human listen-through is the release gate before batch production.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- AGENTS.md
-- .cursor/rules/content-studio.mdc
-- content-studio/
-- content-packs/pinocchio/v3/
+- content-packs/pinocchio/v3/chapters/chapter-01/audio/
+- content-packs/pinocchio/v3/chapters/chapter-01/levels/core/
+- scripts/generate-story-pack-golden-audio.mjs
 - scripts/validate-story-pack.mjs
-- package.json
-- docs/ai-handoff/PROJECT_CONTEXT.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-npm run validate:story-pack passed (105 sentences, 1,028 words, 481.9 seconds, 8/30/10/10); npx tsc --noEmit passed; all nine new JSON files parse; git diff --check passed. Next Turbopack build was stopped after hanging in its optimization phase with no diagnostic output; no app code changed.
+Story Pack validator, TypeScript, generator syntax, FFprobe format/duration, loudness, checksums, request-count, sentence-count, beat-count, and Mimic-range checks passed.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Commercial target-territory rights review, named editorial/learning approval, durable Lily voice ID/availability, commercial plan evidence, master audio/timestamps/visuals, human listening QA, and product preview remain pending. Existing untracked prototype voice folders are unrelated and were not modified.
+Human audio listen-through remains pending; restricted API key blocked Forced Alignment so recorded per-act timestamps are used; named editorial/learning and rights approval remain pending; Living Story Stage/product preview not yet implemented; Lily retirement requires narrator A/B before batch production.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-A named human editor reviews the Chapter 1 Core script and learning selections. After approval, select and record a durable ElevenLabs voice ID, generate one coherent narration master without sentence-by-sentence TTS, align timestamps, complete human listening and product QA, then approve the Golden Chapter before authoring Chapters 2-12.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->

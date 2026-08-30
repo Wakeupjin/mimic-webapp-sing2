@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "1.0.0",
+  "source": "per-act-elevenlabs-tts",
+  "forcedAlignment": {
+    "status": "fallback-to-per-act-timestamps",
+    "reason": "HTTP 401"
+  }
+}

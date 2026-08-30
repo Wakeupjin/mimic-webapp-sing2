@@ -1059,3 +1059,31 @@ Recorded the AI-native company/Content Studio operating model and created Pinocc
 - docs/ai-handoff/PROJECT_CONTEXT.md
 
 **Open risks:** Commercial target-territory rights review, named editorial/learning approval, durable Lily voice ID/availability, commercial plan evidence, master audio/timestamps/visuals, human listening QA, and product preview remain pending. Existing untracked prototype voice folders are unrelated and were not modified.
+
+## 2026-08-30 16:03:24 — codex / work started
+
+Objective: Produce Pinocchio v3 Core Chapter 1 Golden audiobook master, sentence alignment, and reproducible ElevenLabs media provenance
+
+
+## 2026-08-30 16:31:32 — codex / checkpoint
+
+Generated the Pinocchio v3 Core Chapter 1 Lily ElevenLabs v3 Golden master from the approved 1,031-word canonical script as two coherent acts, then decode-concatenated and re-encoded them into a single 490.32-second 44.1 kHz mono 128 kbps master. Added 105 sentence ranges, 30 Mimic ranges, eight beat ranges, durable request IDs/checksums/config fingerprint, voice snapshot, cost evidence, safe paid-request resume/overwrite guards, and technical media validation. Forced Alignment returned HTTP 401 on the restricted key, so the explicitly approved and recorded per-act ElevenLabs timestamp fallback was used without regenerating paid audio.
+
+**Next action:** Product owner listens to the full master, especially the S054-S055 seam at 235.526 seconds, and records audio approval or exact revision notes. Do not batch Chapters 2-12 or other levels until this Golden listen-through passes.
+
+**Validation:** npm run validate:story-pack passed with 490.32-second master, 105 lines, 30 Mimic ranges, two provider requests, matching text/audio checksums; npx tsc --noEmit passed; node --check generator passed; ffprobe confirmed MP3 44.1 kHz mono 128 kbps; loudness measured -18.45 LUFS and -1.19 dBTP; seam gap is 0.458 seconds.
+
+**Files:**
+- content-packs/pinocchio/v3/chapters/chapter-01/audio/
+- content-packs/pinocchio/v3/chapters/chapter-01/levels/core/
+- scripts/generate-story-pack-golden-audio.mjs
+- scripts/validate-story-pack.mjs
+
+**Open risks:** Human audio listen-through remains pending; restricted API key blocked Forced Alignment so recorded per-act timestamps are used; named editorial/learning and rights approval remain pending; Living Story Stage/product preview not yet implemented; Lily retirement requires narrator A/B before batch production.
+
+
+## 2026-08-30 16:31:39 — codex / completed
+
+Pinocchio v3 Core Chapter 1 Golden audiobook master, sentence/Mimic alignment, and reproducible ElevenLabs provenance are complete. Human listen-through is the release gate before batch production.
+
+**Validation:** Story Pack validator, TypeScript, generator syntax, FFprobe format/duration, loudness, checksums, request-count, sentence-count, beat-count, and Mimic-range checks passed.

@@ -65,7 +65,7 @@
       "id": "M08",
       "sourceSentenceId": "S028",
       "beatId": "B03",
-      "text": "Geppetto entered, carrying a patched coat and a hopeful smile.",
+      "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
       "focus": "participial description",
       "selectionReason": "Introduces a character through two concise visual details."
     },
@@ -73,7 +73,7 @@
       "id": "M09",
       "sourceSentenceId": "S029",
       "beatId": "B03",
-      "text": "He was a poor woodcarver, but his imagination was richer than the treasure room of any king.",
+      "text": "He was poor, but his imagination was richer than any king’s treasure room.",
       "focus": "but-contrast and comparison",
       "selectionReason": "Expresses poverty and inner richness in one memorable line."
     },
@@ -89,7 +89,7 @@
       "id": "M11",
       "sourceSentenceId": "S034",
       "beatId": "B03",
-      "text": "More than money, however, Geppetto wanted company in his small, lonely house at the end of each day.",
+      "text": "More than money, Geppetto wanted company in his small, lonely home.",
       "focus": "emotional contrast and phrasing",
       "selectionReason": "Reveals the emotional motive beneath the practical plan."
     },
@@ -161,7 +161,7 @@
       "id": "M20",
       "sourceSentenceId": "S072",
       "beatId": "B06",
-      "text": "It grew longer and longer, no matter how often he shortened it.",
+      "text": "The nose grew longer and longer, no matter how often Geppetto shortened it.",
       "focus": "repetition and no-matter clause",
       "selectionReason": "Uses a useful persistence pattern around the iconic nose."
     },
@@ -225,15 +225,15 @@
       "id": "M28",
       "sourceSentenceId": "S099",
       "beatId": "B08",
-      "text": "Some people decided that Geppetto must be a cruel father, although none of them knew the truth.",
-      "focus": "assumption and concession",
-      "selectionReason": "Encodes the crowd's error with an important although clause."
+      "text": "When he caught the puppet by the neck instead, Pinocchio threw himself onto the road and refused to move.",
+      "focus": "when-clause and physical reaction",
+      "selectionReason": "Shows the action that causes the crowd to misunderstand Geppetto."
     },
     {
       "id": "M29",
-      "sourceSentenceId": "S100",
+      "sourceSentenceId": "S101",
       "beatId": "B08",
-      "text": "The constable listened to the loudest voices instead of the wisest one.",
+      "text": "The constable listened to the loudest voices instead of examining the facts.",
       "focus": "instead-of contrast",
       "selectionReason": "A memorable consequence line with a reusable contrast frame."
     },
@@ -253,7 +253,7 @@
       "cue": "Master Cherry raises his axe and hears an impossible warning.",
       "options": [
         { "id": "A", "sourceSentenceId": "S007", "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”" },
-        { "id": "B", "sourceSentenceId": "S013", "text": "This time, the voice squealed, “That tickles!”" },
+        { "id": "B", "sourceSentenceId": "S013", "text": "This time, the axe came down, and the voice cried, “Oh! You hurt me!”" },
         { "id": "C", "sourceSentenceId": "S025", "text": "At that exact moment, someone knocked loudly at the shop door." }
       ],
       "correctOptionId": "A",
@@ -276,7 +276,7 @@
       "beatId": "B02",
       "cue": "The plane touches the block and proves that the wood reacts like a child.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S009", "text": "He looked under the bench, behind the door, near the stove, and even inside an empty cupboard." },
+        { "id": "A", "sourceSentenceId": "S009", "text": "He searched beneath the bench, behind the door, and inside every cupboard." },
         { "id": "B", "sourceSentenceId": "S054", "text": "The block gave a quiet, satisfied chuckle." },
         { "id": "C", "sourceSentenceId": "S017", "text": "The moment the tool scraped across it, the wood laughed like a cheeky child." }
       ],
@@ -302,7 +302,7 @@
       "options": [
         { "id": "A", "sourceSentenceId": "S053", "text": "“Friends again,” Master Cherry replied." },
         { "id": "B", "sourceSentenceId": "S041", "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”" },
-        { "id": "C", "sourceSentenceId": "S097", "text": "“That is my boy.”" }
+        { "id": "C", "sourceSentenceId": "S097", "text": "“He is my boy, and I shall take him home.”" }
       ],
       "correctOptionId": "B",
       "distractorStrategy": "Other dialogue lines with different speakers and intentions."
@@ -324,7 +324,7 @@
       "beatId": "B06",
       "cue": "Geppetto cannot control the most famous feature of the puppet's face.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S072", "text": "It grew longer and longer, no matter how often he shortened it." },
+        { "id": "A", "sourceSentenceId": "S072", "text": "The nose grew longer and longer, no matter how often Geppetto shortened it." },
         { "id": "B", "sourceSentenceId": "S084", "text": "One step became two, and two steps became a wild dash around the room." },
         { "id": "C", "sourceSentenceId": "S093", "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose." }
       ],
@@ -338,7 +338,7 @@
       "options": [
         { "id": "A", "sourceSentenceId": "S056", "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd." },
         { "id": "B", "sourceSentenceId": "S087", "text": "The puppet pulled the latch and shot into the street." },
-        { "id": "C", "sourceSentenceId": "S101", "text": "He released Pinocchio and took Geppetto by the arm." }
+        { "id": "C", "sourceSentenceId": "S102", "text": "He released Pinocchio and took Geppetto by the arm." }
       ],
       "correctOptionId": "B",
       "distractorStrategy": "Other street movement or release moments."
@@ -346,11 +346,11 @@
     {
       "id": "G09",
       "beatId": "B08",
-      "cue": "The constable makes a bad decision because he follows noise rather than judgment.",
+      "cue": "The constable makes a bad decision because he follows noise rather than facts.",
       "options": [
         { "id": "A", "sourceSentenceId": "S045", "text": "Master Cherry lifted both hands and swore it was not him." },
         { "id": "B", "sourceSentenceId": "S096", "text": "“Thank goodness,” he said." },
-        { "id": "C", "sourceSentenceId": "S100", "text": "The constable listened to the loudest voices instead of the wisest one." }
+        { "id": "C", "sourceSentenceId": "S101", "text": "The constable listened to the loudest voices instead of examining the facts." }
       ],
       "correctOptionId": "C",
       "distractorStrategy": "Other reactions that do not express the constable's error."
@@ -389,17 +389,17 @@
       "id": "W03",
       "sourceSentenceId": "S028",
       "beatId": "B03",
-      "text": "Geppetto entered, carrying a patched coat and a hopeful smile.",
-      "tokens": ["Geppetto", "entered,", "carrying", "a", "patched", "coat", "and", "a", "hopeful", "smile."],
+      "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
+      "tokens": ["Geppetto", "entered,", "wearing", "a", "patched", "coat", "and", "a", "hopeful", "smile."],
       "focus": "main action plus participial description"
     },
     {
       "id": "W04",
-      "sourceSentenceId": "S034",
+      "sourceSentenceId": "S031",
       "beatId": "B03",
-      "text": "More than money, however, Geppetto wanted company in his small, lonely house at the end of each day.",
-      "tokens": ["More", "than", "money,", "however,", "Geppetto", "wanted", "company", "in", "his", "small,", "lonely", "house", "at", "the", "end", "of", "each", "day."],
-      "focus": "fronted contrast and place-time phrase order"
+      "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”",
+      "tokens": ["“I", "shall", "make", "a", "wooden", "boy", "who", "can", "dance,", "fence,", "and", "turn", "somersaults.”"],
+      "focus": "future intention and relative clause"
     },
     {
       "id": "W05",
@@ -411,11 +411,11 @@
     },
     {
       "id": "W06",
-      "sourceSentenceId": "S056",
+      "sourceSentenceId": "S066",
       "beatId": "B05",
-      "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd.",
-      "tokens": ["As", "Geppetto", "walked", "home", "through", "the", "narrow", "streets,", "he", "imagined", "the", "puppet", "bowing", "before", "a", "delighted", "crowd."],
-      "focus": "as-clause followed by imagined object action"
+      "text": "“Let us make a boy,” he said, “and perhaps a family too.”",
+      "tokens": ["“Let", "us", "make", "a", "boy,”", "he", "said,", "“and", "perhaps", "a", "family", "too.”"],
+      "focus": "quoted invitation and reporting clause"
     },
     {
       "id": "W07",
@@ -443,10 +443,10 @@
     },
     {
       "id": "W10",
-      "sourceSentenceId": "S100",
+      "sourceSentenceId": "S101",
       "beatId": "B08",
-      "text": "The constable listened to the loudest voices instead of the wisest one.",
-      "tokens": ["The", "constable", "listened", "to", "the", "loudest", "voices", "instead", "of", "the", "wisest", "one."],
+      "text": "The constable listened to the loudest voices instead of examining the facts.",
+      "tokens": ["The", "constable", "listened", "to", "the", "loudest", "voices", "instead", "of", "examining", "the", "facts."],
       "focus": "listened-to collocation and instead-of contrast"
     }
   ]

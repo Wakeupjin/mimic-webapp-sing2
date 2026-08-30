@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { execFileSync } from "node:child_process";
+import { readFileSync, statSync } from "node:fs";
 import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
 
 const repositoryRoot = process.cwd();
@@ -131,7 +132,7 @@ if (record) {
     const storyBible = readText(storyBiblePath, "Story Bible");
     const seasonMap = readJson(seasonMapPath, "Season map");
     readText(qaStandardPath, "Story Pack standard");
-    readJson(latestQaPath, "Latest QA report");
+    const latestQa = readJson(latestQaPath, "Latest QA report");
 
     check(Boolean(storyBible?.includes("## Twelve-Chapter arc")), "Story Bible must define the twelve-Chapter arc.");
     check(rights?.humanReview?.decision === "pending", "Draft rights review should remain explicitly pending.");
@@ -186,6 +187,21 @@ if (record) {
             ((words.length / production.targets.referenceWordsPerMinute) * 60).toFixed(1),
           );
           const masterChecksum = createHash("sha256").update(masterText).digest("hex");
+
+          check(
+            production.generation?.scriptChecksum === `sha256:${masterChecksum}`,
+            "Production script checksum does not match the canonical master.",
+          );
+          check(
+            latestQa?.metrics?.masterSha256 === masterChecksum,
+            "QA master checksum does not match the canonical master.",
+          );
+          check(latestQa?.metrics?.sentenceCount === sentences.length, "QA sentence count is stale.");
+          check(latestQa?.metrics?.wordCount === words.length, "QA word count is stale.");
+          check(
+            latestQa?.metrics?.estimatedDurationSecondsAt128Wpm === estimatedDurationSeconds,
+            "QA estimated duration is stale.",
+          );
 
           check(sentences.length >= 80, "Golden master is too fragmented or too short for an eight-minute story.");
           check(words.length >= 950 && words.length <= 1100, `Golden master must be 950–1,100 words; found ${words.length}.`);
@@ -242,13 +258,152 @@ if (record) {
             check(item.tokens?.join(" ") === item.text, `${item.id} tokens do not rebuild the exact master sentence.`);
           }
 
-          check(production.status === "audio-not-generated", "Draft production must state that audio is not generated.");
-          check(production.provider?.approved === false, "Narrator must not be marked approved before human review.");
+          check(
+            [
+              "audio-not-generated",
+              "audio-generated-technical-review-pending",
+              "audio-generated-technical-pass",
+            ].includes(production.status),
+            `Unknown Golden audio status: ${production.status}`,
+          );
+          if (production.provider?.approved) {
+            check(Boolean(production.provider.voiceId), "Approved narrator is missing a durable voice ID.");
+            check(
+              Boolean(production.provider.approval?.role && production.provider.approval?.approvedAt),
+              "Approved narrator is missing a human approval record.",
+            );
+          }
           check(
             production.generation?.sentenceBySentenceGenerationAllowed === false,
             "Sentence-by-sentence TTS generation must be prohibited.",
           );
           check(manifest.release?.replacesProductionVersion === false, "Draft v3 must not silently replace v2 production.");
+
+          let mediaSummary = null;
+          if (production.status !== "audio-not-generated") {
+            const mediaPath = (reference, label) =>
+              resolveInside(packRoot, reference ?? "", label);
+            const masterAudioPath = mediaPath(production.outputs?.masterAudio, "Master audio path");
+            const timelinePath = mediaPath(production.outputs?.sentenceTimeline, "Sentence timeline path");
+            const alignmentPath = mediaPath(production.outputs?.forcedAlignment, "Alignment path");
+            const provenancePath = mediaPath(production.outputs?.provenance, "Audio provenance path");
+            const voiceSnapshotPath = mediaPath(production.outputs?.voiceProfileSnapshot, "Voice snapshot path");
+            const timeline = readJson(timelinePath, "Golden sentence timeline");
+            const alignment = readJson(alignmentPath, "Golden final alignment");
+            const provenance = readJson(provenancePath, "Golden audio provenance");
+            const voiceSnapshot = readJson(voiceSnapshotPath, "Golden voice snapshot");
+            let audioBuffer = null;
+            let actualDuration = null;
+            try {
+              audioBuffer = readFileSync(masterAudioPath);
+              actualDuration = Number(
+                execFileSync(
+                  "ffprobe",
+                  [
+                    "-v",
+                    "error",
+                    "-show_entries",
+                    "format=duration",
+                    "-of",
+                    "default=nw=1:nk=1",
+                    masterAudioPath,
+                  ],
+                  { encoding: "utf8" },
+                ).trim(),
+              );
+            } catch (error) {
+              errors.push(`Golden master audio: ${error.message}`);
+            }
+
+            if (audioBuffer && Number.isFinite(actualDuration)) {
+              const audioChecksum = createHash("sha256").update(audioBuffer).digest("hex");
+              check(statSync(masterAudioPath).size > 100_000, "Golden master audio file is unexpectedly small.");
+              check(
+                production.outputs?.checksum === `sha256:${audioChecksum}`,
+                "Production audio checksum does not match the Golden master file.",
+              );
+              check(
+                actualDuration >= production.targets.acceptedGoldenRangeSeconds[0] &&
+                  actualDuration <= production.targets.acceptedGoldenRangeSeconds[1],
+                `Actual Golden audio duration ${actualDuration.toFixed(3)}s is outside the accepted range.`,
+              );
+              check(
+                Math.abs((timeline?.duration ?? 0) - actualDuration) <= 0.5,
+                "Timeline duration does not match the Golden master audio.",
+              );
+              check(timeline?.lines?.length === sentences.length, "Timeline must contain all 105 master sentences.");
+              for (const [index, line] of (timeline?.lines ?? []).entries()) {
+                const expectedId = `S${String(index + 1).padStart(3, "0")}`;
+                check(line.sentenceId === expectedId, `Timeline sentence ${index + 1} has the wrong ID.`);
+                check(line.text === sentences[index], `${expectedId} timeline text differs from the canonical master.`);
+                check(line.start >= 0 && line.end > line.start, `${expectedId} has invalid playback bounds.`);
+                check(line.speechStart >= 0 && line.speechEnd > line.speechStart, `${expectedId} has invalid speech bounds.`);
+                check(line.end <= actualDuration + 0.25, `${expectedId} extends beyond the Golden master.`);
+                if (index > 0) {
+                  check(
+                    line.start >= timeline.lines[index - 1].start,
+                    `${expectedId} starts before the previous timeline sentence.`,
+                  );
+                }
+              }
+              check(timeline?.mimicItems?.length === 30, "Audio timeline must contain 30 Mimic selections.");
+              for (const item of timeline?.mimicItems ?? []) {
+                const authored = activities.mimic.find((candidate) => candidate.id === item.id);
+                check(
+                  Boolean(
+                    authored &&
+                      authored.sourceSentenceId === item.sourceSentenceId &&
+                      authored.text === item.text,
+                  ),
+                  `${item.id} audio range differs from the authored Mimic selection.`,
+                );
+                check(item.start >= 0 && item.end > item.start, `${item.id} has invalid audio bounds.`);
+              }
+              check(timeline?.beats?.length === 8, "Audio timeline must contain eight beat ranges.");
+              check(
+                ["elevenlabs-forced-alignment", "per-act-elevenlabs-tts"].includes(timeline?.alignmentSource),
+                "Timeline has an unknown alignment source.",
+              );
+              warn(
+                timeline?.alignmentSource === "elevenlabs-forced-alignment",
+                "Final Forced Alignment was unavailable; the timeline uses the two source-act timestamp offsets.",
+              );
+              check(Boolean(alignment), "Final alignment evidence is missing.");
+              check(provenance?.source?.sha256 === masterChecksum, "Audio provenance points to a different master script.");
+              check(provenance?.provider?.voice?.id === production.provider.voiceId, "Audio provenance voice ID differs.");
+              check(provenance?.provider?.modelId === production.provider.modelId, "Audio provenance model differs.");
+              check(provenance?.provider?.commercialPaidPlanConfirmed === true, "Commercial paid-plan evidence is missing.");
+              check(provenance?.strategy?.sentenceBySentenceGeneration === false, "Provenance must prohibit sentence TTS.");
+              check(
+                provenance?.requests?.length === production.generation.actPlan.length,
+                "Provenance request count must match the approved act plan.",
+              );
+              for (const request of provenance?.requests ?? []) {
+                check(Boolean(request.requestId), `${request.actId} is missing the ElevenLabs request ID.`);
+                check(
+                  request.characters <= production.generation.requestCharacterLimit,
+                  `${request.actId} exceeded the Eleven v3 character limit.`,
+                );
+                check(Boolean(request.audioSha256), `${request.actId} is missing its audio checksum.`);
+              }
+              check(provenance?.master?.audioSha256 === audioChecksum, "Provenance master checksum differs.");
+              check(voiceSnapshot?.voiceId === production.provider.voiceId, "Voice snapshot ID differs.");
+              check(
+                voiceSnapshot?.approvedDisplayName === production.provider.voiceCandidateName &&
+                  voiceSnapshot?.name?.startsWith(production.provider.voiceCandidateName),
+                "Voice snapshot no longer matches the approved narrator label.",
+              );
+
+              mediaSummary = {
+                actualDurationSeconds: Number(actualDuration.toFixed(3)),
+                audioBytes: audioBuffer.length,
+                audioSha256: audioChecksum,
+                alignmentSource: timeline.alignmentSource,
+                requestCount: provenance?.requests?.length ?? 0,
+                billedCharactersEstimate: provenance?.cost?.billedCharactersEstimate ?? null,
+              };
+            }
+          }
 
           summary = {
             storyPackId: manifest.storyPackId,
@@ -265,6 +420,7 @@ if (record) {
             guessCount: activities.guess.length,
             wordItemCount: activities.word.length,
             masterSha256: masterChecksum,
+            media: mediaSummary,
           };
         }
       }

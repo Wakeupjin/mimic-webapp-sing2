@@ -5,13 +5,19 @@
   "status": "automated-pass-human-review-pending",
   "metrics": {
     "sentenceCount": 105,
-    "wordCount": 1028,
-    "estimatedDurationSecondsAt128Wpm": 481.9,
+    "wordCount": 1031,
+    "estimatedDurationSecondsAt128Wpm": 483.3,
     "mimicCount": 30,
     "guessCount": 10,
     "wordCountItems": 10,
     "beatCount": 8,
-    "masterSha256": "f81cdf751f3e7daf3198154751c297ac705e864804d13036c41412d45136b1a5"
+    "masterSha256": "95b40a5d571ec73a806fbaac0e1c8e4d7d518b5a07a00b3cf67bc6fb38e8cf81",
+    "actualDurationSeconds": 490.32,
+    "audioBytes": 7846390,
+    "audioSha256": "efa1b4d74d35a3ce5b00f061d505d359782c07a5523e7a4a381b5435bfc191b2",
+    "alignmentSource": "per-act-elevenlabs-tts",
+    "providerRequestCount": 2,
+    "providerReportedCharacterCost": 3394
   },
   "automatedValidation": {
     "command": "npm run validate:story-pack",
@@ -21,15 +27,15 @@
   "humanApprovals": {
     "editorial": { "status": "pending", "reviewer": null, "reviewedAt": null },
     "learning": { "status": "pending", "reviewer": null, "reviewedAt": null },
-    "voice": { "status": "pending", "reviewer": null, "reviewedAt": null },
+    "voice": { "status": "golden-sample-approved", "reviewer": "product-owner", "reviewedAt": "2026-08-30" },
     "audio": { "status": "pending", "reviewer": null, "reviewedAt": null },
     "rights": { "status": "pending", "reviewer": null, "reviewedAt": null },
     "release": { "status": "pending", "reviewer": null, "reviewedAt": null }
   },
   "blockingIssues": [
     "Named editorial and learning approval not recorded.",
-    "Durable narrator voice ID not selected.",
-    "Master audio, alignment, visual beats, and product preview do not exist.",
+    "Human listen-through, visual beats, and product preview are not complete.",
+    "Lily is scheduled for retirement; long-term narrator A/B remains required before batch production.",
     "Target-territory rights review remains pending."
   ]
 }
