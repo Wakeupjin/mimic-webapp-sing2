@@ -9,6 +9,7 @@
     "handoff": "node scripts/ai-handoff.mjs",
     "rebuild:pinocchio-v2-boundaries": "node scripts/rebuild-pinocchio-v2-boundaries.mjs --write",
     "check:pinocchio-v2-boundaries": "node scripts/rebuild-pinocchio-v2-boundaries.mjs --check",
+    "import:pinocchio-human-review": "node scripts/import-pinocchio-human-review.mjs",
     "validate:pinocchio-core": "node scripts/validate-pinocchio-core-chapters.mjs",
     "validate:pinocchio-core:preview": "node scripts/validate-pinocchio-core-chapters.mjs --allow-pending-review",
     "write:pinocchio-release-receipt": "node scripts/validate-pinocchio-core-chapters.mjs --allow-pending-review --write-receipt",

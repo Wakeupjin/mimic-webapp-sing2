@@ -13,3 +13,7 @@ node_modules/
 .git/
 .env.local
 .env
+.pinocchio-human-review-import.lock.json
+.pinocchio-human-review-import.lock.json.human-review-*.tmp
+.pinocchio-human-review-backup/
+*.human-review-stage

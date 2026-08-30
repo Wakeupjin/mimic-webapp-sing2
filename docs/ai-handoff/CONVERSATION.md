@@ -1060,3 +1060,32 @@ deployment approval.
 **Open risks:** Independent files prevent next-item leakage, but human QA must
 still confirm that coarticulated cuts do not trim a phoneme from either side. No
 production deployment has been made from this branch.
+
+## 2026-08-30 — user / approval
+
+Approved proceeding with the full twelve-chapter human QA workflow after the
+system identified 28 coarticulated boundaries and twelve required master
+listen-throughs.
+
+## 2026-08-30 — codex / checkpoint
+
+Added a preview-only, mobile-first Pinocchio audio QA room at
+`/dev/pinocchio-audio-review`. A boundary cannot be judged until the left and
+right independent files reach natural EOF and the original master context
+crosses the cut. A chapter cannot be approved by scrubbing to its end: the page
+records per-second coverage and requires at least 98% plus natural EOF. Progress
+is stored locally under the current release hash and exported with a second
+deterministic hash covering exactly the 28 boundaries and 12 chapter masters.
+
+Added `scripts/import-pinocchio-human-review.mjs`, dry-run by default and
+`--apply` explicitly mutating. It reconstructs every current media binding and
+treats the browser playback audit as trusted owner attestation, requires a
+complete 28+12 PASS set with no recut issues, updates canonical/public files
+with a recovery journal, runs deterministic/strict release validators, and
+rolls back all touched files on failure or explicit `--recover`. Synthetic
+dry-run validation passed; a stale target hash was rejected. Browser QA found
+and fixed a normal media-abort event that initially prevented RIGHT natural-EOF
+credit.
+
+**Next action:** Push a Vercel preview, have the owner complete the 40 human
+checks, import the exported bundle, then seek explicit production approval.
