@@ -4,14 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import ModeSelectLayout from "../../../components/ModeSelectLayout";
 import { FullscreenIcon, HeaderIconButton } from "../../../components/HeaderIcons";
+import { useAuth } from "../../../contexts/AuthContext";
 import { useFullscreen } from "../../../hooks/useFullscreen";
+import { fetchOwnProgress, isMasterRole } from "../../../lib/progressGate";
 import { chapterRoot, MODE_LABEL, MODE_ORDER, modeHref } from "../lessonData";
 import {
   canOpenChapter,
   canOpenMode,
+  mergeRemoteProgress,
   PINOCCHIO_PROGRESS_EVENT,
   readProgress,
-  resetProgress,
   safeChapterRoot,
   type ChapterProgress,
 } from "../localProgress";
@@ -32,6 +34,8 @@ export default function ChapterSelectClient({
   titleKo,
 }: Props) {
   const router = useRouter();
+  const { user, profile, loading, profileLoading } = useAuth();
+  const isMaster = isMasterRole(profile?.role);
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const [progress, setProgress] = useState<ChapterProgress>({});
   const [ready, setReady] = useState(false);
@@ -40,22 +44,39 @@ export default function ChapterSelectClient({
   const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (loading || profileLoading) return;
+    if (!user) {
+      router.replace("/auth/login");
+      return;
+    }
+
+    let cancelled = false;
     const sync = () => {
       const nextProgress = readProgress();
       setProgress(nextProgress);
       setReady(true);
-      if (!canOpenChapter(chapterNumber, nextProgress)) {
+      if (!isMaster && !canOpenChapter(chapterNumber, nextProgress)) {
         router.replace(safeChapterRoot(chapterNumber, nextProgress));
       }
     };
     sync();
+    void fetchOwnProgress().then((rows) => {
+      if (cancelled) return;
+      const nextProgress = mergeRemoteProgress(rows);
+      setProgress(nextProgress);
+      setReady(true);
+      if (!isMaster && !canOpenChapter(chapterNumber, nextProgress)) {
+        router.replace(safeChapterRoot(chapterNumber, nextProgress));
+      }
+    });
     window.addEventListener(PINOCCHIO_PROGRESS_EVENT, sync);
     window.addEventListener("storage", sync);
     return () => {
+      cancelled = true;
       window.removeEventListener(PINOCCHIO_PROGRESS_EVENT, sync);
       window.removeEventListener("storage", sync);
     };
-  }, [chapterNumber, router]);
+  }, [chapterNumber, isMaster, loading, profileLoading, router, user]);
 
   useEffect(() => {
     if (!dropdownOpen) return;
@@ -66,34 +87,25 @@ export default function ChapterSelectClient({
   const completed = progress[String(chapterNumber)] ?? [];
   const hereMode = MODE_ORDER.find((mode) => !completed.includes(mode));
 
-  if (!ready || !canOpenChapter(chapterNumber, progress)) {
+  if (loading || profileLoading || !user || !ready || (!isMaster && !canOpenChapter(chapterNumber, progress))) {
     return <main className="min-h-screen bg-black" />;
   }
 
   return (
     <ModeSelectLayout
       badge={
-        <button
-          type="button"
-          className={styles.profileBadge}
-          title="더블클릭하면 12개 Chapter의 로컬 진행을 초기화합니다"
-          onDoubleClick={() => {
-            resetProgress();
-            setProgress({});
-            router.push(chapterRoot(1));
-          }}
-        >
+        <div className={styles.profileBadge}>
           <span>피</span>
           <b>피노키오</b>
           <small title={`${titleEn} · ${titleKo}`}>Core · {chapterNumber}/{totalChapters}</small>
-        </button>
+        </div>
       }
       chapterLabel={`CHAPTER ${chapterNumber}`}
       dropdownOpen={dropdownOpen}
       onToggleDropdown={() => setDropdownOpen((open) => !open)}
       dropdownRef={dropdownRef}
       listRef={listRef}
-      closeHref="/dev/pinocchio-levels"
+      closeHref="/"
       extraActions={
         <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
           <FullscreenIcon active={isFullscreen} />
@@ -105,7 +117,7 @@ export default function ChapterSelectClient({
         return {
           id: number,
           label: `CHAPTER ${number}`,
-          locked: !canOpenChapter(number, progress),
+          locked: !isMaster && !canOpenChapter(number, progress),
           selected: number === chapterNumber,
           done: chapterCompleted.includes("word"),
           onSelect: () => {
@@ -117,7 +129,7 @@ export default function ChapterSelectClient({
       modes={MODE_ORDER.map((mode: LessonMode) => ({
         id: mode,
         label: MODE_LABEL[mode],
-        locked: !canOpenMode(mode, completed),
+        locked: !isMaster && !canOpenMode(mode, completed),
         done: completed.includes(mode),
         here: hereMode === mode,
         onSelect: () => router.push(modeHref(chapterNumber, mode)),

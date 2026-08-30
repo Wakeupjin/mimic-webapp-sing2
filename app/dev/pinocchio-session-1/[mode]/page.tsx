@@ -10,7 +10,10 @@ import LessonShell from "../../../components/LessonShell";
 import MimicLineList from "../../../components/MimicLineList";
 import PauseOverlay from "../../../components/PauseOverlay";
 import PlaybackControls from "../../../components/PlaybackControls";
+import { useAuth } from "../../../contexts/AuthContext";
 import { useFullscreen } from "../../../hooks/useFullscreen";
+import { saveProgress } from "../../../lib/progress";
+import { fetchOwnProgress, isMasterRole } from "../../../lib/progressGate";
 import { getChapterPack, TOTAL_CHAPTERS } from "../../pinocchio-chapters/data";
 import {
   chapterMedia,
@@ -26,8 +29,8 @@ import {
   canOpenMode,
   completeMode,
   latestOpenChapter,
+  mergeRemoteProgress,
   readCompleted,
-  readProgress,
 } from "../../pinocchio-chapters/localProgress";
 import type { LessonMode, PinocchioPack, Segment, Timeline, WordItem } from "../../pinocchio-chapters/types";
 import styles from "../../pinocchio-chapters/pinocchio-chapters.module.css";
@@ -43,6 +46,13 @@ type LessonContextValue = {
 };
 
 const LessonContext = createContext<LessonContextValue | null>(null);
+
+function markModeComplete(chapterNumber: number, mode: LessonMode) {
+  completeMode(chapterNumber, mode);
+  void saveProgress(300 + chapterNumber, mode, true).catch((error) => {
+    console.error("피노키오 진도 저장 실패:", error);
+  });
+}
 
 function useLesson() {
   const lesson = useContext(LessonContext);
@@ -306,7 +316,7 @@ function WatchMode() {
   const { chapterNumber, pack, timeline } = useLesson();
   const [started, setStarted] = useState(false);
   const [complete, setComplete] = useState(false);
-  const finish = useCallback(() => { completeMode(chapterNumber, "watching"); setComplete(true); }, [chapterNumber]);
+  const finish = useCallback(() => { markModeComplete(chapterNumber, "watching"); setComplete(true); }, [chapterNumber]);
   const engine = useLessonAudio(finish);
   const activeLine = activeSourceLine(engine.currentTime, timeline);
   const percent = complete ? 100 : Math.min(100, (engine.currentTime / Math.max(1, engine.duration)) * 100);
@@ -395,7 +405,7 @@ function MimicMode() {
 
   useEffect(() => () => clearStepTimer(), []);
 
-  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); completeMode(chapterNumber, "mimicking"); setComplete(true); setFeedbackOpen(false); };
+  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); markModeComplete(chapterNumber, "mimicking"); setComplete(true); setFeedbackOpen(false); };
   const chooseLine = (index: number, autoplay = false, unlock = false) => {
     if (!unlock && index > maxReached) return;
     clearStepTimer();
@@ -502,7 +512,7 @@ function GuessMode() {
     playAt(0);
   }, [engine, items]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); completeMode(chapterNumber, "guessing"); setComplete(true); setReady(false); };
+  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "guessing"); setComplete(true); setReady(false); };
   const answer = (label: string) => {
     if (!ready || complete) return;
     setReady(false);
@@ -628,7 +638,7 @@ function WordMode() {
     playAt(0);
   }, [engine, items]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); completeMode(chapterNumber, "word"); setComplete(true); };
+  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "word"); setComplete(true); };
   const submit = () => {
     if (phase !== "arranging" || selected.length !== tokens.length) return;
     const correct = selected.every((id, index) => id === index);
@@ -679,7 +689,7 @@ function WordMode() {
                 {complete ? (
                   <Completion
                     onAgain={again}
-                    onNext={() => router.push(chapterNumber < TOTAL_CHAPTERS ? chapterRoot(chapterNumber + 1) : "/dev/pinocchio-levels")}
+                    onNext={() => router.push(chapterNumber < TOTAL_CHAPTERS ? chapterRoot(chapterNumber + 1) : "/")}
                     nextLabel={chapterNumber < TOTAL_CHAPTERS ? "Next" : "Home"}
                     nextCaption={chapterNumber < TOTAL_CHAPTERS ? "Let's go" : "12개 Chapter 끝!"}
                   />
@@ -714,6 +724,8 @@ function WordMode() {
 export default function PinocchioLessonModePage() {
   const params = useParams<{ chapter?: string; mode: string }>();
   const router = useRouter();
+  const { user, profile, loading, profileLoading } = useAuth();
+  const isMaster = isMasterRole(profile?.role);
   const mode = params.mode as LessonMode;
   const parsedChapter = parseChapterNumber(params.chapter);
   const chapterNumber = params.chapter === undefined ? 1 : parsedChapter;
@@ -726,23 +738,37 @@ export default function PinocchioLessonModePage() {
   const [allowed, setAllowed] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (!chapterNumber || !pack || !MODE_ORDER.includes(mode)) {
+    if (loading || profileLoading) return;
+    if (!user) {
       setAllowed(false);
-      router.replace(chapterRoot(1));
+      router.replace("/auth/login");
       return;
     }
 
-    const progress = readProgress();
-    if (!canOpenChapter(chapterNumber, progress)) {
-      setAllowed(false);
-      router.replace(chapterRoot(latestOpenChapter(progress)));
-      return;
-    }
+    let cancelled = false;
+    const verifyAccess = async () => {
+      if (!chapterNumber || !pack || !MODE_ORDER.includes(mode)) {
+        setAllowed(false);
+        router.replace(chapterRoot(1));
+        return;
+      }
 
-    const nextAllowed = canOpenMode(mode, readCompleted(chapterNumber));
-    setAllowed(nextAllowed);
-    if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
-  }, [chapterNumber, mode, pack, router]);
+      const rows = await fetchOwnProgress();
+      const progress = mergeRemoteProgress(rows);
+      if (!isMaster && !canOpenChapter(chapterNumber, progress)) {
+        setAllowed(false);
+        router.replace(chapterRoot(latestOpenChapter(progress)));
+        return;
+      }
+
+      const nextAllowed = isMaster || canOpenMode(mode, readCompleted(chapterNumber));
+      if (cancelled) return;
+      setAllowed(nextAllowed);
+      if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
+    };
+    void verifyAccess();
+    return () => { cancelled = true; };
+  }, [chapterNumber, isMaster, loading, mode, pack, profileLoading, router, user]);
 
   useEffect(() => {
     if (!chapterNumber || !fallbackTimeline) return;
@@ -767,7 +793,7 @@ export default function PinocchioLessonModePage() {
     return () => controller.abort();
   }, [chapterNumber, fallbackTimeline, pack]);
 
-  if (allowed !== true || !chapterNumber || !pack || !timeline) return <main className="min-h-screen bg-black" />;
+  if (loading || profileLoading || !user || allowed !== true || !chapterNumber || !pack || !timeline) return <main className="min-h-screen bg-black" />;
 
   const lesson = {
     chapterNumber,

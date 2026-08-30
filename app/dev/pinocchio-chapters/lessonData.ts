@@ -19,7 +19,7 @@ export function parseChapterNumber(value: string | string[] | undefined) {
 }
 
 export function chapterRoot(chapterNumber: number) {
-  return `/dev/pinocchio-chapters/${chapterNumber}`;
+  return `/book/pinocchio/${chapterNumber}`;
 }
 
 export function modeHref(chapterNumber: number, mode: LessonMode) {

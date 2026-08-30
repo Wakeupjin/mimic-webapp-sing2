@@ -1,5 +1,6 @@
 import { MODE_ORDER, chapterRoot } from "./lessonData";
 import type { LessonMode } from "./types";
+import type { ProgressRow } from "../../lib/progressGate";
 
 const STORAGE_KEY = "mimic:pinocchio-chapters:progress:v1";
 const LEGACY_STORAGE_KEY = "mimic:pinocchio-session-1:completed";
@@ -41,6 +42,32 @@ export function readProgress(): ChapterProgress {
 
 export function readCompleted(chapterNumber: number) {
   return readProgress()[String(chapterNumber)] ?? [];
+}
+
+export function mergeRemoteProgress(rows: ProgressRow[]) {
+  const progress = readProgress();
+
+  for (const row of rows) {
+    const chapterNumber = row.lesson_number - 300;
+    const mode = row.mode as LessonMode;
+    if (
+      !row.completed
+      || chapterNumber < 1
+      || chapterNumber > 12
+      || !MODE_ORDER.includes(mode)
+    ) {
+      continue;
+    }
+
+    const completed = progress[String(chapterNumber)] ?? [];
+    progress[String(chapterNumber)] = MODE_ORDER.filter(
+      (item) => item === mode || completed.includes(item)
+    );
+  }
+
+  const merged = sanitizeProgress(progress);
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+  return merged;
 }
 
 export function completeMode(chapterNumber: number, mode: LessonMode) {
