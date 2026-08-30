@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-01",
+  "level": "core",
+  "status": "automated-pass-human-review-pending",
+  "metrics": {
+    "sentenceCount": 105,
+    "wordCount": 1028,
+    "estimatedDurationSecondsAt128Wpm": 481.9,
+    "mimicCount": 30,
+    "guessCount": 10,
+    "wordCountItems": 10,
+    "beatCount": 8,
+    "masterSha256": "f81cdf751f3e7daf3198154751c297ac705e864804d13036c41412d45136b1a5"
+  },
+  "automatedValidation": {
+    "command": "npm run validate:story-pack",
+    "status": "passed",
+    "lastRunAt": "2026-08-30"
+  },
+  "humanApprovals": {
+    "editorial": { "status": "pending", "reviewer": null, "reviewedAt": null },
+    "learning": { "status": "pending", "reviewer": null, "reviewedAt": null },
+    "voice": { "status": "pending", "reviewer": null, "reviewedAt": null },
+    "audio": { "status": "pending", "reviewer": null, "reviewedAt": null },
+    "rights": { "status": "pending", "reviewer": null, "reviewedAt": null },
+    "release": { "status": "pending", "reviewer": null, "reviewedAt": null }
+  },
+  "blockingIssues": [
+    "Named editorial and learning approval not recorded.",
+    "Durable narrator voice ID not selected.",
+    "Master audio, alignment, visual beats, and product preview do not exist.",
+    "Target-territory rights review remains pending."
+  ]
+}

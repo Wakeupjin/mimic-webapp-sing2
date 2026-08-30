@@ -33,3 +33,14 @@ task without relying on their private chat histories.
 
 Read `docs/ai-handoff/README.md` for commands and the copy-paste bootstrap
 prompt for a GPT chat that is not already attached to this workspace.
+
+## Content Studio work
+
+Before creating or changing any movie, story, script, narration, activity,
+image, or release pack, read `content-studio/START_HERE.md` and follow
+`content-studio/STORY_PACK_STANDARD.md`. The repository—not Slack, chat
+history, or one person's memory—is the source of truth for content decisions.
+
+Never publish a content pack without its rights record, versioned manifest,
+automated validation, and an explicit human approval record. Preserve released
+versions; create a new version instead of silently overwriting one.

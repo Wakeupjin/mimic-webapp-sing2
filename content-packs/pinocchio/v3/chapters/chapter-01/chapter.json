@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-01",
+  "number": 1,
+  "status": "golden-draft",
+  "titles": {
+    "en": "A Voice in the Wood",
+    "ko": "나무 속의 목소리"
+  },
+  "sourceChapters": [1, 2, 3],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Master Cherry discovers an unexplained block of wood in his shop.",
+    "closing": "Pinocchio is free but alone; Geppetto is imprisoned because the crowd misunderstands him.",
+    "next": "Pinocchio returns to an empty home and meets the consequences of hunger and disobedience."
+  },
+  "learningObjective": "Tell a connected cause-and-reaction story using vivid actions, time connectors, and emotional consequences.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Unexpected Voice",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Open with ordinary work interrupted by an impossible voice."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "A Very Peculiar Block",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S027",
+      "purpose": "Prove that the wood reacts like a mischievous child."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "Geppetto's Wonderful Plan",
+      "sentenceStart": "S028",
+      "sentenceEnd": "S039",
+      "purpose": "Give Geppetto both a practical plan and an emotional need."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "An Insult and a Quarrel",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S054",
+      "purpose": "Let the wood cause comic trouble before it has a body."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "A Name for a New Boy",
+      "sentenceStart": "S055",
+      "sentenceEnd": "S066",
+      "purpose": "Turn a block of wood into Geppetto's hope for a family."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Pinocchio Takes Shape",
+      "sentenceStart": "S067",
+      "sentenceEnd": "S080",
+      "purpose": "Reveal Pinocchio's lively character as each feature is carved."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Great Escape",
+      "sentenceStart": "S081",
+      "sentenceEnd": "S091",
+      "purpose": "Convert first steps into an impulsive flight from home."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "The Wrong Man Goes to Prison",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S105",
+      "purpose": "End with Pinocchio free and Geppetto bearing the consequence."
+    }
+  ],
+  "levels": {
+    "foundation": { "status": "planned" },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": { "status": "planned" }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-08-30",
+  "packs": [
+    {
+      "storyPackId": "pinocchio-story-v3",
+      "title": "The Adventures of Pinocchio",
+      "format": "longform",
+      "version": "3.0.0-draft.1",
+      "status": "draft",
+      "path": "content-packs/pinocchio/v3/manifest.json",
+      "goldenSample": "chapter-01/core",
+      "productionVersion": "content-packs/pinocchio/v2/manifest.json",
+      "nextGate": "Approve the eight-minute Core Chapter 1 script and durable narrator before commercial audio generation."
+    }
+  ]
+}

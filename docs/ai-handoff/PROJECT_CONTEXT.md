@@ -6,10 +6,37 @@ checkpoint and `CONVERSATION.md` for recent decisions.
 
 ## Product in one sentence
 
-Mimic is a story-based English practice service where learners watch or listen,
-imitate lines, identify phrases, and complete word activities in a guided
-sequence. The current MVP uses *Sing 2* video lessons and a public-domain
-*Pinocchio* audiobook lesson.
+Mimic is an AI-native content company that releases a monthly English
+playground: one licensed film world and one owned story season, both learned
+through Watch → Mimic → Guess → Word across a twelve-class Monthly Pack.
+
+Film creates discovery and vividness; reusable Story Packs create owned,
+levelled inventory and margin. Long stories may fill a season, while medium or
+short stories are assembled as serial or anthology seasons instead of being
+padded to an arbitrary ninety minutes.
+
+## Content Studio operating model
+
+- `content-studio/START_HERE.md` is the front door for every AI agent, employee,
+  contractor, and reviewer doing content work.
+- `content-studio/OPERATING_MODEL.md` records the company model, ninety-day
+  sequence, first hires, ownership transition, and company metrics.
+- `content-studio/STORY_PACK_STANDARD.md` defines the reusable asset contract,
+  lifecycle, QA gates, and Golden Sample rule.
+- `content-studio/registry.json` identifies the canonical pack and version.
+- Published packs are immutable; changes require a new version and named human
+  approval. Private chat and final MP3 files are not sufficient company memory.
+
+Pinocchio v2 remains the production course. Pinocchio v3 is a separate draft
+Story Pack whose Core Chapter 1 is the Golden Sample: a 1,028-word canonical
+Watch master estimated at 481.9 seconds at 128 wpm, with thirty exact Mimic
+selections, ten Guess items, ten Word items, and eight narrative beats.
+
+For Story Packs, `Chapter` is the product term; do not reintroduce `Session` in
+new authoring or UI. The six-to-ten-minute Watch narrative and the sixty-minute
+class plan are different metrics. Generate one coherent editorial narration
+master (or the fewest continuity-aware acts), then align Mimic from it; never
+generate thirty unrelated sentence TTS clips.
 
 ## Production and stack
 

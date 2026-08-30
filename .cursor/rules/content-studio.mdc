@@ -1,0 +1,16 @@
+---
+description: Use Mimic's repository-backed Content Studio operating standard
+alwaysApply: true
+---
+
+# Content Studio source of truth
+
+For movie, story, script, TTS, learning-activity, art, or content-release work:
+
+1. Read `content-studio/START_HERE.md`.
+2. Treat `content-studio/registry.json` and the selected Story Pack manifest as canonical.
+3. Keep the full Watch narrative separate from the selected Mimic/Guess/Word curriculum.
+4. Record rights, source, model, voice, settings, cost, QA, and release provenance.
+5. Run the pack validator before claiming a pack is ready.
+6. Require explicit human approval before changing a pack to `published`.
+7. Never overwrite a released pack or use private chat as the only decision record.

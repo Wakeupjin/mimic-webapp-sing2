@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "reviewStatus": "territory-review-required",
+  "commercialReleaseAllowed": false,
+  "works": [
+    {
+      "assetType": "original-story",
+      "title": "Le avventure di Pinocchio",
+      "author": "Carlo Collodi",
+      "firstPublication": "1881–1883",
+      "rightsBasis": "Public-domain source work; target-territory review remains required before release.",
+      "evidence": [
+        "https://www.gutenberg.org/ebooks/500"
+      ],
+      "status": "source-recorded"
+    },
+    {
+      "assetType": "english-translation-reference",
+      "title": "The Adventures of Pinocchio",
+      "translator": "Carol Della Chiesa",
+      "source": "Project Gutenberg eBook #500",
+      "rightsBasis": "Project Gutenberg identifies this edition as public domain in the United States.",
+      "territory": "United States",
+      "evidence": [
+        "https://www.gutenberg.org/ebooks/500",
+        "https://www.gutenberg.org/policy/permission.html"
+      ],
+      "status": "us-basis-recorded"
+    },
+    {
+      "assetType": "educational-adaptation",
+      "title": "Mimic Pinocchio Story Pack v3",
+      "authoringEntity": "Mimic",
+      "method": "Original educational retelling based on the recorded public-domain story source; no passage is intended as a verbatim edition reproduction.",
+      "status": "draft-company-work"
+    }
+  ],
+  "assetRegisters": {
+    "text": "recorded-in-this-file",
+    "voice": "pending-production-record",
+    "audio": "not-generated",
+    "art": "not-selected",
+    "music": "not-selected",
+    "fonts": "product-level-review-required"
+  },
+  "requiredBeforeApproval": [
+    "Confirm commercial public-domain status for every launch territory.",
+    "Record the legal owner of the Mimic adaptation after company formation or IP assignment.",
+    "Record every image, font, music, voice, and audio license independently.",
+    "Retain evidence snapshots or files with the approval record."
+  ],
+  "humanReview": {
+    "reviewer": null,
+    "reviewedAt": null,
+    "decision": "pending"
+  }
+}

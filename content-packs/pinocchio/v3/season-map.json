@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "assembly": {
+    "type": "longform",
+    "classes": 12,
+    "originalChaptersCovered": "1–36 exactly once",
+    "coreWatchTargetMinutes": 8,
+    "rule": "Preserve natural story capacity; do not pad a Chapter to hit duration."
+  },
+  "chapters": [
+    {
+      "id": "chapter-01",
+      "number": 1,
+      "sourceChapters": [1, 2, 3],
+      "titleEn": "A Voice in the Wood",
+      "titleKo": "나무 속의 목소리",
+      "dramaticQuestion": "What happens when a loving maker gives freedom to a boy who has no sense of consequence?",
+      "endHook": "Geppetto is taken away while Pinocchio runs home alone.",
+      "coreStatus": "golden-draft"
+    },
+    {
+      "id": "chapter-02",
+      "number": 2,
+      "sourceChapters": [4, 5, 6, 7, 8],
+      "titleEn": "Hunger, Home, and Sacrifice",
+      "titleKo": "배고픔과 아버지의 희생",
+      "dramaticQuestion": "Will Pinocchio understand what Geppetto gives up for him?",
+      "endHook": "With a new schoolbook in hand, Pinocchio hears music in the street.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-03",
+      "number": 3,
+      "sourceChapters": [9, 10, 11],
+      "titleEn": "The Puppet Theater",
+      "titleKo": "인형극장의 선택",
+      "dramaticQuestion": "Can Pinocchio choose a friend's safety over his own?",
+      "endHook": "Five gold coins turn a good intention into a dangerous temptation.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-04",
+      "number": 4,
+      "sourceChapters": [12, 13, 14, 15],
+      "titleEn": "Five Coins and a Dangerous Road",
+      "titleKo": "다섯 금화와 위험한 길",
+      "dramaticQuestion": "Will the promise of easy riches silence Pinocchio's better judgment?",
+      "endHook": "A blue-haired figure waits beyond the darkest moment.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-05",
+      "number": 5,
+      "sourceChapters": [16, 17, 18, 19],
+      "titleEn": "The Blue Fairy and the Field of Wonders",
+      "titleKo": "푸른 요정과 기적의 들판",
+      "dramaticQuestion": "Can care and truth compete with one more glittering shortcut?",
+      "endHook": "Pinocchio discovers that promises cannot grow on trees.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-06",
+      "number": 6,
+      "sourceChapters": [20, 21, 22, 23],
+      "titleEn": "The Snake, the Trap, and the Dog",
+      "titleKo": "뱀과 덫과 충직한 개",
+      "dramaticQuestion": "Can punishment become the beginning of responsibility?",
+      "endHook": "News of Geppetto sends Pinocchio racing towards the sea.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-07",
+      "number": 7,
+      "sourceChapters": [24, 25, 26],
+      "titleEn": "The Sea and the Terrible Dogfish",
+      "titleKo": "바다와 무서운 상어",
+      "dramaticQuestion": "How far will Pinocchio go to find the father he left behind?",
+      "endHook": "A new home offers him one more chance to keep his word.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-08",
+      "number": 8,
+      "sourceChapters": [27, 28, 29],
+      "titleEn": "The Land of Busy Bees",
+      "titleKo": "부지런한 벌들의 나라",
+      "dramaticQuestion": "Can Pinocchio turn good intentions into daily action?",
+      "endHook": "His best school day becomes the doorway to his worst temptation.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-09",
+      "number": 9,
+      "sourceChapters": [30, 31, 32],
+      "titleEn": "The Land of Toys",
+      "titleKo": "장난감 나라",
+      "dramaticQuestion": "What does endless fun cost when nobody accepts responsibility?",
+      "endHook": "Pinocchio wakes to find that his ears are no longer human—or wooden.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-10",
+      "number": 10,
+      "sourceChapters": [33, 34],
+      "titleEn": "Donkey Days",
+      "titleKo": "당나귀가 된 날들",
+      "dramaticQuestion": "Can Pinocchio survive after others turn his foolishness into profit?",
+      "endHook": "The terrible Dogfish swallows him into total darkness.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-11",
+      "number": 11,
+      "sourceChapters": [35],
+      "titleEn": "Inside the Dogfish",
+      "titleKo": "상어 배 속에서",
+      "dramaticQuestion": "Can Pinocchio become the rescuer Geppetto needs?",
+      "endHook": "Father and son reach land, but survival now depends on ordinary work.",
+      "coreStatus": "outline-ready"
+    },
+    {
+      "id": "chapter-12",
+      "number": 12,
+      "sourceChapters": [36],
+      "titleEn": "A Real Boy",
+      "titleKo": "진짜 아이가 되다",
+      "dramaticQuestion": "What finally makes Pinocchio worthy of becoming real?",
+      "endHook": "The season closes with a family transformed by choices, not shortcuts.",
+      "coreStatus": "outline-ready"
+    }
+  ]
+}

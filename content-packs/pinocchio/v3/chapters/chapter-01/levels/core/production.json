@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-01",
+  "level": "core",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [450, 510],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Let wonder, comic friction, loneliness, and consequence emerge naturally. Keep dialogue distinct without cartoon exaggeration.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for young learners to process the story.",
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": null,
+    "accent": "British English",
+    "commercialPlanSnapshot": "pending",
+    "voiceAvailabilityVerifiedAt": null,
+    "approved": false
+  },
+  "generation": {
+    "strategyPreference": [
+      "provider-long-form",
+      "continuity-aware-beat-stitch"
+    ],
+    "sentenceBySentenceGenerationAllowed": false,
+    "scriptChecksum": "sha256:f81cdf751f3e7daf3198154751c297ac705e864804d13036c41412d45136b1a5",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": null
+  },
+  "outputs": {
+    "masterAudio": null,
+    "sentenceTimeline": null,
+    "voiceProfileSnapshot": null,
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

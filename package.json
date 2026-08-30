@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "handoff": "node scripts/ai-handoff.mjs"
+    "handoff": "node scripts/ai-handoff.mjs",
+    "validate:story-pack": "node scripts/validate-story-pack.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",

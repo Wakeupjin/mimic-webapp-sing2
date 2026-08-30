@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mimicenglish.com/schemas/story-pack-manifest-v1.json",
+  "title": "Mimic Story Pack Manifest",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "storyPackId",
+    "version",
+    "status",
+    "title",
+    "format",
+    "rights",
+    "storyBible",
+    "seasonMap",
+    "levels",
+    "chapters",
+    "qa"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "storyPackId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+    "version": { "type": "string" },
+    "status": {
+      "enum": ["draft", "review", "approved", "staged", "published", "archived"]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "format": {
+      "type": "object",
+      "required": ["type", "classes", "modes"],
+      "properties": {
+        "type": { "enum": ["longform", "serial", "anthology"] },
+        "classes": { "type": "integer", "minimum": 1 },
+        "modes": {
+          "type": "array",
+          "prefixItems": [
+            { "const": "watch" },
+            { "const": "mimic" },
+            { "const": "guess" },
+            { "const": "word" }
+          ],
+          "items": false
+        }
+      },
+      "additionalProperties": true
+    },
+    "rights": { "type": "string" },
+    "storyBible": { "type": "string" },
+    "seasonMap": { "type": "string" },
+    "levels": {
+      "type": "object",
+      "required": ["foundation", "core", "studio"],
+      "additionalProperties": { "type": "object" }
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["number", "slug", "path", "status"],
+        "properties": {
+          "number": { "type": "integer", "minimum": 1 },
+          "slug": { "type": "string" },
+          "path": { "type": "string" },
+          "status": { "type": "string" }
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": ["standard", "latestReport", "humanApprovalRequired"],
+      "properties": {
+        "standard": { "type": "string" },
+        "latestReport": { "type": "string" },
+        "humanApprovalRequired": { "const": true }
+      }
+    }
+  },
+  "additionalProperties": true
+}

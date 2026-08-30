@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "version": "3.0.0-draft.1",
+  "status": "draft",
+  "title": "The Adventures of Pinocchio",
+  "titleKo": "피노키오의 모험",
+  "format": {
+    "type": "longform",
+    "classes": 12,
+    "minutesPerClass": 60,
+    "modes": ["watch", "mimic", "guess", "word"],
+    "watchTargetMinutes": { "minimum": 6, "preferred": 8, "maximum": 10 },
+    "mimicItemsPerChapter": 30,
+    "guessItemsPerChapter": 10,
+    "wordItemsPerChapter": 10
+  },
+  "rights": "rights.json",
+  "storyBible": "story-bible.md",
+  "seasonMap": "season-map.json",
+  "levels": {
+    "foundation": {
+      "status": "planned",
+      "purpose": "Concrete, high-frequency language with shorter speakable sentences."
+    },
+    "core": {
+      "status": "golden-chapter-draft",
+      "purpose": "Natural cause-and-reaction language with an everyday narrative rhythm."
+    },
+    "studio": {
+      "status": "planned",
+      "purpose": "Richer description, voice, tension, and complex connections."
+    }
+  },
+  "chapters": [
+    { "number": 1, "slug": "a-voice-in-the-wood", "path": "chapters/chapter-01/chapter.json", "status": "golden-draft" },
+    { "number": 2, "slug": "hunger-home-and-sacrifice", "path": "season-map.json#chapter-02", "status": "outline-ready" },
+    { "number": 3, "slug": "the-puppet-theater", "path": "season-map.json#chapter-03", "status": "outline-ready" },
+    { "number": 4, "slug": "five-coins-and-a-dangerous-road", "path": "season-map.json#chapter-04", "status": "outline-ready" },
+    { "number": 5, "slug": "the-blue-fairy-and-the-field-of-wonders", "path": "season-map.json#chapter-05", "status": "outline-ready" },
+    { "number": 6, "slug": "the-snake-the-trap-and-the-dog", "path": "season-map.json#chapter-06", "status": "outline-ready" },
+    { "number": 7, "slug": "the-sea-and-the-terrible-dogfish", "path": "season-map.json#chapter-07", "status": "outline-ready" },
+    { "number": 8, "slug": "the-land-of-busy-bees", "path": "season-map.json#chapter-08", "status": "outline-ready" },
+    { "number": 9, "slug": "the-land-of-toys", "path": "season-map.json#chapter-09", "status": "outline-ready" },
+    { "number": 10, "slug": "donkey-days", "path": "season-map.json#chapter-10", "status": "outline-ready" },
+    { "number": 11, "slug": "inside-the-dogfish", "path": "season-map.json#chapter-11", "status": "outline-ready" },
+    { "number": 12, "slug": "a-real-boy", "path": "season-map.json#chapter-12", "status": "outline-ready" }
+  ],
+  "qa": {
+    "standard": "../../../content-studio/STORY_PACK_STANDARD.md",
+    "latestReport": "chapters/chapter-01/levels/core/qa.json",
+    "humanApprovalRequired": true
+  },
+  "release": {
+    "replacesProductionVersion": false,
+    "currentProductionVersion": "../v2/manifest.json",
+    "nextGate": "Human approval of the Core Chapter 1 script and durable narrator before paid audio generation."
+  }
+}

@@ -1026,3 +1026,36 @@ Chapter 12 art returns `image/png`, and the removed Story Finale routes remain
 **Open risks:** Human listen-through, classroom pacing, Foundation/Studio
 media, Lily's 2026-12-31 retirement, and Korean-market rights confirmation
 remain follow-ups.
+
+## 2026-08-30 15:25:58 — codex / work started
+
+Objective: Create Mimic company operating record and Pinocchio v3 Story Pack with an eight-minute Core Golden Chapter
+
+## 2026-08-30 15:55:37 — user / request
+
+Record Mimic's company operating system so new AI agents and human content managers can start immediately, then create the Pinocchio Story Pack.
+
+
+## 2026-08-30 15:55:37 — codex / decision
+
+Preserve production Pinocchio v2 and author v3 as a separate draft. Use an eight-minute canonical Watch master, select 30 Mimic plus 10 Guess and 10 Word activities from it, and require Golden Chapter human approval before batch TTS or Chapters 2-12 production.
+
+
+## 2026-08-30 15:55:37 — codex / checkpoint
+
+Recorded the AI-native company/Content Studio operating model and created Pinocchio v3 Story Pack draft. Core Chapter 1 now has a 1,028-word, 105-sentence canonical master estimated at 481.9 seconds at 128 wpm, eight beats, and exact 30 Mimic/10 Guess/10 Word selections. Added registry, manifest schema, persistent Content Studio AI rule, rights record, Story Bible, twelve-Chapter season map, production/QA records, and a generic validator.
+
+**Next action:** A named human editor reviews the Chapter 1 Core script and learning selections. After approval, select and record a durable ElevenLabs voice ID, generate one coherent narration master without sentence-by-sentence TTS, align timestamps, complete human listening and product QA, then approve the Golden Chapter before authoring Chapters 2-12.
+
+**Validation:** npm run validate:story-pack passed (105 sentences, 1,028 words, 481.9 seconds, 8/30/10/10); npx tsc --noEmit passed; all nine new JSON files parse; git diff --check passed. Next Turbopack build was stopped after hanging in its optimization phase with no diagnostic output; no app code changed.
+
+**Files:**
+- AGENTS.md
+- .cursor/rules/content-studio.mdc
+- content-studio/
+- content-packs/pinocchio/v3/
+- scripts/validate-story-pack.mjs
+- package.json
+- docs/ai-handoff/PROJECT_CONTEXT.md
+
+**Open risks:** Commercial target-territory rights review, named editorial/learning approval, durable Lily voice ID/availability, commercial plan evidence, master audio/timestamps/visuals, human listening QA, and product preview remain pending. Existing untracked prototype voice folders are unrelated and were not modified.

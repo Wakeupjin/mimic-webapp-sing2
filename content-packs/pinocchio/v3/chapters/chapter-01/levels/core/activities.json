@@ -1,0 +1,453 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-01",
+  "level": "core",
+  "source": "master.txt",
+  "selectionPolicy": "Learning items are editorial selections from the full Watch master. They are not the full script divided into activities.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "One winter morning, he discovered a plain block of wood beside his bench.",
+      "focus": "time opener and narrative stress",
+      "selectionReason": "A clear scene-setting sentence with useful storytelling rhythm."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "Master Cherry rubbed his hands, lifted his axe, and whispered, “This will do nicely.”",
+      "focus": "linked action sequence",
+      "selectionReason": "Practises three coordinated actions followed by expressive dialogue."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”",
+      "focus": "before-clause and emotional contrast",
+      "selectionReason": "Carries the Chapter's first surprise and a reusable time clause."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "“I must have imagined it,” he decided, though his knees had begun to shake.",
+      "focus": "concession with though",
+      "selectionReason": "Pairs spoken confidence with physical fear."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S015",
+      "beatId": "B02",
+      "text": "A piece of wood could not speak, yet this one clearly had opinions.",
+      "focus": "contrast with yet",
+      "selectionReason": "Compact cause of comedy with a high-value contrast pattern."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "The moment the tool scraped across it, the wood laughed like a cheeky child.",
+      "focus": "immediate reaction and simile",
+      "selectionReason": "Combines precise timing, sound, and characterisation."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "At that exact moment, someone knocked loudly at the shop door.",
+      "focus": "dramatic timing",
+      "selectionReason": "A versatile suspense connector with strong sentence stress."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "Geppetto entered, carrying a patched coat and a hopeful smile.",
+      "focus": "participial description",
+      "selectionReason": "Introduces a character through two concise visual details."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S029",
+      "beatId": "B03",
+      "text": "He was a poor woodcarver, but his imagination was richer than the treasure room of any king.",
+      "focus": "but-contrast and comparison",
+      "selectionReason": "Expresses poverty and inner richness in one memorable line."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”",
+      "focus": "future intention and list rhythm",
+      "selectionReason": "States Geppetto's plan with playful three-part rhythm."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "More than money, however, Geppetto wanted company in his small, lonely house at the end of each day.",
+      "focus": "emotional contrast and phrasing",
+      "selectionReason": "Reveals the emotional motive beneath the practical plan."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S041",
+      "beatId": "B04",
+      "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
+      "focus": "before-clause and quoted greeting",
+      "selectionReason": "Creates comic interruption with a repeatable time pattern."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Their argument became a storm of accusations, stamping feet, and flying insults.",
+      "focus": "metaphor and list stress",
+      "selectionReason": "Turns conflict into a vivid, speakable image."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "A moment later, they were rolling across the floor like two angry sacks of flour.",
+      "focus": "sequence marker and simile",
+      "selectionReason": "A physical comic beat with clear rhythm and imagery."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd.",
+      "focus": "simultaneous action and imagination",
+      "selectionReason": "Moves from physical journey to inner hope in one sentence."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "He imagined music, applause, and warm meals shared beside the fire.",
+      "focus": "three-part list and warmth",
+      "selectionReason": "A short expressive line built around concrete desires."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "A painted fire on the wall had to pretend to keep him warm.",
+      "focus": "personification and contrast",
+      "selectionReason": "Shows poverty through one memorable visual sentence."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S066",
+      "beatId": "B05",
+      "text": "“Let us make a boy,” he said, “and perhaps a family too.”",
+      "focus": "invitation and emotional subtext",
+      "selectionReason": "Connects the act of making with the deeper family theme."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "The moment the eyes appeared, they stared directly at him.",
+      "focus": "immediate reaction",
+      "selectionReason": "A concise magical transformation with strong stress."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "It grew longer and longer, no matter how often he shortened it.",
+      "focus": "repetition and no-matter clause",
+      "selectionReason": "Uses a useful persistence pattern around the iconic nose."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S074",
+      "beatId": "B06",
+      "text": "He shaped a mouth, and the mouth immediately began to grin.",
+      "focus": "linked action and result",
+      "selectionReason": "A clean cause-and-reaction sentence for connected speech."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S079",
+      "beatId": "B06",
+      "text": "As soon as the hands were finished, they snatched away his yellow wig.",
+      "focus": "as-soon-as clause",
+      "selectionReason": "Pairs a high-value connector with a comic action."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "One step became two, and two steps became a wild dash around the room.",
+      "focus": "parallel rhythm and escalation",
+      "selectionReason": "Makes a fast escalation easy to hear and reproduce."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S085",
+      "beatId": "B07",
+      "text": "Pinocchio kicked over a stool, leapt across the bed, and raced towards the door.",
+      "focus": "three-action sequence",
+      "selectionReason": "Practises energetic past-tense verbs in one visual line."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "The puppet pulled the latch and shot into the street.",
+      "focus": "linked actions and release",
+      "selectionReason": "A compact escape sentence with a strong final beat."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S091",
+      "beatId": "B07",
+      "text": "Freedom felt too exciting, and consequences were still a mystery.",
+      "focus": "abstract contrast made simple",
+      "selectionReason": "Summarises Pinocchio's emotional logic without moralising."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S093",
+      "beatId": "B08",
+      "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
+      "focus": "attempt and reversal",
+      "selectionReason": "A useful tried-to-but pattern tied to a memorable action."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S099",
+      "beatId": "B08",
+      "text": "Some people decided that Geppetto must be a cruel father, although none of them knew the truth.",
+      "focus": "assumption and concession",
+      "selectionReason": "Encodes the crowd's error with an important although clause."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S100",
+      "beatId": "B08",
+      "text": "The constable listened to the loudest voices instead of the wisest one.",
+      "focus": "instead-of contrast",
+      "selectionReason": "A memorable consequence line with a reusable contrast frame."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S105",
+      "beatId": "B08",
+      "text": "And somewhere ahead, the wooden boy’s first hard lesson was already waiting.",
+      "focus": "forward hook and sentence stress",
+      "selectionReason": "Closes the Chapter while pulling the learner into the next one."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "Master Cherry raises his axe and hears an impossible warning.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S007", "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”" },
+        { "id": "B", "sourceSentenceId": "S013", "text": "This time, the voice squealed, “That tickles!”" },
+        { "id": "C", "sourceSentenceId": "S025", "text": "At that exact moment, someone knocked loudly at the shop door." }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other surprising sounds from the same opening sequence."
+    },
+    {
+      "id": "G02",
+      "beatId": "B01",
+      "cue": "The empty shop makes Master Cherry doubt what he heard, even while his body shows fear.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S020", "text": "“There must be a trick,” he muttered." },
+        { "id": "B", "sourceSentenceId": "S011", "text": "“I must have imagined it,” he decided, though his knees had begun to shake." },
+        { "id": "C", "sourceSentenceId": "S030", "text": "“I have a wonderful plan,” he announced." }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible quotations with different motives."
+    },
+    {
+      "id": "G03",
+      "beatId": "B02",
+      "cue": "The plane touches the block and proves that the wood reacts like a child.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S009", "text": "He looked under the bench, behind the door, near the stove, and even inside an empty cupboard." },
+        { "id": "B", "sourceSentenceId": "S054", "text": "The block gave a quiet, satisfied chuckle." },
+        { "id": "C", "sourceSentenceId": "S017", "text": "The moment the tool scraped across it, the wood laughed like a cheeky child." }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "One search action and one later laugh compete with the exact reaction."
+    },
+    {
+      "id": "G04",
+      "beatId": "B03",
+      "cue": "Geppetto describes the wooden performer he wants to create.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S031", "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”" },
+        { "id": "B", "sourceSentenceId": "S063", "text": "“I shall call you Pinocchio.”" },
+        { "id": "C", "sourceSentenceId": "S086", "text": "“Stop!” cried Geppetto." }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other Geppetto quotations from later actions."
+    },
+    {
+      "id": "G05",
+      "beatId": "B04",
+      "cue": "The hidden voice insults Geppetto before he even touches the wood.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S053", "text": "“Friends again,” Master Cherry replied." },
+        { "id": "B", "sourceSentenceId": "S041", "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”" },
+        { "id": "C", "sourceSentenceId": "S097", "text": "“That is my boy.”" }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other dialogue lines with different speakers and intentions."
+    },
+    {
+      "id": "G06",
+      "beatId": "B05",
+      "cue": "Geppetto chooses the name that sounds bright and full of adventure.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S030", "text": "“I have a wonderful plan,” he announced." },
+        { "id": "B", "sourceSentenceId": "S052", "text": "“Friends again?” Geppetto asked." },
+        { "id": "C", "sourceSentenceId": "S063", "text": "“I shall call you Pinocchio.”" }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other first-person Geppetto dialogue."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Geppetto cannot control the most famous feature of the puppet's face.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S072", "text": "It grew longer and longer, no matter how often he shortened it." },
+        { "id": "B", "sourceSentenceId": "S084", "text": "One step became two, and two steps became a wild dash around the room." },
+        { "id": "C", "sourceSentenceId": "S093", "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose." }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other escalation or nose-related actions."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "Pinocchio opens the way out and begins his first escape.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S056", "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd." },
+        { "id": "B", "sourceSentenceId": "S087", "text": "The puppet pulled the latch and shot into the street." },
+        { "id": "C", "sourceSentenceId": "S101", "text": "He released Pinocchio and took Geppetto by the arm." }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other street movement or release moments."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "The constable makes a bad decision because he follows noise rather than judgment.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S045", "text": "Master Cherry lifted both hands and swore it was not him." },
+        { "id": "B", "sourceSentenceId": "S096", "text": "“Thank goodness,” he said." },
+        { "id": "C", "sourceSentenceId": "S100", "text": "The constable listened to the loudest voices instead of the wisest one." }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other reactions that do not express the constable's error."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Geppetto names the painful gap between the love he gave and the judgment Pinocchio lacks.",
+      "options": [
+        { "id": "A", "sourceSentenceId": "S104", "text": "“Oh, Pinocchio,” he sighed, “I made you with love, but I forgot to give you sense.”" },
+        { "id": "B", "sourceSentenceId": "S066", "text": "“Let us make a boy,” he said, “and perhaps a family too.”" },
+        { "id": "C", "sourceSentenceId": "S011", "text": "“I must have imagined it,” he decided, though his knees had begun to shake." }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other emotional dialogue from earlier hopes and fears."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "One winter morning, he discovered a plain block of wood beside his bench.",
+      "tokens": ["One", "winter", "morning,", "he", "discovered", "a", "plain", "block", "of", "wood", "beside", "his", "bench."],
+      "focus": "time phrase followed by subject and past-tense action"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S015",
+      "beatId": "B02",
+      "text": "A piece of wood could not speak, yet this one clearly had opinions.",
+      "tokens": ["A", "piece", "of", "wood", "could", "not", "speak,", "yet", "this", "one", "clearly", "had", "opinions."],
+      "focus": "modal negative and yet-contrast"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "Geppetto entered, carrying a patched coat and a hopeful smile.",
+      "tokens": ["Geppetto", "entered,", "carrying", "a", "patched", "coat", "and", "a", "hopeful", "smile."],
+      "focus": "main action plus participial description"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "More than money, however, Geppetto wanted company in his small, lonely house at the end of each day.",
+      "tokens": ["More", "than", "money,", "however,", "Geppetto", "wanted", "company", "in", "his", "small,", "lonely", "house", "at", "the", "end", "of", "each", "day."],
+      "focus": "fronted contrast and place-time phrase order"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Their argument became a storm of accusations, stamping feet, and flying insults.",
+      "tokens": ["Their", "argument", "became", "a", "storm", "of", "accusations,", "stamping", "feet,", "and", "flying", "insults."],
+      "focus": "became-complement and coordinated list"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd.",
+      "tokens": ["As", "Geppetto", "walked", "home", "through", "the", "narrow", "streets,", "he", "imagined", "the", "puppet", "bowing", "before", "a", "delighted", "crowd."],
+      "focus": "as-clause followed by imagined object action"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "The moment the eyes appeared, they stared directly at him.",
+      "tokens": ["The", "moment", "the", "eyes", "appeared,", "they", "stared", "directly", "at", "him."],
+      "focus": "immediate-time clause and pronoun reference"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "One step became two, and two steps became a wild dash around the room.",
+      "tokens": ["One", "step", "became", "two,", "and", "two", "steps", "became", "a", "wild", "dash", "around", "the", "room."],
+      "focus": "parallel clauses and escalation"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S093",
+      "beatId": "B08",
+      "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
+      "tokens": ["Pinocchio", "tried", "to", "slip", "past,", "but", "the", "constable", "caught", "him", "by", "his", "remarkable", "nose."],
+      "focus": "tried-to action followed by but-reversal"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S100",
+      "beatId": "B08",
+      "text": "The constable listened to the loudest voices instead of the wisest one.",
+      "tokens": ["The", "constable", "listened", "to", "the", "loudest", "voices", "instead", "of", "the", "wisest", "one."],
+      "focus": "listened-to collocation and instead-of contrast"
+    }
+  ]
+}
