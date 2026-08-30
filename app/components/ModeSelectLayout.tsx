@@ -32,6 +32,7 @@ type ModeSelectLayoutProps = {
   listRef?: React.RefObject<HTMLDivElement | null>;
   extraActions?: ReactNode;
   badge?: ReactNode;
+  closeHref?: string;
 };
 
 export default function ModeSelectLayout({
@@ -44,13 +45,14 @@ export default function ModeSelectLayout({
   listRef,
   extraActions,
   badge,
+  closeHref = "/",
 }: ModeSelectLayoutProps) {
   return (
     <main className="select-stage relative flex flex-col overflow-x-hidden overflow-y-auto px-[clamp(1rem,2vw,2.5rem)] py-[clamp(0.8rem,1.6vw,1.5rem)]">
       <header className="relative z-40 flex shrink-0 items-center justify-end gap-[clamp(0.45rem,1vw,0.75rem)]">
         {badge ? <div className="mr-auto">{badge}</div> : null}
         {extraActions}
-        <HeaderCloseLink href="/" />
+        <HeaderCloseLink href={closeHref} />
       </header>
 
       <div className="select-chapter-wrap" ref={dropdownRef}>

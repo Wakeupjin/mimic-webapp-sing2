@@ -12,19 +12,19 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-SESSION 1 CORE LOCAL PILOT READY — THIRTY-LINE MIMIC ARCHITECTURE
+SESSION 1 CORE LOCAL PILOT READY — SING 2 LEARNING FLOW PARITY
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Review and freeze the Lily British Session 1 Core vertical slice before main-thread integration
+Review the Sing 2-parity Pinocchio Session 1 Core vertical slice before main-thread integration
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Revised all twelve sessions so each selected level keeps one coherent sixteen-sentence Watch narration but exposes thirty timestamped Mimic speaking units cut from that exact master, plus ten Guess and ten Word items. Generated the paid-plan Session 1 Core Lily British master as one 84.16-second Eleven v3 take with sixteen caption timestamps and thirty Mimic timestamps. Added original corrected Living Storybook art and a fully interactive local Watch/Mimic/Guess/Word route with local-only microphone recording, scoring, sentence building, responsive navigation, and progress state.
+Revised all twelve sessions so each selected level keeps one coherent sixteen-sentence Watch narration but exposes thirty timestamped Mimic speaking units cut from that exact master, plus ten Guess and ten Word items. Generated the paid-plan Session 1 Core Lily British master as one 84.16-second Eleven v3 take with sixteen caption timestamps and thirty Mimic timestamps. Replaced the independent combined prototype with a five-screen local flow that follows the deployed Sing 2 interaction system: Selecting gates Watch → Mimic → Guess → Word; each mode uses the operational start, controls, count, feedback, completion, Again, and Next patterns while Pinocchio supplies the storybook art and Lily audio.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
@@ -44,7 +44,7 @@ Revised all twelve sessions so each selected level keeps one coherent sixteen-se
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Compiler and validator pass: 12 sessions, original Chapters 1–36 in order, 576 narration sentences, 1,080 Mimic units, 360 Guess items, 360 Word items, 96 story beats, sixty minutes per selected level, and zero language-band exceptions. Session 1 Core audio is 192 kbps/44.1 kHz mono and its pack checksum, sixteen caption timestamps, and thirty ordered Mimic timestamps validate. TypeScript, whitespace, and the full 27-route Next production build pass. Browser checks confirm real 84.16-second audio playback, exact final-segment stop, thirty visible Mimic controls, Guess scoring, Word answer validation, zero console errors, and no horizontal overflow at mobile or desktop widths.
+Compiler and validator pass: 12 sessions, original Chapters 1–36 in order, 576 narration sentences, 1,080 Mimic units, 360 Guess items, 360 Word items, 96 story beats, sixty minutes per selected level, and zero language-band exceptions. Session 1 Core audio is 192 kbps/44.1 kHz mono and its pack checksum, sixteen caption timestamps, and thirty ordered Mimic timestamps validate. TypeScript, whitespace, and the full 27-route Next production build pass. Browser checks cover all five Sing 2-parity screens, sequential locks and direct-route rejection, Watch completion, the eight-slot 30-line Mimic dock and review, Guess A/B/C onboarding, Word two-listen/one-mute card reveal, exact 30/30 and 10/10 completion counts, desktop/mobile layout, and zero console errors.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
@@ -56,5 +56,5 @@ The Session 1 Core master still needs a human listen-through for pronunciation, 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Have the user listen through and operate the local Session 1 Core lesson. If the voice direction, thirty-unit pacing, and Living Storybook UX are approved, freeze the pack and hand its versioned files plus acceptance criteria to the main development thread before generating broader media.
+Have the user operate the local Session 1 Core lesson against the deployed Sing 2 reference. If the interaction parity, Lily voice direction, thirty-unit pacing, and Living Storybook substitution are approved, freeze the pack and hand its versioned files plus acceptance criteria to the main development thread before generating broader media.
 <!-- HANDOFF:NEXT_ACTION:END -->

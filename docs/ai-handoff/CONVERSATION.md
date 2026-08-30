@@ -712,3 +712,32 @@ overflow.
 freezes the Lily direction/UX for main-thread handoff or gives targeted voice,
 pacing, text, or interaction notes. No Preview or production deployment was
 performed.
+
+## 2026-08-30 — user / correction
+
+Rejected the standalone combined prototype interaction and established the
+deployed Sing 2 lesson as the product standard. Requested that Pinocchio keep
+its own story art, text, and Lily narration while following Sing 2's Selecting,
+Watch, Mimic, Guess, and Word process, screen hierarchy, controls, gating, and
+completion transitions.
+
+## 2026-08-30 — codex / completed
+
+Rebuilt the local Session 1 Core pilot around the operational Sing 2 learning
+flow. The selecting screen now uses sequential mode locks, completion checks,
+and the current-stage chameleon. Watch uses the standard start/pause/progress
+and Again/Next completion pattern. Mimic uses the same eight-slot
+listen/listen/listen/mute/listen/mute/listen/mute sequence across thirty units
+and ends with the difficult-sentence review. Guess uses the A/B/C onboarding,
+three-option listening, feedback, and ten-question dock. Word uses the compact
+center stage, side/mobile word cards, two-listen/one-mute sequence, sentence
+assembly, chameleon submit, and ten-question completion state. Locked routes
+redirect to Selecting, local completion restores without hydration errors, and
+punctuation stays attached to its word cards.
+
+**Validation:** The twelve-session pack validator, TypeScript, whitespace
+checks, and the full 27-route Next production build pass. Browser QA covered
+all five screens, sequential local progression, SKIP and Again/Next behavior,
+30/30 and 10/10 completion counts, direct locked-route rejection, Word card
+reveal after the audio sequence, desktop/mobile layouts, and zero console
+errors. No Preview or production deployment was performed.
