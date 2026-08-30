@@ -27,6 +27,23 @@ approved masters and pickups must finish by the internal 2026-11-30 deadline.
 Store the audio, sentence timeline, request evidence, settings, and checksums as
 company assets. See `narrator-policy.json` for the immutable production decision.
 
+## Foundation public beta
+
+The product owner explicitly authorized the twelve Foundation Chapters for a
+Production public beta on 2026-08-30 after the open alignment, human-review,
+and final legal gates were disclosed. `release-beta.json` is deliberately
+scoped to Foundation only. It allows deployment without changing
+`releaseReady`, rights, QA, or approval records; every unresolved blocker stays
+in the generated release catalog and the learner UI remains visibly labeled
+`BETA · 검수 중`.
+
+The beta does not relax technical integrity checks. Publishing still fails for
+an incomplete Chapter set, missing or empty media, stale identities, malformed
+millisecond timelines, checksum mismatches, or any change to the
+manifest-pinned beta authorization digest. Set
+`PINOCCHIO_PRODUCTION_RELEASE=v2` to bypass v3 publishing and restore the
+previous production route as an emergency rollback.
+
 ## Validate
 
 ```bash

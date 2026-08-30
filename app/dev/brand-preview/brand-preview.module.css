@@ -193,6 +193,7 @@
 .bookCover { position: relative; width: min(82%, 410px); min-height: 395px; margin: 0 auto; border: 2px solid var(--line); background: #172c51; box-shadow: 7px 7px 0 #1d3521; transform: rotate(1.5deg); }
 .bookCover img { object-fit: cover; }
 .bookTape { position: absolute; top: -18px; left: 35%; width: 80px; height: 35px; background: rgba(246,216,90,.85); transform: rotate(-4deg); }
+.bookReleaseBadge { position: absolute; right: 12px; bottom: 12px; z-index: 2; padding: 8px 10px 7px; border: 1px solid rgba(244,241,232,.52); background: rgba(5,6,5,.88); color: var(--green); font-family: var(--font-geist-mono), monospace; font-size: .68rem; font-weight: 950; letter-spacing: .08em; backdrop-filter: blur(8px); }
 .cardCaption { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: auto; padding-top: 34px; }
 .cardCaption span { font-size: .72rem; font-weight: 900; letter-spacing: .12em; }
 .cardCaption h3 { margin: 3px 0 0; font-family: var(--font-bm-hanna-pro), sans-serif; font-size: clamp(2rem, 3vw, 3.6rem); font-weight: 400; line-height: .9; }

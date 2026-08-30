@@ -44,6 +44,7 @@ export default async function PinocchioChapterSelecting({
       titleEn={release.pack.story.titleEn}
       titleKo={release.pack.story.titleKo}
       levelLabel={PINOCCHIO_V3_LEVEL_LABEL}
+      releaseBadge={release.releaseBadge}
       mediaReady={release.mediaReady}
       mediaMessage={release.mediaMessage}
       chapterAvailability={chapterAvailability}

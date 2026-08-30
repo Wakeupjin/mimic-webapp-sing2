@@ -40,6 +40,7 @@ export default async function PinocchioProductionLesson({
       <main className="flex min-h-screen items-center justify-center bg-black px-5 text-white">
         <section className="w-full max-w-xl rounded-3xl border border-[#60D96C]/50 bg-[#171717] p-7 text-center shadow-2xl">
           <p className="text-xs font-black tracking-[0.2em] text-[#60D96C]">FOUNDATION · 초급</p>
+          {release.releaseBadge ? <p className="mt-2 text-xs font-black tracking-[0.16em] text-amber-300">{release.releaseBadge}</p> : null}
           <h1 className="mt-3 text-3xl font-black">CHAPTER {chapterNumber} 준비 중</h1>
           <p className="mx-auto mt-4 max-w-md text-sm font-bold leading-6 text-white/70">
             {release.mediaMessage} 검증된 v3 음원이 준비되기 전에는 이전 v2 음원으로 대신 재생하지 않습니다.
@@ -64,6 +65,7 @@ export default async function PinocchioProductionLesson({
       initialMedia={release.media}
       progressScope={PINOCCHIO_V3_PROGRESS_SCOPE}
       lessonNumberBase={PINOCCHIO_V3_LESSON_NUMBER_BASE}
+      releaseBadge={release.releaseBadge}
     />
   );
 }

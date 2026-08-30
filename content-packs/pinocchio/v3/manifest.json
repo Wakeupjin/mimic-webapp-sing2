@@ -26,6 +26,8 @@
     "assembly": "Twelve coherent Chapter masters become one student-facing full-story master for each level."
   },
   "rights": "rights.json",
+  "betaReleaseAuthorization": "release-beta.json",
+  "betaReleaseAuthorizationSha256": "sha256:fb66cae9c0526c9eb0762f38808fe962c666b72caf3e78ef1b6ba493a2194675",
   "narratorPolicy": "narrator-policy.json",
   "levelSpecs": "level-specs.json",
   "storyBible": "story-bible.md",

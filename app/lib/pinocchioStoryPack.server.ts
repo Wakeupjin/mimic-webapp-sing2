@@ -93,6 +93,26 @@ type RawTimeline = {
 type WebReleaseCatalog = {
   storyPackId?: string;
   level?: string;
+  channel?: string;
+  releaseReady?: boolean;
+  deploymentAllowed?: boolean;
+  beta?: {
+    active?: boolean;
+    label?: string | null;
+  };
+  releaseGate?: {
+    status?: string;
+    blockers?: string[];
+    authorization?: {
+      releaseId?: string;
+      authorizationType?: string;
+      authorizedBy?: string;
+      authorizedAt?: string;
+      scope?: string;
+      levels?: string[];
+      authorizationSha256?: string;
+    } | null;
+  };
   chapters?: { chapter: number; audioUrl: string; timelineUrl: string }[];
 };
 
@@ -102,6 +122,7 @@ export type PinocchioV3ChapterRelease = {
   media: PinocchioChapterMedia;
   mediaReady: boolean;
   mediaMessage: string;
+  releaseBadge: string | null;
 };
 
 const repositoryRoot = process.cwd();
@@ -205,17 +226,70 @@ function publicMedia(chapterNumber: number): PinocchioChapterMedia & { audioPath
 }
 
 async function webReleaseCatalog(): Promise<WebReleaseCatalog> {
+  let catalog: WebReleaseCatalog;
   try {
-    const catalog = JSON.parse(await readFile(path.join(publicRoot, "release.json"), "utf8")) as WebReleaseCatalog;
-    if (catalog.storyPackId !== "pinocchio-story-v3" || catalog.level !== PINOCCHIO_V3_LEVEL) return {};
-    return catalog;
+    catalog = JSON.parse(await readFile(path.join(publicRoot, "release.json"), "utf8")) as WebReleaseCatalog;
   } catch {
     return {};
   }
+
+  if (catalog.storyPackId !== "pinocchio-story-v3" || catalog.level !== PINOCCHIO_V3_LEVEL) {
+    throw new Error("Published Foundation release catalog identity is invalid");
+  }
+
+  const productionEnvironment = process.env.VERCEL_ENV === "production";
+  if (productionEnvironment && catalog.channel !== "production") {
+    throw new Error("The Production build received a non-Production Foundation catalog");
+  }
+
+  if (catalog.channel === "production") {
+    const chapters = catalog.chapters ?? [];
+    const chapterNumbers = new Set(chapters.map((chapter) => chapter.chapter));
+    const completeCatalog = chapters.length === PINOCCHIO_TOTAL_CHAPTERS
+      && chapterNumbers.size === PINOCCHIO_TOTAL_CHAPTERS
+      && Array.from({ length: PINOCCHIO_TOTAL_CHAPTERS }, (_, index) => index + 1).every((chapter) => chapterNumbers.has(chapter))
+      && chapters.every((chapter) => typeof chapter.audioUrl === "string" && typeof chapter.timelineUrl === "string");
+    const normalRelease = catalog.releaseReady === true
+      && catalog.deploymentAllowed === true
+      && catalog.releaseGate?.status === "passed";
+    const authorization = catalog.releaseGate?.authorization;
+    const betaRelease = catalog.releaseReady === false
+      && catalog.deploymentAllowed === true
+      && catalog.beta?.active === true
+      && catalog.beta.label === "BETA · 검수 중"
+      && catalog.releaseGate?.status === "public-beta-authorized"
+      && authorization?.authorizationType === "product-owner-explicit-public-beta"
+      && Array.isArray(authorization.levels)
+      && authorization.levels.length === 1
+      && authorization.levels[0] === PINOCCHIO_V3_LEVEL
+      && typeof authorization.releaseId === "string"
+      && typeof authorization.authorizedBy === "string"
+      && typeof authorization.authorizedAt === "string"
+      && /^sha256:[a-f0-9]{64}$/.test(authorization.authorizationSha256 ?? "")
+      && Array.isArray(catalog.releaseGate.blockers)
+      && catalog.releaseGate.blockers.length > 0;
+
+    if (!completeCatalog || (!normalRelease && !betaRelease)) {
+      throw new Error("Published Foundation Production catalog is incomplete or not deployment-authorized");
+    }
+  }
+
+  return catalog;
 }
 
 export function productionPinocchioRelease(): PinocchioProductionRelease {
   return process.env.PINOCCHIO_PRODUCTION_RELEASE === "v2" ? "v2" : "v3-foundation";
+}
+
+function releaseBadge(catalog: WebReleaseCatalog) {
+  return catalog.beta?.active === true && catalog.releaseGate?.status === "public-beta-authorized"
+    ? catalog.beta.label ?? "BETA · 검수 중"
+    : null;
+}
+
+export async function pinocchioV3ReleaseBadge() {
+  if (productionPinocchioRelease() === "v2") return null;
+  return releaseBadge(await webReleaseCatalog());
 }
 
 export async function foundationMediaAvailability() {
@@ -323,6 +397,7 @@ export async function loadPinocchioV3FoundationChapter(chapterNumber: number): P
   const mediaPaths = publicMedia(chapterNumber);
   const catalog = await webReleaseCatalog();
   const catalogEntry = catalog.chapters?.find((entry) => entry.chapter === chapterNumber);
+  const badge = releaseBadge(catalog);
   const media: PinocchioChapterMedia = {
     audioSrc: mediaPaths.audioSrc,
     timelineSrc: mediaPaths.timelineSrc,
@@ -338,6 +413,7 @@ export async function loadPinocchioV3FoundationChapter(chapterNumber: number): P
       media,
       mediaReady: false,
       mediaMessage: `Chapter ${chapterNumber} 초급 Lily 음원과 밀리초 타임라인을 제작 중입니다.`,
+      releaseBadge: badge,
     };
   }
 
@@ -351,7 +427,10 @@ export async function loadPinocchioV3FoundationChapter(chapterNumber: number): P
       timeline,
       media,
       mediaReady: true,
-      mediaMessage: `Chapter ${chapterNumber} 초급 Lily 완성본`,
+      mediaMessage: badge
+        ? `Chapter ${chapterNumber} 초급 Lily 공개 베타`
+        : `Chapter ${chapterNumber} 초급 Lily 완성본`,
+      releaseBadge: badge,
     };
   } catch (error) {
     console.error(`Pinocchio ${stem} Foundation media gate failed:`, error);
@@ -361,6 +440,7 @@ export async function loadPinocchioV3FoundationChapter(chapterNumber: number): P
       media,
       mediaReady: false,
       mediaMessage: `Chapter ${chapterNumber} 초급 음원 검증이 끝나지 않아 잠겨 있습니다.`,
+      releaseBadge: badge,
     };
   }
 }

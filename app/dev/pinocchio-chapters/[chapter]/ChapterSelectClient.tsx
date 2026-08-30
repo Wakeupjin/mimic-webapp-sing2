@@ -28,6 +28,7 @@ type Props = {
   titleEn: string;
   titleKo: string;
   levelLabel?: string;
+  releaseBadge?: string | null;
   mediaReady?: boolean;
   mediaMessage?: string;
   chapterAvailability?: boolean[];
@@ -41,6 +42,7 @@ export default function ChapterSelectClient({
   titleEn,
   titleKo,
   levelLabel = "Core",
+  releaseBadge = null,
   mediaReady = true,
   mediaMessage,
   chapterAvailability,
@@ -126,9 +128,12 @@ export default function ChapterSelectClient({
       listRef={listRef}
       closeHref="/"
       extraActions={
-        <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
-          <FullscreenIcon active={isFullscreen} />
-        </HeaderIconButton>
+        <>
+          {releaseBadge ? <span className={styles.betaBadge}>{releaseBadge}</span> : null}
+          <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
+            <FullscreenIcon active={isFullscreen} />
+          </HeaderIconButton>
+        </>
       }
       notice={!mediaReady ? (
         <p>{mediaMessage ?? `Chapter ${chapterNumber} 음원과 타임라인을 준비 중입니다.`}</p>

@@ -16,6 +16,10 @@ import styles from "./brand-preview.module.css";
 
 type Language = "ko" | "en";
 
+type BrandPreviewPageProps = {
+  bookReleaseBadge?: string | null;
+};
+
 const copy = {
   ko: {
     nav: ["이번 달", "학습 방식", "콘텐츠", "부모·선생님"],
@@ -178,7 +182,7 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
   };
 }
 
-export default function BrandPreviewPage() {
+export default function BrandPreviewPage({ bookReleaseBadge = null }: BrandPreviewPageProps = {}) {
   const [language, setLanguage] = useState<Language>("ko");
   const [menuOpen, setMenuOpen] = useState(false);
   const [hasPlacement, setHasPlacement] = useState(false);
@@ -369,6 +373,7 @@ export default function BrandPreviewPage() {
           <div className={styles.bookCover}>
             <Image src="/pinocchio-mimic-cover.png" alt="Mimic 오리지널 피노키오 커버" fill sizes="(max-width: 760px) 86vw, 33vw" />
             <span className={styles.bookTape} aria-hidden="true" />
+            {bookReleaseBadge ? <strong className={styles.bookReleaseBadge}>{bookReleaseBadge}</strong> : null}
           </div>
           <div className={styles.cardCaption}>
             <div><span>{t.bookLabel}</span><h3>PINOCCHIO</h3></div>

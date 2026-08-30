@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "storyPackId": "pinocchio-story-v3",
-  "reviewStatus": "territory-review-required",
+  "reviewStatus": "public-beta-basis-recorded-final-territory-review-required",
   "commercialReleaseAllowed": false,
   "works": [
     {
@@ -54,5 +54,29 @@
     "reviewer": null,
     "reviewedAt": null,
     "decision": "pending"
+  },
+  "publicBetaEvidence": {
+    "recordedAt": "2026-08-30",
+    "decision": "basis-recorded-not-legal-approval",
+    "sources": [
+      {
+        "claim": "Project Gutenberg records The Adventures of Pinocchio as public domain in the United States and identifies Carlo Collodi as 1826–1890.",
+        "url": "https://www.gutenberg.org/ebooks/500"
+      },
+      {
+        "claim": "The Korea Copyright Commission states the general term as the author's life plus 70 years, calculated from the following January 1.",
+        "url": "https://www.copyright.or.kr/information-materials/common-sense/basic-knowledge/index.do?jspName=08"
+      },
+      {
+        "claim": "ElevenLabs states that paid-plan generations include commercial usage rights when the user owns the input IP rights and follows its terms.",
+        "url": "https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform"
+      },
+      {
+        "claim": "OpenAI's services agreement assigns Output rights to the customer to the extent permitted by law.",
+        "url": "https://openai.com/policies/services-agreement/"
+      }
+    ],
+    "inference": "The underlying Collodi story is far beyond a life-plus-70 term, while the Mimic scripts are recorded as an original educational retelling rather than a republication of the Gutenberg translation. The Foundation audio was generated on a user-confirmed paid ElevenLabs plan and the cover is a newly generated project asset.",
+    "remainingRisk": "The Carol Della Chiesa English translation has a later author death date, so verbatim-overlap review and named target-territory legal approval remain required before removing the Beta label."
   }
 }

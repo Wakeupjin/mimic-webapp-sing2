@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "releaseId": "foundation-public-beta-2026-08-30",
+  "authorizationType": "product-owner-explicit-public-beta",
+  "status": "active",
+  "channel": "production",
+  "levels": ["foundation"],
+  "authorizedBy": "이강진 (Product Owner)",
+  "authorizedAt": "2026-08-30T21:00:00+09:00",
+  "expiresAt": null,
+  "revokedAt": null,
+  "authorizationEvidence": "After Codex explicitly disclosed that final Forced Alignment, twelve-Chapter human listen/editorial/learning review, and named final legal approval remain pending, the product owner replied '승인' on 2026-08-30 and authorized an actual-service Foundation public-beta deployment.",
+  "scope": "Public beta availability for Pinocchio Foundation Chapters 1–12 only. This does not convert pending legal, editorial, learning, audio, alignment, or final release reviews into approvals.",
+  "acknowledgedOpenGates": [
+    "The Story Pack manifest and Chapter QA/production records remain draft or human-review-pending rather than release-approved.",
+    "Per-Chapter and full-master Forced Alignment remain pending.",
+    "Named editorial, learning, voice, audio, rights, and final release reviews remain pending across the twelve Chapters.",
+    "Commercial-rights approval and named target-territory legal review remain pending even though the public-domain and paid-generation bases are recorded.",
+    "The release must remain visibly labeled Beta until the normal release gate passes."
+  ],
+  "rollback": {
+    "environmentVariable": "PINOCCHIO_PRODUCTION_RELEASE",
+    "value": "v2",
+    "effect": "Restore the previously deployed Pinocchio v2 lesson routes without deleting v3 assets."
+  }
+}

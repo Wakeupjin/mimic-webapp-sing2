@@ -48,6 +48,7 @@ type LessonContextValue = {
   media: PinocchioChapterMedia;
   progressScope: string;
   lessonNumberBase: number;
+  releaseBadge: string | null;
 };
 
 const LessonContext = createContext<LessonContextValue | null>(null);
@@ -272,7 +273,7 @@ function StoryStage({ activeLine, dim = false, faded = false, caption, onClick, 
 }
 
 function StageActions({ onSkip }: { onSkip?: () => void }) {
-  const { chapterNumber } = useLesson();
+  const { chapterNumber, releaseBadge } = useLesson();
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   return (
     <div className={styles.topActions}>
@@ -280,6 +281,7 @@ function StageActions({ onSkip }: { onSkip?: () => void }) {
         <img src="/home/back.svg" alt="" className="h-full w-full" />
       </Link>
       <div className={styles.topActionsRight}>
+        {releaseBadge ? <span className={styles.betaBadge}>{releaseBadge}</span> : null}
         <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
           <FullscreenIcon active={isFullscreen} />
         </HeaderIconButton>
@@ -776,6 +778,7 @@ export type PinocchioLessonModePageProps = {
   initialMedia?: PinocchioChapterMedia;
   progressScope?: string;
   lessonNumberBase?: number;
+  releaseBadge?: string | null;
 };
 
 export function PinocchioLessonModeClient({
@@ -786,6 +789,7 @@ export function PinocchioLessonModeClient({
   initialMedia,
   progressScope = LEGACY_PINOCCHIO_PROGRESS_SCOPE,
   lessonNumberBase = LEGACY_PINOCCHIO_LESSON_NUMBER_BASE,
+  releaseBadge = null,
 }: PinocchioLessonModePageProps = {}) {
   const params = useParams<{ chapter?: string; mode: string }>();
   const router = useRouter();
@@ -877,6 +881,7 @@ export function PinocchioLessonModeClient({
     media,
     progressScope,
     lessonNumberBase,
+    releaseBadge,
   };
 
   let content: ReactNode = null;
