@@ -4,7 +4,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const packRoot = path.join(root, "content-packs", "pinocchio", "v1");
 const levelIds = ["foundation", "core", "studio"];
 
 function argument(name, fallback = undefined) {
@@ -17,7 +16,10 @@ function fail(message) {
 }
 
 const mode = argument("mode", "estimate");
-const requestedChapters = argument("chapter", "all");
+const version = argument("version", "v1");
+if (!new Set(["v1", "v2"]).has(version)) fail("Use --version=v1 or --version=v2.");
+const packRoot = path.join(root, "content-packs", "pinocchio", version);
+const requestedUnits = version === "v2" ? argument("session", "all") : argument("chapter", "all");
 const requestedLevels = argument("level", "all");
 const voiceId = argument("voice-id");
 const voiceName = argument("voice-name");
@@ -35,10 +37,12 @@ function parseSelection(value, allowed, label) {
 }
 
 const manifest = JSON.parse(await readFile(path.join(packRoot, "manifest.json"), "utf8"));
-const chapterNumbers = parseSelection(
-  requestedChapters,
-  manifest.chapters.map((chapter) => String(chapter.number)),
-  "chapter"
+const unitKind = manifest.sessions ? "session" : "chapter";
+const manifestEntries = manifest.sessions || manifest.chapters;
+const unitNumbers = parseSelection(
+  requestedUnits,
+  manifestEntries.map((entry) => String(entry.number)),
+  unitKind
 ).map(Number);
 const selectedLevelIds = parseSelection(requestedLevels, levelIds, "level");
 
@@ -57,19 +61,21 @@ function makePerformanceText(pack, levelId) {
 }
 
 const jobs = [];
-for (const chapterNumber of chapterNumbers) {
-  const entry = manifest.chapters.find((chapter) => chapter.number === chapterNumber);
+for (const unitNumber of unitNumbers) {
+  const entry = manifestEntries.find((item) => item.number === unitNumber);
   const packPath = path.join(packRoot, entry.path);
   const pack = JSON.parse(await readFile(packPath, "utf8"));
   for (const levelId of selectedLevelIds) {
     const text = makePerformanceText(pack, levelId);
-    if (text.length > 5000) fail(`Chapter ${chapterNumber} ${levelId} exceeds the 5,000-character request limit.`);
-    jobs.push({ chapterNumber, entry, pack, packPath, levelId, text });
+    if (text.length > 5000) fail(`${unitKind} ${unitNumber} ${levelId} exceeds the 5,000-character request limit.`);
+    jobs.push({ unitNumber, entry, pack, packPath, levelId, text });
   }
 }
 
 const estimate = {
-  chapters: chapterNumbers.length,
+  version,
+  unitKind,
+  units: unitNumbers.length,
   levels: selectedLevelIds,
   continuousMasterRequests: jobs.length,
   billedCharactersEstimate: jobs.reduce((sum, job) => sum + job.text.length, 0),
@@ -145,7 +151,7 @@ function buildTimeline(job, alignment) {
   let searchFrom = 0;
   const spoken = job.pack.levels[job.levelId].lines.map((line, index) => {
     const offset = alignedText.indexOf(line.text, searchFrom);
-    if (offset < 0) fail(`Could not align chapter ${job.chapterNumber} ${job.levelId} line ${index + 1}.`);
+    if (offset < 0) fail(`Could not align ${unitKind} ${job.unitNumber} ${job.levelId} line ${index + 1}.`);
     searchFrom = offset + line.text.length;
     return { id: line.id, text: line.text, ...timedCharacterRange(alignment, offset, offset + line.text.length) };
   });
@@ -158,7 +164,7 @@ function buildTimeline(job, alignment) {
   }));
 }
 
-const provenanceByChapter = new Map();
+const provenanceByUnit = new Map();
 for (const [jobIndex, job] of jobs.entries()) {
   const result = await createSpeech(job, jobIndex);
   const timeline = buildTimeline(job, result.alignment);
@@ -186,25 +192,26 @@ for (const [jobIndex, job] of jobs.entries()) {
       lines: timeline,
     }, null, 2)}\n`
   );
-  if (!provenanceByChapter.has(job.chapterNumber)) provenanceByChapter.set(job.chapterNumber, []);
-  provenanceByChapter.get(job.chapterNumber).push({
+  if (!provenanceByUnit.has(job.unitNumber)) provenanceByUnit.set(job.unitNumber, []);
+  provenanceByUnit.get(job.unitNumber).push({
     level: job.levelId,
     master: `audio/${job.levelId}.master.mp3`,
     timeline: `audio/${job.levelId}.timeline.json`,
     requestId: result.requestId,
     billedCharactersEstimate: job.text.length,
   });
-  console.log(`Generated chapter ${job.chapterNumber} ${job.levelId} as one continuous master.`);
+  console.log(`Generated ${unitKind} ${job.unitNumber} ${job.levelId} as one continuous master.`);
 }
 
-for (const [chapterNumber, levels] of provenanceByChapter) {
-  const entry = manifest.chapters.find((chapter) => chapter.number === chapterNumber);
+for (const [unitNumber, levels] of provenanceByUnit) {
+  const entry = manifestEntries.find((item) => item.number === unitNumber);
   const outputDir = path.join(path.dirname(path.join(packRoot, entry.path)), "audio");
   await writeFile(
     path.join(outputDir, "provenance.json"),
     `${JSON.stringify({
       schemaVersion: "1.0.0",
-      chapter: chapterNumber,
+      unitKind,
+      unitNumber,
       generatedAt: new Date().toISOString(),
       voice: { id: voiceId, name: voiceName },
       modelId,

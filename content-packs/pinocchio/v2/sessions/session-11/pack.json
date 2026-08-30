@@ -1,0 +1,1856 @@
+{
+  "schemaVersion": "2.0.0",
+  "contentId": "pinocchio-v2-session-11",
+  "version": "2.0.0",
+  "status": "text-ready-art-audio-pending",
+  "course": {
+    "title": "The Adventures of Pinocchio",
+    "session": 11,
+    "totalSessions": 12,
+    "minutes": 60,
+    "modeMinutes": {
+      "watch": 10,
+      "mimic": 25,
+      "guess": 10,
+      "word": 15
+    },
+    "learnerRule": "A learner completes one selected level per session; Foundation, Core, and Studio are alternatives, not cumulative work."
+  },
+  "story": {
+    "slug": "inside-the-terrible-shark",
+    "sourceChapters": [
+      35
+    ],
+    "titleEn": "Inside the Terrible Shark",
+    "titleKo": "거대한 상어 속의 재회",
+    "guidingQuestionKo": "두려움보다 사랑이 더 커지는 순간은 언제일까요?",
+    "synopsisKo": "상어의 배 속에서 제페토를 찾은 피노키오는 지난 여행을 고백하고, 아버지를 등에 업은 채 함께 탈출한다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic twelve-session educational retelling, version 2.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "The twelve sessions preserve the complete original 36-chapter arc, causal sequence, major choices, consequences, reunions, and ending.",
+    "foundation": "Concrete, speakable sentences with one main action and mostly 6–11 words per line.",
+    "core": "Connected sentences with cause, contrast, and reaction, mostly 10–18 words per line.",
+    "studio": "Literary but performable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic peril and slapstick retain their narrative consequence without added graphic detail.",
+    "narration": "Generate one continuous master per session and level; Watch and Mimic must seek within the same performance.",
+    "classTime": "The story text remains concise; sixty minutes comes from deliberate replay, recording, comparison, retrieval, and sentence reconstruction—not padding the narration."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Hold the darkness and distant candle patiently, let the reunion breathe, perform Pinocchio's long confession with urgency, and make the second escape attempt resolute and luminous.",
+    "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "status": "brief-ready-asset-pending",
+    "expectedAsset": "assets/session-11.png",
+    "artBrief": "A vast dark Shark interior leads from Tunny and a distant candle to Geppetto's tiny table, swallowed ship supplies, throat, moonlit open mouth, tongue road, sneeze setback, and final leap into the sea.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "멀리 있는 불빛",
+        "summaryKo": "완전한 어둠 속에서 작은 촛불을 발견한다.",
+        "performanceTag": "[hushed]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            1
+          ],
+          "core": [
+            0,
+            1
+          ],
+          "studio": [
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "제페토",
+        "summaryKo": "두 해 동안 갇힌 아버지와 마침내 만난다.",
+        "performanceTag": "[with astonished joy]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            2,
+            3
+          ],
+          "studio": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "긴 고백",
+        "summaryKo": "피노키오가 자신의 모든 여행을 털어놓는다.",
+        "performanceTag": "[breathlessly]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            5
+          ],
+          "core": [
+            4,
+            5
+          ],
+          "studio": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "두 해의 생존",
+        "summaryKo": "제페토가 배의 식량으로 버틴 사연을 말한다.",
+        "performanceTag": "[wearily]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "탈출 계획",
+        "summaryKo": "마지막 촛불이 꺼지기 전에 나가기로 한다.",
+        "performanceTag": "[decisively]",
+        "lineRanges": {
+          "foundation": [
+            8,
+            9
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "열린 입",
+        "summaryKo": "잠든 Shark의 입에서 별빛을 본다.",
+        "performanceTag": "[with quiet suspense]",
+        "lineRanges": {
+          "foundation": [
+            10,
+            11
+          ],
+          "core": [
+            10,
+            11
+          ],
+          "studio": [
+            10,
+            11
+          ]
+        }
+      },
+      {
+        "id": "beat-07",
+        "titleKo": "첫 실패",
+        "summaryKo": "재채기에 다시 어둠 속으로 떨어진다.",
+        "performanceTag": "[startled]",
+        "lineRanges": {
+          "foundation": [
+            12,
+            13
+          ],
+          "core": [
+            12,
+            13
+          ],
+          "studio": [
+            12,
+            13
+          ]
+        }
+      },
+      {
+        "id": "beat-08",
+        "titleKo": "아버지를 업고",
+        "summaryKo": "두 번째 시도에서 함께 바다로 뛰어든다.",
+        "performanceTag": "[bravely]",
+        "lineRanges": {
+          "foundation": [
+            14,
+            15
+          ],
+          "core": [
+            14,
+            15
+          ],
+          "studio": [
+            14,
+            15
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건과 결과를 순서대로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio followed a tiny light through the darkness."
+        },
+        {
+          "id": "line-02",
+          "text": "An old man sat beside the last candle."
+        },
+        {
+          "id": "line-03",
+          "text": "The old man was his father, Geppetto."
+        },
+        {
+          "id": "line-04",
+          "text": "Father and son hugged, laughed, and cried."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio told Geppetto about his long journey."
+        },
+        {
+          "id": "line-06",
+          "text": "Geppetto described the storm and the Terrible Shark."
+        },
+        {
+          "id": "line-07",
+          "text": "He had lived inside it for two years."
+        },
+        {
+          "id": "line-08",
+          "text": "Food from a swallowed ship kept him alive."
+        },
+        {
+          "id": "line-09",
+          "text": "Now the supplies and final candle were ending."
+        },
+        {
+          "id": "line-10",
+          "text": "Pinocchio said they must escape immediately."
+        },
+        {
+          "id": "line-11",
+          "text": "Geppetto could not swim, but Pinocchio could."
+        },
+        {
+          "id": "line-12",
+          "text": "The old Shark slept with its mouth open."
+        },
+        {
+          "id": "line-13",
+          "text": "A sudden sneeze ruined their first escape."
+        },
+        {
+          "id": "line-14",
+          "text": "Pinocchio took Geppetto's hand and tried again."
+        },
+        {
+          "id": "line-15",
+          "text": "Geppetto climbed securely onto his son's back."
+        },
+        {
+          "id": "line-16",
+          "text": "Together they jumped and swam into moonlight."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "오랫동안 찾던 사람을 만나면 가장 먼저 어떤 말을 하고 싶을까요?",
+            "상대가 약할 때 용기는 힘보다 무엇을 필요로 할까요?"
+          ],
+          "afterPromptsKo": [
+            "Pinocchio의 긴 고백은 변명과 책임 중 어디에 더 가까웠나요?",
+            "첫 탈출 실패 뒤 두 번째 시도가 성공한 이유를 말해 보세요."
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "Pinocchio followed a tiny light through the darkness."
+            },
+            {
+              "lineIndex": 1,
+              "text": "An old man sat beside the last candle."
+            },
+            {
+              "lineIndex": 2,
+              "text": "The old man was his father, Geppetto."
+            },
+            {
+              "lineIndex": 3,
+              "text": "Father and son hugged, laughed, and cried."
+            },
+            {
+              "lineIndex": 4,
+              "text": "Pinocchio told Geppetto about his long journey."
+            },
+            {
+              "lineIndex": 5,
+              "text": "Geppetto described the storm and the Terrible Shark."
+            },
+            {
+              "lineIndex": 6,
+              "text": "He had lived inside it for two years."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Food from a swallowed ship kept him alive."
+            },
+            {
+              "lineIndex": 8,
+              "text": "Now the supplies and final candle were ending."
+            },
+            {
+              "lineIndex": 9,
+              "text": "Pinocchio said they must escape immediately."
+            },
+            {
+              "lineIndex": 10,
+              "text": "Geppetto could not swim, but Pinocchio could."
+            },
+            {
+              "lineIndex": 11,
+              "text": "The old Shark slept with its mouth open."
+            },
+            {
+              "lineIndex": 12,
+              "text": "A sudden sneeze ruined their first escape."
+            },
+            {
+              "lineIndex": 13,
+              "text": "Pinocchio took Geppetto's hand and tried again."
+            },
+            {
+              "lineIndex": 14,
+              "text": "Geppetto climbed securely onto his son's back."
+            },
+            {
+              "lineIndex": 15,
+              "text": "Together they jumped and swam into moonlight."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "An old man sat beside the last candle."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "He had lived inside it for two years."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The old Shark slept with its mouth open."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "Now the supplies and final candle were ending."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio took Geppetto's hand and tried again."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "Father and son hugged, laughed, and cried."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Together they jumped and swam into moonlight."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Geppetto described the storm and the Terrible Shark."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "Geppetto could not swim, but Pinocchio could."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Food from a swallowed ship kept him alive."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "A sudden sneeze ruined their first escape."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "An old man sat beside the last candle."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "Geppetto climbed securely onto his son's back."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "Father and son hugged, laughed, and cried."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "Pinocchio said they must escape immediately."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Geppetto described the storm and the Terrible Shark."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "The old Shark slept with its mouth open."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "Pinocchio followed a tiny light through the darkness."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "Pinocchio took Geppetto's hand and tried again."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "The old man was his father, Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Food from a swallowed ship kept him alive."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "Pinocchio told Geppetto about his long journey."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "Pinocchio said they must escape immediately."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Together they jumped and swam into moonlight."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "An old man sat beside the last candle.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "An",
+                "old",
+                "man",
+                "sat",
+                "beside",
+                "the",
+                "last",
+                "candle",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "Father and son hugged, laughed, and cried.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Father",
+                "and",
+                "son",
+                "hugged",
+                ",",
+                "laughed",
+                ",",
+                "and",
+                "cried",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "Geppetto described the storm and the Terrible Shark.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Geppetto",
+                "described",
+                "the",
+                "storm",
+                "and",
+                "the",
+                "Terrible",
+                "Shark",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Food from a swallowed ship kept him alive.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Food",
+                "from",
+                "a",
+                "swallowed",
+                "ship",
+                "kept",
+                "him",
+                "alive",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "Pinocchio said they must escape immediately.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "said",
+                "they",
+                "must",
+                "escape",
+                "immediately",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "The old Shark slept with its mouth open.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "old",
+                "Shark",
+                "slept",
+                "with",
+                "its",
+                "mouth",
+                "open",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "Pinocchio took Geppetto's hand and tried again.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "took",
+                "Geppetto's",
+                "hand",
+                "and",
+                "tried",
+                "again",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "Together they jumped and swam into moonlight.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Together",
+                "they",
+                "jumped",
+                "and",
+                "swam",
+                "into",
+                "moonlight",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "빛을 발견한 순간부터 바다로 탈출한 순간까지 말해 보세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 118,
+        "characters": 718,
+        "averageWordsPerLine": 7.4
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인, 선택, 반응을 연결해 자연스럽게 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Pinocchio left the Tunny and followed a tiny light through the darkness."
+        },
+        {
+          "id": "line-02",
+          "text": "At a small table, an old man ate beside his final candle."
+        },
+        {
+          "id": "line-03",
+          "text": "The white-haired prisoner was Geppetto, the father Pinocchio had searched for."
+        },
+        {
+          "id": "line-04",
+          "text": "They embraced in disbelief, laughing and crying at the same time."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio poured out the entire story of his mistakes and misfortunes."
+        },
+        {
+          "id": "line-06",
+          "text": "Geppetto explained how the storm and Terrible Shark had swallowed him."
+        },
+        {
+          "id": "line-07",
+          "text": "He had survived inside the monster for two long years."
+        },
+        {
+          "id": "line-08",
+          "text": "Supplies from a swallowed merchant ship had provided food, candles, and matches."
+        },
+        {
+          "id": "line-09",
+          "text": "Now the food was gone, and the candle on the table was the last."
+        },
+        {
+          "id": "line-10",
+          "text": "Pinocchio insisted that they attempt an escape before darkness returned."
+        },
+        {
+          "id": "line-11",
+          "text": "Although Geppetto could not swim, Pinocchio promised to carry him."
+        },
+        {
+          "id": "line-12",
+          "text": "The ancient Shark's asthma forced it to sleep with its mouth open."
+        },
+        {
+          "id": "line-13",
+          "text": "Their first attempt failed when a sudden sneeze threw them backward."
+        },
+        {
+          "id": "line-14",
+          "text": "Pinocchio refused despair, took his father's hand, and climbed again."
+        },
+        {
+          "id": "line-15",
+          "text": "At the final row of teeth, Geppetto climbed onto his son's back."
+        },
+        {
+          "id": "line-16",
+          "text": "Pinocchio leaped into the moonlit water and began carrying them home."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "오랫동안 찾던 사람을 만나면 가장 먼저 어떤 말을 하고 싶을까요?",
+            "상대가 약할 때 용기는 힘보다 무엇을 필요로 할까요?"
+          ],
+          "afterPromptsKo": [
+            "Pinocchio의 긴 고백은 변명과 책임 중 어디에 더 가까웠나요?",
+            "첫 탈출 실패 뒤 두 번째 시도가 성공한 이유를 말해 보세요."
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "Pinocchio left the Tunny and followed a tiny light through the darkness."
+            },
+            {
+              "lineIndex": 1,
+              "text": "At a small table, an old man ate beside his final candle."
+            },
+            {
+              "lineIndex": 2,
+              "text": "The white-haired prisoner was Geppetto, the father Pinocchio had searched for."
+            },
+            {
+              "lineIndex": 3,
+              "text": "They embraced in disbelief, laughing and crying at the same time."
+            },
+            {
+              "lineIndex": 4,
+              "text": "Pinocchio poured out the entire story of his mistakes and misfortunes."
+            },
+            {
+              "lineIndex": 5,
+              "text": "Geppetto explained how the storm and Terrible Shark had swallowed him."
+            },
+            {
+              "lineIndex": 6,
+              "text": "He had survived inside the monster for two long years."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Supplies from a swallowed merchant ship had provided food, candles, and matches."
+            },
+            {
+              "lineIndex": 8,
+              "text": "Now the food was gone, and the candle on the table was the last."
+            },
+            {
+              "lineIndex": 9,
+              "text": "Pinocchio insisted that they attempt an escape before darkness returned."
+            },
+            {
+              "lineIndex": 10,
+              "text": "Although Geppetto could not swim, Pinocchio promised to carry him."
+            },
+            {
+              "lineIndex": 11,
+              "text": "The ancient Shark's asthma forced it to sleep with its mouth open."
+            },
+            {
+              "lineIndex": 12,
+              "text": "Their first attempt failed when a sudden sneeze threw them backward."
+            },
+            {
+              "lineIndex": 13,
+              "text": "Pinocchio refused despair, took his father's hand, and climbed again."
+            },
+            {
+              "lineIndex": 14,
+              "text": "At the final row of teeth, Geppetto climbed onto his son's back."
+            },
+            {
+              "lineIndex": 15,
+              "text": "Pinocchio leaped into the moonlit water and began carrying them home."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "At a small table, an old man ate beside his final candle."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "He had survived inside the monster for two long years."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The ancient Shark's asthma forced it to sleep with its mouth open."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "Now the food was gone, and the candle on the table was the last."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio refused despair, took his father's hand, and climbed again."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "They embraced in disbelief, laughing and crying at the same time."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Pinocchio leaped into the moonlit water and began carrying them home."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Geppetto explained how the storm and Terrible Shark had swallowed him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "Although Geppetto could not swim, Pinocchio promised to carry him."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Supplies from a swallowed merchant ship had provided food, candles, and matches."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "Their first attempt failed when a sudden sneeze threw them backward."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "At a small table, an old man ate beside his final candle."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "At the final row of teeth, Geppetto climbed onto his son's back."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "They embraced in disbelief, laughing and crying at the same time."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "Pinocchio insisted that they attempt an escape before darkness returned."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Geppetto explained how the storm and Terrible Shark had swallowed him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "The ancient Shark's asthma forced it to sleep with its mouth open."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "Pinocchio left the Tunny and followed a tiny light through the darkness."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "Pinocchio refused despair, took his father's hand, and climbed again."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "The white-haired prisoner was Geppetto, the father Pinocchio had searched for."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Supplies from a swallowed merchant ship had provided food, candles, and matches."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "Pinocchio poured out the entire story of his mistakes and misfortunes."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "Pinocchio insisted that they attempt an escape before darkness returned."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Pinocchio leaped into the moonlit water and began carrying them home."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "At a small table, an old man ate beside his final candle.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "At",
+                "a",
+                "small",
+                "table",
+                ",",
+                "an",
+                "old",
+                "man",
+                "ate",
+                "beside",
+                "his",
+                "final",
+                "candle",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "They embraced in disbelief, laughing and crying at the same time.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "They",
+                "embraced",
+                "in",
+                "disbelief",
+                ",",
+                "laughing",
+                "and",
+                "crying",
+                "at",
+                "the",
+                "same",
+                "time",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "Geppetto explained how the storm and Terrible Shark had swallowed him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Geppetto",
+                "explained",
+                "how",
+                "the",
+                "storm",
+                "and",
+                "Terrible",
+                "Shark",
+                "had",
+                "swallowed",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Supplies from a swallowed merchant ship had provided food, candles, and matches.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Supplies",
+                "from",
+                "a",
+                "swallowed",
+                "merchant",
+                "ship",
+                "had",
+                "provided",
+                "food",
+                ",",
+                "candles",
+                ",",
+                "and",
+                "matches",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "Pinocchio insisted that they attempt an escape before darkness returned.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "insisted",
+                "that",
+                "they",
+                "attempt",
+                "an",
+                "escape",
+                "before",
+                "darkness",
+                "returned",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "The ancient Shark's asthma forced it to sleep with its mouth open.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "ancient",
+                "Shark's",
+                "asthma",
+                "forced",
+                "it",
+                "to",
+                "sleep",
+                "with",
+                "its",
+                "mouth",
+                "open",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "Pinocchio refused despair, took his father's hand, and climbed again.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "refused",
+                "despair",
+                ",",
+                "took",
+                "his",
+                "father's",
+                "hand",
+                ",",
+                "and",
+                "climbed",
+                "again",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "Pinocchio leaped into the moonlit water and began carrying them home.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "leaped",
+                "into",
+                "the",
+                "moonlit",
+                "water",
+                "and",
+                "began",
+                "carrying",
+                "them",
+                "home",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "Pinocchio가 Geppetto를 찾고 두 번째 시도로 탈출하는 과정을 설명하세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 180,
+        "characters": 1099,
+        "averageWordsPerLine": 11.3
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "서술자의 어조와 도덕적 긴장을 살려 해석하고 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Leaving the resigned Tunny behind, Pinocchio followed a faint light through the vast darkness of the Shark."
+        },
+        {
+          "id": "line-02",
+          "text": "The glow came from a final candle beside a tiny table where a white-haired old man ate live fish."
+        },
+        {
+          "id": "line-03",
+          "text": "Recognition arrived almost too powerfully for speech: the prisoner was Geppetto, still waiting after two years."
+        },
+        {
+          "id": "line-04",
+          "text": "Father and son embraced with the confused laughter and tears of people who had imagined each other lost."
+        },
+        {
+          "id": "line-05",
+          "text": "Pinocchio released the entire journey in one breathless confession, naming temptations, lies, punishments, helpers, and regret."
+        },
+        {
+          "id": "line-06",
+          "text": "Geppetto answered with his own story of the storm, the overturned boat, and the monster that swallowed him."
+        },
+        {
+          "id": "line-07",
+          "text": "A merchant ship had also disappeared into the Shark, leaving enough supplies to sustain one man in darkness."
+        },
+        {
+          "id": "line-08",
+          "text": "Those provisions had lasted two years, but now both the cupboard and the final candle were nearly empty."
+        },
+        {
+          "id": "line-09",
+          "text": "Pinocchio immediately proposed escaping through the mouth, treating action as responsibility rather than impulse."
+        },
+        {
+          "id": "line-10",
+          "text": "Geppetto admitted that he could not swim and doubted that a small marionette could carry him."
+        },
+        {
+          "id": "line-11",
+          "text": "His son answered that they should test courage together rather than wait separately for the end."
+        },
+        {
+          "id": "line-12",
+          "text": "Because age and asthma forced the Shark to sleep with its mouth open, moonlight marked a possible route."
+        },
+        {
+          "id": "line-13",
+          "text": "A sudden sneeze destroyed their first attempt and sent them sliding back into darkness without the candle."
+        },
+        {
+          "id": "line-14",
+          "text": "Pinocchio refused the language of defeat, found his father's hand, and led the climb a second time."
+        },
+        {
+          "id": "line-15",
+          "text": "Beyond the tongue and three rows of teeth, Geppetto settled his weight onto the wooden shoulders."
+        },
+        {
+          "id": "line-16",
+          "text": "Pinocchio leaped into the calm moonlit sea, finally using his strength to carry the father who had carried him."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "오랫동안 찾던 사람을 만나면 가장 먼저 어떤 말을 하고 싶을까요?",
+            "상대가 약할 때 용기는 힘보다 무엇을 필요로 할까요?"
+          ],
+          "afterPromptsKo": [
+            "Pinocchio의 긴 고백은 변명과 책임 중 어디에 더 가까웠나요?",
+            "첫 탈출 실패 뒤 두 번째 시도가 성공한 이유를 말해 보세요."
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "Leaving the resigned Tunny behind, Pinocchio followed a faint light through the vast darkness of the Shark."
+            },
+            {
+              "lineIndex": 1,
+              "text": "The glow came from a final candle beside a tiny table where a white-haired old man ate live fish."
+            },
+            {
+              "lineIndex": 2,
+              "text": "Recognition arrived almost too powerfully for speech: the prisoner was Geppetto, still waiting after two years."
+            },
+            {
+              "lineIndex": 3,
+              "text": "Father and son embraced with the confused laughter and tears of people who had imagined each other lost."
+            },
+            {
+              "lineIndex": 4,
+              "text": "Pinocchio released the entire journey in one breathless confession, naming temptations, lies, punishments, helpers, and regret."
+            },
+            {
+              "lineIndex": 5,
+              "text": "Geppetto answered with his own story of the storm, the overturned boat, and the monster that swallowed him."
+            },
+            {
+              "lineIndex": 6,
+              "text": "A merchant ship had also disappeared into the Shark, leaving enough supplies to sustain one man in darkness."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Those provisions had lasted two years, but now both the cupboard and the final candle were nearly empty."
+            },
+            {
+              "lineIndex": 8,
+              "text": "Pinocchio immediately proposed escaping through the mouth, treating action as responsibility rather than impulse."
+            },
+            {
+              "lineIndex": 9,
+              "text": "Geppetto admitted that he could not swim and doubted that a small marionette could carry him."
+            },
+            {
+              "lineIndex": 10,
+              "text": "His son answered that they should test courage together rather than wait separately for the end."
+            },
+            {
+              "lineIndex": 11,
+              "text": "Because age and asthma forced the Shark to sleep with its mouth open, moonlight marked a possible route."
+            },
+            {
+              "lineIndex": 12,
+              "text": "A sudden sneeze destroyed their first attempt and sent them sliding back into darkness without the candle."
+            },
+            {
+              "lineIndex": 13,
+              "text": "Pinocchio refused the language of defeat, found his father's hand, and led the climb a second time."
+            },
+            {
+              "lineIndex": 14,
+              "text": "Beyond the tongue and three rows of teeth, Geppetto settled his weight onto the wooden shoulders."
+            },
+            {
+              "lineIndex": 15,
+              "text": "Pinocchio leaped into the calm moonlit sea, finally using his strength to carry the father who had carried him."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "The glow came from a final candle beside a tiny table where a white-haired old man ate live fish."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "A merchant ship had also disappeared into the Shark, leaving enough supplies to sustain one man in darkness."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Because age and asthma forced the Shark to sleep with its mouth open, moonlight marked a possible route."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "Pinocchio immediately proposed escaping through the mouth, treating action as responsibility rather than impulse."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio refused the language of defeat, found his father's hand, and led the climb a second time."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "Father and son embraced with the confused laughter and tears of people who had imagined each other lost."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Pinocchio leaped into the calm moonlit sea, finally using his strength to carry the father who had carried him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Geppetto answered with his own story of the storm, the overturned boat, and the monster that swallowed him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "His son answered that they should test courage together rather than wait separately for the end."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Those provisions had lasted two years, but now both the cupboard and the final candle were nearly empty."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "A sudden sneeze destroyed their first attempt and sent them sliding back into darkness without the candle."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "The glow came from a final candle beside a tiny table where a white-haired old man ate live fish."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "Beyond the tongue and three rows of teeth, Geppetto settled his weight onto the wooden shoulders."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "Father and son embraced with the confused laughter and tears of people who had imagined each other lost."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "Geppetto admitted that he could not swim and doubted that a small marionette could carry him."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Geppetto answered with his own story of the storm, the overturned boat, and the monster that swallowed him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "Because age and asthma forced the Shark to sleep with its mouth open, moonlight marked a possible route."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "Leaving the resigned Tunny behind, Pinocchio followed a faint light through the vast darkness of the Shark."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "Pinocchio refused the language of defeat, found his father's hand, and led the climb a second time."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "Recognition arrived almost too powerfully for speech: the prisoner was Geppetto, still waiting after two years."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Those provisions had lasted two years, but now both the cupboard and the final candle were nearly empty."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "Pinocchio released the entire journey in one breathless confession, naming temptations, lies, punishments, helpers, and regret."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "Geppetto admitted that he could not swim and doubted that a small marionette could carry him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Pinocchio leaped into the calm moonlit sea, finally using his strength to carry the father who had carried him."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "The glow came from a final candle beside a tiny table where a white-haired old man ate live fish.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "glow",
+                "came",
+                "from",
+                "a",
+                "final",
+                "candle",
+                "beside",
+                "a",
+                "tiny",
+                "table",
+                "where",
+                "a",
+                "white",
+                "-",
+                "haired",
+                "old",
+                "man",
+                "ate",
+                "live",
+                "fish",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "Father and son embraced with the confused laughter and tears of people who had imagined each other lost.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Father",
+                "and",
+                "son",
+                "embraced",
+                "with",
+                "the",
+                "confused",
+                "laughter",
+                "and",
+                "tears",
+                "of",
+                "people",
+                "who",
+                "had",
+                "imagined",
+                "each",
+                "other",
+                "lost",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "Geppetto answered with his own story of the storm, the overturned boat, and the monster that swallowed him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Geppetto",
+                "answered",
+                "with",
+                "his",
+                "own",
+                "story",
+                "of",
+                "the",
+                "storm",
+                ",",
+                "the",
+                "overturned",
+                "boat",
+                ",",
+                "and",
+                "the",
+                "monster",
+                "that",
+                "swallowed",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Those provisions had lasted two years, but now both the cupboard and the final candle were nearly empty.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Those",
+                "provisions",
+                "had",
+                "lasted",
+                "two",
+                "years",
+                ",",
+                "but",
+                "now",
+                "both",
+                "the",
+                "cupboard",
+                "and",
+                "the",
+                "final",
+                "candle",
+                "were",
+                "nearly",
+                "empty",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "Geppetto admitted that he could not swim and doubted that a small marionette could carry him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Geppetto",
+                "admitted",
+                "that",
+                "he",
+                "could",
+                "not",
+                "swim",
+                "and",
+                "doubted",
+                "that",
+                "a",
+                "small",
+                "marionette",
+                "could",
+                "carry",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "Because age and asthma forced the Shark to sleep with its mouth open, moonlight marked a possible route.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Because",
+                "age",
+                "and",
+                "asthma",
+                "forced",
+                "the",
+                "Shark",
+                "to",
+                "sleep",
+                "with",
+                "its",
+                "mouth",
+                "open",
+                ",",
+                "moonlight",
+                "marked",
+                "a",
+                "possible",
+                "route",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "Pinocchio refused the language of defeat, found his father's hand, and led the climb a second time.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "refused",
+                "the",
+                "language",
+                "of",
+                "defeat",
+                ",",
+                "found",
+                "his",
+                "father's",
+                "hand",
+                ",",
+                "and",
+                "led",
+                "the",
+                "climb",
+                "a",
+                "second",
+                "time",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "Pinocchio leaped into the calm moonlit sea, finally using his strength to carry the father who had carried him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "leaped",
+                "into",
+                "the",
+                "calm",
+                "moonlit",
+                "sea",
+                ",",
+                "finally",
+                "using",
+                "his",
+                "strength",
+                "to",
+                "carry",
+                "the",
+                "father",
+                "who",
+                "had",
+                "carried",
+                "him",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "첫 회차의 ‘아버지를 떠나는 움직임’과 이번 회차의 ‘아버지를 업는 움직임’을 대조하세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 273,
+        "characters": 1699,
+        "averageWordsPerLine": 17.1
+      }
+    }
+  },
+  "checksum": "7d051604d24a8c43eae88cf95f8b6e0b4846d207ed7f0e1853564d743cd27d8f"
+}

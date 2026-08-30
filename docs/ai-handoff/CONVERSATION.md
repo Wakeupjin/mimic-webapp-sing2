@@ -654,3 +654,25 @@ Added a compiler, structural/asset validator, image-generation record, and a pro
 - docs/ai-handoff/CONVERSATION.md
 
 **Open risks:** Audio masters are intentionally pending because the current free balance is insufficient and Lily is not a durable narrator. Generate commercial masters only after selecting a durable narrator on a paid plan and then complete a human listen-through. Confirm Korean-market public-domain status before commercial distribution. Do not integrate or deploy from this R&D thread.
+
+## 2026-08-30 11:29:10 — user / request
+
+Approved rebuilding the material as a true twelve-session curriculum. Reframe the complete original 36-chapter Pinocchio arc into twelve lessons rather than treating original Chapters 1–12 as the whole course. Each lesson must support Watch, Mimic, Guess, and Word for a real sixty-minute session at the learner's selected Foundation, Core, or Studio level. Keep narration generation pending until the rewritten text is approved.
+
+## 2026-08-30 11:52:00 — codex / checkpoint
+
+Completed the corrected Pinocchio v2 text curriculum. All original Chapters 1–36 are assigned exactly once, in order, across twelve dramatic sessions that run from the talking wood through the final transformation into a real boy. The earlier v1 remains preserved for audit but is superseded for the twelve-session course.
+
+Every session now provides Foundation, Core, and Studio alternatives with sixteen shared Watch/Mimic lines, eight Guess items, eight Word sentence rebuilds, one final retell, two before-listening and two after-listening prompts, eight performance/story beats, narration direction, and a new-session art brief. The product timing contract is Watch 10 minutes, Mimic 25, Guess 10, and Word 15; a learner completes one level, never all three.
+
+**Validation:** V2 compiler and validator pass with twelve sessions, full ordered coverage of original Chapters 1–36, 576 leveled lines, 6,716 words, 41,678 script characters, 288 Guess items, 288 Word items, 96 beats, and zero language-band exceptions. ElevenLabs estimate mode reports 36 continuous masters and approximately 46,136 billed characters including performance tags. Node syntax, TypeScript, and whitespace checks pass. A full Next build stopped producing output after compilation began and was canceled; no app runtime code changed. No v2 art, audio, Preview, or production deployment was created.
+
+**Files:**
+- content-packs/pinocchio/v2/
+- scripts/build-pinocchio-12-session-pack.mjs
+- scripts/validate-pinocchio-12-session-pack.mjs
+- scripts/generate-pinocchio-content-pack-audio.mjs
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
+
+**Open risks:** Sixty-minute timing needs a real learner/classroom pilot even though the interaction budget is explicit. V2 art and audio remain pending. Lily is not a durable production narrator, and commercial masters require a paid plan. The full Next build remains an integration-time check after the local build process stalled without an error. Confirm Korean-market public-domain status before commercial distribution. Do not deploy from this content R&D thread.

@@ -1,0 +1,1850 @@
+{
+  "schemaVersion": "2.0.0",
+  "contentId": "pinocchio-v2-session-08",
+  "version": "2.0.0",
+  "status": "text-ready-art-audio-pending",
+  "course": {
+    "title": "The Adventures of Pinocchio",
+    "session": 8,
+    "totalSessions": 12,
+    "minutes": 60,
+    "modeMinutes": {
+      "watch": 10,
+      "mimic": 25,
+      "guess": 10,
+      "word": 15
+    },
+    "learnerRule": "A learner completes one selected level per session; Foundation, Core, and Studio are alternatives, not cumulative work."
+  },
+  "story": {
+    "slug": "trouble-at-school-and-a-second-chance",
+    "sourceChapters": [
+      27,
+      28,
+      29
+    ],
+    "titleEn": "Trouble at School and a Second Chance",
+    "titleKo": "학교의 소동과 두 번째 기회",
+    "guidingQuestionKo": "실수를 바로잡는 행동은 사과만으로 충분할까요?",
+    "synopsisKo": "거짓 소문으로 시작된 싸움에서 피노키오는 누명을 쓰고 쫓기지만, 자신을 쫓던 개를 구하고 도움을 돌려받은 뒤 다시 성실함을 증명한다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic twelve-session educational retelling, version 2.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "The twelve sessions preserve the complete original 36-chapter arc, causal sequence, major choices, consequences, reunions, and ending.",
+    "foundation": "Concrete, speakable sentences with one main action and mostly 6–11 words per line.",
+    "core": "Connected sentences with cause, contrast, and reaction, mostly 10–18 words per line.",
+    "studio": "Literary but performable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic peril and slapstick retain their narrative consequence without added graphic detail.",
+    "narration": "Generate one continuous master per session and level; Watch and Mimic must seek within the same performance.",
+    "classTime": "The story text remains concise; sixty minutes comes from deliberate replay, recording, comparison, retrieval, and sentence reconstruction—not padding the narration."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Keep the school fight fast but not triumphant, emphasize the reciprocal rescue between Pinocchio and Alidoro, and end with earned hope rather than instant perfection.",
+    "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "status": "brief-ready-asset-pending",
+    "expectedAsset": "assets/session-08.png",
+    "artBrief": "A coastal stage links the book fight, wounded classmate, officers, Alidoro's sea chase, Green Fisherman's net and kitchen, Fairy's slow door, study desk, and promised celebration.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "거짓 소문",
+        "summaryKo": "Shark 이야기가 친구들의 거짓말이었음을 안다.",
+        "performanceTag": "[disappointed]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            1
+          ],
+          "core": [
+            0,
+            1
+          ],
+          "studio": [
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "책으로 벌인 싸움",
+        "summaryKo": "Eugene이 다치고 다른 아이들은 달아난다.",
+        "performanceTag": "[with alarm]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            2,
+            3
+          ],
+          "studio": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "잘못된 체포",
+        "summaryKo": "남아 있던 피노키오가 범인으로 몰린다.",
+        "performanceTag": "[urgently]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            5
+          ],
+          "core": [
+            4,
+            5
+          ],
+          "studio": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "추격자를 구하다",
+        "summaryKo": "물에 빠진 Alidoro를 되돌아가 구한다.",
+        "performanceTag": "[bravely]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "Green Fisherman",
+        "summaryKo": "그물에 잡혀 요리가 될 위기에 놓인다.",
+        "performanceTag": "[with dark humor]",
+        "lineRanges": {
+          "foundation": [
+            8,
+            9
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "돌아온 도움",
+        "summaryKo": "Alidoro가 은혜를 갚아 피노키오를 구한다.",
+        "performanceTag": "[triumphantly]",
+        "lineRanges": {
+          "foundation": [
+            10,
+            11
+          ],
+          "core": [
+            10,
+            11
+          ],
+          "studio": [
+            10,
+            11
+          ]
+        }
+      },
+      {
+        "id": "beat-07",
+        "titleKo": "느린 문",
+        "summaryKo": "조급함 때문에 또 다른 작은 벌을 겪는다.",
+        "performanceTag": "[wryly]",
+        "lineRanges": {
+          "foundation": [
+            12,
+            13
+          ],
+          "core": [
+            12,
+            13
+          ],
+          "studio": [
+            12,
+            13
+          ]
+        }
+      },
+      {
+        "id": "beat-08",
+        "titleKo": "증명된 변화",
+        "summaryKo": "오랜 노력 끝에 사람이 될 약속을 받는다.",
+        "performanceTag": "[warmly]",
+        "lineRanges": {
+          "foundation": [
+            14,
+            15
+          ],
+          "core": [
+            14,
+            15
+          ],
+          "studio": [
+            14,
+            15
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건과 결과를 순서대로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "At the beach, there was no Shark."
+        },
+        {
+          "id": "line-02",
+          "text": "The classmates had lied and started a fight."
+        },
+        {
+          "id": "line-03",
+          "text": "They threw schoolbooks like heavy stones."
+        },
+        {
+          "id": "line-04",
+          "text": "One book struck a boy named Eugene."
+        },
+        {
+          "id": "line-05",
+          "text": "The other boys fled before the officers arrived."
+        },
+        {
+          "id": "line-06",
+          "text": "The officers blamed Pinocchio and arrested him."
+        },
+        {
+          "id": "line-07",
+          "text": "A police dog named Alidoro chased him."
+        },
+        {
+          "id": "line-08",
+          "text": "Alidoro fell into the sea, so Pinocchio saved him."
+        },
+        {
+          "id": "line-09",
+          "text": "Later, a Green Fisherman caught Pinocchio in a net."
+        },
+        {
+          "id": "line-10",
+          "text": "The Fisherman planned to fry him for dinner."
+        },
+        {
+          "id": "line-11",
+          "text": "Alidoro returned and carried Pinocchio to safety."
+        },
+        {
+          "id": "line-12",
+          "text": "Pinocchio hurried back to the Fairy's house."
+        },
+        {
+          "id": "line-13",
+          "text": "The slow Snail made him wait all night."
+        },
+        {
+          "id": "line-14",
+          "text": "His impatient kick trapped one foot in the door."
+        },
+        {
+          "id": "line-15",
+          "text": "For many months, Pinocchio studied and worked faithfully."
+        },
+        {
+          "id": "line-16",
+          "text": "The Fairy promised he would become a boy tomorrow."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "나를 괴롭힌 사람도 위험에 빠지면 도와야 할까요?",
+            "신뢰를 다시 얻으려면 얼마나 오래 행동으로 보여 줘야 할까요?"
+          ],
+          "afterPromptsKo": [
+            "Pinocchio와 Alidoro가 서로를 구한 장면을 비교하세요.",
+            "Fairy의 용서는 왜 즉시 주어진 것이 아니었나요?"
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "At the beach, there was no Shark."
+            },
+            {
+              "lineIndex": 1,
+              "text": "The classmates had lied and started a fight."
+            },
+            {
+              "lineIndex": 2,
+              "text": "They threw schoolbooks like heavy stones."
+            },
+            {
+              "lineIndex": 3,
+              "text": "One book struck a boy named Eugene."
+            },
+            {
+              "lineIndex": 4,
+              "text": "The other boys fled before the officers arrived."
+            },
+            {
+              "lineIndex": 5,
+              "text": "The officers blamed Pinocchio and arrested him."
+            },
+            {
+              "lineIndex": 6,
+              "text": "A police dog named Alidoro chased him."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Alidoro fell into the sea, so Pinocchio saved him."
+            },
+            {
+              "lineIndex": 8,
+              "text": "Later, a Green Fisherman caught Pinocchio in a net."
+            },
+            {
+              "lineIndex": 9,
+              "text": "The Fisherman planned to fry him for dinner."
+            },
+            {
+              "lineIndex": 10,
+              "text": "Alidoro returned and carried Pinocchio to safety."
+            },
+            {
+              "lineIndex": 11,
+              "text": "Pinocchio hurried back to the Fairy's house."
+            },
+            {
+              "lineIndex": 12,
+              "text": "The slow Snail made him wait all night."
+            },
+            {
+              "lineIndex": 13,
+              "text": "His impatient kick trapped one foot in the door."
+            },
+            {
+              "lineIndex": 14,
+              "text": "For many months, Pinocchio studied and worked faithfully."
+            },
+            {
+              "lineIndex": 15,
+              "text": "The Fairy promised he would become a boy tomorrow."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "The classmates had lied and started a fight."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "A police dog named Alidoro chased him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio hurried back to the Fairy's house."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "Later, a Green Fisherman caught Pinocchio in a net."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "His impatient kick trapped one foot in the door."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "One book struck a boy named Eugene."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The Fairy promised he would become a boy tomorrow."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The officers blamed Pinocchio and arrested him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "Alidoro returned and carried Pinocchio to safety."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Alidoro fell into the sea, so Pinocchio saved him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "The slow Snail made him wait all night."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "The classmates had lied and started a fight."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "For many months, Pinocchio studied and worked faithfully."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "One book struck a boy named Eugene."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "The Fisherman planned to fry him for dinner."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The officers blamed Pinocchio and arrested him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "Pinocchio hurried back to the Fairy's house."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "At the beach, there was no Shark."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "His impatient kick trapped one foot in the door."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "They threw schoolbooks like heavy stones."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Alidoro fell into the sea, so Pinocchio saved him."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "The other boys fled before the officers arrived."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "The Fisherman planned to fry him for dinner."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The Fairy promised he would become a boy tomorrow."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "The classmates had lied and started a fight.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "classmates",
+                "had",
+                "lied",
+                "and",
+                "started",
+                "a",
+                "fight",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "One book struck a boy named Eugene.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "One",
+                "book",
+                "struck",
+                "a",
+                "boy",
+                "named",
+                "Eugene",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "The officers blamed Pinocchio and arrested him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "officers",
+                "blamed",
+                "Pinocchio",
+                "and",
+                "arrested",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Alidoro fell into the sea, so Pinocchio saved him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Alidoro",
+                "fell",
+                "into",
+                "the",
+                "sea",
+                ",",
+                "so",
+                "Pinocchio",
+                "saved",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "The Fisherman planned to fry him for dinner.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "Fisherman",
+                "planned",
+                "to",
+                "fry",
+                "him",
+                "for",
+                "dinner",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "Pinocchio hurried back to the Fairy's house.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "hurried",
+                "back",
+                "to",
+                "the",
+                "Fairy's",
+                "house",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "His impatient kick trapped one foot in the door.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "His",
+                "impatient",
+                "kick",
+                "trapped",
+                "one",
+                "foot",
+                "in",
+                "the",
+                "door",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "The Fairy promised he would become a boy tomorrow.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "Fairy",
+                "promised",
+                "he",
+                "would",
+                "become",
+                "a",
+                "boy",
+                "tomorrow",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "Pinocchio와 Alidoro가 서로를 구한 일을 순서대로 말해 보세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 124,
+        "characters": 733,
+        "averageWordsPerLine": 7.8
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인, 선택, 반응을 연결해 자연스럽게 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "At the beach, Pinocchio discovered that the Shark story was a lie."
+        },
+        {
+          "id": "line-02",
+          "text": "His classmates mocked him, and their argument became a violent book fight."
+        },
+        {
+          "id": "line-03",
+          "text": "A heavy schoolbook struck Eugene, leaving him injured on the sand."
+        },
+        {
+          "id": "line-04",
+          "text": "The guilty boys ran away before the officers could question them."
+        },
+        {
+          "id": "line-05",
+          "text": "Because Pinocchio remained beside Eugene, the officers blamed and arrested him."
+        },
+        {
+          "id": "line-06",
+          "text": "He escaped, but the powerful police dog Alidoro chased him into the sea."
+        },
+        {
+          "id": "line-07",
+          "text": "When Alidoro began drowning, Pinocchio turned back and saved his pursuer."
+        },
+        {
+          "id": "line-08",
+          "text": "The dog promised to repay the unexpected act of kindness."
+        },
+        {
+          "id": "line-09",
+          "text": "Soon a Green Fisherman pulled Pinocchio from the water in a net."
+        },
+        {
+          "id": "line-10",
+          "text": "Mistaking him for a rare fish, the cook prepared to fry him."
+        },
+        {
+          "id": "line-11",
+          "text": "Alidoro arrived at the last moment and carried Pinocchio away."
+        },
+        {
+          "id": "line-12",
+          "text": "The rescued puppet finally returned to the Blue Fairy's house."
+        },
+        {
+          "id": "line-13",
+          "text": "A painfully slow Snail left him waiting outside through the night."
+        },
+        {
+          "id": "line-14",
+          "text": "Pinocchio kicked the door, trapped his foot, and regretted his impatience."
+        },
+        {
+          "id": "line-15",
+          "text": "During the following months, he studied, worked, and rebuilt the Fairy's trust."
+        },
+        {
+          "id": "line-16",
+          "text": "At last, she promised that he would wake as a real boy the next day."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "나를 괴롭힌 사람도 위험에 빠지면 도와야 할까요?",
+            "신뢰를 다시 얻으려면 얼마나 오래 행동으로 보여 줘야 할까요?"
+          ],
+          "afterPromptsKo": [
+            "Pinocchio와 Alidoro가 서로를 구한 장면을 비교하세요.",
+            "Fairy의 용서는 왜 즉시 주어진 것이 아니었나요?"
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "At the beach, Pinocchio discovered that the Shark story was a lie."
+            },
+            {
+              "lineIndex": 1,
+              "text": "His classmates mocked him, and their argument became a violent book fight."
+            },
+            {
+              "lineIndex": 2,
+              "text": "A heavy schoolbook struck Eugene, leaving him injured on the sand."
+            },
+            {
+              "lineIndex": 3,
+              "text": "The guilty boys ran away before the officers could question them."
+            },
+            {
+              "lineIndex": 4,
+              "text": "Because Pinocchio remained beside Eugene, the officers blamed and arrested him."
+            },
+            {
+              "lineIndex": 5,
+              "text": "He escaped, but the powerful police dog Alidoro chased him into the sea."
+            },
+            {
+              "lineIndex": 6,
+              "text": "When Alidoro began drowning, Pinocchio turned back and saved his pursuer."
+            },
+            {
+              "lineIndex": 7,
+              "text": "The dog promised to repay the unexpected act of kindness."
+            },
+            {
+              "lineIndex": 8,
+              "text": "Soon a Green Fisherman pulled Pinocchio from the water in a net."
+            },
+            {
+              "lineIndex": 9,
+              "text": "Mistaking him for a rare fish, the cook prepared to fry him."
+            },
+            {
+              "lineIndex": 10,
+              "text": "Alidoro arrived at the last moment and carried Pinocchio away."
+            },
+            {
+              "lineIndex": 11,
+              "text": "The rescued puppet finally returned to the Blue Fairy's house."
+            },
+            {
+              "lineIndex": 12,
+              "text": "A painfully slow Snail left him waiting outside through the night."
+            },
+            {
+              "lineIndex": 13,
+              "text": "Pinocchio kicked the door, trapped his foot, and regretted his impatience."
+            },
+            {
+              "lineIndex": 14,
+              "text": "During the following months, he studied, worked, and rebuilt the Fairy's trust."
+            },
+            {
+              "lineIndex": 15,
+              "text": "At last, she promised that he would wake as a real boy the next day."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "His classmates mocked him, and their argument became a violent book fight."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "When Alidoro began drowning, Pinocchio turned back and saved his pursuer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The rescued puppet finally returned to the Blue Fairy's house."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "Soon a Green Fisherman pulled Pinocchio from the water in a net."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio kicked the door, trapped his foot, and regretted his impatience."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "The guilty boys ran away before the officers could question them."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "At last, she promised that he would wake as a real boy the next day."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "He escaped, but the powerful police dog Alidoro chased him into the sea."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "Alidoro arrived at the last moment and carried Pinocchio away."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "The dog promised to repay the unexpected act of kindness."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "A painfully slow Snail left him waiting outside through the night."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "His classmates mocked him, and their argument became a violent book fight."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "During the following months, he studied, worked, and rebuilt the Fairy's trust."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "The guilty boys ran away before the officers could question them."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "Mistaking him for a rare fish, the cook prepared to fry him."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "He escaped, but the powerful police dog Alidoro chased him into the sea."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "The rescued puppet finally returned to the Blue Fairy's house."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "At the beach, Pinocchio discovered that the Shark story was a lie."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "Pinocchio kicked the door, trapped his foot, and regretted his impatience."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "A heavy schoolbook struck Eugene, leaving him injured on the sand."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "The dog promised to repay the unexpected act of kindness."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "Because Pinocchio remained beside Eugene, the officers blamed and arrested him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "Mistaking him for a rare fish, the cook prepared to fry him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "At last, she promised that he would wake as a real boy the next day."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "His classmates mocked him, and their argument became a violent book fight.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "His",
+                "classmates",
+                "mocked",
+                "him",
+                ",",
+                "and",
+                "their",
+                "argument",
+                "became",
+                "a",
+                "violent",
+                "book",
+                "fight",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "The guilty boys ran away before the officers could question them.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "guilty",
+                "boys",
+                "ran",
+                "away",
+                "before",
+                "the",
+                "officers",
+                "could",
+                "question",
+                "them",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "He escaped, but the powerful police dog Alidoro chased him into the sea.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "escaped",
+                ",",
+                "but",
+                "the",
+                "powerful",
+                "police",
+                "dog",
+                "Alidoro",
+                "chased",
+                "him",
+                "into",
+                "the",
+                "sea",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "The dog promised to repay the unexpected act of kindness.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "dog",
+                "promised",
+                "to",
+                "repay",
+                "the",
+                "unexpected",
+                "act",
+                "of",
+                "kindness",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "Mistaking him for a rare fish, the cook prepared to fry him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Mistaking",
+                "him",
+                "for",
+                "a",
+                "rare",
+                "fish",
+                ",",
+                "the",
+                "cook",
+                "prepared",
+                "to",
+                "fry",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "The rescued puppet finally returned to the Blue Fairy's house.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "rescued",
+                "puppet",
+                "finally",
+                "returned",
+                "to",
+                "the",
+                "Blue",
+                "Fairy's",
+                "house",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "Pinocchio kicked the door, trapped his foot, and regretted his impatience.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "kicked",
+                "the",
+                "door",
+                ",",
+                "trapped",
+                "his",
+                "foot",
+                ",",
+                "and",
+                "regretted",
+                "his",
+                "impatience",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "At last, she promised that he would wake as a real boy the next day.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "At",
+                "last",
+                ",",
+                "she",
+                "promised",
+                "that",
+                "he",
+                "would",
+                "wake",
+                "as",
+                "a",
+                "real",
+                "boy",
+                "the",
+                "next",
+                "day",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "누명을 쓴 사건부터 Fairy의 약속까지 Pinocchio가 신뢰를 되찾은 과정을 설명하세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 184,
+        "characters": 1102,
+        "averageWordsPerLine": 11.5
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "서술자의 어조와 도덕적 긴장을 살려 해석하고 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "The beach contained no Shark at all; the story had been invented to pull Pinocchio away from school."
+        },
+        {
+          "id": "line-02",
+          "text": "Mockery became an argument, and the classmates converted their schoolbooks from tools of learning into weapons."
+        },
+        {
+          "id": "line-03",
+          "text": "One heavy volume struck Eugene, who collapsed while the sea carried the evidence back toward shore."
+        },
+        {
+          "id": "line-04",
+          "text": "The boys responsible fled, leaving Pinocchio beside the injured student when the officers arrived."
+        },
+        {
+          "id": "line-05",
+          "text": "His decision to remain looked like guilt, and the authorities arrested the one person attempting to help."
+        },
+        {
+          "id": "line-06",
+          "text": "Pinocchio escaped, but Alidoro, a powerful police dog, pursued him through the waves."
+        },
+        {
+          "id": "line-07",
+          "text": "When the exhausted dog began to drown, Pinocchio abandoned escape long enough to save his pursuer."
+        },
+        {
+          "id": "line-08",
+          "text": "Alidoro remembered the mercy and promised that kindness would not remain unpaid."
+        },
+        {
+          "id": "line-09",
+          "text": "A Green Fisherman soon hauled Pinocchio from the sea inside a net crowded with fish."
+        },
+        {
+          "id": "line-10",
+          "text": "Convinced that the wooden creature was an exotic catch, he coated the prisoner and prepared the frying pan."
+        },
+        {
+          "id": "line-11",
+          "text": "Alidoro burst into the kitchen, recognized his rescuer, and carried Pinocchio beyond the cook's reach."
+        },
+        {
+          "id": "line-12",
+          "text": "The puppet reached the Fairy's home expecting comfort, but the Snail required him to wait through the night."
+        },
+        {
+          "id": "line-13",
+          "text": "Impatience returned in one furious kick, leaving Pinocchio's foot trapped in the door and his breakfast made of imitation food."
+        },
+        {
+          "id": "line-14",
+          "text": "The humiliation taught what repeated promises had not: change needed patience when nobody offered immediate applause."
+        },
+        {
+          "id": "line-15",
+          "text": "For months Pinocchio studied, worked, and allowed dependable behavior to rebuild the Fairy's trust."
+        },
+        {
+          "id": "line-16",
+          "text": "Satisfied by the evidence, she promised that the following morning would finally begin his life as a real boy."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "나를 괴롭힌 사람도 위험에 빠지면 도와야 할까요?",
+            "신뢰를 다시 얻으려면 얼마나 오래 행동으로 보여 줘야 할까요?"
+          ],
+          "afterPromptsKo": [
+            "Pinocchio와 Alidoro가 서로를 구한 장면을 비교하세요.",
+            "Fairy의 용서는 왜 즉시 주어진 것이 아니었나요?"
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "The beach contained no Shark at all; the story had been invented to pull Pinocchio away from school."
+            },
+            {
+              "lineIndex": 1,
+              "text": "Mockery became an argument, and the classmates converted their schoolbooks from tools of learning into weapons."
+            },
+            {
+              "lineIndex": 2,
+              "text": "One heavy volume struck Eugene, who collapsed while the sea carried the evidence back toward shore."
+            },
+            {
+              "lineIndex": 3,
+              "text": "The boys responsible fled, leaving Pinocchio beside the injured student when the officers arrived."
+            },
+            {
+              "lineIndex": 4,
+              "text": "His decision to remain looked like guilt, and the authorities arrested the one person attempting to help."
+            },
+            {
+              "lineIndex": 5,
+              "text": "Pinocchio escaped, but Alidoro, a powerful police dog, pursued him through the waves."
+            },
+            {
+              "lineIndex": 6,
+              "text": "When the exhausted dog began to drown, Pinocchio abandoned escape long enough to save his pursuer."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Alidoro remembered the mercy and promised that kindness would not remain unpaid."
+            },
+            {
+              "lineIndex": 8,
+              "text": "A Green Fisherman soon hauled Pinocchio from the sea inside a net crowded with fish."
+            },
+            {
+              "lineIndex": 9,
+              "text": "Convinced that the wooden creature was an exotic catch, he coated the prisoner and prepared the frying pan."
+            },
+            {
+              "lineIndex": 10,
+              "text": "Alidoro burst into the kitchen, recognized his rescuer, and carried Pinocchio beyond the cook's reach."
+            },
+            {
+              "lineIndex": 11,
+              "text": "The puppet reached the Fairy's home expecting comfort, but the Snail required him to wait through the night."
+            },
+            {
+              "lineIndex": 12,
+              "text": "Impatience returned in one furious kick, leaving Pinocchio's foot trapped in the door and his breakfast made of imitation food."
+            },
+            {
+              "lineIndex": 13,
+              "text": "The humiliation taught what repeated promises had not: change needed patience when nobody offered immediate applause."
+            },
+            {
+              "lineIndex": 14,
+              "text": "For months Pinocchio studied, worked, and allowed dependable behavior to rebuild the Fairy's trust."
+            },
+            {
+              "lineIndex": 15,
+              "text": "Satisfied by the evidence, she promised that the following morning would finally begin his life as a real boy."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "Mockery became an argument, and the classmates converted their schoolbooks from tools of learning into weapons."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "When the exhausted dog began to drown, Pinocchio abandoned escape long enough to save his pursuer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The puppet reached the Fairy's home expecting comfort, but the Snail required him to wait through the night."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "A Green Fisherman soon hauled Pinocchio from the sea inside a net crowded with fish."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "The humiliation taught what repeated promises had not: change needed patience when nobody offered immediate applause."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "The boys responsible fled, leaving Pinocchio beside the injured student when the officers arrived."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Satisfied by the evidence, she promised that the following morning would finally begin his life as a real boy."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Pinocchio escaped, but Alidoro, a powerful police dog, pursued him through the waves."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "Alidoro burst into the kitchen, recognized his rescuer, and carried Pinocchio beyond the cook's reach."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Alidoro remembered the mercy and promised that kindness would not remain unpaid."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "Impatience returned in one furious kick, leaving Pinocchio's foot trapped in the door and his breakfast made of imitation food."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "Mockery became an argument, and the classmates converted their schoolbooks from tools of learning into weapons."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "For months Pinocchio studied, worked, and allowed dependable behavior to rebuild the Fairy's trust."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "The boys responsible fled, leaving Pinocchio beside the injured student when the officers arrived."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "Convinced that the wooden creature was an exotic catch, he coated the prisoner and prepared the frying pan."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Pinocchio escaped, but Alidoro, a powerful police dog, pursued him through the waves."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "The puppet reached the Fairy's home expecting comfort, but the Snail required him to wait through the night."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "The beach contained no Shark at all; the story had been invented to pull Pinocchio away from school."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "The humiliation taught what repeated promises had not: change needed patience when nobody offered immediate applause."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "One heavy volume struck Eugene, who collapsed while the sea carried the evidence back toward shore."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Alidoro remembered the mercy and promised that kindness would not remain unpaid."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "His decision to remain looked like guilt, and the authorities arrested the one person attempting to help."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "Convinced that the wooden creature was an exotic catch, he coated the prisoner and prepared the frying pan."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Satisfied by the evidence, she promised that the following morning would finally begin his life as a real boy."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "Mockery became an argument, and the classmates converted their schoolbooks from tools of learning into weapons.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Mockery",
+                "became",
+                "an",
+                "argument",
+                ",",
+                "and",
+                "the",
+                "classmates",
+                "converted",
+                "their",
+                "schoolbooks",
+                "from",
+                "tools",
+                "of",
+                "learning",
+                "into",
+                "weapons",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "The boys responsible fled, leaving Pinocchio beside the injured student when the officers arrived.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "boys",
+                "responsible",
+                "fled",
+                ",",
+                "leaving",
+                "Pinocchio",
+                "beside",
+                "the",
+                "injured",
+                "student",
+                "when",
+                "the",
+                "officers",
+                "arrived",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "Pinocchio escaped, but Alidoro, a powerful police dog, pursued him through the waves.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "escaped",
+                ",",
+                "but",
+                "Alidoro",
+                ",",
+                "a",
+                "powerful",
+                "police",
+                "dog",
+                ",",
+                "pursued",
+                "him",
+                "through",
+                "the",
+                "waves",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Alidoro remembered the mercy and promised that kindness would not remain unpaid.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Alidoro",
+                "remembered",
+                "the",
+                "mercy",
+                "and",
+                "promised",
+                "that",
+                "kindness",
+                "would",
+                "not",
+                "remain",
+                "unpaid",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "Convinced that the wooden creature was an exotic catch, he coated the prisoner and prepared the frying pan.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Convinced",
+                "that",
+                "the",
+                "wooden",
+                "creature",
+                "was",
+                "an",
+                "exotic",
+                "catch",
+                ",",
+                "he",
+                "coated",
+                "the",
+                "prisoner",
+                "and",
+                "prepared",
+                "the",
+                "frying",
+                "pan",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "The puppet reached the Fairy's home expecting comfort, but the Snail required him to wait through the night.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "puppet",
+                "reached",
+                "the",
+                "Fairy's",
+                "home",
+                "expecting",
+                "comfort",
+                ",",
+                "but",
+                "the",
+                "Snail",
+                "required",
+                "him",
+                "to",
+                "wait",
+                "through",
+                "the",
+                "night",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "The humiliation taught what repeated promises had not: change needed patience when nobody offered immediate applause.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "humiliation",
+                "taught",
+                "what",
+                "repeated",
+                "promises",
+                "had",
+                "not",
+                ":",
+                "change",
+                "needed",
+                "patience",
+                "when",
+                "nobody",
+                "offered",
+                "immediate",
+                "applause",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "Satisfied by the evidence, she promised that the following morning would finally begin his life as a real boy.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Satisfied",
+                "by",
+                "the",
+                "evidence",
+                ",",
+                "she",
+                "promised",
+                "that",
+                "the",
+                "following",
+                "morning",
+                "would",
+                "finally",
+                "begin",
+                "his",
+                "life",
+                "as",
+                "a",
+                "real",
+                "boy",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "이 회차에서 즉각적인 충동과 오랜 습관의 변화가 어떻게 대조되는지 분석하세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 257,
+        "characters": 1645,
+        "averageWordsPerLine": 16.1
+      }
+    }
+  },
+  "checksum": "cbea6fdde5692b111f8711de9b9a06b0d26982b3aa869d4f8f2f892786315762"
+}

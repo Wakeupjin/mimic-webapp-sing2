@@ -1,0 +1,348 @@
+{
+  "sessions": [
+    {
+      "number": 1,
+      "slug": "a-wooden-boy-wakes",
+      "sourceChapters": [1, 2, 3],
+      "titleEn": "A Wooden Boy Wakes",
+      "titleKo": "나무 아이가 깨어나다",
+      "guidingQuestionKo": "자유는 책임 없이도 자유일 수 있을까요?",
+      "synopsisKo": "말하는 나무토막이 제페토의 손에서 피노키오가 되고, 첫 탈출의 대가를 제페토가 대신 치른다.",
+      "narrationDirection": "Open with fireside wonder, accelerate through the carving and chase, then end with quiet unfairness rather than comedy.",
+      "artBrief": "One connected paper-theatre stage joining Mastro Cherry's workshop, Geppetto's tiny room, and the village street; the log, carving bench, open door, officer, and separated father and son form eight camera zones.",
+      "watchPrompts": {
+        "beforeKo": ["평범한 물건이 갑자기 살아난다면 가장 먼저 무엇을 확인할까요?", "원하는 대로 달리는 것과 진짜 자유는 어떻게 다를까요?"],
+        "afterKo": ["피노키오의 첫 선택 때문에 누가 대가를 치렀나요?", "제페토가 만든 것은 인형뿐이었을까요, 아들이었을까요?"]
+      },
+      "levels": {
+        "foundation": [
+          "Long ago, a carpenter found an ordinary log.",
+          "The log laughed and cried like a child.",
+          "Mastro Cherry searched, but nobody was hiding.",
+          "His plane made the strange wood giggle.",
+          "His friend Geppetto came to the workshop.",
+          "Geppetto wanted wood for a wonderful puppet.",
+          "The log caused two silly quarrels between them.",
+          "Still, Geppetto carried the lively wood home.",
+          "He named his new puppet Pinocchio.",
+          "The unfinished eyes stared at their maker.",
+          "The nose grew, and the new mouth laughed.",
+          "Pinocchio stole Geppetto's cap before he had legs.",
+          "Once he had feet, he ran outside.",
+          "Geppetto chased him through the noisy street.",
+          "A policeman caught Pinocchio by his long nose.",
+          "The crowd freed Pinocchio, but arrested Geppetto."
+        ],
+        "core": [
+          "Centuries ago, Mastro Cherry found an ordinary log in his workshop.",
+          "When he raised his hatchet, a child's voice begged him to be careful.",
+          "He searched every corner, but no hidden speaker could be found.",
+          "The wood cried under a blow and laughed beneath the carpenter's plane.",
+          "Then Geppetto arrived, seeking wood for a marvelous traveling marionette.",
+          "The mischievous log used a hated nickname and provoked two comic quarrels.",
+          "After making peace, Geppetto accepted the strange gift and carried it home.",
+          "In his poor room, he named the puppet Pinocchio and began carving.",
+          "The unfinished eyes moved, and the nose stretched longer than he planned.",
+          "The new puppet mocked Geppetto and stole his yellow cap.",
+          "Geppetto taught him to stand as soon as the legs were finished.",
+          "Pinocchio learned one step, then raced through the open door.",
+          "His wooden feet clattered while Geppetto chased him down the street.",
+          "A Carabineer stopped the runaway by grabbing his extremely long nose.",
+          "Pinocchio collapsed dramatically, and the crowd blamed his worried father.",
+          "The officer released the puppet and led innocent Geppetto to prison."
+        ],
+        "studio": [
+          "Although grand adventures often begin with kings, this one opened with a common block of firewood.",
+          "Mastro Cherry lifted his hatchet, only to hear a child's voice plead from inside the grain.",
+          "He searched beneath benches and inside cupboards, yet the impossible speaker remained hidden in plain sight.",
+          "A blow made the wood cry, while the carpenter's plane produced an even more alarming fit of laughter.",
+          "At that precise moment, quick-tempered Geppetto arrived in search of wood for a world-traveling marionette.",
+          "The log exploited a hated nickname so cleverly that the old friends twice forgot why they had met.",
+          "Once peace returned, Mastro Cherry gladly surrendered the troublesome gift, and Geppetto carried it home.",
+          "Inside his poor but orderly room, Geppetto named the future puppet Pinocchio and began to carve.",
+          "The unfinished eyes stared back, the nose lengthened stubbornly, and the mouth laughed at its creator.",
+          "Before he even possessed legs, Pinocchio mocked Geppetto and snatched the yellow cap from his head.",
+          "His patient maker finished the body and carefully taught the wooden child how to stand.",
+          "Pinocchio converted his very first steps into an escape through the open door.",
+          "The clatter of wooden feet drew a laughing crowd as Geppetto pursued him through the village.",
+          "A Carabineer finally stopped the runaway by seizing the nose that could never be carved shorter.",
+          "Pinocchio dropped to the road and performed helplessness so convincingly that appearances defeated the truth.",
+          "The puppet went free, while the father who had given him life was led away grieving."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 만들어진 뒤 제페토에게 생긴 세 가지 일을 순서대로 말해 보세요.",
+        "core": "피노키오의 첫 자유가 왜 제페토의 체포로 이어졌는지 원인과 결과로 설명하세요.",
+        "studio": "이 회차에서 겉으로 보이는 상황이 진실을 뒤집는 과정을 설명하세요."
+      },
+      "beats": [
+        {"titleKo":"말하는 나무","summaryKo":"평범한 통나무가 울고 웃는다.","performanceTag":"[with quiet wonder]"},
+        {"titleKo":"목공소의 공포","summaryKo":"도구가 닿을 때마다 나무가 반응한다.","performanceTag":"[startled]"},
+        {"titleKo":"제페토의 계획","summaryKo":"제페토가 세상을 다닐 인형을 꿈꾼다.","performanceTag":"[brightly]"},
+        {"titleKo":"수상한 선물","summaryKo":"두 친구가 화해하고 나무를 건넨다.","performanceTag":"[mischievously]"},
+        {"titleKo":"살아나는 얼굴","summaryKo":"눈과 코와 입이 제멋대로 움직인다.","performanceTag":"[playfully]"},
+        {"titleKo":"첫걸음","summaryKo":"피노키오가 걷자마자 달아난다.","performanceTag":"[quickening]"},
+        {"titleKo":"거리의 추격","summaryKo":"제페토와 경찰이 도망친 인형을 쫓는다.","performanceTag":"[with comic urgency]"},
+        {"titleKo":"뒤바뀐 죄","summaryKo":"피노키오는 풀려나고 제페토가 잡혀간다.","performanceTag":"[softly]"}
+      ]
+    },
+    {
+      "number": 2,
+      "slug": "hunger-home-and-sacrifice",
+      "sourceChapters": [4, 5, 6, 7, 8],
+      "titleEn": "Hunger, Home, and Sacrifice",
+      "titleKo": "배고픔과 아버지의 희생",
+      "guidingQuestionKo": "누군가의 희생을 알게 되면 행동이 달라질까요?",
+      "synopsisKo": "충고를 거절한 피노키오는 배고픔과 사고를 겪고, 제페토의 마지막 음식과 외투에 담긴 사랑을 배운다.",
+      "narrationDirection": "Move from stubborn comedy into cold loneliness, then warm the performance around the pears, apology, new feet, and primer.",
+      "artBrief": "Geppetto's room changes from empty darkness to a warm home: Cricket on the wall, bare cupboard, window, stove, bed, three pears, repaired feet, and the new primer create eight focus zones.",
+      "watchPrompts": {
+        "beforeKo": ["배고플 때 사람의 생각과 행동은 어떻게 달라질까요?", "부모의 사랑은 말보다 어떤 행동으로 보일 수 있을까요?"],
+        "afterKo": ["피노키오는 배 껍질과 심을 먹으며 무엇을 배웠나요?", "제페토의 외투가 왜 중요한 상징인지 말해 보세요."]
+      },
+      "levels": {
+        "foundation": [
+          "Pinocchio celebrated while Geppetto sat in prison.",
+          "The Talking Cricket warned him to obey.",
+          "Pinocchio rejected school, work, and good advice.",
+          "In anger, he threw a hammer at the Cricket.",
+          "Soon hunger made his empty house feel terrible.",
+          "One egg opened, and a chick flew away.",
+          "Pinocchio begged outside, but received cold water.",
+          "He slept beside the stove with wet feet.",
+          "By morning, both wooden feet had burned away.",
+          "Geppetto returned and heard Pinocchio's hungry cries.",
+          "He gave the puppet his last three pears.",
+          "Pinocchio learned to eat even skins and cores.",
+          "Geppetto promised new feet if he behaved.",
+          "Pinocchio apologized and promised to attend school.",
+          "Geppetto carved two strong new wooden feet.",
+          "Then he sold his coat to buy a primer."
+        ],
+        "core": [
+          "While Geppetto sat in prison, Pinocchio celebrated being completely free.",
+          "The century-old Talking Cricket warned him to respect his father.",
+          "Pinocchio rejected school, honest work, and every uncomfortable piece of advice.",
+          "When the Cricket predicted trouble, the angry puppet threw a hammer.",
+          "His victory felt empty as hunger filled the cold, bare house.",
+          "The only egg cracked open, and a cheerful chick escaped through the window.",
+          "Outside, Pinocchio begged for food but received a bucket of cold water.",
+          "He returned soaked and fell asleep with his feet beside the stove.",
+          "By morning, both wooden feet had burned completely away.",
+          "Geppetto returned from prison and listened to Pinocchio's desperate story.",
+          "Though he was hungry too, the old man offered his last three pears.",
+          "Pinocchio first refused the skins and cores, then ate them gratefully.",
+          "Geppetto agreed to replace the feet only after a sincere promise.",
+          "The puppet apologized and declared that he would go to school.",
+          "His father carved and attached two sturdy new wooden feet.",
+          "Finally, Geppetto sold his only coat to buy the promised primer."
+        ],
+        "studio": [
+          "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision.",
+          "The century-old Talking Cricket interrupted his celebration with a warning about children who abandon their parents.",
+          "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement.",
+          "When the Cricket named the likely consequences, the wooden child answered wisdom with a reckless hammer.",
+          "Triumph quickly surrendered to hunger, which made the silent house feel colder and larger than before.",
+          "His single egg promised an omelet, then opened to release a chick that cheerfully flew away.",
+          "Driven into the storm, Pinocchio begged at a window and received a freezing bucket of water instead of bread.",
+          "He staggered home soaked, rested his feet near the stove, and fell into an exhausted sleep.",
+          "At dawn, the fire had consumed both wooden feet, leaving his bold independence literally unable to stand.",
+          "Geppetto returned from prison and patiently heard the confused mixture of truth, excuse, and hunger.",
+          "Although he had saved the meal for himself, the old man placed his final three pears before his son.",
+          "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained.",
+          "Geppetto required a promise of better conduct before agreeing to repair the damage.",
+          "For once, Pinocchio recognized his father's suffering and sincerely promised to attend school.",
+          "The woodcarver shaped two new feet so skillfully that they seemed to have grown there.",
+          "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "배고픔에서 새 책까지 피노키오에게 일어난 일을 네 단계로 말해 보세요.",
+        "core": "피노키오의 선택과 제페토의 희생을 대조해서 설명하세요.",
+        "studio": "배고픔과 잃어버린 발이 책임 없는 자유의 결과를 어떻게 보여 주는지 분석하세요."
+      },
+      "beats": [
+        {"titleKo":"귀뚜라미의 경고","summaryKo":"피노키오가 공부와 일을 거절한다.","performanceTag":"[firmly]"},
+        {"titleKo":"돌이킬 수 없는 화","summaryKo":"충고에 화를 내며 위험한 행동을 한다.","performanceTag":"[sharply]"},
+        {"titleKo":"텅 빈 부엌","summaryKo":"배고픔 속에서 유일한 달걀도 사라진다.","performanceTag":"[with comic disappointment]"},
+        {"titleKo":"차가운 밤","summaryKo":"비와 추위 속에서 지친 채 잠든다.","performanceTag":"[cold and tired]"},
+        {"titleKo":"사라진 발","summaryKo":"아침에 두 발이 타 버린 것을 발견한다.","performanceTag":"[in disbelief]"},
+        {"titleKo":"마지막 세 개의 배","summaryKo":"제페토가 자신의 아침을 내어 준다.","performanceTag":"[tenderly]"},
+        {"titleKo":"진심 어린 약속","summaryKo":"피노키오가 잘못을 인정하고 학교를 약속한다.","performanceTag":"[sincerely]"},
+        {"titleKo":"외투와 새 책","summaryKo":"제페토가 외투를 팔아 교재를 산다.","performanceTag":"[softly]"}
+      ]
+    },
+    {
+      "number": 3,
+      "slug": "the-puppet-theater",
+      "sourceChapters": [9, 10, 11],
+      "titleEn": "The Puppet Theater",
+      "titleKo": "인형극장의 선택",
+      "guidingQuestionKo": "잘못된 선택 뒤에도 용기 있는 선택을 할 수 있을까요?",
+      "synopsisKo": "학교 대신 인형극장을 택한 피노키오는 위험에 빠지지만, 친구를 위해 자신을 내놓으며 처음으로 용기를 보인다.",
+      "narrationDirection": "Make the music irresistible, the theater joyous, Fire Eater enormous but human, and Pinocchio's offer for Harlequin genuinely brave.",
+      "artBrief": "A village road flows into a layered puppet theater: school in the distance, ticket window and sold primer, welcoming wooden troupe, Fire Eater's entrance, brazier, Harlequin, and final celebration.",
+      "watchPrompts": {
+        "beforeKo": ["해야 할 일과 재미있는 일이 충돌하면 무엇을 기준으로 선택하나요?", "용기는 위험을 피하는 것일까요, 누군가를 위해 감수하는 것일까요?"],
+        "afterKo": ["피노키오의 잘못과 용기 있는 행동을 각각 찾아보세요.", "Fire Eater가 마음을 바꾼 진짜 이유는 무엇이었나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "Pinocchio walked toward school with his new primer.",
+          "Music from a puppet theater pulled him away.",
+          "He sold the primer to buy a ticket.",
+          "The wooden actors recognized him as their brother.",
+          "They stopped the show and welcomed him joyfully.",
+          "Then the huge director, Fire Eater, appeared.",
+          "He blamed Pinocchio for ruining the performance.",
+          "Fire Eater planned to use him as firewood.",
+          "Pinocchio cried and spoke about poor Geppetto.",
+          "The director sneezed, and his anger softened.",
+          "Instead, he ordered Harlequin into the fire.",
+          "Pinocchio begged him to spare his friend.",
+          "He offered to take Harlequin's place.",
+          "Fire Eater was moved by Pinocchio's courage.",
+          "He forgave both puppets and saved the dinner.",
+          "The whole wooden company celebrated until morning."
+        ],
+        "core": [
+          "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for.",
+          "Music from a nearby puppet theater made him forget every promise.",
+          "He sold the precious book and spent the money on a ticket.",
+          "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother.",
+          "They abandoned the play and greeted him with noisy affection.",
+          "Their enormous director, Fire Eater, entered and demanded an explanation.",
+          "He blamed Pinocchio for the ruined performance and threatened to burn him.",
+          "The terrified puppet called for his father and begged for mercy.",
+          "Fire Eater's repeated sneezes revealed that his anger was beginning to soften.",
+          "He spared Pinocchio but ordered Harlequin burned beneath the roasting dinner.",
+          "Pinocchio refused to celebrate while his innocent friend faced danger.",
+          "He begged, argued, and finally offered to replace Harlequin himself.",
+          "The selfish runaway suddenly acted with loyalty and genuine courage.",
+          "Fire Eater lifted him up, deeply moved by the sacrifice.",
+          "He pardoned Harlequin and decided to eat his dinner uncooked.",
+          "The entire puppet company danced with relief until dawn."
+        ],
+        "studio": [
+          "Pinocchio set out for school carrying the primer purchased with Geppetto's only coat.",
+          "A lively drum and pipe soon transformed his solemn promise into a debate between duty and delight.",
+          "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater.",
+          "The wooden actors recognized a brother in the newcomer and interrupted their own performance to embrace him.",
+          "Their celebration delighted the audience but enraged Fire Eater, the theater's immense and terrifying director.",
+          "He seized Pinocchio, blamed him for the ruined show, and selected him as fuel for the evening meal.",
+          "Facing a consequence he could no longer outrun, Pinocchio cried out for the father he had disappointed.",
+          "Fire Eater began to sneeze, the peculiar sign that pity was loosening his anger.",
+          "He released Pinocchio, then casually ordered Harlequin to be burned in the puppet's place.",
+          "Relief vanished when Pinocchio realized that his safety had merely transferred the danger to a friend.",
+          "He pleaded for Harlequin with a determination unlike the excuses he usually made for himself.",
+          "When argument failed, Pinocchio offered his own wooden body to the flames.",
+          "For the first time, the impulsive runaway accepted a cost in order to protect someone else.",
+          "Fire Eater, astonished by such loyalty, embraced the puppet and abandoned the cruel order.",
+          "Harlequin was spared, and the director accepted an uncooked dinner rather than another victim.",
+          "The wooden company celebrated a small but important change in Pinocchio until morning."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 책을 판 순간부터 친구를 구한 순간까지 말해 보세요.",
+        "core": "피노키오가 같은 회차에서 무책임함과 용기를 모두 보여 준 장면을 비교하세요.",
+        "studio": "Harlequin을 위한 선택이 피노키오의 첫 번째 도덕적 성장인 이유를 논증하세요."
+      },
+      "beats": [
+        {"titleKo":"학교로 가는 길","summaryKo":"새 교재를 들고 학교를 향한다.","performanceTag":"[hopefully]"},
+        {"titleKo":"유혹하는 음악","summaryKo":"음악을 따라가 책을 팔고 표를 산다.","performanceTag":"[temptingly]"},
+        {"titleKo":"형제의 환영","summaryKo":"무대의 인형들이 피노키오를 반긴다.","performanceTag":"[joyfully]"},
+        {"titleKo":"Fire Eater의 등장","summaryKo":"거대한 극장주가 공연을 망쳤다고 화낸다.","performanceTag":"[thunderously]"},
+        {"titleKo":"아버지를 부르는 목소리","summaryKo":"위기 속에서 제페토를 떠올린다.","performanceTag":"[fearfully]"},
+        {"titleKo":"옮겨 간 위험","summaryKo":"Harlequin이 대신 희생될 처지가 된다.","performanceTag":"[gravely]"},
+        {"titleKo":"친구를 위한 선택","summaryKo":"피노키오가 자신의 몸을 대신 내놓는다.","performanceTag":"[bravely]"},
+        {"titleKo":"새벽의 축제","summaryKo":"둘 다 살아남고 극단이 기뻐한다.","performanceTag":"[with relief]"}
+      ]
+    },
+    {
+      "number": 4,
+      "slug": "five-coins-and-a-dangerous-road",
+      "sourceChapters": [12, 13, 14, 15],
+      "titleEn": "Five Coins and a Dangerous Road",
+      "titleKo": "다섯 금화와 위험한 길",
+      "guidingQuestionKo": "듣고 싶은 말과 믿어야 할 말은 어떻게 구별할까요?",
+      "synopsisKo": "제페토에게 줄 금화를 받은 피노키오는 여우와 고양이의 달콤한 거짓말을 믿고 위험한 밤길에 오른다.",
+      "narrationDirection": "Begin with generous hope, make the swindlers charming but suspicious, darken the road gradually, and treat the hanging as a solemn cliffhanger without graphic detail.",
+      "artBrief": "A branching country road connects Fire Eater's gift, Fox and Cat, the Blackbird, Red Lobster inn, moonlit forest, distant white house, and giant oak in one tense paper-theatre landscape.",
+      "watchPrompts": {
+        "beforeKo": ["큰돈이 생기면 누구에게 먼저 말하거나 도움을 구해야 할까요?", "상대가 내가 듣고 싶은 말만 할 때 어떤 신호를 확인해야 할까요?"],
+        "afterKo": ["피노키오가 무시한 경고를 모두 찾아보세요.", "여우와 고양이는 피노키오의 어떤 마음을 이용했나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "Fire Eater gave Pinocchio five gold coins.",
+          "Pinocchio planned to bring them to Geppetto.",
+          "A limping Fox and blind Cat greeted him.",
+          "They promised to grow his coins into thousands.",
+          "A Blackbird warned Pinocchio about their trick.",
+          "The Cat silenced the honest little bird.",
+          "Pinocchio followed the strangers to an inn.",
+          "They ate a huge meal at his expense.",
+          "The Fox and Cat secretly left before midnight.",
+          "Pinocchio paid one coin and walked alone.",
+          "The Cricket's ghost warned him to turn back.",
+          "Two masked Assassins chased him through the forest.",
+          "Pinocchio hid four coins inside his mouth.",
+          "He escaped and ran toward a white house.",
+          "The Assassins caught him beside a giant oak.",
+          "They left him hanging as the storm rose."
+        ],
+        "core": [
+          "Fire Eater gave Pinocchio five gold pieces to carry home to Geppetto.",
+          "The puppet imagined food, clothing, and a new coat for his father.",
+          "On the road, a limping Fox and supposedly blind Cat approached him.",
+          "They described a magical field where buried coins would multiply overnight.",
+          "A Blackbird exposed the story as a trick and urged Pinocchio home.",
+          "The Cat quickly silenced the bird before the warning could sink in.",
+          "Pinocchio chose the exciting promise and followed them to the Red Lobster Inn.",
+          "His new friends ordered an enormous meal while pretending to be unwell.",
+          "Before midnight, they disappeared and left Pinocchio responsible for the bill.",
+          "After paying one coin, he continued alone along the dark road.",
+          "The ghost of the Talking Cricket offered one final warning to return.",
+          "Two masked Assassins appeared and chased Pinocchio deep into the forest.",
+          "He hid the remaining four coins beneath his tongue and refused to speak.",
+          "After a desperate escape, he raced toward a distant white house.",
+          "The Assassins caught him near a giant oak when the door stayed closed.",
+          "They left him suspended from a branch while the violent wind rose."
+        ],
+        "studio": [
+          "Grateful for Pinocchio's courage, Fire Eater entrusted him with five gold pieces for the impoverished Geppetto.",
+          "Pinocchio pictured a repaired home and a warm coat, briefly placing his father's needs ahead of his own.",
+          "That hopeful plan met a limping Fox and a Cat who claimed blindness while watching every coin.",
+          "The travelers promised that a simple burial in the Field of Wonders would produce thousands by morning.",
+          "A Blackbird identified the scheme plainly, but the Cat silenced the truth before reflection could begin.",
+          "Pinocchio followed the flattering strangers because their lie made generosity seem effortless and immediate.",
+          "At the Red Lobster Inn, his supposedly sick companions consumed a magnificent meal at his expense.",
+          "They slipped away before midnight, leaving a message, an unpaid bill, and a more isolated victim.",
+          "Pinocchio surrendered one gold piece to the innkeeper and entered the dark road alone.",
+          "The ghost of the Talking Cricket urged him to reverse course and protect both his money and himself.",
+          "Still loyal to the promised miracle, Pinocchio dismissed the warning and walked deeper into danger.",
+          "Two masked Assassins emerged, demanding the coins as they pursued him through the forest.",
+          "Pinocchio concealed the remaining four pieces beneath his tongue and resisted every threat.",
+          "He escaped for a moment and ran toward a white house whose silent occupant refused to open the door.",
+          "The Assassins finally seized him beside a giant oak and suspended him from a branch.",
+          "As the storm intensified, the easy road to riches ended in a lonely and uncertain night."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "다섯 금화가 네 금화가 되고 피노키오가 위험에 빠진 과정을 말해 보세요.",
+        "core": "피노키오가 받은 세 번의 경고와 각각의 반응을 설명하세요.",
+        "studio": "여우와 고양이가 효심과 욕심을 동시에 이용한 방식을 분석하세요."
+      },
+      "beats": [
+        {"titleKo":"다섯 금화","summaryKo":"Fire Eater가 제페토를 위한 금화를 준다.","performanceTag":"[generously]"},
+        {"titleKo":"새로운 동행","summaryKo":"여우와 고양이가 기적의 투자를 제안한다.","performanceTag":"[smoothly]"},
+        {"titleKo":"Blackbird의 경고","summaryKo":"정직한 경고가 강제로 끊긴다.","performanceTag":"[urgently]"},
+        {"titleKo":"Red Lobster Inn","summaryKo":"낯선 친구들이 피노키오의 돈으로 잔치한다.","performanceTag":"[with sly humor]"},
+        {"titleKo":"혼자 남은 밤길","summaryKo":"한 금화를 내고 어두운 길로 나선다.","performanceTag":"[uneasily]"},
+        {"titleKo":"Cricket의 마지막 충고","summaryKo":"돌아가라는 경고를 또 거절한다.","performanceTag":"[warningly]"},
+        {"titleKo":"Assassins의 추격","summaryKo":"가면 쓴 자들이 금화를 노리고 쫓는다.","performanceTag":"[with rising suspense]"},
+        {"titleKo":"거대한 참나무","summaryKo":"피노키오가 붙잡혀 폭풍 속에 남겨진다.","performanceTag":"[solemnly]"}
+      ]
+    }
+  ]
+}

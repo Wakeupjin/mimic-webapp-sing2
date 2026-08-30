@@ -1,0 +1,348 @@
+{
+  "sessions": [
+    {
+      "number": 9,
+      "slug": "the-land-of-toys",
+      "sourceChapters": [30, 31, 32],
+      "titleEn": "The Land of Toys",
+      "titleKo": "장난감 나라",
+      "guidingQuestionKo": "즐거움만 있고 책임이 없는 곳은 정말 천국일까요?",
+      "synopsisKo": "사람이 되기 직전 피노키오는 Lamp-Wick을 따라 장난감 나라로 떠나고, 끝없는 놀이의 대가로 당나귀가 된다.",
+      "narrationDirection": "Make the invitation genuinely seductive, fill Toyland with bright speed, then let the silence around the first donkey ears turn pleasure into dread.",
+      "artBrief": "A festive but unsettling paper-theatre stage joins the Fairy's prepared party, Lamp-Wick under a street lamp, crowded silent wagon, Toyland games, passing months, hidden ears, Marmot doctor, and two transformed donkeys.",
+      "watchPrompts": {
+        "beforeKo": ["해야 할 일이 전혀 없는 삶을 얼마나 오래 즐길 수 있을까요?", "친구를 따라가는 선택의 책임은 누구에게 있을까요?"],
+        "afterKo": ["장난감 나라의 즐거움이 위험하다는 신호는 언제부터 보였나요?", "피노키오는 왜 사람이 되기 직전에 가장 크게 흔들렸나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "The Fairy prepared Pinocchio's final celebration.",
+          "Pinocchio went to invite his friend Lamp-Wick.",
+          "Lamp-Wick planned to leave for the Land of Toys.",
+          "There were no schools, books, or teachers there.",
+          "Pinocchio resisted, but the promise sounded wonderful.",
+          "At midnight, a crowded wagon collected them.",
+          "The sad donkeys pulling it tried to warn Pinocchio.",
+          "Still, he climbed aboard and left the Fairy.",
+          "Toyland offered games from morning until night.",
+          "For five months, the boys never studied.",
+          "One morning, long ears appeared on Pinocchio.",
+          "A Marmot said he had Donkey Fever.",
+          "Pinocchio hid his ears beneath a cap.",
+          "Then Lamp-Wick revealed the same terrible change.",
+          "The two friends became complete donkeys.",
+          "A buyer took Pinocchio away from Toyland."
+        ],
+        "core": [
+          "The Fairy prepared a celebration for Pinocchio's transformation into a real boy.",
+          "Pinocchio went out to invite Lamp-Wick, his closest and laziest friend.",
+          "Lamp-Wick announced that he was leaving for the famous Land of Toys.",
+          "He described a country without schools, books, teachers, or any required work.",
+          "Pinocchio remembered the Fairy's promise, but endless play sounded irresistible.",
+          "At midnight, a crowded wagon arrived to carry the boys away.",
+          "The exhausted donkeys pulling it seemed to whisper warnings through their tears.",
+          "Pinocchio ignored every sign, squeezed aboard, and abandoned the waiting celebration.",
+          "In Toyland, children played from morning until night without correction.",
+          "Five carefree months passed without a single lesson or useful task.",
+          "Then Pinocchio awoke and discovered long donkey ears on his head.",
+          "A Marmot examined him and sadly diagnosed incurable Donkey Fever.",
+          "Pinocchio covered the ears and hurried to check on Lamp-Wick.",
+          "His friend was hiding the same ears beneath an oversized cap.",
+          "Laughter changed into braying as both boys became complete donkeys.",
+          "The wagon driver sold Pinocchio to a new owner and collected his profit."
+        ],
+        "studio": [
+          "The Blue Fairy prepared the celebration that would mark Pinocchio's long-awaited transformation into a real boy.",
+          "Before the party, he went to invite Lamp-Wick, the companion most skilled at turning responsibility into a joke.",
+          "Lamp-Wick announced his departure for the Land of Toys, where vacation supposedly continued every day of the year.",
+          "No schools, books, teachers, schedules, or adult expectations disturbed the happiness he described.",
+          "Pinocchio defended his promise at first, yet the fantasy of unlimited amusement steadily weakened his resistance.",
+          "At midnight, a silent driver arrived with a wagon so crowded that the boys could barely find space.",
+          "The donkeys pulling it wept and whispered warnings, but their passengers heard only the destination.",
+          "Pinocchio climbed aboard, leaving the Fairy's prepared celebration and his almost-human future behind.",
+          "Toyland delivered exactly what had been advertised: noise, games, sweets, freedom, and no visible consequence.",
+          "For five months the children practiced nothing except amusement, while the hidden cost quietly developed.",
+          "One morning Pinocchio discovered that two long donkey ears had appeared where a boy's ears should be.",
+          "A solemn Marmot diagnosed Donkey Fever and explained that a life without learning produced this transformation.",
+          "Pinocchio hid the evidence beneath a cap and ran to Lamp-Wick, hoping the problem belonged to him alone.",
+          "His friend removed another oversized cap, revealing the same ears and the same terrified understanding.",
+          "Their nervous laughter became braying as hands, feet, voices, and bodies completed the change into donkeys.",
+          "The driver who had collected carefree children now sold the finished animals, turning false paradise into business."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "파티 준비부터 당나귀가 되기까지 다섯 단계를 말해 보세요.",
+        "core": "피노키오가 무시한 장난감 나라의 위험 신호를 순서대로 설명하세요.",
+        "studio": "장난감 나라가 자유로운 천국이 아니라 착취 구조인 이유를 분석하세요."
+      },
+      "beats": [
+        {"titleKo":"내일이면 사람","summaryKo":"Fairy가 변신을 축하할 파티를 준비한다.","performanceTag":"[warmly]"},
+        {"titleKo":"Lamp-Wick의 초대","summaryKo":"공부 없는 나라의 매력을 듣는다.","performanceTag":"[temptingly]"},
+        {"titleKo":"한밤의 마차","summaryKo":"경고하는 당나귀를 무시하고 떠난다.","performanceTag":"[uneasily]"},
+        {"titleKo":"끝없는 놀이","summaryKo":"장난감 나라에서 매일 놀기만 한다.","performanceTag":"[wildly joyful]"},
+        {"titleKo":"다섯 달 뒤","summaryKo":"보이지 않던 대가가 몸에 나타나기 시작한다.","performanceTag":"[slowing]"},
+        {"titleKo":"Donkey Fever","summaryKo":"Marmot이 되돌리기 어려운 변화를 진단한다.","performanceTag":"[gravely]"},
+        {"titleKo":"같은 귀","summaryKo":"Lamp-Wick도 같은 결과를 숨기고 있다.","performanceTag":"[in frightened disbelief]"},
+        {"titleKo":"팔려 가는 당나귀","summaryKo":"두 아이가 동물이 되고 상품처럼 팔린다.","performanceTag":"[somberly]"}
+      ]
+    },
+    {
+      "number": 10,
+      "slug": "the-donkey-and-the-sea",
+      "sourceChapters": [33, 34],
+      "titleEn": "The Donkey and the Sea",
+      "titleKo": "당나귀와 바다",
+      "guidingQuestionKo": "가치를 잃었다고 취급받을 때도 다시 시작할 수 있을까요?",
+      "synopsisKo": "당나귀가 된 피노키오는 서커스에서 착취당하고 바다에 버려지지만, 다시 나무 인형의 몸을 되찾은 뒤 거대한 상어에게 삼켜진다.",
+      "narrationDirection": "Treat the circus as glittering exploitation, make the sea transformation strange and liberating, and end the Shark swallowing with awe and suspense.",
+      "artBrief": "A circular circus ring opens toward a moonlit sea: trainer, hoop, Fairy in the audience, injured donkey, drum-maker's rope and stone, fish revealing the wooden body, open water, giant Shark, and Tunny silhouette.",
+      "watchPrompts": {
+        "beforeKo": ["실수한 사람을 이용해도 괜찮다는 생각은 왜 위험할까요?", "모든 것을 잃은 순간에도 남아 있는 것은 무엇일까요?"],
+        "afterKo": ["서커스 주인과 북을 만들려는 사람은 피노키오를 어떻게 바라봤나요?", "나무 몸을 되찾는 장면이 자유이면서 또 다른 위험인 이유는 무엇인가요?"]
+      },
+      "levels": {
+        "foundation": [
+          "A circus owner bought Donkey Pinocchio.",
+          "He trained him to perform difficult tricks.",
+          "The audience cheered inside the bright ring.",
+          "Pinocchio saw the Blue Fairy watching him.",
+          "He tried to call her, but only brayed.",
+          "During a jump, Pinocchio fell and became lame.",
+          "The owner sold him to another man.",
+          "The man wanted donkey skin for a drum.",
+          "He tied on a stone and drowned Pinocchio.",
+          "Underwater fish ate away the donkey body.",
+          "The wooden puppet appeared alive again.",
+          "Pinocchio escaped and swam toward an azure Goat.",
+          "The Goat called him toward a white rock.",
+          "Then the Terrible Shark opened its enormous mouth.",
+          "The Shark swallowed Pinocchio in one rush.",
+          "Inside, he met a Tunny waiting in darkness."
+        ],
+        "core": [
+          "A circus owner bought Donkey Pinocchio and trained him through punishment.",
+          "Soon the animal performed bows, dances, and dangerous jumps before crowds.",
+          "During one bright performance, Pinocchio recognized the Blue Fairy in the audience.",
+          "He tried to call her name, but his mouth produced only a donkey's bray.",
+          "Confused and distracted, Pinocchio missed a jump and injured one leg.",
+          "The circus owner immediately sold the lame donkey for almost nothing.",
+          "His next owner cared only about using the skin for a drumhead.",
+          "The man tied a heavy stone to Pinocchio and dropped him underwater.",
+          "Hungry fish consumed the donkey covering while the protected wooden body remained.",
+          "When the rope rose, the surprised buyer found a living marionette instead.",
+          "Pinocchio slipped free and explained that the Fairy had protected him.",
+          "While he swam away, an azure Goat called from a white rock.",
+          "Before he could reach safety, the Terrible Shark appeared nearby.",
+          "Its mouth opened like a cave and pulled the swimmer inward.",
+          "Pinocchio was swallowed before he could change direction.",
+          "In the darkness, a large Tunny explained that escape seemed impossible."
+        ],
+        "studio": [
+          "A circus owner purchased Donkey Pinocchio and converted the consequences of Toyland into a profitable performance.",
+          "Training replaced play with punishment until the animal could bow, dance, and leap through dangerous hoops.",
+          "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats.",
+          "He attempted to call to her, but the human appeal emerged as nothing more than a humiliating bray.",
+          "Distracted by recognition and shame, Pinocchio missed a jump, fell heavily, and permanently injured one leg.",
+          "The owner who had valued his tricks sold the lame animal immediately for a handful of coins.",
+          "The second buyer saw no living creature at all, only a hide that could become a drumhead.",
+          "He fastened a stone to the donkey and lowered him into the sea to end the transaction efficiently.",
+          "Beneath the water, fish consumed the donkey covering while the Fairy's protection preserved the wooden marionette inside.",
+          "The rope returned not with a dead animal but with Pinocchio alive in his original wooden body.",
+          "He broke away from the astonished buyer, explaining that the Fairy had sent the fish to protect him.",
+          "As he swam through open water, an azure Goat called urgently from a white rock.",
+          "Relief lasted only until the Terrible Shark surfaced and opened a mouth large enough to resemble a cavern.",
+          "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster.",
+          "In a single motion the Shark swallowed him, replacing the open sea with complete darkness.",
+          "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "서커스에서 상어 뱃속까지 피노키오의 몸이 어떻게 달라졌는지 말해 보세요.",
+        "core": "두 주인이 피노키오의 가치를 판단한 방식과 그 결과를 설명하세요.",
+        "studio": "이 회차가 처벌의 이야기이면서 동시에 구조와 재탄생의 이야기인 이유를 분석하세요."
+      },
+      "beats": [
+        {"titleKo":"서커스의 상품","summaryKo":"피노키오가 훈련받아 관객 앞에서 공연한다.","performanceTag":"[briskly]"},
+        {"titleKo":"객석의 Fairy","summaryKo":"요정을 알아보지만 말 대신 울음만 나온다.","performanceTag":"[longingly]"},
+        {"titleKo":"다친 다리","summaryKo":"점프에 실패하자 가치 없는 상품처럼 팔린다.","performanceTag":"[with alarm]"},
+        {"titleKo":"북가죽","summaryKo":"새 주인은 생명이 아니라 가죽만 본다.","performanceTag":"[coldly]"},
+        {"titleKo":"물속의 변화","summaryKo":"당나귀 껍질이 사라지고 나무 몸이 돌아온다.","performanceTag":"[with strange wonder]"},
+        {"titleKo":"다시 헤엄치다","summaryKo":"줄을 벗어나 자유로운 바다로 나간다.","performanceTag":"[with relief]"},
+        {"titleKo":"Terrible Shark","summaryKo":"거대한 입이 바다 전체처럼 다가온다.","performanceTag":"[with awe and dread]"},
+        {"titleKo":"어둠 속 Tunny","summaryKo":"삼켜진 뒤 탈출을 포기한 물고기를 만난다.","performanceTag":"[hushed]"}
+      ]
+    },
+    {
+      "number": 11,
+      "slug": "inside-the-terrible-shark",
+      "sourceChapters": [35],
+      "titleEn": "Inside the Terrible Shark",
+      "titleKo": "거대한 상어 속의 재회",
+      "guidingQuestionKo": "두려움보다 사랑이 더 커지는 순간은 언제일까요?",
+      "synopsisKo": "상어의 배 속에서 제페토를 찾은 피노키오는 지난 여행을 고백하고, 아버지를 등에 업은 채 함께 탈출한다.",
+      "narrationDirection": "Hold the darkness and distant candle patiently, let the reunion breathe, perform Pinocchio's long confession with urgency, and make the second escape attempt resolute and luminous.",
+      "artBrief": "A vast dark Shark interior leads from Tunny and a distant candle to Geppetto's tiny table, swallowed ship supplies, throat, moonlit open mouth, tongue road, sneeze setback, and final leap into the sea.",
+      "watchPrompts": {
+        "beforeKo": ["오랫동안 찾던 사람을 만나면 가장 먼저 어떤 말을 하고 싶을까요?", "상대가 약할 때 용기는 힘보다 무엇을 필요로 할까요?"],
+        "afterKo": ["Pinocchio의 긴 고백은 변명과 책임 중 어디에 더 가까웠나요?", "첫 탈출 실패 뒤 두 번째 시도가 성공한 이유를 말해 보세요."]
+      },
+      "levels": {
+        "foundation": [
+          "Pinocchio followed a tiny light through the darkness.",
+          "An old man sat beside the last candle.",
+          "The old man was his father, Geppetto.",
+          "Father and son hugged, laughed, and cried.",
+          "Pinocchio told Geppetto about his long journey.",
+          "Geppetto described the storm and the Terrible Shark.",
+          "He had lived inside it for two years.",
+          "Food from a swallowed ship kept him alive.",
+          "Now the supplies and final candle were ending.",
+          "Pinocchio said they must escape immediately.",
+          "Geppetto could not swim, but Pinocchio could.",
+          "The old Shark slept with its mouth open.",
+          "A sudden sneeze ruined their first escape.",
+          "Pinocchio took Geppetto's hand and tried again.",
+          "Geppetto climbed securely onto his son's back.",
+          "Together they jumped and swam into moonlight."
+        ],
+        "core": [
+          "Pinocchio left the Tunny and followed a tiny light through the darkness.",
+          "At a small table, an old man ate beside his final candle.",
+          "The white-haired prisoner was Geppetto, the father Pinocchio had searched for.",
+          "They embraced in disbelief, laughing and crying at the same time.",
+          "Pinocchio poured out the entire story of his mistakes and misfortunes.",
+          "Geppetto explained how the storm and Terrible Shark had swallowed him.",
+          "He had survived inside the monster for two long years.",
+          "Supplies from a swallowed merchant ship had provided food, candles, and matches.",
+          "Now the food was gone, and the candle on the table was the last.",
+          "Pinocchio insisted that they attempt an escape before darkness returned.",
+          "Although Geppetto could not swim, Pinocchio promised to carry him.",
+          "The ancient Shark's asthma forced it to sleep with its mouth open.",
+          "Their first attempt failed when a sudden sneeze threw them backward.",
+          "Pinocchio refused despair, took his father's hand, and climbed again.",
+          "At the final row of teeth, Geppetto climbed onto his son's back.",
+          "Pinocchio leaped into the moonlit water and began carrying them home."
+        ],
+        "studio": [
+          "Leaving the resigned Tunny behind, Pinocchio followed a faint light through the vast darkness of the Shark.",
+          "The glow came from a final candle beside a tiny table where a white-haired old man ate live fish.",
+          "Recognition arrived almost too powerfully for speech: the prisoner was Geppetto, still waiting after two years.",
+          "Father and son embraced with the confused laughter and tears of people who had imagined each other lost.",
+          "Pinocchio released the entire journey in one breathless confession, naming temptations, lies, punishments, helpers, and regret.",
+          "Geppetto answered with his own story of the storm, the overturned boat, and the monster that swallowed him.",
+          "A merchant ship had also disappeared into the Shark, leaving enough supplies to sustain one man in darkness.",
+          "Those provisions had lasted two years, but now both the cupboard and the final candle were nearly empty.",
+          "Pinocchio immediately proposed escaping through the mouth, treating action as responsibility rather than impulse.",
+          "Geppetto admitted that he could not swim and doubted that a small marionette could carry him.",
+          "His son answered that they should test courage together rather than wait separately for the end.",
+          "Because age and asthma forced the Shark to sleep with its mouth open, moonlight marked a possible route.",
+          "A sudden sneeze destroyed their first attempt and sent them sliding back into darkness without the candle.",
+          "Pinocchio refused the language of defeat, found his father's hand, and led the climb a second time.",
+          "Beyond the tongue and three rows of teeth, Geppetto settled his weight onto the wooden shoulders.",
+          "Pinocchio leaped into the calm moonlit sea, finally using his strength to carry the father who had carried him."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "빛을 발견한 순간부터 바다로 탈출한 순간까지 말해 보세요.",
+        "core": "Pinocchio가 Geppetto를 찾고 두 번째 시도로 탈출하는 과정을 설명하세요.",
+        "studio": "첫 회차의 ‘아버지를 떠나는 움직임’과 이번 회차의 ‘아버지를 업는 움직임’을 대조하세요."
+      },
+      "beats": [
+        {"titleKo":"멀리 있는 불빛","summaryKo":"완전한 어둠 속에서 작은 촛불을 발견한다.","performanceTag":"[hushed]"},
+        {"titleKo":"제페토","summaryKo":"두 해 동안 갇힌 아버지와 마침내 만난다.","performanceTag":"[with astonished joy]"},
+        {"titleKo":"긴 고백","summaryKo":"피노키오가 자신의 모든 여행을 털어놓는다.","performanceTag":"[breathlessly]"},
+        {"titleKo":"두 해의 생존","summaryKo":"제페토가 배의 식량으로 버틴 사연을 말한다.","performanceTag":"[wearily]"},
+        {"titleKo":"탈출 계획","summaryKo":"마지막 촛불이 꺼지기 전에 나가기로 한다.","performanceTag":"[decisively]"},
+        {"titleKo":"열린 입","summaryKo":"잠든 Shark의 입에서 별빛을 본다.","performanceTag":"[with quiet suspense]"},
+        {"titleKo":"첫 실패","summaryKo":"재채기에 다시 어둠 속으로 떨어진다.","performanceTag":"[startled]"},
+        {"titleKo":"아버지를 업고","summaryKo":"두 번째 시도에서 함께 바다로 뛰어든다.","performanceTag":"[bravely]"}
+      ]
+    },
+    {
+      "number": 12,
+      "slug": "a-real-boy-at-last",
+      "sourceChapters": [36],
+      "titleEn": "A Real Boy at Last",
+      "titleKo": "마침내 진짜 아이",
+      "guidingQuestionKo": "사람을 진짜 사람답게 만드는 것은 모습일까요, 반복된 선택일까요?",
+      "synopsisKo": "피노키오는 제페토를 부양하며 일하고 공부하고, 요정을 위해 자신의 돈을 내어놓은 뒤 마침내 진짜 아이가 된다.",
+      "narrationDirection": "Begin physically exhausted, let the Tunny rescue feel grateful, move through daily labor with steady warmth, and make the transformation quiet, earned, and emotionally complete.",
+      "artBrief": "A dawn-to-morning transformation stage links the Tunny rescue, poor Fox and Cat, Cricket's straw cottage, well and milk, Lamp-Wick's stable, basket work and study lamp, Snail's news, Fairy dream, renewed home, and old marionette by the chair.",
+      "watchPrompts": {
+        "beforeKo": ["큰 결심 한 번과 작은 책임을 매일 반복하는 것 중 무엇이 사람을 더 바꿀까요?", "나를 위한 돈을 아픈 사람에게 줄 수 있을까요?"],
+        "afterKo": ["피노키오가 사람이 되기 전에 이미 사람답게 행동한 장면을 찾아보세요.", "마지막의 낡은 나무 인형은 무엇을 상징하나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "Pinocchio carried Geppetto until his strength disappeared.",
+          "The friendly Tunny carried them safely ashore.",
+          "The poor Fox and Cat begged beside the road.",
+          "Pinocchio remembered their theft and walked past them.",
+          "The Talking Cricket welcomed them into a cottage.",
+          "Pinocchio apologized and made Geppetto a bed.",
+          "Farmer John offered milk for one hundred buckets.",
+          "Pinocchio worked daily to feed his weak father.",
+          "He found Lamp-Wick dying as a tired donkey.",
+          "For five months, Pinocchio worked and studied.",
+          "He made baskets and built Geppetto a chair.",
+          "He saved fifty pennies for new clothes.",
+          "Then the Snail said the Fairy was sick.",
+          "Pinocchio gave her everything and worked twice as hard.",
+          "The Fairy rewarded his loving heart in a dream.",
+          "He woke as a real boy beside a healthy Geppetto."
+        ],
+        "core": [
+          "Pinocchio carried Geppetto through the sea until his strength began failing.",
+          "The friendly Tunny arrived and carried both exhausted travelers safely ashore.",
+          "On the road, the ruined Fox and Cat begged their former victim for money.",
+          "Pinocchio remembered their theft, rejected their excuses, and continued with his father.",
+          "The Talking Cricket welcomed them into a small straw cottage.",
+          "Pinocchio apologized for the hammer and prepared a bed for Geppetto.",
+          "Farmer John offered warm milk in exchange for one hundred buckets of water.",
+          "Every morning, Pinocchio completed the hard work to feed his weak father.",
+          "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion.",
+          "For five months, Pinocchio worked by day and studied by lamplight.",
+          "He sold baskets, supported Geppetto, and built him a comfortable rolling chair.",
+          "Eventually he saved fifty pennies and planned to buy new clothes.",
+          "The Snail then reported that the Blue Fairy was sick and penniless.",
+          "Pinocchio gave away every coin and doubled his work for her.",
+          "That night, the Fairy praised his loving heart and forgave his past.",
+          "He awoke as a real boy in a renewed home beside a healthy Geppetto."
+        ],
+        "studio": [
+          "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength.",
+          "The Tunny, inspired by their escape, arrived at the critical moment and carried father and son to safety.",
+          "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit.",
+          "Pinocchio recognized the consequence of their old deception, rejected their excuses, and calmly continued onward.",
+          "The Talking Cricket offered shelter in a straw cottage and reminded Pinocchio of the hammer thrown long ago.",
+          "Instead of defending himself, Pinocchio apologized, accepted the rebuke, and prepared a bed for his weakened father.",
+          "Farmer John offered one glass of milk in exchange for the exhausting labor of drawing one hundred buckets.",
+          "Every dawn Pinocchio returned to the well, transforming work into food and care for Geppetto.",
+          "In the stable he found Lamp-Wick dying as an overworked donkey, the final human cost of Toyland's promise.",
+          "For five months Pinocchio made baskets, studied by lamplight, and built a rolling chair for his recovering father.",
+          "His daily habits produced enough security for Geppetto and fifty saved pennies for a long-delayed new suit.",
+          "Before he could spend them, the Snail reported that the Blue Fairy lay ill without money for food.",
+          "Pinocchio surrendered every penny and chose to double his labor for the mother who had repeatedly rescued him.",
+          "That night the Fairy appeared in a dream, praising not perfection but the loving heart revealed through action.",
+          "He awoke in a renewed home as a living boy, while Geppetto stood healthy and young beside his workbench.",
+          "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "피노키오가 마지막에 아버지와 Fairy를 돌본 행동을 말해 보세요.",
+        "core": "피노키오가 진짜 아이가 될 자격을 행동으로 증명한 네 가지 일을 설명하세요.",
+        "studio": "외형의 변화보다 먼저 일어난 도덕적 변화를 작품 전체의 장면과 연결해 논증하세요."
+      },
+      "beats": [
+        {"titleKo":"Tunny의 구조","summaryKo":"힘이 다한 부자를 Tunny가 해변으로 옮긴다.","performanceTag":"[with grateful relief]"},
+        {"titleKo":"거짓 친구의 결말","summaryKo":"Fox와 Cat의 몰락을 보고 다시 속지 않는다.","performanceTag":"[firmly]"},
+        {"titleKo":"Cricket에게 사과","summaryKo":"오래된 잘못을 변명 없이 인정한다.","performanceTag":"[humbly]"},
+        {"titleKo":"아버지를 위한 우유","summaryKo":"매일 백 번 물을 길어 제페토를 돌본다.","performanceTag":"[steadily]"},
+        {"titleKo":"Lamp-Wick의 마지막","summaryKo":"장난감 나라의 친구가 치른 대가를 마주한다.","performanceTag":"[sorrowfully]"},
+        {"titleKo":"일하고 공부하는 밤","summaryKo":"노동과 배움을 습관으로 만든다.","performanceTag":"[warmly]"},
+        {"titleKo":"쉰 개의 동전","summaryKo":"자신의 옷값을 아픈 Fairy에게 모두 보낸다.","performanceTag":"[selflessly]"},
+        {"titleKo":"진짜 아이","summaryKo":"이미 달라진 마음이 마침내 새로운 몸으로 나타난다.","performanceTag":"[with quiet joy]"}
+      ]
+    }
+  ]
+}

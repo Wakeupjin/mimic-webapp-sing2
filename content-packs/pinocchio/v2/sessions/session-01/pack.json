@@ -1,0 +1,1838 @@
+{
+  "schemaVersion": "2.0.0",
+  "contentId": "pinocchio-v2-session-01",
+  "version": "2.0.0",
+  "status": "text-ready-art-audio-pending",
+  "course": {
+    "title": "The Adventures of Pinocchio",
+    "session": 1,
+    "totalSessions": 12,
+    "minutes": 60,
+    "modeMinutes": {
+      "watch": 10,
+      "mimic": 25,
+      "guess": 10,
+      "word": 15
+    },
+    "learnerRule": "A learner completes one selected level per session; Foundation, Core, and Studio are alternatives, not cumulative work."
+  },
+  "story": {
+    "slug": "a-wooden-boy-wakes",
+    "sourceChapters": [
+      1,
+      2,
+      3
+    ],
+    "titleEn": "A Wooden Boy Wakes",
+    "titleKo": "나무 아이가 깨어나다",
+    "guidingQuestionKo": "자유는 책임 없이도 자유일 수 있을까요?",
+    "synopsisKo": "말하는 나무토막이 제페토의 손에서 피노키오가 되고, 첫 탈출의 대가를 제페토가 대신 치른다."
+  },
+  "source": {
+    "title": "The Adventures of Pinocchio",
+    "author": "Carlo Collodi",
+    "translator": "Carol Della Chiesa",
+    "text": "Project Gutenberg eBook #500",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/500",
+    "rightsNote": "Project Gutenberg identifies this English text as public domain in the United States. Confirm target-territory status before commercial distribution outside the United States.",
+    "adaptation": "Mimic twelve-session educational retelling, version 2.0"
+  },
+  "editorialPolicy": {
+    "storyFidelity": "The twelve sessions preserve the complete original 36-chapter arc, causal sequence, major choices, consequences, reunions, and ending.",
+    "foundation": "Concrete, speakable sentences with one main action and mostly 6–11 words per line.",
+    "core": "Connected sentences with cause, contrast, and reaction, mostly 10–18 words per line.",
+    "studio": "Literary but performable sentences that preserve narrator wit, suspense, and moral tension.",
+    "safety": "Historic peril and slapstick retain their narrative consequence without added graphic detail.",
+    "narration": "Generate one continuous master per session and level; Watch and Mimic must seek within the same performance.",
+    "classTime": "The story text remains concise; sixty minutes comes from deliberate replay, recording, comparison, retrieval, and sentence reconstruction—not padding the narration."
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "model": "eleven_v3",
+    "voiceStatus": "awaiting-durable-paid-voice-selection",
+    "generationStatus": "not-generated",
+    "outputPreference": "mp3_44100_192",
+    "direction": "Open with fireside wonder, accelerate through the carving and chase, then end with quiet unfairness rather than comedy.",
+    "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
+    "expectedAssets": {
+      "foundation": {
+        "master": "audio/foundation.master.mp3",
+        "timeline": "audio/foundation.timeline.json"
+      },
+      "core": {
+        "master": "audio/core.master.mp3",
+        "timeline": "audio/core.timeline.json"
+      },
+      "studio": {
+        "master": "audio/studio.master.mp3",
+        "timeline": "audio/studio.timeline.json"
+      }
+    }
+  },
+  "livingStorybook": {
+    "status": "brief-ready-asset-pending",
+    "expectedAsset": "assets/session-01.png",
+    "artBrief": "One connected paper-theatre stage joining Mastro Cherry's workshop, Geppetto's tiny room, and the village street; the log, carving bench, open door, officer, and separated father and son form eight camera zones.",
+    "beats": [
+      {
+        "id": "beat-01",
+        "titleKo": "말하는 나무",
+        "summaryKo": "평범한 통나무가 울고 웃는다.",
+        "performanceTag": "[with quiet wonder]",
+        "lineRanges": {
+          "foundation": [
+            0,
+            1
+          ],
+          "core": [
+            0,
+            1
+          ],
+          "studio": [
+            0,
+            1
+          ]
+        }
+      },
+      {
+        "id": "beat-02",
+        "titleKo": "목공소의 공포",
+        "summaryKo": "도구가 닿을 때마다 나무가 반응한다.",
+        "performanceTag": "[startled]",
+        "lineRanges": {
+          "foundation": [
+            2,
+            3
+          ],
+          "core": [
+            2,
+            3
+          ],
+          "studio": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "id": "beat-03",
+        "titleKo": "제페토의 계획",
+        "summaryKo": "제페토가 세상을 다닐 인형을 꿈꾼다.",
+        "performanceTag": "[brightly]",
+        "lineRanges": {
+          "foundation": [
+            4,
+            5
+          ],
+          "core": [
+            4,
+            5
+          ],
+          "studio": [
+            4,
+            5
+          ]
+        }
+      },
+      {
+        "id": "beat-04",
+        "titleKo": "수상한 선물",
+        "summaryKo": "두 친구가 화해하고 나무를 건넨다.",
+        "performanceTag": "[mischievously]",
+        "lineRanges": {
+          "foundation": [
+            6,
+            7
+          ],
+          "core": [
+            6,
+            7
+          ],
+          "studio": [
+            6,
+            7
+          ]
+        }
+      },
+      {
+        "id": "beat-05",
+        "titleKo": "살아나는 얼굴",
+        "summaryKo": "눈과 코와 입이 제멋대로 움직인다.",
+        "performanceTag": "[playfully]",
+        "lineRanges": {
+          "foundation": [
+            8,
+            9
+          ],
+          "core": [
+            8,
+            9
+          ],
+          "studio": [
+            8,
+            9
+          ]
+        }
+      },
+      {
+        "id": "beat-06",
+        "titleKo": "첫걸음",
+        "summaryKo": "피노키오가 걷자마자 달아난다.",
+        "performanceTag": "[quickening]",
+        "lineRanges": {
+          "foundation": [
+            10,
+            11
+          ],
+          "core": [
+            10,
+            11
+          ],
+          "studio": [
+            10,
+            11
+          ]
+        }
+      },
+      {
+        "id": "beat-07",
+        "titleKo": "거리의 추격",
+        "summaryKo": "제페토와 경찰이 도망친 인형을 쫓는다.",
+        "performanceTag": "[with comic urgency]",
+        "lineRanges": {
+          "foundation": [
+            12,
+            13
+          ],
+          "core": [
+            12,
+            13
+          ],
+          "studio": [
+            12,
+            13
+          ]
+        }
+      },
+      {
+        "id": "beat-08",
+        "titleKo": "뒤바뀐 죄",
+        "summaryKo": "피노키오는 풀려나고 제페토가 잡혀간다.",
+        "performanceTag": "[softly]",
+        "lineRanges": {
+          "foundation": [
+            14,
+            15
+          ],
+          "core": [
+            14,
+            15
+          ],
+          "studio": [
+            14,
+            15
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "foundation": {
+      "label": "Foundation",
+      "readingBand": "A1–A2",
+      "goalKo": "짧고 구체적인 문장으로 사건과 결과를 순서대로 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Long ago, a carpenter found an ordinary log."
+        },
+        {
+          "id": "line-02",
+          "text": "The log laughed and cried like a child."
+        },
+        {
+          "id": "line-03",
+          "text": "Mastro Cherry searched, but nobody was hiding."
+        },
+        {
+          "id": "line-04",
+          "text": "His plane made the strange wood giggle."
+        },
+        {
+          "id": "line-05",
+          "text": "His friend Geppetto came to the workshop."
+        },
+        {
+          "id": "line-06",
+          "text": "Geppetto wanted wood for a wonderful puppet."
+        },
+        {
+          "id": "line-07",
+          "text": "The log caused two silly quarrels between them."
+        },
+        {
+          "id": "line-08",
+          "text": "Still, Geppetto carried the lively wood home."
+        },
+        {
+          "id": "line-09",
+          "text": "He named his new puppet Pinocchio."
+        },
+        {
+          "id": "line-10",
+          "text": "The unfinished eyes stared at their maker."
+        },
+        {
+          "id": "line-11",
+          "text": "The nose grew, and the new mouth laughed."
+        },
+        {
+          "id": "line-12",
+          "text": "Pinocchio stole Geppetto's cap before he had legs."
+        },
+        {
+          "id": "line-13",
+          "text": "Once he had feet, he ran outside."
+        },
+        {
+          "id": "line-14",
+          "text": "Geppetto chased him through the noisy street."
+        },
+        {
+          "id": "line-15",
+          "text": "A policeman caught Pinocchio by his long nose."
+        },
+        {
+          "id": "line-16",
+          "text": "The crowd freed Pinocchio, but arrested Geppetto."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "평범한 물건이 갑자기 살아난다면 가장 먼저 무엇을 확인할까요?",
+            "원하는 대로 달리는 것과 진짜 자유는 어떻게 다를까요?"
+          ],
+          "afterPromptsKo": [
+            "피노키오의 첫 선택 때문에 누가 대가를 치렀나요?",
+            "제페토가 만든 것은 인형뿐이었을까요, 아들이었을까요?"
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "Long ago, a carpenter found an ordinary log."
+            },
+            {
+              "lineIndex": 1,
+              "text": "The log laughed and cried like a child."
+            },
+            {
+              "lineIndex": 2,
+              "text": "Mastro Cherry searched, but nobody was hiding."
+            },
+            {
+              "lineIndex": 3,
+              "text": "His plane made the strange wood giggle."
+            },
+            {
+              "lineIndex": 4,
+              "text": "His friend Geppetto came to the workshop."
+            },
+            {
+              "lineIndex": 5,
+              "text": "Geppetto wanted wood for a wonderful puppet."
+            },
+            {
+              "lineIndex": 6,
+              "text": "The log caused two silly quarrels between them."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Still, Geppetto carried the lively wood home."
+            },
+            {
+              "lineIndex": 8,
+              "text": "He named his new puppet Pinocchio."
+            },
+            {
+              "lineIndex": 9,
+              "text": "The unfinished eyes stared at their maker."
+            },
+            {
+              "lineIndex": 10,
+              "text": "The nose grew, and the new mouth laughed."
+            },
+            {
+              "lineIndex": 11,
+              "text": "Pinocchio stole Geppetto's cap before he had legs."
+            },
+            {
+              "lineIndex": 12,
+              "text": "Once he had feet, he ran outside."
+            },
+            {
+              "lineIndex": 13,
+              "text": "Geppetto chased him through the noisy street."
+            },
+            {
+              "lineIndex": 14,
+              "text": "A policeman caught Pinocchio by his long nose."
+            },
+            {
+              "lineIndex": 15,
+              "text": "The crowd freed Pinocchio, but arrested Geppetto."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "The log laughed and cried like a child."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "The log caused two silly quarrels between them."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio stole Geppetto's cap before he had legs."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "He named his new puppet Pinocchio."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Geppetto chased him through the noisy street."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "His plane made the strange wood giggle."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The crowd freed Pinocchio, but arrested Geppetto."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Geppetto wanted wood for a wonderful puppet."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "The nose grew, and the new mouth laughed."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Still, Geppetto carried the lively wood home."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "Once he had feet, he ran outside."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "The log laughed and cried like a child."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "A policeman caught Pinocchio by his long nose."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "His plane made the strange wood giggle."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "The unfinished eyes stared at their maker."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Geppetto wanted wood for a wonderful puppet."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "Pinocchio stole Geppetto's cap before he had legs."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "Long ago, a carpenter found an ordinary log."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "Geppetto chased him through the noisy street."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "Mastro Cherry searched, but nobody was hiding."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Still, Geppetto carried the lively wood home."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "His friend Geppetto came to the workshop."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "The unfinished eyes stared at their maker."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The crowd freed Pinocchio, but arrested Geppetto."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "The log laughed and cried like a child.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "log",
+                "laughed",
+                "and",
+                "cried",
+                "like",
+                "a",
+                "child",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "His plane made the strange wood giggle.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "His",
+                "plane",
+                "made",
+                "the",
+                "strange",
+                "wood",
+                "giggle",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "Geppetto wanted wood for a wonderful puppet.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Geppetto",
+                "wanted",
+                "wood",
+                "for",
+                "a",
+                "wonderful",
+                "puppet",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Still, Geppetto carried the lively wood home.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Still",
+                ",",
+                "Geppetto",
+                "carried",
+                "the",
+                "lively",
+                "wood",
+                "home",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "The unfinished eyes stared at their maker.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "unfinished",
+                "eyes",
+                "stared",
+                "at",
+                "their",
+                "maker",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "Pinocchio stole Geppetto's cap before he had legs.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "stole",
+                "Geppetto's",
+                "cap",
+                "before",
+                "he",
+                "had",
+                "legs",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "Geppetto chased him through the noisy street.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Geppetto",
+                "chased",
+                "him",
+                "through",
+                "the",
+                "noisy",
+                "street",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "The crowd freed Pinocchio, but arrested Geppetto.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "crowd",
+                "freed",
+                "Pinocchio",
+                ",",
+                "but",
+                "arrested",
+                "Geppetto",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "피노키오가 만들어진 뒤 제페토에게 생긴 세 가지 일을 순서대로 말해 보세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 117,
+        "characters": 700,
+        "averageWordsPerLine": 7.3
+      }
+    },
+    "core": {
+      "label": "Core",
+      "readingBand": "A2–B1",
+      "goalKo": "원인, 선택, 반응을 연결해 자연스럽게 설명한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Centuries ago, Mastro Cherry found an ordinary log in his workshop."
+        },
+        {
+          "id": "line-02",
+          "text": "When he raised his hatchet, a child's voice begged him to be careful."
+        },
+        {
+          "id": "line-03",
+          "text": "He searched every corner, but no hidden speaker could be found."
+        },
+        {
+          "id": "line-04",
+          "text": "The wood cried under a blow and laughed beneath the carpenter's plane."
+        },
+        {
+          "id": "line-05",
+          "text": "Then Geppetto arrived, seeking wood for a marvelous traveling marionette."
+        },
+        {
+          "id": "line-06",
+          "text": "The mischievous log used a hated nickname and provoked two comic quarrels."
+        },
+        {
+          "id": "line-07",
+          "text": "After making peace, Geppetto accepted the strange gift and carried it home."
+        },
+        {
+          "id": "line-08",
+          "text": "In his poor room, he named the puppet Pinocchio and began carving."
+        },
+        {
+          "id": "line-09",
+          "text": "The unfinished eyes moved, and the nose stretched longer than he planned."
+        },
+        {
+          "id": "line-10",
+          "text": "The new puppet mocked Geppetto and stole his yellow cap."
+        },
+        {
+          "id": "line-11",
+          "text": "Geppetto taught him to stand as soon as the legs were finished."
+        },
+        {
+          "id": "line-12",
+          "text": "Pinocchio learned one step, then raced through the open door."
+        },
+        {
+          "id": "line-13",
+          "text": "His wooden feet clattered while Geppetto chased him down the street."
+        },
+        {
+          "id": "line-14",
+          "text": "A Carabineer stopped the runaway by grabbing his extremely long nose."
+        },
+        {
+          "id": "line-15",
+          "text": "Pinocchio collapsed dramatically, and the crowd blamed his worried father."
+        },
+        {
+          "id": "line-16",
+          "text": "The officer released the puppet and led innocent Geppetto to prison."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "평범한 물건이 갑자기 살아난다면 가장 먼저 무엇을 확인할까요?",
+            "원하는 대로 달리는 것과 진짜 자유는 어떻게 다를까요?"
+          ],
+          "afterPromptsKo": [
+            "피노키오의 첫 선택 때문에 누가 대가를 치렀나요?",
+            "제페토가 만든 것은 인형뿐이었을까요, 아들이었을까요?"
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "Centuries ago, Mastro Cherry found an ordinary log in his workshop."
+            },
+            {
+              "lineIndex": 1,
+              "text": "When he raised his hatchet, a child's voice begged him to be careful."
+            },
+            {
+              "lineIndex": 2,
+              "text": "He searched every corner, but no hidden speaker could be found."
+            },
+            {
+              "lineIndex": 3,
+              "text": "The wood cried under a blow and laughed beneath the carpenter's plane."
+            },
+            {
+              "lineIndex": 4,
+              "text": "Then Geppetto arrived, seeking wood for a marvelous traveling marionette."
+            },
+            {
+              "lineIndex": 5,
+              "text": "The mischievous log used a hated nickname and provoked two comic quarrels."
+            },
+            {
+              "lineIndex": 6,
+              "text": "After making peace, Geppetto accepted the strange gift and carried it home."
+            },
+            {
+              "lineIndex": 7,
+              "text": "In his poor room, he named the puppet Pinocchio and began carving."
+            },
+            {
+              "lineIndex": 8,
+              "text": "The unfinished eyes moved, and the nose stretched longer than he planned."
+            },
+            {
+              "lineIndex": 9,
+              "text": "The new puppet mocked Geppetto and stole his yellow cap."
+            },
+            {
+              "lineIndex": 10,
+              "text": "Geppetto taught him to stand as soon as the legs were finished."
+            },
+            {
+              "lineIndex": 11,
+              "text": "Pinocchio learned one step, then raced through the open door."
+            },
+            {
+              "lineIndex": 12,
+              "text": "His wooden feet clattered while Geppetto chased him down the street."
+            },
+            {
+              "lineIndex": 13,
+              "text": "A Carabineer stopped the runaway by grabbing his extremely long nose."
+            },
+            {
+              "lineIndex": 14,
+              "text": "Pinocchio collapsed dramatically, and the crowd blamed his worried father."
+            },
+            {
+              "lineIndex": 15,
+              "text": "The officer released the puppet and led innocent Geppetto to prison."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "When he raised his hatchet, a child's voice begged him to be careful."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "After making peace, Geppetto accepted the strange gift and carried it home."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio learned one step, then raced through the open door."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "The unfinished eyes moved, and the nose stretched longer than he planned."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "A Carabineer stopped the runaway by grabbing his extremely long nose."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "The wood cried under a blow and laughed beneath the carpenter's plane."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The officer released the puppet and led innocent Geppetto to prison."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The mischievous log used a hated nickname and provoked two comic quarrels."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "Geppetto taught him to stand as soon as the legs were finished."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "In his poor room, he named the puppet Pinocchio and began carving."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "His wooden feet clattered while Geppetto chased him down the street."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "When he raised his hatchet, a child's voice begged him to be careful."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "Pinocchio collapsed dramatically, and the crowd blamed his worried father."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "The wood cried under a blow and laughed beneath the carpenter's plane."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "The new puppet mocked Geppetto and stole his yellow cap."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The mischievous log used a hated nickname and provoked two comic quarrels."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "Pinocchio learned one step, then raced through the open door."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "Centuries ago, Mastro Cherry found an ordinary log in his workshop."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "A Carabineer stopped the runaway by grabbing his extremely long nose."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "He searched every corner, but no hidden speaker could be found."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "In his poor room, he named the puppet Pinocchio and began carving."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "Then Geppetto arrived, seeking wood for a marvelous traveling marionette."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "The new puppet mocked Geppetto and stole his yellow cap."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The officer released the puppet and led innocent Geppetto to prison."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "When he raised his hatchet, a child's voice begged him to be careful.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "When",
+                "he",
+                "raised",
+                "his",
+                "hatchet",
+                ",",
+                "a",
+                "child's",
+                "voice",
+                "begged",
+                "him",
+                "to",
+                "be",
+                "careful",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "The wood cried under a blow and laughed beneath the carpenter's plane.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "wood",
+                "cried",
+                "under",
+                "a",
+                "blow",
+                "and",
+                "laughed",
+                "beneath",
+                "the",
+                "carpenter's",
+                "plane",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "The mischievous log used a hated nickname and provoked two comic quarrels.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "mischievous",
+                "log",
+                "used",
+                "a",
+                "hated",
+                "nickname",
+                "and",
+                "provoked",
+                "two",
+                "comic",
+                "quarrels",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "In his poor room, he named the puppet Pinocchio and began carving.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "In",
+                "his",
+                "poor",
+                "room",
+                ",",
+                "he",
+                "named",
+                "the",
+                "puppet",
+                "Pinocchio",
+                "and",
+                "began",
+                "carving",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "The new puppet mocked Geppetto and stole his yellow cap.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "new",
+                "puppet",
+                "mocked",
+                "Geppetto",
+                "and",
+                "stole",
+                "his",
+                "yellow",
+                "cap",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "Pinocchio learned one step, then raced through the open door.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "learned",
+                "one",
+                "step",
+                ",",
+                "then",
+                "raced",
+                "through",
+                "the",
+                "open",
+                "door",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "A Carabineer stopped the runaway by grabbing his extremely long nose.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "A",
+                "Carabineer",
+                "stopped",
+                "the",
+                "runaway",
+                "by",
+                "grabbing",
+                "his",
+                "extremely",
+                "long",
+                "nose",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "The officer released the puppet and led innocent Geppetto to prison.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "officer",
+                "released",
+                "the",
+                "puppet",
+                "and",
+                "led",
+                "innocent",
+                "Geppetto",
+                "to",
+                "prison",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "피노키오의 첫 자유가 왜 제페토의 체포로 이어졌는지 원인과 결과로 설명하세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 180,
+        "characters": 1104,
+        "averageWordsPerLine": 11.3
+      }
+    },
+    "studio": {
+      "label": "Studio",
+      "readingBand": "B1–B2",
+      "goalKo": "서술자의 어조와 도덕적 긴장을 살려 해석하고 말한다.",
+      "lines": [
+        {
+          "id": "line-01",
+          "text": "Although grand adventures often begin with kings, this one opened with a common block of firewood."
+        },
+        {
+          "id": "line-02",
+          "text": "Mastro Cherry lifted his hatchet, only to hear a child's voice plead from inside the grain."
+        },
+        {
+          "id": "line-03",
+          "text": "He searched beneath benches and inside cupboards, yet the impossible speaker remained hidden in plain sight."
+        },
+        {
+          "id": "line-04",
+          "text": "A blow made the wood cry, while the carpenter's plane produced an even more alarming fit of laughter."
+        },
+        {
+          "id": "line-05",
+          "text": "At that precise moment, quick-tempered Geppetto arrived in search of wood for a world-traveling marionette."
+        },
+        {
+          "id": "line-06",
+          "text": "The log exploited a hated nickname so cleverly that the old friends twice forgot why they had met."
+        },
+        {
+          "id": "line-07",
+          "text": "Once peace returned, Mastro Cherry gladly surrendered the troublesome gift, and Geppetto carried it home."
+        },
+        {
+          "id": "line-08",
+          "text": "Inside his poor but orderly room, Geppetto named the future puppet Pinocchio and began to carve."
+        },
+        {
+          "id": "line-09",
+          "text": "The unfinished eyes stared back, the nose lengthened stubbornly, and the mouth laughed at its creator."
+        },
+        {
+          "id": "line-10",
+          "text": "Before he even possessed legs, Pinocchio mocked Geppetto and snatched the yellow cap from his head."
+        },
+        {
+          "id": "line-11",
+          "text": "His patient maker finished the body and carefully taught the wooden child how to stand."
+        },
+        {
+          "id": "line-12",
+          "text": "Pinocchio converted his very first steps into an escape through the open door."
+        },
+        {
+          "id": "line-13",
+          "text": "The clatter of wooden feet drew a laughing crowd as Geppetto pursued him through the village."
+        },
+        {
+          "id": "line-14",
+          "text": "A Carabineer finally stopped the runaway by seizing the nose that could never be carved shorter."
+        },
+        {
+          "id": "line-15",
+          "text": "Pinocchio dropped to the road and performed helplessness so convincingly that appearances defeated the truth."
+        },
+        {
+          "id": "line-16",
+          "text": "The puppet went free, while the father who had given him life was led away grieving."
+        }
+      ],
+      "activities": {
+        "watch": {
+          "minutes": 10,
+          "beforePromptsKo": [
+            "평범한 물건이 갑자기 살아난다면 가장 먼저 무엇을 확인할까요?",
+            "원하는 대로 달리는 것과 진짜 자유는 어떻게 다를까요?"
+          ],
+          "afterPromptsKo": [
+            "피노키오의 첫 선택 때문에 누가 대가를 치렀나요?",
+            "제페토가 만든 것은 인형뿐이었을까요, 아들이었을까요?"
+          ],
+          "protocol": [
+            "predict-before-listening",
+            "first-listen-without-captions",
+            "answer-gist-prompts",
+            "second-listen-with-captions"
+          ]
+        },
+        "mimic": {
+          "minutes": 25,
+          "protocol": [
+            "listen",
+            "chunk",
+            "record",
+            "compare",
+            "retry"
+          ],
+          "items": [
+            {
+              "lineIndex": 0,
+              "text": "Although grand adventures often begin with kings, this one opened with a common block of firewood."
+            },
+            {
+              "lineIndex": 1,
+              "text": "Mastro Cherry lifted his hatchet, only to hear a child's voice plead from inside the grain."
+            },
+            {
+              "lineIndex": 2,
+              "text": "He searched beneath benches and inside cupboards, yet the impossible speaker remained hidden in plain sight."
+            },
+            {
+              "lineIndex": 3,
+              "text": "A blow made the wood cry, while the carpenter's plane produced an even more alarming fit of laughter."
+            },
+            {
+              "lineIndex": 4,
+              "text": "At that precise moment, quick-tempered Geppetto arrived in search of wood for a world-traveling marionette."
+            },
+            {
+              "lineIndex": 5,
+              "text": "The log exploited a hated nickname so cleverly that the old friends twice forgot why they had met."
+            },
+            {
+              "lineIndex": 6,
+              "text": "Once peace returned, Mastro Cherry gladly surrendered the troublesome gift, and Geppetto carried it home."
+            },
+            {
+              "lineIndex": 7,
+              "text": "Inside his poor but orderly room, Geppetto named the future puppet Pinocchio and began to carve."
+            },
+            {
+              "lineIndex": 8,
+              "text": "The unfinished eyes stared back, the nose lengthened stubbornly, and the mouth laughed at its creator."
+            },
+            {
+              "lineIndex": 9,
+              "text": "Before he even possessed legs, Pinocchio mocked Geppetto and snatched the yellow cap from his head."
+            },
+            {
+              "lineIndex": 10,
+              "text": "His patient maker finished the body and carefully taught the wooden child how to stand."
+            },
+            {
+              "lineIndex": 11,
+              "text": "Pinocchio converted his very first steps into an escape through the open door."
+            },
+            {
+              "lineIndex": 12,
+              "text": "The clatter of wooden feet drew a laughing crowd as Geppetto pursued him through the village."
+            },
+            {
+              "lineIndex": 13,
+              "text": "A Carabineer finally stopped the runaway by seizing the nose that could never be carved shorter."
+            },
+            {
+              "lineIndex": 14,
+              "text": "Pinocchio dropped to the road and performed helplessness so convincingly that appearances defeated the truth."
+            },
+            {
+              "lineIndex": 15,
+              "text": "The puppet went free, while the father who had given him life was led away grieving."
+            }
+          ]
+        },
+        "guess": {
+          "minutes": 10,
+          "items": [
+            {
+              "id": "guess-01",
+              "audioLineIndex": 1,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 1,
+                  "text": "Mastro Cherry lifted his hatchet, only to hear a child's voice plead from inside the grain."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 6,
+                  "text": "Once peace returned, Mastro Cherry gladly surrendered the troublesome gift, and Geppetto carried it home."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio converted his very first steps into an escape through the open door."
+                }
+              ]
+            },
+            {
+              "id": "guess-02",
+              "audioLineIndex": 3,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 8,
+                  "text": "The unfinished eyes stared back, the nose lengthened stubbornly, and the mouth laughed at its creator."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "A Carabineer finally stopped the runaway by seizing the nose that could never be carved shorter."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 3,
+                  "text": "A blow made the wood cry, while the carpenter's plane produced an even more alarming fit of laughter."
+                }
+              ]
+            },
+            {
+              "id": "guess-03",
+              "audioLineIndex": 5,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The puppet went free, while the father who had given him life was led away grieving."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The log exploited a hated nickname so cleverly that the old friends twice forgot why they had met."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 10,
+                  "text": "His patient maker finished the body and carefully taught the wooden child how to stand."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 7,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Inside his poor but orderly room, Geppetto named the future puppet Pinocchio and began to carve."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 12,
+                  "text": "The clatter of wooden feet drew a laughing crowd as Geppetto pursued him through the village."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 1,
+                  "text": "Mastro Cherry lifted his hatchet, only to hear a child's voice plead from inside the grain."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 9,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 14,
+                  "text": "Pinocchio dropped to the road and performed helplessness so convincingly that appearances defeated the truth."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 3,
+                  "text": "A blow made the wood cry, while the carpenter's plane produced an even more alarming fit of laughter."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 9,
+                  "text": "Before he even possessed legs, Pinocchio mocked Geppetto and snatched the yellow cap from his head."
+                }
+              ]
+            },
+            {
+              "id": "guess-06",
+              "audioLineIndex": 11,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The log exploited a hated nickname so cleverly that the old friends twice forgot why they had met."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 11,
+                  "text": "Pinocchio converted his very first steps into an escape through the open door."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 0,
+                  "text": "Although grand adventures often begin with kings, this one opened with a common block of firewood."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 13,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 13,
+                  "text": "A Carabineer finally stopped the runaway by seizing the nose that could never be carved shorter."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 2,
+                  "text": "He searched beneath benches and inside cupboards, yet the impossible speaker remained hidden in plain sight."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 7,
+                  "text": "Inside his poor but orderly room, Geppetto named the future puppet Pinocchio and began to carve."
+                }
+              ]
+            },
+            {
+              "id": "guess-08",
+              "audioLineIndex": 15,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 4,
+                  "text": "At that precise moment, quick-tempered Geppetto arrived in search of wood for a world-traveling marionette."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 9,
+                  "text": "Before he even possessed legs, Pinocchio mocked Geppetto and snatched the yellow cap from his head."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The puppet went free, while the father who had given him life was led away grieving."
+                }
+              ]
+            }
+          ]
+        },
+        "word": {
+          "minutes": 15,
+          "protocol": [
+            "rebuild",
+            "read-aloud",
+            "use-in-retell"
+          ],
+          "items": [
+            {
+              "id": "word-01",
+              "lineIndex": 1,
+              "text": "Mastro Cherry lifted his hatchet, only to hear a child's voice plead from inside the grain.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Mastro",
+                "Cherry",
+                "lifted",
+                "his",
+                "hatchet",
+                ",",
+                "only",
+                "to",
+                "hear",
+                "a",
+                "child's",
+                "voice",
+                "plead",
+                "from",
+                "inside",
+                "the",
+                "grain",
+                "."
+              ]
+            },
+            {
+              "id": "word-02",
+              "lineIndex": 3,
+              "text": "A blow made the wood cry, while the carpenter's plane produced an even more alarming fit of laughter.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "A",
+                "blow",
+                "made",
+                "the",
+                "wood",
+                "cry",
+                ",",
+                "while",
+                "the",
+                "carpenter's",
+                "plane",
+                "produced",
+                "an",
+                "even",
+                "more",
+                "alarming",
+                "fit",
+                "of",
+                "laughter",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
+              "lineIndex": 5,
+              "text": "The log exploited a hated nickname so cleverly that the old friends twice forgot why they had met.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "log",
+                "exploited",
+                "a",
+                "hated",
+                "nickname",
+                "so",
+                "cleverly",
+                "that",
+                "the",
+                "old",
+                "friends",
+                "twice",
+                "forgot",
+                "why",
+                "they",
+                "had",
+                "met",
+                "."
+              ]
+            },
+            {
+              "id": "word-04",
+              "lineIndex": 7,
+              "text": "Inside his poor but orderly room, Geppetto named the future puppet Pinocchio and began to carve.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Inside",
+                "his",
+                "poor",
+                "but",
+                "orderly",
+                "room",
+                ",",
+                "Geppetto",
+                "named",
+                "the",
+                "future",
+                "puppet",
+                "Pinocchio",
+                "and",
+                "began",
+                "to",
+                "carve",
+                "."
+              ]
+            },
+            {
+              "id": "word-05",
+              "lineIndex": 9,
+              "text": "Before he even possessed legs, Pinocchio mocked Geppetto and snatched the yellow cap from his head.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Before",
+                "he",
+                "even",
+                "possessed",
+                "legs",
+                ",",
+                "Pinocchio",
+                "mocked",
+                "Geppetto",
+                "and",
+                "snatched",
+                "the",
+                "yellow",
+                "cap",
+                "from",
+                "his",
+                "head",
+                "."
+              ]
+            },
+            {
+              "id": "word-06",
+              "lineIndex": 11,
+              "text": "Pinocchio converted his very first steps into an escape through the open door.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "converted",
+                "his",
+                "very",
+                "first",
+                "steps",
+                "into",
+                "an",
+                "escape",
+                "through",
+                "the",
+                "open",
+                "door",
+                "."
+              ]
+            },
+            {
+              "id": "word-07",
+              "lineIndex": 13,
+              "text": "A Carabineer finally stopped the runaway by seizing the nose that could never be carved shorter.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "A",
+                "Carabineer",
+                "finally",
+                "stopped",
+                "the",
+                "runaway",
+                "by",
+                "seizing",
+                "the",
+                "nose",
+                "that",
+                "could",
+                "never",
+                "be",
+                "carved",
+                "shorter",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
+              "lineIndex": 15,
+              "text": "The puppet went free, while the father who had given him life was led away grieving.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "puppet",
+                "went",
+                "free",
+                ",",
+                "while",
+                "the",
+                "father",
+                "who",
+                "had",
+                "given",
+                "him",
+                "life",
+                "was",
+                "led",
+                "away",
+                "grieving",
+                "."
+              ]
+            }
+          ],
+          "retellPromptKo": "이 회차에서 겉으로 보이는 상황이 진실을 뒤집는 과정을 설명하세요."
+        }
+      },
+      "stats": {
+        "lines": 16,
+        "words": 253,
+        "characters": 1567,
+        "averageWordsPerLine": 15.8
+      }
+    }
+  },
+  "checksum": "2a0e5d8879ea392cbdc7971ba0f00280b3a5decf92e033a9a3d64b84bdd40a34"
+}

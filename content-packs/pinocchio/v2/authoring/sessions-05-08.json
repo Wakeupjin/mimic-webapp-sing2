@@ -1,0 +1,348 @@
+{
+  "sessions": [
+    {
+      "number": 5,
+      "slug": "the-blue-fairy-and-the-field-of-wonders",
+      "sourceChapters": [16, 17, 18, 19],
+      "titleEn": "The Blue Fairy and the Field of Wonders",
+      "titleKo": "푸른 요정과 기적의 들판",
+      "guidingQuestionKo": "실수를 인정하지 않으면 왜 같은 실수를 반복하게 될까요?",
+      "synopsisKo": "푸른 요정에게 구조된 피노키오는 거짓말의 결과를 겪고도 다시 여우와 고양이를 따라가 금화를 잃고 감옥에 갇힌다.",
+      "narrationDirection": "Let the rescue feel magical and compassionate, play the medicine scene with restraint, make the growing nose comic but meaningful, and sharpen the injustice of the court.",
+      "artBrief": "A moonlit oak opens into the Fairy's blue room, then flows toward the Field of Wonders and the courtroom: Falcon, Poodle coach, doctors, medicine, growing nose, four coins, Parrot, and judge form eight focus zones.",
+      "watchPrompts": {
+        "beforeKo": ["도움을 받은 뒤 같은 실수를 반복하는 이유는 무엇일까요?", "거짓말은 문제를 숨길까요, 더 크게 만들까요?"],
+        "afterKo": ["코가 길어진 사건과 금화를 잃은 사건의 공통점을 찾아보세요.", "재판의 결과가 부당한 이유를 피노키오의 선택과 구분해서 말해 보세요."]
+      },
+      "levels": {
+        "foundation": [
+          "The Blue Fairy saw Pinocchio beside the oak.",
+          "She sent a Falcon to cut him down.",
+          "A Poodle carried him home in a carriage.",
+          "Three doctors argued about whether he lived.",
+          "Pinocchio refused the Fairy's bitter medicine.",
+          "Black Rabbits arrived, and he quickly drank.",
+          "He lied about the four hidden coins.",
+          "With each lie, his wooden nose grew.",
+          "Woodpeckers finally shortened the enormous nose.",
+          "The Fairy promised he could meet Geppetto soon.",
+          "Outside, the Fox and Cat found him again.",
+          "Pinocchio followed them to the Field of Wonders.",
+          "He buried four coins and waited for riches.",
+          "A Parrot revealed that the thieves took everything.",
+          "The judge heard his story, then jailed him.",
+          "A royal celebration finally opened the prison."
+        ],
+        "core": [
+          "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak.",
+          "She sent a Falcon to cut the rope and rescue him.",
+          "Her elegant Poodle carried the puppet home in a tiny carriage.",
+          "A Crow, Owl, and Talking Cricket debated whether their patient was alive.",
+          "Pinocchio refused the bitter medicine until Black Rabbits arrived for him.",
+          "He swallowed it immediately and recovered from his dangerous fever.",
+          "When the Fairy asked about the coins, Pinocchio invented several lies.",
+          "His nose lengthened after every false answer until he could barely move.",
+          "The Fairy forgave him and called Woodpeckers to shorten the nose.",
+          "She promised that Geppetto could soon join them as a family.",
+          "On the way to meet his father, Pinocchio met the Fox and Cat again.",
+          "Ignoring experience, he followed them toward the Field of Wonders.",
+          "He buried his four coins and waited for a tree of money.",
+          "A laughing Parrot revealed that the swindlers had stolen everything.",
+          "The local judge listened to the robbery, then imprisoned the victim.",
+          "Only a royal celebration freed Pinocchio four months later."
+        ],
+        "studio": [
+          "From her white house, the Blue Fairy saw Pinocchio suspended from the oak and ordered an immediate rescue.",
+          "A Falcon severed the rope, while a magnificently dressed Poodle brought the unconscious puppet home by carriage.",
+          "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character.",
+          "Although seriously ill, he rejected the bitter medicine until solemn Black Rabbits arrived to carry him away.",
+          "Fear accomplished what good advice had not, and one hurried swallow restored his strength.",
+          "The Fairy then asked about the gold pieces, giving Pinocchio an opportunity to practice honesty.",
+          "He protected his embarrassment with one lie after another, and his wooden nose recorded each falsehood publicly.",
+          "Once the lesson had become impossible to ignore, the Fairy forgave him and summoned Woodpeckers to repair the damage.",
+          "She promised that Geppetto would soon arrive, offering Pinocchio the family reunion he claimed to desire.",
+          "Yet on the road to meet his father, he encountered the Fox and Cat and accepted their story again.",
+          "Experience warned him, but the fantasy of effortless wealth remained louder than memory.",
+          "At the Field of Wonders, Pinocchio buried his remaining four coins and waited for a golden harvest.",
+          "A Parrot laughed at the scheme and explained that the swindlers had simply dug up the money.",
+          "Pinocchio reported the theft to a judge, expecting the law to restore what foolishness had lost.",
+          "The court perversely punished the robbed puppet with four months in prison, pleasing the absent thieves.",
+          "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "구조, 거짓말, 금화, 감옥을 차례로 연결해 이야기하세요.",
+        "core": "피노키오가 코의 교훈을 얻고도 여우와 고양이를 다시 믿은 이유를 설명하세요.",
+        "studio": "개인의 어리석은 선택과 사회의 부당한 판결을 구분해 평가하세요."
+      },
+      "beats": [
+        {"titleKo":"요정의 구조","summaryKo":"푸른 요정이 매달린 피노키오를 구한다.","performanceTag":"[with magical concern]"},
+        {"titleKo":"세 명의 의사","summaryKo":"의사들과 Cricket이 상태와 성격을 진단한다.","performanceTag":"[wryly]"},
+        {"titleKo":"쓴 약","summaryKo":"두려움 끝에 약을 마시고 회복한다.","performanceTag":"[with comic urgency]"},
+        {"titleKo":"길어지는 코","summaryKo":"거짓말이 눈에 보이는 결과가 된다.","performanceTag":"[knowingly]"},
+        {"titleKo":"다시 만난 사기꾼","summaryKo":"여우와 고양이의 제안을 또 받아들인다.","performanceTag":"[smoothly]"},
+        {"titleKo":"묻힌 금화","summaryKo":"기적을 기대하며 네 금화를 땅에 묻는다.","performanceTag":"[hopefully]"},
+        {"titleKo":"Parrot의 웃음","summaryKo":"금화가 이미 도둑맞았다는 사실을 안다.","performanceTag":"[bitterly amused]"},
+        {"titleKo":"뒤집힌 재판","summaryKo":"도움을 청한 피해자가 감옥에 갇힌다.","performanceTag":"[dryly]"}
+      ]
+    },
+    {
+      "number": 6,
+      "slug": "the-watchdog-and-the-search-for-father",
+      "sourceChapters": [20, 21, 22, 23],
+      "titleEn": "The Watchdog and the Search for Father",
+      "titleKo": "감시견과 아버지 찾기",
+      "guidingQuestionKo": "한 번의 정직한 선택이 사람을 얼마나 바꿀 수 있을까요?",
+      "synopsisKo": "감옥에서 나온 피노키오는 함정에 걸려 감시견이 되지만 정직함으로 자유를 얻고, 제페토를 찾기 위해 바다로 향한다.",
+      "narrationDirection": "Mix roadside absurdity with the humiliation of the collar, make the watchdog choice quietly honorable, and build emotional momentum toward the stormy sea.",
+      "artBrief": "A long paper-theatre journey links the serpent road, grape trap, farmer's coop and collar, weasels, Fairy's memorial stone, Pigeon flight, stormy coast, and Geppetto's tiny boat.",
+      "watchPrompts": {
+        "beforeKo": ["아무도 보지 않을 때의 정직함은 어떻게 증명될까요?", "잃어버린 가족을 찾기 위해 어디까지 갈 수 있을까요?"],
+        "afterKo": ["감시견이 된 일이 왜 단순한 벌로 끝나지 않았나요?", "피노키오가 바다에 뛰어든 선택은 이전의 충동과 어떻게 달랐나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "After prison, Pinocchio hurried toward the Fairy.",
+          "A giant Serpent frightened him on the road.",
+          "Hungry Pinocchio tried to steal some grapes.",
+          "A trap closed tightly around his legs.",
+          "A farmer chained him beside the chicken coop.",
+          "Pinocchio had to replace the farmer's dead watchdog.",
+          "Weasels offered him food for helping their theft.",
+          "Pinocchio refused and quietly called the farmer.",
+          "The grateful farmer removed his heavy collar.",
+          "At the Fairy's home, Pinocchio found a tombstone.",
+          "He wept until a great Pigeon arrived.",
+          "The Pigeon said Geppetto had built a boat.",
+          "Pinocchio climbed onto the bird's strong back.",
+          "They flew all night toward the distant sea.",
+          "A storm overturned Geppetto's tiny boat offshore.",
+          "Pinocchio jumped into the waves to find him."
+        ],
+        "core": [
+          "Once released from prison, Pinocchio hurried back toward the Blue Fairy.",
+          "A giant smoking Serpent blocked the road and frightened him senseless.",
+          "Later, hunger tempted Pinocchio to steal grapes from a vineyard.",
+          "A hidden trap snapped shut and held both wooden legs.",
+          "The farmer who found him chained the puppet beside his chicken coop.",
+          "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog.",
+          "That night, Weasels offered him food for allowing their usual theft.",
+          "Instead of accepting the bargain, Pinocchio trapped them and alerted the farmer.",
+          "Impressed by this unexpected honesty, the farmer removed the humiliating collar.",
+          "At the Fairy's home, Pinocchio discovered a stone claiming she had died.",
+          "His grief continued until a great Pigeon brought news of Geppetto.",
+          "The bird explained that his father had built a small boat to search overseas.",
+          "Pinocchio climbed onto the Pigeon's back without hesitating.",
+          "They flew through the entire night and reached the coast by morning.",
+          "Offshore, Pinocchio recognized Geppetto struggling as a storm overturned the boat.",
+          "He threw himself into the rough sea, determined to reach his father."
+        ],
+        "studio": [
+          "Freed after four months, Pinocchio rushed toward the Blue Fairy, hoping to recover the future he had abandoned.",
+          "A gigantic smoking Serpent blocked the road and frightened him, then collapsed in laughter at his panic.",
+          "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes.",
+          "The hidden trap that closed on his wooden legs had been set for thieves, making the consequence painfully exact.",
+          "A farmer chained him beside the chicken coop and appointed him successor to the recently buried watchdog Melampo.",
+          "Humiliated but alert, Pinocchio spent the night listening for anyone who might approach the hens.",
+          "A band of Weasels offered the same corrupt bargain that had apparently kept Melampo comfortable.",
+          "Pinocchio rejected the food, secured the coop, and quietly summoned the farmer before the thieves could escape.",
+          "Because he chose faithfulness when dishonesty would have been easy, the farmer removed the collar and released him.",
+          "His return to the Fairy's home brought another shock: a memorial stone announced that grief had ended her life.",
+          "Pinocchio's mourning attracted a great Pigeon carrying news that Geppetto had gone to sea in search of him.",
+          "The father had built a fragile boat and planned to cross the ocean rather than abandon his missing son.",
+          "Pinocchio mounted the bird's back, and together they crossed a thousand miles through the night.",
+          "At dawn, fishermen pointed toward a tiny boat fighting a violent sea, and Pinocchio recognized Geppetto.",
+          "A great wave overturned the craft just as father and son attempted to signal across the distance.",
+          "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "함정에서 바다까지 피노키오가 한 좋은 선택 두 가지를 말해 보세요.",
+        "core": "도둑질하다 잡힌 피노키오가 정직함으로 자유를 얻는 변화를 설명하세요.",
+        "studio": "바다로 뛰어드는 충동이 첫 회차의 도망과 도덕적으로 다른 이유를 논증하세요."
+      },
+      "beats": [
+        {"titleKo":"돌아가는 길","summaryKo":"요정에게 돌아가려다 여러 위험을 만난다.","performanceTag":"[hopefully]"},
+        {"titleKo":"포도밭의 함정","summaryKo":"배고픔에 도둑질하다 덫에 걸린다.","performanceTag":"[with rueful suspense]"},
+        {"titleKo":"감시견의 목줄","summaryKo":"닭장을 지키는 벌을 받는다.","performanceTag":"[humbled]"},
+        {"titleKo":"Weasels의 거래","summaryKo":"편한 부정을 거절하고 도둑을 알린다.","performanceTag":"[quietly firm]"},
+        {"titleKo":"정직이 만든 자유","summaryKo":"농부가 변화를 인정하고 풀어 준다.","performanceTag":"[with relief]"},
+        {"titleKo":"요정의 묘비","summaryKo":"요정이 죽었다는 글을 보고 무너진다.","performanceTag":"[grieving]"},
+        {"titleKo":"Pigeon의 소식","summaryKo":"제페토가 바다로 떠났다는 소식을 듣는다.","performanceTag":"[urgently]"},
+        {"titleKo":"폭풍 속으로","summaryKo":"아버지를 향해 거친 바다에 몸을 던진다.","performanceTag":"[bravely]"}
+      ]
+    },
+    {
+      "number": 7,
+      "slug": "the-island-of-busy-bees",
+      "sourceChapters": [24, 25, 26],
+      "titleEn": "The Island of Busy Bees",
+      "titleKo": "부지런한 벌들의 섬",
+      "guidingQuestionKo": "좋은 습관은 약속만으로 생길까요, 반복으로 생길까요?",
+      "synopsisKo": "섬에 도착한 피노키오는 일의 가치를 배우고 성장한 요정과 재회해 학교생활을 시작하지만, 아버지 소식에 대한 기대 때문에 다시 약속을 벗어난다.",
+      "narrationDirection": "Open with exhausted survival, brighten around honest work and the Fairy reunion, then let school confidence give way to a believable temptation at the beach.",
+      "artBrief": "A bright island stage connects the shore and Dolphin, industrious town, water jug and food basket, the grown Fairy's home, classroom, and a path leading toward the shark-watch beach.",
+      "watchPrompts": {
+        "beforeKo": ["도움을 받기 위해 일을 요구하는 것은 공정할까요?", "좋은 친구는 언제 나의 선택을 지지하고 언제 멈춰야 할까요?"],
+        "afterKo": ["피노키오가 섬에서 처음으로 일하게 된 이유는 무엇인가요?", "해변으로 간 선택에는 걱정과 유혹 중 무엇이 더 컸나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "Pinocchio swam all night and reached an island.",
+          "A Dolphin warned him about the Terrible Shark.",
+          "The busy islanders would not reward begging.",
+          "They offered food only in exchange for work.",
+          "At last, Pinocchio carried a woman's water jug.",
+          "She gave him bread, vegetables, and sweet candy.",
+          "The kind woman was the Blue Fairy.",
+          "She had grown while Pinocchio stayed wooden.",
+          "Pinocchio promised to study and behave well.",
+          "He attended school and ignored early teasing.",
+          "Soon he became one of the best students.",
+          "The Fairy hoped to make him a real boy.",
+          "Some lazy classmates disliked his new habits.",
+          "They invited him to see the Shark offshore.",
+          "Pinocchio hoped the Shark might reveal Geppetto's fate.",
+          "He left school and followed them to the beach."
+        ],
+        "core": [
+          "After swimming through the night, Pinocchio reached the Island of Busy Bees.",
+          "A helpful Dolphin warned that the Terrible Shark hunted in those waters.",
+          "In the busy town, nobody would give food to an able beggar.",
+          "Each person offered a meal only if Pinocchio completed honest work.",
+          "Hunger finally persuaded him to carry a woman's heavy water jug.",
+          "She rewarded him with a generous meal and his favorite candy.",
+          "Pinocchio then recognized the woman as the Blue Fairy.",
+          "She had grown into a motherly figure while he remained a puppet.",
+          "He promised to attend school, work hard, and respect her guidance.",
+          "Classmates mocked him at first, but Pinocchio continued studying.",
+          "His effort soon made him one of the strongest students.",
+          "The Fairy suggested that good habits could eventually make him a real boy.",
+          "Several lazy classmates resented the change and planned to distract him.",
+          "They claimed that the Terrible Shark had appeared near the beach.",
+          "Hoping for news about Geppetto, Pinocchio forgot the school-day promise.",
+          "He followed the boys toward the sea and another dangerous test."
+        ],
+        "studio": [
+          "After battling the sea throughout the night, Pinocchio reached an island whose citizens seemed constantly at work.",
+          "A friendly Dolphin warned that the enormous Shark had recently brought terror to the surrounding waters.",
+          "Inside the town, every request for food received the same answer: an able person should offer useful labor.",
+          "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work.",
+          "He carried a woman's heavy jug and basket home, discovering that effort could produce dignity as well as food.",
+          "The woman served bread, vegetables, and candy, then watched carefully as recognition reached her guest.",
+          "She was the Blue Fairy, now grown into the motherly figure Pinocchio had repeatedly disappointed.",
+          "Her growth exposed his own delay: time had moved forward while his habits had kept him wooden.",
+          "Pinocchio promised to study, behave responsibly, and earn the possibility of becoming a real boy.",
+          "Schoolmates initially mocked the marionette, but he answered ridicule by continuing to learn.",
+          "Steady effort made him one of the class's strongest students and began to replace reputation with evidence.",
+          "The Fairy encouraged him, explaining that human life required more than simply losing a wooden body.",
+          "His laziest companions disliked this transformation and looked for a temptation strong enough to interrupt it.",
+          "They announced that the Terrible Shark had appeared offshore and invited him to witness the spectacle.",
+          "Concern for Geppetto gave their lie emotional force, because the monster might hold news about his father.",
+          "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "섬에서 피노키오가 일하고 공부하게 된 과정을 말해 보세요.",
+        "core": "피노키오의 좋은 습관이 만들어지는 과정과 해변에서 흔들린 이유를 설명하세요.",
+        "studio": "아버지에 대한 걱정이 정당한 동기이면서도 잘못된 선택의 핑계가 되는 방식을 분석하세요."
+      },
+      "beats": [
+        {"titleKo":"섬에 닿다","summaryKo":"밤새 헤엄친 뒤 낯선 섬에 도착한다.","performanceTag":"[exhausted but hopeful]"},
+        {"titleKo":"일하는 도시","summaryKo":"모두가 음식과 노동의 교환을 제안한다.","performanceTag":"[briskly]"},
+        {"titleKo":"첫 노동","summaryKo":"배고픔 끝에 물동이를 나른다.","performanceTag":"[humbly]"},
+        {"titleKo":"성장한 Fairy","summaryKo":"어른이 된 푸른 요정과 재회한다.","performanceTag":"[tenderly]"},
+        {"titleKo":"새로운 약속","summaryKo":"학교와 책임을 통해 사람이 되겠다고 한다.","performanceTag":"[sincerely]"},
+        {"titleKo":"좋아지는 습관","summaryKo":"놀림을 견디며 좋은 학생으로 성장한다.","performanceTag":"[steadily]"},
+        {"titleKo":"Shark의 소문","summaryKo":"친구들이 바다 괴물 소식으로 유혹한다.","performanceTag":"[temptingly]"},
+        {"titleKo":"해변으로","summaryKo":"아버지의 단서를 기대하며 학교를 벗어난다.","performanceTag":"[uneasily]"}
+      ]
+    },
+    {
+      "number": 8,
+      "slug": "trouble-at-school-and-a-second-chance",
+      "sourceChapters": [27, 28, 29],
+      "titleEn": "Trouble at School and a Second Chance",
+      "titleKo": "학교의 소동과 두 번째 기회",
+      "guidingQuestionKo": "실수를 바로잡는 행동은 사과만으로 충분할까요?",
+      "synopsisKo": "거짓 소문으로 시작된 싸움에서 피노키오는 누명을 쓰고 쫓기지만, 자신을 쫓던 개를 구하고 도움을 돌려받은 뒤 다시 성실함을 증명한다.",
+      "narrationDirection": "Keep the school fight fast but not triumphant, emphasize the reciprocal rescue between Pinocchio and Alidoro, and end with earned hope rather than instant perfection.",
+      "artBrief": "A coastal stage links the book fight, wounded classmate, officers, Alidoro's sea chase, Green Fisherman's net and kitchen, Fairy's slow door, study desk, and promised celebration.",
+      "watchPrompts": {
+        "beforeKo": ["나를 괴롭힌 사람도 위험에 빠지면 도와야 할까요?", "신뢰를 다시 얻으려면 얼마나 오래 행동으로 보여 줘야 할까요?"],
+        "afterKo": ["Pinocchio와 Alidoro가 서로를 구한 장면을 비교하세요.", "Fairy의 용서는 왜 즉시 주어진 것이 아니었나요?"]
+      },
+      "levels": {
+        "foundation": [
+          "At the beach, there was no Shark.",
+          "The classmates had lied and started a fight.",
+          "They threw schoolbooks like heavy stones.",
+          "One book struck a boy named Eugene.",
+          "The other boys fled before the officers arrived.",
+          "The officers blamed Pinocchio and arrested him.",
+          "A police dog named Alidoro chased him.",
+          "Alidoro fell into the sea, so Pinocchio saved him.",
+          "Later, a Green Fisherman caught Pinocchio in a net.",
+          "The Fisherman planned to fry him for dinner.",
+          "Alidoro returned and carried Pinocchio to safety.",
+          "Pinocchio hurried back to the Fairy's house.",
+          "The slow Snail made him wait all night.",
+          "His impatient kick trapped one foot in the door.",
+          "For many months, Pinocchio studied and worked faithfully.",
+          "The Fairy promised he would become a boy tomorrow."
+        ],
+        "core": [
+          "At the beach, Pinocchio discovered that the Shark story was a lie.",
+          "His classmates mocked him, and their argument became a violent book fight.",
+          "A heavy schoolbook struck Eugene, leaving him injured on the sand.",
+          "The guilty boys ran away before the officers could question them.",
+          "Because Pinocchio remained beside Eugene, the officers blamed and arrested him.",
+          "He escaped, but the powerful police dog Alidoro chased him into the sea.",
+          "When Alidoro began drowning, Pinocchio turned back and saved his pursuer.",
+          "The dog promised to repay the unexpected act of kindness.",
+          "Soon a Green Fisherman pulled Pinocchio from the water in a net.",
+          "Mistaking him for a rare fish, the cook prepared to fry him.",
+          "Alidoro arrived at the last moment and carried Pinocchio away.",
+          "The rescued puppet finally returned to the Blue Fairy's house.",
+          "A painfully slow Snail left him waiting outside through the night.",
+          "Pinocchio kicked the door, trapped his foot, and regretted his impatience.",
+          "During the following months, he studied, worked, and rebuilt the Fairy's trust.",
+          "At last, she promised that he would wake as a real boy the next day."
+        ],
+        "studio": [
+          "The beach contained no Shark at all; the story had been invented to pull Pinocchio away from school.",
+          "Mockery became an argument, and the classmates converted their schoolbooks from tools of learning into weapons.",
+          "One heavy volume struck Eugene, who collapsed while the sea carried the evidence back toward shore.",
+          "The boys responsible fled, leaving Pinocchio beside the injured student when the officers arrived.",
+          "His decision to remain looked like guilt, and the authorities arrested the one person attempting to help.",
+          "Pinocchio escaped, but Alidoro, a powerful police dog, pursued him through the waves.",
+          "When the exhausted dog began to drown, Pinocchio abandoned escape long enough to save his pursuer.",
+          "Alidoro remembered the mercy and promised that kindness would not remain unpaid.",
+          "A Green Fisherman soon hauled Pinocchio from the sea inside a net crowded with fish.",
+          "Convinced that the wooden creature was an exotic catch, he coated the prisoner and prepared the frying pan.",
+          "Alidoro burst into the kitchen, recognized his rescuer, and carried Pinocchio beyond the cook's reach.",
+          "The puppet reached the Fairy's home expecting comfort, but the Snail required him to wait through the night.",
+          "Impatience returned in one furious kick, leaving Pinocchio's foot trapped in the door and his breakfast made of imitation food.",
+          "The humiliation taught what repeated promises had not: change needed patience when nobody offered immediate applause.",
+          "For months Pinocchio studied, worked, and allowed dependable behavior to rebuild the Fairy's trust.",
+          "Satisfied by the evidence, she promised that the following morning would finally begin his life as a real boy."
+        ]
+      },
+      "retellPrompts": {
+        "foundation": "Pinocchio와 Alidoro가 서로를 구한 일을 순서대로 말해 보세요.",
+        "core": "누명을 쓴 사건부터 Fairy의 약속까지 Pinocchio가 신뢰를 되찾은 과정을 설명하세요.",
+        "studio": "이 회차에서 즉각적인 충동과 오랜 습관의 변화가 어떻게 대조되는지 분석하세요."
+      },
+      "beats": [
+        {"titleKo":"거짓 소문","summaryKo":"Shark 이야기가 친구들의 거짓말이었음을 안다.","performanceTag":"[disappointed]"},
+        {"titleKo":"책으로 벌인 싸움","summaryKo":"Eugene이 다치고 다른 아이들은 달아난다.","performanceTag":"[with alarm]"},
+        {"titleKo":"잘못된 체포","summaryKo":"남아 있던 피노키오가 범인으로 몰린다.","performanceTag":"[urgently]"},
+        {"titleKo":"추격자를 구하다","summaryKo":"물에 빠진 Alidoro를 되돌아가 구한다.","performanceTag":"[bravely]"},
+        {"titleKo":"Green Fisherman","summaryKo":"그물에 잡혀 요리가 될 위기에 놓인다.","performanceTag":"[with dark humor]"},
+        {"titleKo":"돌아온 도움","summaryKo":"Alidoro가 은혜를 갚아 피노키오를 구한다.","performanceTag":"[triumphantly]"},
+        {"titleKo":"느린 문","summaryKo":"조급함 때문에 또 다른 작은 벌을 겪는다.","performanceTag":"[wryly]"},
+        {"titleKo":"증명된 변화","summaryKo":"오랜 노력 끝에 사람이 될 약속을 받는다.","performanceTag":"[warmly]"}
+      ]
+    }
+  ]
+}
