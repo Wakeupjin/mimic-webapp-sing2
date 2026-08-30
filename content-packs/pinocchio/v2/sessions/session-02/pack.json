@@ -52,7 +52,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Move from stubborn comedy into cold loneliness, then warm the performance around the pears, apology, new feet, and primer.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -94,6 +98,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            3
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            2
+          ]
         }
       },
       {
@@ -113,6 +131,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            4,
+            7
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            3,
+            6
           ]
         }
       },
@@ -134,6 +166,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            8,
+            11
+          ],
+          "core": [
+            8,
+            11
+          ],
+          "studio": [
+            7,
+            10
+          ]
         }
       },
       {
@@ -153,6 +199,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            12,
+            15
+          ],
+          "core": [
+            12,
+            15
+          ],
+          "studio": [
+            11,
+            14
           ]
         }
       },
@@ -174,6 +234,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            16,
+            19
+          ],
+          "core": [
+            16,
+            18
+          ],
+          "studio": [
+            15,
+            18
+          ]
         }
       },
       {
@@ -193,6 +267,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            20,
+            23
+          ],
+          "core": [
+            19,
+            22
+          ],
+          "studio": [
+            19,
+            21
           ]
         }
       },
@@ -214,6 +302,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            24,
+            26
+          ],
+          "core": [
+            23,
+            26
+          ],
+          "studio": [
+            22,
+            25
+          ]
         }
       },
       {
@@ -233,6 +335,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            27,
+            29
+          ],
+          "core": [
+            27,
+            29
+          ],
+          "studio": [
+            26,
+            29
           ]
         }
       }
@@ -336,70 +452,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio celebrated while Geppetto sat in prison."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio celebrated",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "The Talking Cricket warned him to obey."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "while Geppetto sat in prison.",
+              "sourceTextRange": [
+                21,
+                50
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Pinocchio rejected school, work, and good advice."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "The Talking Cricket",
+              "sourceTextRange": [
+                0,
+                19
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "In anger, he threw a hammer at the Cricket."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "warned him to obey.",
+              "sourceTextRange": [
+                20,
+                39
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Soon hunger made his empty house feel terrible."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio rejected school,",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "One egg opened, and a chick flew away."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "work, and good advice.",
+              "sourceTextRange": [
+                27,
+                49
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Pinocchio begged outside, but received cold water."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "In anger,",
+              "sourceTextRange": [
+                0,
+                9
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "He slept beside the stove with wet feet."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "he threw a hammer at the Cricket.",
+              "sourceTextRange": [
+                10,
+                43
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "By morning, both wooden feet had burned away."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Soon hunger made his",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Geppetto returned and heard Pinocchio's hungry cries."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "empty house feel terrible.",
+              "sourceTextRange": [
+                21,
+                47
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "He gave the puppet his last three pears."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "One egg opened,",
+              "sourceTextRange": [
+                0,
+                15
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Pinocchio learned to eat even skins and cores."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and a chick flew away.",
+              "sourceTextRange": [
+                16,
+                38
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Geppetto promised new feet if he behaved."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio begged outside,",
+              "sourceTextRange": [
+                0,
+                25
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Pinocchio apologized and promised to attend school."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "but received cold water.",
+              "sourceTextRange": [
+                26,
+                50
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Geppetto carved two strong new wooden feet."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "He slept beside the",
+              "sourceTextRange": [
+                0,
+                19
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Then he sold his coat to buy a primer."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "stove with wet feet.",
+              "sourceTextRange": [
+                20,
+                40
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "By morning,",
+              "sourceTextRange": [
+                0,
+                11
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "both wooden feet had burned away.",
+              "sourceTextRange": [
+                12,
+                45
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "Geppetto returned",
+              "sourceTextRange": [
+                0,
+                17
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "and heard Pinocchio's hungry cries.",
+              "sourceTextRange": [
+                18,
+                53
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "He gave the puppet",
+              "sourceTextRange": [
+                0,
+                18
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "his last three pears.",
+              "sourceTextRange": [
+                19,
+                40
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio learned to eat even skins",
+              "sourceTextRange": [
+                0,
+                35
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and cores.",
+              "sourceTextRange": [
+                36,
+                46
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Geppetto promised new",
+              "sourceTextRange": [
+                0,
+                21
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "feet if he behaved.",
+              "sourceTextRange": [
+                22,
+                41
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio apologized and promised to attend school.",
+              "sourceTextRange": [
+                0,
+                51
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 1,
+              "text": "Geppetto carved two strong new wooden feet.",
+              "sourceTextRange": [
+                0,
+                43
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "Then he sold his",
+              "sourceTextRange": [
+                0,
+                16
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "coat to buy a primer.",
+              "sourceTextRange": [
+                17,
+                38
+              ]
             }
           ]
         },
@@ -408,57 +791,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "The Talking Cricket warned him to obey."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Pinocchio begged outside, but received cold water."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Pinocchio learned to eat even skins and cores."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "By morning, both wooden feet had burned away."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Pinocchio apologized and promised to attend school."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "In anger, he threw a hammer at the Cricket."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Then he sold his coat to buy a primer."
+                  "lineIndex": 0,
+                  "text": "Pinocchio celebrated while Geppetto sat in prison."
                 },
                 {
                   "label": "B",
@@ -473,9 +812,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -489,59 +828,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "The Talking Cricket warned him to obey."
+                  "lineIndex": 2,
+                  "text": "Pinocchio rejected school, work, and good advice."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Geppetto carved two strong new wooden feet."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "In anger, he threw a hammer at the Cricket."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Geppetto returned and heard Pinocchio's hungry cries."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "One egg opened, and a chick flew away."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Pinocchio learned to eat even skins and cores."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio celebrated while Geppetto sat in prison."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -550,8 +845,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Pinocchio rejected school, work, and good advice."
+                  "lineIndex": 3,
+                  "text": "In anger, he threw a hammer at the Cricket."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "By morning, both wooden feet had burned away."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "One egg opened, and a chick flew away."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "He gave the puppet his last three pears."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Then he sold his coat to buy a primer."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Geppetto promised new feet if he behaved."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "The Talking Cricket warned him to obey."
                 },
                 {
                   "label": "C",
@@ -561,24 +900,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Pinocchio rejected school, work, and good advice."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "By morning, both wooden feet had burned away."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Pinocchio apologized and promised to attend school."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "He gave the puppet his last three pears."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Then he sold his coat to buy a primer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Soon hunger made his empty house feel terrible."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio celebrated while Geppetto sat in prison."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "One egg opened, and a chick flew away."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio learned to eat even skins and cores."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "He slept beside the stove with wet feet."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio apologized and promised to attend school."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Pinocchio rejected school, work, and good advice."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Then he sold his coat to buy a primer."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Soon hunger made his empty house feel terrible."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Geppetto returned and heard Pinocchio's hungry cries."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Then he sold his coat to buy a primer."
                 }
               ]
             }
@@ -594,22 +1021,40 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "The Talking Cricket warned him to obey.",
+              "lineIndex": 0,
+              "text": "Pinocchio celebrated while Geppetto sat in prison.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "Talking",
-                "Cricket",
-                "warned",
-                "him",
-                "to",
-                "obey",
+                "Pinocchio",
+                "celebrated",
+                "while",
+                "Geppetto",
+                "sat",
+                "in",
+                "prison",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Pinocchio rejected school, work, and good advice.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "rejected",
+                "school",
+                ",",
+                "work",
+                ",",
+                "and",
+                "good",
+                "advice",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "In anger, he threw a hammer at the Cricket.",
               "task": "rebuild-then-speak",
@@ -628,7 +1073,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "One egg opened, and a chick flew away.",
               "task": "rebuild-then-speak",
@@ -646,7 +1091,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "He slept beside the stove with wet feet.",
               "task": "rebuild-then-speak",
@@ -663,23 +1108,42 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Geppetto returned and heard Pinocchio's hungry cries.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "By morning, both wooden feet had burned away.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Geppetto",
-                "returned",
-                "and",
-                "heard",
-                "Pinocchio's",
-                "hungry",
-                "cries",
+                "By",
+                "morning",
+                ",",
+                "both",
+                "wooden",
+                "feet",
+                "had",
+                "burned",
+                "away",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "He gave the puppet his last three pears.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "gave",
+                "the",
+                "puppet",
+                "his",
+                "last",
+                "three",
+                "pears",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Pinocchio learned to eat even skins and cores.",
               "task": "rebuild-then-speak",
@@ -696,7 +1160,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Pinocchio apologized and promised to attend school.",
               "task": "rebuild-then-speak",
@@ -712,7 +1176,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Then he sold his coat to buy a primer.",
               "task": "rebuild-then-speak",
@@ -837,70 +1301,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "While Geppetto sat in prison, Pinocchio celebrated being completely free."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "While Geppetto sat in prison,",
+              "sourceTextRange": [
+                0,
+                29
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "The century-old Talking Cricket warned him to respect his father."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio celebrated being completely free.",
+              "sourceTextRange": [
+                30,
+                73
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "The century-old Talking Cricket warned",
+              "sourceTextRange": [
+                0,
+                38
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "When the Cricket predicted trouble, the angry puppet threw a hammer."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "him to respect his father.",
+              "sourceTextRange": [
+                39,
+                65
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "His victory felt empty as hunger filled the cold, bare house."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio rejected school, honest work,",
+              "sourceTextRange": [
+                0,
+                39
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "The only egg cracked open, and a cheerful chick escaped through the window."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and every uncomfortable piece of advice.",
+              "sourceTextRange": [
+                40,
+                80
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Outside, Pinocchio begged for food but received a bucket of cold water."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "When the Cricket predicted trouble,",
+              "sourceTextRange": [
+                0,
+                35
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "He returned soaked and fell asleep with his feet beside the stove."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "the angry puppet threw a hammer.",
+              "sourceTextRange": [
+                36,
+                68
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "By morning, both wooden feet had burned completely away."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "His victory felt empty",
+              "sourceTextRange": [
+                0,
+                22
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Geppetto returned from prison and listened to Pinocchio's desperate story."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "as hunger filled the cold, bare house.",
+              "sourceTextRange": [
+                23,
+                61
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Though he was hungry too, the old man offered his last three pears."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "The only egg cracked open,",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Pinocchio first refused the skins and cores, then ate them gratefully."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and a cheerful chick escaped through the window.",
+              "sourceTextRange": [
+                27,
+                75
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Geppetto agreed to replace the feet only after a sincere promise."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Outside, Pinocchio begged for food",
+              "sourceTextRange": [
+                0,
+                34
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "The puppet apologized and declared that he would go to school."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "but received a bucket of cold water.",
+              "sourceTextRange": [
+                35,
+                71
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "His father carved and attached two sturdy new wooden feet."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "He returned soaked",
+              "sourceTextRange": [
+                0,
+                18
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Finally, Geppetto sold his only coat to buy the promised primer."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and fell asleep with his feet beside the stove.",
+              "sourceTextRange": [
+                19,
+                66
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 1,
+              "text": "By morning, both wooden feet had burned completely away.",
+              "sourceTextRange": [
+                0,
+                56
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "Geppetto returned from prison",
+              "sourceTextRange": [
+                0,
+                29
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "and listened to Pinocchio's desperate story.",
+              "sourceTextRange": [
+                30,
+                74
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Though he was hungry too,",
+              "sourceTextRange": [
+                0,
+                25
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "the old man offered his last three pears.",
+              "sourceTextRange": [
+                26,
+                67
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio first refused the skins",
+              "sourceTextRange": [
+                0,
+                33
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and cores, then ate them gratefully.",
+              "sourceTextRange": [
+                34,
+                70
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Geppetto agreed to replace the feet only",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "after a sincere promise.",
+              "sourceTextRange": [
+                41,
+                65
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "The puppet apologized",
+              "sourceTextRange": [
+                0,
+                21
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "and declared that he would go to school.",
+              "sourceTextRange": [
+                22,
+                62
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 1,
+              "text": "His father carved and attached two sturdy new wooden feet.",
+              "sourceTextRange": [
+                0,
+                58
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "Finally, Geppetto sold his only",
+              "sourceTextRange": [
+                0,
+                31
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "coat to buy the promised primer.",
+              "sourceTextRange": [
+                32,
+                64
+              ]
             }
           ]
         },
@@ -909,57 +1640,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "The century-old Talking Cricket warned him to respect his father."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Outside, Pinocchio begged for food but received a bucket of cold water."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Pinocchio first refused the skins and cores, then ate them gratefully."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "By morning, both wooden feet had burned completely away."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "The puppet apologized and declared that he would go to school."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "When the Cricket predicted trouble, the angry puppet threw a hammer."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Finally, Geppetto sold his only coat to buy the promised primer."
+                  "lineIndex": 0,
+                  "text": "While Geppetto sat in prison, Pinocchio celebrated being completely free."
                 },
                 {
                   "label": "B",
@@ -974,9 +1661,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -990,59 +1677,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "The century-old Talking Cricket warned him to respect his father."
+                  "lineIndex": 2,
+                  "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "His father carved and attached two sturdy new wooden feet."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "When the Cricket predicted trouble, the angry puppet threw a hammer."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Geppetto returned from prison and listened to Pinocchio's desperate story."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "The only egg cracked open, and a cheerful chick escaped through the window."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Pinocchio first refused the skins and cores, then ate them gratefully."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "While Geppetto sat in prison, Pinocchio celebrated being completely free."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1051,8 +1694,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice."
+                  "lineIndex": 3,
+                  "text": "When the Cricket predicted trouble, the angry puppet threw a hammer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "By morning, both wooden feet had burned completely away."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The only egg cracked open, and a cheerful chick escaped through the window."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Though he was hungry too, the old man offered his last three pears."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Finally, Geppetto sold his only coat to buy the promised primer."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Geppetto agreed to replace the feet only after a sincere promise."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "The century-old Talking Cricket warned him to respect his father."
                 },
                 {
                   "label": "C",
@@ -1062,24 +1749,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "By morning, both wooden feet had burned completely away."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "The puppet apologized and declared that he would go to school."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Though he was hungry too, the old man offered his last three pears."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Finally, Geppetto sold his only coat to buy the promised primer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "His victory felt empty as hunger filled the cold, bare house."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "While Geppetto sat in prison, Pinocchio celebrated being completely free."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The only egg cracked open, and a cheerful chick escaped through the window."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio first refused the skins and cores, then ate them gratefully."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "He returned soaked and fell asleep with his feet beside the stove."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "The puppet apologized and declared that he would go to school."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Finally, Geppetto sold his only coat to buy the promised primer."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "His victory felt empty as hunger filled the cold, bare house."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Geppetto returned from prison and listened to Pinocchio's desperate story."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Finally, Geppetto sold his only coat to buy the promised primer."
                 }
               ]
             }
@@ -1095,27 +1870,48 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "The century-old Talking Cricket warned him to respect his father.",
+              "lineIndex": 0,
+              "text": "While Geppetto sat in prison, Pinocchio celebrated being completely free.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "century",
-                "-",
-                "old",
-                "Talking",
-                "Cricket",
-                "warned",
-                "him",
-                "to",
-                "respect",
-                "his",
-                "father",
+                "While",
+                "Geppetto",
+                "sat",
+                "in",
+                "prison",
+                ",",
+                "Pinocchio",
+                "celebrated",
+                "being",
+                "completely",
+                "free",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "rejected",
+                "school",
+                ",",
+                "honest",
+                "work",
+                ",",
+                "and",
+                "every",
+                "uncomfortable",
+                "piece",
+                "of",
+                "advice",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "When the Cricket predicted trouble, the angry puppet threw a hammer.",
               "task": "rebuild-then-speak",
@@ -1136,7 +1932,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "The only egg cracked open, and a cheerful chick escaped through the window.",
               "task": "rebuild-then-speak",
@@ -1159,7 +1955,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "He returned soaked and fell asleep with his feet beside the stove.",
               "task": "rebuild-then-speak",
@@ -1180,26 +1976,49 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Geppetto returned from prison and listened to Pinocchio's desperate story.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "By morning, both wooden feet had burned completely away.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Geppetto",
-                "returned",
-                "from",
-                "prison",
-                "and",
-                "listened",
-                "to",
-                "Pinocchio's",
-                "desperate",
-                "story",
+                "By",
+                "morning",
+                ",",
+                "both",
+                "wooden",
+                "feet",
+                "had",
+                "burned",
+                "completely",
+                "away",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Though he was hungry too, the old man offered his last three pears.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Though",
+                "he",
+                "was",
+                "hungry",
+                "too",
+                ",",
+                "the",
+                "old",
+                "man",
+                "offered",
+                "his",
+                "last",
+                "three",
+                "pears",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Pinocchio first refused the skins and cores, then ate them gratefully.",
               "task": "rebuild-then-speak",
@@ -1220,7 +2039,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "The puppet apologized and declared that he would go to school.",
               "task": "rebuild-then-speak",
@@ -1240,7 +2059,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Finally, Geppetto sold his only coat to buy the promised primer.",
               "task": "rebuild-then-speak",
@@ -1368,70 +2187,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 1,
+              "text": "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision.",
+              "sourceTextRange": [
+                0,
+                109
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "The century-old Talking Cricket interrupted his celebration with a warning about children who abandon their parents."
+              "id": "mimic-02",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "The century-old Talking Cricket interrupted his celebration with",
+              "sourceTextRange": [
+                0,
+                64
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "a warning about children who abandon their parents.",
+              "sourceTextRange": [
+                65,
+                116
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "When the Cricket named the likely consequences, the wooden child answered wisdom with a reckless hammer."
+              "id": "mimic-04",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio dismissed education, honest work,",
+              "sourceTextRange": [
+                0,
+                43
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Triumph quickly surrendered to hunger, which made the silent house feel colder and larger than before."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and every future that required effort rather than amusement.",
+              "sourceTextRange": [
+                44,
+                104
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "His single egg promised an omelet, then opened to release a chick that cheerfully flew away."
+              "id": "mimic-06",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "When the Cricket named the likely consequences,",
+              "sourceTextRange": [
+                0,
+                47
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Driven into the storm, Pinocchio begged at a window and received a freezing bucket of water instead of bread."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "the wooden child answered wisdom with a reckless hammer.",
+              "sourceTextRange": [
+                48,
+                104
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "He staggered home soaked, rested his feet near the stove, and fell into an exhausted sleep."
+              "id": "mimic-08",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Triumph quickly surrendered to hunger,",
+              "sourceTextRange": [
+                0,
+                38
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "At dawn, the fire had consumed both wooden feet, leaving his bold independence literally unable to stand."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "which made the silent house feel colder and larger than before.",
+              "sourceTextRange": [
+                39,
+                102
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Geppetto returned from prison and patiently heard the confused mixture of truth, excuse, and hunger."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "His single egg promised an omelet,",
+              "sourceTextRange": [
+                0,
+                34
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Although he had saved the meal for himself, the old man placed his final three pears before his son."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "then opened to release a chick that cheerfully flew away.",
+              "sourceTextRange": [
+                35,
+                92
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Driven into the storm, Pinocchio begged at a window",
+              "sourceTextRange": [
+                0,
+                51
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Geppetto required a promise of better conduct before agreeing to repair the damage."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "and received a freezing bucket of water instead of bread.",
+              "sourceTextRange": [
+                52,
+                109
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "For once, Pinocchio recognized his father's suffering and sincerely promised to attend school."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "He staggered home soaked, rested his feet near the stove,",
+              "sourceTextRange": [
+                0,
+                57
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "The woodcarver shaped two new feet so skillfully that they seemed to have grown there."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and fell into an exhausted sleep.",
+              "sourceTextRange": [
+                58,
+                91
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "At dawn, the fire had consumed both wooden feet,",
+              "sourceTextRange": [
+                0,
+                48
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "leaving his bold independence literally unable to stand.",
+              "sourceTextRange": [
+                49,
+                105
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "Geppetto returned from prison",
+              "sourceTextRange": [
+                0,
+                29
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "and patiently heard the confused mixture of truth, excuse, and hunger.",
+              "sourceTextRange": [
+                30,
+                100
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Although he had saved the meal for himself,",
+              "sourceTextRange": [
+                0,
+                43
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "the old man placed his final three pears before his son.",
+              "sourceTextRange": [
+                44,
+                100
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 1,
+              "text": "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained.",
+              "sourceTextRange": [
+                0,
+                90
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Geppetto required a promise of better conduct",
+              "sourceTextRange": [
+                0,
+                45
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "before agreeing to repair the damage.",
+              "sourceTextRange": [
+                46,
+                83
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "For once, Pinocchio recognized his father's suffering",
+              "sourceTextRange": [
+                0,
+                53
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "and sincerely promised to attend school.",
+              "sourceTextRange": [
+                54,
+                94
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "The woodcarver shaped two new feet",
+              "sourceTextRange": [
+                0,
+                34
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "so skillfully that they seemed to have grown there.",
+              "sourceTextRange": [
+                35,
+                86
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "To complete the fresh beginning,",
+              "sourceTextRange": [
+                0,
+                32
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "Geppetto sold his only coat and returned with a primer.",
+              "sourceTextRange": [
+                33,
+                88
+              ]
             }
           ]
         },
@@ -1440,57 +2526,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "The century-old Talking Cricket interrupted his celebration with a warning about children who abandon their parents."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Driven into the storm, Pinocchio begged at a window and received a freezing bucket of water instead of bread."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "At dawn, the fire had consumed both wooden feet, leaving his bold independence literally unable to stand."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "For once, Pinocchio recognized his father's suffering and sincerely promised to attend school."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "When the Cricket named the likely consequences, the wooden child answered wisdom with a reckless hammer."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
+                  "lineIndex": 0,
+                  "text": "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision."
                 },
                 {
                   "label": "B",
@@ -1505,9 +2547,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1521,59 +2563,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "The century-old Talking Cricket interrupted his celebration with a warning about children who abandon their parents."
+                  "lineIndex": 2,
+                  "text": "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "The woodcarver shaped two new feet so skillfully that they seemed to have grown there."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "When the Cricket named the likely consequences, the wooden child answered wisdom with a reckless hammer."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Geppetto returned from prison and patiently heard the confused mixture of truth, excuse, and hunger."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "His single egg promised an omelet, then opened to release a chick that cheerfully flew away."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1582,8 +2580,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement."
+                  "lineIndex": 3,
+                  "text": "When the Cricket named the likely consequences, the wooden child answered wisdom with a reckless hammer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "At dawn, the fire had consumed both wooden feet, leaving his bold independence literally unable to stand."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "His single egg promised an omelet, then opened to release a chick that cheerfully flew away."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Although he had saved the meal for himself, the old man placed his final three pears before his son."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Geppetto required a promise of better conduct before agreeing to repair the damage."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "The century-old Talking Cricket interrupted his celebration with a warning about children who abandon their parents."
                 },
                 {
                   "label": "C",
@@ -1593,24 +2635,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "At dawn, the fire had consumed both wooden feet, leaving his bold independence literally unable to stand."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "For once, Pinocchio recognized his father's suffering and sincerely promised to attend school."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Although he had saved the meal for himself, the old man placed his final three pears before his son."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Triumph quickly surrendered to hunger, which made the silent house feel colder and larger than before."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "His single egg promised an omelet, then opened to release a chick that cheerfully flew away."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "He staggered home soaked, rested his feet near the stove, and fell into an exhausted sleep."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "For once, Pinocchio recognized his father's suffering and sincerely promised to attend school."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Triumph quickly surrendered to hunger, which made the silent house feel colder and larger than before."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Geppetto returned from prison and patiently heard the confused mixture of truth, excuse, and hunger."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer."
                 }
               ]
             }
@@ -1626,33 +2756,53 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "The century-old Talking Cricket interrupted his celebration with a warning about children who abandon their parents.",
+              "lineIndex": 0,
+              "text": "With Geppetto unjustly imprisoned, Pinocchio congratulated himself on possessing freedom without supervision.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "century",
-                "-",
-                "old",
-                "Talking",
-                "Cricket",
-                "interrupted",
-                "his",
-                "celebration",
-                "with",
-                "a",
-                "warning",
-                "about",
-                "children",
-                "who",
-                "abandon",
-                "their",
-                "parents",
+                "With",
+                "Geppetto",
+                "unjustly",
+                "imprisoned",
+                ",",
+                "Pinocchio",
+                "congratulated",
+                "himself",
+                "on",
+                "possessing",
+                "freedom",
+                "without",
+                "supervision",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Pinocchio dismissed education, honest work, and every future that required effort rather than amusement.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "dismissed",
+                "education",
+                ",",
+                "honest",
+                "work",
+                ",",
+                "and",
+                "every",
+                "future",
+                "that",
+                "required",
+                "effort",
+                "rather",
+                "than",
+                "amusement",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "When the Cricket named the likely consequences, the wooden child answered wisdom with a reckless hammer.",
               "task": "rebuild-then-speak",
@@ -1678,7 +2828,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "His single egg promised an omelet, then opened to release a chick that cheerfully flew away.",
               "task": "rebuild-then-speak",
@@ -1704,7 +2854,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "He staggered home soaked, rested his feet near the stove, and fell into an exhausted sleep.",
               "task": "rebuild-then-speak",
@@ -1731,33 +2881,64 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Geppetto returned from prison and patiently heard the confused mixture of truth, excuse, and hunger.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "At dawn, the fire had consumed both wooden feet, leaving his bold independence literally unable to stand.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Geppetto",
-                "returned",
-                "from",
-                "prison",
-                "and",
-                "patiently",
-                "heard",
+                "At",
+                "dawn",
+                ",",
                 "the",
-                "confused",
-                "mixture",
-                "of",
-                "truth",
+                "fire",
+                "had",
+                "consumed",
+                "both",
+                "wooden",
+                "feet",
                 ",",
-                "excuse",
-                ",",
-                "and",
-                "hunger",
+                "leaving",
+                "his",
+                "bold",
+                "independence",
+                "literally",
+                "unable",
+                "to",
+                "stand",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Although he had saved the meal for himself, the old man placed his final three pears before his son.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Although",
+                "he",
+                "had",
+                "saved",
+                "the",
+                "meal",
+                "for",
+                "himself",
+                ",",
+                "the",
+                "old",
+                "man",
+                "placed",
+                "his",
+                "final",
+                "three",
+                "pears",
+                "before",
+                "his",
+                "son",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "After refusing skins and cores, Pinocchio discovered gratitude when nothing else remained.",
               "task": "rebuild-then-speak",
@@ -1779,7 +2960,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "For once, Pinocchio recognized his father's suffering and sincerely promised to attend school.",
               "task": "rebuild-then-speak",
@@ -1802,7 +2983,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "To complete the fresh beginning, Geppetto sold his only coat and returned with a primer.",
               "task": "rebuild-then-speak",
@@ -1838,5 +3019,5 @@
       }
     }
   },
-  "checksum": "67c9c7a550907d3fdbb56df3d4be8f815df1129da131d65741dfc850451228f3"
+  "checksum": "62619dd6ba94ba24e6bf814392316af001d45c9d3172d90a712045ef955c402b"
 }

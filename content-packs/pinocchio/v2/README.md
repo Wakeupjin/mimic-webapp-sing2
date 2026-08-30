@@ -11,10 +11,10 @@ sequence:
 
 - Watch — 10 minutes: predict, listen once without captions, answer for gist,
   then listen again with captions;
-- Mimic — 25 minutes: sixteen lines using listen, chunk, record, compare, and
-  retry;
-- Guess — 10 minutes: eight retrieval questions from the same master;
-- Word — 15 minutes: eight sentence rebuilds, read-aloud, and a final retell.
+- Mimic — 25 minutes: thirty timestamped speaking units using listen, chunk,
+  record, compare, and retry;
+- Guess — 10 minutes: ten retrieval questions from the same master;
+- Word — 15 minutes: ten sentence rebuilds, read-aloud, and a final retell.
 
 The three levels are alternatives. They must never be added together to claim
 three times the lesson duration.
@@ -23,8 +23,9 @@ three times the lesson duration.
 
 The text curriculum is ready. Every session includes complete leveled scripts,
 learning prompts, retell prompts, eight story beats, narration direction, and
-an art brief. New session artwork and ElevenLabs masters are intentionally
-pending until the text receives product approval.
+an art brief. Session 1 Core is the paid-plan Lily British vertical slice with
+one continuous master, thirty timestamped Mimic units, and new original art.
+The remaining session/level media is intentionally pending.
 
 Run:
 

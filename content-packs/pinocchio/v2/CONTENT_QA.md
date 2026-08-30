@@ -13,8 +13,9 @@
 
 - A learner completes one selected level, never all three levels.
 - Watch is 10 minutes, Mimic 25, Guess 10, and Word 15.
-- Every level provides sixteen shared master lines, eight Guess items, eight
-  Word rebuilds, and one retell prompt.
+- Every level provides one coherent sixteen-sentence narration, thirty Mimic
+  speaking units cut from that exact master, ten Guess items, ten Word
+  rebuilds, and one retell prompt.
 - Duration comes from observable practice loops and retrieval, not silent
   waiting or artificially long narration.
 
@@ -28,7 +29,7 @@
 ## Media gate
 
 - Watch and Mimic must use the same continuous narration master.
-- Sentence playback uses timestamps from that master, not separate TTS calls.
+- Mimic-unit playback uses timestamps from that master, not separate TTS calls.
 - Commercial narration requires a durable voice and paid-plan generation.
 - New art follows the approved original paper-theatre direction; v1 chapter
   images cannot be silently relabeled as v2 session art.

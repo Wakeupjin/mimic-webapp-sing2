@@ -50,7 +50,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Open with exhausted survival, brighten around honest work and the Fairy reunion, then let school confidence give way to a believable temptation at the beach.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -92,6 +96,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            3
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            3
+          ]
         }
       },
       {
@@ -111,6 +129,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            4,
+            7
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            4,
+            6
           ]
         }
       },
@@ -132,6 +164,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            8,
+            11
+          ],
+          "core": [
+            8,
+            11
+          ],
+          "studio": [
+            7,
+            10
+          ]
         }
       },
       {
@@ -151,6 +197,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            12,
+            15
+          ],
+          "core": [
+            12,
+            14
+          ],
+          "studio": [
+            11,
+            14
           ]
         }
       },
@@ -172,6 +232,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            16,
+            18
+          ],
+          "core": [
+            15,
+            17
+          ],
+          "studio": [
+            15,
+            17
+          ]
         }
       },
       {
@@ -191,6 +265,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            19,
+            22
+          ],
+          "core": [
+            18,
+            21
+          ],
+          "studio": [
+            18,
+            21
           ]
         }
       },
@@ -212,6 +300,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            23,
+            25
+          ],
+          "core": [
+            22,
+            25
+          ],
+          "studio": [
+            22,
+            25
+          ]
         }
       },
       {
@@ -231,6 +333,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            26,
+            29
+          ],
+          "core": [
+            26,
+            29
+          ],
+          "studio": [
+            26,
+            29
           ]
         }
       }
@@ -334,70 +450,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio swam all night and reached an island."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio swam all night",
+              "sourceTextRange": [
+                0,
+                24
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A Dolphin warned him about the Terrible Shark."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "and reached an island.",
+              "sourceTextRange": [
+                25,
+                47
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "The busy islanders would not reward begging."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A Dolphin warned him",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "They offered food only in exchange for work."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "about the Terrible Shark.",
+              "sourceTextRange": [
+                21,
+                46
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "At last, Pinocchio carried a woman's water jug."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "The busy islanders",
+              "sourceTextRange": [
+                0,
+                18
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "She gave him bread, vegetables, and sweet candy."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "would not reward begging.",
+              "sourceTextRange": [
+                19,
+                44
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "The kind woman was the Blue Fairy."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "They offered food only",
+              "sourceTextRange": [
+                0,
+                22
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "She had grown while Pinocchio stayed wooden."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "in exchange for work.",
+              "sourceTextRange": [
+                23,
+                44
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Pinocchio promised to study and behave well."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "At last,",
+              "sourceTextRange": [
+                0,
+                8
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "He attended school and ignored early teasing."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio carried a woman's water jug.",
+              "sourceTextRange": [
+                9,
+                47
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Soon he became one of the best students."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "She gave him bread,",
+              "sourceTextRange": [
+                0,
+                19
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "The Fairy hoped to make him a real boy."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "vegetables, and sweet candy.",
+              "sourceTextRange": [
+                20,
+                48
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Some lazy classmates disliked his new habits."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "The kind woman",
+              "sourceTextRange": [
+                0,
+                14
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "They invited him to see the Shark offshore."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "was the Blue Fairy.",
+              "sourceTextRange": [
+                15,
+                34
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Pinocchio hoped the Shark might reveal Geppetto's fate."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "She had grown",
+              "sourceTextRange": [
+                0,
+                13
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "He left school and followed them to the beach."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "while Pinocchio stayed wooden.",
+              "sourceTextRange": [
+                14,
+                44
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio promised to study",
+              "sourceTextRange": [
+                0,
+                27
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "and behave well.",
+              "sourceTextRange": [
+                28,
+                44
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 1,
+              "text": "He attended school and ignored early teasing.",
+              "sourceTextRange": [
+                0,
+                45
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Soon he became one",
+              "sourceTextRange": [
+                0,
+                18
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "of the best students.",
+              "sourceTextRange": [
+                19,
+                40
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy hoped to",
+              "sourceTextRange": [
+                0,
+                18
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "make him a real boy.",
+              "sourceTextRange": [
+                19,
+                39
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 1,
+              "text": "Some lazy classmates disliked his new habits.",
+              "sourceTextRange": [
+                0,
+                45
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "They invited him to",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "see the Shark offshore.",
+              "sourceTextRange": [
+                20,
+                43
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio hoped the Shark",
+              "sourceTextRange": [
+                0,
+                25
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "might reveal Geppetto's fate.",
+              "sourceTextRange": [
+                26,
+                55
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "He left school",
+              "sourceTextRange": [
+                0,
+                14
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "and followed them to the beach.",
+              "sourceTextRange": [
+                15,
+                46
+              ]
             }
           ]
         },
@@ -406,57 +789,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A Dolphin warned him about the Terrible Shark."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "The kind woman was the Blue Fairy."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "The Fairy hoped to make him a real boy."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Pinocchio promised to study and behave well."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "They invited him to see the Shark offshore."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "They offered food only in exchange for work."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "He left school and followed them to the beach."
+                  "lineIndex": 0,
+                  "text": "Pinocchio swam all night and reached an island."
                 },
                 {
                   "label": "B",
@@ -471,9 +810,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -487,59 +826,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A Dolphin warned him about the Terrible Shark."
+                  "lineIndex": 2,
+                  "text": "The busy islanders would not reward begging."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Pinocchio hoped the Shark might reveal Geppetto's fate."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "They offered food only in exchange for work."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "He attended school and ignored early teasing."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "She gave him bread, vegetables, and sweet candy."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "The Fairy hoped to make him a real boy."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio swam all night and reached an island."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -548,8 +843,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "The busy islanders would not reward begging."
+                  "lineIndex": 3,
+                  "text": "They offered food only in exchange for work."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Pinocchio promised to study and behave well."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "She gave him bread, vegetables, and sweet candy."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Soon he became one of the best students."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "He left school and followed them to the beach."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Some lazy classmates disliked his new habits."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A Dolphin warned him about the Terrible Shark."
                 },
                 {
                   "label": "C",
@@ -559,24 +898,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "The busy islanders would not reward begging."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Pinocchio promised to study and behave well."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "They invited him to see the Shark offshore."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Soon he became one of the best students."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "He left school and followed them to the beach."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "At last, Pinocchio carried a woman's water jug."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio swam all night and reached an island."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "She gave him bread, vegetables, and sweet candy."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The Fairy hoped to make him a real boy."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "She had grown while Pinocchio stayed wooden."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "They invited him to see the Shark offshore."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "The busy islanders would not reward begging."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "He left school and followed them to the beach."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "At last, Pinocchio carried a woman's water jug."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "He attended school and ignored early teasing."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "He left school and followed them to the beach."
                 }
               ]
             }
@@ -592,23 +1019,39 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A Dolphin warned him about the Terrible Shark.",
+              "lineIndex": 0,
+              "text": "Pinocchio swam all night and reached an island.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "Dolphin",
-                "warned",
-                "him",
-                "about",
-                "the",
-                "Terrible",
-                "Shark",
+                "Pinocchio",
+                "swam",
+                "all",
+                "night",
+                "and",
+                "reached",
+                "an",
+                "island",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "The busy islanders would not reward begging.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "busy",
+                "islanders",
+                "would",
+                "not",
+                "reward",
+                "begging",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "They offered food only in exchange for work.",
               "task": "rebuild-then-speak",
@@ -625,7 +1068,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "She gave him bread, vegetables, and sweet candy.",
               "task": "rebuild-then-speak",
@@ -644,7 +1087,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "She had grown while Pinocchio stayed wooden.",
               "task": "rebuild-then-speak",
@@ -660,23 +1103,40 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "He attended school and ignored early teasing.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Pinocchio promised to study and behave well.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "He",
-                "attended",
-                "school",
+                "Pinocchio",
+                "promised",
+                "to",
+                "study",
                 "and",
-                "ignored",
-                "early",
-                "teasing",
+                "behave",
+                "well",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Soon he became one of the best students.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Soon",
+                "he",
+                "became",
+                "one",
+                "of",
+                "the",
+                "best",
+                "students",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "The Fairy hoped to make him a real boy.",
               "task": "rebuild-then-speak",
@@ -694,7 +1154,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "They invited him to see the Shark offshore.",
               "task": "rebuild-then-speak",
@@ -711,7 +1171,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "He left school and followed them to the beach.",
               "task": "rebuild-then-speak",
@@ -836,70 +1296,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "After swimming through the night, Pinocchio reached the Island of Busy Bees."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "After swimming through the night,",
+              "sourceTextRange": [
+                0,
+                33
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A helpful Dolphin warned that the Terrible Shark hunted in those waters."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio reached the Island of Busy Bees.",
+              "sourceTextRange": [
+                34,
+                76
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "In the busy town, nobody would give food to an able beggar."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A helpful Dolphin warned that the",
+              "sourceTextRange": [
+                0,
+                33
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Each person offered a meal only if Pinocchio completed honest work."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "Terrible Shark hunted in those waters.",
+              "sourceTextRange": [
+                34,
+                72
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Hunger finally persuaded him to carry a woman's heavy water jug."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "In the busy town,",
+              "sourceTextRange": [
+                0,
+                17
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "She rewarded him with a generous meal and his favorite candy."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "nobody would give food to an able beggar.",
+              "sourceTextRange": [
+                18,
+                59
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Pinocchio then recognized the woman as the Blue Fairy."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Each person offered a meal",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "She had grown into a motherly figure while he remained a puppet."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "only if Pinocchio completed honest work.",
+              "sourceTextRange": [
+                27,
+                67
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "He promised to attend school, work hard, and respect her guidance."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Hunger finally persuaded him to",
+              "sourceTextRange": [
+                0,
+                31
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Classmates mocked him at first, but Pinocchio continued studying."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "carry a woman's heavy water jug.",
+              "sourceTextRange": [
+                32,
+                64
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "His effort soon made him one of the strongest students."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "She rewarded him with a generous meal",
+              "sourceTextRange": [
+                0,
+                37
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "The Fairy suggested that good habits could eventually make him a real boy."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and his favorite candy.",
+              "sourceTextRange": [
+                38,
+                61
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Several lazy classmates resented the change and planned to distract him."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio then recognized the woman as the Blue Fairy.",
+              "sourceTextRange": [
+                0,
+                54
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "They claimed that the Terrible Shark had appeared near the beach."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "She had grown into a motherly figure",
+              "sourceTextRange": [
+                0,
+                36
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Hoping for news about Geppetto, Pinocchio forgot the school-day promise."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "while he remained a puppet.",
+              "sourceTextRange": [
+                37,
+                64
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "He followed the boys toward the sea and another dangerous test."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "He promised to attend school,",
+              "sourceTextRange": [
+                0,
+                29
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "work hard, and respect her guidance.",
+              "sourceTextRange": [
+                30,
+                66
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 1,
+              "text": "Classmates mocked him at first, but Pinocchio continued studying.",
+              "sourceTextRange": [
+                0,
+                65
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "His effort soon made him",
+              "sourceTextRange": [
+                0,
+                24
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "one of the strongest students.",
+              "sourceTextRange": [
+                25,
+                55
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy suggested that good habits",
+              "sourceTextRange": [
+                0,
+                36
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "could eventually make him a real boy.",
+              "sourceTextRange": [
+                37,
+                74
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Several lazy classmates resented the change",
+              "sourceTextRange": [
+                0,
+                43
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and planned to distract him.",
+              "sourceTextRange": [
+                44,
+                72
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "They claimed that the Terrible",
+              "sourceTextRange": [
+                0,
+                30
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "Shark had appeared near the beach.",
+              "sourceTextRange": [
+                31,
+                65
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "Hoping for news about Geppetto,",
+              "sourceTextRange": [
+                0,
+                31
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio forgot the school-day promise.",
+              "sourceTextRange": [
+                32,
+                72
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "He followed the boys toward the sea",
+              "sourceTextRange": [
+                0,
+                35
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "and another dangerous test.",
+              "sourceTextRange": [
+                36,
+                63
+              ]
             }
           ]
         },
@@ -908,57 +1635,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A helpful Dolphin warned that the Terrible Shark hunted in those waters."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Pinocchio then recognized the woman as the Blue Fairy."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "The Fairy suggested that good habits could eventually make him a real boy."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "He promised to attend school, work hard, and respect her guidance."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "They claimed that the Terrible Shark had appeared near the beach."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Each person offered a meal only if Pinocchio completed honest work."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "He followed the boys toward the sea and another dangerous test."
+                  "lineIndex": 0,
+                  "text": "After swimming through the night, Pinocchio reached the Island of Busy Bees."
                 },
                 {
                   "label": "B",
@@ -973,9 +1656,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -989,59 +1672,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A helpful Dolphin warned that the Terrible Shark hunted in those waters."
+                  "lineIndex": 2,
+                  "text": "In the busy town, nobody would give food to an able beggar."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Hoping for news about Geppetto, Pinocchio forgot the school-day promise."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Each person offered a meal only if Pinocchio completed honest work."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Classmates mocked him at first, but Pinocchio continued studying."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "She rewarded him with a generous meal and his favorite candy."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "The Fairy suggested that good habits could eventually make him a real boy."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "After swimming through the night, Pinocchio reached the Island of Busy Bees."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1050,8 +1689,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "In the busy town, nobody would give food to an able beggar."
+                  "lineIndex": 3,
+                  "text": "Each person offered a meal only if Pinocchio completed honest work."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "He promised to attend school, work hard, and respect her guidance."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "She rewarded him with a generous meal and his favorite candy."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "His effort soon made him one of the strongest students."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "He followed the boys toward the sea and another dangerous test."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Several lazy classmates resented the change and planned to distract him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A helpful Dolphin warned that the Terrible Shark hunted in those waters."
                 },
                 {
                   "label": "C",
@@ -1061,24 +1744,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "In the busy town, nobody would give food to an able beggar."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "He promised to attend school, work hard, and respect her guidance."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "They claimed that the Terrible Shark had appeared near the beach."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "His effort soon made him one of the strongest students."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "He followed the boys toward the sea and another dangerous test."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Hunger finally persuaded him to carry a woman's heavy water jug."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "After swimming through the night, Pinocchio reached the Island of Busy Bees."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "She rewarded him with a generous meal and his favorite candy."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The Fairy suggested that good habits could eventually make him a real boy."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "She had grown into a motherly figure while he remained a puppet."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "They claimed that the Terrible Shark had appeared near the beach."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "In the busy town, nobody would give food to an able beggar."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "He followed the boys toward the sea and another dangerous test."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Hunger finally persuaded him to carry a woman's heavy water jug."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Classmates mocked him at first, but Pinocchio continued studying."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "He followed the boys toward the sea and another dangerous test."
                 }
               ]
             }
@@ -1094,27 +1865,50 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A helpful Dolphin warned that the Terrible Shark hunted in those waters.",
+              "lineIndex": 0,
+              "text": "After swimming through the night, Pinocchio reached the Island of Busy Bees.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "helpful",
-                "Dolphin",
-                "warned",
-                "that",
+                "After",
+                "swimming",
+                "through",
                 "the",
-                "Terrible",
-                "Shark",
-                "hunted",
-                "in",
-                "those",
-                "waters",
+                "night",
+                ",",
+                "Pinocchio",
+                "reached",
+                "the",
+                "Island",
+                "of",
+                "Busy",
+                "Bees",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "In the busy town, nobody would give food to an able beggar.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "In",
+                "the",
+                "busy",
+                "town",
+                ",",
+                "nobody",
+                "would",
+                "give",
+                "food",
+                "to",
+                "an",
+                "able",
+                "beggar",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Each person offered a meal only if Pinocchio completed honest work.",
               "task": "rebuild-then-speak",
@@ -1134,7 +1928,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "She rewarded him with a generous meal and his favorite candy.",
               "task": "rebuild-then-speak",
@@ -1154,7 +1948,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "She had grown into a motherly figure while he remained a puppet.",
               "task": "rebuild-then-speak",
@@ -1175,26 +1969,48 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Classmates mocked him at first, but Pinocchio continued studying.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "He promised to attend school, work hard, and respect her guidance.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Classmates",
-                "mocked",
-                "him",
-                "at",
-                "first",
+                "He",
+                "promised",
+                "to",
+                "attend",
+                "school",
                 ",",
-                "but",
-                "Pinocchio",
-                "continued",
-                "studying",
+                "work",
+                "hard",
+                ",",
+                "and",
+                "respect",
+                "her",
+                "guidance",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "His effort soon made him one of the strongest students.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "His",
+                "effort",
+                "soon",
+                "made",
+                "him",
+                "one",
+                "of",
+                "the",
+                "strongest",
+                "students",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "The Fairy suggested that good habits could eventually make him a real boy.",
               "task": "rebuild-then-speak",
@@ -1216,7 +2032,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "They claimed that the Terrible Shark had appeared near the beach.",
               "task": "rebuild-then-speak",
@@ -1236,7 +2052,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "He followed the boys toward the sea and another dangerous test.",
               "task": "rebuild-then-speak",
@@ -1363,70 +2179,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "After battling the sea throughout the night, Pinocchio reached an island whose citizens seemed constantly at work."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "After battling the sea throughout the night,",
+              "sourceTextRange": [
+                0,
+                44
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A friendly Dolphin warned that the enormous Shark had recently brought terror to the surrounding waters."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio reached an island whose citizens seemed constantly at work.",
+              "sourceTextRange": [
+                45,
+                114
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Inside the town, every request for food received the same answer: an able person should offer useful labor."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A friendly Dolphin warned that the enormous Shark",
+              "sourceTextRange": [
+                0,
+                49
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "had recently brought terror to the surrounding waters.",
+              "sourceTextRange": [
+                50,
+                104
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "He carried a woman's heavy jug and basket home, discovering that effort could produce dignity as well as food."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Inside the town, every request for food received the same answer:",
+              "sourceTextRange": [
+                0,
+                65
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "The woman served bread, vegetables, and candy, then watched carefully as recognition reached her guest."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "an able person should offer useful labor.",
+              "sourceTextRange": [
+                66,
+                107
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "She was the Blue Fairy, now grown into the motherly figure Pinocchio had repeatedly disappointed."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work.",
+              "sourceTextRange": [
+                0,
+                98
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Her growth exposed his own delay: time had moved forward while his habits had kept him wooden."
+              "id": "mimic-08",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "He carried a woman's heavy jug and basket home,",
+              "sourceTextRange": [
+                0,
+                47
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Pinocchio promised to study, behave responsibly, and earn the possibility of becoming a real boy."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "discovering that effort could produce dignity as well as food.",
+              "sourceTextRange": [
+                48,
+                110
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Schoolmates initially mocked the marionette, but he answered ridicule by continuing to learn."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "The woman served bread, vegetables, and candy,",
+              "sourceTextRange": [
+                0,
+                46
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Steady effort made him one of the class's strongest students and began to replace reputation with evidence."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "then watched carefully as recognition reached her guest.",
+              "sourceTextRange": [
+                47,
+                103
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "The Fairy encouraged him, explaining that human life required more than simply losing a wooden body."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "She was the Blue Fairy,",
+              "sourceTextRange": [
+                0,
+                23
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "His laziest companions disliked this transformation and looked for a temptation strong enough to interrupt it."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "now grown into the motherly figure Pinocchio had repeatedly disappointed.",
+              "sourceTextRange": [
+                24,
+                97
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "They announced that the Terrible Shark had appeared offshore and invited him to witness the spectacle."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Her growth exposed his own delay: time had moved forward",
+              "sourceTextRange": [
+                0,
+                56
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Concern for Geppetto gave their lie emotional force, because the monster might hold news about his father."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "while his habits had kept him wooden.",
+              "sourceTextRange": [
+                57,
+                94
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio promised to study, behave responsibly,",
+              "sourceTextRange": [
+                0,
+                48
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "and earn the possibility of becoming a real boy.",
+              "sourceTextRange": [
+                49,
+                97
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 1,
+              "text": "Schoolmates initially mocked the marionette, but he answered ridicule by continuing to learn.",
+              "sourceTextRange": [
+                0,
+                93
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Steady effort made him one of the class's strongest students",
+              "sourceTextRange": [
+                0,
+                60
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "and began to replace reputation with evidence.",
+              "sourceTextRange": [
+                61,
+                107
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy encouraged him, explaining that human life",
+              "sourceTextRange": [
+                0,
+                52
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "required more than simply losing a wooden body.",
+              "sourceTextRange": [
+                53,
+                100
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "His laziest companions disliked this transformation",
+              "sourceTextRange": [
+                0,
+                51
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and looked for a temptation strong enough to interrupt it.",
+              "sourceTextRange": [
+                52,
+                110
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "They announced that the Terrible Shark had appeared offshore",
+              "sourceTextRange": [
+                0,
+                60
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "and invited him to witness the spectacle.",
+              "sourceTextRange": [
+                61,
+                102
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "Concern for Geppetto gave their lie emotional force,",
+              "sourceTextRange": [
+                0,
+                52
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "because the monster might hold news about his father.",
+              "sourceTextRange": [
+                53,
+                106
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio abandoned the school day and followed them to the beach,",
+              "sourceTextRange": [
+                0,
+                66
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "carrying hope and poor judgment together.",
+              "sourceTextRange": [
+                67,
+                108
+              ]
             }
           ]
         },
@@ -1435,57 +2518,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A friendly Dolphin warned that the enormous Shark had recently brought terror to the surrounding waters."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "She was the Blue Fairy, now grown into the motherly figure Pinocchio had repeatedly disappointed."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "The Fairy encouraged him, explaining that human life required more than simply losing a wooden body."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Pinocchio promised to study, behave responsibly, and earn the possibility of becoming a real boy."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "They announced that the Terrible Shark had appeared offshore and invited him to witness the spectacle."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
+                  "lineIndex": 0,
+                  "text": "After battling the sea throughout the night, Pinocchio reached an island whose citizens seemed constantly at work."
                 },
                 {
                   "label": "B",
@@ -1500,9 +2539,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1516,59 +2555,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A friendly Dolphin warned that the enormous Shark had recently brought terror to the surrounding waters."
+                  "lineIndex": 2,
+                  "text": "Inside the town, every request for food received the same answer: an able person should offer useful labor."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Concern for Geppetto gave their lie emotional force, because the monster might hold news about his father."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Schoolmates initially mocked the marionette, but he answered ridicule by continuing to learn."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "The woman served bread, vegetables, and candy, then watched carefully as recognition reached her guest."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "The Fairy encouraged him, explaining that human life required more than simply losing a wooden body."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "After battling the sea throughout the night, Pinocchio reached an island whose citizens seemed constantly at work."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1577,8 +2572,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Inside the town, every request for food received the same answer: an able person should offer useful labor."
+                  "lineIndex": 3,
+                  "text": "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Pinocchio promised to study, behave responsibly, and earn the possibility of becoming a real boy."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The woman served bread, vegetables, and candy, then watched carefully as recognition reached her guest."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Steady effort made him one of the class's strongest students and began to replace reputation with evidence."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "His laziest companions disliked this transformation and looked for a temptation strong enough to interrupt it."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A friendly Dolphin warned that the enormous Shark had recently brought terror to the surrounding waters."
                 },
                 {
                   "label": "C",
@@ -1588,24 +2627,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Inside the town, every request for food received the same answer: an able person should offer useful labor."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Pinocchio promised to study, behave responsibly, and earn the possibility of becoming a real boy."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "They announced that the Terrible Shark had appeared offshore and invited him to witness the spectacle."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Steady effort made him one of the class's strongest students and began to replace reputation with evidence."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "He carried a woman's heavy jug and basket home, discovering that effort could produce dignity as well as food."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "After battling the sea throughout the night, Pinocchio reached an island whose citizens seemed constantly at work."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The woman served bread, vegetables, and candy, then watched carefully as recognition reached her guest."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The Fairy encouraged him, explaining that human life required more than simply losing a wooden body."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Her growth exposed his own delay: time had moved forward while his habits had kept him wooden."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "They announced that the Terrible Shark had appeared offshore and invited him to witness the spectacle."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Inside the town, every request for food received the same answer: an able person should offer useful labor."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "He carried a woman's heavy jug and basket home, discovering that effort could produce dignity as well as food."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Schoolmates initially mocked the marionette, but he answered ridicule by continuing to learn."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together."
                 }
               ]
             }
@@ -1621,31 +2748,62 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A friendly Dolphin warned that the enormous Shark had recently brought terror to the surrounding waters.",
+              "lineIndex": 0,
+              "text": "After battling the sea throughout the night, Pinocchio reached an island whose citizens seemed constantly at work.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "friendly",
-                "Dolphin",
-                "warned",
-                "that",
+                "After",
+                "battling",
                 "the",
-                "enormous",
-                "Shark",
-                "had",
-                "recently",
-                "brought",
-                "terror",
-                "to",
+                "sea",
+                "throughout",
                 "the",
-                "surrounding",
-                "waters",
+                "night",
+                ",",
+                "Pinocchio",
+                "reached",
+                "an",
+                "island",
+                "whose",
+                "citizens",
+                "seemed",
+                "constantly",
+                "at",
+                "work",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Inside the town, every request for food received the same answer: an able person should offer useful labor.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Inside",
+                "the",
+                "town",
+                ",",
+                "every",
+                "request",
+                "for",
+                "food",
+                "received",
+                "the",
+                "same",
+                "answer",
+                ":",
+                "an",
+                "able",
+                "person",
+                "should",
+                "offer",
+                "useful",
+                "labor",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Pinocchio rejected several fair exchanges until hunger finally overcame his old contempt for work.",
               "task": "rebuild-then-speak",
@@ -1668,7 +2826,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "The woman served bread, vegetables, and candy, then watched carefully as recognition reached her guest.",
               "task": "rebuild-then-speak",
@@ -1695,7 +2853,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Her growth exposed his own delay: time had moved forward while his habits had kept him wooden.",
               "task": "rebuild-then-speak",
@@ -1722,30 +2880,59 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Schoolmates initially mocked the marionette, but he answered ridicule by continuing to learn.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Pinocchio promised to study, behave responsibly, and earn the possibility of becoming a real boy.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Schoolmates",
-                "initially",
-                "mocked",
-                "the",
-                "marionette",
-                ",",
-                "but",
-                "he",
-                "answered",
-                "ridicule",
-                "by",
-                "continuing",
+                "Pinocchio",
+                "promised",
                 "to",
-                "learn",
+                "study",
+                ",",
+                "behave",
+                "responsibly",
+                ",",
+                "and",
+                "earn",
+                "the",
+                "possibility",
+                "of",
+                "becoming",
+                "a",
+                "real",
+                "boy",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Steady effort made him one of the class's strongest students and began to replace reputation with evidence.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Steady",
+                "effort",
+                "made",
+                "him",
+                "one",
+                "of",
+                "the",
+                "class's",
+                "strongest",
+                "students",
+                "and",
+                "began",
+                "to",
+                "replace",
+                "reputation",
+                "with",
+                "evidence",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "The Fairy encouraged him, explaining that human life required more than simply losing a wooden body.",
               "task": "rebuild-then-speak",
@@ -1771,7 +2958,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "They announced that the Terrible Shark had appeared offshore and invited him to witness the spectacle.",
               "task": "rebuild-then-speak",
@@ -1796,7 +2983,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Pinocchio abandoned the school day and followed them to the beach, carrying hope and poor judgment together.",
               "task": "rebuild-then-speak",
@@ -1834,5 +3021,5 @@
       }
     }
   },
-  "checksum": "210dd563cf744e857627476f3f02dedb35d3ac99b19f7ce71ca92b87651aa7f5"
+  "checksum": "b24b9ed17c6a305214ad3b99012b6b17395058da6f1fcc2d5d959429f748ea68"
 }

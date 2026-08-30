@@ -48,7 +48,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Begin physically exhausted, let the Tunny rescue feel grateful, move through daily labor with steady warmth, and make the transformation quiet, earned, and emotionally complete.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -90,6 +94,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            3
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            2
+          ]
         }
       },
       {
@@ -109,6 +127,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            4,
+            7
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            3,
+            6
           ]
         }
       },
@@ -130,6 +162,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            8,
+            11
+          ],
+          "core": [
+            8,
+            10
+          ],
+          "studio": [
+            7,
+            10
+          ]
         }
       },
       {
@@ -149,6 +195,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            12,
+            15
+          ],
+          "core": [
+            11,
+            14
+          ],
+          "studio": [
+            11,
+            13
           ]
         }
       },
@@ -170,6 +230,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            16,
+            18
+          ],
+          "core": [
+            15,
+            18
+          ],
+          "studio": [
+            14,
+            17
+          ]
         }
       },
       {
@@ -189,6 +263,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            19,
+            21
+          ],
+          "core": [
+            19,
+            22
+          ],
+          "studio": [
+            18,
+            21
           ]
         }
       },
@@ -210,6 +298,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            22,
+            25
+          ],
+          "core": [
+            23,
+            25
+          ],
+          "studio": [
+            22,
+            25
+          ]
         }
       },
       {
@@ -229,6 +331,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            26,
+            29
+          ],
+          "core": [
+            26,
+            29
+          ],
+          "studio": [
+            26,
+            29
           ]
         }
       }
@@ -332,70 +448,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio carried Geppetto until his strength disappeared."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio carried Geppetto",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "The friendly Tunny carried them safely ashore."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "until his strength disappeared.",
+              "sourceTextRange": [
+                27,
+                58
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "The poor Fox and Cat begged beside the road."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "The friendly Tunny",
+              "sourceTextRange": [
+                0,
+                18
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Pinocchio remembered their theft and walked past them."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "carried them safely ashore.",
+              "sourceTextRange": [
+                19,
+                46
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "The Talking Cricket welcomed them into a cottage."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "The poor Fox",
+              "sourceTextRange": [
+                0,
+                12
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Pinocchio apologized and made Geppetto a bed."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and Cat begged beside the road.",
+              "sourceTextRange": [
+                13,
+                44
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Farmer John offered milk for one hundred buckets."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio remembered their theft",
+              "sourceTextRange": [
+                0,
+                32
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Pinocchio worked daily to feed his weak father."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "and walked past them.",
+              "sourceTextRange": [
+                33,
+                54
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "He found Lamp-Wick dying as a tired donkey."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "The Talking Cricket welcomed",
+              "sourceTextRange": [
+                0,
+                28
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "For five months, Pinocchio worked and studied."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "them into a cottage.",
+              "sourceTextRange": [
+                29,
+                49
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "He made baskets and built Geppetto a chair."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio apologized",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "He saved fifty pennies for new clothes."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and made Geppetto a bed.",
+              "sourceTextRange": [
+                21,
+                45
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Then the Snail said the Fairy was sick."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Farmer John offered milk",
+              "sourceTextRange": [
+                0,
+                24
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Pinocchio gave her everything and worked twice as hard."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "for one hundred buckets.",
+              "sourceTextRange": [
+                25,
+                49
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "The Fairy rewarded his loving heart in a dream."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio worked daily to",
+              "sourceTextRange": [
+                0,
+                25
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "He woke as a real boy beside a healthy Geppetto."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "feed his weak father.",
+              "sourceTextRange": [
+                26,
+                47
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "He found Lamp-Wick dying",
+              "sourceTextRange": [
+                0,
+                24
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "as a tired donkey.",
+              "sourceTextRange": [
+                25,
+                43
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 1,
+              "text": "For five months, Pinocchio worked and studied.",
+              "sourceTextRange": [
+                0,
+                46
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "He made baskets",
+              "sourceTextRange": [
+                0,
+                15
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "and built Geppetto a chair.",
+              "sourceTextRange": [
+                16,
+                43
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 1,
+              "text": "He saved fifty pennies for new clothes.",
+              "sourceTextRange": [
+                0,
+                39
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Then the Snail said",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "the Fairy was sick.",
+              "sourceTextRange": [
+                20,
+                39
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio gave her everything",
+              "sourceTextRange": [
+                0,
+                29
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "and worked twice as hard.",
+              "sourceTextRange": [
+                30,
+                55
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy rewarded his",
+              "sourceTextRange": [
+                0,
+                22
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "loving heart in a dream.",
+              "sourceTextRange": [
+                23,
+                47
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "He woke",
+              "sourceTextRange": [
+                0,
+                7
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "as a real boy beside a healthy Geppetto.",
+              "sourceTextRange": [
+                8,
+                48
+              ]
             }
           ]
         },
@@ -404,57 +787,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "The friendly Tunny carried them safely ashore."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Farmer John offered milk for one hundred buckets."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "He saved fifty pennies for new clothes."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "He found Lamp-Wick dying as a tired donkey."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Pinocchio gave her everything and worked twice as hard."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Pinocchio remembered their theft and walked past them."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "He woke as a real boy beside a healthy Geppetto."
+                  "lineIndex": 0,
+                  "text": "Pinocchio carried Geppetto until his strength disappeared."
                 },
                 {
                   "label": "B",
@@ -469,9 +808,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -485,59 +824,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "The friendly Tunny carried them safely ashore."
+                  "lineIndex": 2,
+                  "text": "The poor Fox and Cat begged beside the road."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "The Fairy rewarded his loving heart in a dream."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Pinocchio remembered their theft and walked past them."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "For five months, Pinocchio worked and studied."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Pinocchio apologized and made Geppetto a bed."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "He saved fifty pennies for new clothes."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio carried Geppetto until his strength disappeared."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -546,8 +841,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "The poor Fox and Cat begged beside the road."
+                  "lineIndex": 3,
+                  "text": "Pinocchio remembered their theft and walked past them."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "He found Lamp-Wick dying as a tired donkey."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Pinocchio apologized and made Geppetto a bed."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "He made baskets and built Geppetto a chair."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "He woke as a real boy beside a healthy Geppetto."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Then the Snail said the Fairy was sick."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "The friendly Tunny carried them safely ashore."
                 },
                 {
                   "label": "C",
@@ -557,24 +896,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "The poor Fox and Cat begged beside the road."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "He found Lamp-Wick dying as a tired donkey."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Pinocchio gave her everything and worked twice as hard."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "He made baskets and built Geppetto a chair."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "He woke as a real boy beside a healthy Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "The Talking Cricket welcomed them into a cottage."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio carried Geppetto until his strength disappeared."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Pinocchio apologized and made Geppetto a bed."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "He saved fifty pennies for new clothes."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Pinocchio worked daily to feed his weak father."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio gave her everything and worked twice as hard."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "The poor Fox and Cat begged beside the road."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "He woke as a real boy beside a healthy Geppetto."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "The Talking Cricket welcomed them into a cottage."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "For five months, Pinocchio worked and studied."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "He woke as a real boy beside a healthy Geppetto."
                 }
               ]
             }
@@ -590,22 +1017,40 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "The friendly Tunny carried them safely ashore.",
+              "lineIndex": 0,
+              "text": "Pinocchio carried Geppetto until his strength disappeared.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "friendly",
-                "Tunny",
+                "Pinocchio",
                 "carried",
-                "them",
-                "safely",
-                "ashore",
+                "Geppetto",
+                "until",
+                "his",
+                "strength",
+                "disappeared",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "The poor Fox and Cat begged beside the road.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "poor",
+                "Fox",
+                "and",
+                "Cat",
+                "begged",
+                "beside",
+                "the",
+                "road",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Pinocchio remembered their theft and walked past them.",
               "task": "rebuild-then-speak",
@@ -622,7 +1067,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Pinocchio apologized and made Geppetto a bed.",
               "task": "rebuild-then-speak",
@@ -638,7 +1083,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Pinocchio worked daily to feed his weak father.",
               "task": "rebuild-then-speak",
@@ -655,24 +1100,43 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "For five months, Pinocchio worked and studied.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "He found Lamp-Wick dying as a tired donkey.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "For",
-                "five",
-                "months",
-                ",",
-                "Pinocchio",
-                "worked",
-                "and",
-                "studied",
+                "He",
+                "found",
+                "Lamp",
+                "-",
+                "Wick",
+                "dying",
+                "as",
+                "a",
+                "tired",
+                "donkey",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "He made baskets and built Geppetto a chair.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "made",
+                "baskets",
+                "and",
+                "built",
+                "Geppetto",
+                "a",
+                "chair",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "He saved fifty pennies for new clothes.",
               "task": "rebuild-then-speak",
@@ -688,7 +1152,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Pinocchio gave her everything and worked twice as hard.",
               "task": "rebuild-then-speak",
@@ -706,7 +1170,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "He woke as a real boy beside a healthy Geppetto.",
               "task": "rebuild-then-speak",
@@ -832,70 +1296,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio carried Geppetto through the sea until his strength began failing."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio carried Geppetto through the",
+              "sourceTextRange": [
+                0,
+                38
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "The friendly Tunny arrived and carried both exhausted travelers safely ashore."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "sea until his strength began failing.",
+              "sourceTextRange": [
+                39,
+                76
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "On the road, the ruined Fox and Cat begged their former victim for money."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "The friendly Tunny arrived",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Pinocchio remembered their theft, rejected their excuses, and continued with his father."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "and carried both exhausted travelers safely ashore.",
+              "sourceTextRange": [
+                27,
+                78
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "The Talking Cricket welcomed them into a small straw cottage."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "On the road, the ruined Fox",
+              "sourceTextRange": [
+                0,
+                27
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Pinocchio apologized for the hammer and prepared a bed for Geppetto."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and Cat begged their former victim for money.",
+              "sourceTextRange": [
+                28,
+                73
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Farmer John offered warm milk in exchange for one hundred buckets of water."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio remembered their theft, rejected their excuses,",
+              "sourceTextRange": [
+                0,
+                57
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Every morning, Pinocchio completed the hard work to feed his weak father."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "and continued with his father.",
+              "sourceTextRange": [
+                58,
+                88
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 1,
+              "text": "The Talking Cricket welcomed them into a small straw cottage.",
+              "sourceTextRange": [
+                0,
+                61
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "For five months, Pinocchio worked by day and studied by lamplight."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio apologized for the hammer",
+              "sourceTextRange": [
+                0,
+                35
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "He sold baskets, supported Geppetto, and built him a comfortable rolling chair."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and prepared a bed for Geppetto.",
+              "sourceTextRange": [
+                36,
+                68
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Eventually he saved fifty pennies and planned to buy new clothes."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Farmer John offered warm milk in",
+              "sourceTextRange": [
+                0,
+                32
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "The Snail then reported that the Blue Fairy was sick and penniless."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "exchange for one hundred buckets of water.",
+              "sourceTextRange": [
+                33,
+                75
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Pinocchio gave away every coin and doubled his work for her."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Every morning, Pinocchio completed the hard",
+              "sourceTextRange": [
+                0,
+                43
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "That night, the Fairy praised his loving heart and forgave his past."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "work to feed his weak father.",
+              "sourceTextRange": [
+                44,
+                73
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "At the farm, he discovered Lamp-Wick dying",
+              "sourceTextRange": [
+                0,
+                42
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "after a donkey's life of exhaustion.",
+              "sourceTextRange": [
+                43,
+                79
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "For five months, Pinocchio worked by day",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "and studied by lamplight.",
+              "sourceTextRange": [
+                41,
+                66
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "He sold baskets, supported Geppetto,",
+              "sourceTextRange": [
+                0,
+                36
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "and built him a comfortable rolling chair.",
+              "sourceTextRange": [
+                37,
+                79
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Eventually he saved fifty pennies",
+              "sourceTextRange": [
+                0,
+                33
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and planned to buy new clothes.",
+              "sourceTextRange": [
+                34,
+                65
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "The Snail then reported that the",
+              "sourceTextRange": [
+                0,
+                32
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "Blue Fairy was sick and penniless.",
+              "sourceTextRange": [
+                33,
+                67
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio gave away every coin and doubled his work for her.",
+              "sourceTextRange": [
+                0,
+                60
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "That night, the Fairy praised his loving heart",
+              "sourceTextRange": [
+                0,
+                46
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "and forgave his past.",
+              "sourceTextRange": [
+                47,
+                68
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "He awoke as a real boy in",
+              "sourceTextRange": [
+                0,
+                25
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "a renewed home beside a healthy Geppetto.",
+              "sourceTextRange": [
+                26,
+                67
+              ]
             }
           ]
         },
@@ -904,57 +1635,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "The friendly Tunny arrived and carried both exhausted travelers safely ashore."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Farmer John offered warm milk in exchange for one hundred buckets of water."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Eventually he saved fifty pennies and planned to buy new clothes."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Pinocchio gave away every coin and doubled his work for her."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Pinocchio remembered their theft, rejected their excuses, and continued with his father."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto."
+                  "lineIndex": 0,
+                  "text": "Pinocchio carried Geppetto through the sea until his strength began failing."
                 },
                 {
                   "label": "B",
@@ -969,9 +1656,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -985,59 +1672,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "The friendly Tunny arrived and carried both exhausted travelers safely ashore."
+                  "lineIndex": 2,
+                  "text": "On the road, the ruined Fox and Cat begged their former victim for money."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "That night, the Fairy praised his loving heart and forgave his past."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Pinocchio remembered their theft, rejected their excuses, and continued with his father."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "For five months, Pinocchio worked by day and studied by lamplight."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Pinocchio apologized for the hammer and prepared a bed for Geppetto."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Eventually he saved fifty pennies and planned to buy new clothes."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio carried Geppetto through the sea until his strength began failing."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1046,8 +1689,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "On the road, the ruined Fox and Cat begged their former victim for money."
+                  "lineIndex": 3,
+                  "text": "Pinocchio remembered their theft, rejected their excuses, and continued with his father."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Pinocchio apologized for the hammer and prepared a bed for Geppetto."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "He sold baskets, supported Geppetto, and built him a comfortable rolling chair."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "The Snail then reported that the Blue Fairy was sick and penniless."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "The friendly Tunny arrived and carried both exhausted travelers safely ashore."
                 },
                 {
                   "label": "C",
@@ -1057,24 +1744,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "On the road, the ruined Fox and Cat begged their former victim for money."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Pinocchio gave away every coin and doubled his work for her."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "He sold baskets, supported Geppetto, and built him a comfortable rolling chair."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "The Talking Cricket welcomed them into a small straw cottage."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio carried Geppetto through the sea until his strength began failing."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Pinocchio apologized for the hammer and prepared a bed for Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Eventually he saved fifty pennies and planned to buy new clothes."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Every morning, Pinocchio completed the hard work to feed his weak father."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio gave away every coin and doubled his work for her."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "On the road, the ruined Fox and Cat begged their former victim for money."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "The Talking Cricket welcomed them into a small straw cottage."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "For five months, Pinocchio worked by day and studied by lamplight."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto."
                 }
               ]
             }
@@ -1090,26 +1865,50 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "The friendly Tunny arrived and carried both exhausted travelers safely ashore.",
+              "lineIndex": 0,
+              "text": "Pinocchio carried Geppetto through the sea until his strength began failing.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "friendly",
-                "Tunny",
-                "arrived",
-                "and",
+                "Pinocchio",
                 "carried",
-                "both",
-                "exhausted",
-                "travelers",
-                "safely",
-                "ashore",
+                "Geppetto",
+                "through",
+                "the",
+                "sea",
+                "until",
+                "his",
+                "strength",
+                "began",
+                "failing",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "On the road, the ruined Fox and Cat begged their former victim for money.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "On",
+                "the",
+                "road",
+                ",",
+                "the",
+                "ruined",
+                "Fox",
+                "and",
+                "Cat",
+                "begged",
+                "their",
+                "former",
+                "victim",
+                "for",
+                "money",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Pinocchio remembered their theft, rejected their excuses, and continued with his father.",
               "task": "rebuild-then-speak",
@@ -1132,7 +1931,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Pinocchio apologized for the hammer and prepared a bed for Geppetto.",
               "task": "rebuild-then-speak",
@@ -1152,7 +1951,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Every morning, Pinocchio completed the hard work to feed his weak father.",
               "task": "rebuild-then-speak",
@@ -1174,28 +1973,55 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "For five months, Pinocchio worked by day and studied by lamplight.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "For",
-                "five",
-                "months",
+                "At",
+                "the",
+                "farm",
                 ",",
-                "Pinocchio",
-                "worked",
-                "by",
-                "day",
-                "and",
-                "studied",
-                "by",
-                "lamplight",
+                "he",
+                "discovered",
+                "Lamp",
+                "-",
+                "Wick",
+                "dying",
+                "after",
+                "a",
+                "donkey's",
+                "life",
+                "of",
+                "exhaustion",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "He sold baskets, supported Geppetto, and built him a comfortable rolling chair.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "sold",
+                "baskets",
+                ",",
+                "supported",
+                "Geppetto",
+                ",",
+                "and",
+                "built",
+                "him",
+                "a",
+                "comfortable",
+                "rolling",
+                "chair",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Eventually he saved fifty pennies and planned to buy new clothes.",
               "task": "rebuild-then-speak",
@@ -1215,7 +2041,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Pinocchio gave away every coin and doubled his work for her.",
               "task": "rebuild-then-speak",
@@ -1235,7 +2061,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto.",
               "task": "rebuild-then-speak",
@@ -1365,70 +2191,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength.",
+              "sourceTextRange": [
+                0,
+                106
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "The Tunny, inspired by their escape, arrived at the critical moment and carried father and son to safety."
+              "id": "mimic-02",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "The Tunny, inspired by their escape, arrived at the critical moment",
+              "sourceTextRange": [
+                0,
+                67
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "and carried father and son to safety.",
+              "sourceTextRange": [
+                68,
+                105
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Pinocchio recognized the consequence of their old deception, rejected their excuses, and calmly continued onward."
+              "id": "mimic-04",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Along the road, the ruined Fox and Cat begged from",
+              "sourceTextRange": [
+                0,
+                50
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "The Talking Cricket offered shelter in a straw cottage and reminded Pinocchio of the hammer thrown long ago."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "the victim whose trust they had once converted into profit.",
+              "sourceTextRange": [
+                51,
+                110
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Instead of defending himself, Pinocchio apologized, accepted the rebuke, and prepared a bed for his weakened father."
+              "id": "mimic-06",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio recognized the consequence of their old deception,",
+              "sourceTextRange": [
+                0,
+                60
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Farmer John offered one glass of milk in exchange for the exhausting labor of drawing one hundred buckets."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "rejected their excuses, and calmly continued onward.",
+              "sourceTextRange": [
+                61,
+                113
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Every dawn Pinocchio returned to the well, transforming work into food and care for Geppetto."
+              "id": "mimic-08",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "The Talking Cricket offered shelter in a straw cottage",
+              "sourceTextRange": [
+                0,
+                54
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "In the stable he found Lamp-Wick dying as an overworked donkey, the final human cost of Toyland's promise."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "and reminded Pinocchio of the hammer thrown long ago.",
+              "sourceTextRange": [
+                55,
+                108
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "For five months Pinocchio made baskets, studied by lamplight, and built a rolling chair for his recovering father."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Instead of defending himself, Pinocchio apologized, accepted the rebuke,",
+              "sourceTextRange": [
+                0,
+                72
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "His daily habits produced enough security for Geppetto and fifty saved pennies for a long-delayed new suit."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and prepared a bed for his weakened father.",
+              "sourceTextRange": [
+                73,
+                116
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Before he could spend them, the Snail reported that the Blue Fairy lay ill without money for food."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Farmer John offered one glass of milk in exchange",
+              "sourceTextRange": [
+                0,
+                49
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Pinocchio surrendered every penny and chose to double his labor for the mother who had repeatedly rescued him."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "for the exhausting labor of drawing one hundred buckets.",
+              "sourceTextRange": [
+                50,
+                106
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "That night the Fairy appeared in a dream, praising not perfection but the loving heart revealed through action."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 1,
+              "text": "Every dawn Pinocchio returned to the well, transforming work into food and care for Geppetto.",
+              "sourceTextRange": [
+                0,
+                93
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "He awoke in a renewed home as a living boy, while Geppetto stood healthy and young beside his workbench."
+              "id": "mimic-15",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "In the stable he found Lamp-Wick dying",
+              "sourceTextRange": [
+                0,
+                38
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "as an overworked donkey, the final human cost of Toyland's promise.",
+              "sourceTextRange": [
+                39,
+                106
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "For five months Pinocchio made baskets, studied by lamplight,",
+              "sourceTextRange": [
+                0,
+                61
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "and built a rolling chair for his recovering father.",
+              "sourceTextRange": [
+                62,
+                114
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "His daily habits produced enough security for Geppetto",
+              "sourceTextRange": [
+                0,
+                54
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "and fifty saved pennies for a long-delayed new suit.",
+              "sourceTextRange": [
+                55,
+                107
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Before he could spend them, the Snail reported that",
+              "sourceTextRange": [
+                0,
+                51
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "the Blue Fairy lay ill without money for food.",
+              "sourceTextRange": [
+                52,
+                98
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio surrendered every penny and chose to double his",
+              "sourceTextRange": [
+                0,
+                57
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "labor for the mother who had repeatedly rescued him.",
+              "sourceTextRange": [
+                58,
+                110
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "That night the Fairy appeared in a dream,",
+              "sourceTextRange": [
+                0,
+                41
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "praising not perfection but the loving heart revealed through action.",
+              "sourceTextRange": [
+                42,
+                111
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "He awoke in a renewed home as a living boy,",
+              "sourceTextRange": [
+                0,
+                43
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "while Geppetto stood healthy and young beside his workbench.",
+              "sourceTextRange": [
+                44,
+                104
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "Looking at the abandoned wooden body,",
+              "sourceTextRange": [
+                0,
+                37
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio understood that becoming human had happened before his appearance changed.",
+              "sourceTextRange": [
+                38,
+                122
+              ]
             }
           ]
         },
@@ -1437,57 +2530,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "The Tunny, inspired by their escape, arrived at the critical moment and carried father and son to safety."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Farmer John offered one glass of milk in exchange for the exhausting labor of drawing one hundred buckets."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Before he could spend them, the Snail reported that the Blue Fairy lay ill without money for food."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "In the stable he found Lamp-Wick dying as an overworked donkey, the final human cost of Toyland's promise."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "That night the Fairy appeared in a dream, praising not perfection but the loving heart revealed through action."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Pinocchio recognized the consequence of their old deception, rejected their excuses, and calmly continued onward."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
+                  "lineIndex": 0,
+                  "text": "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength."
                 },
                 {
                   "label": "B",
@@ -1502,9 +2551,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1518,59 +2567,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "The Tunny, inspired by their escape, arrived at the critical moment and carried father and son to safety."
+                  "lineIndex": 2,
+                  "text": "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "He awoke in a renewed home as a living boy, while Geppetto stood healthy and young beside his workbench."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Pinocchio recognized the consequence of their old deception, rejected their excuses, and calmly continued onward."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "For five months Pinocchio made baskets, studied by lamplight, and built a rolling chair for his recovering father."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Instead of defending himself, Pinocchio apologized, accepted the rebuke, and prepared a bed for his weakened father."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Before he could spend them, the Snail reported that the Blue Fairy lay ill without money for food."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1579,8 +2584,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit."
+                  "lineIndex": 3,
+                  "text": "Pinocchio recognized the consequence of their old deception, rejected their excuses, and calmly continued onward."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "In the stable he found Lamp-Wick dying as an overworked donkey, the final human cost of Toyland's promise."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Instead of defending himself, Pinocchio apologized, accepted the rebuke, and prepared a bed for his weakened father."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "His daily habits produced enough security for Geppetto and fifty saved pennies for a long-delayed new suit."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Pinocchio surrendered every penny and chose to double his labor for the mother who had repeatedly rescued him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "The Tunny, inspired by their escape, arrived at the critical moment and carried father and son to safety."
                 },
                 {
                   "label": "C",
@@ -1590,24 +2639,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "In the stable he found Lamp-Wick dying as an overworked donkey, the final human cost of Toyland's promise."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "That night the Fairy appeared in a dream, praising not perfection but the loving heart revealed through action."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "His daily habits produced enough security for Geppetto and fifty saved pennies for a long-delayed new suit."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "The Talking Cricket offered shelter in a straw cottage and reminded Pinocchio of the hammer thrown long ago."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Instead of defending himself, Pinocchio apologized, accepted the rebuke, and prepared a bed for his weakened father."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Before he could spend them, the Snail reported that the Blue Fairy lay ill without money for food."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Every dawn Pinocchio returned to the well, transforming work into food and care for Geppetto."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "That night the Fairy appeared in a dream, praising not perfection but the loving heart revealed through action."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "The Talking Cricket offered shelter in a straw cottage and reminded Pinocchio of the hammer thrown long ago."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "For five months Pinocchio made baskets, studied by lamplight, and built a rolling chair for his recovering father."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed."
                 }
               ]
             }
@@ -1623,35 +2760,59 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "The Tunny, inspired by their escape, arrived at the critical moment and carried father and son to safety.",
+              "lineIndex": 0,
+              "text": "Pinocchio carried Geppetto toward the distant shore until exhaustion finally overcame his wooden strength.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "Tunny",
-                ",",
-                "inspired",
-                "by",
-                "their",
-                "escape",
-                ",",
-                "arrived",
-                "at",
-                "the",
-                "critical",
-                "moment",
-                "and",
+                "Pinocchio",
                 "carried",
-                "father",
-                "and",
-                "son",
-                "to",
-                "safety",
+                "Geppetto",
+                "toward",
+                "the",
+                "distant",
+                "shore",
+                "until",
+                "exhaustion",
+                "finally",
+                "overcame",
+                "his",
+                "wooden",
+                "strength",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Along the road, the ruined Fox and Cat begged from the victim whose trust they had once converted into profit.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Along",
+                "the",
+                "road",
+                ",",
+                "the",
+                "ruined",
+                "Fox",
+                "and",
+                "Cat",
+                "begged",
+                "from",
+                "the",
+                "victim",
+                "whose",
+                "trust",
+                "they",
+                "had",
+                "once",
+                "converted",
+                "into",
+                "profit",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Pinocchio recognized the consequence of their old deception, rejected their excuses, and calmly continued onward.",
               "task": "rebuild-then-speak",
@@ -1677,7 +2838,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Instead of defending himself, Pinocchio apologized, accepted the rebuke, and prepared a bed for his weakened father.",
               "task": "rebuild-then-speak",
@@ -1706,7 +2867,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Every dawn Pinocchio returned to the well, transforming work into food and care for Geppetto.",
               "task": "rebuild-then-speak",
@@ -1731,36 +2892,65 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "For five months Pinocchio made baskets, studied by lamplight, and built a rolling chair for his recovering father.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "In the stable he found Lamp-Wick dying as an overworked donkey, the final human cost of Toyland's promise.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "For",
-                "five",
-                "months",
-                "Pinocchio",
-                "made",
-                "baskets",
+                "In",
+                "the",
+                "stable",
+                "he",
+                "found",
+                "Lamp",
+                "-",
+                "Wick",
+                "dying",
+                "as",
+                "an",
+                "overworked",
+                "donkey",
                 ",",
-                "studied",
-                "by",
-                "lamplight",
-                ",",
-                "and",
-                "built",
-                "a",
-                "rolling",
-                "chair",
-                "for",
-                "his",
-                "recovering",
-                "father",
+                "the",
+                "final",
+                "human",
+                "cost",
+                "of",
+                "Toyland's",
+                "promise",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "His daily habits produced enough security for Geppetto and fifty saved pennies for a long-delayed new suit.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "His",
+                "daily",
+                "habits",
+                "produced",
+                "enough",
+                "security",
+                "for",
+                "Geppetto",
+                "and",
+                "fifty",
+                "saved",
+                "pennies",
+                "for",
+                "a",
+                "long",
+                "-",
+                "delayed",
+                "new",
+                "suit",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Before he could spend them, the Snail reported that the Blue Fairy lay ill without money for food.",
               "task": "rebuild-then-speak",
@@ -1788,7 +2978,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "That night the Fairy appeared in a dream, praising not perfection but the loving heart revealed through action.",
               "task": "rebuild-then-speak",
@@ -1816,7 +3006,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Looking at the abandoned wooden body, Pinocchio understood that becoming human had happened before his appearance changed.",
               "task": "rebuild-then-speak",
@@ -1854,5 +3044,5 @@
       }
     }
   },
-  "checksum": "95b9db67a464ec848bfdf30787dbd1a8404fd68b72463bd0ffa0c5614e889d1c"
+  "checksum": "defe515ec38a536a5e9e52956e6c5c373568742ee9f09a9355fd3b34b67f41d0"
 }

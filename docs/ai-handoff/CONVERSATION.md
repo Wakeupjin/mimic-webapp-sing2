@@ -676,3 +676,39 @@ Every session now provides Foundation, Core, and Studio alternatives with sixtee
 - docs/ai-handoff/CONVERSATION.md
 
 **Open risks:** Sixty-minute timing needs a real learner/classroom pilot even though the interaction budget is explicit. V2 art and audio remain pending. Lily is not a durable production narrator, and commercial masters require a paid plan. The full Next build remains an integration-time check after the local build process stalled without an error. Confirm Korean-market public-domain status before commercial distribution. Do not deploy from this content R&D thread.
+## 2026-08-30 — user / decision
+
+Purchased an ElevenLabs paid plan and approved proceeding with Lily for the
+Session 1 Core pilot. Then challenged the sixteen-line Mimic design because the
+operational Sing 2 lesson uses thirty practice lines, and approved revising the
+course to the same thirty-unit practice density before generating audio.
+
+## 2026-08-30 — codex / in progress
+
+Reframing each level as one coherent sixteen-sentence Watch narration plus
+thirty timestamped Mimic speaking units cut from that exact continuous master.
+Guess and Word are being raised from eight to ten items. Session 1 Core will be
+the first Lily British paid-plan vertical slice; no production deployment is
+authorized from this R&D thread.
+
+## 2026-08-30 — codex / completed
+
+Completed the thirty-unit revision across all twelve sessions and built the
+paid-plan Lily British Session 1 Core vertical slice. The course now contains
+1,080 Mimic units and 360 each of Guess and Word items while preserving the
+same coherent sixteen-sentence Watch narration per session and level. Session
+1 Core uses one 84.16-second Eleven v3 master; sixteen caption ranges and thirty
+Mimic ranges are aligned to that exact take. Generated and corrected original
+non-Disney Living Storybook art, then added a local student-facing Watch,
+Mimic, Guess, and Word lesson with local microphone comparison and progress.
+
+**Validation:** The v2 validator, TypeScript, whitespace checks, and the full
+27-route Next production build pass. Browser verification confirmed real audio
+playback, exact last-segment stopping, thirty Mimic controls, Guess scoring,
+Word answer validation, zero console errors, and no mobile/desktop horizontal
+overflow.
+
+**Next action:** User listens through the local Session 1 Core pilot and either
+freezes the Lily direction/UX for main-thread handoff or gives targeted voice,
+pacing, text, or interaction notes. No Preview or production deployment was
+performed.

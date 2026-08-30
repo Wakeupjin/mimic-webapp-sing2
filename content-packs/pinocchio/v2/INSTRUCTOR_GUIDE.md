@@ -13,7 +13,8 @@ This timing is the product contract for every session and every selected level.
 
 ## Mimic — minutes 10–35
 
-Practice all sixteen master lines. Each line reuses the Watch master timestamp:
+Practice all thirty speaking units. Every unit is cut by timestamp from the
+same coherent Watch master:
 
 1. listen once;
 2. hear the natural chunking;
@@ -21,18 +22,18 @@ Practice all sixteen master lines. Each line reuses the Watch master timestamp:
 4. compare rhythm and final consonants;
 5. retry once where needed.
 
-The expected pace is roughly ninety seconds per line. Faster learners spend
-the remaining time replaying four starred lines with stronger expression.
+The expected pace is roughly fifty seconds per unit. Faster learners spend the
+remaining time replaying four starred units with stronger expression.
 
 ## Guess — minutes 35–45
 
-Complete eight three-choice listening questions. Captions remain hidden until
+Complete ten three-choice listening questions. Captions remain hidden until
 the answer. After each answer, replay the exact master line and require a short
 spoken explanation: “I heard ___, so the answer is ___.”
 
 ## Word — minutes 45–60
 
-1. Rebuild eight sentences from shuffled tokens and read each result aloud.
+1. Rebuild ten sentences from shuffled tokens and read each result aloud.
 2. Reuse at least three rebuilt phrases in the level's final retell prompt.
 3. Finish by recording a forty-to-sixty-second retell without reading the full
    script.

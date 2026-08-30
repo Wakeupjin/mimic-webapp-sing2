@@ -22,9 +22,10 @@
       "guess": 10,
       "word": 15
     },
-    "linesPerLevel": 16,
-    "guessItemsPerLevel": 8,
-    "wordItemsPerLevel": 8,
+    "narrationLinesPerLevel": 16,
+    "mimicUnitsPerLevel": 30,
+    "guessItemsPerLevel": 10,
+    "wordItemsPerLevel": 10,
     "storyBeatsPerSession": 8,
     "learnerRule": "A learner completes one selected level per session; Foundation, Core, and Studio are alternatives, not cumulative work."
   },
@@ -99,7 +100,7 @@
       "titleEn": "A Wooden Boy Wakes",
       "titleKo": "나무 아이가 깨어나다",
       "path": "sessions/session-01/pack.json",
-      "checksum": "2a0e5d8879ea392cbdc7971ba0f00280b3a5decf92e033a9a3d64b84bdd40a34",
+      "checksum": "860a43174240e2f09c3b2eceaadfd4d91fa8cde2fb2a982d2585a03de50e1f6d",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -135,7 +136,7 @@
       "titleEn": "Hunger, Home, and Sacrifice",
       "titleKo": "배고픔과 아버지의 희생",
       "path": "sessions/session-02/pack.json",
-      "checksum": "67c9c7a550907d3fdbb56df3d4be8f815df1129da131d65741dfc850451228f3",
+      "checksum": "62619dd6ba94ba24e6bf814392316af001d45c9d3172d90a712045ef955c402b",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -169,7 +170,7 @@
       "titleEn": "The Puppet Theater",
       "titleKo": "인형극장의 선택",
       "path": "sessions/session-03/pack.json",
-      "checksum": "95f91c34a0a20881bd288505ee01ce281446496347cfd50bda254462b36a24b6",
+      "checksum": "92bbe30f2acca381c0eb196fe357b594096700ea43c0341060b118e72ba37966",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -204,7 +205,7 @@
       "titleEn": "Five Coins and a Dangerous Road",
       "titleKo": "다섯 금화와 위험한 길",
       "path": "sessions/session-04/pack.json",
-      "checksum": "28bcd7b7d13418ec39fb2e71d9b5d073c7137c4cb48d5d12a39054e9dfeeecbe",
+      "checksum": "c344df90be9c7b4b977699a4d792430e36905696d1954572db2a2281fb0cc48b",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -239,7 +240,7 @@
       "titleEn": "The Blue Fairy and the Field of Wonders",
       "titleKo": "푸른 요정과 기적의 들판",
       "path": "sessions/session-05/pack.json",
-      "checksum": "b41e4c9af94e7cf1028e6b08fed049aeed79c64951e8bfe1f1eb5aca723e6a30",
+      "checksum": "e1e416d59c15a683f70565d0e77b1a968f74c7d34b15bf1f84e91aa07a7e9b5a",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -274,7 +275,7 @@
       "titleEn": "The Watchdog and the Search for Father",
       "titleKo": "감시견과 아버지 찾기",
       "path": "sessions/session-06/pack.json",
-      "checksum": "72975e01d0647f24d0ad4696fea64d526cb81fba47ae85571cec3f46a892a0ed",
+      "checksum": "7ce600697e19cef5e274eed43c2e21d74bb247e326e0b6278b205d96c1583c83",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -308,7 +309,7 @@
       "titleEn": "The Island of Busy Bees",
       "titleKo": "부지런한 벌들의 섬",
       "path": "sessions/session-07/pack.json",
-      "checksum": "210dd563cf744e857627476f3f02dedb35d3ac99b19f7ce71ca92b87651aa7f5",
+      "checksum": "b24b9ed17c6a305214ad3b99012b6b17395058da6f1fcc2d5d959429f748ea68",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -342,7 +343,7 @@
       "titleEn": "Trouble at School and a Second Chance",
       "titleKo": "학교의 소동과 두 번째 기회",
       "path": "sessions/session-08/pack.json",
-      "checksum": "cbea6fdde5692b111f8711de9b9a06b0d26982b3aa869d4f8f2f892786315762",
+      "checksum": "434b38e37e90f7c8d87abcb2da155c15541cde3ae7d044fc52881e24588bb697",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -376,7 +377,7 @@
       "titleEn": "The Land of Toys",
       "titleKo": "장난감 나라",
       "path": "sessions/session-09/pack.json",
-      "checksum": "83b27687cdb912bb61fb3c0d2fea5f7069ca8bf7d8cba8b89e7759a861488b8e",
+      "checksum": "a47a82890a4f3e7a6b71c0023cf9d87b013c879b760ed8bfaffd9f3b3e36877a",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -409,7 +410,7 @@
       "titleEn": "The Donkey and the Sea",
       "titleKo": "당나귀와 바다",
       "path": "sessions/session-10/pack.json",
-      "checksum": "dcdb3b38ee832bb928608d6433a61e80115e9c9753fdb8047988de8b24163534",
+      "checksum": "abad0ffbc55eb17431cdf51b4500f3558cb3bf035bd03c3fb2d8e7ad17ed2391",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -441,7 +442,7 @@
       "titleEn": "Inside the Terrible Shark",
       "titleKo": "거대한 상어 속의 재회",
       "path": "sessions/session-11/pack.json",
-      "checksum": "7d051604d24a8c43eae88cf95f8b6e0b4846d207ed7f0e1853564d743cd27d8f",
+      "checksum": "d4fe477a44d76238f59fef0d5027ef2c9c02318fd725ed62f6b764b9db7880df",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -473,7 +474,7 @@
       "titleEn": "A Real Boy at Last",
       "titleKo": "마침내 진짜 아이",
       "path": "sessions/session-12/pack.json",
-      "checksum": "95b9db67a464ec848bfdf30787dbd1a8404fd68b72463bd0ffa0c5614e889d1c",
+      "checksum": "defe515ec38a536a5e9e52956e6c5c373568742ee9f09a9355fd3b34b67f41d0",
       "stats": {
         "foundation": {
           "lines": 16,
@@ -496,5 +497,5 @@
       }
     }
   ],
-  "checksum": "4a14a0df0d70c9fa47723de690eb21013794b23af2a2584d66a0f9a0cf5f05b9"
+  "checksum": "3d785a058ab781753bf186a8808b854cd80010ac78361f760b22c2de93cabfc2"
 }

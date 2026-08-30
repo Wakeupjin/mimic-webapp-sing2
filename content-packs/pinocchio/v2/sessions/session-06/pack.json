@@ -51,7 +51,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Mix roadside absurdity with the humiliation of the collar, make the watchdog choice quietly honorable, and build emotional momentum toward the stormy sea.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -93,6 +97,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            3
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            3
+          ]
         }
       },
       {
@@ -112,6 +130,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            4,
+            7
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            4,
+            7
           ]
         }
       },
@@ -133,6 +165,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            8,
+            11
+          ],
+          "core": [
+            8,
+            10
+          ],
+          "studio": [
+            8,
+            11
+          ]
         }
       },
       {
@@ -152,6 +198,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            12,
+            15
+          ],
+          "core": [
+            11,
+            14
+          ],
+          "studio": [
+            12,
+            14
           ]
         }
       },
@@ -173,6 +233,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            16,
+            19
+          ],
+          "core": [
+            15,
+            18
+          ],
+          "studio": [
+            15,
+            18
+          ]
         }
       },
       {
@@ -192,6 +266,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            20,
+            23
+          ],
+          "core": [
+            19,
+            22
+          ],
+          "studio": [
+            19,
+            22
           ]
         }
       },
@@ -213,6 +301,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            24,
+            26
+          ],
+          "core": [
+            23,
+            25
+          ],
+          "studio": [
+            23,
+            25
+          ]
         }
       },
       {
@@ -232,6 +334,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            27,
+            29
+          ],
+          "core": [
+            26,
+            29
+          ],
+          "studio": [
+            26,
+            29
           ]
         }
       }
@@ -335,70 +451,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "After prison, Pinocchio hurried toward the Fairy."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "After prison,",
+              "sourceTextRange": [
+                0,
+                13
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A giant Serpent frightened him on the road."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio hurried toward the Fairy.",
+              "sourceTextRange": [
+                14,
+                49
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Hungry Pinocchio tried to steal some grapes."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A giant Serpent frightened",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "A trap closed tightly around his legs."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "him on the road.",
+              "sourceTextRange": [
+                27,
+                43
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "A farmer chained him beside the chicken coop."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Hungry Pinocchio tried",
+              "sourceTextRange": [
+                0,
+                22
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Pinocchio had to replace the farmer's dead watchdog."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "to steal some grapes.",
+              "sourceTextRange": [
+                23,
+                44
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Weasels offered him food for helping their theft."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "A trap closed",
+              "sourceTextRange": [
+                0,
+                13
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Pinocchio refused and quietly called the farmer."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "tightly around his legs.",
+              "sourceTextRange": [
+                14,
+                38
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "The grateful farmer removed his heavy collar."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "A farmer chained him",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "At the Fairy's home, Pinocchio found a tombstone."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "beside the chicken coop.",
+              "sourceTextRange": [
+                21,
+                45
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "He wept until a great Pigeon arrived."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio had to replace",
+              "sourceTextRange": [
+                0,
+                24
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "The Pigeon said Geppetto had built a boat."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "the farmer's dead watchdog.",
+              "sourceTextRange": [
+                25,
+                52
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Pinocchio climbed onto the bird's strong back."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Weasels offered him food",
+              "sourceTextRange": [
+                0,
+                24
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "They flew all night toward the distant sea."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "for helping their theft.",
+              "sourceTextRange": [
+                25,
+                49
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "A storm overturned Geppetto's tiny boat offshore."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio refused",
+              "sourceTextRange": [
+                0,
+                17
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Pinocchio jumped into the waves to find him."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and quietly called the farmer.",
+              "sourceTextRange": [
+                18,
+                48
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "The grateful farmer",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "removed his heavy collar.",
+              "sourceTextRange": [
+                20,
+                45
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "At the Fairy's home,",
+              "sourceTextRange": [
+                0,
+                20
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio found a tombstone.",
+              "sourceTextRange": [
+                21,
+                49
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "He wept until",
+              "sourceTextRange": [
+                0,
+                13
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "a great Pigeon arrived.",
+              "sourceTextRange": [
+                14,
+                37
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "The Pigeon said Geppetto",
+              "sourceTextRange": [
+                0,
+                24
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "had built a boat.",
+              "sourceTextRange": [
+                25,
+                42
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio climbed onto the bird's strong back.",
+              "sourceTextRange": [
+                0,
+                46
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "They flew all night",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "toward the distant sea.",
+              "sourceTextRange": [
+                20,
+                43
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 1,
+              "text": "A storm overturned Geppetto's tiny boat offshore.",
+              "sourceTextRange": [
+                0,
+                49
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio jumped into the",
+              "sourceTextRange": [
+                0,
+                25
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "waves to find him.",
+              "sourceTextRange": [
+                26,
+                44
+              ]
             }
           ]
         },
@@ -407,57 +790,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A giant Serpent frightened him on the road."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Weasels offered him food for helping their theft."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "The Pigeon said Geppetto had built a boat."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "The grateful farmer removed his heavy collar."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "They flew all night toward the distant sea."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "A trap closed tightly around his legs."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Pinocchio jumped into the waves to find him."
+                  "lineIndex": 0,
+                  "text": "After prison, Pinocchio hurried toward the Fairy."
                 },
                 {
                   "label": "B",
@@ -472,9 +811,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -488,59 +827,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A giant Serpent frightened him on the road."
+                  "lineIndex": 2,
+                  "text": "Hungry Pinocchio tried to steal some grapes."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "A storm overturned Geppetto's tiny boat offshore."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "A trap closed tightly around his legs."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "At the Fairy's home, Pinocchio found a tombstone."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Pinocchio had to replace the farmer's dead watchdog."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "The Pigeon said Geppetto had built a boat."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "After prison, Pinocchio hurried toward the Fairy."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -549,8 +844,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Hungry Pinocchio tried to steal some grapes."
+                  "lineIndex": 3,
+                  "text": "A trap closed tightly around his legs."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "The grateful farmer removed his heavy collar."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Pinocchio had to replace the farmer's dead watchdog."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "He wept until a great Pigeon arrived."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Pinocchio jumped into the waves to find him."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Pinocchio climbed onto the bird's strong back."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A giant Serpent frightened him on the road."
                 },
                 {
                   "label": "C",
@@ -560,24 +899,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Hungry Pinocchio tried to steal some grapes."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "The grateful farmer removed his heavy collar."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "They flew all night toward the distant sea."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "He wept until a great Pigeon arrived."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Pinocchio jumped into the waves to find him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "A farmer chained him beside the chicken coop."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "After prison, Pinocchio hurried toward the Fairy."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Pinocchio had to replace the farmer's dead watchdog."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The Pigeon said Geppetto had built a boat."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Pinocchio refused and quietly called the farmer."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "They flew all night toward the distant sea."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Hungry Pinocchio tried to steal some grapes."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Pinocchio jumped into the waves to find him."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "A farmer chained him beside the chicken coop."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "At the Fairy's home, Pinocchio found a tombstone."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Pinocchio jumped into the waves to find him."
                 }
               ]
             }
@@ -593,23 +1020,39 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A giant Serpent frightened him on the road.",
+              "lineIndex": 0,
+              "text": "After prison, Pinocchio hurried toward the Fairy.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "giant",
-                "Serpent",
-                "frightened",
-                "him",
-                "on",
+                "After",
+                "prison",
+                ",",
+                "Pinocchio",
+                "hurried",
+                "toward",
                 "the",
-                "road",
+                "Fairy",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Hungry Pinocchio tried to steal some grapes.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Hungry",
+                "Pinocchio",
+                "tried",
+                "to",
+                "steal",
+                "some",
+                "grapes",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "A trap closed tightly around his legs.",
               "task": "rebuild-then-speak",
@@ -625,7 +1068,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Pinocchio had to replace the farmer's dead watchdog.",
               "task": "rebuild-then-speak",
@@ -642,7 +1085,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Pinocchio refused and quietly called the farmer.",
               "task": "rebuild-then-speak",
@@ -658,25 +1101,39 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "At the Fairy's home, Pinocchio found a tombstone.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "The grateful farmer removed his heavy collar.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "At",
-                "the",
-                "Fairy's",
-                "home",
-                ",",
-                "Pinocchio",
-                "found",
-                "a",
-                "tombstone",
+                "The",
+                "grateful",
+                "farmer",
+                "removed",
+                "his",
+                "heavy",
+                "collar",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "He wept until a great Pigeon arrived.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "wept",
+                "until",
+                "a",
+                "great",
+                "Pigeon",
+                "arrived",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "The Pigeon said Geppetto had built a boat.",
               "task": "rebuild-then-speak",
@@ -693,7 +1150,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "They flew all night toward the distant sea.",
               "task": "rebuild-then-speak",
@@ -710,7 +1167,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Pinocchio jumped into the waves to find him.",
               "task": "rebuild-then-speak",
@@ -834,70 +1291,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Once released from prison, Pinocchio hurried back toward the Blue Fairy."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Once released from prison,",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A giant smoking Serpent blocked the road and frightened him senseless."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio hurried back toward the Blue Fairy.",
+              "sourceTextRange": [
+                27,
+                72
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A giant smoking Serpent blocked the road",
+              "sourceTextRange": [
+                0,
+                40
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "A hidden trap snapped shut and held both wooden legs."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "and frightened him senseless.",
+              "sourceTextRange": [
+                41,
+                70
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "The farmer who found him chained the puppet beside his chicken coop."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Later, hunger tempted Pinocchio to",
+              "sourceTextRange": [
+                0,
+                34
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "steal grapes from a vineyard.",
+              "sourceTextRange": [
+                35,
+                64
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "That night, Weasels offered him food for allowing their usual theft."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "A hidden trap snapped shut",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Instead of accepting the bargain, Pinocchio trapped them and alerted the farmer."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "and held both wooden legs.",
+              "sourceTextRange": [
+                27,
+                53
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Impressed by this unexpected honesty, the farmer removed the humiliating collar."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "The farmer who found him chained",
+              "sourceTextRange": [
+                0,
+                32
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "At the Fairy's home, Pinocchio discovered a stone claiming she had died."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "the puppet beside his chicken coop.",
+              "sourceTextRange": [
+                33,
+                68
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "His grief continued until a great Pigeon brought news of Geppetto."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog.",
+              "sourceTextRange": [
+                0,
+                69
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "The bird explained that his father had built a small boat to search overseas."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "That night,",
+              "sourceTextRange": [
+                0,
+                11
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Pinocchio climbed onto the Pigeon's back without hesitating."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "Weasels offered him food for allowing their usual theft.",
+              "sourceTextRange": [
+                12,
+                68
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "They flew through the entire night and reached the coast by morning."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Instead of accepting the bargain,",
+              "sourceTextRange": [
+                0,
+                33
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Offshore, Pinocchio recognized Geppetto struggling as a storm overturned the boat."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio trapped them and alerted the farmer.",
+              "sourceTextRange": [
+                34,
+                80
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "He threw himself into the rough sea, determined to reach his father."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Impressed by this unexpected honesty,",
+              "sourceTextRange": [
+                0,
+                37
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "the farmer removed the humiliating collar.",
+              "sourceTextRange": [
+                38,
+                80
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "At the Fairy's home,",
+              "sourceTextRange": [
+                0,
+                20
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio discovered a stone claiming she had died.",
+              "sourceTextRange": [
+                21,
+                72
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "His grief continued until a",
+              "sourceTextRange": [
+                0,
+                27
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "great Pigeon brought news of Geppetto.",
+              "sourceTextRange": [
+                28,
+                66
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "The bird explained that his father had",
+              "sourceTextRange": [
+                0,
+                38
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "built a small boat to search overseas.",
+              "sourceTextRange": [
+                39,
+                77
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio climbed onto the Pigeon's back without hesitating.",
+              "sourceTextRange": [
+                0,
+                60
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "They flew through the entire night",
+              "sourceTextRange": [
+                0,
+                34
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "and reached the coast by morning.",
+              "sourceTextRange": [
+                35,
+                68
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "Offshore, Pinocchio recognized Geppetto struggling",
+              "sourceTextRange": [
+                0,
+                50
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "as a storm overturned the boat.",
+              "sourceTextRange": [
+                51,
+                82
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "He threw himself into the rough sea,",
+              "sourceTextRange": [
+                0,
+                36
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "determined to reach his father.",
+              "sourceTextRange": [
+                37,
+                68
+              ]
             }
           ]
         },
@@ -906,57 +1630,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A giant smoking Serpent blocked the road and frightened him senseless."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "That night, Weasels offered him food for allowing their usual theft."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "The bird explained that his father had built a small boat to search overseas."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Impressed by this unexpected honesty, the farmer removed the humiliating collar."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "They flew through the entire night and reached the coast by morning."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "A hidden trap snapped shut and held both wooden legs."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "He threw himself into the rough sea, determined to reach his father."
+                  "lineIndex": 0,
+                  "text": "Once released from prison, Pinocchio hurried back toward the Blue Fairy."
                 },
                 {
                   "label": "B",
@@ -971,9 +1651,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -987,59 +1667,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A giant smoking Serpent blocked the road and frightened him senseless."
+                  "lineIndex": 2,
+                  "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Offshore, Pinocchio recognized Geppetto struggling as a storm overturned the boat."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "A hidden trap snapped shut and held both wooden legs."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "At the Fairy's home, Pinocchio discovered a stone claiming she had died."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "The bird explained that his father had built a small boat to search overseas."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Once released from prison, Pinocchio hurried back toward the Blue Fairy."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1048,8 +1684,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard."
+                  "lineIndex": 3,
+                  "text": "A hidden trap snapped shut and held both wooden legs."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Impressed by this unexpected honesty, the farmer removed the humiliating collar."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "His grief continued until a great Pigeon brought news of Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "He threw himself into the rough sea, determined to reach his father."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Pinocchio climbed onto the Pigeon's back without hesitating."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A giant smoking Serpent blocked the road and frightened him senseless."
                 },
                 {
                   "label": "C",
@@ -1059,24 +1739,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Impressed by this unexpected honesty, the farmer removed the humiliating collar."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "They flew through the entire night and reached the coast by morning."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "His grief continued until a great Pigeon brought news of Geppetto."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "He threw himself into the rough sea, determined to reach his father."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "The farmer who found him chained the puppet beside his chicken coop."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Once released from prison, Pinocchio hurried back toward the Blue Fairy."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The bird explained that his father had built a small boat to search overseas."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Instead of accepting the bargain, Pinocchio trapped them and alerted the farmer."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "They flew through the entire night and reached the coast by morning."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "He threw himself into the rough sea, determined to reach his father."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "The farmer who found him chained the puppet beside his chicken coop."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "At the Fairy's home, Pinocchio discovered a stone claiming she had died."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "He threw himself into the rough sea, determined to reach his father."
                 }
               ]
             }
@@ -1092,26 +1860,47 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A giant smoking Serpent blocked the road and frightened him senseless.",
+              "lineIndex": 0,
+              "text": "Once released from prison, Pinocchio hurried back toward the Blue Fairy.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "giant",
-                "smoking",
-                "Serpent",
-                "blocked",
+                "Once",
+                "released",
+                "from",
+                "prison",
+                ",",
+                "Pinocchio",
+                "hurried",
+                "back",
+                "toward",
                 "the",
-                "road",
-                "and",
-                "frightened",
-                "him",
-                "senseless",
+                "Blue",
+                "Fairy",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Later",
+                ",",
+                "hunger",
+                "tempted",
+                "Pinocchio",
+                "to",
+                "steal",
+                "grapes",
+                "from",
+                "a",
+                "vineyard",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "A hidden trap snapped shut and held both wooden legs.",
               "task": "rebuild-then-speak",
@@ -1130,7 +1919,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog.",
               "task": "rebuild-then-speak",
@@ -1150,7 +1939,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Instead of accepting the bargain, Pinocchio trapped them and alerted the farmer.",
               "task": "rebuild-then-speak",
@@ -1172,29 +1961,48 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "At the Fairy's home, Pinocchio discovered a stone claiming she had died.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Impressed by this unexpected honesty, the farmer removed the humiliating collar.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "At",
-                "the",
-                "Fairy's",
-                "home",
+                "Impressed",
+                "by",
+                "this",
+                "unexpected",
+                "honesty",
                 ",",
-                "Pinocchio",
-                "discovered",
-                "a",
-                "stone",
-                "claiming",
-                "she",
-                "had",
-                "died",
+                "the",
+                "farmer",
+                "removed",
+                "the",
+                "humiliating",
+                "collar",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "His grief continued until a great Pigeon brought news of Geppetto.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "His",
+                "grief",
+                "continued",
+                "until",
+                "a",
+                "great",
+                "Pigeon",
+                "brought",
+                "news",
+                "of",
+                "Geppetto",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "The bird explained that his father had built a small boat to search overseas.",
               "task": "rebuild-then-speak",
@@ -1217,7 +2025,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "They flew through the entire night and reached the coast by morning.",
               "task": "rebuild-then-speak",
@@ -1238,7 +2046,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "He threw himself into the rough sea, determined to reach his father.",
               "task": "rebuild-then-speak",
@@ -1367,70 +2175,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Freed after four months, Pinocchio rushed toward the Blue Fairy, hoping to recover the future he had abandoned."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Freed after four months, Pinocchio rushed toward the Blue Fairy,",
+              "sourceTextRange": [
+                0,
+                64
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A gigantic smoking Serpent blocked the road and frightened him, then collapsed in laughter at his panic."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "hoping to recover the future he had abandoned.",
+              "sourceTextRange": [
+                65,
+                111
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A gigantic smoking Serpent blocked the road",
+              "sourceTextRange": [
+                0,
+                43
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "The hidden trap that closed on his wooden legs had been set for thieves, making the consequence painfully exact."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "and frightened him, then collapsed in laughter at his panic.",
+              "sourceTextRange": [
+                44,
+                104
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "A farmer chained him beside the chicken coop and appointed him successor to the recently buried watchdog Melampo."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Hunger soon supplied another test,",
+              "sourceTextRange": [
+                0,
+                34
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Humiliated but alert, Pinocchio spent the night listening for anyone who might approach the hens."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and Pinocchio entered a vineyard to steal a tempting bunch of grapes.",
+              "sourceTextRange": [
+                35,
+                104
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "A band of Weasels offered the same corrupt bargain that had apparently kept Melampo comfortable."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "The hidden trap that closed on his wooden legs",
+              "sourceTextRange": [
+                0,
+                46
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Pinocchio rejected the food, secured the coop, and quietly summoned the farmer before the thieves could escape."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "had been set for thieves, making the consequence painfully exact.",
+              "sourceTextRange": [
+                47,
+                112
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Because he chose faithfulness when dishonesty would have been easy, the farmer removed the collar and released him."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "A farmer chained him beside the chicken coop",
+              "sourceTextRange": [
+                0,
+                44
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "His return to the Fairy's home brought another shock: a memorial stone announced that grief had ended her life."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "and appointed him successor to the recently buried watchdog Melampo.",
+              "sourceTextRange": [
+                45,
+                113
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Pinocchio's mourning attracted a great Pigeon carrying news that Geppetto had gone to sea in search of him."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Humiliated but alert, Pinocchio spent the night",
+              "sourceTextRange": [
+                0,
+                47
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "The father had built a fragile boat and planned to cross the ocean rather than abandon his missing son."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "listening for anyone who might approach the hens.",
+              "sourceTextRange": [
+                48,
+                97
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Pinocchio mounted the bird's back, and together they crossed a thousand miles through the night."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 1,
+              "text": "A band of Weasels offered the same corrupt bargain that had apparently kept Melampo comfortable.",
+              "sourceTextRange": [
+                0,
+                96
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "At dawn, fishermen pointed toward a tiny boat fighting a violent sea, and Pinocchio recognized Geppetto."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio rejected the food, secured the coop,",
+              "sourceTextRange": [
+                0,
+                46
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "A great wave overturned the craft just as father and son attempted to signal across the distance."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and quietly summoned the farmer before the thieves could escape.",
+              "sourceTextRange": [
+                47,
+                111
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Because he chose faithfulness when dishonesty would have been easy,",
+              "sourceTextRange": [
+                0,
+                67
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "the farmer removed the collar and released him.",
+              "sourceTextRange": [
+                68,
+                115
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "His return to the Fairy's home brought another shock:",
+              "sourceTextRange": [
+                0,
+                53
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "a memorial stone announced that grief had ended her life.",
+              "sourceTextRange": [
+                54,
+                111
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio's mourning attracted a great Pigeon carrying news that",
+              "sourceTextRange": [
+                0,
+                64
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "Geppetto had gone to sea in search of him.",
+              "sourceTextRange": [
+                65,
+                107
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "The father had built a fragile boat",
+              "sourceTextRange": [
+                0,
+                35
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and planned to cross the ocean rather than abandon his missing son.",
+              "sourceTextRange": [
+                36,
+                103
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio mounted the bird's back, and together they crossed a thousand miles through the night.",
+              "sourceTextRange": [
+                0,
+                96
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "At dawn, fishermen pointed toward a tiny boat",
+              "sourceTextRange": [
+                0,
+                45
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "fighting a violent sea, and Pinocchio recognized Geppetto.",
+              "sourceTextRange": [
+                46,
+                104
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "A great wave overturned the craft just as father",
+              "sourceTextRange": [
+                0,
+                48
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "and son attempted to signal across the distance.",
+              "sourceTextRange": [
+                49,
+                97
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "This time Pinocchio's sudden leap served love rather than escape,",
+              "sourceTextRange": [
+                0,
+                65
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "carrying him directly into the storm.",
+              "sourceTextRange": [
+                66,
+                103
+              ]
             }
           ]
         },
@@ -1439,57 +2514,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A gigantic smoking Serpent blocked the road and frightened him, then collapsed in laughter at his panic."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "A band of Weasels offered the same corrupt bargain that had apparently kept Melampo comfortable."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "The father had built a fragile boat and planned to cross the ocean rather than abandon his missing son."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Because he chose faithfulness when dishonesty would have been easy, the farmer removed the collar and released him."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "At dawn, fishermen pointed toward a tiny boat fighting a violent sea, and Pinocchio recognized Geppetto."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "The hidden trap that closed on his wooden legs had been set for thieves, making the consequence painfully exact."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
+                  "lineIndex": 0,
+                  "text": "Freed after four months, Pinocchio rushed toward the Blue Fairy, hoping to recover the future he had abandoned."
                 },
                 {
                   "label": "B",
@@ -1504,9 +2535,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1520,59 +2551,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A gigantic smoking Serpent blocked the road and frightened him, then collapsed in laughter at his panic."
+                  "lineIndex": 2,
+                  "text": "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "A great wave overturned the craft just as father and son attempted to signal across the distance."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "The hidden trap that closed on his wooden legs had been set for thieves, making the consequence painfully exact."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "His return to the Fairy's home brought another shock: a memorial stone announced that grief had ended her life."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Humiliated but alert, Pinocchio spent the night listening for anyone who might approach the hens."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "The father had built a fragile boat and planned to cross the ocean rather than abandon his missing son."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Freed after four months, Pinocchio rushed toward the Blue Fairy, hoping to recover the future he had abandoned."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1581,8 +2568,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes."
+                  "lineIndex": 3,
+                  "text": "The hidden trap that closed on his wooden legs had been set for thieves, making the consequence painfully exact."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Because he chose faithfulness when dishonesty would have been easy, the farmer removed the collar and released him."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Humiliated but alert, Pinocchio spent the night listening for anyone who might approach the hens."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Pinocchio's mourning attracted a great Pigeon carrying news that Geppetto had gone to sea in search of him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Pinocchio mounted the bird's back, and together they crossed a thousand miles through the night."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A gigantic smoking Serpent blocked the road and frightened him, then collapsed in laughter at his panic."
                 },
                 {
                   "label": "C",
@@ -1592,24 +2623,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Because he chose faithfulness when dishonesty would have been easy, the farmer removed the collar and released him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "At dawn, fishermen pointed toward a tiny boat fighting a violent sea, and Pinocchio recognized Geppetto."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Pinocchio's mourning attracted a great Pigeon carrying news that Geppetto had gone to sea in search of him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "A farmer chained him beside the chicken coop and appointed him successor to the recently buried watchdog Melampo."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Freed after four months, Pinocchio rushed toward the Blue Fairy, hoping to recover the future he had abandoned."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Humiliated but alert, Pinocchio spent the night listening for anyone who might approach the hens."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "The father had built a fragile boat and planned to cross the ocean rather than abandon his missing son."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Pinocchio rejected the food, secured the coop, and quietly summoned the farmer before the thieves could escape."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "At dawn, fishermen pointed toward a tiny boat fighting a violent sea, and Pinocchio recognized Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "A farmer chained him beside the chicken coop and appointed him successor to the recently buried watchdog Melampo."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "His return to the Fairy's home brought another shock: a memorial stone announced that grief had ended her life."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm."
                 }
               ]
             }
@@ -1625,33 +2744,62 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A gigantic smoking Serpent blocked the road and frightened him, then collapsed in laughter at his panic.",
+              "lineIndex": 0,
+              "text": "Freed after four months, Pinocchio rushed toward the Blue Fairy, hoping to recover the future he had abandoned.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "gigantic",
-                "smoking",
-                "Serpent",
-                "blocked",
-                "the",
-                "road",
-                "and",
-                "frightened",
-                "him",
+                "Freed",
+                "after",
+                "four",
+                "months",
                 ",",
-                "then",
-                "collapsed",
-                "in",
-                "laughter",
-                "at",
-                "his",
-                "panic",
+                "Pinocchio",
+                "rushed",
+                "toward",
+                "the",
+                "Blue",
+                "Fairy",
+                ",",
+                "hoping",
+                "to",
+                "recover",
+                "the",
+                "future",
+                "he",
+                "had",
+                "abandoned",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Hunger soon supplied another test, and Pinocchio entered a vineyard to steal a tempting bunch of grapes.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Hunger",
+                "soon",
+                "supplied",
+                "another",
+                "test",
+                ",",
+                "and",
+                "Pinocchio",
+                "entered",
+                "a",
+                "vineyard",
+                "to",
+                "steal",
+                "a",
+                "tempting",
+                "bunch",
+                "of",
+                "grapes",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "The hidden trap that closed on his wooden legs had been set for thieves, making the consequence painfully exact.",
               "task": "rebuild-then-speak",
@@ -1680,7 +2828,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Humiliated but alert, Pinocchio spent the night listening for anyone who might approach the hens.",
               "task": "rebuild-then-speak",
@@ -1705,7 +2853,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Pinocchio rejected the food, secured the coop, and quietly summoned the farmer before the thieves could escape.",
               "task": "rebuild-then-speak",
@@ -1733,36 +2881,62 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "His return to the Fairy's home brought another shock: a memorial stone announced that grief had ended her life.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Because he chose faithfulness when dishonesty would have been easy, the farmer removed the collar and released him.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "His",
-                "return",
-                "to",
+                "Because",
+                "he",
+                "chose",
+                "faithfulness",
+                "when",
+                "dishonesty",
+                "would",
+                "have",
+                "been",
+                "easy",
+                ",",
                 "the",
-                "Fairy's",
-                "home",
-                "brought",
-                "another",
-                "shock",
-                ":",
-                "a",
-                "memorial",
-                "stone",
-                "announced",
-                "that",
-                "grief",
-                "had",
-                "ended",
-                "her",
-                "life",
+                "farmer",
+                "removed",
+                "the",
+                "collar",
+                "and",
+                "released",
+                "him",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Pinocchio's mourning attracted a great Pigeon carrying news that Geppetto had gone to sea in search of him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio's",
+                "mourning",
+                "attracted",
+                "a",
+                "great",
+                "Pigeon",
+                "carrying",
+                "news",
+                "that",
+                "Geppetto",
+                "had",
+                "gone",
+                "to",
+                "sea",
+                "in",
+                "search",
+                "of",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "The father had built a fragile boat and planned to cross the ocean rather than abandon his missing son.",
               "task": "rebuild-then-speak",
@@ -1790,7 +2964,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "At dawn, fishermen pointed toward a tiny boat fighting a violent sea, and Pinocchio recognized Geppetto.",
               "task": "rebuild-then-speak",
@@ -1817,7 +2991,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "This time Pinocchio's sudden leap served love rather than escape, carrying him directly into the storm.",
               "task": "rebuild-then-speak",
@@ -1854,5 +3028,5 @@
       }
     }
   },
-  "checksum": "72975e01d0647f24d0ad4696fea64d526cb81fba47ae85571cec3f46a892a0ed"
+  "checksum": "7ce600697e19cef5e274eed43c2e21d74bb247e326e0b6278b205d96c1583c83"
 }

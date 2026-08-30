@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -19,7 +19,7 @@ const levelMeta = {
   core: { label: "Core", readingBand: "A2–B1", goalKo: "원인, 선택, 반응을 연결해 자연스럽게 설명한다." },
   studio: { label: "Studio", readingBand: "B1–B2", goalKo: "서술자의 어조와 도덕적 긴장을 살려 해석하고 말한다." },
 };
-const selectedIndexes = [1, 3, 5, 7, 9, 11, 13, 15];
+const selectedIndexes = [0, 2, 3, 5, 7, 8, 10, 11, 13, 15];
 
 function fail(message) {
   throw new Error(message);
@@ -27,6 +27,15 @@ function fail(message) {
 
 function checksum(value) {
   return createHash("sha256").update(JSON.stringify(value)).digest("hex");
+}
+
+async function exists(filePath) {
+  try {
+    await access(filePath);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 function words(text) {
@@ -44,6 +53,61 @@ function stats(lines) {
 
 function tokenize(text) {
   return text.match(/[A-Za-z]+(?:['’][A-Za-z]+)?|[0-9]+|[.,!?;:—-]/g) || [];
+}
+
+function wordRanges(text) {
+  return [...text.matchAll(/\S+/g)].map((match) => ({ start: match.index, end: match.index + match[0].length }));
+}
+
+function splitLine(text) {
+  const ranges = wordRanges(text);
+  if (ranges.length < 4) fail(`Cannot split a Mimic line with fewer than four words: ${text}`);
+  const middle = ranges.length / 2;
+  const candidates = [];
+  for (let splitWord = 2; splitWord <= ranges.length - 2; splitWord += 1) {
+    const leftToken = text.slice(ranges[splitWord - 1].start, ranges[splitWord - 1].end);
+    const rightToken = text.slice(ranges[splitWord].start, ranges[splitWord].end);
+    const boundaryBonus = /[,;:—-]$/.test(leftToken) || /^(and|but|because|when|while|then|so|yet|after|before|as)$/i.test(rightToken) ? 3 : 0;
+    candidates.push({ splitWord, score: boundaryBonus - Math.abs(splitWord - middle) });
+  }
+  const splitWord = candidates.sort((a, b) => b.score - a.score)[0].splitWord;
+  const rawBoundary = ranges[splitWord].start;
+  const leftEnd = text.slice(0, rawBoundary).trimEnd().length;
+  const rightStart = rawBoundary + text.slice(rawBoundary).search(/\S/);
+  return [
+    { text: text.slice(0, leftEnd), sourceTextRange: [0, leftEnd] },
+    { text: text.slice(rightStart), sourceTextRange: [rightStart, text.length] },
+  ];
+}
+
+function buildMimicItems(lines, expectedCount) {
+  const splitCount = expectedCount - lines.length;
+  if (splitCount < 0 || splitCount > lines.length) fail(`Cannot derive ${expectedCount} Mimic units from ${lines.length} narration lines.`);
+  const splitIndexes = new Set(
+    lines
+      .map((text, index) => ({ index, wordCount: words(text).length }))
+      .sort((a, b) => b.wordCount - a.wordCount || a.index - b.index)
+      .slice(0, splitCount)
+      .map(({ index }) => index)
+  );
+  const items = [];
+  for (const [sourceLineIndex, text] of lines.entries()) {
+    const parts = splitIndexes.has(sourceLineIndex)
+      ? splitLine(text)
+      : [{ text, sourceTextRange: [0, text.length] }];
+    for (const [partIndex, part] of parts.entries()) {
+      items.push({
+        id: `mimic-${String(items.length + 1).padStart(2, "0")}`,
+        sourceLineIndex,
+        part: partIndex + 1,
+        parts: parts.length,
+        text: part.text,
+        sourceTextRange: part.sourceTextRange,
+      });
+    }
+  }
+  if (items.length !== expectedCount) fail(`Expected ${expectedCount} Mimic units, got ${items.length}.`);
+  return items;
 }
 
 function buildGuess(lines) {
@@ -79,6 +143,15 @@ function lineRange(beatIndex) {
   return [beatIndex * 2, beatIndex * 2 + 1];
 }
 
+function mimicRange(items, beatIndex) {
+  const [startLine, endLine] = lineRange(beatIndex);
+  const indexes = items
+    .map((item, index) => ({ item, index }))
+    .filter(({ item }) => item.sourceLineIndex >= startLine && item.sourceLineIndex <= endLine)
+    .map(({ index }) => index);
+  return [indexes[0], indexes.at(-1)];
+}
+
 if (sessions.length !== 12) fail("Authoring source must contain exactly 12 sessions.");
 const coveredChapters = sessions.flatMap((session) => session.sourceChapters);
 if (JSON.stringify(coveredChapters) !== JSON.stringify(Array.from({ length: 36 }, (_, index) => index + 1))) {
@@ -88,16 +161,18 @@ if (JSON.stringify(coveredChapters) !== JSON.stringify(Array.from({ length: 36 }
 const compiled = [];
 for (const [sessionIndex, session] of sessions.entries()) {
   const number = sessionIndex + 1;
+  const sessionDir = path.join(packRoot, "sessions", `session-${String(number).padStart(2, "0")}`);
   if (session.number !== number) fail(`Expected session ${number}.`);
   if (session.beats.length !== source.courseDesign.storyBeatsPerSession) fail(`Session ${number} needs eight beats.`);
 
   const levels = {};
   for (const levelId of levelOrder) {
     const lines = session.levels[levelId];
-    if (!Array.isArray(lines) || lines.length !== source.courseDesign.linesPerLevel) {
+    if (!Array.isArray(lines) || lines.length !== source.courseDesign.narrationLinesPerLevel) {
       fail(`Session ${number} ${levelId} must contain exactly 16 lines.`);
     }
     if (new Set(lines).size !== lines.length) fail(`Session ${number} ${levelId} repeats a line.`);
+    const mimicItems = buildMimicItems(lines, source.courseDesign.mimicUnitsPerLevel);
     levels[levelId] = {
       ...levelMeta[levelId],
       lines: lines.map((text, index) => ({ id: `line-${String(index + 1).padStart(2, "0")}`, text })),
@@ -116,7 +191,8 @@ for (const [sessionIndex, session] of sessions.entries()) {
         mimic: {
           minutes: source.courseDesign.modeMinutes.mimic,
           protocol: ["listen", "chunk", "record", "compare", "retry"],
-          items: lines.map((text, index) => ({ lineIndex: index, text })),
+          source: "timestamped-segments-from-the-continuous-watch-master",
+          items: mimicItems,
         },
         guess: {
           minutes: source.courseDesign.modeMinutes.guess,
@@ -137,13 +213,20 @@ for (const [sessionIndex, session] of sessions.entries()) {
     id: `beat-${String(beatIndex + 1).padStart(2, "0")}`,
     ...beat,
     lineRanges: Object.fromEntries(levelOrder.map((levelId) => [levelId, lineRange(beatIndex)])),
+    mimicItemRanges: Object.fromEntries(levelOrder.map((levelId) => [levelId, mimicRange(levels[levelId].activities.mimic.items, beatIndex)])),
   }));
 
+  const artReady = await exists(path.join(sessionDir, "assets", `session-${String(number).padStart(2, "0")}.png`));
+  const generatedLevels = Object.fromEntries(await Promise.all(levelOrder.map(async (levelId) => [
+    levelId,
+    await exists(path.join(sessionDir, "audio", `${levelId}.master.mp3`)) && await exists(path.join(sessionDir, "audio", `${levelId}.timeline.json`)),
+  ])));
+  const corePilotReady = artReady && generatedLevels.core;
   const packCore = {
     schemaVersion: "2.0.0",
     contentId: `pinocchio-v2-session-${String(number).padStart(2, "0")}`,
     version: "2.0.0",
-    status: "text-ready-art-audio-pending",
+    status: corePilotReady ? "core-pilot-ready" : "text-ready-art-audio-pending",
     course: {
       title: "The Adventures of Pinocchio",
       session: number,
@@ -165,8 +248,8 @@ for (const [sessionIndex, session] of sessions.entries()) {
     narration: {
       provider: "ElevenLabs",
       model: "eleven_v3",
-      voiceStatus: "awaiting-durable-paid-voice-selection",
-      generationStatus: "not-generated",
+      voiceStatus: corePilotReady ? "paid-pilot-voice-selected" : "awaiting-durable-paid-voice-selection",
+      generationStatus: generatedLevels,
       outputPreference: "mp3_44100_192",
       direction: session.narrationDirection,
       productionRule: "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -175,7 +258,7 @@ for (const [sessionIndex, session] of sessions.entries()) {
       ),
     },
     livingStorybook: {
-      status: "brief-ready-asset-pending",
+      status: artReady ? "asset-ready" : "brief-ready-asset-pending",
       expectedAsset: `assets/session-${String(number).padStart(2, "0")}.png`,
       artBrief: session.artBrief,
       beats,
@@ -183,7 +266,6 @@ for (const [sessionIndex, session] of sessions.entries()) {
     levels,
   };
   const pack = { ...packCore, checksum: checksum(packCore) };
-  const sessionDir = path.join(packRoot, "sessions", `session-${String(number).padStart(2, "0")}`);
   await mkdir(sessionDir, { recursive: true });
   await writeFile(path.join(sessionDir, "pack.json"), `${JSON.stringify(pack, null, 2)}\n`);
   compiled.push(pack);

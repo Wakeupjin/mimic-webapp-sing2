@@ -35,7 +35,7 @@ if (Object.values(manifest.courseDesign.modeMinutes).reduce((sum, minutes) => su
   fail("Watch, Mimic, Guess, and Word must total sixty minutes.");
 }
 
-const totals = { sessions: 0, lines: 0, words: 0, characters: 0, guess: 0, word: 0, beats: 0 };
+const totals = { sessions: 0, narrationLines: 0, mimicUnits: 0, words: 0, characters: 0, guess: 0, word: 0, beats: 0 };
 const bandExceptions = { foundation: 0, core: 0, studio: 0 };
 
 for (const [sessionIndex, entry] of manifest.sessions.entries()) {
@@ -46,33 +46,54 @@ for (const [sessionIndex, entry] of manifest.sessions.entries()) {
     fail(`Session ${number} checksum mismatch.`);
   }
   if (pack.course.minutes !== 60) fail(`Session ${number} must be sixty minutes.`);
+  if (pack.status === "core-pilot-ready" && (!pack.narration.generationStatus.core || pack.livingStorybook.status !== "asset-ready")) {
+    fail(`Session ${number} claims a ready Core pilot without its media status.`);
+  }
+  if (pack.status === "core-pilot-ready") {
+    const sessionRoot = path.dirname(path.join(packRoot, entry.path));
+    const timeline = JSON.parse(await readFile(path.join(sessionRoot, "audio", "core.timeline.json"), "utf8"));
+    if (timeline.contentChecksum !== pack.checksum) fail(`Session ${number} Core timeline checksum mismatch.`);
+    if (timeline.lines.length !== manifest.courseDesign.narrationLinesPerLevel) fail(`Session ${number} Core timeline narration mismatch.`);
+    if (timeline.mimicItems.length !== manifest.courseDesign.mimicUnitsPerLevel) fail(`Session ${number} Core timeline Mimic mismatch.`);
+  }
   if (pack.livingStorybook.beats.length !== 8) fail(`Session ${number} must contain eight beats.`);
   totals.sessions += 1;
   totals.beats += 8;
 
   for (const levelId of levelIds) {
     const level = pack.levels[levelId];
-    if (level.lines.length !== 16) fail(`Session ${number} ${levelId} must contain sixteen lines.`);
-    if (level.activities.mimic.items.length !== 16) fail(`Session ${number} ${levelId} Mimic mismatch.`);
-    if (level.activities.guess.items.length !== 8) fail(`Session ${number} ${levelId} needs eight Guess items.`);
-    if (level.activities.word.items.length !== 8) fail(`Session ${number} ${levelId} needs eight Word items.`);
+    if (level.lines.length !== manifest.courseDesign.narrationLinesPerLevel) fail(`Session ${number} ${levelId} narration mismatch.`);
+    if (level.activities.mimic.items.length !== manifest.courseDesign.mimicUnitsPerLevel) fail(`Session ${number} ${levelId} Mimic mismatch.`);
+    if (level.activities.guess.items.length !== manifest.courseDesign.guessItemsPerLevel) fail(`Session ${number} ${levelId} Guess mismatch.`);
+    if (level.activities.word.items.length !== manifest.courseDesign.wordItemsPerLevel) fail(`Session ${number} ${levelId} Word mismatch.`);
     if (!level.activities.word.retellPromptKo) fail(`Session ${number} ${levelId} needs a retell prompt.`);
     const minutes = level.activities.watch.minutes + level.activities.mimic.minutes + level.activities.guess.minutes + level.activities.word.minutes;
     if (minutes !== 60) fail(`Session ${number} ${levelId} activity minutes total ${minutes}.`);
 
     for (const [lineIndex, line] of level.lines.entries()) {
-      if (level.activities.mimic.items[lineIndex].text !== line.text) fail(`Session ${number} ${levelId} line ${lineIndex + 1} mismatch.`);
       const count = wordCount(line.text);
       const inBand = levelId === "foundation" ? count >= 5 && count <= 11 : levelId === "core" ? count >= 8 && count <= 20 : count >= 12 && count <= 30;
       if (!inBand) bandExceptions[levelId] += 1;
     }
+    const reconstructed = new Map();
+    for (const [itemIndex, item] of level.activities.mimic.items.entries()) {
+      if (item.id !== `mimic-${String(itemIndex + 1).padStart(2, "0")}`) fail(`Session ${number} ${levelId} Mimic IDs are not sequential.`);
+      const sourceLine = level.lines[item.sourceLineIndex]?.text;
+      if (!sourceLine) fail(`Session ${number} ${levelId} ${item.id} references a missing narration line.`);
+      const [start, end] = item.sourceTextRange;
+      if (sourceLine.slice(start, end) !== item.text) fail(`Session ${number} ${levelId} ${item.id} text range mismatch.`);
+      if (!reconstructed.has(item.sourceLineIndex)) reconstructed.set(item.sourceLineIndex, []);
+      reconstructed.get(item.sourceLineIndex).push(item.text);
+    }
+    if (reconstructed.size !== level.lines.length) fail(`Session ${number} ${levelId} Mimic does not cover every narration line.`);
     for (const item of level.activities.guess.items) {
       const answer = item.options.find((option) => option.label === item.correctAnswer);
       if (!answer || answer.lineIndex !== item.audioLineIndex || new Set(item.options.map((option) => option.lineIndex)).size !== 3) {
         fail(`Session ${number} ${levelId} ${item.id} is invalid.`);
       }
     }
-    totals.lines += level.stats.lines;
+    totals.narrationLines += level.stats.lines;
+    totals.mimicUnits += level.activities.mimic.items.length;
     totals.words += level.stats.words;
     totals.characters += level.stats.characters;
     totals.guess += level.activities.guess.items.length;

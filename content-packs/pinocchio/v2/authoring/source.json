@@ -13,9 +13,10 @@
     "minutesPerSession": 60,
     "sourceChapterCoverage": "Original Chapters 1–36, each assigned exactly once",
     "modeMinutes": { "watch": 10, "mimic": 25, "guess": 10, "word": 15 },
-    "linesPerLevel": 16,
-    "guessItemsPerLevel": 8,
-    "wordItemsPerLevel": 8,
+    "narrationLinesPerLevel": 16,
+    "mimicUnitsPerLevel": 30,
+    "guessItemsPerLevel": 10,
+    "wordItemsPerLevel": 10,
     "storyBeatsPerSession": 8,
     "learnerRule": "A learner completes one selected level per session; Foundation, Core, and Studio are alternatives, not cumulative work."
   },

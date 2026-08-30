@@ -149,19 +149,35 @@ function buildTimeline(job, alignment) {
   if (!alignment?.characters?.length) fail("ElevenLabs did not return character alignment.");
   const alignedText = alignment.characters.join("");
   let searchFrom = 0;
+  const sourceOffsets = [];
   const spoken = job.pack.levels[job.levelId].lines.map((line, index) => {
     const offset = alignedText.indexOf(line.text, searchFrom);
     if (offset < 0) fail(`Could not align ${unitKind} ${job.unitNumber} ${job.levelId} line ${index + 1}.`);
+    sourceOffsets.push(offset);
     searchFrom = offset + line.text.length;
     return { id: line.id, text: line.text, ...timedCharacterRange(alignment, offset, offset + line.text.length) };
   });
   const boundaries = spoken.slice(0, -1).map((line, index) => (line.end + spoken[index + 1].start) / 2);
-  return spoken.map((line, index) => ({
+  const lines = spoken.map((line, index) => ({
     id: line.id,
     text: line.text,
     start: Number((index === 0 ? Math.max(0, line.start - 0.08) : boundaries[index - 1]).toFixed(3)),
     end: Number((index === spoken.length - 1 ? line.end + 0.22 : boundaries[index]).toFixed(3)),
   }));
+  const mimicItems = job.pack.levels[job.levelId].activities.mimic.items.map((item) => {
+    const [relativeStart, relativeEnd] = item.sourceTextRange || [0, item.text.length];
+    const absoluteStart = sourceOffsets[item.sourceLineIndex] + relativeStart;
+    const absoluteEnd = sourceOffsets[item.sourceLineIndex] + relativeEnd;
+    const timed = timedCharacterRange(alignment, absoluteStart, absoluteEnd);
+    return {
+      id: item.id,
+      sourceLineIndex: item.sourceLineIndex,
+      text: item.text,
+      start: Number(Math.max(0, timed.start - 0.12).toFixed(3)),
+      end: Number((timed.end + 0.1).toFixed(3)),
+    };
+  });
+  return { lines, mimicItems };
 }
 
 const provenanceByUnit = new Map();
@@ -187,9 +203,10 @@ for (const [jobIndex, job] of jobs.entries()) {
       seed: seed + jobIndex,
       requestId: result.requestId,
       billedCharactersEstimate: job.text.length,
-      duration: timeline.at(-1)?.end || 0,
+      duration: timeline.lines.at(-1)?.end || 0,
       source: "one-continuous-master",
-      lines: timeline,
+      lines: timeline.lines,
+      mimicItems: timeline.mimicItems,
     }, null, 2)}\n`
   );
   if (!provenanceByUnit.has(job.unitNumber)) provenanceByUnit.set(job.unitNumber, []);

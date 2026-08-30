@@ -51,7 +51,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Let the rescue feel magical and compassionate, play the medicine scene with restraint, make the growing nose comic but meaningful, and sharpen the injustice of the court.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -93,6 +97,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            3
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            3
+          ]
         }
       },
       {
@@ -112,6 +130,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            4,
+            7
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            4,
+            7
           ]
         }
       },
@@ -133,6 +165,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            8,
+            10
+          ],
+          "core": [
+            8,
+            11
+          ],
+          "studio": [
+            8,
+            10
+          ]
         }
       },
       {
@@ -152,6 +198,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            11,
+            14
+          ],
+          "core": [
+            12,
+            15
+          ],
+          "studio": [
+            11,
+            14
           ]
         }
       },
@@ -173,6 +233,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            15,
+            17
+          ],
+          "core": [
+            16,
+            19
+          ],
+          "studio": [
+            15,
+            18
+          ]
         }
       },
       {
@@ -192,6 +266,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            18,
+            21
+          ],
+          "core": [
+            20,
+            23
+          ],
+          "studio": [
+            19,
+            21
           ]
         }
       },
@@ -213,6 +301,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            22,
+            25
+          ],
+          "core": [
+            24,
+            26
+          ],
+          "studio": [
+            22,
+            25
+          ]
         }
       },
       {
@@ -232,6 +334,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            26,
+            29
+          ],
+          "core": [
+            27,
+            29
+          ],
+          "studio": [
+            26,
+            29
           ]
         }
       }
@@ -335,70 +451,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "The Blue Fairy saw Pinocchio beside the oak."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "The Blue Fairy saw",
+              "sourceTextRange": [
+                0,
+                18
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "She sent a Falcon to cut him down."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio beside the oak.",
+              "sourceTextRange": [
+                19,
+                44
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "A Poodle carried him home in a carriage."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "She sent a Falcon",
+              "sourceTextRange": [
+                0,
+                17
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Three doctors argued about whether he lived."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "to cut him down.",
+              "sourceTextRange": [
+                18,
+                34
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Pinocchio refused the Fairy's bitter medicine."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "A Poodle carried him",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Black Rabbits arrived, and he quickly drank."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "home in a carriage.",
+              "sourceTextRange": [
+                21,
+                40
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "He lied about the four hidden coins."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Three doctors argued",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "With each lie, his wooden nose grew."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "about whether he lived.",
+              "sourceTextRange": [
+                21,
+                44
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Woodpeckers finally shortened the enormous nose."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio refused the Fairy's bitter medicine.",
+              "sourceTextRange": [
+                0,
+                46
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "The Fairy promised he could meet Geppetto soon."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Black Rabbits arrived,",
+              "sourceTextRange": [
+                0,
+                22
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Outside, the Fox and Cat found him again."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and he quickly drank.",
+              "sourceTextRange": [
+                23,
+                44
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Pinocchio followed them to the Field of Wonders."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "He lied about",
+              "sourceTextRange": [
+                0,
+                13
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "He buried four coins and waited for riches."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "the four hidden coins.",
+              "sourceTextRange": [
+                14,
+                36
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "A Parrot revealed that the thieves took everything."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "With each lie,",
+              "sourceTextRange": [
+                0,
+                14
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "The judge heard his story, then jailed him."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "his wooden nose grew.",
+              "sourceTextRange": [
+                15,
+                36
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "A royal celebration finally opened the prison."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 1,
+              "text": "Woodpeckers finally shortened the enormous nose.",
+              "sourceTextRange": [
+                0,
+                48
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy promised he",
+              "sourceTextRange": [
+                0,
+                21
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "could meet Geppetto soon.",
+              "sourceTextRange": [
+                22,
+                47
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Outside, the Fox",
+              "sourceTextRange": [
+                0,
+                16
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "and Cat found him again.",
+              "sourceTextRange": [
+                17,
+                41
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio followed them to",
+              "sourceTextRange": [
+                0,
+                26
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "the Field of Wonders.",
+              "sourceTextRange": [
+                27,
+                48
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "He buried four coins",
+              "sourceTextRange": [
+                0,
+                20
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and waited for riches.",
+              "sourceTextRange": [
+                21,
+                43
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "A Parrot revealed that",
+              "sourceTextRange": [
+                0,
+                22
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "the thieves took everything.",
+              "sourceTextRange": [
+                23,
+                51
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "The judge heard his story,",
+              "sourceTextRange": [
+                0,
+                26
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "then jailed him.",
+              "sourceTextRange": [
+                27,
+                43
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "A royal celebration",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "finally opened the prison.",
+              "sourceTextRange": [
+                20,
+                46
+              ]
             }
           ]
         },
@@ -407,57 +790,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "She sent a Falcon to cut him down."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "He lied about the four hidden coins."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Pinocchio followed them to the Field of Wonders."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Woodpeckers finally shortened the enormous nose."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "A Parrot revealed that the thieves took everything."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Three doctors argued about whether he lived."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "A royal celebration finally opened the prison."
+                  "lineIndex": 0,
+                  "text": "The Blue Fairy saw Pinocchio beside the oak."
                 },
                 {
                   "label": "B",
@@ -472,9 +811,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -488,59 +827,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "She sent a Falcon to cut him down."
+                  "lineIndex": 2,
+                  "text": "A Poodle carried him home in a carriage."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "The judge heard his story, then jailed him."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Three doctors argued about whether he lived."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "The Fairy promised he could meet Geppetto soon."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Black Rabbits arrived, and he quickly drank."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Pinocchio followed them to the Field of Wonders."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "The Blue Fairy saw Pinocchio beside the oak."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -549,8 +844,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "A Poodle carried him home in a carriage."
+                  "lineIndex": 3,
+                  "text": "Three doctors argued about whether he lived."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Woodpeckers finally shortened the enormous nose."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Black Rabbits arrived, and he quickly drank."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Outside, the Fox and Cat found him again."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "A royal celebration finally opened the prison."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "He buried four coins and waited for riches."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "She sent a Falcon to cut him down."
                 },
                 {
                   "label": "C",
@@ -560,24 +899,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "A Poodle carried him home in a carriage."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Woodpeckers finally shortened the enormous nose."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "A Parrot revealed that the thieves took everything."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Outside, the Fox and Cat found him again."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "A royal celebration finally opened the prison."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Pinocchio refused the Fairy's bitter medicine."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "The Blue Fairy saw Pinocchio beside the oak."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Black Rabbits arrived, and he quickly drank."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio followed them to the Field of Wonders."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "With each lie, his wooden nose grew."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "A Parrot revealed that the thieves took everything."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "A Poodle carried him home in a carriage."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "A royal celebration finally opened the prison."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Pinocchio refused the Fairy's bitter medicine."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "The Fairy promised he could meet Geppetto soon."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "A royal celebration finally opened the prison."
                 }
               ]
             }
@@ -593,23 +1020,40 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "She sent a Falcon to cut him down.",
+              "lineIndex": 0,
+              "text": "The Blue Fairy saw Pinocchio beside the oak.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "She",
-                "sent",
-                "a",
-                "Falcon",
-                "to",
-                "cut",
-                "him",
-                "down",
+                "The",
+                "Blue",
+                "Fairy",
+                "saw",
+                "Pinocchio",
+                "beside",
+                "the",
+                "oak",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "A Poodle carried him home in a carriage.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "A",
+                "Poodle",
+                "carried",
+                "him",
+                "home",
+                "in",
+                "a",
+                "carriage",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Three doctors argued about whether he lived.",
               "task": "rebuild-then-speak",
@@ -625,7 +1069,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Black Rabbits arrived, and he quickly drank.",
               "task": "rebuild-then-speak",
@@ -642,7 +1086,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "With each lie, his wooden nose grew.",
               "task": "rebuild-then-speak",
@@ -659,24 +1103,40 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "The Fairy promised he could meet Geppetto soon.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Woodpeckers finally shortened the enormous nose.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "Fairy",
-                "promised",
-                "he",
-                "could",
-                "meet",
-                "Geppetto",
-                "soon",
+                "Woodpeckers",
+                "finally",
+                "shortened",
+                "the",
+                "enormous",
+                "nose",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Outside, the Fox and Cat found him again.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Outside",
+                ",",
+                "the",
+                "Fox",
+                "and",
+                "Cat",
+                "found",
+                "him",
+                "again",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Pinocchio followed them to the Field of Wonders.",
               "task": "rebuild-then-speak",
@@ -693,7 +1153,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "A Parrot revealed that the thieves took everything.",
               "task": "rebuild-then-speak",
@@ -710,7 +1170,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "A royal celebration finally opened the prison.",
               "task": "rebuild-then-speak",
@@ -833,70 +1293,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "The Blue Fairy noticed Pinocchio",
+              "sourceTextRange": [
+                0,
+                32
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "She sent a Falcon to cut the rope and rescue him."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "hanging helplessly from the giant oak.",
+              "sourceTextRange": [
+                33,
+                71
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Her elegant Poodle carried the puppet home in a tiny carriage."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "She sent a Falcon to cut the rope",
+              "sourceTextRange": [
+                0,
+                33
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "A Crow, Owl, and Talking Cricket debated whether their patient was alive."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "and rescue him.",
+              "sourceTextRange": [
+                34,
+                49
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Pinocchio refused the bitter medicine until Black Rabbits arrived for him."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Her elegant Poodle carried the",
+              "sourceTextRange": [
+                0,
+                30
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "He swallowed it immediately and recovered from his dangerous fever."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "puppet home in a tiny carriage.",
+              "sourceTextRange": [
+                31,
+                62
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "When the Fairy asked about the coins, Pinocchio invented several lies."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "A Crow, Owl,",
+              "sourceTextRange": [
+                0,
+                12
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "His nose lengthened after every false answer until he could barely move."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "and Talking Cricket debated whether their patient was alive.",
+              "sourceTextRange": [
+                13,
+                73
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "The Fairy forgave him and called Woodpeckers to shorten the nose."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio refused the bitter medicine",
+              "sourceTextRange": [
+                0,
+                37
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "She promised that Geppetto could soon join them as a family."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "until Black Rabbits arrived for him.",
+              "sourceTextRange": [
+                38,
+                74
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "On the way to meet his father, Pinocchio met the Fox and Cat again."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "He swallowed it immediately",
+              "sourceTextRange": [
+                0,
+                27
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Ignoring experience, he followed them toward the Field of Wonders."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and recovered from his dangerous fever.",
+              "sourceTextRange": [
+                28,
+                67
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "He buried his four coins and waited for a tree of money."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "When the Fairy asked about the coins,",
+              "sourceTextRange": [
+                0,
+                37
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "A laughing Parrot revealed that the swindlers had stolen everything."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio invented several lies.",
+              "sourceTextRange": [
+                38,
+                70
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "The local judge listened to the robbery, then imprisoned the victim."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "His nose lengthened",
+              "sourceTextRange": [
+                0,
+                19
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Only a royal celebration freed Pinocchio four months later."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "after every false answer until he could barely move.",
+              "sourceTextRange": [
+                20,
+                72
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy forgave him",
+              "sourceTextRange": [
+                0,
+                21
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "and called Woodpeckers to shorten the nose.",
+              "sourceTextRange": [
+                22,
+                65
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "She promised that Geppetto could soon join them",
+              "sourceTextRange": [
+                0,
+                47
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "as a family.",
+              "sourceTextRange": [
+                48,
+                60
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "On the way to meet his father,",
+              "sourceTextRange": [
+                0,
+                30
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio met the Fox and Cat again.",
+              "sourceTextRange": [
+                31,
+                67
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Ignoring experience,",
+              "sourceTextRange": [
+                0,
+                20
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "he followed them toward the Field of Wonders.",
+              "sourceTextRange": [
+                21,
+                66
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "He buried his four coins",
+              "sourceTextRange": [
+                0,
+                24
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and waited for a tree of money.",
+              "sourceTextRange": [
+                25,
+                56
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 1,
+              "text": "A laughing Parrot revealed that the swindlers had stolen everything.",
+              "sourceTextRange": [
+                0,
+                68
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "The local judge listened to the robbery,",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "then imprisoned the victim.",
+              "sourceTextRange": [
+                41,
+                68
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 1,
+              "text": "Only a royal celebration freed Pinocchio four months later.",
+              "sourceTextRange": [
+                0,
+                59
+              ]
             }
           ]
         },
@@ -905,57 +1632,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "She sent a Falcon to cut the rope and rescue him."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "When the Fairy asked about the coins, Pinocchio invented several lies."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Ignoring experience, he followed them toward the Field of Wonders."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "The Fairy forgave him and called Woodpeckers to shorten the nose."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "A laughing Parrot revealed that the swindlers had stolen everything."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "A Crow, Owl, and Talking Cricket debated whether their patient was alive."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Only a royal celebration freed Pinocchio four months later."
+                  "lineIndex": 0,
+                  "text": "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak."
                 },
                 {
                   "label": "B",
@@ -970,9 +1653,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -986,59 +1669,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "She sent a Falcon to cut the rope and rescue him."
+                  "lineIndex": 2,
+                  "text": "Her elegant Poodle carried the puppet home in a tiny carriage."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "The local judge listened to the robbery, then imprisoned the victim."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "A Crow, Owl, and Talking Cricket debated whether their patient was alive."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "She promised that Geppetto could soon join them as a family."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "He swallowed it immediately and recovered from his dangerous fever."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Ignoring experience, he followed them toward the Field of Wonders."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1047,8 +1686,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Her elegant Poodle carried the puppet home in a tiny carriage."
+                  "lineIndex": 3,
+                  "text": "A Crow, Owl, and Talking Cricket debated whether their patient was alive."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "The Fairy forgave him and called Woodpeckers to shorten the nose."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "He swallowed it immediately and recovered from his dangerous fever."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "On the way to meet his father, Pinocchio met the Fox and Cat again."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Only a royal celebration freed Pinocchio four months later."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "He buried his four coins and waited for a tree of money."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "She sent a Falcon to cut the rope and rescue him."
                 },
                 {
                   "label": "C",
@@ -1058,24 +1741,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Her elegant Poodle carried the puppet home in a tiny carriage."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "The Fairy forgave him and called Woodpeckers to shorten the nose."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "A laughing Parrot revealed that the swindlers had stolen everything."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "On the way to meet his father, Pinocchio met the Fox and Cat again."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Only a royal celebration freed Pinocchio four months later."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Pinocchio refused the bitter medicine until Black Rabbits arrived for him."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "He swallowed it immediately and recovered from his dangerous fever."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Ignoring experience, he followed them toward the Field of Wonders."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "His nose lengthened after every false answer until he could barely move."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "A laughing Parrot revealed that the swindlers had stolen everything."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Her elegant Poodle carried the puppet home in a tiny carriage."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Only a royal celebration freed Pinocchio four months later."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Pinocchio refused the bitter medicine until Black Rabbits arrived for him."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "She promised that Geppetto could soon join them as a family."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Only a royal celebration freed Pinocchio four months later."
                 }
               ]
             }
@@ -1091,26 +1862,46 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "She sent a Falcon to cut the rope and rescue him.",
+              "lineIndex": 0,
+              "text": "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "She",
-                "sent",
-                "a",
-                "Falcon",
-                "to",
-                "cut",
+                "The",
+                "Blue",
+                "Fairy",
+                "noticed",
+                "Pinocchio",
+                "hanging",
+                "helplessly",
+                "from",
                 "the",
-                "rope",
-                "and",
-                "rescue",
-                "him",
+                "giant",
+                "oak",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Her elegant Poodle carried the puppet home in a tiny carriage.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Her",
+                "elegant",
+                "Poodle",
+                "carried",
+                "the",
+                "puppet",
+                "home",
+                "in",
+                "a",
+                "tiny",
+                "carriage",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "A Crow, Owl, and Talking Cricket debated whether their patient was alive.",
               "task": "rebuild-then-speak",
@@ -1133,7 +1924,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "He swallowed it immediately and recovered from his dangerous fever.",
               "task": "rebuild-then-speak",
@@ -1152,7 +1943,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "His nose lengthened after every false answer until he could barely move.",
               "task": "rebuild-then-speak",
@@ -1173,27 +1964,51 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "She promised that Geppetto could soon join them as a family.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "The Fairy forgave him and called Woodpeckers to shorten the nose.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "She",
-                "promised",
-                "that",
-                "Geppetto",
-                "could",
-                "soon",
-                "join",
-                "them",
-                "as",
-                "a",
-                "family",
+                "The",
+                "Fairy",
+                "forgave",
+                "him",
+                "and",
+                "called",
+                "Woodpeckers",
+                "to",
+                "shorten",
+                "the",
+                "nose",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "On the way to meet his father, Pinocchio met the Fox and Cat again.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "On",
+                "the",
+                "way",
+                "to",
+                "meet",
+                "his",
+                "father",
+                ",",
+                "Pinocchio",
+                "met",
+                "the",
+                "Fox",
+                "and",
+                "Cat",
+                "again",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Ignoring experience, he followed them toward the Field of Wonders.",
               "task": "rebuild-then-speak",
@@ -1213,7 +2028,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "A laughing Parrot revealed that the swindlers had stolen everything.",
               "task": "rebuild-then-speak",
@@ -1232,7 +2047,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Only a royal celebration freed Pinocchio four months later.",
               "task": "rebuild-then-speak",
@@ -1357,70 +2172,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "From her white house, the Blue Fairy saw Pinocchio suspended from the oak and ordered an immediate rescue."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "From her white house, the Blue Fairy saw Pinocchio",
+              "sourceTextRange": [
+                0,
+                50
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A Falcon severed the rope, while a magnificently dressed Poodle brought the unconscious puppet home by carriage."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "suspended from the oak and ordered an immediate rescue.",
+              "sourceTextRange": [
+                51,
+                106
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A Falcon severed the rope,",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Although seriously ill, he rejected the bitter medicine until solemn Black Rabbits arrived to carry him away."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "while a magnificently dressed Poodle brought the unconscious puppet home by carriage.",
+              "sourceTextRange": [
+                27,
+                112
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Fear accomplished what good advice had not, and one hurried swallow restored his strength."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "The Crow, Owl, and Talking Cricket offered contradictory",
+              "sourceTextRange": [
+                0,
+                56
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "The Fairy then asked about the gold pieces, giving Pinocchio an opportunity to practice honesty."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "diagnoses that exposed both Pinocchio's life and character.",
+              "sourceTextRange": [
+                57,
+                116
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "He protected his embarrassment with one lie after another, and his wooden nose recorded each falsehood publicly."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Although seriously ill, he rejected the bitter medicine",
+              "sourceTextRange": [
+                0,
+                55
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Once the lesson had become impossible to ignore, the Fairy forgave him and summoned Woodpeckers to repair the damage."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "until solemn Black Rabbits arrived to carry him away.",
+              "sourceTextRange": [
+                56,
+                109
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "She promised that Geppetto would soon arrive, offering Pinocchio the family reunion he claimed to desire."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 1,
+              "text": "Fear accomplished what good advice had not, and one hurried swallow restored his strength.",
+              "sourceTextRange": [
+                0,
+                90
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Yet on the road to meet his father, he encountered the Fox and Cat and accepted their story again."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "The Fairy then asked about the gold pieces,",
+              "sourceTextRange": [
+                0,
+                43
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Experience warned him, but the fantasy of effortless wealth remained louder than memory."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "giving Pinocchio an opportunity to practice honesty.",
+              "sourceTextRange": [
+                44,
+                96
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "At the Field of Wonders, Pinocchio buried his remaining four coins and waited for a golden harvest."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "He protected his embarrassment with one lie after another,",
+              "sourceTextRange": [
+                0,
+                58
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "A Parrot laughed at the scheme and explained that the swindlers had simply dug up the money."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "and his wooden nose recorded each falsehood publicly.",
+              "sourceTextRange": [
+                59,
+                112
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Pinocchio reported the theft to a judge, expecting the law to restore what foolishness had lost."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Once the lesson had become impossible to ignore,",
+              "sourceTextRange": [
+                0,
+                48
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "The court perversely punished the robbed puppet with four months in prison, pleasing the absent thieves."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "the Fairy forgave him and summoned Woodpeckers to repair the damage.",
+              "sourceTextRange": [
+                49,
+                117
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "She promised that Geppetto would soon arrive,",
+              "sourceTextRange": [
+                0,
+                45
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "offering Pinocchio the family reunion he claimed to desire.",
+              "sourceTextRange": [
+                46,
+                105
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "Yet on the road to meet his father,",
+              "sourceTextRange": [
+                0,
+                35
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "he encountered the Fox and Cat and accepted their story again.",
+              "sourceTextRange": [
+                36,
+                98
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 1,
+              "text": "Experience warned him, but the fantasy of effortless wealth remained louder than memory.",
+              "sourceTextRange": [
+                0,
+                88
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "At the Field of Wonders, Pinocchio buried his remaining four coins",
+              "sourceTextRange": [
+                0,
+                66
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and waited for a golden harvest.",
+              "sourceTextRange": [
+                67,
+                99
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "A Parrot laughed at the scheme",
+              "sourceTextRange": [
+                0,
+                30
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and explained that the swindlers had simply dug up the money.",
+              "sourceTextRange": [
+                31,
+                92
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio reported the theft to a judge,",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "expecting the law to restore what foolishness had lost.",
+              "sourceTextRange": [
+                41,
+                96
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "The court perversely punished the robbed puppet with",
+              "sourceTextRange": [
+                0,
+                52
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "four months in prison, pleasing the absent thieves.",
+              "sourceTextRange": [
+                53,
+                104
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "A royal celebration eventually opened the cell,",
+              "sourceTextRange": [
+                0,
+                47
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "but freedom arrived without restoring either money or judgment.",
+              "sourceTextRange": [
+                48,
+                111
+              ]
             }
           ]
         },
@@ -1429,57 +2511,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A Falcon severed the rope, while a magnificently dressed Poodle brought the unconscious puppet home by carriage."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "He protected his embarrassment with one lie after another, and his wooden nose recorded each falsehood publicly."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "At the Field of Wonders, Pinocchio buried his remaining four coins and waited for a golden harvest."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "She promised that Geppetto would soon arrive, offering Pinocchio the family reunion he claimed to desire."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Pinocchio reported the theft to a judge, expecting the law to restore what foolishness had lost."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Although seriously ill, he rejected the bitter medicine until solemn Black Rabbits arrived to carry him away."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
+                  "lineIndex": 0,
+                  "text": "From her white house, the Blue Fairy saw Pinocchio suspended from the oak and ordered an immediate rescue."
                 },
                 {
                   "label": "B",
@@ -1494,9 +2532,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1510,59 +2548,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A Falcon severed the rope, while a magnificently dressed Poodle brought the unconscious puppet home by carriage."
+                  "lineIndex": 2,
+                  "text": "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "The court perversely punished the robbed puppet with four months in prison, pleasing the absent thieves."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Although seriously ill, he rejected the bitter medicine until solemn Black Rabbits arrived to carry him away."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Yet on the road to meet his father, he encountered the Fox and Cat and accepted their story again."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "The Fairy then asked about the gold pieces, giving Pinocchio an opportunity to practice honesty."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "At the Field of Wonders, Pinocchio buried his remaining four coins and waited for a golden harvest."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "From her white house, the Blue Fairy saw Pinocchio suspended from the oak and ordered an immediate rescue."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1571,8 +2565,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character."
+                  "lineIndex": 3,
+                  "text": "Although seriously ill, he rejected the bitter medicine until solemn Black Rabbits arrived to carry him away."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "She promised that Geppetto would soon arrive, offering Pinocchio the family reunion he claimed to desire."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The Fairy then asked about the gold pieces, giving Pinocchio an opportunity to practice honesty."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Experience warned him, but the fantasy of effortless wealth remained louder than memory."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "A Parrot laughed at the scheme and explained that the swindlers had simply dug up the money."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A Falcon severed the rope, while a magnificently dressed Poodle brought the unconscious puppet home by carriage."
                 },
                 {
                   "label": "C",
@@ -1582,24 +2620,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "She promised that Geppetto would soon arrive, offering Pinocchio the family reunion he claimed to desire."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Pinocchio reported the theft to a judge, expecting the law to restore what foolishness had lost."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Experience warned him, but the fantasy of effortless wealth remained louder than memory."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Fear accomplished what good advice had not, and one hurried swallow restored his strength."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "From her white house, the Blue Fairy saw Pinocchio suspended from the oak and ordered an immediate rescue."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The Fairy then asked about the gold pieces, giving Pinocchio an opportunity to practice honesty."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "At the Field of Wonders, Pinocchio buried his remaining four coins and waited for a golden harvest."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Once the lesson had become impossible to ignore, the Fairy forgave him and summoned Woodpeckers to repair the damage."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Pinocchio reported the theft to a judge, expecting the law to restore what foolishness had lost."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Fear accomplished what good advice had not, and one hurried swallow restored his strength."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Yet on the road to meet his father, he encountered the Fox and Cat and accepted their story again."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment."
                 }
               ]
             }
@@ -1615,33 +2741,61 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A Falcon severed the rope, while a magnificently dressed Poodle brought the unconscious puppet home by carriage.",
+              "lineIndex": 0,
+              "text": "From her white house, the Blue Fairy saw Pinocchio suspended from the oak and ordered an immediate rescue.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "Falcon",
-                "severed",
-                "the",
-                "rope",
+                "From",
+                "her",
+                "white",
+                "house",
                 ",",
-                "while",
-                "a",
-                "magnificently",
-                "dressed",
-                "Poodle",
-                "brought",
                 "the",
-                "unconscious",
-                "puppet",
-                "home",
-                "by",
-                "carriage",
+                "Blue",
+                "Fairy",
+                "saw",
+                "Pinocchio",
+                "suspended",
+                "from",
+                "the",
+                "oak",
+                "and",
+                "ordered",
+                "an",
+                "immediate",
+                "rescue",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "The Crow, Owl, and Talking Cricket offered contradictory diagnoses that exposed both Pinocchio's life and character.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "Crow",
+                ",",
+                "Owl",
+                ",",
+                "and",
+                "Talking",
+                "Cricket",
+                "offered",
+                "contradictory",
+                "diagnoses",
+                "that",
+                "exposed",
+                "both",
+                "Pinocchio's",
+                "life",
+                "and",
+                "character",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Although seriously ill, he rejected the bitter medicine until solemn Black Rabbits arrived to carry him away.",
               "task": "rebuild-then-speak",
@@ -1668,7 +2822,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "The Fairy then asked about the gold pieces, giving Pinocchio an opportunity to practice honesty.",
               "task": "rebuild-then-speak",
@@ -1693,7 +2847,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Once the lesson had become impossible to ignore, the Fairy forgave him and summoned Woodpeckers to repair the damage.",
               "task": "rebuild-then-speak",
@@ -1722,36 +2876,56 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Yet on the road to meet his father, he encountered the Fox and Cat and accepted their story again.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "She promised that Geppetto would soon arrive, offering Pinocchio the family reunion he claimed to desire.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Yet",
-                "on",
-                "the",
-                "road",
-                "to",
-                "meet",
-                "his",
-                "father",
+                "She",
+                "promised",
+                "that",
+                "Geppetto",
+                "would",
+                "soon",
+                "arrive",
                 ",",
-                "he",
-                "encountered",
+                "offering",
+                "Pinocchio",
                 "the",
-                "Fox",
-                "and",
-                "Cat",
-                "and",
-                "accepted",
-                "their",
-                "story",
-                "again",
+                "family",
+                "reunion",
+                "he",
+                "claimed",
+                "to",
+                "desire",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Experience warned him, but the fantasy of effortless wealth remained louder than memory.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Experience",
+                "warned",
+                "him",
+                ",",
+                "but",
+                "the",
+                "fantasy",
+                "of",
+                "effortless",
+                "wealth",
+                "remained",
+                "louder",
+                "than",
+                "memory",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "At the Field of Wonders, Pinocchio buried his remaining four coins and waited for a golden harvest.",
               "task": "rebuild-then-speak",
@@ -1778,7 +2952,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Pinocchio reported the theft to a judge, expecting the law to restore what foolishness had lost.",
               "task": "rebuild-then-speak",
@@ -1804,7 +2978,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "A royal celebration eventually opened the cell, but freedom arrived without restoring either money or judgment.",
               "task": "rebuild-then-speak",
@@ -1841,5 +3015,5 @@
       }
     }
   },
-  "checksum": "b41e4c9af94e7cf1028e6b08fed049aeed79c64951e8bfe1f1eb5aca723e6a30"
+  "checksum": "e1e416d59c15a683f70565d0e77b1a968f74c7d34b15bf1f84e91aa07a7e9b5a"
 }

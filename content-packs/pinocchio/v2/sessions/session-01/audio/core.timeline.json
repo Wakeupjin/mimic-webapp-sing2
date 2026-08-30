@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-01",
+  "contentChecksum": "860a43174240e2f09c3b2eceaadfd4d91fa8cde2fb2a982d2585a03de50e1f6d",
+  "level": "core",
+  "generatedAt": "2026-08-30T03:12:04.849Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2401,
+  "requestId": "hMbcdgNLiZWjuUi7QJjB",
+  "billedCharactersEstimate": 1234,
+  "duration": 84.413,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Centuries ago, Mastro Cherry found an ordinary log in his workshop.",
+      "start": 0.235,
+      "end": 5.243
+    },
+    {
+      "id": "line-02",
+      "text": "When he raised his hatchet, a child's voice begged him to be careful.",
+      "start": 5.243,
+      "end": 10.508
+    },
+    {
+      "id": "line-03",
+      "text": "He searched every corner, but no hidden speaker could be found.",
+      "start": 10.508,
+      "end": 15.697
+    },
+    {
+      "id": "line-04",
+      "text": "The wood cried under a blow and laughed beneath the carpenter's plane.",
+      "start": 15.697,
+      "end": 20.993
+    },
+    {
+      "id": "line-05",
+      "text": "Then Geppetto arrived, seeking wood for a marvelous traveling marionette.",
+      "start": 20.993,
+      "end": 26.752
+    },
+    {
+      "id": "line-06",
+      "text": "The mischievous log used a hated nickname and provoked two comic quarrels.",
+      "start": 26.752,
+      "end": 33.081
+    },
+    {
+      "id": "line-07",
+      "text": "After making peace, Geppetto accepted the strange gift and carried it home.",
+      "start": 33.081,
+      "end": 37.99
+    },
+    {
+      "id": "line-08",
+      "text": "In his poor room, he named the puppet Pinocchio and began carving.",
+      "start": 37.99,
+      "end": 44.049
+    },
+    {
+      "id": "line-09",
+      "text": "The unfinished eyes moved, and the nose stretched longer than he planned.",
+      "start": 44.049,
+      "end": 49.137
+    },
+    {
+      "id": "line-10",
+      "text": "The new puppet mocked Geppetto and stole his yellow cap.",
+      "start": 49.137,
+      "end": 54.21
+    },
+    {
+      "id": "line-11",
+      "text": "Geppetto taught him to stand as soon as the legs were finished.",
+      "start": 54.21,
+      "end": 57.957
+    },
+    {
+      "id": "line-12",
+      "text": "Pinocchio learned one step, then raced through the open door.",
+      "start": 57.957,
+      "end": 62.915
+    },
+    {
+      "id": "line-13",
+      "text": "His wooden feet clattered while Geppetto chased him down the street.",
+      "start": 62.915,
+      "end": 67.433
+    },
+    {
+      "id": "line-14",
+      "text": "A Carabineer stopped the runaway by grabbing his extremely long nose.",
+      "start": 67.433,
+      "end": 73.258
+    },
+    {
+      "id": "line-15",
+      "text": "Pinocchio collapsed dramatically, and the crowd blamed his worried father.",
+      "start": 73.258,
+      "end": 78.873
+    },
+    {
+      "id": "line-16",
+      "text": "The officer released the puppet and led innocent Geppetto to prison.",
+      "start": 78.873,
+      "end": 84.413
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "Centuries ago,",
+      "start": 0.195,
+      "end": 1.631
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "Mastro Cherry found an ordinary log in his workshop.",
+      "start": 1.491,
+      "end": 5.311
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "When he raised his hatchet,",
+      "start": 5.155,
+      "end": 7.471
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "a child's voice begged him to be careful.",
+      "start": 7.331,
+      "end": 10.271
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "He searched every corner,",
+      "start": 10.724,
+      "end": 12.597
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "but no hidden speaker could be found.",
+      "start": 12.537,
+      "end": 15.717
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "The wood cried under a blow",
+      "start": 15.657,
+      "end": 18.117
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "and laughed beneath the carpenter's plane.",
+      "start": 18.017,
+      "end": 20.677
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Then Geppetto arrived,",
+      "start": 21.289,
+      "end": 22.997
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "seeking wood for a marvelous traveling marionette.",
+      "start": 22.837,
+      "end": 26.797
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "The mischievous log used a hated nickname",
+      "start": 26.687,
+      "end": 30.117
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "and provoked two comic quarrels.",
+      "start": 29.977,
+      "end": 32.677
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "After making peace, Geppetto accepted the strange gift",
+      "start": 33.464,
+      "end": 36.597
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "and carried it home.",
+      "start": 36.477,
+      "end": 37.957
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "In his poor room,",
+      "start": 38.004,
+      "end": 39.957
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "he named the puppet Pinocchio and began carving.",
+      "start": 39.79,
+      "end": 43.717
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "The unfinished eyes moved,",
+      "start": 44.362,
+      "end": 46.597
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "and the nose stretched longer than he planned.",
+      "start": 46.417,
+      "end": 49.157
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "The new puppet mocked Geppetto",
+      "start": 49.097,
+      "end": 51.957
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "and stole his yellow cap.",
+      "start": 51.817,
+      "end": 53.877
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "Geppetto taught him to stand",
+      "start": 54.524,
+      "end": 56.197
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 10,
+      "text": "as soon as the legs were finished.",
+      "start": 56.03,
+      "end": 57.957
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "Pinocchio learned one step, then raced through the open door.",
+      "start": 57.937,
+      "end": 62.597
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "His wooden feet clattered",
+      "start": 63.213,
+      "end": 64.773
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "while Geppetto chased him down the street.",
+      "start": 64.633,
+      "end": 67.333
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "A Carabineer stopped the runaway",
+      "start": 67.513,
+      "end": 69.973
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 13,
+      "text": "by grabbing his extremely long nose.",
+      "start": 69.913,
+      "end": 72.933
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "Pinocchio collapsed dramatically, and the crowd blamed his worried father.",
+      "start": 73.563,
+      "end": 78.853
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "The officer released the puppet",
+      "start": 78.873,
+      "end": 81.333
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "and led innocent Geppetto to prison.",
+      "start": 81.253,
+      "end": 84.293
+    }
+  ]
+}

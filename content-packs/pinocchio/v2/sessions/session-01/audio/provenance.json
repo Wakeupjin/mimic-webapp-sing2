@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "unitKind": "session",
+  "unitNumber": 1,
+  "generatedAt": "2026-08-30T03:12:04.852Z",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "modelId": "eleven_v3",
+  "outputFormat": "mp3_44100_192",
+  "commercialPaidPlanConfirmed": true,
+  "qaStatus": "technical-playback-verified-human-listen-through-pending",
+  "levels": [
+    {
+      "level": "core",
+      "master": "audio/core.master.mp3",
+      "timeline": "audio/core.timeline.json",
+      "requestId": "hMbcdgNLiZWjuUi7QJjB",
+      "billedCharactersEstimate": 1234
+    }
+  ]
+}

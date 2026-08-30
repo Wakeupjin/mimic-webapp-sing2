@@ -49,7 +49,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Treat the circus as glittering exploitation, make the sea transformation strange and liberating, and end the Shark swallowing with awe and suspense.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -91,6 +95,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            2
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            3
+          ]
         }
       },
       {
@@ -110,6 +128,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            3,
+            6
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            4,
+            6
           ]
         }
       },
@@ -131,6 +163,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            7,
+            10
+          ],
+          "core": [
+            8,
+            11
+          ],
+          "studio": [
+            7,
+            10
+          ]
         }
       },
       {
@@ -150,6 +196,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            11,
+            14
+          ],
+          "core": [
+            12,
+            15
+          ],
+          "studio": [
+            11,
+            14
           ]
         }
       },
@@ -171,6 +231,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            15,
+            18
+          ],
+          "core": [
+            16,
+            19
+          ],
+          "studio": [
+            15,
+            18
+          ]
         }
       },
       {
@@ -190,6 +264,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            19,
+            21
+          ],
+          "core": [
+            20,
+            23
+          ],
+          "studio": [
+            19,
+            22
           ]
         }
       },
@@ -211,6 +299,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            22,
+            25
+          ],
+          "core": [
+            24,
+            26
+          ],
+          "studio": [
+            23,
+            25
+          ]
         }
       },
       {
@@ -230,6 +332,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            26,
+            29
+          ],
+          "core": [
+            27,
+            29
+          ],
+          "studio": [
+            26,
+            29
           ]
         }
       }
@@ -333,70 +449,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "A circus owner bought Donkey Pinocchio."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 1,
+              "text": "A circus owner bought Donkey Pinocchio.",
+              "sourceTextRange": [
+                0,
+                39
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "He trained him to perform difficult tricks."
+              "id": "mimic-02",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "He trained him",
+              "sourceTextRange": [
+                0,
+                14
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "The audience cheered inside the bright ring."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "to perform difficult tricks.",
+              "sourceTextRange": [
+                15,
+                43
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Pinocchio saw the Blue Fairy watching him."
+              "id": "mimic-04",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "The audience cheered",
+              "sourceTextRange": [
+                0,
+                20
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "He tried to call her, but only brayed."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "inside the bright ring.",
+              "sourceTextRange": [
+                21,
+                44
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "During a jump, Pinocchio fell and became lame."
+              "id": "mimic-06",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio saw the",
+              "sourceTextRange": [
+                0,
+                17
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "The owner sold him to another man."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "Blue Fairy watching him.",
+              "sourceTextRange": [
+                18,
+                42
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "The man wanted donkey skin for a drum."
+              "id": "mimic-08",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "He tried to call her,",
+              "sourceTextRange": [
+                0,
+                21
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "He tied on a stone and drowned Pinocchio."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "but only brayed.",
+              "sourceTextRange": [
+                22,
+                38
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Underwater fish ate away the donkey body."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "During a jump,",
+              "sourceTextRange": [
+                0,
+                14
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "The wooden puppet appeared alive again."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio fell and became lame.",
+              "sourceTextRange": [
+                15,
+                46
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Pinocchio escaped and swam toward an azure Goat."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "The owner sold",
+              "sourceTextRange": [
+                0,
+                14
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "The Goat called him toward a white rock."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "him to another man.",
+              "sourceTextRange": [
+                15,
+                34
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Then the Terrible Shark opened its enormous mouth."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "The man wanted donkey",
+              "sourceTextRange": [
+                0,
+                21
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "The Shark swallowed Pinocchio in one rush."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "skin for a drum.",
+              "sourceTextRange": [
+                22,
+                38
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "Inside, he met a Tunny waiting in darkness."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "He tied on a stone",
+              "sourceTextRange": [
+                0,
+                18
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "and drowned Pinocchio.",
+              "sourceTextRange": [
+                19,
+                41
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "Underwater fish ate",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "away the donkey body.",
+              "sourceTextRange": [
+                20,
+                41
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 1,
+              "text": "The wooden puppet appeared alive again.",
+              "sourceTextRange": [
+                0,
+                39
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio escaped",
+              "sourceTextRange": [
+                0,
+                17
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and swam toward an azure Goat.",
+              "sourceTextRange": [
+                18,
+                48
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "The Goat called him",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "toward a white rock.",
+              "sourceTextRange": [
+                20,
+                40
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Then the Terrible Shark",
+              "sourceTextRange": [
+                0,
+                23
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "opened its enormous mouth.",
+              "sourceTextRange": [
+                24,
+                50
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "The Shark swallowed",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio in one rush.",
+              "sourceTextRange": [
+                20,
+                42
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "Inside, he met a",
+              "sourceTextRange": [
+                0,
+                16
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "Tunny waiting in darkness.",
+              "sourceTextRange": [
+                17,
+                43
+              ]
             }
           ]
         },
@@ -405,57 +788,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "He trained him to perform difficult tricks."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "The owner sold him to another man."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Pinocchio escaped and swam toward an azure Goat."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "He tied on a stone and drowned Pinocchio."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Then the Terrible Shark opened its enormous mouth."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Pinocchio saw the Blue Fairy watching him."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "Inside, he met a Tunny waiting in darkness."
+                  "lineIndex": 0,
+                  "text": "A circus owner bought Donkey Pinocchio."
                 },
                 {
                   "label": "B",
@@ -470,9 +809,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -486,59 +825,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "He trained him to perform difficult tricks."
+                  "lineIndex": 2,
+                  "text": "The audience cheered inside the bright ring."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "The Shark swallowed Pinocchio in one rush."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Pinocchio saw the Blue Fairy watching him."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Underwater fish ate away the donkey body."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "During a jump, Pinocchio fell and became lame."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Pinocchio escaped and swam toward an azure Goat."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "A circus owner bought Donkey Pinocchio."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -547,8 +842,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "The audience cheered inside the bright ring."
+                  "lineIndex": 3,
+                  "text": "Pinocchio saw the Blue Fairy watching him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "He tied on a stone and drowned Pinocchio."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "During a jump, Pinocchio fell and became lame."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "The wooden puppet appeared alive again."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "Inside, he met a Tunny waiting in darkness."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "The Goat called him toward a white rock."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "He trained him to perform difficult tricks."
                 },
                 {
                   "label": "C",
@@ -558,24 +897,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "The audience cheered inside the bright ring."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "He tied on a stone and drowned Pinocchio."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Then the Terrible Shark opened its enormous mouth."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "The wooden puppet appeared alive again."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "Inside, he met a Tunny waiting in darkness."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "He tried to call her, but only brayed."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "A circus owner bought Donkey Pinocchio."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "During a jump, Pinocchio fell and became lame."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio escaped and swam toward an azure Goat."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "The man wanted donkey skin for a drum."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Then the Terrible Shark opened its enormous mouth."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "The audience cheered inside the bright ring."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "Inside, he met a Tunny waiting in darkness."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "He tried to call her, but only brayed."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Underwater fish ate away the donkey body."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "Inside, he met a Tunny waiting in darkness."
                 }
               ]
             }
@@ -591,22 +1018,37 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "He trained him to perform difficult tricks.",
+              "lineIndex": 0,
+              "text": "A circus owner bought Donkey Pinocchio.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "He",
-                "trained",
-                "him",
-                "to",
-                "perform",
-                "difficult",
-                "tricks",
+                "A",
+                "circus",
+                "owner",
+                "bought",
+                "Donkey",
+                "Pinocchio",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "The audience cheered inside the bright ring.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "audience",
+                "cheered",
+                "inside",
+                "the",
+                "bright",
+                "ring",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Pinocchio saw the Blue Fairy watching him.",
               "task": "rebuild-then-speak",
@@ -622,7 +1064,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "During a jump, Pinocchio fell and became lame.",
               "task": "rebuild-then-speak",
@@ -640,7 +1082,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "The man wanted donkey skin for a drum.",
               "task": "rebuild-then-speak",
@@ -657,23 +1099,39 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Underwater fish ate away the donkey body.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "He tied on a stone and drowned Pinocchio.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Underwater",
-                "fish",
-                "ate",
-                "away",
-                "the",
-                "donkey",
-                "body",
+                "He",
+                "tied",
+                "on",
+                "a",
+                "stone",
+                "and",
+                "drowned",
+                "Pinocchio",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "The wooden puppet appeared alive again.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "The",
+                "wooden",
+                "puppet",
+                "appeared",
+                "alive",
+                "again",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Pinocchio escaped and swam toward an azure Goat.",
               "task": "rebuild-then-speak",
@@ -690,7 +1148,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Then the Terrible Shark opened its enormous mouth.",
               "task": "rebuild-then-speak",
@@ -707,7 +1165,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "Inside, he met a Tunny waiting in darkness.",
               "task": "rebuild-then-speak",
@@ -832,70 +1290,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "A circus owner bought Donkey Pinocchio and trained him through punishment."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "A circus owner bought Donkey Pinocchio",
+              "sourceTextRange": [
+                0,
+                38
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "Soon the animal performed bows, dances, and dangerous jumps before crowds."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "and trained him through punishment.",
+              "sourceTextRange": [
+                39,
+                74
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "Soon the animal performed bows,",
+              "sourceTextRange": [
+                0,
+                31
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "He tried to call her name, but his mouth produced only a donkey's bray."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "dances, and dangerous jumps before crowds.",
+              "sourceTextRange": [
+                32,
+                74
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Confused and distracted, Pinocchio missed a jump and injured one leg."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "During one bright performance,",
+              "sourceTextRange": [
+                0,
+                30
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "The circus owner immediately sold the lame donkey for almost nothing."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio recognized the Blue Fairy in the audience.",
+              "sourceTextRange": [
+                31,
+                83
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "His next owner cared only about using the skin for a drumhead."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "He tried to call her name,",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "The man tied a heavy stone to Pinocchio and dropped him underwater."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "but his mouth produced only a donkey's bray.",
+              "sourceTextRange": [
+                27,
+                71
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Hungry fish consumed the donkey covering while the protected wooden body remained."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Confused and distracted, Pinocchio missed a jump",
+              "sourceTextRange": [
+                0,
+                48
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "When the rope rose, the surprised buyer found a living marionette instead."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "and injured one leg.",
+              "sourceTextRange": [
+                49,
+                69
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Pinocchio slipped free and explained that the Fairy had protected him."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "The circus owner immediately sold",
+              "sourceTextRange": [
+                0,
+                33
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "While he swam away, an azure Goat called from a white rock."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "the lame donkey for almost nothing.",
+              "sourceTextRange": [
+                34,
+                69
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Before he could reach safety, the Terrible Shark appeared nearby."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "His next owner cared only about",
+              "sourceTextRange": [
+                0,
+                31
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Its mouth opened like a cave and pulled the swimmer inward."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "using the skin for a drumhead.",
+              "sourceTextRange": [
+                32,
+                62
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Pinocchio was swallowed before he could change direction."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "The man tied a heavy stone to Pinocchio",
+              "sourceTextRange": [
+                0,
+                39
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "In the darkness, a large Tunny explained that escape seemed impossible."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and dropped him underwater.",
+              "sourceTextRange": [
+                40,
+                67
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Hungry fish consumed the donkey covering",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "while the protected wooden body remained.",
+              "sourceTextRange": [
+                41,
+                82
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "When the rope rose,",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "the surprised buyer found a living marionette instead.",
+              "sourceTextRange": [
+                20,
+                74
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio slipped free",
+              "sourceTextRange": [
+                0,
+                22
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "and explained that the Fairy had protected him.",
+              "sourceTextRange": [
+                23,
+                70
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "While he swam away,",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "an azure Goat called from a white rock.",
+              "sourceTextRange": [
+                20,
+                59
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 1,
+              "text": "Before he could reach safety, the Terrible Shark appeared nearby.",
+              "sourceTextRange": [
+                0,
+                65
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Its mouth opened like a cave",
+              "sourceTextRange": [
+                0,
+                28
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "and pulled the swimmer inward.",
+              "sourceTextRange": [
+                29,
+                59
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 1,
+              "text": "Pinocchio was swallowed before he could change direction.",
+              "sourceTextRange": [
+                0,
+                57
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "In the darkness,",
+              "sourceTextRange": [
+                0,
+                16
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "a large Tunny explained that escape seemed impossible.",
+              "sourceTextRange": [
+                17,
+                71
+              ]
             }
           ]
         },
@@ -904,57 +1629,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "Soon the animal performed bows, dances, and dangerous jumps before crowds."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "His next owner cared only about using the skin for a drumhead."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "While he swam away, an azure Goat called from a white rock."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Hungry fish consumed the donkey covering while the protected wooden body remained."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Its mouth opened like a cave and pulled the swimmer inward."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "He tried to call her name, but his mouth produced only a donkey's bray."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "In the darkness, a large Tunny explained that escape seemed impossible."
+                  "lineIndex": 0,
+                  "text": "A circus owner bought Donkey Pinocchio and trained him through punishment."
                 },
                 {
                   "label": "B",
@@ -969,9 +1650,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -985,59 +1666,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "Soon the animal performed bows, dances, and dangerous jumps before crowds."
+                  "lineIndex": 2,
+                  "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Pinocchio was swallowed before he could change direction."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "He tried to call her name, but his mouth produced only a donkey's bray."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "When the rope rose, the surprised buyer found a living marionette instead."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "The circus owner immediately sold the lame donkey for almost nothing."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "While he swam away, an azure Goat called from a white rock."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "A circus owner bought Donkey Pinocchio and trained him through punishment."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1046,8 +1683,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience."
+                  "lineIndex": 3,
+                  "text": "He tried to call her name, but his mouth produced only a donkey's bray."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Hungry fish consumed the donkey covering while the protected wooden body remained."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The circus owner immediately sold the lame donkey for almost nothing."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Pinocchio slipped free and explained that the Fairy had protected him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "In the darkness, a large Tunny explained that escape seemed impossible."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Before he could reach safety, the Terrible Shark appeared nearby."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "Soon the animal performed bows, dances, and dangerous jumps before crowds."
                 },
                 {
                   "label": "C",
@@ -1057,24 +1738,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Hungry fish consumed the donkey covering while the protected wooden body remained."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Its mouth opened like a cave and pulled the swimmer inward."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Pinocchio slipped free and explained that the Fairy had protected him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "In the darkness, a large Tunny explained that escape seemed impossible."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Confused and distracted, Pinocchio missed a jump and injured one leg."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "A circus owner bought Donkey Pinocchio and trained him through punishment."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The circus owner immediately sold the lame donkey for almost nothing."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "While he swam away, an azure Goat called from a white rock."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "The man tied a heavy stone to Pinocchio and dropped him underwater."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Its mouth opened like a cave and pulled the swimmer inward."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "In the darkness, a large Tunny explained that escape seemed impossible."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Confused and distracted, Pinocchio missed a jump and injured one leg."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "When the rope rose, the surprised buyer found a living marionette instead."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "In the darkness, a large Tunny explained that escape seemed impossible."
                 }
               ]
             }
@@ -1090,28 +1859,48 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "Soon the animal performed bows, dances, and dangerous jumps before crowds.",
+              "lineIndex": 0,
+              "text": "A circus owner bought Donkey Pinocchio and trained him through punishment.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Soon",
-                "the",
-                "animal",
-                "performed",
-                "bows",
-                ",",
-                "dances",
-                ",",
+                "A",
+                "circus",
+                "owner",
+                "bought",
+                "Donkey",
+                "Pinocchio",
                 "and",
-                "dangerous",
-                "jumps",
-                "before",
-                "crowds",
+                "trained",
+                "him",
+                "through",
+                "punishment",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "During",
+                "one",
+                "bright",
+                "performance",
+                ",",
+                "Pinocchio",
+                "recognized",
+                "the",
+                "Blue",
+                "Fairy",
+                "in",
+                "the",
+                "audience",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "He tried to call her name, but his mouth produced only a donkey's bray.",
               "task": "rebuild-then-speak",
@@ -1135,7 +1924,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "The circus owner immediately sold the lame donkey for almost nothing.",
               "task": "rebuild-then-speak",
@@ -1155,7 +1944,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "The man tied a heavy stone to Pinocchio and dropped him underwater.",
               "task": "rebuild-then-speak",
@@ -1176,29 +1965,48 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "When the rope rose, the surprised buyer found a living marionette instead.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Hungry fish consumed the donkey covering while the protected wooden body remained.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "When",
+                "Hungry",
+                "fish",
+                "consumed",
                 "the",
-                "rope",
-                "rose",
-                ",",
+                "donkey",
+                "covering",
+                "while",
                 "the",
-                "surprised",
-                "buyer",
-                "found",
-                "a",
-                "living",
-                "marionette",
-                "instead",
+                "protected",
+                "wooden",
+                "body",
+                "remained",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Pinocchio slipped free and explained that the Fairy had protected him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "slipped",
+                "free",
+                "and",
+                "explained",
+                "that",
+                "the",
+                "Fairy",
+                "had",
+                "protected",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "While he swam away, an azure Goat called from a white rock.",
               "task": "rebuild-then-speak",
@@ -1220,7 +2028,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Its mouth opened like a cave and pulled the swimmer inward.",
               "task": "rebuild-then-speak",
@@ -1240,7 +2048,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "In the darkness, a large Tunny explained that escape seemed impossible.",
               "task": "rebuild-then-speak",
@@ -1368,70 +2176,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "A circus owner purchased Donkey Pinocchio and converted the consequences of Toyland into a profitable performance."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "A circus owner purchased Donkey Pinocchio",
+              "sourceTextRange": [
+                0,
+                41
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "Training replaced play with punishment until the animal could bow, dance, and leap through dangerous hoops."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "and converted the consequences of Toyland into a profitable performance.",
+              "sourceTextRange": [
+                42,
+                114
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "Training replaced play with punishment until the animal could bow,",
+              "sourceTextRange": [
+                0,
+                66
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "He attempted to call to her, but the human appeal emerged as nothing more than a humiliating bray."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "dance, and leap through dangerous hoops.",
+              "sourceTextRange": [
+                67,
+                107
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Distracted by recognition and shame, Pinocchio missed a jump, fell heavily, and permanently injured one leg."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 1,
+              "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats.",
+              "sourceTextRange": [
+                0,
+                96
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "The owner who had valued his tricks sold the lame animal immediately for a handful of coins."
+              "id": "mimic-06",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "He attempted to call to her, but the human appeal emerged",
+              "sourceTextRange": [
+                0,
+                57
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "The second buyer saw no living creature at all, only a hide that could become a drumhead."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "as nothing more than a humiliating bray.",
+              "sourceTextRange": [
+                58,
+                98
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "He fastened a stone to the donkey and lowered him into the sea to end the transaction efficiently."
+              "id": "mimic-08",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Distracted by recognition and shame, Pinocchio missed a jump,",
+              "sourceTextRange": [
+                0,
+                61
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Beneath the water, fish consumed the donkey covering while the Fairy's protection preserved the wooden marionette inside."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "fell heavily, and permanently injured one leg.",
+              "sourceTextRange": [
+                62,
+                108
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "The rope returned not with a dead animal but with Pinocchio alive in his original wooden body."
+              "id": "mimic-10",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "The owner who had valued his tricks sold",
+              "sourceTextRange": [
+                0,
+                40
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "He broke away from the astonished buyer, explaining that the Fairy had sent the fish to protect him."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "the lame animal immediately for a handful of coins.",
+              "sourceTextRange": [
+                41,
+                92
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "As he swam through open water, an azure Goat called urgently from a white rock."
+              "id": "mimic-12",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "The second buyer saw no living creature at all,",
+              "sourceTextRange": [
+                0,
+                47
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "Relief lasted only until the Terrible Shark surfaced and opened a mouth large enough to resemble a cavern."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "only a hide that could become a drumhead.",
+              "sourceTextRange": [
+                48,
+                89
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster."
+              "id": "mimic-14",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "He fastened a stone to the donkey",
+              "sourceTextRange": [
+                0,
+                33
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "In a single motion the Shark swallowed him, replacing the open sea with complete darkness."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and lowered him into the sea to end the transaction efficiently.",
+              "sourceTextRange": [
+                34,
+                98
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
+              "id": "mimic-16",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Beneath the water, fish consumed the donkey covering",
+              "sourceTextRange": [
+                0,
+                52
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "while the Fairy's protection preserved the wooden marionette inside.",
+              "sourceTextRange": [
+                53,
+                121
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "The rope returned not with a dead animal",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "but with Pinocchio alive in his original wooden body.",
+              "sourceTextRange": [
+                41,
+                94
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "He broke away from the astonished buyer,",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "explaining that the Fairy had sent the fish to protect him.",
+              "sourceTextRange": [
+                41,
+                100
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "As he swam through open water,",
+              "sourceTextRange": [
+                0,
+                30
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "an azure Goat called urgently from a white rock.",
+              "sourceTextRange": [
+                31,
+                79
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "Relief lasted only until the Terrible Shark surfaced",
+              "sourceTextRange": [
+                0,
+                52
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and opened a mouth large enough to resemble a cavern.",
+              "sourceTextRange": [
+                53,
+                106
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 1,
+              "text": "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster.",
+              "sourceTextRange": [
+                0,
+                102
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "In a single motion the Shark swallowed him,",
+              "sourceTextRange": [
+                0,
+                43
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "replacing the open sea with complete darkness.",
+              "sourceTextRange": [
+                44,
+                90
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 2,
+              "text": "There Pinocchio met a resigned Tunny who",
+              "sourceTextRange": [
+                0,
+                40
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 2,
+              "parts": 2,
+              "text": "had stopped believing that anyone could leave alive.",
+              "sourceTextRange": [
+                41,
+                93
+              ]
             }
           ]
         },
@@ -1440,57 +2515,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "Training replaced play with punishment until the animal could bow, dance, and leap through dangerous hoops."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "The second buyer saw no living creature at all, only a hide that could become a drumhead."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "As he swam through open water, an azure Goat called urgently from a white rock."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Beneath the water, fish consumed the donkey covering while the Fairy's protection preserved the wooden marionette inside."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "He attempted to call to her, but the human appeal emerged as nothing more than a humiliating bray."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
+                  "lineIndex": 0,
+                  "text": "A circus owner purchased Donkey Pinocchio and converted the consequences of Toyland into a profitable performance."
                 },
                 {
                   "label": "B",
@@ -1505,9 +2536,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1521,59 +2552,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "Training replaced play with punishment until the animal could bow, dance, and leap through dangerous hoops."
+                  "lineIndex": 2,
+                  "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "In a single motion the Shark swallowed him, replacing the open sea with complete darkness."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "He attempted to call to her, but the human appeal emerged as nothing more than a humiliating bray."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "The rope returned not with a dead animal but with Pinocchio alive in his original wooden body."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "The owner who had valued his tricks sold the lame animal immediately for a handful of coins."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "As he swam through open water, an azure Goat called urgently from a white rock."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "A circus owner purchased Donkey Pinocchio and converted the consequences of Toyland into a profitable performance."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1582,8 +2569,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats."
+                  "lineIndex": 3,
+                  "text": "He attempted to call to her, but the human appeal emerged as nothing more than a humiliating bray."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Beneath the water, fish consumed the donkey covering while the Fairy's protection preserved the wooden marionette inside."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "The owner who had valued his tricks sold the lame animal immediately for a handful of coins."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "He broke away from the astonished buyer, explaining that the Fairy had sent the fish to protect him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "Relief lasted only until the Terrible Shark surfaced and opened a mouth large enough to resemble a cavern."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "Training replaced play with punishment until the animal could bow, dance, and leap through dangerous hoops."
                 },
                 {
                   "label": "C",
@@ -1593,24 +2624,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Beneath the water, fish consumed the donkey covering while the Fairy's protection preserved the wooden marionette inside."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "He broke away from the astonished buyer, explaining that the Fairy had sent the fish to protect him."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Distracted by recognition and shame, Pinocchio missed a jump, fell heavily, and permanently injured one leg."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "A circus owner purchased Donkey Pinocchio and converted the consequences of Toyland into a profitable performance."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "The owner who had valued his tricks sold the lame animal immediately for a handful of coins."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "As he swam through open water, an azure Goat called urgently from a white rock."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "He fastened a stone to the donkey and lowered him into the sea to end the transaction efficiently."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Distracted by recognition and shame, Pinocchio missed a jump, fell heavily, and permanently injured one leg."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "The rope returned not with a dead animal but with Pinocchio alive in his original wooden body."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive."
                 }
               ]
             }
@@ -1626,33 +2745,55 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "Training replaced play with punishment until the animal could bow, dance, and leap through dangerous hoops.",
+              "lineIndex": 0,
+              "text": "A circus owner purchased Donkey Pinocchio and converted the consequences of Toyland into a profitable performance.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Training",
-                "replaced",
-                "play",
-                "with",
-                "punishment",
-                "until",
-                "the",
-                "animal",
-                "could",
-                "bow",
-                ",",
-                "dance",
-                ",",
+                "A",
+                "circus",
+                "owner",
+                "purchased",
+                "Donkey",
+                "Pinocchio",
                 "and",
-                "leap",
-                "through",
-                "dangerous",
-                "hoops",
+                "converted",
+                "the",
+                "consequences",
+                "of",
+                "Toyland",
+                "into",
+                "a",
+                "profitable",
+                "performance",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "During one glittering show, Pinocchio recognized the Blue Fairy watching from the crowded seats.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "During",
+                "one",
+                "glittering",
+                "show",
+                ",",
+                "Pinocchio",
+                "recognized",
+                "the",
+                "Blue",
+                "Fairy",
+                "watching",
+                "from",
+                "the",
+                "crowded",
+                "seats",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "He attempted to call to her, but the human appeal emerged as nothing more than a humiliating bray.",
               "task": "rebuild-then-speak",
@@ -1680,7 +2821,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "The owner who had valued his tricks sold the lame animal immediately for a handful of coins.",
               "task": "rebuild-then-speak",
@@ -1706,7 +2847,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "He fastened a stone to the donkey and lowered him into the sea to end the transaction efficiently.",
               "task": "rebuild-then-speak",
@@ -1733,33 +2874,62 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "The rope returned not with a dead animal but with Pinocchio alive in his original wooden body.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Beneath the water, fish consumed the donkey covering while the Fairy's protection preserved the wooden marionette inside.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "rope",
-                "returned",
-                "not",
-                "with",
-                "a",
-                "dead",
-                "animal",
-                "but",
-                "with",
-                "Pinocchio",
-                "alive",
-                "in",
-                "his",
-                "original",
+                "Beneath",
+                "the",
+                "water",
+                ",",
+                "fish",
+                "consumed",
+                "the",
+                "donkey",
+                "covering",
+                "while",
+                "the",
+                "Fairy's",
+                "protection",
+                "preserved",
+                "the",
                 "wooden",
-                "body",
+                "marionette",
+                "inside",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "He broke away from the astonished buyer, explaining that the Fairy had sent the fish to protect him.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "broke",
+                "away",
+                "from",
+                "the",
+                "astonished",
+                "buyer",
+                ",",
+                "explaining",
+                "that",
+                "the",
+                "Fairy",
+                "had",
+                "sent",
+                "the",
+                "fish",
+                "to",
+                "protect",
+                "him",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "As he swam through open water, an azure Goat called urgently from a white rock.",
               "task": "rebuild-then-speak",
@@ -1784,7 +2954,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "The rushing water defeated Pinocchio's strongest swimming and carried him directly toward the monster.",
               "task": "rebuild-then-speak",
@@ -1807,7 +2977,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "There Pinocchio met a resigned Tunny who had stopped believing that anyone could leave alive.",
               "task": "rebuild-then-speak",
@@ -1842,5 +3012,5 @@
       }
     }
   },
-  "checksum": "dcdb3b38ee832bb928608d6433a61e80115e9c9753fdb8047988de8b24163534"
+  "checksum": "abad0ffbc55eb17431cdf51b4500f3558cb3bf035bd03c3fb2d8e7ad17ed2391"
 }

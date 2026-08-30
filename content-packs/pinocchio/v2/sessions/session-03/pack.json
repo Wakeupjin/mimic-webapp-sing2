@@ -50,7 +50,11 @@
     "provider": "ElevenLabs",
     "model": "eleven_v3",
     "voiceStatus": "awaiting-durable-paid-voice-selection",
-    "generationStatus": "not-generated",
+    "generationStatus": {
+      "foundation": false,
+      "core": false,
+      "studio": false
+    },
     "outputPreference": "mp3_44100_192",
     "direction": "Make the music irresistible, the theater joyous, Fire Eater enormous but human, and Pinocchio's offer for Harlequin genuinely brave.",
     "productionRule": "Generate one continuous master per session and level; Watch and Mimic seek within that exact same master.",
@@ -92,6 +96,20 @@
             0,
             1
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            0,
+            3
+          ],
+          "core": [
+            0,
+            3
+          ],
+          "studio": [
+            0,
+            3
+          ]
         }
       },
       {
@@ -111,6 +129,20 @@
           "studio": [
             2,
             3
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            4,
+            7
+          ],
+          "core": [
+            4,
+            7
+          ],
+          "studio": [
+            4,
+            7
           ]
         }
       },
@@ -132,6 +164,20 @@
             4,
             5
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            8,
+            11
+          ],
+          "core": [
+            8,
+            11
+          ],
+          "studio": [
+            8,
+            11
+          ]
         }
       },
       {
@@ -151,6 +197,20 @@
           "studio": [
             6,
             7
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            12,
+            15
+          ],
+          "core": [
+            12,
+            15
+          ],
+          "studio": [
+            12,
+            15
           ]
         }
       },
@@ -172,6 +232,20 @@
             8,
             9
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            16,
+            19
+          ],
+          "core": [
+            16,
+            19
+          ],
+          "studio": [
+            16,
+            19
+          ]
         }
       },
       {
@@ -191,6 +265,20 @@
           "studio": [
             10,
             11
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            20,
+            23
+          ],
+          "core": [
+            20,
+            23
+          ],
+          "studio": [
+            20,
+            22
           ]
         }
       },
@@ -212,6 +300,20 @@
             12,
             13
           ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            24,
+            26
+          ],
+          "core": [
+            24,
+            27
+          ],
+          "studio": [
+            23,
+            26
+          ]
         }
       },
       {
@@ -231,6 +333,20 @@
           "studio": [
             14,
             15
+          ]
+        },
+        "mimicItemRanges": {
+          "foundation": [
+            27,
+            29
+          ],
+          "core": [
+            28,
+            29
+          ],
+          "studio": [
+            27,
+            29
           ]
         }
       }
@@ -334,70 +450,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio walked toward school with his new primer."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio walked toward school",
+              "sourceTextRange": [
+                0,
+                30
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "Music from a puppet theater pulled him away."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "with his new primer.",
+              "sourceTextRange": [
+                31,
+                51
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "He sold the primer to buy a ticket."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "Music from a puppet",
+              "sourceTextRange": [
+                0,
+                19
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "The wooden actors recognized him as their brother."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "theater pulled him away.",
+              "sourceTextRange": [
+                20,
+                44
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "They stopped the show and welcomed him joyfully."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "He sold the primer",
+              "sourceTextRange": [
+                0,
+                18
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Then the huge director, Fire Eater, appeared."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "to buy a ticket.",
+              "sourceTextRange": [
+                19,
+                35
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "He blamed Pinocchio for ruining the performance."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "The wooden actors recognized him",
+              "sourceTextRange": [
+                0,
+                32
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Fire Eater planned to use him as firewood."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "as their brother.",
+              "sourceTextRange": [
+                33,
+                50
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Pinocchio cried and spoke about poor Geppetto."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "They stopped the show",
+              "sourceTextRange": [
+                0,
+                21
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "The director sneezed, and his anger softened."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "and welcomed him joyfully.",
+              "sourceTextRange": [
+                22,
+                48
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Instead, he ordered Harlequin into the fire."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Then the huge director,",
+              "sourceTextRange": [
+                0,
+                23
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "Pinocchio begged him to spare his friend."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "Fire Eater, appeared.",
+              "sourceTextRange": [
+                24,
+                45
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "He offered to take Harlequin's place."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "He blamed Pinocchio",
+              "sourceTextRange": [
+                0,
+                19
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Fire Eater was moved by Pinocchio's courage."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "for ruining the performance.",
+              "sourceTextRange": [
+                20,
+                48
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "He forgave both puppets and saved the dinner."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Fire Eater planned to use him",
+              "sourceTextRange": [
+                0,
+                29
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "The whole wooden company celebrated until morning."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "as firewood.",
+              "sourceTextRange": [
+                30,
+                42
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio cried",
+              "sourceTextRange": [
+                0,
+                15
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "and spoke about poor Geppetto.",
+              "sourceTextRange": [
+                16,
+                46
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "The director sneezed,",
+              "sourceTextRange": [
+                0,
+                21
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "and his anger softened.",
+              "sourceTextRange": [
+                22,
+                45
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Instead, he ordered",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "Harlequin into the fire.",
+              "sourceTextRange": [
+                20,
+                44
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio begged him",
+              "sourceTextRange": [
+                0,
+                20
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "to spare his friend.",
+              "sourceTextRange": [
+                21,
+                41
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 1,
+              "text": "He offered to take Harlequin's place.",
+              "sourceTextRange": [
+                0,
+                37
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Fire Eater was",
+              "sourceTextRange": [
+                0,
+                14
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "moved by Pinocchio's courage.",
+              "sourceTextRange": [
+                15,
+                44
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "He forgave both puppets",
+              "sourceTextRange": [
+                0,
+                23
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "and saved the dinner.",
+              "sourceTextRange": [
+                24,
+                45
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 1,
+              "text": "The whole wooden company celebrated until morning.",
+              "sourceTextRange": [
+                0,
+                50
+              ]
             }
           ]
         },
@@ -406,57 +789,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "Music from a puppet theater pulled him away."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "He blamed Pinocchio for ruining the performance."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "Pinocchio begged him to spare his friend."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Pinocchio cried and spoke about poor Geppetto."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Fire Eater was moved by Pinocchio's courage."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "The wooden actors recognized him as their brother."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "The whole wooden company celebrated until morning."
+                  "lineIndex": 0,
+                  "text": "Pinocchio walked toward school with his new primer."
                 },
                 {
                   "label": "B",
@@ -471,9 +810,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -487,59 +826,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "Music from a puppet theater pulled him away."
+                  "lineIndex": 2,
+                  "text": "He sold the primer to buy a ticket."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "He forgave both puppets and saved the dinner."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "The wooden actors recognized him as their brother."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "The director sneezed, and his anger softened."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Then the huge director, Fire Eater, appeared."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "Pinocchio begged him to spare his friend."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio walked toward school with his new primer."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -548,8 +843,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "He sold the primer to buy a ticket."
+                  "lineIndex": 3,
+                  "text": "The wooden actors recognized him as their brother."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Pinocchio cried and spoke about poor Geppetto."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Then the huge director, Fire Eater, appeared."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Instead, he ordered Harlequin into the fire."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The whole wooden company celebrated until morning."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "He offered to take Harlequin's place."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "Music from a puppet theater pulled him away."
                 },
                 {
                   "label": "C",
@@ -559,24 +898,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "He sold the primer to buy a ticket."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Pinocchio cried and spoke about poor Geppetto."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Fire Eater was moved by Pinocchio's courage."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Instead, he ordered Harlequin into the fire."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "The whole wooden company celebrated until morning."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "They stopped the show and welcomed him joyfully."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio walked toward school with his new primer."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Then the huge director, Fire Eater, appeared."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "Pinocchio begged him to spare his friend."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Fire Eater planned to use him as firewood."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Fire Eater was moved by Pinocchio's courage."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "He sold the primer to buy a ticket."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The whole wooden company celebrated until morning."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "They stopped the show and welcomed him joyfully."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "The director sneezed, and his anger softened."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "The whole wooden company celebrated until morning."
                 }
               ]
             }
@@ -592,23 +1019,40 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "Music from a puppet theater pulled him away.",
+              "lineIndex": 0,
+              "text": "Pinocchio walked toward school with his new primer.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Music",
-                "from",
-                "a",
-                "puppet",
-                "theater",
-                "pulled",
-                "him",
-                "away",
+                "Pinocchio",
+                "walked",
+                "toward",
+                "school",
+                "with",
+                "his",
+                "new",
+                "primer",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "He sold the primer to buy a ticket.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "sold",
+                "the",
+                "primer",
+                "to",
+                "buy",
+                "a",
+                "ticket",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "The wooden actors recognized him as their brother.",
               "task": "rebuild-then-speak",
@@ -625,7 +1069,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Then the huge director, Fire Eater, appeared.",
               "task": "rebuild-then-speak",
@@ -643,7 +1087,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Fire Eater planned to use him as firewood.",
               "task": "rebuild-then-speak",
@@ -660,24 +1104,40 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "The director sneezed, and his anger softened.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Pinocchio cried and spoke about poor Geppetto.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "The",
-                "director",
-                "sneezed",
-                ",",
+                "Pinocchio",
+                "cried",
                 "and",
-                "his",
-                "anger",
-                "softened",
+                "spoke",
+                "about",
+                "poor",
+                "Geppetto",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Instead, he ordered Harlequin into the fire.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Instead",
+                ",",
+                "he",
+                "ordered",
+                "Harlequin",
+                "into",
+                "the",
+                "fire",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "Pinocchio begged him to spare his friend.",
               "task": "rebuild-then-speak",
@@ -693,7 +1153,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Fire Eater was moved by Pinocchio's courage.",
               "task": "rebuild-then-speak",
@@ -709,7 +1169,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "The whole wooden company celebrated until morning.",
               "task": "rebuild-then-speak",
@@ -832,70 +1292,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio started toward school,",
+              "sourceTextRange": [
+                0,
+                32
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "Music from a nearby puppet theater made him forget every promise."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "proudly carrying the primer Geppetto had sacrificed for.",
+              "sourceTextRange": [
+                33,
+                89
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "He sold the precious book and spent the money on a ticket."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "Music from a nearby puppet",
+              "sourceTextRange": [
+                0,
+                26
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "theater made him forget every promise.",
+              "sourceTextRange": [
+                27,
+                65
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "They abandoned the play and greeted him with noisy affection."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "He sold the precious book",
+              "sourceTextRange": [
+                0,
+                25
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "Their enormous director, Fire Eater, entered and demanded an explanation."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and spent the money on a ticket.",
+              "sourceTextRange": [
+                26,
+                58
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "He blamed Pinocchio for the ruined performance and threatened to burn him."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "Onstage, the wooden actors immediately recognized Pinocchio",
+              "sourceTextRange": [
+                0,
+                59
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "The terrified puppet called for his father and begged for mercy."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "as their long-lost brother.",
+              "sourceTextRange": [
+                60,
+                87
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "Fire Eater's repeated sneezes revealed that his anger was beginning to soften."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "They abandoned the play",
+              "sourceTextRange": [
+                0,
+                23
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "He spared Pinocchio but ordered Harlequin burned beneath the roasting dinner."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "and greeted him with noisy affection.",
+              "sourceTextRange": [
+                24,
+                61
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "Pinocchio refused to celebrate while his innocent friend faced danger."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "Their enormous director, Fire Eater,",
+              "sourceTextRange": [
+                0,
+                36
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "He begged, argued, and finally offered to replace Harlequin himself."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "entered and demanded an explanation.",
+              "sourceTextRange": [
+                37,
+                73
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "The selfish runaway suddenly acted with loyalty and genuine courage."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "He blamed Pinocchio for the ruined performance",
+              "sourceTextRange": [
+                0,
+                46
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Fire Eater lifted him up, deeply moved by the sacrifice."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "and threatened to burn him.",
+              "sourceTextRange": [
+                47,
+                74
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "He pardoned Harlequin and decided to eat his dinner uncooked."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "The terrified puppet called for his father",
+              "sourceTextRange": [
+                0,
+                42
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "The entire puppet company danced with relief until dawn."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "and begged for mercy.",
+              "sourceTextRange": [
+                43,
+                64
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "Fire Eater's repeated sneezes revealed that",
+              "sourceTextRange": [
+                0,
+                43
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "his anger was beginning to soften.",
+              "sourceTextRange": [
+                44,
+                78
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "He spared Pinocchio",
+              "sourceTextRange": [
+                0,
+                19
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "but ordered Harlequin burned beneath the roasting dinner.",
+              "sourceTextRange": [
+                20,
+                77
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio refused to celebrate",
+              "sourceTextRange": [
+                0,
+                30
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "while his innocent friend faced danger.",
+              "sourceTextRange": [
+                31,
+                70
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 2,
+              "text": "He begged, argued,",
+              "sourceTextRange": [
+                0,
+                18
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 11,
+              "part": 2,
+              "parts": 2,
+              "text": "and finally offered to replace Harlequin himself.",
+              "sourceTextRange": [
+                19,
+                68
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "The selfish runaway suddenly acted with loyalty",
+              "sourceTextRange": [
+                0,
+                47
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "and genuine courage.",
+              "sourceTextRange": [
+                48,
+                68
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Fire Eater lifted him up,",
+              "sourceTextRange": [
+                0,
+                25
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "deeply moved by the sacrifice.",
+              "sourceTextRange": [
+                26,
+                56
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 1,
+              "text": "He pardoned Harlequin and decided to eat his dinner uncooked.",
+              "sourceTextRange": [
+                0,
+                61
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 1,
+              "text": "The entire puppet company danced with relief until dawn.",
+              "sourceTextRange": [
+                0,
+                56
+              ]
             }
           ]
         },
@@ -904,57 +1631,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "Music from a nearby puppet theater made him forget every promise."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "He blamed Pinocchio for the ruined performance and threatened to burn him."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "He begged, argued, and finally offered to replace Harlequin himself."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "Fire Eater's repeated sneezes revealed that his anger was beginning to soften."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Fire Eater lifted him up, deeply moved by the sacrifice."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "The entire puppet company danced with relief until dawn."
+                  "lineIndex": 0,
+                  "text": "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for."
                 },
                 {
                   "label": "B",
@@ -969,9 +1652,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -985,59 +1668,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "Music from a nearby puppet theater made him forget every promise."
+                  "lineIndex": 2,
+                  "text": "He sold the precious book and spent the money on a ticket."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "He pardoned Harlequin and decided to eat his dinner uncooked."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "He spared Pinocchio but ordered Harlequin burned beneath the roasting dinner."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "Their enormous director, Fire Eater, entered and demanded an explanation."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "He begged, argued, and finally offered to replace Harlequin himself."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1046,8 +1685,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "He sold the precious book and spent the money on a ticket."
+                  "lineIndex": 3,
+                  "text": "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "Fire Eater's repeated sneezes revealed that his anger was beginning to soften."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "Their enormous director, Fire Eater, entered and demanded an explanation."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "Pinocchio refused to celebrate while his innocent friend faced danger."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The entire puppet company danced with relief until dawn."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "The selfish runaway suddenly acted with loyalty and genuine courage."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "Music from a nearby puppet theater made him forget every promise."
                 },
                 {
                   "label": "C",
@@ -1057,24 +1740,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "He sold the precious book and spent the money on a ticket."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "Fire Eater's repeated sneezes revealed that his anger was beginning to soften."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Fire Eater lifted him up, deeply moved by the sacrifice."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "Pinocchio refused to celebrate while his innocent friend faced danger."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "The entire puppet company danced with relief until dawn."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "They abandoned the play and greeted him with noisy affection."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "Their enormous director, Fire Eater, entered and demanded an explanation."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "He begged, argued, and finally offered to replace Harlequin himself."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "The terrified puppet called for his father and begged for mercy."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Fire Eater lifted him up, deeply moved by the sacrifice."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "He sold the precious book and spent the money on a ticket."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The entire puppet company danced with relief until dawn."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "They abandoned the play and greeted him with noisy affection."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "He spared Pinocchio but ordered Harlequin burned beneath the roasting dinner."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "The entire puppet company danced with relief until dawn."
                 }
               ]
             }
@@ -1090,26 +1861,49 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "Music from a nearby puppet theater made him forget every promise.",
+              "lineIndex": 0,
+              "text": "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Music",
-                "from",
-                "a",
-                "nearby",
-                "puppet",
-                "theater",
-                "made",
-                "him",
-                "forget",
-                "every",
-                "promise",
+                "Pinocchio",
+                "started",
+                "toward",
+                "school",
+                ",",
+                "proudly",
+                "carrying",
+                "the",
+                "primer",
+                "Geppetto",
+                "had",
+                "sacrificed",
+                "for",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "He sold the precious book and spent the money on a ticket.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "sold",
+                "the",
+                "precious",
+                "book",
+                "and",
+                "spent",
+                "the",
+                "money",
+                "on",
+                "a",
+                "ticket",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother.",
               "task": "rebuild-then-speak",
@@ -1132,7 +1926,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "Their enormous director, Fire Eater, entered and demanded an explanation.",
               "task": "rebuild-then-speak",
@@ -1153,7 +1947,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "The terrified puppet called for his father and begged for mercy.",
               "task": "rebuild-then-speak",
@@ -1173,27 +1967,47 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "He spared Pinocchio but ordered Harlequin burned beneath the roasting dinner.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "Fire Eater's repeated sneezes revealed that his anger was beginning to soften.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "He",
-                "spared",
-                "Pinocchio",
-                "but",
-                "ordered",
-                "Harlequin",
-                "burned",
-                "beneath",
-                "the",
-                "roasting",
-                "dinner",
+                "Fire",
+                "Eater's",
+                "repeated",
+                "sneezes",
+                "revealed",
+                "that",
+                "his",
+                "anger",
+                "was",
+                "beginning",
+                "to",
+                "soften",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "Pinocchio refused to celebrate while his innocent friend faced danger.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Pinocchio",
+                "refused",
+                "to",
+                "celebrate",
+                "while",
+                "his",
+                "innocent",
+                "friend",
+                "faced",
+                "danger",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "He begged, argued, and finally offered to replace Harlequin himself.",
               "task": "rebuild-then-speak",
@@ -1214,7 +2028,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Fire Eater lifted him up, deeply moved by the sacrifice.",
               "task": "rebuild-then-speak",
@@ -1234,7 +2048,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "The entire puppet company danced with relief until dawn.",
               "task": "rebuild-then-speak",
@@ -1359,70 +2173,337 @@
             "compare",
             "retry"
           ],
+          "source": "timestamped-segments-from-the-continuous-watch-master",
           "items": [
             {
-              "lineIndex": 0,
-              "text": "Pinocchio set out for school carrying the primer purchased with Geppetto's only coat."
+              "id": "mimic-01",
+              "sourceLineIndex": 0,
+              "part": 1,
+              "parts": 2,
+              "text": "Pinocchio set out for school carrying",
+              "sourceTextRange": [
+                0,
+                37
+              ]
             },
             {
-              "lineIndex": 1,
-              "text": "A lively drum and pipe soon transformed his solemn promise into a debate between duty and delight."
+              "id": "mimic-02",
+              "sourceLineIndex": 0,
+              "part": 2,
+              "parts": 2,
+              "text": "the primer purchased with Geppetto's only coat.",
+              "sourceTextRange": [
+                38,
+                85
+              ]
             },
             {
-              "lineIndex": 2,
-              "text": "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater."
+              "id": "mimic-03",
+              "sourceLineIndex": 1,
+              "part": 1,
+              "parts": 2,
+              "text": "A lively drum and pipe soon transformed his",
+              "sourceTextRange": [
+                0,
+                43
+              ]
             },
             {
-              "lineIndex": 3,
-              "text": "The wooden actors recognized a brother in the newcomer and interrupted their own performance to embrace him."
+              "id": "mimic-04",
+              "sourceLineIndex": 1,
+              "part": 2,
+              "parts": 2,
+              "text": "solemn promise into a debate between duty and delight.",
+              "sourceTextRange": [
+                44,
+                98
+              ]
             },
             {
-              "lineIndex": 4,
-              "text": "Their celebration delighted the audience but enraged Fire Eater, the theater's immense and terrifying director."
+              "id": "mimic-05",
+              "sourceLineIndex": 2,
+              "part": 1,
+              "parts": 2,
+              "text": "Choosing immediate pleasure, he sold the precious book",
+              "sourceTextRange": [
+                0,
+                54
+              ]
             },
             {
-              "lineIndex": 5,
-              "text": "He seized Pinocchio, blamed him for the ruined show, and selected him as fuel for the evening meal."
+              "id": "mimic-06",
+              "sourceLineIndex": 2,
+              "part": 2,
+              "parts": 2,
+              "text": "and bought admission to the Marionette Theater.",
+              "sourceTextRange": [
+                55,
+                102
+              ]
             },
             {
-              "lineIndex": 6,
-              "text": "Facing a consequence he could no longer outrun, Pinocchio cried out for the father he had disappointed."
+              "id": "mimic-07",
+              "sourceLineIndex": 3,
+              "part": 1,
+              "parts": 2,
+              "text": "The wooden actors recognized a brother in the newcomer",
+              "sourceTextRange": [
+                0,
+                54
+              ]
             },
             {
-              "lineIndex": 7,
-              "text": "Fire Eater began to sneeze, the peculiar sign that pity was loosening his anger."
+              "id": "mimic-08",
+              "sourceLineIndex": 3,
+              "part": 2,
+              "parts": 2,
+              "text": "and interrupted their own performance to embrace him.",
+              "sourceTextRange": [
+                55,
+                108
+              ]
             },
             {
-              "lineIndex": 8,
-              "text": "He released Pinocchio, then casually ordered Harlequin to be burned in the puppet's place."
+              "id": "mimic-09",
+              "sourceLineIndex": 4,
+              "part": 1,
+              "parts": 2,
+              "text": "Their celebration delighted the audience but enraged Fire Eater,",
+              "sourceTextRange": [
+                0,
+                64
+              ]
             },
             {
-              "lineIndex": 9,
-              "text": "Relief vanished when Pinocchio realized that his safety had merely transferred the danger to a friend."
+              "id": "mimic-10",
+              "sourceLineIndex": 4,
+              "part": 2,
+              "parts": 2,
+              "text": "the theater's immense and terrifying director.",
+              "sourceTextRange": [
+                65,
+                111
+              ]
             },
             {
-              "lineIndex": 10,
-              "text": "He pleaded for Harlequin with a determination unlike the excuses he usually made for himself."
+              "id": "mimic-11",
+              "sourceLineIndex": 5,
+              "part": 1,
+              "parts": 2,
+              "text": "He seized Pinocchio, blamed him for the ruined show,",
+              "sourceTextRange": [
+                0,
+                52
+              ]
             },
             {
-              "lineIndex": 11,
-              "text": "When argument failed, Pinocchio offered his own wooden body to the flames."
+              "id": "mimic-12",
+              "sourceLineIndex": 5,
+              "part": 2,
+              "parts": 2,
+              "text": "and selected him as fuel for the evening meal.",
+              "sourceTextRange": [
+                53,
+                99
+              ]
             },
             {
-              "lineIndex": 12,
-              "text": "For the first time, the impulsive runaway accepted a cost in order to protect someone else."
+              "id": "mimic-13",
+              "sourceLineIndex": 6,
+              "part": 1,
+              "parts": 2,
+              "text": "Facing a consequence he could no longer outrun,",
+              "sourceTextRange": [
+                0,
+                47
+              ]
             },
             {
-              "lineIndex": 13,
-              "text": "Fire Eater, astonished by such loyalty, embraced the puppet and abandoned the cruel order."
+              "id": "mimic-14",
+              "sourceLineIndex": 6,
+              "part": 2,
+              "parts": 2,
+              "text": "Pinocchio cried out for the father he had disappointed.",
+              "sourceTextRange": [
+                48,
+                103
+              ]
             },
             {
-              "lineIndex": 14,
-              "text": "Harlequin was spared, and the director accepted an uncooked dinner rather than another victim."
+              "id": "mimic-15",
+              "sourceLineIndex": 7,
+              "part": 1,
+              "parts": 2,
+              "text": "Fire Eater began to sneeze,",
+              "sourceTextRange": [
+                0,
+                27
+              ]
             },
             {
-              "lineIndex": 15,
-              "text": "The wooden company celebrated a small but important change in Pinocchio until morning."
+              "id": "mimic-16",
+              "sourceLineIndex": 7,
+              "part": 2,
+              "parts": 2,
+              "text": "the peculiar sign that pity was loosening his anger.",
+              "sourceTextRange": [
+                28,
+                80
+              ]
+            },
+            {
+              "id": "mimic-17",
+              "sourceLineIndex": 8,
+              "part": 1,
+              "parts": 2,
+              "text": "He released Pinocchio, then casually ordered Harlequin",
+              "sourceTextRange": [
+                0,
+                54
+              ]
+            },
+            {
+              "id": "mimic-18",
+              "sourceLineIndex": 8,
+              "part": 2,
+              "parts": 2,
+              "text": "to be burned in the puppet's place.",
+              "sourceTextRange": [
+                55,
+                90
+              ]
+            },
+            {
+              "id": "mimic-19",
+              "sourceLineIndex": 9,
+              "part": 1,
+              "parts": 2,
+              "text": "Relief vanished when Pinocchio realized that his safety",
+              "sourceTextRange": [
+                0,
+                55
+              ]
+            },
+            {
+              "id": "mimic-20",
+              "sourceLineIndex": 9,
+              "part": 2,
+              "parts": 2,
+              "text": "had merely transferred the danger to a friend.",
+              "sourceTextRange": [
+                56,
+                102
+              ]
+            },
+            {
+              "id": "mimic-21",
+              "sourceLineIndex": 10,
+              "part": 1,
+              "parts": 2,
+              "text": "He pleaded for Harlequin with a determination",
+              "sourceTextRange": [
+                0,
+                45
+              ]
+            },
+            {
+              "id": "mimic-22",
+              "sourceLineIndex": 10,
+              "part": 2,
+              "parts": 2,
+              "text": "unlike the excuses he usually made for himself.",
+              "sourceTextRange": [
+                46,
+                93
+              ]
+            },
+            {
+              "id": "mimic-23",
+              "sourceLineIndex": 11,
+              "part": 1,
+              "parts": 1,
+              "text": "When argument failed, Pinocchio offered his own wooden body to the flames.",
+              "sourceTextRange": [
+                0,
+                74
+              ]
+            },
+            {
+              "id": "mimic-24",
+              "sourceLineIndex": 12,
+              "part": 1,
+              "parts": 2,
+              "text": "For the first time, the impulsive runaway accepted",
+              "sourceTextRange": [
+                0,
+                50
+              ]
+            },
+            {
+              "id": "mimic-25",
+              "sourceLineIndex": 12,
+              "part": 2,
+              "parts": 2,
+              "text": "a cost in order to protect someone else.",
+              "sourceTextRange": [
+                51,
+                91
+              ]
+            },
+            {
+              "id": "mimic-26",
+              "sourceLineIndex": 13,
+              "part": 1,
+              "parts": 2,
+              "text": "Fire Eater, astonished by such loyalty,",
+              "sourceTextRange": [
+                0,
+                39
+              ]
+            },
+            {
+              "id": "mimic-27",
+              "sourceLineIndex": 13,
+              "part": 2,
+              "parts": 2,
+              "text": "embraced the puppet and abandoned the cruel order.",
+              "sourceTextRange": [
+                40,
+                90
+              ]
+            },
+            {
+              "id": "mimic-28",
+              "sourceLineIndex": 14,
+              "part": 1,
+              "parts": 2,
+              "text": "Harlequin was spared, and the director accepted",
+              "sourceTextRange": [
+                0,
+                47
+              ]
+            },
+            {
+              "id": "mimic-29",
+              "sourceLineIndex": 14,
+              "part": 2,
+              "parts": 2,
+              "text": "an uncooked dinner rather than another victim.",
+              "sourceTextRange": [
+                48,
+                94
+              ]
+            },
+            {
+              "id": "mimic-30",
+              "sourceLineIndex": 15,
+              "part": 1,
+              "parts": 1,
+              "text": "The wooden company celebrated a small but important change in Pinocchio until morning.",
+              "sourceTextRange": [
+                0,
+                86
+              ]
             }
           ]
         },
@@ -1431,57 +2512,13 @@
           "items": [
             {
               "id": "guess-01",
-              "audioLineIndex": 1,
+              "audioLineIndex": 0,
               "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
-                  "lineIndex": 1,
-                  "text": "A lively drum and pipe soon transformed his solemn promise into a debate between duty and delight."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 6,
-                  "text": "Facing a consequence he could no longer outrun, Pinocchio cried out for the father he had disappointed."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 11,
-                  "text": "When argument failed, Pinocchio offered his own wooden body to the flames."
-                }
-              ]
-            },
-            {
-              "id": "guess-02",
-              "audioLineIndex": 3,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 8,
-                  "text": "He released Pinocchio, then casually ordered Harlequin to be burned in the puppet's place."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 13,
-                  "text": "Fire Eater, astonished by such loyalty, embraced the puppet and abandoned the cruel order."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 3,
-                  "text": "The wooden actors recognized a brother in the newcomer and interrupted their own performance to embrace him."
-                }
-              ]
-            },
-            {
-              "id": "guess-03",
-              "audioLineIndex": 5,
-              "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 15,
-                  "text": "The wooden company celebrated a small but important change in Pinocchio until morning."
+                  "lineIndex": 0,
+                  "text": "Pinocchio set out for school carrying the primer purchased with Geppetto's only coat."
                 },
                 {
                   "label": "B",
@@ -1496,9 +2533,9 @@
               ]
             },
             {
-              "id": "guess-04",
-              "audioLineIndex": 7,
-              "correctAnswer": "A",
+              "id": "guess-02",
+              "audioLineIndex": 2,
+              "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
@@ -1512,59 +2549,15 @@
                 },
                 {
                   "label": "C",
-                  "lineIndex": 1,
-                  "text": "A lively drum and pipe soon transformed his solemn promise into a debate between duty and delight."
+                  "lineIndex": 2,
+                  "text": "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater."
                 }
               ]
             },
             {
-              "id": "guess-05",
-              "audioLineIndex": 9,
-              "correctAnswer": "C",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 14,
-                  "text": "Harlequin was spared, and the director accepted an uncooked dinner rather than another victim."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 3,
-                  "text": "The wooden actors recognized a brother in the newcomer and interrupted their own performance to embrace him."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 9,
-                  "text": "Relief vanished when Pinocchio realized that his safety had merely transferred the danger to a friend."
-                }
-              ]
-            },
-            {
-              "id": "guess-06",
-              "audioLineIndex": 11,
+              "id": "guess-03",
+              "audioLineIndex": 3,
               "correctAnswer": "B",
-              "options": [
-                {
-                  "label": "A",
-                  "lineIndex": 5,
-                  "text": "He seized Pinocchio, blamed him for the ruined show, and selected him as fuel for the evening meal."
-                },
-                {
-                  "label": "B",
-                  "lineIndex": 11,
-                  "text": "When argument failed, Pinocchio offered his own wooden body to the flames."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 0,
-                  "text": "Pinocchio set out for school carrying the primer purchased with Geppetto's only coat."
-                }
-              ]
-            },
-            {
-              "id": "guess-07",
-              "audioLineIndex": 13,
-              "correctAnswer": "A",
               "options": [
                 {
                   "label": "A",
@@ -1573,8 +2566,52 @@
                 },
                 {
                   "label": "B",
-                  "lineIndex": 2,
-                  "text": "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater."
+                  "lineIndex": 3,
+                  "text": "The wooden actors recognized a brother in the newcomer and interrupted their own performance to embrace him."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 8,
+                  "text": "He released Pinocchio, then casually ordered Harlequin to be burned in the puppet's place."
+                }
+              ]
+            },
+            {
+              "id": "guess-04",
+              "audioLineIndex": 5,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 5,
+                  "text": "He seized Pinocchio, blamed him for the ruined show, and selected him as fuel for the evening meal."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 10,
+                  "text": "He pleaded for Harlequin with a determination unlike the excuses he usually made for himself."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 15,
+                  "text": "The wooden company celebrated a small but important change in Pinocchio until morning."
+                }
+              ]
+            },
+            {
+              "id": "guess-05",
+              "audioLineIndex": 7,
+              "correctAnswer": "C",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 12,
+                  "text": "For the first time, the impulsive runaway accepted a cost in order to protect someone else."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 1,
+                  "text": "A lively drum and pipe soon transformed his solemn promise into a debate between duty and delight."
                 },
                 {
                   "label": "C",
@@ -1584,24 +2621,112 @@
               ]
             },
             {
+              "id": "guess-06",
+              "audioLineIndex": 8,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 2,
+                  "text": "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 8,
+                  "text": "He released Pinocchio, then casually ordered Harlequin to be burned in the puppet's place."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 13,
+                  "text": "Fire Eater, astonished by such loyalty, embraced the puppet and abandoned the cruel order."
+                }
+              ]
+            },
+            {
+              "id": "guess-07",
+              "audioLineIndex": 10,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 10,
+                  "text": "He pleaded for Harlequin with a determination unlike the excuses he usually made for himself."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 15,
+                  "text": "The wooden company celebrated a small but important change in Pinocchio until morning."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 4,
+                  "text": "Their celebration delighted the audience but enraged Fire Eater, the theater's immense and terrifying director."
+                }
+              ]
+            },
+            {
               "id": "guess-08",
-              "audioLineIndex": 15,
+              "audioLineIndex": 11,
               "correctAnswer": "C",
               "options": [
                 {
                   "label": "A",
+                  "lineIndex": 0,
+                  "text": "Pinocchio set out for school carrying the primer purchased with Geppetto's only coat."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 5,
+                  "text": "He seized Pinocchio, blamed him for the ruined show, and selected him as fuel for the evening meal."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 11,
+                  "text": "When argument failed, Pinocchio offered his own wooden body to the flames."
+                }
+              ]
+            },
+            {
+              "id": "guess-09",
+              "audioLineIndex": 13,
+              "correctAnswer": "B",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 7,
+                  "text": "Fire Eater began to sneeze, the peculiar sign that pity was loosening his anger."
+                },
+                {
+                  "label": "B",
+                  "lineIndex": 13,
+                  "text": "Fire Eater, astonished by such loyalty, embraced the puppet and abandoned the cruel order."
+                },
+                {
+                  "label": "C",
+                  "lineIndex": 2,
+                  "text": "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater."
+                }
+              ]
+            },
+            {
+              "id": "guess-10",
+              "audioLineIndex": 15,
+              "correctAnswer": "A",
+              "options": [
+                {
+                  "label": "A",
+                  "lineIndex": 15,
+                  "text": "The wooden company celebrated a small but important change in Pinocchio until morning."
+                },
+                {
+                  "label": "B",
                   "lineIndex": 4,
                   "text": "Their celebration delighted the audience but enraged Fire Eater, the theater's immense and terrifying director."
                 },
                 {
-                  "label": "B",
+                  "label": "C",
                   "lineIndex": 9,
                   "text": "Relief vanished when Pinocchio realized that his safety had merely transferred the danger to a friend."
-                },
-                {
-                  "label": "C",
-                  "lineIndex": 15,
-                  "text": "The wooden company celebrated a small but important change in Pinocchio until morning."
                 }
               ]
             }
@@ -1617,32 +2742,53 @@
           "items": [
             {
               "id": "word-01",
-              "lineIndex": 1,
-              "text": "A lively drum and pipe soon transformed his solemn promise into a debate between duty and delight.",
+              "lineIndex": 0,
+              "text": "Pinocchio set out for school carrying the primer purchased with Geppetto's only coat.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "A",
-                "lively",
-                "drum",
-                "and",
-                "pipe",
-                "soon",
-                "transformed",
-                "his",
-                "solemn",
-                "promise",
-                "into",
-                "a",
-                "debate",
-                "between",
-                "duty",
-                "and",
-                "delight",
+                "Pinocchio",
+                "set",
+                "out",
+                "for",
+                "school",
+                "carrying",
+                "the",
+                "primer",
+                "purchased",
+                "with",
+                "Geppetto's",
+                "only",
+                "coat",
                 "."
               ]
             },
             {
               "id": "word-02",
+              "lineIndex": 2,
+              "text": "Choosing immediate pleasure, he sold the precious book and bought admission to the Marionette Theater.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "Choosing",
+                "immediate",
+                "pleasure",
+                ",",
+                "he",
+                "sold",
+                "the",
+                "precious",
+                "book",
+                "and",
+                "bought",
+                "admission",
+                "to",
+                "the",
+                "Marionette",
+                "Theater",
+                "."
+              ]
+            },
+            {
+              "id": "word-03",
               "lineIndex": 3,
               "text": "The wooden actors recognized a brother in the newcomer and interrupted their own performance to embrace him.",
               "task": "rebuild-then-speak",
@@ -1668,7 +2814,7 @@
               ]
             },
             {
-              "id": "word-03",
+              "id": "word-04",
               "lineIndex": 5,
               "text": "He seized Pinocchio, blamed him for the ruined show, and selected him as fuel for the evening meal.",
               "task": "rebuild-then-speak",
@@ -1697,7 +2843,7 @@
               ]
             },
             {
-              "id": "word-04",
+              "id": "word-05",
               "lineIndex": 7,
               "text": "Fire Eater began to sneeze, the peculiar sign that pity was loosening his anger.",
               "task": "rebuild-then-speak",
@@ -1721,32 +2867,55 @@
               ]
             },
             {
-              "id": "word-05",
-              "lineIndex": 9,
-              "text": "Relief vanished when Pinocchio realized that his safety had merely transferred the danger to a friend.",
+              "id": "word-06",
+              "lineIndex": 8,
+              "text": "He released Pinocchio, then casually ordered Harlequin to be burned in the puppet's place.",
               "task": "rebuild-then-speak",
               "tokens": [
-                "Relief",
-                "vanished",
-                "when",
+                "He",
+                "released",
                 "Pinocchio",
-                "realized",
-                "that",
-                "his",
-                "safety",
-                "had",
-                "merely",
-                "transferred",
-                "the",
-                "danger",
+                ",",
+                "then",
+                "casually",
+                "ordered",
+                "Harlequin",
                 "to",
-                "a",
-                "friend",
+                "be",
+                "burned",
+                "in",
+                "the",
+                "puppet's",
+                "place",
                 "."
               ]
             },
             {
-              "id": "word-06",
+              "id": "word-07",
+              "lineIndex": 10,
+              "text": "He pleaded for Harlequin with a determination unlike the excuses he usually made for himself.",
+              "task": "rebuild-then-speak",
+              "tokens": [
+                "He",
+                "pleaded",
+                "for",
+                "Harlequin",
+                "with",
+                "a",
+                "determination",
+                "unlike",
+                "the",
+                "excuses",
+                "he",
+                "usually",
+                "made",
+                "for",
+                "himself",
+                "."
+              ]
+            },
+            {
+              "id": "word-08",
               "lineIndex": 11,
               "text": "When argument failed, Pinocchio offered his own wooden body to the flames.",
               "task": "rebuild-then-speak",
@@ -1768,7 +2937,7 @@
               ]
             },
             {
-              "id": "word-07",
+              "id": "word-09",
               "lineIndex": 13,
               "text": "Fire Eater, astonished by such loyalty, embraced the puppet and abandoned the cruel order.",
               "task": "rebuild-then-speak",
@@ -1793,7 +2962,7 @@
               ]
             },
             {
-              "id": "word-08",
+              "id": "word-10",
               "lineIndex": 15,
               "text": "The wooden company celebrated a small but important change in Pinocchio until morning.",
               "task": "rebuild-then-speak",
@@ -1826,5 +2995,5 @@
       }
     }
   },
-  "checksum": "95f91c34a0a20881bd288505ee01ce281446496347cfd50bda254462b36a24b6"
+  "checksum": "92bbe30f2acca381c0eb196fe357b594096700ea43c0341060b118e72ba37966"
 }
