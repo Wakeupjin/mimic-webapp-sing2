@@ -1,4 +1,4 @@
-import type { LessonMode, PinocchioPack, Timeline } from "./types";
+import type { LessonMode, PinocchioPack } from "./types";
 
 export const MODE_ORDER: LessonMode[] = ["watching", "mimicking", "guessing", "word"];
 
@@ -36,44 +36,11 @@ export function chapterMedia(chapterNumber: number) {
   return {
     artSrc: `/prototype-art/pinocchio-v2/${stem}.png`,
     audioSrc: `${audioRoot}/core.master.mp3`,
+    mimicAudioRoot: audioRoot,
     timelineSrc: `${audioRoot}/core.timeline.json`,
   };
 }
 
 export function sourceLineForMimic(pack: PinocchioPack, index: number) {
   return pack.levels.core.activities.mimic.items[index]?.sourceLineIndex ?? 0;
-}
-
-function spokenSeconds(text: string) {
-  const words = text.trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(2.2, words * 0.43 + 0.7);
-}
-
-export function estimatedTimeline(pack: PinocchioPack): Timeline {
-  let cursor = 0;
-  const lines = pack.levels.core.lines.map((line) => {
-    const start = cursor;
-    const end = start + spokenSeconds(line.text);
-    cursor = end + 0.18;
-    return { ...line, start, end };
-  });
-
-  const mimicItems = pack.levels.core.activities.mimic.items.map((item) => {
-    const source = lines[item.sourceLineIndex] ?? lines[0];
-    const siblings = pack.levels.core.activities.mimic.items.filter(
-      (candidate) => candidate.sourceLineIndex === item.sourceLineIndex
-    );
-    const siblingIndex = Math.max(0, siblings.findIndex((candidate) => candidate.id === item.id));
-    const totalWeight = siblings.reduce((sum, candidate) => sum + spokenSeconds(candidate.text), 0);
-    const elapsedWeight = siblings
-      .slice(0, siblingIndex)
-      .reduce((sum, candidate) => sum + spokenSeconds(candidate.text), 0);
-    const itemWeight = spokenSeconds(item.text);
-    const sourceDuration = Math.max(0.1, source.end - source.start);
-    const start = source.start + sourceDuration * (elapsedWeight / totalWeight);
-    const end = source.start + sourceDuration * ((elapsedWeight + itemWeight) / totalWeight);
-    return { ...item, start, end };
-  });
-
-  return { duration: Math.max(0, cursor - 0.18), lines, mimicItems };
 }

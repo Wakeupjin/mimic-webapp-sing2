@@ -4,9 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "node scripts/build-with-pinocchio-gate.mjs",
     "start": "next start",
-    "handoff": "node scripts/ai-handoff.mjs"
+    "handoff": "node scripts/ai-handoff.mjs",
+    "rebuild:pinocchio-v2-boundaries": "node scripts/rebuild-pinocchio-v2-boundaries.mjs --write",
+    "check:pinocchio-v2-boundaries": "node scripts/rebuild-pinocchio-v2-boundaries.mjs --check",
+    "validate:pinocchio-core": "node scripts/validate-pinocchio-core-chapters.mjs",
+    "validate:pinocchio-core:preview": "node scripts/validate-pinocchio-core-chapters.mjs --allow-pending-review",
+    "write:pinocchio-release-receipt": "node scripts/validate-pinocchio-core-chapters.mjs --allow-pending-review --write-receipt",
+    "validate:pinocchio-deploy": "node scripts/validate-pinocchio-deploy-receipt.mjs",
+    "validate:pinocchio-deploy:preview": "node scripts/validate-pinocchio-deploy-receipt.mjs --allow-blocked"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",

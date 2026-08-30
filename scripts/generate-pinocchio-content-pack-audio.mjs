@@ -145,6 +145,45 @@ function timedCharacterRange(alignment, from, to) {
   return { start, end };
 }
 
+function alignmentClampedMimicTimeline(items) {
+  const boundaries = items.slice(0, -1).map((item, index) => {
+    const next = items[index + 1];
+    return {
+      id: `${item.id}--${next.id}`,
+      leftId: item.id,
+      rightId: next.id,
+      cut: Number(((item.speechEnd + next.speechStart) / 2).toFixed(3)),
+      method: "alignment-midpoint",
+      needsHumanReview: true,
+    };
+  });
+  const mimicItems = items.map((item, index) => ({
+    id: item.id,
+    sourceLineIndex: item.sourceLineIndex,
+    text: item.text,
+    alignmentStart: Number(item.speechStart.toFixed(3)),
+    alignmentEnd: Number(item.speechEnd.toFixed(3)),
+    speechStart: Number(item.speechStart.toFixed(3)),
+    speechEnd: Number(item.speechEnd.toFixed(3)),
+    start: Number((index === 0 ? Math.max(0, item.speechStart - 0.12) : boundaries[index - 1].cut).toFixed(3)),
+    end: Number((index === items.length - 1 ? item.speechEnd + 0.1 : boundaries[index].cut).toFixed(3)),
+  }));
+  return {
+    mimicItems,
+    boundarySafety: {
+      version: "alignment-clamped-v1",
+      source: "one-continuous-master",
+      totalBoundaries: boundaries.length,
+      acousticallySafeBoundaries: 0,
+      releaseBlockedBoundaries: boundaries.length,
+      approvedBoundaryIds: [],
+      pendingBoundaryIds: boundaries.map((boundary) => boundary.id),
+      boundaries,
+      nextStep: "Run rebuild-pinocchio-v2-boundaries.mjs before publishing.",
+    },
+  };
+}
+
 function buildTimeline(job, alignment) {
   if (!alignment?.characters?.length) fail("ElevenLabs did not return character alignment.");
   const alignedText = alignment.characters.join("");
@@ -161,10 +200,14 @@ function buildTimeline(job, alignment) {
   const lines = spoken.map((line, index) => ({
     id: line.id,
     text: line.text,
+    alignmentStart: Number(line.start.toFixed(3)),
+    alignmentEnd: Number(line.end.toFixed(3)),
+    speechStart: Number(line.start.toFixed(3)),
+    speechEnd: Number(line.end.toFixed(3)),
     start: Number((index === 0 ? Math.max(0, line.start - 0.08) : boundaries[index - 1]).toFixed(3)),
     end: Number((index === spoken.length - 1 ? line.end + 0.22 : boundaries[index]).toFixed(3)),
   }));
-  const mimicItems = job.pack.levels[job.levelId].activities.mimic.items.map((item) => {
+  const alignedMimicItems = job.pack.levels[job.levelId].activities.mimic.items.map((item) => {
     const [relativeStart, relativeEnd] = item.sourceTextRange || [0, item.text.length];
     const absoluteStart = sourceOffsets[item.sourceLineIndex] + relativeStart;
     const absoluteEnd = sourceOffsets[item.sourceLineIndex] + relativeEnd;
@@ -173,11 +216,11 @@ function buildTimeline(job, alignment) {
       id: item.id,
       sourceLineIndex: item.sourceLineIndex,
       text: item.text,
-      start: Number(Math.max(0, timed.start - 0.12).toFixed(3)),
-      end: Number((timed.end + 0.1).toFixed(3)),
+      speechStart: timed.start,
+      speechEnd: timed.end,
     };
   });
-  return { lines, mimicItems };
+  return { lines, ...alignmentClampedMimicTimeline(alignedMimicItems) };
 }
 
 const provenanceByUnit = new Map();
@@ -207,6 +250,7 @@ for (const [jobIndex, job] of jobs.entries()) {
       source: "one-continuous-master",
       lines: timeline.lines,
       mimicItems: timeline.mimicItems,
+      boundarySafety: timeline.boundarySafety,
     }, null, 2)}\n`
   );
   if (!provenanceByUnit.has(job.unitNumber)) provenanceByUnit.set(job.unitNumber, []);
