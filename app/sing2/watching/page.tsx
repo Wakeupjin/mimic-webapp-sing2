@@ -21,6 +21,7 @@ import { useRequireModeAccess } from '../../lib/useRequireModeAccess';
 import { getVideoSource } from '../../utils/videoSource';
 import { applyInlinePlayback } from '../../utils/device';
 import LessonShell from '../../components/LessonShell';
+import LessonCompletionActions from '../../components/LessonCompletionActions';
 import { FullscreenIcon, HeaderIconButton } from '../../components/HeaderIcons';
 
 // 데이터 타입 정의
@@ -382,6 +383,7 @@ function WatchingPageContent() {
   return (
     <LessonShell
       hideHeader
+      stageClassName="learning-stage learning-stage-watch learning-content-movie"
       footer={<p className="watch-chapter">{formatChapterLabel(parsePack(movieId), parseLessonNumber(movieId))}</p>}
       video={
           <div className="relative h-full w-full">
@@ -470,7 +472,7 @@ function WatchingPageContent() {
             >
               <img src="/home/back.svg" alt="" className="h-full w-full" />
             </Link>
-            <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+            <div className="lesson-top-actions absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
               <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
                 <FullscreenIcon active={isFullscreen} />
               </HeaderIconButton>
@@ -518,57 +520,38 @@ function WatchingPageContent() {
 
             {/* Watching mode Again/Next button overlay */}
             {showNextCta && (
-              <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
-                <div className="pointer-events-auto flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                    <button
-                      type="button"
-                      className="select-mode"
-                      onClick={() => {
-                        const video = document.querySelector('video') as HTMLVideoElement;
-                        if (video) {
-                          if (isFinite(startTime) && startTime >= 0) {
-                            video.currentTime = startTime;
-                          }
-                          playSafely(video);
-                          setShowNextCta(false);
-                          setVideoProgress(0);
-                          setIsVideoPaused(false);
-                          setIsVideoStarted(true);
-                        }
-                      }}
-                    >
-                      Again
-                    </button>
-                    <p className="select-here" style={{ visibility: 'hidden' }}>Let’s go</p>
-                  </div>
-                  <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                    <button
-                      type="button"
-                      className="select-mode is-open"
-                      onClick={() => {
-                        const isCurrentlyFullscreen = document.fullscreenElement !== null;
-                        if (isCurrentlyFullscreen) {
-                          sessionStorage.setItem('maintainFullscreen', 'true');
-                        }
-                        sessionStorage.setItem('fromWatching', 'true');
-                        setTimeout(() => {
-                          window.location.href = `/sing2/mimicking?id=${movieId}`;
-                        }, WATCHING_NAVIGATION_DELAY_MS);
-                      }}
-                    >
-                      <img src="/Subject.png" alt="" className="select-chameleon" />
-                      Next
-                    </button>
-                    <p className="cta-go">Let’s go</p>
-                  </div>
-                </div>
+              <div className="lesson-completion-overlay absolute inset-0 z-10 flex items-center justify-center bg-black/60 pointer-events-none">
+                <LessonCompletionActions
+                  onAgain={() => {
+                    const video = document.querySelector('video') as HTMLVideoElement;
+                    if (video) {
+                      if (isFinite(startTime) && startTime >= 0) {
+                        video.currentTime = startTime;
+                      }
+                      playSafely(video);
+                      setShowNextCta(false);
+                      setVideoProgress(0);
+                      setIsVideoPaused(false);
+                      setIsVideoStarted(true);
+                    }
+                  }}
+                  onNext={() => {
+                    const isCurrentlyFullscreen = document.fullscreenElement !== null;
+                    if (isCurrentlyFullscreen) {
+                      sessionStorage.setItem('maintainFullscreen', 'true');
+                    }
+                    sessionStorage.setItem('fromWatching', 'true');
+                    setTimeout(() => {
+                      window.location.href = `/sing2/mimicking?id=${movieId}`;
+                    }, WATCHING_NAVIGATION_DELAY_MS);
+                  }}
+                />
               </div>
             )}
           </div>
       }
       controls={
-          <div className="relative z-50 w-full overflow-visible">
+          <div className="watch-progress-control relative z-50 w-full overflow-visible">
             <div 
               className="watch-bar"
               onClick={handleProgressClick}

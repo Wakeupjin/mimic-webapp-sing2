@@ -18,6 +18,7 @@ type LessonShellProps = {
   aside?: ReactNode;
   onAsideDismiss?: () => void;
   children?: ReactNode;
+  stageClassName?: string;
 };
 
 export default function LessonShell({
@@ -35,6 +36,7 @@ export default function LessonShell({
   aside,
   onAsideDismiss,
   children,
+  stageClassName = "",
 }: LessonShellProps) {
   const frameClass = `relative overflow-hidden ${
     hideHeader
@@ -48,7 +50,7 @@ export default function LessonShell({
     <main
       className={`flex flex-col overflow-hidden bg-[#0a0a0a] text-white ${
         hideHeader ? (compactStage ? "watch-stage is-compact" : "watch-stage") : "lesson-stage"
-      }`}
+      } ${stageClassName}`}
     >
       <header className={`flex shrink-0 items-center justify-between gap-2 py-1 ${hideHeader ? "hidden" : ""}`}>
         <div className="flex min-w-0 items-baseline gap-2">
@@ -73,13 +75,13 @@ export default function LessonShell({
         </div>
       </header>
 
-      <div className="flex min-h-0 flex-1 gap-2 md:gap-3">
-        <div className="flex min-h-0 min-w-0 flex-1 flex-col">
+      <div className="lesson-main flex min-h-0 flex-1 gap-2 md:gap-3">
+        <div className="lesson-primary flex min-h-0 min-w-0 flex-1 flex-col">
           {children ? (
             <div className="flex min-h-0 flex-1 flex-col">{children}</div>
           ) : (
             <>
-              <section className="flex min-h-0 min-w-0 flex-1">
+              <section className="lesson-media flex min-h-0 min-w-0 flex-1">
                 <div className={`${frameClass} relative h-full min-h-0 w-full`}>
                   <div className="absolute inset-0 bg-black">{video}</div>
                 </div>

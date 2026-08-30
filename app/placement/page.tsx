@@ -17,6 +17,10 @@ const VIDEO_URL = 'https://mimicsing2.b-cdn.net/sing2.mp4';
 const SCENE = { start: 288.5, end: 342.66 };
 const SCENE_DURATION = SCENE.end - SCENE.start;
 
+function segmentUrl(start: number, end: number): string {
+  return `${VIDEO_URL}#t=${start},${end}`;
+}
+
 const VOICE_TASKS = {
   easy: {
     lineNumber: 4,
@@ -61,11 +65,15 @@ export default function PlacementPage() {
   const router = useRouter();
   const { user, profile, loading } = useAuth();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const activeStartRef = useRef<number | null>(null);
   const activeEndRef = useRef<number | null>(null);
   const sceneAdvanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mediaStartTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [step, setStep] = useState<Step>('intro');
   const [gradeBand, setGradeBand] = useState<PlacementGradeBand>('g4-6');
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(false);
+  const [videoError, setVideoError] = useState('');
   const [sceneElapsed, setSceneElapsed] = useState(0);
   const [sceneComplete, setSceneComplete] = useState(false);
   const [activeCoach, setActiveCoach] = useState<VoiceTaskKey | null>(null);
@@ -76,6 +84,12 @@ export default function PlacementPage() {
   });
   const [answer, setAnswer] = useState<string | null>(null);
   const [result, setResult] = useState<PlacementResult | null>(null);
+
+  const clearMediaStartTimer = useCallback(() => {
+    if (!mediaStartTimerRef.current) return;
+    clearTimeout(mediaStartTimerRef.current);
+    mediaStartTimerRef.current = null;
+  }, []);
 
   useEffect(() => {
     if (loading) return;
@@ -90,21 +104,44 @@ export default function PlacementPage() {
     return () => {
       if (videoRef.current) videoRef.current.pause();
       if (sceneAdvanceTimerRef.current) clearTimeout(sceneAdvanceTimerRef.current);
+      clearMediaStartTimer();
     };
-  }, []);
+  }, [clearMediaStartTimer]);
 
   const playSegment = useCallback(async (start: number, end: number) => {
     const video = videoRef.current;
     if (!video) return;
+
+    activeStartRef.current = start;
     activeEndRef.current = end;
-    video.currentTime = start;
-    setIsPlaying(true);
+    setVideoError('');
+    setIsVideoLoading(true);
+    setIsPlaying(false);
+    clearMediaStartTimer();
+    mediaStartTimerRef.current = setTimeout(() => {
+      video.pause();
+      activeStartRef.current = null;
+      activeEndRef.current = null;
+      setIsVideoLoading(false);
+      setIsPlaying(false);
+      setVideoError('영상 연결이 오래 걸리고 있어요. 한 번 더 눌러 주세요.');
+    }, 20_000);
+
+    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
+      video.currentTime = start;
+    }
+
     try {
       await video.play();
     } catch {
+      clearMediaStartTimer();
+      activeStartRef.current = null;
+      activeEndRef.current = null;
+      setIsVideoLoading(false);
       setIsPlaying(false);
+      setVideoError('영상 재생이 지연되고 있어요. 한 번 더 눌러 주세요.');
     }
-  }, []);
+  }, [clearMediaStartTimer]);
 
   const handleTimeUpdate = () => {
     const video = videoRef.current;
@@ -117,7 +154,10 @@ export default function PlacementPage() {
 
     if (video.currentTime < activeEnd) return;
     video.pause();
+    clearMediaStartTimer();
+    activeStartRef.current = null;
     activeEndRef.current = null;
+    setIsVideoLoading(false);
     setIsPlaying(false);
 
     if (step === 'watch') {
@@ -127,10 +167,23 @@ export default function PlacementPage() {
     }
   };
 
+  const handleVideoMetadata = () => {
+    const video = videoRef.current;
+    setVideoError('');
+
+    const activeStart = activeStartRef.current;
+    if (video && activeStart !== null && Math.abs(video.currentTime - activeStart) > 0.25) {
+      video.currentTime = activeStart;
+    }
+
+    if (activeEndRef.current === null) setIsVideoLoading(false);
+  };
+
   const playScene = () => {
     if (sceneAdvanceTimerRef.current) clearTimeout(sceneAdvanceTimerRef.current);
     setSceneElapsed(0);
     setSceneComplete(false);
+    setVideoError('');
     void playSegment(SCENE.start, SCENE.end);
   };
 
@@ -141,6 +194,10 @@ export default function PlacementPage() {
 
   const beginCoach = (task: VoiceTaskKey) => {
     videoRef.current?.pause();
+    clearMediaStartTimer();
+    activeStartRef.current = null;
+    activeEndRef.current = null;
+    setIsVideoLoading(false);
     setIsPlaying(false);
     setActiveCoach(task);
   };
@@ -175,6 +232,9 @@ export default function PlacementPage() {
   };
 
   const reset = () => {
+    clearMediaStartTimer();
+    activeStartRef.current = null;
+    activeEndRef.current = null;
     setStep('intro');
     setScores({ easy: null, long: null, reading: null });
     setAnswer(null);
@@ -182,6 +242,8 @@ export default function PlacementPage() {
     setActiveCoach(null);
     setSceneElapsed(0);
     setSceneComplete(false);
+    setIsVideoLoading(false);
+    setVideoError('');
   };
 
   const stepIndex = STEP_ORDER.indexOf(step);
@@ -189,6 +251,9 @@ export default function PlacementPage() {
   const activeVoiceStep: VoiceTaskKey | null =
     step === 'easy' || step === 'long' || step === 'reading' ? step : null;
   const currentVoiceTask = activeVoiceStep ? VOICE_TASKS[activeVoiceStep] : null;
+  const activeVideoUrl = currentVoiceTask
+    ? segmentUrl(currentVoiceTask.start, currentVoiceTask.end)
+    : VIDEO_URL;
   const sceneRemaining = Math.max(0, Math.ceil(SCENE_DURATION - sceneElapsed));
   const sceneProgress = Math.min(100, (sceneElapsed / SCENE_DURATION) * 100);
 
@@ -260,21 +325,45 @@ export default function PlacementPage() {
               <div className="relative mt-6 aspect-video overflow-hidden rounded-2xl border-4 border-[#201e1e] bg-[#111]">
                 <video
                   ref={videoRef}
-                  src={VIDEO_URL}
+                  src={segmentUrl(SCENE.start, SCENE.end)}
+                  poster="/sing2Poster.jpg"
                   playsInline
                   preload="metadata"
                   className="h-full w-full object-contain"
+                  onLoadedMetadata={handleVideoMetadata}
+                  onSeeking={() => {
+                    if (activeEndRef.current !== null) setIsVideoLoading(true);
+                  }}
+                  onWaiting={() => {
+                    if (activeEndRef.current !== null) setIsVideoLoading(true);
+                  }}
+                  onPlaying={() => {
+                    clearMediaStartTimer();
+                    setIsVideoLoading(false);
+                    setIsPlaying(true);
+                  }}
                   onTimeUpdate={handleTimeUpdate}
                   onPause={() => setIsPlaying(false)}
+                  onError={() => {
+                    clearMediaStartTimer();
+                    setIsVideoLoading(false);
+                    setIsPlaying(false);
+                    setVideoError('영상을 불러오지 못했어요. 네트워크를 확인하고 다시 눌러 주세요.');
+                  }}
                 />
                 {!isPlaying && !sceneComplete && (
                   <button
                     type="button"
-                    className="absolute inset-0 flex items-center justify-center bg-black/35 text-center"
+                    disabled={!videoError && isVideoLoading}
+                    className="absolute inset-0 flex items-center justify-center bg-black/35 text-center disabled:cursor-wait"
                     onClick={playScene}
                   >
                     <span className="rounded-full bg-[#60D96C] px-7 py-4 text-lg font-black text-black">
-                      ▶ 장면 보기 · 55초
+                      {videoError
+                        ? '다시 불러오기'
+                        : isVideoLoading
+                          ? '영상 준비 중…'
+                          : '▶ 장면 보기 · 55초'}
                     </span>
                   </button>
                 )}
@@ -293,7 +382,15 @@ export default function PlacementPage() {
                 </div>
                 <div className="mt-3 flex items-center justify-between gap-4 text-sm font-bold">
                   <span className={sceneComplete ? 'text-[#60D96C]' : 'text-white'}>
-                    {sceneComplete ? '장면을 다 봤어요. 다음 단계로 넘어가요.' : isPlaying ? '장면을 보고 있어요' : '재생하면 55초 동안 이어져요'}
+                    {sceneComplete
+                      ? '장면을 다 봤어요. 다음 단계로 넘어가요.'
+                      : videoError
+                        ? videoError
+                        : isVideoLoading
+                          ? '장면을 불러오고 있어요. 잠시만 기다려 주세요.'
+                          : isPlaying
+                            ? '장면을 보고 있어요'
+                            : '재생하면 55초 동안 이어져요'}
                   </span>
                   <span className="shrink-0 text-zinc-500">
                     {sceneComplete ? '완료' : `${sceneRemaining}초 남음`}
@@ -318,10 +415,11 @@ export default function PlacementPage() {
               ) : (
                 <button
                   type="button"
-                  className="mt-8 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-lg font-black hover:bg-white/15"
+                  disabled={isVideoLoading}
+                  className="mt-8 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-lg font-black hover:bg-white/15 disabled:cursor-wait disabled:opacity-70"
                   onClick={() => void playSegment(currentVoiceTask.start, currentVoiceTask.end)}
                 >
-                  {isPlaying ? '재생 중…' : '▶ 소리 듣기'}
+                  {isVideoLoading ? '소리 준비 중…' : isPlaying ? '재생 중…' : '▶ 소리 듣기'}
                 </button>
               )}
               <p className="mt-5 text-sm text-zinc-500">
@@ -403,15 +501,35 @@ export default function PlacementPage() {
         </section>
       </div>
 
-      <video
-        ref={step === 'watch' ? undefined : videoRef}
-        src={VIDEO_URL}
-        playsInline
-        preload="metadata"
-        className="hidden"
-        onTimeUpdate={handleTimeUpdate}
-        onPause={() => setIsPlaying(false)}
-      />
+      {currentVoiceTask && step !== 'reading' && (
+        <video
+          ref={videoRef}
+          src={activeVideoUrl}
+          playsInline
+          preload="metadata"
+          className="hidden"
+          onLoadedMetadata={handleVideoMetadata}
+          onSeeking={() => {
+            if (activeEndRef.current !== null) setIsVideoLoading(true);
+          }}
+          onWaiting={() => {
+            if (activeEndRef.current !== null) setIsVideoLoading(true);
+          }}
+          onPlaying={() => {
+            clearMediaStartTimer();
+            setIsVideoLoading(false);
+            setIsPlaying(true);
+          }}
+          onTimeUpdate={handleTimeUpdate}
+          onPause={() => setIsPlaying(false)}
+          onError={() => {
+            clearMediaStartTimer();
+            setIsVideoLoading(false);
+            setIsPlaying(false);
+            setVideoError('영상을 불러오지 못했어요. 네트워크를 확인하고 다시 눌러 주세요.');
+          }}
+        />
+      )}
 
       {activeCoach && (
         <div className="fixed inset-0 z-[100]">
@@ -425,6 +543,16 @@ export default function PlacementPage() {
             continueLabel="다음으로"
             fallbackLabel="이번에는 건너뛰기"
             showScore={false}
+            showTranscript={activeCoach === 'reading'}
+            mimicCue={
+              activeCoach === 'reading'
+                ? undefined
+                : {
+                    src: VIDEO_URL,
+                    start: VOICE_TASKS[activeCoach].start,
+                    end: VOICE_TASKS[activeCoach].end,
+                  }
+            }
             onResult={() => undefined}
             onContinue={(coachResult) => continueAfterVoice(activeCoach, voiceResult(coachResult))}
             onFallback={() => continueAfterVoice(activeCoach, null)}

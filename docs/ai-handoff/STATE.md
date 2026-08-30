@@ -6,25 +6,25 @@
 ## Active operator
 
 <!-- HANDOFF:ACTIVE_OPERATOR:START -->
-codex
+Codex
 <!-- HANDOFF:ACTIVE_OPERATOR:END -->
 
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-CHAPTER 1–12 CORE LOCAL COURSE READY — FULL FLOW AND MEDIA VALIDATED
+PINOCCHIO CHAPTER 1–12 CORE — POST-MERGE BUILD PASSED, READY FOR MAIN PUSH
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Review and approve the complete Sing 2-parity Pinocchio Core course across all twelve learner-facing Chapters
+Deploy the validated Pinocchio Chapter 1–12 Core course to production and verify the live learning flow
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Generalized the former Session 1-only pilot into one data-driven Chapter 1–12 learner flow while preserving the Sing 2 Selecting → Watch → Mimic → Guess → Word interaction. The app reads every v2 `sessions/session-01..12/pack.json`, but deliberately presents those sixty-minute curriculum meetings as `CHAPTER 1..12` in learner-facing UI and routes. Each Chapter has independent local mode completion; completing Word unlocks the next Chapter, direct locked routes return to the latest open Chapter, and legacy Session 1 progress/URLs migrate or redirect to Chapter 1. All twelve Core packs now have paid-plan Eleven v3 Lily British one-take masters, exact line/Mimic timelines, and original Living Storybook panoramas in canonical and public media slots. Learner integrity gates prevent jumping to the last exercise, segment playback stops at 30 ms precision, and Chapter 12 exits to Home with a course-complete message.
+The latest production main first reverted PRs #35, #34, and #33, removing Story Finale UI, routes, progress integration, and the story-conversation API while preserving the concept in the product backlog. On top of that clean production state, the former Pinocchio Session 1 pilot is now a data-driven Chapter 1–12 Core course that preserves the Sing 2 Selecting → Watch → Mimic → Guess → Word interaction. All twelve Chapters have independent sequential progress, paid-plan Eleven v3 Lily British masters, exact line/Mimic timelines, original Living Storybook panoramas, 30 ms segment stops, item-level learner gates, and a final Chapter 12 Home exit.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
@@ -42,22 +42,23 @@ Generalized the former Session 1-only pilot into one data-driven Chapter 1–12 
 - scripts/generate-pinocchio-content-pack-audio.mjs
 - docs/ai-handoff/STATE.md
 - docs/ai-handoff/CONVERSATION.md
+- docs/product-backlog.md plus reverse reverts of the Story Finale files from PRs #33-#35
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Both content validators, `npx tsc --noEmit`, `git diff --check`, and a clean 40-route `next build` pass. The Core media validator confirms source Chapters 1–36 in order, twelve matching canonical/public MP3-timeline-art sets, 17.63 minutes of continuous Lily narration, 192 Watch lines, 360 Mimic units, 120 Guess items, and 120 Word items. Browser QA traversed every mode in Chapters 1–12, confirmed Chapter-only terminology, sequential locks, direct-route rejection, Chapter 1/2/12 real audio and art, Mimic arrow autoplay/active state, item-level forward gates, hidden Word cards after completion, Chapter 12 Home exit, responsive rendering, and zero console errors.
+After merging current production main, both Pinocchio content validators, `npx tsc --noEmit`, `git diff --check`, and a clean 40-route `next build` pass. The Core media validator confirms source Chapters 1–36 in order, twelve matching canonical/public MP3-timeline-art sets, 17.63 minutes of continuous Lily narration, 192 Watch lines, 360 Mimic units, 120 Guess items, and 120 Word items. Browser QA traversed every mode in Chapters 1–12 with real Chapter 1/2/12 media and zero console errors. The production Story Finale removal remains intact with no retelling routes.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-All twelve Core masters still need a human listen-through for emotion, pronunciation, and breath quality. Foundation/Studio media remains pending. Lily expires on 2026-12-31, the sixty-minute contract needs a learner/classroom pacing pilot, and Korean-market public-domain status still requires confirmation. This R&D thread must not deploy production.
+All twelve Core masters still need a human listen-through for emotion, pronunciation, and breath quality. Foundation/Studio media remains pending. Lily expires on 2026-12-31, the sixty-minute contract needs a learner/classroom pacing pilot, and Korean-market public-domain status still requires confirmation. Existing retelling evaluation rows may remain in Supabase but are no longer read or shown.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Have the user review the local Chapter 1–12 Core course, especially Lily's delivery and one sixty-minute classroom run. If approved, hand the versioned packs, media, routes, and acceptance criteria to the main development thread for controlled integration; do not deploy from this R&D thread.
+Run the post-merge validators and production build, push the merged commit to `main`, then verify the live Chapter 1–12 route, audio, art, and Story Finale absence.
 <!-- HANDOFF:NEXT_ACTION:END -->

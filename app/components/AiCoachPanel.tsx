@@ -19,6 +19,12 @@ type AiCoachPanelProps = {
   continueLabel?: string;
   fallbackLabel?: string;
   showScore?: boolean;
+  showTranscript?: boolean;
+  mimicCue?: {
+    src: string;
+    start: number;
+    end: number;
+  };
 };
 
 const MAX_RECORDING_MS = 12_000;
@@ -49,6 +55,8 @@ export default function AiCoachPanel({
   continueLabel = '다음 문장',
   fallbackLabel = '이번에는 건너뛰기',
   showScore = true,
+  showTranscript = true,
+  mimicCue,
 }: AiCoachPanelProps) {
   const [state, setState] = useState<CoachState>('idle');
   const [result, setResult] = useState<AiCoachResult | null>(null);
@@ -64,6 +72,46 @@ export default function AiCoachPanel({
   const recordingUrlRef = useRef<string | null>(null);
   const playbackRef = useRef<HTMLAudioElement | null>(null);
   const playbackDoneRef = useRef<(() => void) | null>(null);
+  const cueVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [cueMode, setCueMode] = useState<'idle' | 'muted' | 'sound'>('idle');
+
+  const playCue = useCallback(
+    async (withSound: boolean) => {
+      const video = cueVideoRef.current;
+      if (!video || !mimicCue) return;
+
+      video.pause();
+      video.muted = !withSound;
+      video.currentTime = mimicCue.start;
+      setCueMode(withSound ? 'sound' : 'muted');
+
+      try {
+        await video.play();
+      } catch {
+        setCueMode('idle');
+      }
+    },
+    [mimicCue]
+  );
+
+  const handleCueTimeUpdate = useCallback(() => {
+    const video = cueVideoRef.current;
+    if (!video || !mimicCue || video.currentTime < mimicCue.end) return;
+    video.pause();
+    video.currentTime = mimicCue.start;
+    setCueMode('idle');
+  }, [mimicCue]);
+
+  useEffect(() => {
+    const video = cueVideoRef.current;
+    if (!video || !mimicCue || (state !== 'idle' && state !== 'recording')) return;
+
+    const startMutedCue = () => void playCue(false);
+    video.addEventListener('loadedmetadata', startMutedCue);
+    if (video.readyState >= HTMLMediaElement.HAVE_METADATA) startMutedCue();
+
+    return () => video.removeEventListener('loadedmetadata', startMutedCue);
+  }, [mimicCue, playCue, state]);
 
   const releaseRecorder = useCallback(() => {
     if (stopTimerRef.current) {
@@ -134,6 +182,7 @@ export default function AiCoachPanel({
   useEffect(
     () => () => {
       releaseRecorder();
+      cueVideoRef.current?.pause();
       playbackDoneRef.current?.();
       if (recordingUrlRef.current) URL.revokeObjectURL(recordingUrlRef.current);
     },
@@ -240,13 +289,14 @@ export default function AiCoachPanel({
       startedAtRef.current = performance.now();
       recorder.start();
       setState('recording');
+      void playCue(false);
       stopTimerRef.current = setTimeout(stopRecording, MAX_RECORDING_MS);
     } catch {
       releaseRecorder();
       setError('마이크 권한을 허용한 뒤 다시 시도해 주세요.');
       setState('error');
     }
-  }, [analyze, attempt, clearRecording, onResult, playRecording, releaseRecorder, saveRecording, stopRecording]);
+  }, [analyze, attempt, clearRecording, onResult, playCue, playRecording, releaseRecorder, saveRecording, stopRecording]);
 
   const retry = useCallback(() => {
     clearRecording();
@@ -256,9 +306,26 @@ export default function AiCoachPanel({
     setState('idle');
   }, [clearRecording]);
 
+  const cuePlayer = mimicCue ? (
+    <div className="relative mt-4 aspect-video overflow-hidden rounded-xl border border-white/15 bg-black">
+      <video
+        ref={cueVideoRef}
+        src={mimicCue.src}
+        playsInline
+        preload="metadata"
+        muted
+        className="h-full w-full object-contain"
+        onTimeUpdate={handleCueTimeUpdate}
+      />
+      <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-black tracking-[0.12em] text-white">
+        {cueMode === 'sound' ? 'SOUND' : 'MUTE'}
+      </span>
+    </div>
+  ) : null;
+
   return (
-    <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/75 px-4 py-6">
-      <div className="w-full max-w-xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl backdrop-blur sm:p-7">
+    <div className="absolute inset-0 z-40 flex overflow-y-auto bg-black/75 px-4 py-6">
+      <div className="m-auto w-full max-w-xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl backdrop-blur sm:p-7">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">
           {eyebrow || `AI Coach · Line ${String(lineNumber).padStart(2, '0')}`}
         </p>
@@ -273,6 +340,25 @@ export default function AiCoachPanel({
                 {targetPreview}
               </p>
             )}
+            {cuePlayer}
+            {mimicCue && (
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  className="rounded-xl border border-white/20 px-3 py-2 text-sm font-bold text-white transition hover:bg-white/10"
+                  onClick={() => void playCue(false)}
+                >
+                  무음 장면 다시 보기
+                </button>
+                <button
+                  type="button"
+                  className="rounded-xl border border-white/20 px-3 py-2 text-sm font-bold text-white transition hover:bg-white/10"
+                  onClick={() => void playCue(true)}
+                >
+                  소리 다시 듣기
+                </button>
+              </div>
+            )}
             <p className="mt-1 text-xs text-zinc-500">녹음은 분석에만 사용되며 Mimic에 저장되지 않아요.</p>
             <button
               type="button"
@@ -286,8 +372,9 @@ export default function AiCoachPanel({
 
         {state === 'recording' && (
           <>
+            {cuePlayer}
             <div className="mx-auto mt-5 h-4 w-4 animate-pulse rounded-full bg-red-500" />
-            <p className="mt-3 font-semibold text-white">듣고 있어요…</p>
+            <p className="mt-3 font-semibold text-white">장면에 맞춰 말해 보세요…</p>
             {targetPreview && <p className="mt-3 text-lg font-bold text-white">{targetPreview}</p>}
             <button
               type="button"
@@ -341,12 +428,14 @@ export default function AiCoachPanel({
             ) : (
               <p className="mt-5 text-2xl font-black text-white">분석이 끝났어요</p>
             )}
-            <div className="mt-4 rounded-xl border border-white/15 bg-black/25 px-4 py-4 text-left">
-              <p className="text-xs font-bold text-[#60D96C]">AI가 이렇게 들었어요</p>
-              <p className="mt-2 text-lg font-bold text-white sm:text-xl">
-                {result.heardText || '음성을 인식하지 못했어요'}
-              </p>
-            </div>
+            {showTranscript && (
+              <div className="mt-4 rounded-xl border border-white/15 bg-black/25 px-4 py-4 text-left">
+                <p className="text-xs font-bold text-[#60D96C]">AI가 이렇게 들었어요</p>
+                <p className="mt-2 text-lg font-bold text-white sm:text-xl">
+                  {result.heardText || '음성을 인식하지 못했어요'}
+                </p>
+              </div>
+            )}
             {recordingUrl && (
               <button
                 type="button"

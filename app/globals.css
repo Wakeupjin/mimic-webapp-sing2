@@ -226,6 +226,39 @@ body {
   text-align: center;
 }
 
+.lesson-completion-actions {
+  pointer-events: auto;
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(2rem, 8vw, 12rem);
+}
+
+.lesson-completion-item {
+  display: flex;
+  width: clamp(9.5rem, 14.5vw, 17.4rem);
+  flex-direction: column;
+  align-items: center;
+}
+
+.lesson-completion-caption {
+  margin-top: 0.35rem;
+  color: var(--mimic);
+  font-family: var(--font-bm-hanna-pro), sans-serif;
+  font-size: clamp(1rem, 2.2vw, 2.6rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.lesson-completion-item:first-child .lesson-completion-caption {
+  visibility: hidden;
+}
+
+.lesson-results .lesson-completion-actions {
+  margin-top: clamp(1.5rem, 4vw, 3.5rem);
+}
+
 .lesson-stage {
   height: 100dvh;
   padding-top: max(0.4rem, env(safe-area-inset-top));
@@ -1625,6 +1658,62 @@ body {
 }
 
 /* 휴대폰 세로는 학습 순서가 위→아래로 읽히도록 1열 4단으로 배치합니다. */
+@media (orientation: portrait) and (max-width: 1024px) {
+  .learning-stage.watch-stage,
+  .learning-stage.watch-stage.is-compact {
+    padding-top: max(0.75rem, env(safe-area-inset-top));
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .learning-stage .lesson-primary {
+    justify-content: center;
+  }
+
+  .learning-stage .lesson-dock {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .learning-content-movie.learning-stage-watch .lesson-media,
+  .learning-content-movie.learning-stage-mimic .lesson-media,
+  .learning-content-movie.learning-stage-guess .lesson-media,
+  .learning-content-movie.learning-stage-word .word-video {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .learning-content-movie.learning-stage-word .word-board.is-arranging {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .learning-content-movie.learning-stage-word .word-board.is-arranging .word-chips-side {
+    display: none;
+  }
+
+  .learning-content-movie.learning-stage-word .word-board.is-arranging .word-chips-mobile {
+    display: flex;
+  }
+
+  .learning-content-movie.learning-stage-word .word-board.is-arranging .word-video {
+    max-width: 100%;
+  }
+
+  .learning-content-movie.learning-stage-word .word-main-stack {
+    justify-content: center;
+  }
+
+  .learning-content-movie.learning-stage-word .word-main-stack > div:first-child {
+    min-height: 0;
+    flex: 0 0 auto;
+  }
+}
+
 @media (orientation: portrait) and (max-width: 540px) {
   .select-content {
     padding: 0.75rem 0 max(2rem, env(safe-area-inset-bottom));
@@ -1870,58 +1959,301 @@ body {
   }
 }
 
-.rotate-gate {
-  display: none;
-}
-
-.rotate-gate-phone {
-  width: 52px;
-  height: 88px;
-  border: 4px solid var(--mimic);
-  border-radius: 12px;
-  animation: rotate-phone 1.6s ease-in-out infinite;
-}
-
-.rotate-gate-title {
-  margin: 1.4rem 1.2rem 0;
-  color: #fff;
-  font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif;
-  font-size: 1.35rem;
-  font-weight: 800;
-  line-height: 1.3;
-  text-align: center;
-}
-
-.rotate-gate-sub {
-  margin: 0.55rem 1.2rem 0;
-  color: #9ca3af;
-  font-family: "Encode Sans", sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-@keyframes rotate-phone {
-  0%,
-  35% {
-    transform: rotate(0deg);
-  }
-  55%,
-  100% {
-    transform: rotate(90deg);
-  }
-}
-
 @media (orientation: portrait) and (max-width: 540px) {
-  .rotate-gate {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .learning-stage.watch-stage,
+  .learning-stage.watch-stage.is-compact {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+    padding-left: max(0.6rem, env(safe-area-inset-left));
+    padding-right: max(0.6rem, env(safe-area-inset-right));
+  }
+
+  .learning-stage .lesson-primary {
     justify-content: center;
-    background: #000;
-    padding: 1.5rem;
+  }
+
+  .learning-stage .watch-frame {
+    border-width: 6px;
+    border-radius: 20px;
+  }
+
+  .learning-stage .watch-back,
+  .learning-stage .cinema-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .learning-stage .lesson-top-actions {
+    gap: 0.35rem;
+  }
+
+  .learning-stage .watch-skip {
+    height: 34px;
+    min-width: 66px;
+    border-radius: 17px;
+    font-size: 0.78rem;
+  }
+
+  .learning-content-movie.learning-stage-watch .lesson-media,
+  .learning-content-movie.learning-stage-mimic .lesson-media,
+  .learning-content-movie.learning-stage-guess .lesson-media {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .learning-stage .lesson-start-overlay {
+    padding-inline: 2.65rem;
+  }
+
+  .learning-stage .lesson-start-card {
+    max-width: 19rem;
+    padding: 0.7rem 0.85rem;
+    border-radius: 14px;
+  }
+
+  .learning-stage .lesson-start-title {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+
+  .learning-stage .lesson-start-description {
+    margin-top: 0.3rem;
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  .learning-stage .lesson-start-action {
+    min-width: 4.5rem;
+    margin-top: 0.55rem;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  .learning-stage .watch-controls {
+    padding-top: 0.35rem;
+  }
+
+  .learning-stage-watch .watch-bar {
+    height: 12px;
+    margin-top: 1.7rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .learning-stage-watch .watch-bar-thumb {
+    width: 12px;
+    height: 28px;
+  }
+
+  .learning-stage-watch .watch-time {
+    bottom: calc(100% + 6px);
+    padding: 0.25rem 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  .learning-stage-watch .watch-chapter {
+    font-size: 1.2rem;
+  }
+
+  .learning-stage .lesson-dock {
+    gap: 0.35rem;
+  }
+
+  .learning-stage .mimic-count {
+    height: 2.6rem;
+    min-width: 7.25rem;
+    padding-inline: 0.8rem;
+    border-radius: 15px;
+    font-size: 1.05rem;
+  }
+
+  .learning-stage .mimic-count-chevron {
+    width: 17px;
+    height: 9px;
+  }
+
+  .learning-stage-mimic .mimic-dock {
+    --ctrl-size: clamp(1.75rem, calc((100vw - 5.75rem) / 8), 2.2rem);
+    --ctrl-nav: 1.55rem;
+    --ctrl-gap: 0.125rem;
+  }
+
+  .learning-stage-mimic .mimic-dock > div:first-child,
+  .learning-stage-mimic .mimic-bar {
+    width: 100%;
+  }
+
+  .learning-stage-mimic .mimic-bar {
+    min-height: 3.15rem;
+    padding-inline: 0.2rem;
+    border-radius: 15px;
+  }
+
+  .learning-stage-mimic .mimic-bar .ctrl-slot {
+    border-radius: 10px;
+  }
+
+  .learning-stage-guess .guess-dock {
+    --ctrl-nav: 1.9rem;
+  }
+
+  .learning-stage-guess .guess-abc {
+    width: 100%;
+    gap: clamp(0.35rem, 2.8vw, 0.7rem);
+  }
+
+  .learning-stage-guess .guess-opt {
+    width: clamp(3.2rem, 16vw, 3.8rem);
+    height: clamp(3.2rem, 16vw, 3.8rem);
+    border-width: 5px;
+    border-radius: 18px;
+    font-size: 1.55rem;
+  }
+
+  .learning-stage-word .word-main-stack {
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .learning-stage-word .word-video {
+    max-width: 100%;
+  }
+
+  .learning-stage-word .word-chips-mobile {
+    max-height: 17dvh;
+    margin-top: 0.35rem;
+    gap: 0.25rem;
+  }
+
+  .learning-stage-word .word-chip.is-compact {
+    min-height: 2.15rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 12px;
+    font-size: 0.78rem;
+  }
+
+  .learning-stage-word .word-dock {
+    overflow: visible;
+    padding-top: 0.25rem;
+    --ctrl-size: 2.2rem;
+    --ctrl-nav: 1.75rem;
+    --ctrl-gap: 0.2rem;
+  }
+
+  .learning-stage-word .word-bar {
+    min-height: 3rem;
+    padding: 0.25rem 0.4rem;
+    border-radius: 15px;
+  }
+
+  .learning-stage-word .word-submit {
+    width: 4.4rem;
+    margin-block: 0.25rem;
+  }
+
+  .learning-stage-word .word-sentence {
+    left: 3%;
+    right: 3%;
+    gap: 0.2rem 0.4rem;
+    padding: 0.45rem 0.55rem;
+    border-radius: 14px;
+  }
+
+  .learning-stage-word .word-sentence-item {
+    font-size: 0.95rem;
+  }
+
+  .learning-stage .mimic-lines {
+    inset: auto 0.6rem 0.6rem;
+    width: auto;
+    height: min(44dvh, 22rem);
+    border-width: 3px;
+    border-radius: 18px;
+    background: rgba(32, 30, 30, 0.98);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.65);
+  }
+
+  .learning-stage .mimic-line {
+    min-height: 3.8rem;
+    padding-inline: 0.8rem;
+    border-bottom-width: 2px;
+    font-size: 1rem;
+  }
+
+  .learning-stage .lesson-completion-overlay {
+    overflow-y: auto;
+    padding: 0.75rem;
+  }
+
+  .learning-stage .lesson-completion-actions {
+    gap: 0.75rem;
+    padding-inline: 0.25rem;
+  }
+
+  .learning-stage .lesson-completion-item {
+    width: min(42vw, 9.2rem);
+  }
+
+  .learning-stage .lesson-completion-button {
+    height: 4.25rem;
+    border-width: 6px;
+    border-radius: 24px;
+    font-size: 1.25rem;
+  }
+
+  .learning-stage .lesson-completion-caption {
+    margin-top: 0.2rem;
+    font-size: 1rem;
+  }
+
+  .learning-stage .lesson-completion-button .select-chameleon {
+    width: 48px;
+    translate: -50% -58%;
+  }
+
+  .learning-stage .lesson-feedback-panel {
+    bottom: 0.75rem;
+    padding-inline: 0.75rem;
+  }
+
+  .learning-stage .lesson-feedback-card,
+  .learning-stage .lesson-results-card {
+    padding: 0.8rem;
+    border-radius: 14px;
+  }
+
+  .learning-stage .lesson-feedback-card > div {
+    margin-top: 0.65rem;
+    gap: 0.5rem;
+  }
+
+  .learning-stage .lesson-feedback-card button {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .learning-stage .lesson-results {
+    max-height: 100%;
+    overflow-y: auto;
+  }
+
+  .learning-stage .lesson-results-card {
+    max-height: calc(100% - 5.5rem);
+    overflow-y: auto;
+  }
+
+  .learning-stage .lesson-results-card ol {
+    margin-top: 0.65rem;
+  }
+
+  .learning-stage .lesson-results-card li {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.78rem;
+  }
+
+  .learning-stage .lesson-results .lesson-completion-actions {
+    margin-top: 0.75rem;
+    flex-shrink: 0;
   }
 }

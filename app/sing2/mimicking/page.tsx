@@ -20,6 +20,7 @@ import { useRequireModeAccess } from "../../lib/useRequireModeAccess";
 import { getLessonMedia, isBookId, lessonPath, lessonSelectHref } from "../../lib/lessonMedia";
 import { requestAppFullscreen } from "../../utils/device";
 import LessonShell from "../../components/LessonShell";
+import LessonCompletionActions from "../../components/LessonCompletionActions";
 import { FullscreenIcon, HeaderIconButton } from "../../components/HeaderIcons";
 import PauseOverlay from "../../components/PauseOverlay";
 import { MIMICKING_SEGMENT_TAIL_SECONDS } from "../../constants/timings";
@@ -692,6 +693,7 @@ function MimickingPageContent() {
   return (
     <LessonShell
       hideHeader
+      stageClassName={`learning-stage learning-stage-mimic ${isBookLesson ? "learning-content-book" : "learning-content-movie"}`}
       video={
             <div className="relative h-full w-full">
               <div className={`absolute inset-0 ${showNextCta ? "opacity-10" : ""}`}>
@@ -782,7 +784,7 @@ function MimickingPageContent() {
               >
                 <img src="/home/back.svg" alt="" className="h-full w-full" />
               </Link>
-              <div className="absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
+              <div className="lesson-top-actions absolute right-3 top-3 z-20 flex items-center gap-2 sm:right-4 sm:top-4">
                 <HeaderIconButton label={isFullscreen ? "전체화면 종료" : "전체화면"} onClick={toggleFullscreen}>
                   <FullscreenIcon active={isFullscreen} />
                 </HeaderIconButton>
@@ -825,8 +827,8 @@ function MimickingPageContent() {
               {isSequencePaused && !showNextCta && <PauseOverlay />}
 
               {isFeedbackOpen && !showNextCta && (
-                <div className="absolute inset-x-0 bottom-5 z-30 flex justify-center px-4 sm:bottom-8">
-                  <div className="w-full max-w-xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-4 text-center shadow-2xl backdrop-blur sm:p-6">
+                <div className="lesson-feedback-panel absolute inset-x-0 bottom-5 z-30 flex justify-center px-4 sm:bottom-8">
+                  <div className="lesson-feedback-card w-full max-w-xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-4 text-center shadow-2xl backdrop-blur sm:p-6">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">
                       Line {String(currentIndex + 1).padStart(2, '0')}
                     </p>
@@ -852,9 +854,9 @@ function MimickingPageContent() {
               )}
         
             {showNextCta && (
-              <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 px-4">
-                <div className="pointer-events-auto flex w-full max-w-4xl flex-col items-center">
-                  <div className="w-full max-w-2xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl sm:p-7">
+              <div className="lesson-completion-overlay pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 px-4">
+                <div className="lesson-results pointer-events-auto flex w-full max-w-4xl flex-col items-center">
+                  <div className="lesson-results-card w-full max-w-2xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl sm:p-7">
                     <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#60D96C]">오늘의 복습</p>
                     <h2 className="mt-1 text-xl font-bold text-white sm:text-2xl">어려웠던 문장 TOP 3</h2>
                     {Object.entries(sentenceFeedback).filter(([, value]) => value === 'hard').length > 0 ? (
@@ -875,12 +877,8 @@ function MimickingPageContent() {
                       </p>
                     )}
                   </div>
-                  <div className="mt-[clamp(4.5rem,9vw,7.5rem)] flex items-start justify-center gap-[clamp(2rem,8vw,12rem)]">
-                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                    <button
-                      type="button"
-                      className="select-mode"
-                      onClick={() => {
+                  <LessonCompletionActions
+                    onAgain={() => {
                         clearStepTimeout();
                         pauseVideo();
                         resetMimickingState();
@@ -891,30 +889,15 @@ function MimickingPageContent() {
                         sentenceFeedbackRef.current = {};
                         setSentenceFeedback({});
                       }}
-                    >
-                      Again
-                    </button>
-                    <p className="select-here" style={{ visibility: "hidden" }}>Let’s go</p>
-                  </div>
-                    <div className="flex w-[clamp(9.5rem,14.5vw,17.4rem)] flex-col items-center">
-                    <button
-                      type="button"
-                      className="select-mode is-open"
-                      onClick={handleNext}
-                    >
-                      <img src="/Subject.png" alt="" className="select-chameleon" />
-                      Next
-                    </button>
-                    <p className="cta-go">Let’s go</p>
-                    </div>
-                  </div>
+                    onNext={handleNext}
+                  />
                 </div>
               </div>
             )}
           </div>
       }
       controls={
-          <div className="mimic-dock">
+          <div className="lesson-dock mimic-dock">
             <PlaybackControls
               variant="cinema"
               onPrev={handlePrev}

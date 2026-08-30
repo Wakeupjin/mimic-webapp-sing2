@@ -802,3 +802,205 @@ Home CTA, mobile/desktop rendering, and zero console errors.
 pending. Foundation/Studio media, long-term Lily replacement, classroom pacing,
 and Korean-market rights confirmation remain separate follow-ups. No deployment
 was performed.
+## 2026-08-29 10:30:36 — codex / work started
+
+Objective: Allow movie learning in mobile portrait and standardize control layout across Watch, Mimic, Guess, and Word without changing the existing MimiC visual language
+
+
+## 2026-08-29 10:48:58 — user / request
+
+Allow Sing 2 learning in mobile portrait and remove irregular control sizing, ordering, spacing, and completion actions across Watch, Mimic, Guess, and Word while preserving the established MimiC design.
+
+
+## 2026-08-29 10:48:58 — codex / checkpoint
+
+Removed the movie-only portrait rotation gate; normalized the four movie modes around one 16:9 portrait stage; standardized top actions, start overlays, Again/Next completion actions, and portrait control docks; kept book-specific portrait media behavior separate; added a development layout fixture for responsive QA.
+
+**Next action:** Commit the isolated branch and wait for explicit approval before preview or production deployment.
+
+**Validation:** TypeScript passed; Next.js production build passed; browser QA covered 320x568 and 390x844 phone portrait, phone landscape, 820x1180 pad portrait, pad landscape, and desktop across Watch/Mimic/Guess/Word with no document overflow or clipped controls.
+
+**Files:**
+- app/layout.tsx, app/components/RotateGate.tsx, app/components/LessonShell.tsx, app/components/ClickToStartOverlay.tsx, app/components/LessonCompletionActions.tsx, app/globals.css, app/sing2/watching/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/guessing/page.tsx, app/sing2/word/page.tsx, app/dev/layout-lab/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
+
+**Open risks:** Authenticated production media flows were not exercised on this clean local origin; the responsive fixture mirrors production class structures, while event-handler behavior remains unchanged except removal of RotateGate.
+
+
+## 2026-08-29 10:48:58 — codex / completed
+
+Movie learning now works in portrait with consistent stage ratios and control hierarchy across all four modes; book portrait behavior remains intentionally distinct where its static cover benefits from it.
+
+**Validation:** TypeScript and Next.js production build passed; responsive browser checks found no horizontal or vertical document overflow at tested phone, tablet, landscape, and desktop sizes.
+
+## 2026-08-29 11:02:34 — codex / work started
+
+Objective: Deploy the verified movie portrait controls to production through the existing GitHub and Vercel pipeline
+
+
+## 2026-08-29 11:02:34 — user / request
+
+Deploy the verified mobile portrait and standardized movie controls change to production.
+
+
+## 2026-08-29 11:02:35 — codex / checkpoint
+
+Deployment branch is clean, build-verified, and exactly one commit ahead of current origin/main with no divergence. Push was not executed because the host requires explicit approval to send the private source branch to the configured GitHub remote.
+
+**Next action:** After explicit user approval, commit this handoff checkpoint, push codex/movie-portrait-controls to https://github.com/Wakeupjin/mimic-webapp-sing2.git, create and merge the PR, then verify the production Vercel URL.
+
+**Validation:** origin/main fetched successfully; branch divergence is 0 behind and 1 ahead; working tree was clean before the deployment handoff update; production build already passed.
+
+**Files:**
+- docs/ai-handoff/CONVERSATION.md, docs/ai-handoff/STATE.md
+
+**Open risks:** GitHub push requires explicit user authorization for source-code egress to the configured remote. Vercel MCP tools are not available in this session, so deployment status must be verified through the existing GitHub integration and the public production URL.
+
+## 2026-08-29 12:10:56 — codex / work started
+
+Objective: Replace Mimic Check memory prompt with same-segment muted scene replay while never exposing the English sentence
+
+
+## 2026-08-29 12:11:02 — user / request
+
+Implement Mimic Check as sentence-hidden same-scene muted replay, with sound replay available only when needed.
+
+## 2026-08-29 12:18:34 — codex / checkpoint
+
+Mimic Check now replays the exact target video segment muted on entry and again when recording starts; optional sound replay is available, while target and transcript text remain hidden for Mimic tasks.
+
+**Next action:** Keep the branch local for user review; push or deploy only after explicit approval.
+
+**Validation:** TypeScript and production build passed. Browser fixture confirmed muted autoplay, exact segment stop/reset, optional sound replay, no target sentence in DOM, and no horizontal overflow on phone, pad, or desktop.
+
+**Files:**
+- app/components/AiCoachPanel.tsx, app/placement/page.tsx, docs/ai-handoff/PROJECT_CONTEXT.md
+
+**Open risks:** A real microphone permission and AI response run still requires an authenticated user and was not triggered during automated browser QA.
+
+
+## 2026-08-29 12:18:34 — codex / completed
+
+Mimic Check is now scene-led rather than memory-led: the learner receives the same clip muted, can replay sound only when needed, and never sees the target English sentence or Mimic transcript.
+
+**Validation:** Production build passed; responsive browser QA passed; muted and sound replay behaviors were verified against the real Sing 2 media segment.
+
+## 2026-08-29 12:20:59 — codex / work started
+
+Objective: Diagnose and fix the placement 55-second scene failing to start on iPad after grade selection
+
+
+## 2026-08-29 12:20:59 — user / request
+
+On iPad, the 55-second placement scene does not appear or play regardless of which grade band is selected; diagnose and fix it.
+
+
+## 2026-08-29 12:35:26 — codex / checkpoint
+
+Fixed placement playback gating for iPad-class devices: preload waiting events no longer lock the start button, the 55-second scene uses an MP4 media fragment, a poster remains visible while seeking, and explicit loading/retry/timeout states replace the blank stall.
+
+**Next action:** Keep the combined Mimic Check and iPad playback fixes local until the user explicitly requests preview or production deployment.
+
+**Validation:** TypeScript and production build passed. In a 1024x1366 browser viewport, every grade selection reached an enabled 55-second start action; tapping it played the real Bunny CDN media at 288.5 seconds with no media error or horizontal overflow.
+
+**Files:**
+- app/placement/page.tsx
+
+**Open risks:** The automated browser is not Mobile Safari, so one real iPad Safari smoke test remains after deployment. The source is a 950 MB full-movie MP4; a dedicated 55-second CDN clip would be the strongest long-term latency fix.
+
+
+## 2026-08-29 12:35:26 — codex / completed
+
+Placement no longer mistakes iPad preload delay for active playback: the start action stays usable, gives visible loading/retry feedback, and seeks through a segment-specific media URL.
+
+**Validation:** Build passed; real media playback began at the intended 288.5-second scene in iPad-sized browser QA.
+
+
+## 2026-08-29 12:36:29 — codex / validation
+
+The initial iPad-sized reproduction showed preload waiting events disabling the 55-second start action before any tap. After guarding waiting/seeking behind an active play request, the start action remained enabled and real media played from 288.5 seconds; the redundant hidden full-movie video was also removed from watch/intro states.
+
+
+## 2026-08-29 12:36:29 — codex / completed
+
+Placement playback now remains actionable during iPad preload, requests only the needed media time range, avoids a duplicate hidden movie request, and exposes poster/loading/retry/timeout feedback instead of a blank stall.
+
+**Validation:** TypeScript and production build passed after the final duplicate-media cleanup; iPad-sized browser QA played the real segment from 288.5 seconds without a media error.
+
+## 2026-08-29 12:37:32 — codex / work started
+
+Objective: Render Sing 2 selecting only after profile, lesson list, and progress are all ready so the first visible state never repaints
+
+
+## 2026-08-29 12:37:32 — user / request
+
+Fix the Selecting hydration flash so its final progress, locks, and current-stage marker appear correctly on the first render without changing afterward.
+
+
+## 2026-08-29 12:44:36 — Codex / checkpoint
+
+Selecting now waits for the initial account profile, lesson list, and progress together, then commits and renders the final course state once. Token refreshes do not blank an already loaded profile.
+
+**Next action:** Commit the verified fix locally. Push or deploy only after explicit user instruction.
+
+**Validation:** TypeScript check and Next.js production build passed. A delayed-progress browser fixture showed only the neutral loading screen before data, followed by the correct Watch-complete and Mimic-current state without an intermediate mode DOM.
+
+**Files:**
+- app/contexts/AuthContext.tsx, app/components/AuthGate.tsx, app/sing2/selecting/page.tsx
+
+**Open risks:** The signed-in production account still needs a smoke test after a future deployment; this change has not been deployed.
+
+
+## 2026-08-29 12:44:36 — Codex / completed
+
+Removed the Selecting progress flash by gating the first visible render on complete profile, lessons, and progress data.
+
+**Validation:** Production build passed and delayed-data browser verification passed.
+## 2026-08-29 15:34:46 — Codex / work started
+
+Objective: Replace the decorative Story Finale with a meaning-first AI retell conversation and contextual scene hints
+
+
+## 2026-08-29 15:34:47 — user / request
+
+Replace BEGIN/MIDDLE/END and the decorative Finale with a clear interactive story conversation where component roles are obvious.
+
+
+## 2026-08-29 15:34:47 — user / decision
+
+Explicitly approved sending child recorded audio to the OpenAI API for analysis. Mimic must not persist raw audio or transcripts and must disclose the transfer before recording.
+
+
+## 2026-08-29 15:34:47 — Codex / checkpoint
+
+Built a linear meaning-first Story Finale: explicit OpenAI consent, child voice transcription and semantic AI follow-up, contextual scene hints only when needed, and completion metrics without raw audio or transcript persistence.
+
+**Next action:** Verify final build, confirm Vercel API key availability, then deploy through a reviewed PR and smoke-test production.
+
+**Validation:** TypeScript and production build passed before final copy refinements; browser QA passed at 1280x720, 390x844, and 320x568 for consent, prompt, response, and scene-hint states.
+
+**Files:**
+- app/sing2/retelling/StoryRetellExperience.tsx, app/sing2/retelling/page.tsx, app/api/story-conversation/route.ts, app/lib/storyConversation.ts, app/types/storyConversation.ts, app/types/storyRetell.ts
+
+**Open risks:** Live OpenAI voice-turn smoke testing depends on OPENAI_API_KEY being configured in Vercel; automated QA did not accept microphone permission.
+
+## 2026-08-29 17:07:29 — Codex / work started
+
+Objective: Remove Story Finale from production and move it to the product backlog
+
+
+## 2026-08-29 17:07:29 — user / request
+
+Remove the current Story Finale from the deployed service and move the concept to the backlog.
+
+## 2026-08-29 17:10:17 — Codex / checkpoint
+
+Reverted PRs #35, #34, and #33 in reverse order, removing Story Finale UI, routes, progress integration, and the story-conversation API. The app now exactly matches pre-Story commit 8ab9d7b and the concept is documented in the product backlog with re-entry gates.
+
+**Next action:** Commit the backlog note, push a PR, verify Vercel preview, merge, then confirm the production selector and route no longer expose Story Finale.
+
+**Validation:** npx tsc --noEmit passed; npx next build passed with no /sing2/retelling, /book/retelling, or /api/story-conversation route; app diff against pre-Story commit 8ab9d7b is empty.
+
+**Files:**
+- docs/product-backlog.md plus reverse reverts of the Story Finale files from PRs #33-#35
+
+**Open risks:** Existing retelling evaluation rows may remain in Supabase but are no longer read or shown; no production data was changed.

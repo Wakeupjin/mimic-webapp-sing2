@@ -33,6 +33,9 @@ sequence. The current MVP uses *Sing 2* video lessons and a public-domain
 - Resume should continue at the saved line, but a completed mode must reopen in
   a deliberate replay state rather than unexpectedly autoplaying its last line.
 - Onboarding timing and language should feel consistent across modes.
+- Mimic and Mimic Check never reveal the target English sentence. Learners
+  listen first, then use the same scene without sound as the speaking cue;
+  replaying the sound is an optional recovery action rather than the default.
 
 ## Product and design rules
 
@@ -40,14 +43,15 @@ sequence. The current MVP uses *Sing 2* video lessons and a public-domain
   rounded dark panels, bold condensed display type.
 - The chameleon is a functional guide or CTA, not filler decoration. On Word it
   should invite a click and react as if it receives the completed word.
-- Login, account, home, and selection screens must work naturally in mobile
-  portrait. Movie gameplay prefers landscape. Book Mimicking also supports a
-  usable portrait layout because it displays a static cover rather than video.
+- Login, account, home, selection, and every learning mode must work naturally
+  in mobile portrait. Landscape/fullscreen may improve movie immersion, but it
+  is a user choice rather than a hard gate. Book Mimicking keeps its portrait
+  layout because it displays a static cover rather than video.
 - Always check phone, tablet, laptop, and large-screen layouts. Fixed desktop
   widths must not create horizontal clipping on phones.
-- In mobile portrait Mimicking, keep all eight practice steps visible, place the
-  line counter separately, hide the redundant fullscreen control, and show line
-  text previews in the line picker.
+- In mobile portrait Mimicking, keep all eight practice steps visible and place
+  the line counter separately. Across Mimic, Guess, and Word, use the same dock
+  order and spacing rule: primary controls first, progress counter below.
 - Do not present review output as source code or a `.canvas.tsx` file. Show the
   rendered service, a real preview URL, screenshots, or a concise written result.
 

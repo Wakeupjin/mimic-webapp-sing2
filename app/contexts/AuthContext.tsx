@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../supabaseClient';
 import { getCurrentUser, getStudentProfile, type StudentProfile } from '../lib/auth';
@@ -9,6 +9,7 @@ interface AuthContextType {
   user: User | null;
   profile: StudentProfile | null;
   loading: boolean;
+  profileLoading: boolean;
   refreshProfile: () => Promise<void>;
 }
 
@@ -16,6 +17,7 @@ const AuthContext = createContext<AuthContextType>({
   user: null,
   profile: null,
   loading: true,
+  profileLoading: true,
   refreshProfile: async () => undefined,
 });
 
@@ -23,30 +25,52 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<StudentProfile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [profileLoading, setProfileLoading] = useState(true);
+  const profileUserIdRef = useRef<string | null>(null);
+  const profileRequestIdRef = useRef(0);
 
   const refreshProfile = async () => {
     if (!user) {
       setProfile(null);
+      profileUserIdRef.current = null;
       return;
     }
+    const requestId = ++profileRequestIdRef.current;
     const nextProfile = await getStudentProfile(user.id);
-    setProfile(nextProfile);
+    if (requestId === profileRequestIdRef.current) {
+      setProfile(nextProfile);
+      profileUserIdRef.current = user.id;
+    }
   };
 
   useEffect(() => {
     let cancelled = false;
 
     const loadProfile = async (nextUser: User | null) => {
+      const requestId = ++profileRequestIdRef.current;
       if (!nextUser) {
-        if (!cancelled) setProfile(null);
+        if (!cancelled) {
+          setProfile(null);
+          setProfileLoading(false);
+          profileUserIdRef.current = null;
+        }
         return;
       }
+      const shouldBlock = profileUserIdRef.current !== nextUser.id;
+      if (!cancelled && shouldBlock) setProfileLoading(true);
       try {
         const nextProfile = await getStudentProfile(nextUser.id);
-        if (!cancelled) setProfile(nextProfile);
+        if (!cancelled && requestId === profileRequestIdRef.current) {
+          setProfile(nextProfile);
+          profileUserIdRef.current = nextUser.id;
+        }
       } catch (error) {
         console.error('Profile load error:', error);
-        if (!cancelled) setProfile(null);
+        if (!cancelled && requestId === profileRequestIdRef.current) setProfile(null);
+      } finally {
+        if (!cancelled && requestId === profileRequestIdRef.current && shouldBlock) {
+          setProfileLoading(false);
+        }
       }
     };
 
@@ -63,6 +87,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           setUser(null);
           setProfile(null);
           setLoading(false);
+          setProfileLoading(false);
         }
       }
     };
@@ -85,7 +110,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, profile, loading, refreshProfile }}>
+    <AuthContext.Provider value={{ user, profile, loading, profileLoading, refreshProfile }}>
       {children}
     </AuthContext.Provider>
   );
