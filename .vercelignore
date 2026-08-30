@@ -6,9 +6,14 @@ assets/
 !public/prototype-audio/pinocchio-levels/voices/lily-british/*.mp3
 !public/prototype-audio/pinocchio-levels/voices/lily-american/*.mp3
 !public/prototype-audio/pinocchio-v2/session-*/lily-british/*.mp3
+!public/prototype-audio/pinocchio-v2/session-*/lily-british/mimic/core/*.mp3
 *.mov
 *.avi
 node_modules/
 .git/
 .env.local
 .env
+.pinocchio-human-review-import.lock.json
+.pinocchio-human-review-import.lock.json.human-review-*.tmp
+.pinocchio-human-review-backup/
+*.human-review-stage

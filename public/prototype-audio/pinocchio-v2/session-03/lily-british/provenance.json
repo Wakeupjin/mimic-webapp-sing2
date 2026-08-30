@@ -19,5 +19,15 @@
       "requestId": "41ZxnnydhtBnh0AS0eYk",
       "billedCharactersEstimate": 1234
     }
-  ]
+  ],
+  "boundarySafety": {
+    "version": "vad-clamped-v2",
+    "playbackIsolation": "independent-files",
+    "mimicAssetCount": 30,
+    "masterSha256": "6a90588b84ac84cd7a6b25dddf41c2d5dc76e4d243e4c40e8a2bc882e7421aa6",
+    "mimicAssetSetSha256": "f6aae499f7534a92afac29267f6a221ede99e6b5e6edf9c7130bca911e7ef60b",
+    "humanApprovedBoundaries": 0,
+    "releaseBlockedBoundaries": 0,
+    "pendingBoundaryIds": []
+  }
 }

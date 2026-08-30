@@ -42,3 +42,9 @@ next-env.d.ts
 
 # large video files
 public/videos/*.mp4
+
+# Pinocchio human-review importer crash recovery
+/.pinocchio-human-review-import.lock.json
+/.pinocchio-human-review-import.lock.json.human-review-*.tmp
+/.pinocchio-human-review-backup/
+*.human-review-stage

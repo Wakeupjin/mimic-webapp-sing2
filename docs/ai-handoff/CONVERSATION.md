@@ -1026,3 +1026,66 @@ Chapter 12 art returns `image/png`, and the removed Story Finale routes remain
 **Open risks:** Human listen-through, classroom pacing, Foundation/Studio
 media, Lily's 2026-12-31 retirement, and Korean-market rights confirmation
 remain follow-ups.
+
+## 2026-08-30 — user / request
+
+After hearing part of the next phrase (`Ma…`) at the end of Chapter 1 Mimic 01,
+asked to solve the boundary problem across all twelve Pinocchio chapters rather
+than patching one local timestamp.
+
+## 2026-08-30 — codex / checkpoint
+
+Rebuilt all twelve Core chapters so their 360 Mimic units use independent MP3s
+derived sample-accurately from the same continuous ElevenLabs masters. Mimic now
+plays each file to natural EOF instead of stopping a shared master with a browser
+timer, so event-loop or iPad stalls cannot advance into the next item. Watch,
+Guess, Word, progress, content IDs, and question mappings remain unchanged.
+
+A deterministic release receipt and two-stage release gate were added. Full
+local QA uses ffmpeg; Vercel uses a Node-only verifier that hashes the actual
+public master, timeline, provenance, and all 360 Mimic files. Preview builds may
+show the blocked content for QA, while production builds fail until the receipt
+is PASS.
+
+**Validation:** Boundary reconstruction, full structural/audio validation,
+Node-only receipt verification, TypeScript, and the 53-route preview production
+build pass. Of 348 adjacent boundaries, 320 have a measurable quiet cut and 28
+coarticulated cuts require human listening. Strict production validation fails
+as designed.
+
+**Next action:** Human-listen the 28 flagged boundaries and all twelve masters,
+record bound approvals, regenerate a PASS receipt, and seek explicit production
+deployment approval.
+
+**Open risks:** Independent files prevent next-item leakage, but human QA must
+still confirm that coarticulated cuts do not trim a phoneme from either side. No
+production deployment has been made from this branch.
+
+## 2026-08-30 — user / approval
+
+Approved proceeding with the full twelve-chapter human QA workflow after the
+system identified 28 coarticulated boundaries and twelve required master
+listen-throughs.
+
+## 2026-08-30 — codex / checkpoint
+
+Added a preview-only, mobile-first Pinocchio audio QA room at
+`/dev/pinocchio-audio-review`. A boundary cannot be judged until the left and
+right independent files reach natural EOF and the original master context
+crosses the cut. A chapter cannot be approved by scrubbing to its end: the page
+records per-second coverage and requires at least 98% plus natural EOF. Progress
+is stored locally under the current release hash and exported with a second
+deterministic hash covering exactly the 28 boundaries and 12 chapter masters.
+
+Added `scripts/import-pinocchio-human-review.mjs`, dry-run by default and
+`--apply` explicitly mutating. It reconstructs every current media binding and
+treats the browser playback audit as trusted owner attestation, requires a
+complete 28+12 PASS set with no recut issues, updates canonical/public files
+with a recovery journal, runs deterministic/strict release validators, and
+rolls back all touched files on failure or explicit `--recover`. Synthetic
+dry-run validation passed; a stale target hash was rejected. Browser QA found
+and fixed a normal media-abort event that initially prevented RIGHT natural-EOF
+credit.
+
+**Next action:** Push a Vercel preview, have the owner complete the 40 human
+checks, import the exported bundle, then seek explicit production approval.

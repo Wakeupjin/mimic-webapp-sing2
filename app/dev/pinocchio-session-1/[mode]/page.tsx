@@ -18,7 +18,6 @@ import { getChapterPack, TOTAL_CHAPTERS } from "../../pinocchio-chapters/data";
 import {
   chapterMedia,
   chapterRoot,
-  estimatedTimeline,
   MODE_ORDER,
   modeHref,
   parseChapterNumber,
@@ -32,7 +31,8 @@ import {
   mergeRemoteProgress,
   readCompleted,
 } from "../../pinocchio-chapters/localProgress";
-import type { LessonMode, PinocchioPack, Segment, Timeline, WordItem } from "../../pinocchio-chapters/types";
+import { validateCanonicalTimeline } from "../../pinocchio-chapters/timelineValidation";
+import type { LessonMode, MimicSegment, PinocchioPack, Segment, Timeline, WordItem } from "../../pinocchio-chapters/types";
 import styles from "../../pinocchio-chapters/pinocchio-chapters.module.css";
 
 const FOCUS_X = ["4%", "12%", "24%", "36%", "48%", "62%", "76%", "92%"];
@@ -43,6 +43,7 @@ type LessonContextValue = {
   pack: PinocchioPack;
   timeline: Timeline;
   audioSrc: string;
+  mimicAudioRoot: string;
 };
 
 const LessonContext = createContext<LessonContextValue | null>(null);
@@ -62,24 +63,26 @@ function useLesson() {
 
 function useLessonAudio(onFullEnded?: () => void) {
   const { audioSrc, timeline } = useLesson();
+  const expectedDuration = timeline.duration;
   const audioRef = useRef<HTMLAudioElement>(null);
   const segmentEndRef = useRef<number | null>(null);
   const segmentCallbackRef = useRef<(() => void) | null>(null);
   const fallbackTimerRef = useRef<number | null>(null);
   const boundaryTimerRef = useRef<number | null>(null);
+  const boundaryFrameRef = useRef<number | null>(null);
   const fullEndedRef = useRef(onFullEnded);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(timeline.duration);
+  const [duration, setDuration] = useState(expectedDuration);
   const [mediaMissing, setMediaMissing] = useState(false);
 
   useEffect(() => { fullEndedRef.current = onFullEnded; }, [onFullEnded]);
 
   useEffect(() => {
     setCurrentTime(0);
-    setDuration(timeline.duration);
+    setDuration(expectedDuration);
     setMediaMissing(false);
-  }, [audioSrc, timeline.duration]);
+  }, [audioSrc, expectedDuration]);
 
   const clearFallbackTimer = useCallback(() => {
     if (fallbackTimerRef.current !== null) window.clearTimeout(fallbackTimerRef.current);
@@ -87,8 +90,10 @@ function useLessonAudio(onFullEnded?: () => void) {
   }, []);
 
   const clearBoundaryTimer = useCallback(() => {
-    if (boundaryTimerRef.current !== null) window.clearInterval(boundaryTimerRef.current);
+    if (boundaryTimerRef.current !== null) window.clearTimeout(boundaryTimerRef.current);
     boundaryTimerRef.current = null;
+    if (boundaryFrameRef.current !== null) window.cancelAnimationFrame(boundaryFrameRef.current);
+    boundaryFrameRef.current = null;
   }, []);
 
   useEffect(() => () => {
@@ -104,16 +109,52 @@ function useLessonAudio(onFullEnded?: () => void) {
     if (callback) window.setTimeout(callback, 0);
   }, [clearBoundaryTimer]);
 
+  const stopAtBoundary = useCallback((audio: HTMLAudioElement) => {
+    const end = segmentEndRef.current;
+    if (end === null) return;
+    clearBoundaryTimer();
+    audio.pause();
+    audio.currentTime = Math.min(end, audio.duration || end);
+    setCurrentTime(audio.currentTime);
+    finishSegment();
+  }, [clearBoundaryTimer, finishSegment]);
+
+  const armBoundaryTimer = useCallback((audio: HTMLAudioElement) => {
+    clearBoundaryTimer();
+
+    const check = () => {
+      const end = segmentEndRef.current;
+      if (end === null || audio.paused) return;
+      if (audio.currentTime >= end) {
+        stopAtBoundary(audio);
+        return;
+      }
+      const remainingMs = Math.max(4, (end - audio.currentTime) * 1000);
+      boundaryTimerRef.current = window.setTimeout(check, Math.min(remainingMs, 120));
+    };
+
+    const checkFrame = () => {
+      const end = segmentEndRef.current;
+      if (end === null || audio.paused) return;
+      if (audio.currentTime >= end) {
+        stopAtBoundary(audio);
+        return;
+      }
+      boundaryFrameRef.current = window.requestAnimationFrame(checkFrame);
+    };
+
+    check();
+    if (segmentEndRef.current !== null && !audio.paused) {
+      boundaryFrameRef.current = window.requestAnimationFrame(checkFrame);
+    }
+  }, [clearBoundaryTimer, stopAtBoundary]);
+
   const onTimeUpdate = useCallback((audio: HTMLAudioElement) => {
     setCurrentTime(audio.currentTime);
-    if (segmentEndRef.current !== null && audio.currentTime >= segmentEndRef.current - 0.035) {
-      const end = segmentEndRef.current;
-      audio.pause();
-      audio.currentTime = Math.min(end, audio.duration || end);
-      setCurrentTime(audio.currentTime);
-      finishSegment();
+    if (segmentEndRef.current !== null && audio.currentTime >= segmentEndRef.current) {
+      stopAtBoundary(audio);
     }
-  }, [finishSegment]);
+  }, [stopAtBoundary]);
 
   const playRange = useCallback((segment: Segment, muted = false, onEnded?: () => void) => {
     const audio = audioRef.current;
@@ -128,15 +169,7 @@ function useLessonAudio(onFullEnded?: () => void) {
     setCurrentTime(segment.start);
     void audio.play()
       .then(() => {
-        boundaryTimerRef.current = window.setInterval(() => {
-          const currentAudio = audioRef.current;
-          const end = segmentEndRef.current;
-          if (!currentAudio || end === null || currentAudio.currentTime < end - 0.025) return;
-          currentAudio.pause();
-          currentAudio.currentTime = Math.min(end, currentAudio.duration || end);
-          setCurrentTime(currentAudio.currentTime);
-          finishSegment();
-        }, 30);
+        armBoundaryTimer(audio);
       })
       .catch(() => {
         clearBoundaryTimer();
@@ -145,9 +178,11 @@ function useLessonAudio(onFullEnded?: () => void) {
         segmentCallbackRef.current = null;
         setIsPlaying(false);
         setMediaMissing(true);
-        if (onEnded) fallbackTimerRef.current = window.setTimeout(onEnded, 260);
+        if (process.env.NODE_ENV !== "production" && onEnded) {
+          fallbackTimerRef.current = window.setTimeout(onEnded, 260);
+        }
       });
-  }, [clearBoundaryTimer, clearFallbackTimer, finishSegment]);
+  }, [armBoundaryTimer, clearBoundaryTimer, clearFallbackTimer]);
 
   const playFull = useCallback((restart = false) => {
     const audio = audioRef.current;
@@ -164,14 +199,22 @@ function useLessonAudio(onFullEnded?: () => void) {
     });
   }, [clearBoundaryTimer, clearFallbackTimer]);
 
-  const pause = useCallback(() => audioRef.current?.pause(), []);
+  const pause = useCallback(() => {
+    clearBoundaryTimer();
+    audioRef.current?.pause();
+  }, [clearBoundaryTimer]);
   const resume = useCallback(() => {
     if (!audioRef.current) return;
-    void audioRef.current.play().catch(() => {
-      setIsPlaying(false);
-      setMediaMissing(true);
-    });
-  }, []);
+    const audio = audioRef.current;
+    void audio.play()
+      .then(() => {
+        if (segmentEndRef.current !== null) armBoundaryTimer(audio);
+      })
+      .catch(() => {
+        setIsPlaying(false);
+        setMediaMissing(true);
+      });
+  }, [armBoundaryTimer]);
   const stop = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
@@ -199,7 +242,7 @@ function useLessonAudio(onFullEnded?: () => void) {
       onPause={() => setIsPlaying(false)}
       onTimeUpdate={(event) => onTimeUpdate(event.currentTarget)}
       onEnded={() => {
-        setCurrentTime(audioRef.current?.duration || timeline.duration);
+        setCurrentTime(audioRef.current?.duration || expectedDuration);
         setIsPlaying(false);
         if (segmentEndRef.current !== null) finishSegment();
         else fullEndedRef.current?.();
@@ -208,6 +251,141 @@ function useLessonAudio(onFullEnded?: () => void) {
   );
 
   return { audio, audioRef, isPlaying, currentTime, duration, mediaMissing, playRange, playFull, pause, resume, stop, seek };
+}
+
+/** Mimic uses one file per item, so completion comes from the media EOF—not a JavaScript cut timer. */
+function useMimicItemAudio() {
+  const { mimicAudioRoot } = useLesson();
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const callbackRef = useRef<(() => void) | null>(null);
+  const callbackTimerRef = useRef<number | null>(null);
+  const currentSrcRef = useRef("");
+  const expectedDurationRef = useRef<number | null>(null);
+  const playAttemptRef = useRef(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [mediaError, setMediaError] = useState("");
+
+  const clearCallbackTimer = useCallback(() => {
+    if (callbackTimerRef.current !== null) window.clearTimeout(callbackTimerRef.current);
+    callbackTimerRef.current = null;
+  }, []);
+
+  const durationMatchesManifest = useCallback((audio: HTMLAudioElement) => {
+    const expected = expectedDurationRef.current;
+    if (expected === null || !Number.isFinite(audio.duration)) return true;
+    const tolerance = Math.max(0.08, expected * 0.02);
+    return Math.abs(audio.duration - expected) <= tolerance;
+  }, []);
+
+  const failItem = useCallback((message: string) => {
+    clearCallbackTimer();
+    playAttemptRef.current += 1;
+    callbackRef.current = null;
+    audioRef.current?.pause();
+    setIsPlaying(false);
+    setMediaError(message);
+  }, [clearCallbackTimer]);
+
+  const finishItem = useCallback(() => {
+    clearCallbackTimer();
+    const callback = callbackRef.current;
+    callbackRef.current = null;
+    expectedDurationRef.current = null;
+    setIsPlaying(false);
+    if (callback) {
+      callbackTimerRef.current = window.setTimeout(() => {
+        callbackTimerRef.current = null;
+        callback();
+      }, 0);
+    }
+  }, [clearCallbackTimer]);
+
+  const playRange = useCallback((item: MimicSegment, muted = false, onEnded?: () => void) => {
+    const audio = audioRef.current;
+    if (!audio) {
+      setMediaError("Mimic 음원 재생기를 준비하지 못했어요.");
+      return;
+    }
+
+    const attempt = ++playAttemptRef.current;
+    const nextSrc = `${mimicAudioRoot}/${item.audio}?v=${item.audioSha256.slice(0, 16)}`;
+    clearCallbackTimer();
+    audio.pause();
+    callbackRef.current = onEnded || null;
+    expectedDurationRef.current = item.duration;
+    audio.muted = muted;
+    setMediaError("");
+
+    if (currentSrcRef.current !== nextSrc) {
+      currentSrcRef.current = nextSrc;
+      audio.src = nextSrc;
+      audio.load();
+    } else {
+      audio.currentTime = 0;
+    }
+
+    void audio.play()
+      .then(() => {
+        if (attempt !== playAttemptRef.current) return;
+        if (!durationMatchesManifest(audio)) {
+          failItem("Mimic 음원과 검수 정보가 달라 재생을 멈췄어요.");
+        }
+      })
+      .catch((error) => {
+        if (attempt !== playAttemptRef.current) return;
+        console.error("피노키오 Mimic 독립 음원 재생 실패:", error);
+        failItem("Mimic 음원을 불러오지 못했어요.");
+      });
+  }, [clearCallbackTimer, durationMatchesManifest, failItem, mimicAudioRoot]);
+
+  const pause = useCallback(() => audioRef.current?.pause(), []);
+  const resume = useCallback(() => {
+    if (!audioRef.current) return;
+    void audioRef.current.play().catch((error) => {
+      console.error("피노키오 Mimic 독립 음원 재개 실패:", error);
+      failItem("Mimic 음원을 다시 재생하지 못했어요.");
+    });
+  }, [failItem]);
+  const stop = useCallback(() => {
+    const audio = audioRef.current;
+    clearCallbackTimer();
+    playAttemptRef.current += 1;
+    callbackRef.current = null;
+    expectedDurationRef.current = null;
+    if (!audio) return;
+    audio.pause();
+    audio.muted = false;
+    if (Number.isFinite(audio.duration)) audio.currentTime = 0;
+  }, [clearCallbackTimer]);
+  useEffect(() => () => {
+    clearCallbackTimer();
+    playAttemptRef.current += 1;
+    callbackRef.current = null;
+    audioRef.current?.pause();
+  }, [clearCallbackTimer]);
+  const seek = useCallback((seconds: number) => {
+    const audio = audioRef.current;
+    if (!audio || !Number.isFinite(audio.duration)) return;
+    audio.currentTime = Math.max(0, Math.min(seconds, audio.duration));
+  }, []);
+
+  const audio = (
+    <audio
+      ref={audioRef}
+      preload="auto"
+      onLoadedMetadata={(event) => {
+        if (!durationMatchesManifest(event.currentTarget)) {
+          failItem("Mimic 음원과 검수 정보가 달라 재생을 멈췄어요.");
+        }
+      }}
+      onError={() => failItem("Mimic 음원을 불러오지 못했어요.")}
+      onPlay={() => setIsPlaying(true)}
+      onPause={() => setIsPlaying(false)}
+      onEnded={finishItem}
+    />
+  );
+
+  return { audio, isPlaying, mediaMissing: Boolean(mediaError), mediaError, playRange, pause, resume, stop, seek };
 }
 
 function activeSourceLine(time: number, timeline: Timeline) {
@@ -382,7 +560,7 @@ function MimicMode() {
   const [hardLines, setHardLines] = useState<number[]>([]);
   const [maxReached, setMaxReached] = useState(0);
   const stepTimerRef = useRef<number | null>(null);
-  const engine = useLessonAudio();
+  const engine = useMimicItemAudio();
   const activeLine = sourceLineForMimic(pack, current);
 
   const clearStepTimer = () => {
@@ -450,7 +628,12 @@ function MimicMode() {
         <StoryStage activeLine={activeLine} faded={complete} onClick={togglePause}>
           {engine.audio}
           <StageActions onSkip={complete ? undefined : finish} />
-          {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 연습 흐름은 계속 확인할 수 있어요</p> : null}
+          {engine.mediaMissing && !complete ? (
+            <div className={styles.mediaNotice} role="alert">
+              <span>{engine.mediaError}</span>
+              <button type="button" onClick={() => runStep(activeSlot ?? 0, current)}>다시 시도</button>
+            </div>
+          ) : null}
           {lineListOpen && !complete ? <MimicLineList total={total} currentIndex={current} canOpen={(index) => index <= maxReached} onSelect={(index) => chooseLine(index, true)} /> : null}
           {!started && !complete ? <ClickToStartOverlay onClick={() => runStep(0)} text="듣고 따라 말해요" description="먼저 듣고, 소리 없이 한 번 더 말하며 30개 문장을 연습해요." actionLabel="시작" /> : null}
           {paused && !complete ? <PauseOverlay /> : null}
@@ -721,6 +904,37 @@ function WordMode() {
   );
 }
 
+function LessonLoadGate({ title, description, onRetry }: {
+  title: string;
+  description: string;
+  onRetry?: () => void;
+}) {
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-black px-6 text-white">
+      <section
+        className="w-full max-w-md rounded-[28px] border border-[#303030] bg-[#171717] px-7 py-8 text-center shadow-2xl"
+        role={onRetry ? "alert" : "status"}
+        aria-live="polite"
+      >
+        <span className="text-xs font-black tracking-[0.2em] text-[#60d96c]">PINOCCHIO</span>
+        <h1 className="mt-3 text-2xl font-black">{title}</h1>
+        <p className="mt-3 text-sm leading-6 text-[#b7b7b7]">{description}</p>
+        {onRetry ? (
+          <button
+            type="button"
+            className="mt-6 min-h-12 w-full rounded-2xl bg-[#60d96c] px-5 py-3 font-black text-black transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#60d96c]"
+            onClick={onRetry}
+          >
+            다시 불러오기
+          </button>
+        ) : (
+          <div className="mx-auto mt-6 h-8 w-8 animate-spin rounded-full border-4 border-[#303030] border-t-[#60d96c]" aria-hidden="true" />
+        )}
+      </section>
+    </main>
+  );
+}
+
 export default function PinocchioLessonModePage() {
   const params = useParams<{ chapter?: string; mode: string }>();
   const router = useRouter();
@@ -730,12 +944,13 @@ export default function PinocchioLessonModePage() {
   const parsedChapter = parseChapterNumber(params.chapter);
   const chapterNumber = params.chapter === undefined ? 1 : parsedChapter;
   const pack = chapterNumber ? getChapterPack(chapterNumber) : undefined;
-  const fallbackTimeline = useMemo(
-    () => pack ? estimatedTimeline(pack) : null,
-    [pack]
-  );
-  const [timeline, setTimeline] = useState<Timeline | null>(fallbackTimeline);
+  const [timeline, setTimeline] = useState<Timeline | null>(null);
+  const [timelineStatus, setTimelineStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [timelineError, setTimelineError] = useState("");
+  const [timelineAttempt, setTimelineAttempt] = useState(0);
   const [allowed, setAllowed] = useState<boolean | null>(null);
+  const [accessError, setAccessError] = useState("");
+  const [accessAttempt, setAccessAttempt] = useState(0);
 
   useEffect(() => {
     if (loading || profileLoading) return;
@@ -747,59 +962,107 @@ export default function PinocchioLessonModePage() {
 
     let cancelled = false;
     const verifyAccess = async () => {
+      setAllowed(null);
+      setAccessError("");
       if (!chapterNumber || !pack || !MODE_ORDER.includes(mode)) {
         setAllowed(false);
         router.replace(chapterRoot(1));
         return;
       }
 
-      const rows = await fetchOwnProgress();
-      const progress = mergeRemoteProgress(rows);
-      if (!isMaster && !canOpenChapter(chapterNumber, progress)) {
-        setAllowed(false);
-        router.replace(chapterRoot(latestOpenChapter(progress)));
-        return;
-      }
+      try {
+        const rows = await fetchOwnProgress();
+        const progress = mergeRemoteProgress(rows);
+        if (!isMaster && !canOpenChapter(chapterNumber, progress)) {
+          setAllowed(false);
+          router.replace(chapterRoot(latestOpenChapter(progress)));
+          return;
+        }
 
-      const nextAllowed = isMaster || canOpenMode(mode, readCompleted(chapterNumber));
-      if (cancelled) return;
-      setAllowed(nextAllowed);
-      if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
+        const nextAllowed = isMaster || canOpenMode(mode, readCompleted(chapterNumber));
+        if (cancelled) return;
+        setAllowed(nextAllowed);
+        if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
+      } catch (error) {
+        if (cancelled) return;
+        console.error("피노키오 학습 권한 확인 실패:", error);
+        setAllowed(false);
+        setAccessError("학습 진도를 확인하지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.");
+      }
     };
     void verifyAccess();
     return () => { cancelled = true; };
-  }, [chapterNumber, isMaster, loading, mode, pack, profileLoading, router, user]);
+  }, [accessAttempt, chapterNumber, isMaster, loading, mode, pack, profileLoading, router, user]);
 
   useEffect(() => {
-    if (!chapterNumber || !fallbackTimeline) return;
+    if (!chapterNumber || !pack) return;
     const controller = new AbortController();
-    setTimeline(fallbackTimeline);
+    setTimeline(null);
+    setTimelineStatus("loading");
+    setTimelineError("");
 
-    void fetch(chapterMedia(chapterNumber).timelineSrc, { signal: controller.signal })
+    const timelineUrl = `${chapterMedia(chapterNumber).timelineSrc}?v=${pack.checksum.slice(0, 16)}`;
+    void fetch(timelineUrl, { cache: "no-store", signal: controller.signal })
       .then((response) => {
-        if (!response.ok) throw new Error(`Timeline returned ${response.status}`);
-        return response.json() as Promise<Timeline>;
+        if (!response.ok) throw new Error("Chapter 타임라인을 내려받지 못했습니다.");
+        return response.json() as Promise<unknown>;
       })
-      .then((nextTimeline) => {
-        const valid = Number.isFinite(nextTimeline.duration)
-          && nextTimeline.lines?.length === pack?.levels.core.lines.length
-          && nextTimeline.mimicItems?.length === pack?.levels.core.activities.mimic.items.length;
-        if (valid) setTimeline(nextTimeline);
+      .then((value) => {
+        if (controller.signal.aborted) return;
+        const result = validateCanonicalTimeline(value, pack);
+        if (!result.ok) throw new Error(result.message);
+        setTimeline(result.timeline);
+        setTimelineStatus("ready");
       })
-      .catch(() => {
-        if (!controller.signal.aborted) setTimeline(fallbackTimeline);
+      .catch((error: unknown) => {
+        if (controller.signal.aborted) return;
+        console.error("피노키오 타임라인 로딩 실패:", error);
+        setTimeline(null);
+        setTimelineStatus("error");
+        setTimelineError(
+          error instanceof Error && /[가-힣]/.test(error.message)
+            ? error.message
+            : "Chapter 오디오 정보를 읽지 못했습니다. 인터넷 연결을 확인해 주세요."
+        );
       });
 
     return () => controller.abort();
-  }, [chapterNumber, fallbackTimeline, pack]);
+  }, [chapterNumber, pack, timelineAttempt]);
 
-  if (loading || profileLoading || !user || allowed !== true || !chapterNumber || !pack || !timeline) return <main className="min-h-screen bg-black" />;
+  if (loading || profileLoading || !user || !chapterNumber || !pack) {
+    return <LessonLoadGate title="Chapter를 준비하고 있어요" description="계정과 학습 정보를 확인하는 중이에요." />;
+  }
+  if (accessError) {
+    return (
+      <LessonLoadGate
+        title="진도를 확인하지 못했어요"
+        description={accessError}
+        onRetry={() => setAccessAttempt((attempt) => attempt + 1)}
+      />
+    );
+  }
+  if (allowed !== true) {
+    return <LessonLoadGate title="학습 경로를 확인하고 있어요" description="현재 열 수 있는 Chapter와 단계를 찾는 중이에요." />;
+  }
+  if (timelineStatus === "error") {
+    return (
+      <LessonLoadGate
+        title="안전한 문장 구간을 확인하지 못했어요"
+        description={`${timelineError} 재생은 시작하지 않았어요.`}
+        onRetry={() => setTimelineAttempt((attempt) => attempt + 1)}
+      />
+    );
+  }
+  if (timelineStatus !== "ready" || !timeline) {
+    return <LessonLoadGate title="Chapter 오디오를 맞추고 있어요" description="문장과 소리의 시작·끝을 확인한 뒤 한 번에 열어 드릴게요." />;
+  }
 
   const lesson = {
     chapterNumber,
     pack,
     timeline,
     audioSrc: chapterMedia(chapterNumber).audioSrc,
+    mimicAudioRoot: chapterMedia(chapterNumber).mimicAudioRoot,
   };
 
   let content: ReactNode = null;

@@ -12,53 +12,67 @@ Codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-PINOCCHIO CHAPTER 1–12 CORE — PRODUCTION DEPLOYED AND VERIFIED
+PINOCCHIO CHAPTER 1–12 MIMIC BOUNDARY SAFETY — PREVIEW READY, PRODUCTION BLOCKED FOR HUMAN QA
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Review the live Pinocchio Chapter 1–12 Core course and complete human audio/classroom QA
+Human-listen the 28 coarticulated Mimic boundaries and all twelve chapter masters, then release only after explicit production approval
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-The latest production main first reverted PRs #35, #34, and #33, removing Story Finale UI, routes, progress integration, and the story-conversation API while preserving the concept in the product backlog. On top of that clean production state, the data-driven Pinocchio Chapter 1–12 Core course was deployed to Vercel Production from merge commit `a314945`. All twelve Chapters preserve the Sing 2 Selecting → Watch → Mimic → Guess → Word interaction and have independent sequential progress, paid-plan Eleven v3 Lily British masters, exact line/Mimic timelines, original Living Storybook panoramas, 30 ms segment stops, item-level learner gates, and a final Chapter 12 Home exit.
+Starting from production main `fcd89bf`, all twelve Pinocchio Core chapters were rebuilt so Mimic no longer seeks and stops inside a shared master. The same one-take ElevenLabs performance now produces 360 independent, sample-accurate Mimic MP3s with short edge fades and natural file EOF, while Watch, Guess, and Word keep the continuous chapter master. Runtime validation fails closed on stale or incomplete timelines and a deterministic release receipt binds the complete pack. A mobile-first preview-only human QA room now presents the 28 ambiguous boundaries and 12 full masters, records operator-attested natural-EOF/context evidence and 98% listen coverage, and exports a review bundle tied to both the receipt hash and deterministic review-target hash. A local importer independently reconstructs every current media binding, treats the playback audit as trusted owner attestation, and rejects incomplete, stale, future-dated, or recut-containing bundles before any mutation.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/ModeSelectLayout.tsx
-- app/dev/pinocchio-chapters/
-- app/dev/pinocchio-session-1/
-- content-packs/pinocchio/v2/APP_MEDIA_PATHS.md
-- content-packs/pinocchio/v2/
-- public/prototype-art/pinocchio-v2/session-01..12.png
-- public/prototype-audio/pinocchio-v2/session-01..12/lily-british/
-- scripts/build-pinocchio-12-session-pack.mjs
-- scripts/validate-pinocchio-12-session-pack.mjs
+- app/dev/pinocchio-chapters/lessonData.ts
+- app/dev/pinocchio-chapters/types.ts
+- app/dev/pinocchio-chapters/timelineValidation.ts
+- app/dev/pinocchio-chapters/pinocchio-chapters.module.css
+- app/dev/pinocchio-session-1/[mode]/page.tsx
+- content-packs/pinocchio/v2/sessions/session-01..12/audio/core.timeline.json
+- content-packs/pinocchio/v2/sessions/session-01..12/audio/provenance.json
+- content-packs/pinocchio/v2/sessions/session-01..12/audio/mimic/core/*.mp3
+- content-packs/pinocchio/v2/release-receipt.json
+- public/prototype-audio/pinocchio-v2/session-01..12/lily-british/core.timeline.json
+- public/prototype-audio/pinocchio-v2/session-01..12/lily-british/provenance.json
+- public/prototype-audio/pinocchio-v2/session-01..12/lily-british/mimic/core/*.mp3
+- public/prototype-audio/pinocchio-v2/release-receipt.json
+- scripts/rebuild-pinocchio-v2-boundaries.mjs
+- scripts/validate-pinocchio-core-chapters.mjs
+- scripts/validate-pinocchio-deploy-receipt.mjs
+- scripts/build-with-pinocchio-gate.mjs
 - scripts/generate-pinocchio-content-pack-audio.mjs
+- scripts/import-pinocchio-human-review.mjs
+- app/dev/pinocchio-audio-review/page.tsx
+- app/dev/pinocchio-audio-review/AudioReviewClient.tsx
+- app/dev/pinocchio-audio-review/audio-review.module.css
+- package.json
+- vercel.json
+- .vercelignore
 - docs/ai-handoff/STATE.md
 - docs/ai-handoff/CONVERSATION.md
-- docs/product-backlog.md plus reverse reverts of the Story Finale files from PRs #33-#35
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-After merging current production main, both Pinocchio content validators, `npx tsc --noEmit`, `git diff --check`, and a clean 40-route `next build` pass. Vercel Production reported success. The live Chapter route, Chapter 1/12 MP3s, and Chapter 12 art return 200 with correct content types; browser QA confirms live Chapter 1 Lily playback, Chapter-only terminology, sequential mode gates, and zero console errors. The Core media validator confirms source Chapters 1–36 in order, twelve matching canonical/public MP3-timeline-art sets, 17.63 minutes of continuous Lily narration, 192 Watch lines, 360 Mimic units, 120 Guess items, and 120 Word items. Removed Story Finale routes remain 404.
+Boundary rebuild check, full ffmpeg-backed preview validation, Node-only deploy-receipt validation, TypeScript, whitespace checks, and a 54-route Next preview build pass. The validators confirm 12 chapters, 192 Watch lines, 360 independent Mimic assets, 120 Guess items, 120 Word items, 25,942,390 Mimic audio bytes, exact canonical/public parity, 320 automatically safe boundaries, and 28 coarticulated boundaries requiring human listening. The QA importer dry-run accepts an exact synthetic 28+12 bundle, rejects the same bundle when its target hash is stale, revalidates the receipt-bound 360 files before mutation, and keeps a hashed 50-file crash-recovery journal. Browser QA confirmed LEFT/RIGHT natural-EOF and master-context gating, reviewer locking, rapid-tap isolation, and live progress updates; a normal media `abort` false-positive discovered during the test was removed and retested. Strict production validation and `VERCEL_ENV=production npm run build` remain intentionally blocked, while the preview build passes. Receipt SHA-256: `8c6a9f00acbb0ef42aec66648822cc30b35f6d76d3c89df11f30d8ad37f516c4`; review-target SHA-256: `df6d3d069ae849cb5b1475eaaef34430ba226f245b2c4d9fe857819501c5c790`.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-All twelve Core masters still need a human listen-through for emotion, pronunciation, and breath quality. Foundation/Studio media remains pending. Lily expires on 2026-12-31, the sixty-minute contract needs a learner/classroom pacing pilot, and Korean-market public-domain status still requires confirmation. Existing retelling evaluation rows may remain in Supabase but are no longer read or shown.
+Production remains deliberately blocked: 28 boundaries with no measurable quiet gap need a bound human-listen approval, and all twelve chapters need a bound full-master listen-through with `qaStatus: human-listen-pass`. The current reviewer identity is locally entered and cryptographically bound to content hashes but is not a server-authenticated signature; that is acceptable for the owner-operated QA phase, not a multi-reviewer compliance system. No production deployment has been made from this branch. Foundation/Studio media remains pending, Lily expires on 2026-12-31, and Korean-market rights confirmation remains separate.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Run a human listen-through of all twelve masters and one sixty-minute classroom pacing pilot before expanding Foundation/Studio media.
+Open the preview-only `/dev/pinocchio-audio-review`, complete all 28 boundary checks and 12 full-master listen-throughs, export the JSON bundle, dry-run then apply it with `npm run import:pinocchio-human-review -- --input <file> [--apply]`, and request explicit production deployment approval only after the regenerated receipt is PASS.
 <!-- HANDOFF:NEXT_ACTION:END -->
