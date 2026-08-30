@@ -1167,3 +1167,54 @@ Confirmed that the first real service release must be Foundation, the easiest le
 Made Foundation the only default v3 production-route level and removed remaining live entry links to the legacy Pinocchio selector. Added the Mimic-original Pinocchio cover, preserved separate v3 progress IDs 401-412, delayed Chapter redirects until remote progress has merged, reconciled Chapter 6 fallback-alignment provenance, and hardened the web publisher. Preview builds now require exactly 12/12 checksum-valid Chapter media sets and record every open release blocker; Production builds fail until the manifest, commercial rights, named Chapter approvals, all per-Chapter Forced Alignments, and the continuous full-story Forced Alignment are complete.
 
 **Validation:** `npm run publish:pinocchio-v3-web` published 12/12 as a QA Preview; `npx tsc --noEmit`, `git diff --check`, script syntax checks, and the 101-page webpack build passed. An explicit Production-channel publisher run failed on the intended gates, proving draft content cannot silently ship.
+
+## 2026-08-30 21:57:42 — wire-pinocchio-art / work
+
+Connected Foundation v3 Chapters 1-12 to the existing 1672x941 v2 paper-theatre panoramas through a versioned visuals.json registry. The production loader now returns /prototype-art/pinocchio-v2/session-XX.png as artSrc, and the publisher verifies exact v2/v3 source-Chapter grouping, canonical/public SHA-256 identity, PNG dimensions, and release-catalog art evidence. Rights and QA records now distinguish technical reuse completion from pending named human visual, mobile-crop, input-reference provenance, and territory review.
+
+## 2026-08-30 21:57:42 — wire-pinocchio-art / validation
+
+Visual validator passed 12/12 exact source groupings, asset hashes, and 1672x941 dimensions; Story Pack validation passed; Foundation preview and production-public-beta publication both produced 12/12 art-bearing catalog entries while preserving releaseReady=false and the human visual blocker; TypeScript, UI parity tests 5/5, diff check, and the 101-page production build passed.
+
+## 2026-08-30 — fix-visual-release-gate / release safety correction
+
+Prevented the historical Foundation beta approval from silently authorizing the newly added visual catalog. Production public beta now requires an explicit `visualCatalogApproval` bound to the exact `visuals.json` SHA-256 digest and its review state; the existing `release-beta.json` and pending `visuals.json` remain unchanged. Added an atomic pending-to-approved state machine shared by the visual validator and publisher and mirrored by the production loader. Approved state requires one consistent twelve-Chapter state plus a named reviewer, valid date, and evidence; pending remains a release blocker.
+
+**Validation:** Visual release tests passed 5/5, including pending, valid approved transition, missing-evidence rejection, mixed-state rejection, historical-approval rejection, exact-digest acceptance, and stale-digest rejection. TypeScript, Story Pack validation, UI parity tests, and diff check passed. Production publishing failed as intended with `Public-beta authorization does not explicitly approve the visual catalog`; Preview published 12/12 with `releaseReady=false`, `deploymentAllowed=true`, and the exact pending catalog digest. The historical authorization and visual catalog hashes remained unchanged.
+
+## 2026-08-30 22:23:58 — codex / work
+
+Hardened the Pinocchio Sing2-parity runtime: learner SKIP is now blocked by the verified master-role policy, phone portrait line navigation portals into a safe-area-aware scrollable bottom sheet, and the eight panorama beats use a measured 1.36x crop with visible camera travel.
+
+## 2026-08-30 22:23:59 — codex / checkpoint
+
+Fixed UI review findings without touching release scripts or the Story Pack server loader. StageActions receives isMaster through lesson context; learner SKIP is absent. Mimic/Guess/Word use an accessible portalled phone bottom sheet. Panorama retains 73.5% of the illustration while travelling 23.3% across the story.
+
+**Next action:** Parent agent should combine this with the visual release-gate fix, run the consolidated build, review the scoped diff, and deploy only if explicitly authorized.
+
+**Validation:** npx tsc --noEmit passed; validate:pinocchio-ui-parity passed 8/8 including dynamic permission, geometry, and camera contracts; real browser geometry passed at small and standard phone viewports; measured first-to-last camera travel was 101.5px; git diff --check passed.
+
+**Files:**
+- app/components/pinocchio/PinocchioLessonModeClient.tsx, app/components/pinocchio/lessonUiPolicy.mjs, app/components/MimicLineList.tsx, app/dev/pinocchio-chapters/pinocchio-chapters.module.css, app/globals.css, tests/pinocchio-sing2-parity.test.mjs
+
+## 2026-08-30 — codex / consolidated Sing2-parity result
+
+Replaced the separate Pinocchio lesson presentation with the canonical Sing2 learning shell contract across Watch, Mimic, Guess, and Word, while retaining Pinocchio-specific audio, activity data, and Living Storybook imagery. The twelve existing Mimic-created 1672×941 Chapter panoramas are now production-loader inputs with exact digest and source-Chapter evidence instead of disconnected prototype assets. Production routes import the shared lesson client directly rather than reaching through a dev route.
+
+Mobile browser QA confirmed matching 16:9 stage geometry and no horizontal overflow across all four modes. The final production build generated 101 pages; Story Pack validation, UI parity 9/9, visual release gate 5/5, TypeScript, and diff checks passed. A deliberate Production publisher run was refused because the current visual catalog still lacks its own explicit authorization, proving the historical pre-visual beta approval cannot broaden itself.
+
+## 2026-08-30 — codex / visual authorization provenance gate
+
+Closed the final visual-release disclosure gap: any future Production public-beta authorization for a pending visual catalog must acknowledge visual review, mobile-crop review, and input-reference provenance review together. An authorization that mentions only visual and mobile crops now fails even when its catalog path, digest, decision, and evidence are otherwise correct; the complete three-part acknowledgment passes. The historical `release-beta.json` and current `visuals.json` remain unchanged.
+
+**Validation:** Visual release tests passed 5/5, including explicit rejection of the provenance-omitting authorization and acceptance of the complete acknowledgment. TypeScript and diff checks passed.
+
+## 2026-08-30 — codex / final learning-parity corrections
+
+Removed the exact English phrase caption from Mimic so the learner receives the same answer-hidden exercise as Sing2 while keeping `PHRASE x/y` progress for naturally split long sentences. Corrected Word scoring to compare the visible token sequence instead of hidden chip IDs, so two identical repeated words may trade positions without turning a correct sentence into an error.
+
+**Validation:** UI parity passed 9/9, including executable answer-visibility and repeated-token scoring contracts; TypeScript, diff checks, and the final 101-page production build passed.
+
+## 2026-08-30 — codex / local checkpoint ready
+
+Committed the complete Sing2-parity implementation locally on `codex/pinocchio-sing2-parity`. Uploading the branch to the configured external GitHub remote was not authorized by the execution policy, so no remote branch, PR, Vercel Preview, merge, or Production deployment was created. The next operator must obtain explicit user approval for that external branch upload before continuing.

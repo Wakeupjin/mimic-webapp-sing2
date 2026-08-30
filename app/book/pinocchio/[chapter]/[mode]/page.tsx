@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import PinocchioLessonModePage, { PinocchioLessonModeClient } from "../../../../dev/pinocchio-session-1/[mode]/page";
+import PinocchioLessonModeClient from "@/app/components/pinocchio/PinocchioLessonModeClient";
 import { MODE_ORDER, parseChapterNumber } from "../../../../dev/pinocchio-chapters/lessonData";
 import type { LessonMode } from "../../../../dev/pinocchio-chapters/types";
 import {
@@ -26,7 +26,7 @@ export default async function PinocchioProductionLesson({
   params: Promise<{ chapter: string; mode: string }>;
 }) {
   if (productionPinocchioRelease() === "v2") {
-    return <PinocchioLessonModePage />;
+    return <PinocchioLessonModeClient />;
   }
 
   const { chapter, mode: rawMode } = await params;

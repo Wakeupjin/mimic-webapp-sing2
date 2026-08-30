@@ -30,6 +30,7 @@
   "betaReleaseAuthorizationSha256": "sha256:fb66cae9c0526c9eb0762f38808fe962c666b72caf3e78ef1b6ba493a2194675",
   "narratorPolicy": "narrator-policy.json",
   "levelSpecs": "level-specs.json",
+  "visuals": "visuals.json",
   "storyBible": "story-bible.md",
   "seasonMap": "season-map.json",
   "levels": {

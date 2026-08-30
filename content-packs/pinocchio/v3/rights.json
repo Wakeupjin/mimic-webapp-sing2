@@ -34,13 +34,23 @@
       "authoringEntity": "Mimic",
       "method": "Original educational retelling based on the recorded public-domain story source; no passage is intended as a verbatim edition reproduction.",
       "status": "draft-company-work"
+    },
+    {
+      "assetType": "visual-stage-art",
+      "title": "Pinocchio paper-theatre Chapter panoramas 1–12",
+      "generationTool": "OpenAI built-in image_gen",
+      "generationRecord": "../v2/IMAGE_PROMPTS.md",
+      "assetRegistry": "visuals.json",
+      "reuseBasis": "The v2 and v3 packs assign the same original Collodi Chapter groups to all twelve ordinal course Chapters, so each original v2 panorama is reused for the matching v3 Foundation Chapter.",
+      "rightsBasis": "Newly generated in-project output based on an approved original Mimic character/material reference and the public-domain Collodi story. Output-rights evidence is recorded below; the input reference's provenance and named human visual/licensing review remain release gates.",
+      "status": "operational-public-beta-source-and-checksums-recorded-human-review-pending"
     }
   ],
   "assetRegisters": {
     "text": "recorded-in-this-file",
     "voice": "narrator-policy.json",
     "audio": "Foundation Chapters 1–12 paid Lily masters generated; automated technical QA passed and human listen-through remains pending",
-    "art": "Mimic original Pinocchio cover generated in-project; visual-stage assets remain pending",
+    "art": "Foundation Chapters 1–12 operationally reuse the twelve v2 in-project image_gen paper-theatre panoramas recorded in visuals.json. Public/canonical checksums, 1672x941 dimensions, and exact v2/v3 source-Chapter grouping match are verified; named human visual, input-reference provenance, and target-territory licensing review remain pending.",
     "music": "not-selected",
     "fonts": "product-level-review-required"
   },
@@ -48,6 +58,8 @@
     "Confirm commercial public-domain status for every launch territory.",
     "Record the legal owner of the Mimic adaptation after company formation or IP assignment.",
     "Record every image, font, music, voice, and audio license independently.",
+    "Verify and retain the provenance and permitted commercial use of the original character/material reference supplied to image_gen.",
+    "Complete a named human review of all twelve reused panoramas for visual accuracy, child safety, franchise similarity, mobile crops, overlays, and Chapter fit.",
     "Retain evidence snapshots or files with the approval record."
   ],
   "humanReview": {

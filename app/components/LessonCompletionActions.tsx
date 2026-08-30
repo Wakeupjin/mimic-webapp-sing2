@@ -3,11 +3,15 @@
 type LessonCompletionActionsProps = {
   onAgain: () => void;
   onNext: () => void;
+  nextLabel?: string;
+  nextCaption?: string;
 };
 
 export default function LessonCompletionActions({
   onAgain,
   onNext,
+  nextLabel = "Next",
+  nextCaption = "Let's go",
 }: LessonCompletionActionsProps) {
   return (
     <div className="lesson-completion-actions">
@@ -26,9 +30,9 @@ export default function LessonCompletionActions({
           onClick={onNext}
         >
           <img src="/Subject.png" alt="" className="select-chameleon" />
-          Next
+          {nextLabel}
         </button>
-        <p className="cta-go lesson-completion-caption">Let&apos;s go</p>
+        <p className="cta-go lesson-completion-caption">{nextCaption}</p>
       </div>
     </div>
   );

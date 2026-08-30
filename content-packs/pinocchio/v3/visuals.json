@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "levelScope": [
+    "foundation"
+  ],
+  "status": "operational-public-beta-human-visual-review-pending",
+  "sourceReuse": {
+    "sourceStoryPackId": "pinocchio-v2-twelve-session-course",
+    "sourceManifest": "../v2/manifest.json",
+    "generationRecord": "../v2/IMAGE_PROMPTS.md",
+    "compatibilityRule": "A v2 panorama may be reused only when its original-source Chapter group exactly matches the v3 Chapter group in the same ordinal slot.",
+    "compatibilityResult": "passed-all-twelve-exact-source-chapter-groups"
+  },
+  "rendering": {
+    "assetType": "single-chapter-paper-theatre-panorama",
+    "width": 1672,
+    "height": 941,
+    "aspectRatio": "1672:941",
+    "usage": "One static 16:9 panorama is the operational Foundation stage for each Chapter across Watch, Mimic, Guess, and Word.",
+    "limitation": "These are twelve Chapter panoramas, not eight independently timed scene images per Chapter and not an animated storyboard.",
+    "humanVisualReview": "pending"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "chapterId": "chapter-01",
+      "sourceChapterGroup": [1, 2, 3],
+      "sourceAsset": "../v2/sessions/session-01/assets/session-01.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-01.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-01.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:41a70b01aa6eaa7e8ee31648d49a339cf99445c82ab28a4303f11c971e90f8cc",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 2,
+      "chapterId": "chapter-02",
+      "sourceChapterGroup": [4, 5, 6, 7, 8],
+      "sourceAsset": "../v2/sessions/session-02/assets/session-02.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-02.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-02.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:9827ed1b6b8322f510ea295a2197e72035b493a5132b4d95c47e135c385e7f51",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 3,
+      "chapterId": "chapter-03",
+      "sourceChapterGroup": [9, 10, 11],
+      "sourceAsset": "../v2/sessions/session-03/assets/session-03.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-03.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-03.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:6e2210be32e08c4c9375f044fb5cfdfc74041a0972cfcae169a492779b8ea7ef",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 4,
+      "chapterId": "chapter-04",
+      "sourceChapterGroup": [12, 13, 14, 15],
+      "sourceAsset": "../v2/sessions/session-04/assets/session-04.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-04.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-04.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:4897b6c373ba23ac133a7bcb8c6eebd683fddfb55b0aee8066f42e8e0f3ae4c7",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 5,
+      "chapterId": "chapter-05",
+      "sourceChapterGroup": [16, 17, 18, 19],
+      "sourceAsset": "../v2/sessions/session-05/assets/session-05.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-05.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-05.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:e28e97502fcbf5ca28f85368d4a432ee78e815d6e6d78e7e24d9eca4dc7fb017",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 6,
+      "chapterId": "chapter-06",
+      "sourceChapterGroup": [20, 21, 22, 23],
+      "sourceAsset": "../v2/sessions/session-06/assets/session-06.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-06.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-06.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:db52e3791d746b167fa1dbbf202cd56b30b07268db7fb4ff7c051b1ae37bd776",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 7,
+      "chapterId": "chapter-07",
+      "sourceChapterGroup": [24, 25, 26],
+      "sourceAsset": "../v2/sessions/session-07/assets/session-07.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-07.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-07.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:af8c0b6e10b9023221c6049f3675f1174bd8f07e978d67a527064fddb0d3fc2b",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 8,
+      "chapterId": "chapter-08",
+      "sourceChapterGroup": [27, 28, 29],
+      "sourceAsset": "../v2/sessions/session-08/assets/session-08.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-08.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-08.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:ca39b9223f0669fc80cef7c7ffaa3cf05839a6e5dbf6ab50aaea94d1bb653351",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 9,
+      "chapterId": "chapter-09",
+      "sourceChapterGroup": [30, 31, 32],
+      "sourceAsset": "../v2/sessions/session-09/assets/session-09.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-09.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-09.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:71dd9814a5959da4f5635d8476e64137af4e1f66ce3b1acda1901ba3baea528d",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 10,
+      "chapterId": "chapter-10",
+      "sourceChapterGroup": [33, 34],
+      "sourceAsset": "../v2/sessions/session-10/assets/session-10.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-10.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-10.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:ac3dad0ab97b13e489524fd7738dffff97ded95db90b398ac43f53ba3923346f",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 11,
+      "chapterId": "chapter-11",
+      "sourceChapterGroup": [35],
+      "sourceAsset": "../v2/sessions/session-11/assets/session-11.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-11.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-11.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:921251fd4705cf722de765617569ebb29cccca6f771f5558d1bb600aa3071fe6",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    },
+    {
+      "number": 12,
+      "chapterId": "chapter-12",
+      "sourceChapterGroup": [36],
+      "sourceAsset": "../v2/sessions/session-12/assets/session-12.png",
+      "publicAsset": "../../../public/prototype-art/pinocchio-v2/session-12.png",
+      "publicUrl": "/prototype-art/pinocchio-v2/session-12.png",
+      "width": 1672,
+      "height": 941,
+      "sha256": "sha256:2db66583147ac600664b8e55b49599abe62c0a80001b62ab213fe71c9712e354",
+      "technicalStatus": "passed",
+      "humanVisualReview": "pending"
+    }
+  ]
+}

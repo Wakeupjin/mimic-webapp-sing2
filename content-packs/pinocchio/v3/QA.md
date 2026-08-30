@@ -19,7 +19,13 @@ published.
 - [x] Commercial paid-plan eligibility recorded.
 - [x] Golden Chapter narration generated with request/job provenance and cost.
 - [x] Golden Chapter sentence timestamps aligned from the completed master narration.
-- [ ] Eight visual beats licensed or generated and reviewed.
+- [x] Twelve 1672×941 paper-theatre Chapter panoramas are technically present,
+  checksum-locked, and mapped from v2 to v3 only where the original-source
+  Chapter groups match exactly.
+- [ ] A named human has reviewed all twelve reused panoramas for Chapter fit,
+  mobile crops/overlays, franchise similarity, child safety, and input-reference
+  provenance. The current stage is one static panorama per Chapter, not eight
+  independently timed scene images or an animated storyboard.
 - [ ] Human continuity listen-through passes pace, emotion, seams, pronunciation,
   silence, and level fit.
 - [ ] Product preview passes Watch, Mimic, Guess, Word, keyboard, progress, and
@@ -35,3 +41,11 @@ All three-level scripts are authored. Generate or resume Lily audio only after
 all narrative masters and learning selections pass both automated validation
 and independent editorial review. Then listen through every act and Chapter seam
 before assembling and releasing the three full-story masters.
+
+## Foundation visual-stage evidence
+
+`visuals.json` is the canonical visual registry. It records the original v2
+generation prompt source, canonical and public asset paths, SHA-256 digest,
+1672×941 dimensions, exact original-source Chapter grouping, and unresolved
+human-review state for every Chapter. Automated validation proves asset identity
+and grouping compatibility; it does not constitute visual or rights approval.

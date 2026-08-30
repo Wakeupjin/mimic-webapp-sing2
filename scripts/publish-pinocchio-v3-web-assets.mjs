@@ -4,6 +4,11 @@ import { createHash } from "node:crypto";
 import { access, copyFile, mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  sha256Digest,
+  validateVisualPublicBetaBinding,
+  validateVisualReviewState,
+} from "./lib/pinocchio-v3-visual-release.mjs";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const packRoot = path.join(repositoryRoot, "content-packs", "pinocchio", "v3");
@@ -24,7 +29,29 @@ const publicRoot = path.join(repositoryRoot, "public", "books", "pinocchio", "v3
 const manifest = JSON.parse(await readFile(path.join(packRoot, "manifest.json"), "utf8"));
 const rights = JSON.parse(await readFile(path.join(packRoot, manifest.rights), "utf8"));
 const narratorPolicy = JSON.parse(await readFile(path.join(packRoot, manifest.narratorPolicy), "utf8"));
+const visualCatalogFile = await readFile(path.join(packRoot, manifest.visuals));
+const visualCatalog = JSON.parse(visualCatalogFile.toString("utf8"));
+const visualCatalogSha256 = sha256Digest(visualCatalogFile);
+const visualReview = validateVisualReviewState(visualCatalog);
+const sourceVisualManifestPath = path.resolve(packRoot, visualCatalog.sourceReuse?.sourceManifest ?? "missing");
+const sourceVisualManifestRelative = path.relative(repositoryRoot, sourceVisualManifestPath);
+if (sourceVisualManifestRelative.startsWith("..") || path.isAbsolute(sourceVisualManifestRelative)) {
+  throw new Error("The visual-stage source manifest escapes the repository.");
+}
+const sourceVisualManifest = JSON.parse(await readFile(sourceVisualManifestPath, "utf8"));
 const requiredHumanApprovals = ["editorial", "learning", "voice", "audio", "rights", "release"];
+
+if (
+  manifest.visuals !== "visuals.json"
+  || visualCatalog.storyPackId !== manifest.storyPackId
+  || !visualCatalog.levelScope?.includes(level)
+  || !visualReview.valid
+  || visualCatalog.chapters?.length !== 12
+  || sourceVisualManifest.contentSetId !== visualCatalog.sourceReuse?.sourceStoryPackId
+) {
+  const reviewErrors = visualReview.errors.length ? ` ${visualReview.errors.join(" ")}` : "";
+  throw new Error(`The Pinocchio ${level} visual-stage registry is missing, incompatible, or outside its approved level scope.${reviewErrors}`);
+}
 
 if (
   narratorPolicy.storyPackId !== manifest.storyPackId
@@ -42,6 +69,22 @@ const approvedNarrator = narratorPolicy.decision;
 
 function sha256(value) {
   return createHash("sha256").update(value).digest("hex");
+}
+
+function pngDimensions(buffer, label) {
+  if (buffer.length < 24 || buffer.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a") {
+    throw new Error(`${label} does not have a valid PNG header.`);
+  }
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+}
+
+function repositoryPathFromPack(reference, label) {
+  const resolved = path.resolve(packRoot, reference ?? "missing");
+  const relative = path.relative(repositoryRoot, resolved);
+  if (relative.startsWith("..") || path.isAbsolute(relative)) {
+    throw new Error(`${label} escapes the repository.`);
+  }
+  return resolved;
 }
 
 async function publicBetaAuthorization() {
@@ -112,6 +155,13 @@ async function publicBetaAuthorization() {
     errors.push("Public-beta authorization does not declare the v2 rollback.");
   }
 
+  const visualBinding = validateVisualPublicBetaBinding(authorization, {
+    catalogReference: manifest.visuals,
+    catalogSha256: visualCatalogSha256,
+    reviewState: visualReview.state,
+  });
+  errors.push(...visualBinding.errors);
+
   return {
     valid: errors.length === 0,
     errors,
@@ -179,6 +229,7 @@ const published = [];
 const chapterAlignmentPending = [];
 const chapterApprovalPending = [];
 const chapterReleaseRecordsPending = [];
+const chapterVisualReviewPending = [];
 
 function approvalComplete(approval) {
   return typeof approval?.status === "string"
@@ -227,6 +278,51 @@ for (const chapterEntry of manifest.chapters) {
   const timeline = JSON.parse(timelineFile.toString("utf8"));
   const activities = JSON.parse(activitiesFile.toString("utf8"));
   const lines = sentenceIds(masterFile.toString("utf8"));
+  const suffix = String(chapter.number).padStart(2, "0");
+  const visual = visualCatalog.chapters.find((entry) => entry.number === chapter.number);
+  const sourceVisualEntry = sourceVisualManifest.sessions?.find((entry) => entry.number === chapter.number);
+  if (!visual || !sourceVisualEntry) {
+    throw new Error(`Chapter ${chapter.number} is missing its registered visual-stage source.`);
+  }
+  const sourceVisualPackPath = path.resolve(path.dirname(sourceVisualManifestPath), sourceVisualEntry.path);
+  const sourceVisualPackRelative = path.relative(repositoryRoot, sourceVisualPackPath);
+  if (sourceVisualPackRelative.startsWith("..") || path.isAbsolute(sourceVisualPackRelative)) {
+    throw new Error(`Chapter ${chapter.number} visual source pack escapes the repository.`);
+  }
+  const sourceVisualPack = JSON.parse(await readFile(sourceVisualPackPath, "utf8"));
+  const expectedArtUrl = `/prototype-art/pinocchio-v2/session-${suffix}.png`;
+  const expectedSourceAsset = `../v2/sessions/session-${suffix}/assets/session-${suffix}.png`;
+  const expectedPublicAsset = `../../../public/prototype-art/pinocchio-v2/session-${suffix}.png`;
+  if (
+    visual.chapterId !== chapter.chapterId
+    || JSON.stringify(visual.sourceChapterGroup) !== JSON.stringify(chapter.sourceChapters)
+    || JSON.stringify(sourceVisualPack.story?.sourceChapters) !== JSON.stringify(chapter.sourceChapters)
+    || visual.sourceAsset !== expectedSourceAsset
+    || visual.publicAsset !== expectedPublicAsset
+    || visual.publicUrl !== expectedArtUrl
+    || visual.technicalStatus !== "passed"
+    || visual.humanVisualReview !== visualReview.state
+  ) {
+    throw new Error(`Chapter ${chapter.number} v2/v3 visual-stage grouping or review evidence is invalid.`);
+  }
+  const sourceArt = await readFile(repositoryPathFromPack(visual.sourceAsset, `Chapter ${chapter.number} source art`));
+  const publicArt = await readFile(repositoryPathFromPack(visual.publicAsset, `Chapter ${chapter.number} public art`));
+  const sourceArtSha256 = sha256(sourceArt);
+  const publicArtSha256 = sha256(publicArt);
+  const sourceArtDimensions = pngDimensions(sourceArt, `Chapter ${chapter.number} source art`);
+  const publicArtDimensions = pngDimensions(publicArt, `Chapter ${chapter.number} public art`);
+  if (
+    sourceArtSha256 !== publicArtSha256
+    || visual.sha256 !== `sha256:${sourceArtSha256}`
+    || sourceArtDimensions.width !== 1672
+    || sourceArtDimensions.height !== 941
+    || JSON.stringify(sourceArtDimensions) !== JSON.stringify(publicArtDimensions)
+    || visual.width !== sourceArtDimensions.width
+    || visual.height !== sourceArtDimensions.height
+  ) {
+    throw new Error(`Chapter ${chapter.number} visual-stage checksum or 1672x941 dimension contract is invalid.`);
+  }
+  if (visualReview.state === "pending") chapterVisualReviewPending.push(chapter.number);
 
   if (
     chapter.storyPackId !== manifest.storyPackId
@@ -308,7 +404,7 @@ for (const chapterEntry of manifest.chapters) {
   const audioBytes = (await stat(audioPath)).size;
   if (audioBytes < 1024) throw new Error(`Chapter ${chapter.number} ${level} audio is empty.`);
 
-  const stem = `chapter-${String(chapter.number).padStart(2, "0")}`;
+  const stem = `chapter-${suffix}`;
   const outputRoot = path.join(publicRoot, stem, "lily-british");
   await mkdir(outputRoot, { recursive: true });
   await copyWhenChanged(audioPath, path.join(outputRoot, "master.mp3"), audioSha256);
@@ -328,6 +424,12 @@ for (const chapterEntry of manifest.chapters) {
     activitiesSha256,
     alignmentSource: timeline.alignmentSource ?? null,
     qaStatus: qa.status ?? null,
+    artUrl: visual.publicUrl,
+    artSha256: visual.sha256,
+    artWidth: visual.width,
+    artHeight: visual.height,
+    artSourcePack: visualCatalog.sourceReuse.sourceStoryPackId,
+    artHumanVisualReview: visual.humanVisualReview,
     audioUrl: `/books/pinocchio/v3/${level}/${stem}/lily-british/master.mp3`,
     timelineUrl: `/books/pinocchio/v3/${level}/${stem}/lily-british/timeline.json`,
   });
@@ -359,6 +461,9 @@ if (chapterApprovalPending.length) {
 }
 if (chapterReleaseRecordsPending.length) {
   releaseBlockers.push(`Chapter QA/production records are not release-approved or still contain blockers: ${chapterReleaseRecordsPending.map(({ chapter, qaStatus, productionStatus, blockingIssues }) => `Chapter ${chapter} (qa=${qaStatus}, production=${productionStatus}, blockers=${blockingIssues})`).join("; ")}.`);
+}
+if (chapterVisualReviewPending.length) {
+  releaseBlockers.push(`Named human visual, mobile-crop, and input-reference provenance review is pending for Chapters ${chapterVisualReviewPending.join(", ")}.`);
 }
 
 try {
@@ -405,6 +510,15 @@ await writeFile(
       active: publicBetaActive,
       label: publicBetaActive ? "BETA · 검수 중" : null,
     },
+    visualCatalog: {
+      path: manifest.visuals,
+      sha256: visualCatalogSha256,
+      status: visualCatalog.status,
+      reviewState: visualReview.state,
+      reviewer: visualReview.record?.reviewer ?? null,
+      reviewedAt: visualReview.record?.reviewedAt ?? null,
+      evidence: visualReview.record?.evidence ?? null,
+    },
     releaseGate: {
       status: releaseReady
         ? "passed"
@@ -420,6 +534,13 @@ await writeFile(
         scope: betaAuthorization.authorization.scope,
         levels: betaAuthorization.authorization.levels,
         authorizationSha256: `sha256:${betaAuthorization.sha256}`,
+        visualCatalogApproval: {
+          catalog: betaAuthorization.authorization.visualCatalogApproval.catalog,
+          catalogSha256: betaAuthorization.authorization.visualCatalogApproval.catalogSha256,
+          decision: betaAuthorization.authorization.visualCatalogApproval.decision,
+          reviewStateAtAuthorization: betaAuthorization.authorization.visualCatalogApproval.reviewStateAtAuthorization,
+          evidence: betaAuthorization.authorization.visualCatalogApproval.evidence,
+        },
       } : null,
     },
     generatedAt: new Date().toISOString(),

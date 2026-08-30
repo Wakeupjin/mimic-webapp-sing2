@@ -44,11 +44,39 @@ manifest-pinned beta authorization digest. Set
 `PINOCCHIO_PRODUCTION_RELEASE=v2` to bypass v3 publishing and restore the
 previous production route as an emergency rollback.
 
+Foundation also reuses the twelve original v2 paper-theatre panoramas as its
+operational Chapter stages. This is deliberate asset reuse, not a relabeling:
+`visuals.json` proves that every v2 and v3 ordinal Chapter covers the same
+original Collodi Chapter group, and locks both the canonical/public image digest
+and 1672×941 dimensions. Human visual, mobile-crop, and rights review remain
+pending, and the registry explicitly describes the current limitation: one
+static panorama per Chapter, not eight independently timed scenes.
+
+The 2026-08-30 beta authorization predates this visual catalog and is not
+silently extended to it. Production public-beta publishing now requires a new,
+manifest-pinned authorization whose `visualCatalogApproval` names
+`visuals.json`, binds its exact SHA-256 digest, records the review state seen at
+authorization time, explicitly approves that exact catalog for Production
+public beta, and acknowledges the pending visual, mobile-crop, and input-reference
+provenance reviews together. The historical `release-beta.json` is preserved
+unchanged, so the current pending catalog remains valid for Preview but blocked
+from Production until the product owner gives that new deploy approval.
+
+Visual review has one atomic state transition. `pending` requires the catalog,
+rendering record, and all twelve Chapter records to remain pending and continues
+to be a release blocker. `approved` requires the catalog status
+`operational-human-visual-review-approved`, all twelve Chapter records marked
+approved, and `rendering.humanVisualReviewRecord` with a named reviewer, valid
+`reviewedAt`, and non-empty evidence. Mixed states or approval without that
+evidence fail validation, publishing, and production loading.
+
 ## Validate
 
 ```bash
 npm run validate:story-pack
+npm run validate:pinocchio-visual-release
 ```
 
 The validator checks the pack structure, twelve-Chapter map, every authored
-level's duration envelope, exact activity sourcing, and release-state claims.
+level's duration envelope, exact activity sourcing, v2/v3 visual grouping and
+asset identity, and release-state claims.
