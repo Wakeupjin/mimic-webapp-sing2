@@ -24,7 +24,7 @@ Review the Sing 2-parity Pinocchio Session 1 Core vertical slice before main-thr
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Revised all twelve sessions so each selected level keeps one coherent sixteen-sentence Watch narration but exposes thirty timestamped Mimic speaking units cut from that exact master, plus ten Guess and ten Word items. Generated the paid-plan Session 1 Core Lily British master as one 84.16-second Eleven v3 take with sixteen caption timestamps and thirty Mimic timestamps. Replaced the independent combined prototype with a five-screen local flow that follows the deployed Sing 2 interaction system: Selecting gates Watch → Mimic → Guess → Word; each mode uses the operational start, controls, count, feedback, completion, Again, and Next patterns while Pinocchio supplies the storybook art and Lily audio.
+Revised all twelve sessions so each selected level keeps one coherent sixteen-sentence Watch narration but exposes thirty timestamped Mimic speaking units cut from that exact master, plus ten Guess and ten Word items. Generated the paid-plan Session 1 Core Lily British master as one 84.16-second Eleven v3 take with sixteen caption timestamps and thirty Mimic timestamps. Replaced the independent combined prototype with a five-screen local flow that follows the deployed Sing 2 interaction system: Selecting gates Watch → Mimic → Guess → Word; each mode uses the operational start, controls, count, feedback, completion, Again, and Next patterns while Pinocchio supplies the storybook art and Lily audio. Mimic arrow, feedback, and sentence-list navigation now immediately restart the target sentence sequence with the first control lit green.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant

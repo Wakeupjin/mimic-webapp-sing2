@@ -257,7 +257,6 @@ function MimicMode() {
   const [hardLines, setHardLines] = useState<number[]>([]);
   const stepTimerRef = useRef<number | null>(null);
   const engine = useLessonAudio();
-  const segment = timeline.mimicItems[current];
   const activeLine = sourceLineForMimic(current);
 
   const clearStepTimer = () => {
@@ -265,29 +264,38 @@ function MimicMode() {
     stepTimerRef.current = null;
   };
 
-  const runStep = useCallback((slot: number) => {
-    if (complete || feedbackOpen) return;
+  const runStep = useCallback((slot: number, lineIndex = current) => {
+    if (complete) return;
     clearStepTimer();
     setStarted(true);
     setPaused(false);
     setActiveSlot(slot);
-    engine.playRange(segment, MIMIC_MUTED_STEPS.has(slot), () => {
+    engine.playRange(timeline.mimicItems[lineIndex], MIMIC_MUTED_STEPS.has(slot), () => {
       setActiveSlot(null);
-      if (slot < 7) stepTimerRef.current = window.setTimeout(() => runStep(slot + 1), 800);
+      if (slot < 7) stepTimerRef.current = window.setTimeout(() => runStep(slot + 1, lineIndex), 800);
       else setFeedbackOpen(true);
     });
-  }, [complete, feedbackOpen, engine, segment]);
+  }, [complete, current, engine]);
 
   useEffect(() => () => clearStepTimer(), []);
 
   const finish = () => { clearStepTimer(); engine.stop(); setCurrent(29); completeMode("mimicking"); setComplete(true); setFeedbackOpen(false); };
-  const chooseLine = (index: number) => { clearStepTimer(); engine.stop(); setCurrent(index); setActiveSlot(null); setFeedbackOpen(false); setLineListOpen(false); setPaused(false); };
-  const next = () => current >= 29 ? finish() : chooseLine(current + 1);
-  const prev = () => { if (current > 0) chooseLine(current - 1); };
+  const chooseLine = (index: number, autoplay = false) => {
+    clearStepTimer();
+    engine.stop();
+    setCurrent(index);
+    setActiveSlot(null);
+    setFeedbackOpen(false);
+    setLineListOpen(false);
+    setPaused(false);
+    if (autoplay) runStep(0, index);
+  };
+  const next = () => { if (!feedbackOpen) current >= 29 ? finish() : chooseLine(current + 1, true); };
+  const prev = () => { if (!feedbackOpen && current > 0) chooseLine(current - 1, true); };
   const feedback = (hard: boolean) => {
     if (hard) setHardLines((items) => items.includes(current) ? items : [...items, current]);
     setFeedbackOpen(false);
-    if (current >= 29) finish(); else chooseLine(current + 1);
+    if (current >= 29) finish(); else chooseLine(current + 1, true);
   };
   const togglePause = (event: MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).closest("button,a") || !started || complete || feedbackOpen) return;
@@ -310,7 +318,7 @@ function MimicMode() {
         <StoryStage activeLine={activeLine} faded={complete} onClick={togglePause}>
           {engine.audio}
           <StageActions onSkip={complete ? undefined : finish} />
-          {lineListOpen && !complete ? <MimicLineList total={30} currentIndex={current} canOpen={() => true} onSelect={chooseLine} /> : null}
+          {lineListOpen && !complete ? <MimicLineList total={30} currentIndex={current} canOpen={() => true} onSelect={(index) => chooseLine(index, true)} /> : null}
           {!started && !complete ? <ClickToStartOverlay onClick={() => runStep(0)} text="듣고 따라 말해요" description="먼저 듣고, 소리 없이 한 번 더 말하며 30개 문장을 연습해요." actionLabel="시작" /> : null}
           {paused && !complete ? <PauseOverlay /> : null}
           {feedbackOpen && !complete ? (
@@ -325,7 +333,7 @@ function MimicMode() {
       }
       controls={
         <div className="mimic-dock">
-          <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => runStep(slot)} activeIndex={activeSlot} />
+          <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => { if (!feedbackOpen) runStep(slot); }} activeIndex={activeSlot} />
           <button type="button" className="mimic-count" aria-expanded={lineListOpen} aria-label="문장 목록" onClick={() => setLineListOpen((open) => !open)}>
             <span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">30</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
           </button>

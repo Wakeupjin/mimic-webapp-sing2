@@ -741,3 +741,20 @@ all five screens, sequential local progression, SKIP and Again/Next behavior,
 30/30 and 10/10 completion counts, direct locked-route rejection, Word card
 reveal after the audio sequence, desktop/mobile layouts, and zero console
 errors. No Preview or production deployment was performed.
+
+## 2026-08-30 — user / bug report
+
+Reported that the Mimic left and right navigation arrows changed the sentence
+but did not start playback or illuminate the active control in green.
+
+## 2026-08-30 — codex / completed
+
+Fixed Mimic navigation so both arrows stop the old segment, move to the target
+sentence, and immediately restart its eight-step sequence at the first green
+listen slot. The same automatic restart now applies after sentence feedback
+and when selecting a sentence from the list. Feedback overlays still block
+manual navigation and slot playback until a choice is made.
+
+**Validation:** Browser QA confirmed right navigation moves to 02/30, left
+navigation returns to 01/30, one control remains actively green, the underlying
+audio element is playing, and no console errors are emitted.
