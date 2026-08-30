@@ -18,50 +18,42 @@ DEPLOYING
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Prepare the twelve-Chapter Foundation Pinocchio experience on the same Watch/Mimic/Guess/Word learning shell as Sing2, using the existing Mimic-created Chapter art while keeping Production behind explicit release approval
+Close the remaining behavioral and microinteraction gaps between Pinocchio Foundation and the canonical Sing2 Watch/Mimic/Guess/Word experience, then validate and deploy the exact parity release to Production
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Moved Pinocchio's four modes onto the canonical Sing2 lesson shell and shared completion controls, removed the production route's dependency on a dev page, and wired all twelve existing 1672×941 Mimic-created panoramas through a checksum-locked visual registry. Watch/Mimic/Guess/Word now share the same 16:9 mobile stage and dock geometry as Sing2. Mimic preserves exact phrase playback without exposing the English answer, repeated Word chips are judged by their visible sentence rather than hidden IDs, learner SKIP is blocked, mobile line navigation opens outside the clipped stage as an accessible bottom sheet, and the single panorama travels across eight story beats with a 1.36× crop. The historical public-beta approval cannot silently authorize the newly added visual catalog.
+Implemented the full Pinocchio Foundation behavior pass against Sing2: Watch time/seek/resume, Mimic's eight-slot cadence and guarded navigation, Guess's x3/ABC/sound/feedback/auto-next state machine, Word's listen-listen-mimic cadence, fixed chip positions, sound feedback and chameleon reaction, plus per-mode progress hydration. Added pause-safe workflow timers, isolated lock-hint clocks, completed-state guards, and a shared mobile-safe AudioContext.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
 - app/components/pinocchio/PinocchioLessonModeClient.tsx
-- app/components/pinocchio/lessonUiPolicy.mjs
-- app/components/MimicLineList.tsx
-- app/components/LessonCompletionActions.tsx
-- app/book/pinocchio/[chapter]/[mode]/page.tsx
-- app/dev/pinocchio-session-1/[mode]/page.tsx
-- app/dev/pinocchio-chapters/pinocchio-chapters.module.css
 - app/globals.css
-- app/lib/pinocchioStoryPack.server.ts
-- content-packs/pinocchio/v3/visuals.json
-- content-packs/pinocchio/v3/{manifest.json,rights.json,QA.md,README.md}
-- scripts/lib/pinocchio-v3-visual-release.mjs
-- scripts/validate-pinocchio-v3-visuals.mjs
-- scripts/publish-pinocchio-v3-web-assets.mjs
-- tests/pinocchio-sing2-parity.test.mjs
-- tests/pinocchio-visual-release-gate.test.mjs
+- app/hooks/useSoundEffects.ts
+- app/lib/progressGate.ts
+- package.json
+- tests/pinocchio-learning-behavior-parity.test.mjs
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-The product owner explicitly approved Production public beta after the pending visual, mobile-crop, and input-reference provenance reviews were disclosed. The exact `visuals.json` digest is now bound into `release-beta.json`, and the manifest pins the updated authorization digest. `env VERCEL_ENV=production npm run build` passed with 101 pages and published 12/12 Foundation Chapters as `production-public-beta`. `npm run validate:story-pack`, `npm run validate:pinocchio-ui-parity` (9/9), `npm run validate:pinocchio-visual-release` (5/5), `npx tsc --noEmit`, and `git diff --check` passed. Browser QA at a 433px phone viewport found no horizontal overflow; all four modes measured the same 414×233 16:9 stage and 414px dock.
+`npm run validate:pinocchio-behavior-parity` passes 26/26; `npm run validate:pinocchio-ui-parity` passes 9/9; `npm run validate:pinocchio-visual-release` passes 5/5; `npx tsc --noEmit` passes; the final 101-page Production build passes after the pause/audio hardening.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-The current public-beta authorization permits this exact pending visual catalog only; any catalog change invalidates the digest-bound exception. Named human editorial/learning/audio/rights/release approvals, continuity listening, per-Chapter Forced Alignment, full-master Forced Alignment, and named visual/mobile-crop/provenance review remain pending and visible as Beta blockers. The current restricted ElevenLabs key explicitly has `Forced Alignment: No Access`; enabling that one permission is required before final timing can be generated.
+Local browser QA is authentication-blocked on the separate localhost origin. After the final build, deploy the exact commit through the linked GitHub main → Vercel Production path and verify the signed-in Production routes directly. Keep Pinocchio's explicit completion persistence rather than copying Sing2's known final Guess/Word persistence defects.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Commit the digest-bound beta authorization, fast-forward the current commit to GitHub `main`, wait for the existing Vercel Git integration to finish Production, and smoke-test `https://mimicenglish.vercel.app/book/pinocchio/1` plus the four Chapter modes.
+Run the final Production build and diff check, commit the scoped behavior release, push the exact commit to GitHub main, wait for Vercel Production success, then verify Watch/Mimic/Guess/Word on the signed-in live site.
 <!-- HANDOFF:NEXT_ACTION:END -->

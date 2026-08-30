@@ -1228,3 +1228,54 @@ After the assistant disclosed that named visual review, mobile-crop review, and 
 Bound that approval to the exact pending `visuals.json` SHA-256 digest in `release-beta.json`, added the three visual gates to the acknowledged unresolved blockers, and pinned the updated authorization digest in the v3 manifest. This exception permits only the current Foundation visual catalog and does not mark any pending review complete.
 
 **Validation:** `env VERCEL_ENV=production npm run publish:pinocchio-v3-web` published 12/12 as `production-public-beta`; the Vercel-equivalent 101-page Production build, Story Pack validation, UI parity 9/9, visual release gate 5/5, TypeScript, and diff checks passed.
+
+## 2026-08-30 — user / behavioral-parity correction
+
+Reported that Pinocchio still differs from the operating Sing2 product in detailed interactions, including the progress bar's sentence synchronization and the correct-answer chime, and requested a complete investigation, fix, and Production deployment. Also asked why the previous pass did not complete the parity in one release.
+
+## 2026-08-30 — codex / decision
+
+Treat Sing2 as the behavioral reference product, not only a visual shell. The prior release gate was too narrow: it verified shared geometry, media, answer visibility, and basic route smoke but did not encode state transitions, progress text, feedback audio, active-control states, keyboard behavior, or completion flow as executable parity requirements. This pass will add that missing behavioral contract before redeployment.
+
+## 2026-08-30 23:59:36 — design-behavior-parity-tests → codex / handoff
+
+Added an executable Pinocchio-to-Sing2 learning behavior contract covering real Foundation counters, Watch clock/line/progress synchronization, active-green control wiring, feedback sounds and timing, learner/master navigation, chameleon reaction, and completion/replay routes. The suite exposes seven concrete parity gaps without changing production code.
+
+**Next action:** Fix the seven failing microinteraction contracts in PinocchioLessonModeClient.tsx, rerun node --test tests/pinocchio-learning-behavior-parity.test.mjs until 13/13 pass, then run the existing parity suite and browser QA before deployment.
+
+**Validation:** node --test tests/pinocchio-learning-behavior-parity.test.mjs executed: 13 tests, 6 pass, 7 expected diagnostic failures. Passing: all 12 Chapter 30/10/10 fixtures, Watch clock-to-line-to-bar sync, core active-green and counter wiring, final completion/replay routes. Failing: Watch time label, Mimic 1000ms cadence, Guess/Word sound hooks, Guess/Word 2000ms feedback and role-aware navigation, Word chameleon eating reaction.
+
+**Files:**
+- tests/pinocchio-learning-behavior-parity.test.mjs
+
+**Open risks:** This new test is intentionally red until the production behavior is corrected; do not add it to a green aggregate validation script or deploy the new behavior claim until it passes.
+
+
+## 2026-08-31 00:01:54 — design-behavior-parity-tests → codex / handoff
+
+Expanded the isolated executable behavior-parity suite to 21 contracts after a second source audit. It now distinguishes the canonical Sing2 interaction contract from Sing2's own persistence bugs and catches Watch seek/replay/resume, Mimic learner skip gating, Guess attention/three-view/retry/role-aware auto-next, Word cadence/retry/control/chameleon behavior, counters, sounds, and completion hydration. No production code was changed.
+
+**Next action:** Implement the 15 failing Pinocchio behavior contracts, keep Pinocchio's explicit markModeComplete persistence rather than copying Sing2's final-question bugs, then rerun the new 21-test suite, the existing 9-test structural suite, browser QA, and deployment verification.
+
+**Validation:** Existing npm run validate:pinocchio-ui-parity remains 9/9 green while node --test tests/pinocchio-learning-behavior-parity.test.mjs reports 6/21 green and 15 precise diagnostic failures. This proves the prior suite verified geometry/source structure but not action-to-sound-to-feedback-to-counter transitions.
+
+**Files:**
+- tests/pinocchio-learning-behavior-parity.test.mjs
+
+**Open risks:** The behavior suite is intentionally red until production code is corrected. The Sing2 reference has known final Guess/Word persistence defects; retain Pinocchio markModeComplete rather than copying those bugs. Correct/Again sounds fire once per submitted Guess answer or complete Word sentence, never once per chip.
+
+## 2026-08-31 — codex / behavioral parity implementation
+
+Converted Pinocchio Foundation from visual-shell parity to the same observable learning behavior as Sing2. Watch now exposes the synchronized current/total clock, learner seek cap, resume consent, immediate Again replay, and exact playback-driven story focus. Mimic now uses the canonical eight audible/muted slots, one-second cadence, playback-only green state, pause-safe gaps, guarded learner navigation, and persisted review position. Guess now runs the silent scene three times with attention cues, A/B/C auto-play and green state, correct/wrong melodies, two-second feedback, role-aware auto-next, full wrong-answer replay, isolated lock hints, and frozen completion. Word now uses listen/listen/mimic timing, stable ten-chip banks, fixed chip positions, full retry/replay behavior, correct/wrong melodies, two-second feedback, chameleon eating animation, pause-safe steps, and explicit completion persistence.
+
+The shared sound engine now reuses one AudioContext for reliable repeated feedback on mobile instead of allocating a new context for every answer. Remote `current_position`, `progress_data`, and `completed` state hydrate each mode without autoplay and completion saves no longer erase the final cursor.
+
+**Validation:** behavior parity 26/26, structural/mobile UI parity 9/9, visual release gate 5/5, and TypeScript all pass. The final Production build and live signed-in browser verification remain before release completion.
+
+**Files:**
+- app/components/pinocchio/PinocchioLessonModeClient.tsx
+- app/globals.css
+- app/hooks/useSoundEffects.ts
+- app/lib/progressGate.ts
+- package.json
+- tests/pinocchio-learning-behavior-parity.test.mjs

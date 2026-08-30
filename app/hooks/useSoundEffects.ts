@@ -5,6 +5,26 @@ import {
   WRONG_SOUND_NOTE_DURATION,
 } from '../constants/timings';
 
+let sharedAudioContext: AudioContext | null = null;
+
+function getSharedAudioContext() {
+  if (typeof window === 'undefined') return null;
+  const AudioContextConstructor = window.AudioContext || (window as typeof window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  if (!AudioContextConstructor) return null;
+  if (!sharedAudioContext || sharedAudioContext.state === 'closed') {
+    sharedAudioContext = new AudioContextConstructor();
+  }
+  return sharedAudioContext;
+}
+
+function playWhenReady(context: AudioContext, createSound: (context: AudioContext) => void) {
+  if (context.state === 'suspended') {
+    void context.resume().then(() => createSound(context)).catch(() => undefined);
+  } else {
+    createSound(context);
+  }
+}
+
 export function useSoundEffects() {
   // 주의를 끄는 소리 효과 함수
   const lastAttentionAtRef = useRef(0);
@@ -16,16 +36,9 @@ export function useSoundEffects() {
     }
     lastAttentionAtRef.current = now;
     try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-          createAndPlaySound(audioContext);
-        }).catch((err) => {
-        });
-      } else {
-        createAndPlaySound(audioContext);
-      }
+      const audioContext = getSharedAudioContext();
+      if (!audioContext) return;
+      playWhenReady(audioContext, createAndPlaySound);
 
       function createAndPlaySound(ctx: AudioContext) {
         const oscillator = ctx.createOscillator();
@@ -51,15 +64,9 @@ export function useSoundEffects() {
   // 정답 축하 소리 효과 함수
   const playCorrectSound = useCallback(() => {
     try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-          createCorrectSound(audioContext);
-        });
-      } else {
-        createCorrectSound(audioContext);
-      }
+      const audioContext = getSharedAudioContext();
+      if (!audioContext) return;
+      playWhenReady(audioContext, createCorrectSound);
 
       function createCorrectSound(ctx: AudioContext) {
         const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5
@@ -89,15 +96,9 @@ export function useSoundEffects() {
   // 오답 안타까운 소리 효과 함수
   const playAgainSound = useCallback(() => {
     try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-
-      if (audioContext.state === 'suspended') {
-        audioContext.resume().then(() => {
-          createAgainSound(audioContext);
-        });
-      } else {
-        createAgainSound(audioContext);
-      }
+      const audioContext = getSharedAudioContext();
+      if (!audioContext) return;
+      playWhenReady(audioContext, createAgainSound);
 
       function createAgainSound(ctx: AudioContext) {
         const frequencies = [783.99, 659.25, 523.25]; // G5, E5, C5

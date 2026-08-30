@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
 import ClickToStartOverlay from "@/app/components/ClickToStartOverlay";
 import ControlTriangle from "@/app/components/ControlTriangle";
+import GuessingOverlays from "@/app/components/GuessingOverlays";
 import { FullscreenIcon, HeaderIconButton } from "@/app/components/HeaderIcons";
 import LessonCompletionActions from "@/app/components/LessonCompletionActions";
 import LessonShell from "@/app/components/LessonShell";
@@ -36,8 +37,17 @@ import {
 import styles from "@/app/dev/pinocchio-chapters/pinocchio-chapters.module.css";
 import type { LessonMode, PinocchioChapterMedia, PinocchioPack, Segment, Timeline, WordItem } from "@/app/dev/pinocchio-chapters/types";
 import { useFullscreen } from "@/app/hooks/useFullscreen";
+import { useSoundEffects } from "@/app/hooks/useSoundEffects";
 import { saveProgress } from "@/app/lib/progress";
 import { fetchOwnProgress, isMasterRole } from "@/app/lib/progressGate";
+import {
+  GUESSING_ANSWER_FEEDBACK_DURATION,
+  GUESSING_AUTO_PLAY_DELAY,
+  GUESSING_NEXT_QUESTION_DELAY,
+  GUESSING_VIDEO_PLAYS,
+  GUESSING_VIDEO_REPLAY_DELAY,
+  MIMICKING_SEQUENCE_DELAY,
+} from "@/app/constants/timings";
 import {
   isVisibleTokenSequenceCorrect,
   mimicPhraseProgress,
@@ -56,18 +66,47 @@ type LessonContextValue = {
   lessonNumberBase: number;
   releaseBadge: string | null;
   isMaster: boolean;
+  modeProgress: ModeProgressSnapshot | null;
+};
+
+type ModeProgressSnapshot = {
+  lessonNumber: number;
+  mode: LessonMode;
+  completed: boolean;
+  currentPosition: number;
+  progressData: Record<string, unknown> | null;
 };
 
 const LessonContext = createContext<LessonContextValue | null>(null);
+
+function parseProgressData(value: unknown) {
+  if (!value) return null;
+  if (typeof value === "object" && !Array.isArray(value)) return value as Record<string, unknown>;
+  if (typeof value !== "string") return null;
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed as Record<string, unknown> : null;
+  } catch {
+    return null;
+  }
+}
+
+function resumeIndex(progress: ModeProgressSnapshot | null, total: number) {
+  if (total <= 0) return 0;
+  if (progress?.completed) return total - 1;
+  return Math.min(total - 1, Math.max(0, Math.trunc(progress?.currentPosition ?? 0)));
+}
 
 function markModeComplete(
   chapterNumber: number,
   mode: LessonMode,
   progressScope: string,
   lessonNumberBase: number,
+  currentPosition = 0,
+  progressData?: Record<string, unknown>,
 ) {
   completeMode(chapterNumber, mode, progressScope);
-  void saveProgress(lessonNumberBase + chapterNumber, mode, true).catch((error) => {
+  void saveProgress(lessonNumberBase + chapterNumber, mode, true, currentPosition, progressData).catch((error) => {
     console.error("피노키오 진도 저장 실패:", error);
   });
 }
@@ -139,6 +178,7 @@ function useLessonAudio(onFullEnded?: () => void) {
     if (!audio) return;
     clearFallbackTimer();
     clearBoundaryTimer();
+    setMediaMissing(false);
     audio.pause();
     audio.muted = muted;
     audio.currentTime = segment.start;
@@ -173,6 +213,7 @@ function useLessonAudio(onFullEnded?: () => void) {
     if (!audio) return;
     clearFallbackTimer();
     clearBoundaryTimer();
+    setMediaMissing(false);
     segmentEndRef.current = null;
     segmentCallbackRef.current = null;
     audio.muted = false;
@@ -232,6 +273,64 @@ function useLessonAudio(onFullEnded?: () => void) {
 function activeSourceLine(time: number, timeline: Timeline) {
   const index = timeline.lines.findIndex((line, lineIndex, lines) => time >= line.start && time < (lines[lineIndex + 1]?.start ?? Infinity));
   return Math.max(0, index);
+}
+
+function formatLessonTime(seconds: number) {
+  const safeSeconds = Math.max(0, Number.isFinite(seconds) ? seconds : 0);
+  const minutes = Math.floor(safeSeconds / 60);
+  const remainder = Math.floor(safeSeconds % 60);
+  return `${String(minutes).padStart(2, "0")} : ${String(remainder).padStart(2, "0")}`;
+}
+
+function usePausableTimer() {
+  const timerRef = useRef<number | null>(null);
+  const callbackRef = useRef<(() => void) | null>(null);
+  const dueAtRef = useRef(0);
+  const remainingRef = useRef(0);
+
+  const arm = useCallback((delay: number) => {
+    const safeDelay = Math.max(0, delay);
+    remainingRef.current = safeDelay;
+    dueAtRef.current = Date.now() + safeDelay;
+    timerRef.current = window.setTimeout(() => {
+      timerRef.current = null;
+      remainingRef.current = 0;
+      const callback = callbackRef.current;
+      callbackRef.current = null;
+      callback?.();
+    }, safeDelay);
+  }, []);
+
+  const clear = useCallback(() => {
+    if (timerRef.current !== null) window.clearTimeout(timerRef.current);
+    timerRef.current = null;
+    callbackRef.current = null;
+    remainingRef.current = 0;
+    dueAtRef.current = 0;
+  }, []);
+
+  const schedule = useCallback((callback: () => void, delay: number) => {
+    clear();
+    callbackRef.current = callback;
+    arm(delay);
+  }, [arm, clear]);
+
+  const pause = useCallback(() => {
+    if (timerRef.current === null || !callbackRef.current) return false;
+    window.clearTimeout(timerRef.current);
+    timerRef.current = null;
+    remainingRef.current = Math.max(0, dueAtRef.current - Date.now());
+    return true;
+  }, []);
+
+  const resume = useCallback(() => {
+    if (timerRef.current !== null || !callbackRef.current) return false;
+    arm(remainingRef.current);
+    return true;
+  }, [arm]);
+
+  useEffect(() => clear, [clear]);
+  return { clear, schedule, pause, resume };
 }
 
 function StoryStage({ activeLine, dim = false, faded = false, onClick, children }: {
@@ -306,24 +405,88 @@ function StageActions({ onSkip }: { onSkip?: () => void }) {
 
 function WatchMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase, isMaster, modeProgress } = useLesson();
+  const savedWatchTime = modeProgress?.mode === "watching" && !modeProgress.completed
+    ? Math.min(timeline.duration, Math.max(0, modeProgress.currentPosition))
+    : 0;
+  const isWatchingResume = savedWatchTime > 0.5;
   const [started, setStarted] = useState(false);
-  const [complete, setComplete] = useState(false);
+  const [complete, setComplete] = useState(() => Boolean(modeProgress?.completed));
+  const [isDragging, setIsDragging] = useState(false);
+  const [showProgressTooltip, setShowProgressTooltip] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState(0);
+  const maxWatchedRef = useRef(modeProgress?.completed ? timeline.duration : savedWatchTime);
   const finish = useCallback(() => {
-    markModeComplete(chapterNumber, "watching", progressScope, lessonNumberBase);
+    markModeComplete(chapterNumber, "watching", progressScope, lessonNumberBase, timeline.duration, {
+      audioProgress: 100,
+      completedAt: new Date().toISOString(),
+    });
     setComplete(true);
-  }, [chapterNumber, lessonNumberBase, progressScope]);
+  }, [chapterNumber, lessonNumberBase, progressScope, timeline.duration]);
   const engine = useLessonAudio(finish);
   const activeLine = activeSourceLine(engine.currentTime, timeline);
   const percent = complete ? 100 : Math.min(100, (engine.currentTime / Math.max(1, engine.duration)) * 100);
+  const displayPercent = showProgressTooltip ? tooltipPosition : percent;
+  const displayTime = (displayPercent / 100) * engine.duration;
+
+  useEffect(() => {
+    maxWatchedRef.current = Math.max(maxWatchedRef.current, engine.currentTime);
+  }, [engine.currentTime]);
+
+  useEffect(() => {
+    if (savedWatchTime <= 0 || complete) return;
+    const audio = engine.audioRef.current;
+    if (!audio) return;
+    const restore = () => engine.seek(Math.min(savedWatchTime, audio.duration || timeline.duration));
+    if (audio.readyState >= 1) restore();
+    else audio.addEventListener("loadedmetadata", restore, { once: true });
+    return () => audio.removeEventListener("loadedmetadata", restore);
+  }, [complete, engine.audioRef, engine.seek, savedWatchTime, timeline.duration]);
+
+  useEffect(() => {
+    if (!started || complete) return;
+    const audio = engine.audioRef.current;
+    if (!audio) return;
+    const interval = window.setInterval(() => {
+      if (audio.paused) return;
+      void saveProgress(
+        lessonNumberBase + chapterNumber,
+        "watching",
+        false,
+        audio.currentTime,
+        { audioProgress: (audio.currentTime / Math.max(1, audio.duration)) * 100, lastSaved: new Date().toISOString() },
+      ).catch((error) => console.error("피노키오 Watch 진도 저장 실패:", error));
+    }, 5000);
+    return () => window.clearInterval(interval);
+  }, [chapterNumber, complete, engine.audioRef, lessonNumberBase, started]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.code !== "Space" || !started || complete) return;
+      event.preventDefault();
+      if (engine.audioRef.current?.paused) engine.resume();
+      else engine.pause();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [complete, engine, started]);
 
   const handleStageClick = (event: MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).closest("button,a") || !started || complete) return;
     if (engine.isPlaying) engine.pause(); else engine.resume();
   };
 
-  const again = () => { engine.stop(); engine.seek(0); setStarted(false); setComplete(false); };
+  const again = () => { engine.stop(); engine.seek(0); maxWatchedRef.current = 0; setComplete(false); setStarted(true); engine.playFull(true); };
   const skip = () => { engine.pause(); engine.seek(engine.duration); finish(); };
+  const seekFromClientX = (clientX: number, bar: HTMLDivElement) => {
+    if (complete) return;
+    const rect = bar.getBoundingClientRect();
+    const requestedPercent = Math.max(0, Math.min(100, ((clientX - rect.left) / Math.max(1, rect.width)) * 100));
+    const requestedTime = (requestedPercent / 100) * engine.duration;
+    let nextTime = requestedTime;
+    if (!isMaster) nextTime = Math.min(requestedTime, maxWatchedRef.current);
+    engine.seek(nextTime);
+  };
 
   return (
     <LessonShell
@@ -337,10 +500,10 @@ function WatchMode() {
           {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>오디오를 불러오지 못했어요 · 잠시 후 다시 시도해 주세요</p> : null}
           {!started && !complete ? (
             <ClickToStartOverlay
-              onClick={() => { setStarted(true); engine.playFull(true); }}
-              text="이야기를 듣고 장면을 따라가요"
-              description={`Lily의 연속 낭독과 Living Storybook으로 Chapter ${chapterNumber} · ${pack.story.titleKo}를 경험해요.`}
-              actionLabel="시작"
+              onClick={() => { setStarted(true); engine.playFull(false); }}
+              text={isWatchingResume ? "이어서 이야기를 들을까요?" : "이야기를 듣고 장면을 따라가요"}
+              description={isWatchingResume ? "저장된 지점부터 오늘의 이야기를 이어서 들어요." : `Lily의 연속 낭독과 Living Storybook으로 Chapter ${chapterNumber} · ${pack.story.titleKo}를 경험해요.`}
+              actionLabel={isWatchingResume ? "계속하기" : "시작"}
             />
           ) : null}
           {started && !engine.isPlaying && !complete && engine.currentTime > 0 ? <PauseOverlay /> : null}
@@ -352,16 +515,36 @@ function WatchMode() {
         </StoryStage>
       }
       controls={
-        <div
-          className="watch-bar"
-          onClick={(event) => {
-            if (complete) return;
-            const rect = event.currentTarget.getBoundingClientRect();
-            engine.seek(((event.clientX - rect.left) / rect.width) * engine.duration);
-          }}
-        >
-          <div className="watch-bar-track"><div className="watch-bar-fill" style={{ width: `${percent}%` }} /></div>
-          <div className="watch-bar-thumb" style={{ left: `${percent}%` }} />
+        <div className="watch-progress-control relative z-50 w-full overflow-visible">
+          <div
+            className="watch-bar"
+            onPointerDown={(event) => {
+              setIsDragging(true);
+              event.currentTarget.setPointerCapture?.(event.pointerId);
+              seekFromClientX(event.clientX, event.currentTarget);
+            }}
+            onPointerMove={(event) => {
+              const rect = event.currentTarget.getBoundingClientRect();
+              setTooltipPosition(Math.max(0, Math.min(100, ((event.clientX - rect.left) / Math.max(1, rect.width)) * 100)));
+              if (isDragging) seekFromClientX(event.clientX, event.currentTarget);
+            }}
+            onPointerUp={(event) => {
+              setIsDragging(false);
+              event.currentTarget.releasePointerCapture?.(event.pointerId);
+            }}
+            onPointerCancel={() => setIsDragging(false)}
+            onPointerEnter={() => setShowProgressTooltip(true)}
+            onPointerLeave={() => { setShowProgressTooltip(false); setIsDragging(false); }}
+          >
+            <div className="watch-bar-track" />
+            <div className="watch-bar-fill transition-all duration-300 ease-out" style={{ width: `${percent}%` }} />
+            <div className="watch-bar-thumb cursor-pointer" style={{ left: `${percent}%` }} />
+            {(showProgressTooltip || started) ? (
+              <div className="watch-time" style={{ left: `${displayPercent}%` }}>
+                {formatLessonTime(displayTime)} / {formatLessonTime(engine.duration)}
+              </div>
+            ) : null}
+          </div>
         </div>
       }
     />
@@ -370,29 +553,30 @@ function WatchMode() {
 
 function MimicMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase, isMaster, modeProgress } = useLesson();
   const level = lessonLevel(pack);
   const practiceItems = useMemo(() => mimicPracticeItems(pack, timeline), [pack, timeline]);
   const total = practiceItems.length;
-  const [current, setCurrent] = useState(0);
+  const restoredIndex = resumeIndex(modeProgress?.mode === "mimicking" ? modeProgress : null, total);
+  const restoredHardLines = modeProgress?.mode === "mimicking" && Array.isArray(modeProgress.progressData?.hardLines)
+    ? modeProgress.progressData.hardLines.filter((value): value is number => Number.isInteger(value) && value >= 0 && value < total)
+    : [];
+  const [current, setCurrent] = useState(restoredIndex);
   const [activeChunkIndex, setActiveChunkIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const [activeSlot, setActiveSlot] = useState<number | null>(null);
   const [feedbackOpen, setFeedbackOpen] = useState(false);
   const [lineListOpen, setLineListOpen] = useState(false);
   const [paused, setPaused] = useState(false);
-  const [complete, setComplete] = useState(false);
-  const [hardLines, setHardLines] = useState<number[]>([]);
-  const [maxReached, setMaxReached] = useState(0);
-  const stepTimerRef = useRef<number | null>(null);
+  const [sequenceRunning, setSequenceRunning] = useState(false);
+  const [complete, setComplete] = useState(() => Boolean(modeProgress?.completed));
+  const [hardLines, setHardLines] = useState<number[]>(() => [...new Set(restoredHardLines)]);
+  const [maxReached, setMaxReached] = useState(modeProgress?.completed ? Math.max(0, total - 1) : restoredIndex);
+  const pausedMediaRef = useRef(false);
+  const { clear: clearStepTimer, schedule: scheduleStep, pause: pauseStepTimer, resume: resumeStepTimer } = usePausableTimer();
   const engine = useLessonAudio();
   const currentPractice = practiceItems[current];
   const activeLine = currentPractice?.sourceLineIndex ?? 0;
-
-  const clearStepTimer = useCallback(() => {
-    if (stepTimerRef.current !== null) window.clearTimeout(stepTimerRef.current);
-    stepTimerRef.current = null;
-  }, []);
 
   const runStep = useCallback((slot: number, lineIndex = current, chunkIndex = activeChunkIndex) => {
     if (complete) return;
@@ -402,27 +586,43 @@ function MimicMode() {
     clearStepTimer();
     setStarted(true);
     setPaused(false);
+    setSequenceRunning(true);
     setActiveChunkIndex(chunkIndex);
     setActiveSlot(slot);
     engine.playRange(chunk, MIMIC_MUTED_STEPS.has(slot), () => {
       setActiveSlot(null);
       if (slot < 7) {
-        stepTimerRef.current = window.setTimeout(() => runStep(slot + 1, lineIndex, chunkIndex), 800);
+        scheduleStep(() => runStep(slot + 1, lineIndex, chunkIndex), MIMICKING_SEQUENCE_DELAY);
       } else if (chunkIndex < practice.chunks.length - 1) {
-        stepTimerRef.current = window.setTimeout(() => runStep(0, lineIndex, chunkIndex + 1), 800);
+        scheduleStep(() => runStep(0, lineIndex, chunkIndex + 1), MIMICKING_SEQUENCE_DELAY);
       } else {
+        setSequenceRunning(false);
         setFeedbackOpen(true);
       }
     });
-  }, [activeChunkIndex, clearStepTimer, complete, current, engine, practiceItems]);
+  }, [activeChunkIndex, clearStepTimer, complete, current, engine, practiceItems, scheduleStep]);
 
-  useEffect(() => () => clearStepTimer(), [clearStepTimer]);
-
-  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); markModeComplete(chapterNumber, "mimicking", progressScope, lessonNumberBase); setComplete(true); setFeedbackOpen(false); };
-  const chooseLine = (index: number, autoplay = false, unlock = false) => {
-    if (!unlock && index > maxReached) return;
+  const finish = (reviewLines = hardLines) => {
     clearStepTimer();
     engine.stop();
+    setSequenceRunning(false);
+    setCurrent(total - 1);
+    setMaxReached(total - 1);
+    markModeComplete(chapterNumber, "mimicking", progressScope, lessonNumberBase, total - 1, {
+      currentScene: total - 1,
+      totalScenes: total,
+      hardLines: reviewLines,
+      completedAt: new Date().toISOString(),
+    });
+    setComplete(true);
+    setFeedbackOpen(false);
+  };
+  const chooseLine = (index: number, autoplay = false, unlock = false) => {
+    if (complete || index < 0 || index >= total) return;
+    if (!isMaster && !unlock && index > maxReached) return;
+    clearStepTimer();
+    engine.stop();
+    setSequenceRunning(false);
     setCurrent(index);
     setActiveChunkIndex(0);
     setActiveSlot(null);
@@ -436,11 +636,33 @@ function MimicMode() {
     setMaxReached((value) => Math.max(value, nextIndex));
     chooseLine(nextIndex, true, true);
   };
-  const next = () => { if (!feedbackOpen) current >= total - 1 ? finish() : advance(); };
-  const prev = () => { if (!feedbackOpen && current > 0) chooseLine(current - 1, true); };
+  const next = () => {
+    if (complete || feedbackOpen || (sequenceRunning && !isMaster)) return;
+    current >= total - 1 ? finish() : advance();
+  };
+  const prev = () => {
+    if (complete || feedbackOpen || (sequenceRunning && !isMaster) || current <= 0) return;
+    chooseLine(current - 1, true);
+  };
+  const toggleSequencePause = useCallback(() => {
+    if (paused) {
+      setPaused(false);
+      if (!resumeStepTimer() && pausedMediaRef.current) engine.resume();
+      pausedMediaRef.current = false;
+      return;
+    }
+    const timerPaused = pauseStepTimer();
+    pausedMediaRef.current = engine.isPlaying;
+    if (engine.isPlaying) engine.pause();
+    if (timerPaused || pausedMediaRef.current) setPaused(true);
+  }, [engine, pauseStepTimer, paused, resumeStepTimer]);
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
+      if (event.code === "Space") {
+        event.preventDefault();
+        if (!started || complete || feedbackOpen) return;
+        toggleSequencePause();
+      } else if (event.key === "ArrowLeft") {
         event.preventDefault();
         prev();
       } else if (event.key === "ArrowRight") {
@@ -450,17 +672,37 @@ function MimicMode() {
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [current, feedbackOpen, total]);
+  }, [complete, current, feedbackOpen, sequenceRunning, started, toggleSequencePause, total]);
   const feedback = (hard: boolean) => {
-    if (hard) setHardLines((items) => items.includes(current) ? items : [...items, current]);
+    const nextHardLines = hard
+      ? (hardLines.includes(current) ? hardLines : [...hardLines, current])
+      : hardLines.filter((index) => index !== current);
+    setHardLines(nextHardLines);
     setFeedbackOpen(false);
-    if (current >= total - 1) finish(); else advance();
+    setSequenceRunning(false);
+    if (current >= total - 1) finish(nextHardLines);
+    else {
+      const nextPosition = current + 1;
+      void saveProgress(
+        lessonNumberBase + chapterNumber,
+        "mimicking",
+        false,
+        nextPosition,
+        { currentScene: nextPosition, totalScenes: total, hardLines: nextHardLines, lastSaved: new Date().toISOString() },
+      ).catch((error) => console.error("피노키오 Mimic 진도 저장 실패:", error));
+      advance();
+    }
   };
   const togglePause = (event: MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).closest("button,a") || !started || complete || feedbackOpen) return;
-    if (engine.isPlaying) { engine.pause(); setPaused(true); } else { engine.resume(); setPaused(false); }
+    toggleSequencePause();
   };
-  const again = () => { setCurrent(0); setActiveChunkIndex(0); setMaxReached(0); setStarted(false); setActiveSlot(null); setComplete(false); setHardLines([]); engine.stop(); engine.seek(0); };
+  const skipLine = () => {
+    if (complete) return;
+    if (current >= total - 1) finish();
+    else advance();
+  };
+  const again = () => { setCurrent(0); setActiveChunkIndex(0); setMaxReached(0); setStarted(false); setActiveSlot(null); setSequenceRunning(false); setComplete(false); setFeedbackOpen(false); setPaused(false); setHardLines([]); engine.stop(); engine.seek(0); };
 
   const review = (
     <div className="lesson-results-card w-full max-w-2xl rounded-2xl border border-white/20 bg-[#201e1e]/95 p-5 text-center shadow-2xl sm:p-7">
@@ -492,7 +734,7 @@ function MimicMode() {
           onClick={togglePause}
         >
           {engine.audio}
-          <StageActions onSkip={complete ? undefined : finish} />
+          <StageActions onSkip={complete ? undefined : skipLine} />
           {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 연습 흐름은 계속 확인할 수 있어요</p> : null}
           {lineListOpen && !complete ? (
             <MimicLineList
@@ -500,7 +742,7 @@ function MimicMode() {
               mobileSheet
               total={total}
               currentIndex={current}
-              canOpen={(index) => index <= maxReached}
+              canOpen={(index) => isMaster || index <= maxReached}
               onDismiss={() => setLineListOpen(false)}
               onSelect={(index) => chooseLine(index, true)}
             />
@@ -526,7 +768,7 @@ function MimicMode() {
       }
       controls={
         <div className="lesson-dock mimic-dock">
-          <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => { if (!feedbackOpen) runStep(slot); }} activeIndex={activeSlot} />
+          <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => { if (!feedbackOpen) runStep(slot); }} activeIndex={engine.isPlaying ? activeSlot : null} />
           {currentPractice?.chunks.length > 1 ? (
             <p className="text-center text-[10px] font-bold tracking-[0.18em] text-[#60D96C] sm:text-xs" aria-live="polite">
               {mimicPhraseProgress(activeChunkIndex, currentPractice.chunks.length)}
@@ -543,77 +785,235 @@ function MimicMode() {
 
 function GuessMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase, isMaster, modeProgress } = useLesson();
   const level = lessonLevel(pack);
-  const [current, setCurrent] = useState(0);
+  const items = level.activities.guess.items;
+  const restoredIndex = resumeIndex(modeProgress?.mode === "guessing" ? modeProgress : null, items.length);
+  const [current, setCurrent] = useState(restoredIndex);
   const [started, setStarted] = useState(false);
   const [ready, setReady] = useState(false);
   const [playingLabel, setPlayingLabel] = useState<string | null>(null);
+  const [scenePlayCount, setScenePlayCount] = useState(0);
+  const [scenePlaying, setScenePlaying] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [nudgeNext, setNudgeNext] = useState(false);
   const [showCorrect, setShowCorrect] = useState(false);
   const [showAgain, setShowAgain] = useState(false);
-  const [complete, setComplete] = useState(false);
+  const [complete, setComplete] = useState(() => Boolean(modeProgress?.completed));
   const [lineListOpen, setLineListOpen] = useState(false);
-  const [maxReached, setMaxReached] = useState(0);
-  const timerRef = useRef<number | null>(null);
+  const [maxReached, setMaxReached] = useState(modeProgress?.completed ? Math.max(0, items.length - 1) : restoredIndex);
+  const [lockHint, setLockHint] = useState(false);
+  const lockHintTimerRef = useRef<number | null>(null);
+  const longPressTimerRef = useRef<number | null>(null);
+  const longPressFiredRef = useRef(false);
+  const pausedMediaRef = useRef(false);
+  const pausedSceneRef = useRef(false);
+  const pausedLabelRef = useRef<string | null>(null);
+  const { clear: clearTimer, schedule, pause: pauseWorkflowTimer, resume: resumeWorkflowTimer } = usePausableTimer();
   const engine = useLessonAudio();
-  const items = level.activities.guess.items;
+  const { playAttentionSound, playCorrectSound, playAgainSound } = useSoundEffects();
   const question = items[current];
 
-  const clearTimer = () => { if (timerRef.current !== null) window.clearTimeout(timerRef.current); timerRef.current = null; };
-  useEffect(() => () => clearTimer(), []);
+  const clearLongPress = useCallback(() => {
+    if (longPressTimerRef.current !== null) window.clearTimeout(longPressTimerRef.current);
+    longPressTimerRef.current = null;
+  }, []);
+  const showLockHint = useCallback(() => {
+    if (lockHintTimerRef.current !== null) window.clearTimeout(lockHintTimerRef.current);
+    setLockHint(true);
+    lockHintTimerRef.current = window.setTimeout(() => {
+      lockHintTimerRef.current = null;
+      setLockHint(false);
+    }, 1600);
+  }, []);
+  useEffect(() => () => {
+    clearTimer();
+    clearLongPress();
+    if (lockHintTimerRef.current !== null) window.clearTimeout(lockHintTimerRef.current);
+  }, [clearLongPress, clearTimer]);
 
-  const playQuestion = useCallback((questionIndex: number) => {
+  const playOptions = useCallback((questionIndex: number, optionIndex = 0) => {
     const nextQuestion = items[questionIndex];
     const options = [...nextQuestion.options].sort((a, b) => a.label.localeCompare(b.label));
     setReady(false);
-    const playAt = (index: number) => {
-      const option = options[index];
-      setPlayingLabel(option.label);
-      engine.playRange(timeline.lines[option.lineIndex], false, () => {
-        if (index < options.length - 1) timerRef.current = window.setTimeout(() => playAt(index + 1), 550);
-        else { setPlayingLabel(null); setReady(true); }
+    const option = options[optionIndex];
+    if (!option) {
+      setPlayingLabel(null);
+      setReady(true);
+      return;
+    }
+    setPlayingLabel(option.label);
+    engine.playRange(timeline.lines[option.lineIndex], false, () => {
+      if (optionIndex < options.length - 1) playOptions(questionIndex, optionIndex + 1);
+      else { setPlayingLabel(null); setReady(true); }
+    });
+  }, [engine, items, timeline.lines]);
+
+  const playQuestion = useCallback((questionIndex: number, delay = 0) => {
+    const nextQuestion = items[questionIndex];
+    const prompt = timeline.lines[nextQuestion.audioLineIndex];
+    clearTimer();
+    engine.stop();
+    setReady(false);
+    setPlayingLabel(null);
+    setScenePlayCount(0);
+    setScenePlaying(false);
+    setPaused(false);
+    setNudgeNext(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    const playScene = (completedPlays: number) => {
+      setScenePlayCount(completedPlays);
+      setScenePlaying(true);
+      playAttentionSound();
+      engine.playRange(prompt, true, () => {
+        const nextCount = completedPlays + 1;
+        setScenePlayCount(nextCount);
+        setScenePlaying(false);
+        if (nextCount < GUESSING_VIDEO_PLAYS) schedule(() => playScene(nextCount), GUESSING_VIDEO_REPLAY_DELAY);
+        else schedule(() => playOptions(questionIndex), GUESSING_AUTO_PLAY_DELAY);
       });
     };
-    playAt(0);
-  }, [engine, items]);
+    schedule(() => playScene(0), delay);
+  }, [clearTimer, engine, items, playAttentionSound, playOptions, schedule, timeline.lines]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "guessing", progressScope, lessonNumberBase); setComplete(true); setReady(false); };
+  const finish = () => {
+    clearTimer();
+    engine.stop();
+    setCurrent(items.length - 1);
+    setMaxReached(items.length - 1);
+    markModeComplete(chapterNumber, "guessing", progressScope, lessonNumberBase, items.length - 1, {
+      currentQuestion: items.length - 1,
+      totalQuestions: items.length,
+      completedAt: new Date().toISOString(),
+    });
+    setComplete(true);
+    setReady(false);
+    setNudgeNext(false);
+    setScenePlaying(false);
+    setPlayingLabel(null);
+  };
+  const advance = () => {
+    if (complete) return;
+    clearTimer();
+    engine.stop();
+    if (current >= items.length - 1) { finish(); return; }
+    const next = current + 1;
+    setReady(false);
+    setPlayingLabel(null);
+    setScenePlayCount(0);
+    setScenePlaying(false);
+    setPaused(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    setMaxReached((value) => Math.max(value, next));
+    setCurrent(next);
+    setNudgeNext(false);
+    void saveProgress(
+      lessonNumberBase + chapterNumber,
+      "guessing",
+      false,
+      next,
+      { currentQuestion: next, totalQuestions: items.length, lastSaved: new Date().toISOString() },
+    ).catch((error) => console.error("피노키오 Guess 진도 저장 실패:", error));
+    schedule(() => playQuestion(next), GUESSING_NEXT_QUESTION_DELAY);
+  };
   const answer = (label: string) => {
     if (!ready || complete) return;
     setReady(false);
     if (label === question.correctAnswer) {
+      playCorrectSound();
       setShowCorrect(true);
-      timerRef.current = window.setTimeout(() => {
+      schedule(() => {
         setShowCorrect(false);
         if (current >= items.length - 1) finish();
-        else { const next = current + 1; setMaxReached((value) => Math.max(value, next)); setCurrent(next); playQuestion(next); }
-      }, 950);
+        else {
+          setNudgeNext(true);
+          if (!isMaster) schedule(advance, 1600);
+        }
+      }, GUESSING_ANSWER_FEEDBACK_DURATION);
     } else {
+      playAgainSound();
       setShowAgain(true);
-      timerRef.current = window.setTimeout(() => { setShowAgain(false); setReady(true); }, 950);
+      schedule(() => { setShowAgain(false); playQuestion(current); }, GUESSING_ANSWER_FEEDBACK_DURATION);
     }
   };
   const jump = (index: number) => {
-    if (index > maxReached) return;
+    if (complete || index < 0 || index >= items.length) return;
+    if (!isMaster && index > maxReached) {
+      showLockHint();
+      return;
+    }
     clearTimer();
     engine.stop();
     setStarted(true);
+    if (isMaster) setMaxReached((value) => Math.max(value, index));
     setCurrent(index);
     setLineListOpen(false);
     setShowCorrect(false);
     setShowAgain(false);
-    playQuestion(index);
+    setNudgeNext(false);
+    playQuestion(index, GUESSING_NEXT_QUESTION_DELAY);
   };
-  const again = () => { clearTimer(); engine.stop(); setCurrent(0); setMaxReached(0); setStarted(false); setReady(false); setComplete(false); };
+  const skipQuestion = () => { if (complete) return; if (current >= items.length - 1) finish(); else advance(); };
+  const again = () => {
+    clearTimer();
+    engine.stop();
+    setCurrent(0);
+    setMaxReached(0);
+    setStarted(true);
+    setReady(false);
+    setComplete(false);
+    setNudgeNext(false);
+    playQuestion(0);
+  };
+  const togglePause = (event: MouseEvent<HTMLDivElement>) => {
+    if ((event.target as HTMLElement).closest("button,a") || !started || complete || ready || showCorrect || showAgain || nudgeNext) return;
+    if (paused) {
+      setPaused(false);
+      const resumedTimer = resumeWorkflowTimer();
+      if (!resumedTimer && pausedMediaRef.current) {
+        setScenePlaying(pausedSceneRef.current);
+        setPlayingLabel(pausedLabelRef.current);
+        engine.resume();
+      }
+      pausedMediaRef.current = false;
+      pausedSceneRef.current = false;
+      pausedLabelRef.current = null;
+      return;
+    }
+    const timerPaused = pauseWorkflowTimer();
+    pausedMediaRef.current = engine.isPlaying;
+    pausedSceneRef.current = scenePlaying;
+    pausedLabelRef.current = playingLabel;
+    if (engine.isPlaying) engine.pause();
+    setScenePlaying(false);
+    setPlayingLabel(null);
+    if (timerPaused || pausedMediaRef.current) setPaused(true);
+  };
+  const replayOption = (label: string) => {
+    if (!ready || paused || showCorrect || showAgain || nudgeNext) return;
+    const option = question.options.find((candidate) => candidate.label === label);
+    if (!option) return;
+    setReady(false);
+    setPlayingLabel(label);
+    engine.playRange(timeline.lines[option.lineIndex], false, () => { setPlayingLabel(null); setReady(true); });
+  };
+  const remainingPlays = started && !paused && !complete && scenePlayCount < GUESSING_VIDEO_PLAYS
+    ? GUESSING_VIDEO_PLAYS - scenePlayCount
+    : null;
+  const showListen = started && !paused && !complete && scenePlayCount >= GUESSING_VIDEO_PLAYS && !ready && !showCorrect && !showAgain && !nudgeNext;
+  const showWhich = ready && !paused && !complete && !showCorrect && !showAgain;
 
   return (
     <LessonShell
       hideHeader
       stageClassName="learning-stage learning-stage-guess learning-content-book"
+      videoHighlight={engine.isPlaying && (scenePlaying || Boolean(playingLabel))}
       video={
-        <StoryStage activeLine={question.audioLineIndex} dim={!started || complete} faded={complete}>
+        <StoryStage activeLine={question.audioLineIndex} dim={!started || complete} faded={complete} onClick={togglePause}>
           {engine.audio}
-          <StageActions onSkip={complete ? undefined : finish} />
+          <StageActions onSkip={complete ? undefined : skipQuestion} />
           {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 선택 흐름은 계속 확인할 수 있어요</p> : null}
           {lineListOpen && !complete ? (
             <MimicLineList
@@ -622,14 +1022,15 @@ function GuessMode() {
               mobileSheet
               total={items.length}
               currentIndex={current}
-              canOpen={(index) => index <= maxReached}
+              canOpen={(index) => isMaster || index <= maxReached}
               onDismiss={() => setLineListOpen(false)}
               onSelect={jump}
             />
           ) : null}
-          {!started && !complete ? <ClickToStartOverlay onClick={() => { setStarted(true); playQuestion(0); }} text="소리 없는 장면을 보고 대사를 골라요" description="세 문장을 차례로 듣고, 장면에 맞는 문장을 A·B·C에서 고르세요." actionLabel="시작" /> : null}
-          {showCorrect ? <p className="guess-banner is-correct">Correct</p> : null}
-          {showAgain ? <p className="guess-banner is-again">Again</p> : null}
+          {!started && !complete ? <ClickToStartOverlay onClick={() => { setStarted(true); playQuestion(current); }} text="소리 없는 장면을 보고 대사를 골라요" description="소리 없는 장면을 세 번 본 뒤, A·B·C를 듣고 알맞은 문장을 고르세요." actionLabel="시작" /> : null}
+          {paused && !complete ? <PauseOverlay /> : null}
+          <GuessingOverlays remainingPlays={remainingPlays} showListen={showListen} showWhich={showWhich} showCorrect={showCorrect} showAgain={showAgain} />
+          {lockHint ? <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-lg bg-black/80 px-4 py-2 text-sm font-semibold text-white">아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.</div> : null}
           {complete ? (
             <div className="lesson-completion-overlay pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60">
               <LessonCompletionActions onAgain={again} onNext={() => router.push(modeHref(chapterNumber, "word"))} />
@@ -640,9 +1041,36 @@ function GuessMode() {
       controls={
         <div className="lesson-dock guess-dock">
           <div className="guess-abc">
-            <ControlTriangle direction="left" label="이전 문제" disabled={current === 0} onClick={() => jump(Math.max(0, current - 1))} />
-            {["A", "B", "C"].map((label) => <button key={label} type="button" className={`guess-opt ${playingLabel === label ? "is-playing" : ""}`} disabled={!ready} onClick={() => answer(label)}>{label}</button>)}
-            <ControlTriangle direction="right" label="다음 문제" disabled={current >= maxReached} onClick={() => jump(Math.min(maxReached, current + 1))} />
+            <ControlTriangle direction="left" label="이전 문제" disabled={complete} onClick={() => current === 0 ? router.push(modeHref(chapterNumber, "mimicking")) : jump(current - 1)} />
+            {["A", "B", "C"].map((label) => (
+              <button
+                key={label}
+                type="button"
+                className={`guess-opt ${playingLabel === label ? (engine.isPlaying ? "is-playing" : "") : ""}`}
+                aria-label={ready ? `${label} 선택 (길게 누르면 다시 듣기)` : `${label} (아직 고를 수 없음)`}
+                disabled={!ready}
+                onPointerDown={() => {
+                  if (!ready) return;
+                  longPressFiredRef.current = false;
+                  clearLongPress();
+                  longPressTimerRef.current = window.setTimeout(() => { longPressFiredRef.current = true; replayOption(label); }, 500);
+                }}
+                onPointerUp={clearLongPress}
+                onPointerLeave={clearLongPress}
+                onPointerCancel={clearLongPress}
+                onClick={() => {
+                  if (longPressFiredRef.current) { longPressFiredRef.current = false; return; }
+                  answer(label);
+                }}
+              >{label}</button>
+            ))}
+            <ControlTriangle
+              direction="right"
+              label="다음 문제"
+              disabled={complete || current >= items.length - 1}
+              highlight={nudgeNext}
+              onClick={() => nudgeNext ? advance() : jump(current + 1)}
+            />
           </div>
           <button type="button" className="mimic-count" aria-controls="pinocchio-guess-line-list" aria-expanded={lineListOpen} aria-haspopup="listbox" aria-label="문제 목록" onClick={() => setLineListOpen((open) => !open)}><span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{items.length}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" /></button>
         </div>
@@ -678,78 +1106,252 @@ function shuffledTokens(tokens: string[], seed: number) {
   return values;
 }
 
+function wordBank(items: WordItem[], questionIndex: number) {
+  const target = normalizedTokens(items[questionIndex]);
+  const distractors: string[] = [];
+  const targetWords = new Set(target.map((word) => word.toLowerCase()));
+
+  for (let offset = 1; offset < items.length && target.length + distractors.length < 10; offset += 1) {
+    const candidate = items[(questionIndex + offset) % items.length];
+    for (const word of normalizedTokens(candidate)) {
+      const normalized = word.toLowerCase();
+      if (targetWords.has(normalized) || distractors.some((item) => item.toLowerCase() === normalized)) continue;
+      distractors.push(word);
+      if (target.length + distractors.length >= 10) break;
+    }
+  }
+
+  return shuffledTokens([...target, ...distractors], questionIndex);
+}
+
 function WordMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase, isMaster, modeProgress } = useLesson();
   const level = lessonLevel(pack);
-  const [current, setCurrent] = useState(0);
+  const items = level.activities.word.items;
+  const restoredIndex = resumeIndex(modeProgress?.mode === "word" ? modeProgress : null, items.length);
+  const [current, setCurrent] = useState(restoredIndex);
   const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<"listening" | "arranging">("listening");
   const [activeSlot, setActiveSlot] = useState<number | null>(null);
   const [selected, setSelected] = useState<number[]>([]);
   const [showCorrect, setShowCorrect] = useState(false);
   const [showAgain, setShowAgain] = useState(false);
-  const [complete, setComplete] = useState(false);
+  const [complete, setComplete] = useState(() => Boolean(modeProgress?.completed));
   const [lineListOpen, setLineListOpen] = useState(false);
-  const [maxReached, setMaxReached] = useState(0);
-  const timerRef = useRef<number | null>(null);
+  const [maxReached, setMaxReached] = useState(modeProgress?.completed ? Math.max(0, items.length - 1) : restoredIndex);
+  const [paused, setPaused] = useState(false);
+  const [hideAllWords, setHideAllWords] = useState(false);
+  const [isChameleonEating, setIsChameleonEating] = useState(false);
+  const [lockHint, setLockHint] = useState(false);
+  const eatingTimerRef = useRef<number | null>(null);
+  const lockHintTimerRef = useRef<number | null>(null);
+  const pausedMediaRef = useRef(false);
+  const { clear: clearTimer, schedule, pause: pauseWorkflowTimer, resume: resumeWorkflowTimer } = usePausableTimer();
   const engine = useLessonAudio();
-  const items = level.activities.word.items;
+  const { playCorrectSound, playAgainSound } = useSoundEffects();
   const item = items[current];
   const tokens = useMemo(() => normalizedTokens(item), [item]);
-  const bank = useMemo(() => shuffledTokens(tokens, current), [tokens, current]);
-  const available = bank.filter((token) => !selected.includes(token.id));
-  const mid = Math.ceil(available.length / 2);
+  const bank = useMemo(() => wordBank(items, current), [current, items]);
+  const bankText = useMemo(() => new Map(bank.map((token) => [token.id, token.text])), [bank]);
+  const mid = Math.ceil(bank.length / 2);
+  const controlsLocked = phase !== "arranging" || paused || showCorrect || showAgain || complete || isChameleonEating;
 
-  const clearTimer = () => { if (timerRef.current !== null) window.clearTimeout(timerRef.current); timerRef.current = null; };
-  useEffect(() => () => clearTimer(), []);
+  useEffect(() => () => {
+    if (eatingTimerRef.current !== null) window.clearTimeout(eatingTimerRef.current);
+    if (lockHintTimerRef.current !== null) window.clearTimeout(lockHintTimerRef.current);
+  }, []);
+  const showLockHint = useCallback(() => {
+    if (lockHintTimerRef.current !== null) window.clearTimeout(lockHintTimerRef.current);
+    setLockHint(true);
+    lockHintTimerRef.current = window.setTimeout(() => {
+      lockHintTimerRef.current = null;
+      setLockHint(false);
+    }, 1600);
+  }, []);
 
   const playSequence = useCallback((questionIndex: number) => {
     const nextItem = items[questionIndex];
     const segment = timeline.lines[nextItem.lineIndex];
-    setStarted(true);
-    setPhase("listening");
-    const playAt = (slot: number) => {
-      setActiveSlot(slot);
-      engine.playRange(segment, slot === 2, () => {
-        if (slot < 2) timerRef.current = window.setTimeout(() => playAt(slot + 1), 650);
-        else { setActiveSlot(null); setPhase("arranging"); }
-      });
-    };
-    playAt(0);
-  }, [engine, items]);
-
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "word", progressScope, lessonNumberBase); setComplete(true); };
-  const submit = () => {
-    if (phase !== "arranging" || selected.length !== tokens.length) return;
-    const correct = isVisibleTokenSequenceCorrect(tokens, selected);
-    if (correct) {
-      setShowCorrect(true);
-      timerRef.current = window.setTimeout(() => {
-        setShowCorrect(false);
-        if (current >= items.length - 1) finish();
-        else { const next = current + 1; setMaxReached((value) => Math.max(value, next)); setCurrent(next); setSelected([]); playSequence(next); }
-      }, 900);
-    } else {
-      setShowAgain(true);
-      timerRef.current = window.setTimeout(() => { setShowAgain(false); setSelected([]); }, 900);
-    }
-  };
-  const jump = (index: number) => {
-    if (index > maxReached) return;
     clearTimer();
     engine.stop();
     setStarted(true);
+    setPhase("listening");
+    setPaused(false);
+    setSelected([]);
+    setHideAllWords(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    const playAt = (slot: number) => {
+      setActiveSlot(slot);
+      engine.playRange(segment, slot === 2, () => {
+        setActiveSlot(null);
+        if (slot < 2) schedule(() => playAt(slot + 1), MIMICKING_SEQUENCE_DELAY);
+        else schedule(() => setPhase("arranging"), 1500);
+      });
+    };
+    playAt(0);
+  }, [clearTimer, engine, items, schedule, timeline.lines]);
+
+  const finish = () => {
+    clearTimer();
+    engine.stop();
+    setActiveSlot(null);
+    setCurrent(items.length - 1);
+    setMaxReached(items.length - 1);
+    markModeComplete(chapterNumber, "word", progressScope, lessonNumberBase, items.length - 1, {
+      currentQuestion: items.length - 1,
+      totalQuestions: items.length,
+      completedAt: new Date().toISOString(),
+    });
+    setShowCorrect(false);
+    setShowAgain(false);
+    setHideAllWords(false);
+    setIsChameleonEating(false);
+    setComplete(true);
+    setPaused(false);
+  };
+  const submit = () => {
+    if (controlsLocked || selected.length !== tokens.length) return;
+    setIsChameleonEating(true);
+    if (eatingTimerRef.current !== null) window.clearTimeout(eatingTimerRef.current);
+    eatingTimerRef.current = window.setTimeout(() => setIsChameleonEating(false), 720);
+    setHideAllWords(true);
+    clearTimer();
+    const correct = isVisibleTokenSequenceCorrect(tokens, selected);
+    if (correct) {
+      playCorrectSound();
+      setShowCorrect(true);
+      schedule(() => {
+        setShowCorrect(false);
+        setSelected([]);
+        setHideAllWords(false);
+        if (current >= items.length - 1) finish();
+        else {
+          const next = current + 1;
+          setMaxReached((value) => Math.max(value, next));
+          setCurrent(next);
+          setSelected([]);
+          setPhase("listening");
+          void saveProgress(
+            lessonNumberBase + chapterNumber,
+            "word",
+            false,
+            next,
+            { currentQuestion: next, totalQuestions: items.length, lastSaved: new Date().toISOString() },
+          ).catch((error) => console.error("피노키오 Word 진도 저장 실패:", error));
+          schedule(() => playSequence(next), 200);
+        }
+      }, GUESSING_ANSWER_FEEDBACK_DURATION);
+    } else {
+      playAgainSound();
+      setShowAgain(true);
+      schedule(() => {
+        setShowAgain(false);
+        setSelected([]);
+        setHideAllWords(false);
+        schedule(() => playSequence(current), 200);
+      }, GUESSING_ANSWER_FEEDBACK_DURATION);
+    }
+  };
+  const jump = (index: number) => {
+    if (complete || index < 0 || index >= items.length) return;
+    if (!isMaster && index > maxReached) {
+      showLockHint();
+      return;
+    }
+    clearTimer();
+    engine.stop();
+    setStarted(true);
+    if (isMaster) setMaxReached((value) => Math.max(value, index));
     setCurrent(index);
     setSelected([]);
     setLineListOpen(false);
     setShowCorrect(false);
     setShowAgain(false);
+    setHideAllWords(false);
+    setPaused(false);
     playSequence(index);
   };
-  const again = () => { clearTimer(); engine.stop(); setCurrent(0); setMaxReached(0); setStarted(false); setPhase("listening"); setSelected([]); setComplete(false); };
-  const selectToken = (id: number) => { if (phase === "arranging") setSelected((items) => [...items, id]); };
-  const renderChip = (token: { id: number; text: string }, compact = false) => <button key={token.id} type="button" className={`word-chip ${compact ? "is-compact" : ""}`} onClick={() => selectToken(token.id)} disabled={phase !== "arranging"}>{token.text}</button>;
+  const skipQuestion = () => {
+    if (complete) return;
+    if (current >= items.length - 1) finish();
+    else {
+      const next = current + 1;
+      setMaxReached((value) => Math.max(value, next));
+      setCurrent(next);
+      void saveProgress(
+        lessonNumberBase + chapterNumber,
+        "word",
+        false,
+        next,
+        { currentQuestion: next, totalQuestions: items.length, lastSaved: new Date().toISOString() },
+      ).catch((error) => console.error("피노키오 Word 진도 저장 실패:", error));
+      playSequence(next);
+    }
+  };
+  const again = () => {
+    clearTimer();
+    engine.stop();
+    setCurrent(0);
+    setMaxReached(0);
+    setStarted(false);
+    setPhase("listening");
+    setSelected([]);
+    setActiveSlot(null);
+    setHideAllWords(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    setIsChameleonEating(false);
+    setLineListOpen(false);
+    setPaused(false);
+    setComplete(false);
+  };
+  const replayOnce = () => {
+    if (controlsLocked) return;
+    setPaused(false);
+    engine.playRange(timeline.lines[item.lineIndex]);
+  };
+  const replayAll = () => {
+    if (controlsLocked) return;
+    setSelected([]);
+    setHideAllWords(false);
+    playSequence(current);
+  };
+  const togglePause = (event: MouseEvent<HTMLDivElement>) => {
+    if ((event.target as HTMLElement).closest("button,a") || !started || complete || showCorrect || showAgain) return;
+    if (paused) {
+      setPaused(false);
+      if (!resumeWorkflowTimer() && pausedMediaRef.current) engine.resume();
+      pausedMediaRef.current = false;
+    } else {
+      const timerPaused = pauseWorkflowTimer();
+      pausedMediaRef.current = engine.isPlaying;
+      if (engine.isPlaying) engine.pause();
+      if (timerPaused || pausedMediaRef.current || phase === "arranging") setPaused(true);
+    }
+  };
+  const selectToken = (id: number) => {
+    if (controlsLocked || selected.length >= tokens.length) return;
+    setSelected((values) => [...values, id]);
+  };
+  const renderChip = (token: { id: number; text: string }, compact = false) => {
+    const isUsed = selected.includes(token.id);
+    const shouldHide = isUsed || hideAllWords;
+    const cannotAddMore = selected.length >= tokens.length && !isUsed;
+    return (
+      <button
+        key={token.id}
+        type="button"
+        className={`word-chip ${compact ? "is-compact" : ""} ${shouldHide ? "pointer-events-none scale-75 opacity-0" : controlsLocked || cannotAddMore ? "opacity-40" : ""}`}
+        style={{ transition: "opacity 0.4s ease, transform 0.4s ease" }}
+        onClick={() => selectToken(token.id)}
+        disabled={shouldHide || controlsLocked || cannotAddMore}
+      >
+        {token.text}
+      </button>
+    );
+  };
 
   return (
     <LessonShell
@@ -758,13 +1360,13 @@ function WordMode() {
       stageClassName="learning-stage learning-stage-word learning-content-book"
     >
       <div className={`word-board ${phase === "arranging" && !complete ? "is-arranging" : ""}`}>
-        <div className="word-chips-side">{phase === "arranging" && !complete ? available.slice(0, mid).map((token) => renderChip(token)) : null}</div>
+        <div className="word-chips-side">{phase === "arranging" && !complete ? bank.slice(0, mid).map((token) => renderChip(token)) : null}</div>
         <div className={`word-main-stack ${styles.wordMainStack} flex min-h-0 flex-1 flex-col items-center justify-center`}>
           <div className="flex w-full min-h-0 items-center justify-center">
-            <div className={`word-video watch-frame relative aspect-video w-full max-h-full overflow-hidden ${activeSlot === 2 ? "is-live" : ""}`}>
-              <StoryStage activeLine={item.lineIndex} dim={!started || complete} faded={complete}>
+            <div className={`word-video watch-frame relative aspect-video w-full max-h-full overflow-hidden ${engine.isPlaying && activeSlot === 2 ? "is-live" : ""}`}>
+              <StoryStage activeLine={item.lineIndex} dim={!started || complete} faded={complete} onClick={togglePause}>
                 {engine.audio}
-                <StageActions onSkip={complete ? undefined : finish} />
+                <StageActions onSkip={complete ? undefined : skipQuestion} />
                 {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 단어 흐름은 계속 확인할 수 있어요</p> : null}
                 {lineListOpen && !complete ? (
                   <MimicLineList
@@ -773,15 +1375,17 @@ function WordMode() {
                     mobileSheet
                     total={items.length}
                     currentIndex={current}
-                    canOpen={(index) => index <= maxReached}
+                    canOpen={(index) => isMaster || index <= maxReached}
                     onDismiss={() => setLineListOpen(false)}
                     onSelect={jump}
                   />
                 ) : null}
-                {!started && !complete ? <ClickToStartOverlay onClick={() => { setStarted(true); playSequence(0); }} text="단어를 바르게 배열해요" description="문장을 두 번 듣고, 소리 없이 한 번 말한 뒤 단어를 올바른 순서로 놓아 보세요." actionLabel="시작" /> : null}
-                {selected.length && !complete ? <div className="word-sentence">{selected.map((id, index) => <button key={`${id}-${index}`} type="button" className="word-sentence-item" onClick={() => setSelected((values) => values.filter((_, itemIndex) => itemIndex !== index))}>{tokens[id]}</button>)}</div> : null}
+                {!started && !complete ? <ClickToStartOverlay onClick={() => { setStarted(true); playSequence(current); }} text="단어를 바르게 배열해요" description="문장을 두 번 듣고, 소리 없이 한 번 말한 뒤 단어를 올바른 순서로 놓아 보세요." actionLabel="시작" /> : null}
+                {paused && !complete ? <PauseOverlay /> : null}
+                {selected.length && !complete && !showCorrect && !showAgain ? <div className="word-sentence">{selected.map((id, index) => <button key={`${id}-${index}`} type="button" className="word-sentence-item" disabled={controlsLocked} onClick={() => setSelected((values) => values.filter((_, itemIndex) => itemIndex !== index))}>{bankText.get(id)}</button>)}</div> : null}
                 {showCorrect ? <p className="guess-banner is-correct">Correct</p> : null}
                 {showAgain ? <p className="guess-banner is-again">Again</p> : null}
+                {lockHint ? <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-lg bg-black/80 px-4 py-2 text-sm font-semibold text-white">아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.</div> : null}
                 {complete ? (
                   <div className="lesson-completion-overlay pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60">
                     <LessonCompletionActions
@@ -795,25 +1399,36 @@ function WordMode() {
               </StoryStage>
             </div>
           </div>
-          <div className="word-chips-mobile">{phase === "arranging" && !complete ? available.map((token) => renderChip(token, true)) : null}</div>
+          <div className="word-chips-mobile">{phase === "arranging" && !complete ? bank.map((token) => renderChip(token, true)) : null}</div>
           <div className="lesson-dock word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
             <div className="word-bar">
               <ControlTriangle
                 direction="left"
                 label="다시 듣기"
-                disabled={phase !== "arranging"}
-                onClick={() => { setStarted(true); engine.playRange(timeline.lines[item.lineIndex]); }}
+                disabled={controlsLocked}
+                onClick={replayOnce}
               />
-              {[0, 1].map((slot) => <div key={slot} className={`ctrl-slot is-listen ${activeSlot === slot ? "is-active" : ""}`} style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}><span className="ctrl-play-icon" /></div>)}
-              <div className={`ctrl-slot is-mimic ${activeSlot === 2 ? "is-active" : ""}`} style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}><span className="ctrl-mute-letter">m</span></div>
-              <ControlTriangle direction="right" label="전체 다시 듣기" onClick={() => playSequence(current)} />
-              <button type="button" onClick={() => setSelected((values) => values.slice(0, -1))} disabled={!selected.length} className="flex shrink-0 items-center justify-center rounded-lg bg-[#2a2a2a] text-xl font-bold text-white disabled:opacity-40" style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}>⌫</button>
+              {[0, 1].map((slot) => <div key={slot} className={`ctrl-slot is-listen ${engine.isPlaying && activeSlot === slot ? "is-active" : ""}`} style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}><span className="ctrl-play-icon" /></div>)}
+              <div className={`ctrl-slot is-mimic ${engine.isPlaying && activeSlot === 2 ? "is-active" : ""}`} style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}><span className="ctrl-mute-letter">m</span></div>
+              <ControlTriangle direction="right" label="전체 다시 듣기" disabled={controlsLocked} onClick={replayAll} />
+              <button type="button" onClick={() => setSelected((values) => values.slice(0, -1))} disabled={!selected.length || controlsLocked} className="flex shrink-0 items-center justify-center rounded-lg bg-[#2a2a2a] text-xl font-bold text-white disabled:opacity-40" style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}>⌫</button>
             </div>
             <button type="button" className="mimic-count" aria-controls="pinocchio-word-line-list" aria-expanded={lineListOpen} aria-haspopup="listbox" aria-label="문제 목록" onClick={() => setLineListOpen((open) => !open)}><span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{items.length}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" /></button>
           </div>
-          {!complete ? <button type="button" className={`word-submit relative z-20 mb-1 mt-1 ${selected.length === tokens.length ? "hover:scale-105" : "opacity-40"}`} onClick={submit} disabled={selected.length !== tokens.length || phase !== "arranging"}><img src="/Subject.png" alt="완성한 문장 제출" /></button> : null}
+          {!complete ? (
+            <button
+              type="button"
+              className={`word-submit relative z-20 mb-1 mt-1 shrink-0 ${isChameleonEating ? "is-eating" : selected.length === tokens.length && !controlsLocked ? "is-ready hover:scale-105" : "cursor-not-allowed opacity-40"}`}
+              onClick={submit}
+              disabled={selected.length !== tokens.length || controlsLocked}
+              aria-label="완성한 문장을 카멜레온에게 먹이기"
+            >
+              {isChameleonEating ? <span className="word-snack" aria-hidden="true">{selected.map((id) => bankText.get(id)).join(" ")}</span> : null}
+              <img src="/Subject.png" alt="" />
+            </button>
+          ) : null}
         </div>
-        <div className="word-chips-side">{phase === "arranging" && !complete ? available.slice(mid).map((token) => renderChip(token)) : null}</div>
+        <div className="word-chips-side">{phase === "arranging" && !complete ? bank.slice(mid).map((token) => renderChip(token)) : null}</div>
       </div>
     </LessonShell>
   );
@@ -855,16 +1470,26 @@ export default function PinocchioLessonModeClient({
   );
   const [timeline, setTimeline] = useState<Timeline | null>(fallbackTimeline);
   const [allowed, setAllowed] = useState<boolean | null>(null);
+  const [modeProgress, setModeProgress] = useState<ModeProgressSnapshot | null>(null);
+  const [loadedProgressKey, setLoadedProgressKey] = useState<string | null>(null);
+  const progressKey = chapterNumber && MODE_ORDER.includes(mode)
+    ? `${lessonNumberBase + chapterNumber}:${mode}`
+    : null;
 
   useEffect(() => {
     if (loading || profileLoading) return;
     if (!user) {
       setAllowed(false);
+      setModeProgress(null);
+      setLoadedProgressKey(null);
       router.replace("/auth/login");
       return;
     }
 
     let cancelled = false;
+    setAllowed(null);
+    setModeProgress(null);
+    setLoadedProgressKey(null);
     const verifyAccess = async () => {
       if (!chapterNumber || !pack || !MODE_ORDER.includes(mode)) {
         setAllowed(false);
@@ -880,8 +1505,21 @@ export default function PinocchioLessonModeClient({
         return;
       }
 
-      const nextAllowed = isMaster || canOpenMode(mode, readCompleted(chapterNumber, progressScope));
+      const localCompleted = readCompleted(chapterNumber, progressScope);
+      const nextAllowed = isMaster || canOpenMode(mode, localCompleted);
+      const lessonNumber = lessonNumberBase + chapterNumber;
+      const savedProgress = rows.find((row) => row.lesson_number === lessonNumber && row.mode === mode);
+      const rawPosition = Number(savedProgress?.current_position);
+      const progressSnapshot: ModeProgressSnapshot = {
+        lessonNumber,
+        mode,
+        completed: Boolean(savedProgress?.completed || localCompleted.includes(mode)),
+        currentPosition: Number.isFinite(rawPosition) ? Math.max(0, rawPosition) : 0,
+        progressData: parseProgressData(savedProgress?.progress_data),
+      };
       if (cancelled) return;
+      setModeProgress(progressSnapshot);
+      setLoadedProgressKey(`${lessonNumber}:${mode}`);
       setAllowed(nextAllowed);
       if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
     };
@@ -921,7 +1559,7 @@ export default function PinocchioLessonModeClient({
     return () => controller.abort();
   }, [chapterNumber, fallbackTimeline, initialTimeline, media?.timelineSrc, pack]);
 
-  if (loading || profileLoading || !user || allowed !== true || !chapterNumber || !pack || !timeline || !media) return <main className="min-h-screen bg-black" />;
+  if (loading || profileLoading || !user || allowed !== true || !chapterNumber || !pack || !timeline || !media || loadedProgressKey !== progressKey) return <main className="min-h-screen bg-black" />;
 
   const lesson: LessonContextValue = {
     chapterNumber,
@@ -932,6 +1570,7 @@ export default function PinocchioLessonModeClient({
     lessonNumberBase,
     releaseBadge,
     isMaster,
+    modeProgress,
   };
 
   let content: ReactNode = null;

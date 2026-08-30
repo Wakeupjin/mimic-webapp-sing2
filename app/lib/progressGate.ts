@@ -9,6 +9,7 @@ export type ProgressRow = {
   mode: string;
   completed?: boolean | null;
   current_position?: number | null;
+  progress_data?: unknown;
 };
 
 export function isMasterRole(role?: string | null) {
