@@ -12,6 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const TIMING_EPSILON_SECONDS = 1e-6;
 
 function argument(name, fallback = undefined) {
   const prefix = `--${name}=`;
@@ -120,9 +121,11 @@ function buildSentenceTimeline(rawSentences, duration, activities, chapter) {
     const nextSentence = rawSentences[index + 1];
     return (sentence.speechEnd + nextSentence.speechStart) / 2;
   });
+  const rawPlaybackBounds = new Map();
   const lines = rawSentences.map((sentence, index) => {
     const start = index === 0 ? Math.max(0, sentence.speechStart - 0.08) : boundaries[index - 1];
     const end = index === rawSentences.length - 1 ? Math.min(duration, sentence.speechEnd + 0.22) : boundaries[index];
+    rawPlaybackBounds.set(sentence.sentenceId, { start, end });
     return {
       sentenceId: sentence.sentenceId,
       beatId: sentence.beatId,
@@ -142,7 +145,8 @@ function buildSentenceTimeline(rawSentences, duration, activities, chapter) {
   const mimicItems = activities.mimic.map((item) => {
     const source = lineMap.get(item.sourceSentenceId);
     const rawSource = rawLineMap.get(item.sourceSentenceId);
-    if (!source || !rawSource) fail(`${item.id} references a missing generated master sentence.`);
+    const sourceBounds = rawPlaybackBounds.get(item.sourceSentenceId);
+    if (!source || !rawSource || !sourceBounds) fail(`${item.id} references a missing generated master sentence.`);
     const [from, to] = item.sourceTextRange ?? [0, source.text.length];
     if (from !== 0 || to !== source.text.length || item.text !== source.text) {
       fail(`${item.id} must retain its complete source sentence.`);
@@ -152,8 +156,8 @@ function buildSentenceTimeline(rawSentences, duration, activities, chapter) {
       character_end_times_seconds: rawSource.characterEndTimesSeconds,
     };
     const timed = timedCharacterRange(characterAlignment, from, to);
-    const start = Math.max(source.start, timed.start - 0.06);
-    const end = Math.min(source.end, timed.end + 0.08);
+    const start = Math.max(sourceBounds.start, timed.start - 0.06);
+    const end = Math.min(sourceBounds.end, timed.end + 0.08);
     const chunkSpeechTimings = (item.chunks ?? []).map((chunk) => {
       const [chunkFrom, chunkTo] = chunk.sourceTextRange ?? [];
       if (source.text.slice(chunkFrom, chunkTo) !== chunk.text) {
@@ -170,14 +174,18 @@ function buildSentenceTimeline(rawSentences, duration, activities, chapter) {
       return (chunkTimed.end + next.chunkTimed.start) / 2;
     });
     const chunks = chunkSpeechTimings.map(({ chunk, chunkFrom, chunkTo, chunkTimed }, index) => {
-      const lowerBoundary = index === 0 ? source.start : Math.max(source.start, chunkBoundaries[index - 1]);
+      const lowerBoundary =
+        index === 0 ? sourceBounds.start : Math.max(sourceBounds.start, chunkBoundaries[index - 1]);
       const upperBoundary =
         index === chunkSpeechTimings.length - 1
-          ? source.end
-          : Math.min(source.end, chunkBoundaries[index]);
+          ? sourceBounds.end
+          : Math.min(sourceBounds.end, chunkBoundaries[index]);
       const chunkStart = Math.max(lowerBoundary, chunkTimed.start - 0.06);
       const chunkEnd = Math.min(upperBoundary, chunkTimed.end + 0.08);
-      if (chunkStart > chunkTimed.start || chunkEnd < chunkTimed.end) {
+      if (
+        chunkStart - chunkTimed.start > TIMING_EPSILON_SECONDS ||
+        chunkTimed.end - chunkEnd > TIMING_EPSILON_SECONDS
+      ) {
         fail(`${item.id}/${chunk.chunkId} cannot be padded without clipping aligned speech.`);
       }
       return {

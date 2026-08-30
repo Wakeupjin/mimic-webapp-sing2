@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "1.0.0",
+  "source": "per-act-elevenlabs-tts-duration-fitted",
+  "forcedAlignment": {
+    "status": "fallback-to-per-act-timestamps",
+    "reason": "fetch failed"
+  }
+}

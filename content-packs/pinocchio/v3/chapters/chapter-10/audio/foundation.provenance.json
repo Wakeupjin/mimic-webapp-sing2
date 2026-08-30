@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-10",
+  "level": "foundation",
+  "generatedAt": "2026-08-30T11:00:17.353Z",
+  "generator": "scripts/generate-story-pack-golden-audio.mjs",
+  "source": {
+    "master": "chapters/chapter-10/levels/foundation/master.txt",
+    "sha256": "d03dd15aa1df27ee03f15d691cde82a7934ffdc771b4d99a702940436284758e",
+    "activities": "chapters/chapter-10/levels/foundation/activities.json",
+    "activitiesSha256": "ca246543451fe694584b900c0861f98d39dbfa69afb2ef3bc7e2f024a6c47980",
+    "sentences": 105,
+    "words": 837
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voice": {
+      "id": "pFZP5JQG7iQjIQuC4Bku",
+      "name": "Lily"
+    },
+    "voiceSnapshot": "chapters/chapter-10/audio/foundation.voice-profile.snapshot.json",
+    "accent": "British English",
+    "outputFormat": "mp3_44100_128",
+    "seed": 2701,
+    "languageCode": "en",
+    "applyTextNormalization": "auto",
+    "voiceSettings": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": 0,
+      "use_speaker_boost": true
+    },
+    "generationConfigurationSha256": "a19550c448aee2dea9e0a511153c0e281cc946d2c691fb76246bd22bc0b55701",
+    "commercialPaidPlanConfirmed": true
+  },
+  "strategy": {
+    "type": "two-coherent-acts",
+    "actCount": 2,
+    "reason": "The eleven_v3 request limit is 5,000 characters and request stitching is unavailable for v3.",
+    "sentenceBySentenceGeneration": false,
+    "concatenation": {
+      "method": "decode-concat-reencode",
+      "codec": "libmp3lame",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 128
+    },
+    "seams": [
+      {
+        "afterActId": "act-01",
+        "beforeActId": "act-02",
+        "afterSentenceId": "S052",
+        "beforeSentenceId": "S053",
+        "at": 211.831,
+        "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+      }
+    ],
+    "seam": {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S052",
+      "beforeSentenceId": "S053",
+      "at": 211.831,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  },
+  "requests": [
+    {
+      "actId": "act-01",
+      "beatIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "requestId": "Pzi9pGBCiDtyaPrjiDJh",
+      "traceId": "7eba3ff692cadf5c25787e9856826fa6",
+      "characterCost": "1334",
+      "characters": 2425,
+      "inputSha256": "441b8698cb131238f12a5c90b229023ce632735c16d21c214cf82dfb72d43b78",
+      "modelId": "eleven_v3",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "seed": 2701,
+      "outputFormat": "mp3_44100_128",
+      "languageCode": "en",
+      "applyTextNormalization": "auto",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true
+      },
+      "generationConfigurationSha256": "a19550c448aee2dea9e0a511153c0e281cc946d2c691fb76246bd22bc0b55701",
+      "audioSha256": "22cd096fcf2f618175edac1fd5ec086fd96fc4ac886d2820ca6c2ec91b35009b",
+      "alignmentSha256": "8a18d918aa098856d531dc416826a94adac09776fa76713762b45ad8c2c75e52",
+      "requestStitching": "not-supported-by-eleven-v3",
+      "generatedAt": "2026-08-30T10:59:09.964Z",
+      "audio": "chapters/chapter-10/audio/parts/foundation.act-01.mp3",
+      "duration": 211.76
+    },
+    {
+      "actId": "act-02",
+      "beatIds": [
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "requestId": "5vgf94uK5ReE4CAgn07M",
+      "traceId": "e84470a7f917aeb1fe013f913101ce54",
+      "characterCost": "1338",
+      "characters": 2433,
+      "inputSha256": "40674324b2d91dede25a97c0acd7a092b076327c5a555208d0f90ca9dd261bf1",
+      "modelId": "eleven_v3",
+      "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+      "seed": 2701,
+      "outputFormat": "mp3_44100_128",
+      "languageCode": "en",
+      "applyTextNormalization": "auto",
+      "voiceSettings": {
+        "stability": 0.5,
+        "similarity_boost": 0.75,
+        "style": 0,
+        "use_speaker_boost": true
+      },
+      "generationConfigurationSha256": "a19550c448aee2dea9e0a511153c0e281cc946d2c691fb76246bd22bc0b55701",
+      "audioSha256": "712c6228b12b7a49d88cbeafee50f1041a365f8b7f846061b105a1f9d21fe695",
+      "alignmentSha256": "563c43d4c290dede06f4e9f2fb016ea36baab44dfc0833142fa192f726f2fd4d",
+      "requestStitching": "not-supported-by-eleven-v3",
+      "generatedAt": "2026-08-30T11:00:13.128Z",
+      "audio": "chapters/chapter-10/audio/parts/foundation.act-02.mp3",
+      "duration": 197.92
+    }
+  ],
+  "forcedAlignment": {
+    "status": "fallback-to-per-act-timestamps",
+    "reason": "HTTP 401"
+  },
+  "master": {
+    "audio": "chapters/chapter-10/audio/foundation.master.mp3",
+    "timeline": "chapters/chapter-10/audio/foundation.timeline.json",
+    "alignment": "chapters/chapter-10/audio/foundation.alignment.json",
+    "audioSha256": "dd362ab8cde97bf8ba8098cefe1fdec594fbf51b83c9cbf21a289f70902522c3",
+    "duration": 409.68
+  },
+  "cost": {
+    "billedCharactersEstimate": 4858,
+    "providerReportedCharacterCost": 2672,
+    "ttsApiListPriceEstimateUsd": 0.486,
+    "forcedAlignmentListPriceEstimateUsd": 0.029,
+    "note": "List-price estimates only; the account plan, included credits, voice multiplier, taxes, and retries may change actual billing."
+  },
+  "qaStatus": "technical-validation-pending-human-listen-through-pending"
+}

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "chapterId": "chapter-12",
   "level": "foundation",
-  "status": "audio-not-generated",
+  "status": "audio-generated-technical-review-pending",
   "targets": {
     "watchDurationSeconds": 480,
     "acceptedGoldenRangeSeconds": [
@@ -47,7 +47,7 @@
     "accent": "British English",
     "accentTag": "[British accent]",
     "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
-    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T11:02:16.248Z",
     "approved": true,
     "approval": {
       "role": "product-owner",
@@ -89,20 +89,53 @@
     ],
     "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
     "scriptChecksum": "sha256:047c0f4d2d80923b77f81dbcb8e3b1b50dccd0b881ca3d3c99e8176d86e09202",
-    "requests": [],
-    "seams": [],
-    "generatedAt": null,
-    "operator": null,
-    "cost": null,
+    "requests": [
+      {
+        "actId": "act-01",
+        "requestId": "jJYSOIJKpY5A6XlnXKo6",
+        "traceId": "be1fb7c782049a09633245629d95e5c2",
+        "characters": 2443,
+        "characterCost": "1344",
+        "inputSha256": "01c1a24859683229de9530a11c7ecf560925f92e43efcf8e7e701f22ba089be0"
+      },
+      {
+        "actId": "act-02",
+        "requestId": "zP2H20HbNgzdxxoT3uix",
+        "traceId": "5c11ad70a6a6496845ae512ccafa6180",
+        "characters": 2618,
+        "characterCost": "1440",
+        "inputSha256": "eb9372d5d411b33dadd462e48d75b23c0e9792f2282e4a1318157130ef088873"
+      }
+    ],
+    "seams": [
+      {
+        "afterActId": "act-01",
+        "beforeActId": "act-02",
+        "afterSentenceId": "S052",
+        "beforeSentenceId": "S053",
+        "atSeconds": 182.386,
+        "timingBasis": "per-act-elevenlabs-tts-duration-fitted",
+        "humanQaStatus": "pending"
+      }
+    ],
+    "generatedAt": "2026-08-30T11:05:44.288Z",
+    "operator": "codex",
+    "cost": {
+      "billedCharactersEstimate": 5061,
+      "providerReportedCharacterCost": 2784,
+      "ttsApiListPriceEstimateUsd": 0.506,
+      "forcedAlignmentListPriceEstimateUsd": 0.029,
+      "note": "List-price estimates only; the account plan, included credits, voice multiplier, taxes, and retries may change actual billing."
+    },
     "activitiesChecksum": "sha256:cd4d35932c0dff25d8147ab34f2938e122c59ac7a3211337341b59ce3fc06916"
   },
   "outputs": {
-    "masterAudio": null,
-    "sentenceTimeline": null,
-    "forcedAlignment": null,
-    "provenance": null,
-    "voiceProfileSnapshot": null,
-    "checksum": null
+    "masterAudio": "chapters/chapter-12/audio/foundation.master.mp3",
+    "sentenceTimeline": "chapters/chapter-12/audio/foundation.timeline.json",
+    "forcedAlignment": "chapters/chapter-12/audio/foundation.alignment.json",
+    "provenance": "chapters/chapter-12/audio/foundation.provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-12/audio/foundation.voice-profile.snapshot.json",
+    "checksum": "sha256:d1575015044e499ad629bf41887944dd873418b3d1da0c5f55230f91828ce730"
   },
   "humanListen": {
     "status": "pending",

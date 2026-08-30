@@ -4,6 +4,7 @@ import type {
   MimicChunk,
   MimicPracticeItem,
   MimicTimelineItem,
+  PinocchioLessonLevel,
   PinocchioPack,
   Segment,
   Timeline,
@@ -49,8 +50,15 @@ export function chapterMedia(chapterNumber: number) {
   };
 }
 
+export function lessonLevel(pack: PinocchioPack): PinocchioLessonLevel {
+  const levelId = pack.course.level ?? "core";
+  const level = pack.levels[levelId];
+  if (!level) throw new Error(`Pinocchio ${levelId} content is missing`);
+  return level;
+}
+
 export function sourceLineForMimic(pack: PinocchioPack, index: number) {
-  return pack.levels.core.activities.mimic.items[index]?.sourceLineIndex ?? 0;
+  return lessonLevel(pack).activities.mimic.items[index]?.sourceLineIndex ?? 0;
 }
 
 function seconds(value: number | undefined, milliseconds: number | undefined, fallback: number) {
@@ -123,7 +131,7 @@ function estimatedChunk(
  * lessons keep their existing behavior until a v3 pack/timeline is selected.
  */
 export function mimicPracticeItems(pack: PinocchioPack, timeline: Timeline): MimicPracticeItem[] {
-  return pack.levels.core.activities.mimic.items.map((authored, index) => {
+  return lessonLevel(pack).activities.mimic.items.map((authored, index) => {
     const timed = timeline.mimicItems.find((item) => item.id === authored.id)
       ?? timeline.mimicItems[index];
     const sourceLineIndex = sourceLineIndexFor(authored, timed, timeline);
@@ -172,19 +180,20 @@ function spokenSeconds(text: string) {
 
 export function estimatedTimeline(pack: PinocchioPack): Timeline {
   let cursor = 0;
-  const lines: Segment[] = pack.levels.core.lines.map((line) => {
+  const level = lessonLevel(pack);
+  const lines: Segment[] = level.lines.map((line) => {
     const start = cursor;
     const end = start + spokenSeconds(line.text);
     cursor = end + 0.18;
     return { ...line, start, end };
   });
 
-  const mimicItems = pack.levels.core.activities.mimic.items.map((item) => {
+  const mimicItems = level.activities.mimic.items.map((item) => {
     const sourceLineIndex = item.sourceLineIndex
       ?? lines.findIndex((line) => line.id === item.sourceSentenceId || line.sentenceId === item.sourceSentenceId);
     const safeSourceLineIndex = Math.max(0, sourceLineIndex);
     const source = lines[safeSourceLineIndex] ?? lines[0];
-    const siblings = pack.levels.core.activities.mimic.items.filter(
+    const siblings = level.activities.mimic.items.filter(
       (candidate) => (candidate.sourceLineIndex ?? candidate.sourceSentenceId)
         === (item.sourceLineIndex ?? item.sourceSentenceId)
     );

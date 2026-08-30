@@ -12,6 +12,8 @@ import {
   canOpenChapter,
   canOpenMode,
   mergeRemoteProgress,
+  LEGACY_PINOCCHIO_LESSON_NUMBER_BASE,
+  LEGACY_PINOCCHIO_PROGRESS_SCOPE,
   PINOCCHIO_PROGRESS_EVENT,
   readProgress,
   safeChapterRoot,
@@ -25,6 +27,12 @@ type Props = {
   totalChapters: number;
   titleEn: string;
   titleKo: string;
+  levelLabel?: string;
+  mediaReady?: boolean;
+  mediaMessage?: string;
+  chapterAvailability?: boolean[];
+  progressScope?: string;
+  lessonNumberBase?: number;
 };
 
 export default function ChapterSelectClient({
@@ -32,6 +40,12 @@ export default function ChapterSelectClient({
   totalChapters,
   titleEn,
   titleKo,
+  levelLabel = "Core",
+  mediaReady = true,
+  mediaMessage,
+  chapterAvailability,
+  progressScope = LEGACY_PINOCCHIO_PROGRESS_SCOPE,
+  lessonNumberBase = LEGACY_PINOCCHIO_LESSON_NUMBER_BASE,
 }: Props) {
   const router = useRouter();
   const { user, profile, loading, profileLoading } = useAuth();
@@ -51,24 +65,29 @@ export default function ChapterSelectClient({
     }
 
     let cancelled = false;
-    const sync = () => {
-      const nextProgress = readProgress();
+    let remoteProgressSettled = isMaster;
+
+    const applyProgress = (nextProgress: ChapterProgress) => {
       setProgress(nextProgress);
-      setReady(true);
-      if (!isMaster && !canOpenChapter(chapterNumber, nextProgress)) {
+      if (remoteProgressSettled) setReady(true);
+      if (remoteProgressSettled && !isMaster && !canOpenChapter(chapterNumber, nextProgress)) {
         router.replace(safeChapterRoot(chapterNumber, nextProgress));
       }
     };
+
+    const sync = () => applyProgress(readProgress(progressScope));
     sync();
-    void fetchOwnProgress().then((rows) => {
-      if (cancelled) return;
-      const nextProgress = mergeRemoteProgress(rows);
-      setProgress(nextProgress);
-      setReady(true);
-      if (!isMaster && !canOpenChapter(chapterNumber, nextProgress)) {
-        router.replace(safeChapterRoot(chapterNumber, nextProgress));
-      }
-    });
+
+    if (!isMaster) {
+      void fetchOwnProgress()
+        .then((rows) => mergeRemoteProgress(rows, progressScope, lessonNumberBase))
+        .catch(() => readProgress(progressScope))
+        .then((nextProgress) => {
+          if (cancelled) return;
+          remoteProgressSettled = true;
+          applyProgress(nextProgress);
+        });
+    }
     window.addEventListener(PINOCCHIO_PROGRESS_EVENT, sync);
     window.addEventListener("storage", sync);
     return () => {
@@ -76,7 +95,7 @@ export default function ChapterSelectClient({
       window.removeEventListener(PINOCCHIO_PROGRESS_EVENT, sync);
       window.removeEventListener("storage", sync);
     };
-  }, [chapterNumber, isMaster, loading, profileLoading, router, user]);
+  }, [chapterNumber, isMaster, lessonNumberBase, loading, profileLoading, progressScope, router, user]);
 
   useEffect(() => {
     if (!dropdownOpen) return;
@@ -85,7 +104,7 @@ export default function ChapterSelectClient({
   }, [dropdownOpen]);
 
   const completed = progress[String(chapterNumber)] ?? [];
-  const hereMode = MODE_ORDER.find((mode) => !completed.includes(mode));
+  const hereMode = mediaReady ? MODE_ORDER.find((mode) => !completed.includes(mode)) : undefined;
 
   if (loading || profileLoading || !user || !ready || (!isMaster && !canOpenChapter(chapterNumber, progress))) {
     return <main className="min-h-screen bg-black" />;
@@ -97,7 +116,7 @@ export default function ChapterSelectClient({
         <div className={styles.profileBadge}>
           <span>피</span>
           <b>피노키오</b>
-          <small title={`${titleEn} · ${titleKo}`}>Core · {chapterNumber}/{totalChapters}</small>
+          <small title={`${titleEn} · ${titleKo}`}>{levelLabel} · {chapterNumber}/{totalChapters}</small>
         </div>
       }
       chapterLabel={`CHAPTER ${chapterNumber}`}
@@ -111,13 +130,17 @@ export default function ChapterSelectClient({
           <FullscreenIcon active={isFullscreen} />
         </HeaderIconButton>
       }
+      notice={!mediaReady ? (
+        <p>{mediaMessage ?? `Chapter ${chapterNumber} 음원과 타임라인을 준비 중입니다.`}</p>
+      ) : undefined}
       chapters={Array.from({ length: totalChapters }, (_, index) => {
         const number = index + 1;
         const chapterCompleted = progress[String(number)] ?? [];
+        const chapterMediaReady = chapterAvailability?.[index] ?? true;
         return {
           id: number,
           label: `CHAPTER ${number}`,
-          locked: !isMaster && !canOpenChapter(number, progress),
+          locked: !chapterMediaReady || (!isMaster && !canOpenChapter(number, progress)),
           selected: number === chapterNumber,
           done: chapterCompleted.includes("word"),
           onSelect: () => {
@@ -129,7 +152,7 @@ export default function ChapterSelectClient({
       modes={MODE_ORDER.map((mode: LessonMode) => ({
         id: mode,
         label: MODE_LABEL[mode],
-        locked: !isMaster && !canOpenMode(mode, completed),
+        locked: !mediaReady || (!isMaster && !canOpenMode(mode, completed)),
         done: completed.includes(mode),
         here: hereMode === mode,
         onSelect: () => router.push(modeHref(chapterNumber, mode)),

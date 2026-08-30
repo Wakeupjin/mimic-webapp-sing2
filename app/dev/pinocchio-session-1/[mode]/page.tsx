@@ -19,6 +19,7 @@ import {
   chapterMedia,
   chapterRoot,
   estimatedTimeline,
+  lessonLevel,
   mimicPracticeItems,
   MODE_ORDER,
   modeHref,
@@ -31,8 +32,10 @@ import {
   latestOpenChapter,
   mergeRemoteProgress,
   readCompleted,
+  LEGACY_PINOCCHIO_LESSON_NUMBER_BASE,
+  LEGACY_PINOCCHIO_PROGRESS_SCOPE,
 } from "../../pinocchio-chapters/localProgress";
-import type { LessonMode, PinocchioPack, Segment, Timeline, WordItem } from "../../pinocchio-chapters/types";
+import type { LessonMode, PinocchioChapterMedia, PinocchioPack, Segment, Timeline, WordItem } from "../../pinocchio-chapters/types";
 import styles from "../../pinocchio-chapters/pinocchio-chapters.module.css";
 
 const FOCUS_X = ["4%", "12%", "24%", "36%", "48%", "62%", "76%", "92%"];
@@ -42,14 +45,21 @@ type LessonContextValue = {
   chapterNumber: number;
   pack: PinocchioPack;
   timeline: Timeline;
-  audioSrc: string;
+  media: PinocchioChapterMedia;
+  progressScope: string;
+  lessonNumberBase: number;
 };
 
 const LessonContext = createContext<LessonContextValue | null>(null);
 
-function markModeComplete(chapterNumber: number, mode: LessonMode) {
-  completeMode(chapterNumber, mode);
-  void saveProgress(300 + chapterNumber, mode, true).catch((error) => {
+function markModeComplete(
+  chapterNumber: number,
+  mode: LessonMode,
+  progressScope: string,
+  lessonNumberBase: number,
+) {
+  completeMode(chapterNumber, mode, progressScope);
+  void saveProgress(lessonNumberBase + chapterNumber, mode, true).catch((error) => {
     console.error("피노키오 진도 저장 실패:", error);
   });
 }
@@ -61,7 +71,8 @@ function useLesson() {
 }
 
 function useLessonAudio(onFullEnded?: () => void) {
-  const { audioSrc, timeline } = useLesson();
+  const { media, timeline } = useLesson();
+  const audioSrc = media.audioSrc;
   const audioRef = useRef<HTMLAudioElement>(null);
   const segmentEndRef = useRef<number | null>(null);
   const segmentCallbackRef = useRef<(() => void) | null>(null);
@@ -223,12 +234,14 @@ function StoryStage({ activeLine, dim = false, faded = false, caption, onClick, 
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   children?: ReactNode;
 }) {
-  const { chapterNumber, pack } = useLesson();
+  const { chapterNumber, pack, media } = useLesson();
   const [artMissing, setArtMissing] = useState(false);
-  const { artSrc } = chapterMedia(chapterNumber);
+  const artSrc = media.artSrc;
   useEffect(() => setArtMissing(false), [artSrc]);
   const beatIndex = Math.max(0, pack.livingStorybook.beats.findIndex((beat) => {
-    const [start, end] = beat.lineRanges.core;
+    const range = beat.lineRanges[pack.course.level ?? "core"];
+    if (!range) return false;
+    const [start, end] = range;
     return activeLine >= start && activeLine <= end;
   }));
   return (
@@ -237,7 +250,7 @@ function StoryStage({ activeLine, dim = false, faded = false, caption, onClick, 
       style={{ "--focus-x": FOCUS_X[beatIndex] } as CSSProperties}
       onClick={onClick}
     >
-      {!artMissing ? (
+      {artSrc && !artMissing ? (
         <img
           className={styles.stageArt}
           src={artSrc}
@@ -313,10 +326,13 @@ function Completion({
 
 function WatchMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline } = useLesson();
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
   const [started, setStarted] = useState(false);
   const [complete, setComplete] = useState(false);
-  const finish = useCallback(() => { markModeComplete(chapterNumber, "watching"); setComplete(true); }, [chapterNumber]);
+  const finish = useCallback(() => {
+    markModeComplete(chapterNumber, "watching", progressScope, lessonNumberBase);
+    setComplete(true);
+  }, [chapterNumber, lessonNumberBase, progressScope]);
   const engine = useLessonAudio(finish);
   const activeLine = activeSourceLine(engine.currentTime, timeline);
   const percent = complete ? 100 : Math.min(100, (engine.currentTime / Math.max(1, engine.duration)) * 100);
@@ -369,8 +385,8 @@ function WatchMode() {
 
 function MimicMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline } = useLesson();
-  const level = pack.levels.core;
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const level = lessonLevel(pack);
   const practiceItems = useMemo(() => mimicPracticeItems(pack, timeline), [pack, timeline]);
   const total = practiceItems.length;
   const [current, setCurrent] = useState(0);
@@ -417,7 +433,7 @@ function MimicMode() {
 
   useEffect(() => () => clearStepTimer(), [clearStepTimer]);
 
-  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); markModeComplete(chapterNumber, "mimicking"); setComplete(true); setFeedbackOpen(false); };
+  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); markModeComplete(chapterNumber, "mimicking", progressScope, lessonNumberBase); setComplete(true); setFeedbackOpen(false); };
   const chooseLine = (index: number, autoplay = false, unlock = false) => {
     if (!unlock && index > maxReached) return;
     clearStepTimer();
@@ -509,8 +525,8 @@ function MimicMode() {
 
 function GuessMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline } = useLesson();
-  const level = pack.levels.core;
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const level = lessonLevel(pack);
   const [current, setCurrent] = useState(0);
   const [started, setStarted] = useState(false);
   const [ready, setReady] = useState(false);
@@ -543,7 +559,7 @@ function GuessMode() {
     playAt(0);
   }, [engine, items]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "guessing"); setComplete(true); setReady(false); };
+  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "guessing", progressScope, lessonNumberBase); setComplete(true); setReady(false); };
   const answer = (label: string) => {
     if (!ready || complete) return;
     setReady(false);
@@ -630,8 +646,8 @@ function shuffledTokens(tokens: string[], seed: number) {
 
 function WordMode() {
   const router = useRouter();
-  const { chapterNumber, pack, timeline } = useLesson();
-  const level = pack.levels.core;
+  const { chapterNumber, pack, timeline, progressScope, lessonNumberBase } = useLesson();
+  const level = lessonLevel(pack);
   const [current, setCurrent] = useState(0);
   const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<"listening" | "arranging">("listening");
@@ -669,7 +685,7 @@ function WordMode() {
     playAt(0);
   }, [engine, items]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "word"); setComplete(true); };
+  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); markModeComplete(chapterNumber, "word", progressScope, lessonNumberBase); setComplete(true); };
   const submit = () => {
     if (phase !== "arranging" || selected.length !== tokens.length) return;
     const correct = selected.every((id, index) => id === index);
@@ -752,18 +768,37 @@ function WordMode() {
   );
 }
 
-export default function PinocchioLessonModePage() {
+export type PinocchioLessonModePageProps = {
+  initialChapterNumber?: number;
+  initialMode?: LessonMode;
+  initialPack?: PinocchioPack;
+  initialTimeline?: Timeline;
+  initialMedia?: PinocchioChapterMedia;
+  progressScope?: string;
+  lessonNumberBase?: number;
+};
+
+export function PinocchioLessonModeClient({
+  initialChapterNumber,
+  initialMode,
+  initialPack,
+  initialTimeline,
+  initialMedia,
+  progressScope = LEGACY_PINOCCHIO_PROGRESS_SCOPE,
+  lessonNumberBase = LEGACY_PINOCCHIO_LESSON_NUMBER_BASE,
+}: PinocchioLessonModePageProps = {}) {
   const params = useParams<{ chapter?: string; mode: string }>();
   const router = useRouter();
   const { user, profile, loading, profileLoading } = useAuth();
   const isMaster = isMasterRole(profile?.role);
-  const mode = params.mode as LessonMode;
+  const mode = initialMode ?? params.mode as LessonMode;
   const parsedChapter = parseChapterNumber(params.chapter);
-  const chapterNumber = params.chapter === undefined ? 1 : parsedChapter;
-  const pack = chapterNumber ? getChapterPack(chapterNumber) : undefined;
+  const chapterNumber = initialChapterNumber ?? (params.chapter === undefined ? 1 : parsedChapter);
+  const pack = initialPack ?? (chapterNumber ? getChapterPack(chapterNumber) : undefined);
+  const media = initialMedia ?? (chapterNumber ? chapterMedia(chapterNumber) : null);
   const fallbackTimeline = useMemo(
-    () => pack ? estimatedTimeline(pack) : null,
-    [pack]
+    () => initialTimeline ?? (pack ? estimatedTimeline(pack) : null),
+    [initialTimeline, pack]
   );
   const [timeline, setTimeline] = useState<Timeline | null>(fallbackTimeline);
   const [allowed, setAllowed] = useState<boolean | null>(null);
@@ -785,36 +820,45 @@ export default function PinocchioLessonModePage() {
       }
 
       const rows = await fetchOwnProgress();
-      const progress = mergeRemoteProgress(rows);
+      const progress = mergeRemoteProgress(rows, progressScope, lessonNumberBase);
       if (!isMaster && !canOpenChapter(chapterNumber, progress)) {
         setAllowed(false);
         router.replace(chapterRoot(latestOpenChapter(progress)));
         return;
       }
 
-      const nextAllowed = isMaster || canOpenMode(mode, readCompleted(chapterNumber));
+      const nextAllowed = isMaster || canOpenMode(mode, readCompleted(chapterNumber, progressScope));
       if (cancelled) return;
       setAllowed(nextAllowed);
       if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
     };
     void verifyAccess();
     return () => { cancelled = true; };
-  }, [chapterNumber, isMaster, loading, mode, pack, profileLoading, router, user]);
+  }, [chapterNumber, isMaster, lessonNumberBase, loading, mode, pack, profileLoading, progressScope, router, user]);
 
   useEffect(() => {
-    if (!chapterNumber || !fallbackTimeline) return;
+    if (!chapterNumber || !fallbackTimeline || !pack) return;
+    if (initialTimeline) {
+      setTimeline(initialTimeline);
+      return;
+    }
+    if (!media?.timelineSrc) {
+      setTimeline(fallbackTimeline);
+      return;
+    }
     const controller = new AbortController();
     setTimeline(fallbackTimeline);
 
-    void fetch(chapterMedia(chapterNumber).timelineSrc, { signal: controller.signal })
+    void fetch(media.timelineSrc, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error(`Timeline returned ${response.status}`);
         return response.json() as Promise<Timeline>;
       })
       .then((nextTimeline) => {
+        const level = lessonLevel(pack);
         const valid = Number.isFinite(nextTimeline.duration)
-          && nextTimeline.lines?.length === pack?.levels.core.lines.length
-          && nextTimeline.mimicItems?.length === pack?.levels.core.activities.mimic.items.length;
+          && nextTimeline.lines?.length === level.lines.length
+          && nextTimeline.mimicItems?.length === level.activities.mimic.items.length;
         if (valid) setTimeline(nextTimeline);
       })
       .catch(() => {
@@ -822,15 +866,17 @@ export default function PinocchioLessonModePage() {
       });
 
     return () => controller.abort();
-  }, [chapterNumber, fallbackTimeline, pack]);
+  }, [chapterNumber, fallbackTimeline, initialTimeline, media?.timelineSrc, pack]);
 
-  if (loading || profileLoading || !user || allowed !== true || !chapterNumber || !pack || !timeline) return <main className="min-h-screen bg-black" />;
+  if (loading || profileLoading || !user || allowed !== true || !chapterNumber || !pack || !timeline || !media) return <main className="min-h-screen bg-black" />;
 
-  const lesson = {
+  const lesson: LessonContextValue = {
     chapterNumber,
     pack,
     timeline,
-    audioSrc: chapterMedia(chapterNumber).audioSrc,
+    media,
+    progressScope,
+    lessonNumberBase,
   };
 
   let content: ReactNode = null;
@@ -848,4 +894,8 @@ export default function PinocchioLessonModePage() {
       )}
     </LessonContext.Provider>
   );
+}
+
+export default function PinocchioLessonModePage() {
+  return <PinocchioLessonModeClient />;
 }

@@ -1139,3 +1139,31 @@ Completed the Pinocchio v3 asset standard and all 36 Foundation/Core/Studio Chap
 - scripts/validate-story-pack-audiobook.mjs
 
 **Open risks:** Production book routes still load v2 data/media and need explicit v3 loader wiring. Named human editorial/learning approvals, rights approval, and continuity listening remain pending. Current restricted ElevenLabs key cannot access subscription usage or Forced Alignment. Remaining audio estimate is 210,451 billed characters; full batch must not start without a credit cap.
+
+## 2026-08-30 — user / release-level correction
+
+Clarified that the first service release should be Foundation (초급), not Core. Core remains the natural intermediate/default narrative level.
+
+## 2026-08-30 — codex / Foundation production wiring
+
+Connected the real `/book/pinocchio` routes to Pinocchio v3 Foundation while preserving an explicit v2 rollback. The server adapter converts each locked Foundation master and activity file into the existing Watch → Mimic → Guess → Word runtime contract, uses the generated millisecond timeline, and assigns separate progress IDs 401-412 so v2 completion does not leak into v3. A predev/prebuild publisher copies only checksum- and timing-verified Lily masters into stable public URLs; missing or partial Chapters stay visibly locked and never receive stale v2 audio.
+
+**Validation:** TypeScript and both default-v3 and `PINOCCHIO_PRODUCTION_RELEASE=v2` webpack production builds passed. Local HTTP smoke returned 200 for the v3 selector and Foundation Chapter 1 MP3, while an unpublished Chapter direct route showed the explicit production gate. Turbopack remained stuck in its known optimization stall, so the project build command now uses the passing webpack build.
+
+**Next action:** When all twelve Foundation masters finish, run `npm run publish:pinocchio-v3-web`, require `Published 12/12`, then validate, build, and create a Vercel Preview for human listening and release QA. No deployment was performed in this task.
+
+## 2026-08-30 — codex / Foundation 12-Chapter audio completion
+
+Generated all twelve paid Lily/Eleven v3 Foundation Chapter masters under the exact 60,894-character batch cap. The provider reported 33,492 consumed generation credits. The Chapter masters total 80.76 minutes; the assembled full-story master is 81.04 minutes including eleven 1.5-second Chapter gaps. Every Chapter has one locked transcript, one canonical master, 30 unique Mimic parents with nested millisecond chunks, 10 Guess items, 10 Word items, checksummed provenance, and a verified public release entry. `npm run publish:pinocchio-v3-web` printed `Published 12/12`; Story Pack validation, TypeScript, production build, public MP3 MIME/size checks, and Chapter 1/12 route smokes passed.
+
+**Release blocker:** the existing restricted key has Text to Speech access but explicitly has `Forced Alignment: No Access`. Chapter service timelines currently use duration-fitted ElevenLabs TTS character timestamps. Enable only the `Forced Alignment` permission, run the final 81-minute full-master alignment, then complete continuity listening and named editorial/learning review before Production.
+
+## 2026-08-30 — user / first-release correction
+
+Confirmed that the first real service release must be Foundation, the easiest learner version.
+
+## 2026-08-30 — codex / Foundation QA Preview gate
+
+Made Foundation the only default v3 production-route level and removed remaining live entry links to the legacy Pinocchio selector. Added the Mimic-original Pinocchio cover, preserved separate v3 progress IDs 401-412, delayed Chapter redirects until remote progress has merged, reconciled Chapter 6 fallback-alignment provenance, and hardened the web publisher. Preview builds now require exactly 12/12 checksum-valid Chapter media sets and record every open release blocker; Production builds fail until the manifest, commercial rights, named Chapter approvals, all per-Chapter Forced Alignments, and the continuous full-story Forced Alignment are complete.
+
+**Validation:** `npm run publish:pinocchio-v3-web` published 12/12 as a QA Preview; `npx tsc --noEmit`, `git diff --check`, script syntax checks, and the 101-page webpack build passed. An explicit Production-channel publisher run failed on the intended gates, proving draft content cannot silently ship.

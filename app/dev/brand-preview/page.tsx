@@ -147,6 +147,20 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
     }
   }
 
+  if (latest.lesson_number >= 401 && latest.lesson_number <= 412) {
+    if (lessonNumber > 412) return null;
+    const chapter = lessonNumber - 400;
+    const modeLabel = mode.toUpperCase();
+    const position = !latest.completed && Number(latest.current_position) > 0 && mode !== "watching"
+      ? ` · LINE ${Math.floor(Number(latest.current_position)) + 1}`
+      : "";
+    return {
+      href: `/book/pinocchio/${chapter}/${mode}`,
+      ko: `PINOCCHIO · CHAPTER ${chapter} · ${modeLabel}${position}`,
+      en: `PINOCCHIO · CHAPTER ${chapter} · ${modeLabel}${position}`,
+    };
+  }
+
   const pack = lessonNumber >= 300 ? 3 : lessonNumber >= 200 ? 2 : 1;
   const lesson = pack === 1 ? lessonNumber : lessonNumber % 100;
   const movieId = formatMovieId(pack, Math.max(1, lesson));
@@ -293,7 +307,7 @@ export default function BrandPreviewPage() {
           </nav>
           <div className={styles.menuCourses}>
             <button type="button" disabled={Boolean(pendingAction)} onClick={() => openCourse("menu-movie", "/sing2/selecting?id=001:1")}>SING 2 <span>MOVIE →</span></button>
-            <button type="button" disabled={Boolean(pendingAction)} onClick={() => openCourse("menu-book", "/book/selecting?id=003:1")}>PINOCCHIO <span>BOOK →</span></button>
+            <button type="button" disabled={Boolean(pendingAction)} onClick={() => openCourse("menu-book", "/book/pinocchio/1")}>PINOCCHIO <span>BOOK →</span></button>
           </div>
           <p>SOUND → STORY → MY VOICE</p>
         </aside>
@@ -353,13 +367,13 @@ export default function BrandPreviewPage() {
         <article className={styles.featureCard}>
           <div className={styles.cardNumber}>{t.bookOrder} · 02 / BOOK</div>
           <div className={styles.bookCover}>
-            <Image src="/pinocchio.jpeg" alt="Pinocchio book cover" fill sizes="(max-width: 760px) 86vw, 33vw" />
+            <Image src="/pinocchio-mimic-cover.png" alt="Mimic 오리지널 피노키오 커버" fill sizes="(max-width: 760px) 86vw, 33vw" />
             <span className={styles.bookTape} aria-hidden="true" />
           </div>
           <div className={styles.cardCaption}>
             <div><span>{t.bookLabel}</span><h3>PINOCCHIO</h3></div>
             <p>{t.bookBody}</p>
-            <button type="button" className={styles.courseLink} disabled={Boolean(pendingAction)} onClick={() => openCourse("book", "/book/selecting?id=003:1")}>
+            <button type="button" className={styles.courseLink} disabled={Boolean(pendingAction)} onClick={() => openCourse("book", "/book/pinocchio/1")}>
               {pendingAction === "book" ? (user ? t.openingPage : t.openingSignup) : t.bookCta} <b>{pendingAction === "book" ? "…" : "→"}</b>
             </button>
           </div>

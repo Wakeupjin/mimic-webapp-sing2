@@ -32,6 +32,7 @@ type ModeSelectLayoutProps = {
   listRef?: React.RefObject<HTMLDivElement | null>;
   extraActions?: ReactNode;
   badge?: ReactNode;
+  notice?: ReactNode;
   closeHref?: string;
 };
 
@@ -45,6 +46,7 @@ export default function ModeSelectLayout({
   listRef,
   extraActions,
   badge,
+  notice,
   closeHref = "/",
 }: ModeSelectLayoutProps) {
   return (
@@ -107,7 +109,8 @@ export default function ModeSelectLayout({
         )}
       </div>
 
-      <div className="select-content">
+      <div className={`select-content ${notice ? "has-notice" : ""}`}>
+        {notice ? <div className="select-notice">{notice}</div> : null}
         <div className="select-modes">
           {modes.map((mode) => (
             <div key={mode.id} className={`select-mode-item ${mode.here ? "is-here" : ""}`}>

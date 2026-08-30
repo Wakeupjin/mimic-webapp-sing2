@@ -1,0 +1,2680 @@
+{
+  "schemaVersion": "1.1.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-09",
+  "level": "foundation",
+  "generatedAt": "2026-08-30T10:58:04.339Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accent": "British English",
+  "outputFormat": "mp3_44100_128",
+  "timingPrecision": "milliseconds",
+  "seed": 2691,
+  "source": "single-editorial-master-rendered-as-2-coherent-acts",
+  "alignmentSource": "per-act-elevenlabs-tts-duration-fitted",
+  "masterTextSha256": "1c23171534f93e6cdee2386de76533f699479a25dcbeae1259a3387ae952a6fb",
+  "activitiesSha256": "a678ab857b6890287cfb2768a5d2f5e5cfe1326f3b7b392104c0ecd028c4e79e",
+  "duration": 416.24,
+  "acts": [
+    {
+      "actId": "act-01",
+      "beatIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "start": 0,
+      "end": 225.618,
+      "concatenationOffset": 0,
+      "sourceAudioDuration": 225.44,
+      "sourceAlignmentEnd": 225.471,
+      "sourceAlignmentTimeScale": 0.99986251,
+      "requestId": "xmTwbXCPxfSnYRLm0INg",
+      "characters": 2789
+    },
+    {
+      "actId": "act-02",
+      "beatIds": [
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "start": 225.618,
+      "end": 416.24,
+      "concatenationOffset": 225.44,
+      "sourceAudioDuration": 190.8,
+      "sourceAlignmentEnd": 190.823,
+      "sourceAlignmentTimeScale": 0.999879469,
+      "requestId": "rOIoySHFSo1GJ8bv8Tu1",
+      "characters": 2521
+    }
+  ],
+  "seams": [
+    {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S052",
+      "beforeSentenceId": "S053",
+      "at": 225.618,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  ],
+  "seam": {
+    "afterActId": "act-01",
+    "beforeActId": "act-02",
+    "afterSentenceId": "S052",
+    "beforeSentenceId": "S053",
+    "at": 225.618,
+    "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+  },
+  "beats": [
+    {
+      "beatId": "B01",
+      "title": "Tomorrow a Real Boy",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "start": 0.07,
+      "end": 57.857,
+      "startMs": 70,
+      "endMs": 57857
+    },
+    {
+      "beatId": "B02",
+      "title": "Lamp-Wick’s Invitation",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "start": 57.857,
+      "end": 110.983,
+      "startMs": 57857,
+      "endMs": 110983
+    },
+    {
+      "beatId": "B03",
+      "title": "The Midnight Wagon",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S040",
+      "start": 110.983,
+      "end": 168.696,
+      "startMs": 110983,
+      "endMs": 168696
+    },
+    {
+      "beatId": "B04",
+      "title": "Endless Play",
+      "sentenceStart": "S041",
+      "sentenceEnd": "S052",
+      "start": 168.696,
+      "end": 225.618,
+      "startMs": 168696,
+      "endMs": 225618
+    },
+    {
+      "beatId": "B05",
+      "title": "Five Months Later",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "start": 225.618,
+      "end": 267.367,
+      "startMs": 225618,
+      "endMs": 267367
+    },
+    {
+      "beatId": "B06",
+      "title": "Donkey Fever",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S078",
+      "start": 267.367,
+      "end": 312.547,
+      "startMs": 267367,
+      "endMs": 312547
+    },
+    {
+      "beatId": "B07",
+      "title": "The Same Ears",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S091",
+      "start": 312.547,
+      "end": 358.918,
+      "startMs": 312547,
+      "endMs": 358918
+    },
+    {
+      "beatId": "B08",
+      "title": "The Trap Revealed",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S106",
+      "start": 358.918,
+      "end": 416.24,
+      "startMs": 358918,
+      "endMs": 416240
+    }
+  ],
+  "lines": [
+    {
+      "sentenceId": "S001",
+      "beatId": "B01",
+      "text": "The Fairy’s bright house was busy with party work.",
+      "speechStart": 0.15,
+      "speechEnd": 3.3,
+      "speechStartMs": 150,
+      "speechEndMs": 3300,
+      "start": 0.07,
+      "end": 3.362,
+      "startMs": 70,
+      "endMs": 3362
+    },
+    {
+      "sentenceId": "S002",
+      "beatId": "B01",
+      "text": "Tomorrow, Pinocchio would become a real boy.",
+      "speechStart": 3.424,
+      "speechEnd": 6.739,
+      "speechStartMs": 3424,
+      "speechEndMs": 6739,
+      "start": 3.362,
+      "end": 6.813,
+      "startMs": 3362,
+      "endMs": 6813
+    },
+    {
+      "sentenceId": "S003",
+      "beatId": "B01",
+      "text": "Small cakes, fruit, and sweets waited on a long table.",
+      "speechStart": 6.886,
+      "speechEnd": 11.938,
+      "speechStartMs": 6886,
+      "speechEndMs": 11938,
+      "start": 6.813,
+      "end": 12.018,
+      "startMs": 6813,
+      "endMs": 12018
+    },
+    {
+      "sentenceId": "S004",
+      "beatId": "B01",
+      "text": "Twelve chairs stood ready around it for his school friends.",
+      "speechStart": 12.098,
+      "speechEnd": 16.018,
+      "speechStartMs": 12098,
+      "speechEndMs": 16018,
+      "start": 12.018,
+      "end": 16.118,
+      "startMs": 12018,
+      "endMs": 16118
+    },
+    {
+      "sentenceId": "S005",
+      "beatId": "B01",
+      "text": "Pinocchio felt proud of his recent hard work at school.",
+      "speechStart": 16.218,
+      "speechEnd": 20.097,
+      "speechStartMs": 16218,
+      "speechEndMs": 20097,
+      "start": 16.118,
+      "end": 20.217,
+      "startMs": 16118,
+      "endMs": 20217
+    },
+    {
+      "sentenceId": "S006",
+      "beatId": "B01",
+      "text": "He ran through town to invite everyone before evening.",
+      "speechStart": 20.337,
+      "speechEnd": 23.857,
+      "speechStartMs": 20337,
+      "speechEndMs": 23857,
+      "start": 20.217,
+      "end": 23.922,
+      "startMs": 20217,
+      "endMs": 23922
+    },
+    {
+      "sentenceId": "S007",
+      "beatId": "B01",
+      "text": "However, he could not find his friend Lamp-Wick.",
+      "speechStart": 23.987,
+      "speechEnd": 28.176,
+      "speechStartMs": 23987,
+      "speechEndMs": 28176,
+      "start": 23.922,
+      "end": 28.296,
+      "startMs": 23922,
+      "endMs": 28296
+    },
+    {
+      "sentenceId": "S008",
+      "beatId": "B01",
+      "text": "Lamp-Wick was thin, restless, and very lazy.",
+      "speechStart": 28.416,
+      "speechEnd": 33.455,
+      "speechStartMs": 28416,
+      "speechEndMs": 33455,
+      "start": 28.296,
+      "end": 33.565,
+      "startMs": 28296,
+      "endMs": 33565
+    },
+    {
+      "sentenceId": "S009",
+      "beatId": "B01",
+      "text": "Pinocchio searched streets and playgrounds until the sky became dark.",
+      "speechStart": 33.675,
+      "speechEnd": 38.575,
+      "speechStartMs": 33675,
+      "speechEndMs": 38575,
+      "start": 33.565,
+      "end": 38.735,
+      "startMs": 33565,
+      "endMs": 38735
+    },
+    {
+      "sentenceId": "S010",
+      "beatId": "B01",
+      "text": "At last, he found Lamp-Wick hiding beneath a farm porch.",
+      "speechStart": 38.895,
+      "speechEnd": 43.534,
+      "speechStartMs": 38895,
+      "speechEndMs": 43534,
+      "start": 38.735,
+      "end": 43.714,
+      "startMs": 38735,
+      "endMs": 43714
+    },
+    {
+      "sentenceId": "S011",
+      "beatId": "B01",
+      "text": "“Please come to my party tomorrow,” Pinocchio said.",
+      "speechStart": 43.894,
+      "speechEnd": 47.373,
+      "speechStartMs": 43894,
+      "speechEndMs": 47373,
+      "start": 43.714,
+      "end": 47.477,
+      "startMs": 43714,
+      "endMs": 47477
+    },
+    {
+      "sentenceId": "S012",
+      "beatId": "B01",
+      "text": "Lamp-Wick looked towards the empty road with a secret smile.",
+      "speechStart": 47.581,
+      "speechEnd": 51.933,
+      "speechStartMs": 47581,
+      "speechEndMs": 51933,
+      "start": 47.477,
+      "end": 52.079,
+      "startMs": 47477,
+      "endMs": 52079
+    },
+    {
+      "sentenceId": "S013",
+      "beatId": "B01",
+      "text": "He was waiting for a special midnight wagon that would leave town.",
+      "speechStart": 52.226,
+      "speechEnd": 57.572,
+      "speechStartMs": 52226,
+      "speechEndMs": 57572,
+      "start": 52.079,
+      "end": 57.857,
+      "startMs": 52079,
+      "endMs": 57857
+    },
+    {
+      "sentenceId": "S014",
+      "beatId": "B02",
+      "text": "The wagon was going to the Land of Toys.",
+      "speechStart": 58.142,
+      "speechEnd": 61.452,
+      "speechStartMs": 58142,
+      "speechEndMs": 61452,
+      "start": 57.857,
+      "end": 61.556,
+      "startMs": 57857,
+      "endMs": 61556
+    },
+    {
+      "sentenceId": "S015",
+      "beatId": "B02",
+      "text": "Lamp-Wick said that nobody studied or worked there.",
+      "speechStart": 61.66,
+      "speechEnd": 65.611,
+      "speechStartMs": 61660,
+      "speechEndMs": 65611,
+      "start": 61.556,
+      "end": 65.677,
+      "startMs": 61556,
+      "endMs": 65677
+    },
+    {
+      "sentenceId": "S016",
+      "beatId": "B02",
+      "text": "There were no schools, books, teachers, or lessons.",
+      "speechStart": 65.744,
+      "speechEnd": 70.57,
+      "speechStartMs": 65744,
+      "speechEndMs": 70570,
+      "start": 65.677,
+      "end": 70.637,
+      "startMs": 65677,
+      "endMs": 70637
+    },
+    {
+      "sentenceId": "S017",
+      "beatId": "B02",
+      "text": "Children played all day and every day.",
+      "speechStart": 70.703,
+      "speechEnd": 74.73,
+      "speechStartMs": 70703,
+      "speechEndMs": 74730,
+      "start": 70.637,
+      "end": 74.93,
+      "startMs": 70637,
+      "endMs": 74930
+    },
+    {
+      "sentenceId": "S018",
+      "beatId": "B02",
+      "text": "“I will live there forever,” Lamp-Wick announced.",
+      "speechStart": 75.13,
+      "speechEnd": 78.809,
+      "speechStartMs": 75130,
+      "speechEndMs": 78809,
+      "start": 74.93,
+      "end": 78.929,
+      "startMs": 74930,
+      "endMs": 78929
+    },
+    {
+      "sentenceId": "S019",
+      "beatId": "B02",
+      "text": "Pinocchio remembered the Fairy and her promise.",
+      "speechStart": 79.049,
+      "speechEnd": 82.249,
+      "speechStartMs": 79049,
+      "speechEndMs": 82249,
+      "start": 78.929,
+      "end": 82.342,
+      "startMs": 78929,
+      "endMs": 82342
+    },
+    {
+      "sentenceId": "S020",
+      "beatId": "B02",
+      "text": "Still, a life of easy games sounded wonderful.",
+      "speechStart": 82.436,
+      "speechEnd": 86.728,
+      "speechStartMs": 82436,
+      "speechEndMs": 86728,
+      "start": 82.342,
+      "end": 86.875,
+      "startMs": 82342,
+      "endMs": 86875
+    },
+    {
+      "sentenceId": "S021",
+      "beatId": "B02",
+      "text": "He said that he only came to invite Lamp-Wick.",
+      "speechStart": 87.021,
+      "speechEnd": 90.168,
+      "speechStartMs": 87021,
+      "speechEndMs": 90168,
+      "start": 86.875,
+      "end": 90.272,
+      "startMs": 86875,
+      "endMs": 90272
+    },
+    {
+      "sentenceId": "S022",
+      "beatId": "B02",
+      "text": "Lamp-Wick asked him to wait for the wagon.",
+      "speechStart": 90.376,
+      "speechEnd": 93.367,
+      "speechStartMs": 90376,
+      "speechEndMs": 93367,
+      "start": 90.272,
+      "end": 93.507,
+      "startMs": 90272,
+      "endMs": 93507
+    },
+    {
+      "sentenceId": "S023",
+      "beatId": "B02",
+      "text": "One minute became ten under the bright moon above the quiet fields.",
+      "speechStart": 93.647,
+      "speechEnd": 98.726,
+      "speechStartMs": 93647,
+      "speechEndMs": 98726,
+      "start": 93.507,
+      "end": 98.846,
+      "startMs": 93507,
+      "endMs": 98846
+    },
+    {
+      "sentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio promised to leave before the wagon.",
+      "speechStart": 98.966,
+      "speechEnd": 102.166,
+      "speechStartMs": 98966,
+      "speechEndMs": 102166,
+      "start": 98.846,
+      "end": 102.286,
+      "startMs": 98846,
+      "endMs": 102286
+    },
+    {
+      "sentenceId": "S025",
+      "beatId": "B02",
+      "text": "Lamp-Wick kept describing the amazing place.",
+      "speechStart": 102.406,
+      "speechEnd": 106.325,
+      "speechStartMs": 102406,
+      "speechEndMs": 106325,
+      "start": 102.286,
+      "end": 106.472,
+      "startMs": 102286,
+      "endMs": 106472
+    },
+    {
+      "sentenceId": "S026",
+      "beatId": "B02",
+      "text": "By midnight, Pinocchio was still beside him.",
+      "speechStart": 106.618,
+      "speechEnd": 110.325,
+      "speechStartMs": 106618,
+      "speechEndMs": 110325,
+      "start": 106.472,
+      "end": 110.983,
+      "startMs": 106472,
+      "endMs": 110983
+    },
+    {
+      "sentenceId": "S027",
+      "beatId": "B03",
+      "text": "Soon they heard small bells in the distance.",
+      "speechStart": 111.642,
+      "speechEnd": 114.564,
+      "speechStartMs": 111642,
+      "speechEndMs": 114564,
+      "start": 110.983,
+      "end": 114.664,
+      "startMs": 110983,
+      "endMs": 114664
+    },
+    {
+      "sentenceId": "S028",
+      "beatId": "B03",
+      "text": "A large wagon appeared through the darkness with yellow lanterns.",
+      "speechStart": 114.764,
+      "speechEnd": 118.884,
+      "speechStartMs": 114764,
+      "speechEndMs": 118884,
+      "start": 114.664,
+      "end": 119.03,
+      "startMs": 114664,
+      "endMs": 119030
+    },
+    {
+      "sentenceId": "S029",
+      "beatId": "B03",
+      "text": "It was completely full of children squeezed tightly together.",
+      "speechStart": 119.177,
+      "speechEnd": 123.763,
+      "speechStartMs": 119177,
+      "speechEndMs": 123763,
+      "start": 119.03,
+      "end": 123.866,
+      "startMs": 119030,
+      "endMs": 123866
+    },
+    {
+      "sentenceId": "S030",
+      "beatId": "B03",
+      "text": "Twelve tired donkeys with wet eyes pulled the heavy wagon.",
+      "speechStart": 123.969,
+      "speechEnd": 129.442,
+      "speechStartMs": 123969,
+      "speechEndMs": 129442,
+      "start": 123.866,
+      "end": 129.562,
+      "startMs": 123866,
+      "endMs": 129562
+    },
+    {
+      "sentenceId": "S031",
+      "beatId": "B03",
+      "text": "Lamp-Wick climbed inside with great excitement.",
+      "speechStart": 129.682,
+      "speechEnd": 133.522,
+      "speechStartMs": 129682,
+      "speechEndMs": 133522,
+      "start": 129.562,
+      "end": 133.588,
+      "startMs": 129562,
+      "endMs": 133588
+    },
+    {
+      "sentenceId": "S032",
+      "beatId": "B03",
+      "text": "There was no open seat for Pinocchio.",
+      "speechStart": 133.655,
+      "speechEnd": 136.721,
+      "speechStartMs": 133655,
+      "speechEndMs": 136721,
+      "start": 133.588,
+      "end": 136.841,
+      "startMs": 133588,
+      "endMs": 136841
+    },
+    {
+      "sentenceId": "S033",
+      "beatId": "B03",
+      "text": "The driver offered him a donkey’s back.",
+      "speechStart": 136.961,
+      "speechEnd": 139.921,
+      "speechStartMs": 136961,
+      "speechEndMs": 139921,
+      "start": 136.841,
+      "end": 140.041,
+      "startMs": 136841,
+      "endMs": 140041
+    },
+    {
+      "sentenceId": "S034",
+      "beatId": "B03",
+      "text": "Pinocchio remembered his party and stopped.",
+      "speechStart": 140.161,
+      "speechEnd": 143.36,
+      "speechStartMs": 140161,
+      "speechEndMs": 143360,
+      "start": 140.041,
+      "end": 143.48,
+      "startMs": 140041,
+      "endMs": 143480
+    },
+    {
+      "sentenceId": "S035",
+      "beatId": "B03",
+      "text": "Then the donkey spoke softly through its bridle in a tired voice.",
+      "speechStart": 143.6,
+      "speechEnd": 148.8,
+      "speechStartMs": 143600,
+      "speechEndMs": 148800,
+      "start": 143.48,
+      "end": 149,
+      "startMs": 143480,
+      "endMs": 149000
+    },
+    {
+      "sentenceId": "S036",
+      "beatId": "B03",
+      "text": "“Turn back before you become like me.”",
+      "speechStart": 149.199,
+      "speechEnd": 152.319,
+      "speechStartMs": 149199,
+      "speechEndMs": 152319,
+      "start": 149,
+      "end": 152.439,
+      "startMs": 149000,
+      "endMs": 152439
+    },
+    {
+      "sentenceId": "S037",
+      "beatId": "B03",
+      "text": "The driver hit the animal and laughed as if nothing had happened.",
+      "speechStart": 152.559,
+      "speechEnd": 156.958,
+      "speechStartMs": 152559,
+      "speechEndMs": 156958,
+      "start": 152.439,
+      "end": 157.078,
+      "startMs": 152439,
+      "endMs": 157078
+    },
+    {
+      "sentenceId": "S038",
+      "beatId": "B03",
+      "text": "Pinocchio saw fear inside the donkey’s eyes.",
+      "speechStart": 157.198,
+      "speechEnd": 160.798,
+      "speechStartMs": 157198,
+      "speechEndMs": 160798,
+      "start": 157.078,
+      "end": 160.863,
+      "startMs": 157078,
+      "endMs": 160863
+    },
+    {
+      "sentenceId": "S039",
+      "beatId": "B03",
+      "text": "However, he climbed on for a short visit.",
+      "speechStart": 160.928,
+      "speechEnd": 164.237,
+      "speechStartMs": 160928,
+      "speechEndMs": 164237,
+      "start": 160.863,
+      "end": 164.337,
+      "startMs": 160863,
+      "endMs": 164337
+    },
+    {
+      "sentenceId": "S040",
+      "beatId": "B03",
+      "text": "The wagon left the Fairy’s empty chairs behind.",
+      "speechStart": 164.437,
+      "speechEnd": 168.157,
+      "speechStartMs": 164437,
+      "speechEndMs": 168157,
+      "start": 164.337,
+      "end": 168.696,
+      "startMs": 164337,
+      "endMs": 168696
+    },
+    {
+      "sentenceId": "S041",
+      "beatId": "B04",
+      "text": "At sunrise the next morning, they entered the Land of Toys.",
+      "speechStart": 169.235,
+      "speechEnd": 173.447,
+      "speechStartMs": 169235,
+      "speechEndMs": 173447,
+      "start": 168.696,
+      "end": 173.667,
+      "startMs": 168696,
+      "endMs": 173667
+    },
+    {
+      "sentenceId": "S042",
+      "beatId": "B04",
+      "text": "Bells, drums, and happy voices came from every house.",
+      "speechStart": 173.887,
+      "speechEnd": 178.646,
+      "speechStartMs": 173887,
+      "speechEndMs": 178646,
+      "start": 173.667,
+      "end": 178.742,
+      "startMs": 173667,
+      "endMs": 178742
+    },
+    {
+      "sentenceId": "S043",
+      "beatId": "B04",
+      "text": "Some children raced through crowded squares while others flew large kites.",
+      "speechStart": 178.838,
+      "speechEnd": 184.886,
+      "speechStartMs": 178838,
+      "speechEndMs": 184886,
+      "start": 178.742,
+      "end": 185.006,
+      "startMs": 178742,
+      "endMs": 185006
+    },
+    {
+      "sentenceId": "S044",
+      "beatId": "B04",
+      "text": "Theatres showed funny plays all day without stopping.",
+      "speechStart": 185.126,
+      "speechEnd": 189.125,
+      "speechStartMs": 185126,
+      "speechEndMs": 189125,
+      "start": 185.006,
+      "end": 189.225,
+      "startMs": 185006,
+      "endMs": 189225
+    },
+    {
+      "sentenceId": "S045",
+      "beatId": "B04",
+      "text": "Sweet shops with cakes and sweets never closed their colourful doors.",
+      "speechStart": 189.325,
+      "speechEnd": 194.724,
+      "speechStartMs": 189325,
+      "speechEndMs": 194724,
+      "start": 189.225,
+      "end": 194.81,
+      "startMs": 189225,
+      "endMs": 194810
+    },
+    {
+      "sentenceId": "S046",
+      "beatId": "B04",
+      "text": "Nobody carried a bag or went to work.",
+      "speechStart": 194.895,
+      "speechEnd": 198.244,
+      "speechStartMs": 194895,
+      "speechEndMs": 198244,
+      "start": 194.81,
+      "end": 198.364,
+      "startMs": 194810,
+      "endMs": 198364
+    },
+    {
+      "sentenceId": "S047",
+      "beatId": "B04",
+      "text": "Pinocchio and Lamp-Wick tried every game.",
+      "speechStart": 198.484,
+      "speechEnd": 202.163,
+      "speechStartMs": 198484,
+      "speechEndMs": 202163,
+      "start": 198.364,
+      "end": 202.243,
+      "startMs": 198364,
+      "endMs": 202243
+    },
+    {
+      "sentenceId": "S048",
+      "beatId": "B04",
+      "text": "They built towers, chased parades, and broke toys until they fell asleep.",
+      "speechStart": 202.323,
+      "speechEnd": 208.082,
+      "speechStartMs": 202323,
+      "speechEndMs": 208082,
+      "start": 202.243,
+      "end": 208.202,
+      "startMs": 202243,
+      "endMs": 208202
+    },
+    {
+      "sentenceId": "S049",
+      "beatId": "B04",
+      "text": "The next day was exactly the same, without clocks or chores.",
+      "speechStart": 208.322,
+      "speechEnd": 213.602,
+      "speechStartMs": 208322,
+      "speechEndMs": 213602,
+      "start": 208.202,
+      "end": 213.722,
+      "startMs": 208202,
+      "endMs": 213722
+    },
+    {
+      "sentenceId": "S050",
+      "beatId": "B04",
+      "text": "Soon the days became one long holiday.",
+      "speechStart": 213.842,
+      "speechEnd": 218.001,
+      "speechStartMs": 213842,
+      "speechEndMs": 218001,
+      "start": 213.722,
+      "end": 218.073,
+      "startMs": 213722,
+      "endMs": 218073
+    },
+    {
+      "sentenceId": "S051",
+      "beatId": "B04",
+      "text": "Sometimes Pinocchio remembered the waiting Fairy.",
+      "speechStart": 218.145,
+      "speechEnd": 221.84,
+      "speechStartMs": 218145,
+      "speechEndMs": 221840,
+      "start": 218.073,
+      "end": 221.987,
+      "startMs": 218073,
+      "endMs": 221987
+    },
+    {
+      "sentenceId": "S052",
+      "beatId": "B04",
+      "text": "He played louder because the memory hurt.",
+      "speechStart": 222.133,
+      "speechEnd": 225.44,
+      "speechStartMs": 222133,
+      "speechEndMs": 225440,
+      "start": 221.987,
+      "end": 225.618,
+      "startMs": 221987,
+      "endMs": 225618
+    },
+    {
+      "sentenceId": "S053",
+      "beatId": "B05",
+      "text": "Five months passed without school or useful work.",
+      "speechStart": 225.797,
+      "speechEnd": 228.981,
+      "speechStartMs": 225797,
+      "speechEndMs": 228981,
+      "start": 225.618,
+      "end": 229.101,
+      "startMs": 225618,
+      "endMs": 229101
+    },
+    {
+      "sentenceId": "S054",
+      "beatId": "B05",
+      "text": "One morning, Pinocchio felt an itch above his head.",
+      "speechStart": 229.221,
+      "speechEnd": 233.06,
+      "speechStartMs": 229221,
+      "speechEndMs": 233060,
+      "start": 229.101,
+      "end": 233.18,
+      "startMs": 229101,
+      "endMs": 233180
+    },
+    {
+      "sentenceId": "S055",
+      "beatId": "B05",
+      "text": "He touched two long and hairy ears.",
+      "speechStart": 233.3,
+      "speechEnd": 236.74,
+      "speechStartMs": 233300,
+      "speechEndMs": 236740,
+      "start": 233.18,
+      "end": 236.886,
+      "startMs": 233180,
+      "endMs": 236886
+    },
+    {
+      "sentenceId": "S056",
+      "beatId": "B05",
+      "text": "At first, he thought Lamp-Wick was joking.",
+      "speechStart": 237.033,
+      "speechEnd": 240.019,
+      "speechStartMs": 237033,
+      "speechEndMs": 240019,
+      "start": 236.886,
+      "end": 240.083,
+      "startMs": 236886,
+      "endMs": 240083
+    },
+    {
+      "sentenceId": "S057",
+      "beatId": "B05",
+      "text": "Then the mirror showed his own donkey ears.",
+      "speechStart": 240.147,
+      "speechEnd": 243.459,
+      "speechStartMs": 240147,
+      "speechEndMs": 243459,
+      "start": 240.083,
+      "end": 243.559,
+      "startMs": 240083,
+      "endMs": 243559
+    },
+    {
+      "sentenceId": "S058",
+      "beatId": "B05",
+      "text": "Pinocchio hid them under a very large cap.",
+      "speechStart": 243.659,
+      "speechEnd": 246.738,
+      "speechStartMs": 243659,
+      "speechEndMs": 246738,
+      "start": 243.559,
+      "end": 246.832,
+      "startMs": 243559,
+      "endMs": 246832
+    },
+    {
+      "sentenceId": "S059",
+      "beatId": "B05",
+      "text": "He locked the door and searched for answers.",
+      "speechStart": 246.925,
+      "speechEnd": 249.618,
+      "speechStartMs": 246925,
+      "speechEndMs": 249618,
+      "start": 246.832,
+      "end": 249.708,
+      "startMs": 246832,
+      "endMs": 249708
+    },
+    {
+      "sentenceId": "S060",
+      "beatId": "B05",
+      "text": "The ears continued growing during the day.",
+      "speechStart": 249.798,
+      "speechEnd": 252.898,
+      "speechStartMs": 249798,
+      "speechEndMs": 252898,
+      "start": 249.708,
+      "end": 252.994,
+      "startMs": 249708,
+      "endMs": 252994
+    },
+    {
+      "sentenceId": "S061",
+      "beatId": "B05",
+      "text": "Soon the cap could not cover them.",
+      "speechStart": 253.09,
+      "speechEnd": 255.457,
+      "speechStartMs": 253090,
+      "speechEndMs": 255457,
+      "start": 252.994,
+      "end": 255.577,
+      "startMs": 252994,
+      "endMs": 255577
+    },
+    {
+      "sentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio became too frightened to stay alone.",
+      "speechStart": 255.697,
+      "speechEnd": 258.817,
+      "speechStartMs": 255697,
+      "speechEndMs": 258817,
+      "start": 255.577,
+      "end": 258.923,
+      "startMs": 255577,
+      "endMs": 258923
+    },
+    {
+      "sentenceId": "S063",
+      "beatId": "B05",
+      "text": "He called for help from a doctor.",
+      "speechStart": 259.03,
+      "speechEnd": 261.137,
+      "speechStartMs": 259030,
+      "speechEndMs": 261137,
+      "start": 258.923,
+      "end": 261.283,
+      "startMs": 258923,
+      "endMs": 261283
+    },
+    {
+      "sentenceId": "S064",
+      "beatId": "B05",
+      "text": "An old Marmot came into the room.",
+      "speechStart": 261.43,
+      "speechEnd": 264.016,
+      "speechStartMs": 261430,
+      "speechEndMs": 264016,
+      "start": 261.283,
+      "end": 264.096,
+      "startMs": 261283,
+      "endMs": 264096
+    },
+    {
+      "sentenceId": "S065",
+      "beatId": "B05",
+      "text": "She knew many illnesses of careless children.",
+      "speechStart": 264.176,
+      "speechEnd": 267.056,
+      "speechStartMs": 264176,
+      "speechEndMs": 267056,
+      "start": 264.096,
+      "end": 267.367,
+      "startMs": 264096,
+      "endMs": 267367
+    },
+    {
+      "sentenceId": "S066",
+      "beatId": "B06",
+      "text": "She checked his ears, hands, and wooden feet.",
+      "speechStart": 267.678,
+      "speechEnd": 270.898,
+      "speechStartMs": 267678,
+      "speechEndMs": 270898,
+      "start": 267.367,
+      "end": 270.946,
+      "startMs": 267367,
+      "endMs": 270946
+    },
+    {
+      "sentenceId": "S067",
+      "beatId": "B06",
+      "text": "Then her face became serious and sad.",
+      "speechStart": 270.994,
+      "speechEnd": 273.937,
+      "speechStartMs": 270994,
+      "speechEndMs": 273937,
+      "start": 270.946,
+      "end": 274.157,
+      "startMs": 270946,
+      "endMs": 274157
+    },
+    {
+      "sentenceId": "S068",
+      "beatId": "B06",
+      "text": "“You have Donkey Fever,” she told him.",
+      "speechStart": 274.377,
+      "speechEnd": 277.537,
+      "speechStartMs": 274377,
+      "speechEndMs": 277537,
+      "start": 274.157,
+      "end": 277.603,
+      "startMs": 274157,
+      "endMs": 277603
+    },
+    {
+      "sentenceId": "S069",
+      "beatId": "B06",
+      "text": "Children without duties slowly lost their childhood.",
+      "speechStart": 277.67,
+      "speechEnd": 281.856,
+      "speechStartMs": 277670,
+      "speechEndMs": 281856,
+      "start": 277.603,
+      "end": 281.96,
+      "startMs": 277603,
+      "endMs": 281960
+    },
+    {
+      "sentenceId": "S070",
+      "beatId": "B06",
+      "text": "Soon Pinocchio would become a full donkey.",
+      "speechStart": 282.064,
+      "speechEnd": 285.896,
+      "speechStartMs": 282064,
+      "speechEndMs": 285896,
+      "start": 281.96,
+      "end": 285.969,
+      "startMs": 281960,
+      "endMs": 285969
+    },
+    {
+      "sentenceId": "S071",
+      "beatId": "B06",
+      "text": "He asked for medicine or another chance.",
+      "speechStart": 286.043,
+      "speechEnd": 288.975,
+      "speechStartMs": 286043,
+      "speechEndMs": 288975,
+      "start": 285.969,
+      "end": 289.075,
+      "startMs": 285969,
+      "endMs": 289075
+    },
+    {
+      "sentenceId": "S072",
+      "beatId": "B06",
+      "text": "The Marmot could only shake her head.",
+      "speechStart": 289.175,
+      "speechEnd": 291.935,
+      "speechStartMs": 289175,
+      "speechEndMs": 291935,
+      "start": 289.075,
+      "end": 292.031,
+      "startMs": 289075,
+      "endMs": 292031
+    },
+    {
+      "sentenceId": "S073",
+      "beatId": "B06",
+      "text": "This change had started many months before.",
+      "speechStart": 292.127,
+      "speechEnd": 295.375,
+      "speechStartMs": 292127,
+      "speechEndMs": 295375,
+      "start": 292.031,
+      "end": 295.455,
+      "startMs": 292031,
+      "endMs": 295455
+    },
+    {
+      "sentenceId": "S074",
+      "beatId": "B06",
+      "text": "Every ignored warning had made it stronger.",
+      "speechStart": 295.535,
+      "speechEnd": 298.734,
+      "speechStartMs": 295535,
+      "speechEndMs": 298734,
+      "start": 295.455,
+      "end": 298.844,
+      "startMs": 295455,
+      "endMs": 298844
+    },
+    {
+      "sentenceId": "S075",
+      "beatId": "B06",
+      "text": "Pinocchio remembered the donkey under the wagon.",
+      "speechStart": 298.954,
+      "speechEnd": 302.014,
+      "speechStartMs": 298954,
+      "speechEndMs": 302014,
+      "start": 298.844,
+      "end": 302.114,
+      "startMs": 298844,
+      "endMs": 302114
+    },
+    {
+      "sentenceId": "S076",
+      "beatId": "B06",
+      "text": "Now he knew that it had been a child.",
+      "speechStart": 302.214,
+      "speechEnd": 304.733,
+      "speechStartMs": 302214,
+      "speechEndMs": 304733,
+      "start": 302.114,
+      "end": 304.827,
+      "startMs": 302114,
+      "endMs": 304827
+    },
+    {
+      "sentenceId": "S077",
+      "beatId": "B06",
+      "text": "After the Marmot left, Pinocchio ran outside.",
+      "speechStart": 304.92,
+      "speechEnd": 308.813,
+      "speechStartMs": 304920,
+      "speechEndMs": 308813,
+      "start": 304.827,
+      "end": 308.919,
+      "startMs": 304827,
+      "endMs": 308919
+    },
+    {
+      "sentenceId": "S078",
+      "beatId": "B06",
+      "text": "He hurried towards Lamp-Wick’s small house.",
+      "speechStart": 309.026,
+      "speechEnd": 312.013,
+      "speechStartMs": 309026,
+      "speechEndMs": 312013,
+      "start": 308.919,
+      "end": 312.547,
+      "startMs": 308919,
+      "endMs": 312547
+    },
+    {
+      "sentenceId": "S079",
+      "beatId": "B07",
+      "text": "Lamp-Wick opened the door with a huge cap.",
+      "speechStart": 313.081,
+      "speechEnd": 315.612,
+      "speechStartMs": 313081,
+      "speechEndMs": 315612,
+      "start": 312.547,
+      "end": 315.7,
+      "startMs": 312547,
+      "endMs": 315700
+    },
+    {
+      "sentenceId": "S080",
+      "beatId": "B07",
+      "text": "Both boys tried not to look closely.",
+      "speechStart": 315.788,
+      "speechEnd": 318.572,
+      "speechStartMs": 315788,
+      "speechEndMs": 318572,
+      "start": 315.7,
+      "end": 318.692,
+      "startMs": 315700,
+      "endMs": 318692
+    },
+    {
+      "sentenceId": "S081",
+      "beatId": "B07",
+      "text": "Pinocchio asked Lamp-Wick to remove his cap.",
+      "speechStart": 318.812,
+      "speechEnd": 322.091,
+      "speechStartMs": 318812,
+      "speechEndMs": 322091,
+      "start": 318.692,
+      "end": 322.195,
+      "startMs": 318692,
+      "endMs": 322195
+    },
+    {
+      "sentenceId": "S082",
+      "beatId": "B07",
+      "text": "Lamp-Wick told Pinocchio to go first.",
+      "speechStart": 322.299,
+      "speechEnd": 325.611,
+      "speechStartMs": 322299,
+      "speechEndMs": 325611,
+      "start": 322.195,
+      "end": 325.683,
+      "startMs": 322195,
+      "endMs": 325683
+    },
+    {
+      "sentenceId": "S083",
+      "beatId": "B07",
+      "text": "They counted to three and uncovered together.",
+      "speechStart": 325.755,
+      "speechEnd": 328.811,
+      "speechStartMs": 325755,
+      "speechEndMs": 328811,
+      "start": 325.683,
+      "end": 328.931,
+      "startMs": 325683,
+      "endMs": 328931
+    },
+    {
+      "sentenceId": "S084",
+      "beatId": "B07",
+      "text": "Two pairs of donkey ears stood straight up.",
+      "speechStart": 329.051,
+      "speechEnd": 332.93,
+      "speechStartMs": 329051,
+      "speechEndMs": 332930,
+      "start": 328.931,
+      "end": 332.985,
+      "startMs": 328931,
+      "endMs": 332985
+    },
+    {
+      "sentenceId": "S085",
+      "beatId": "B07",
+      "text": "For a moment, both friends stayed silent.",
+      "speechStart": 333.04,
+      "speechEnd": 336.17,
+      "speechStartMs": 333040,
+      "speechEndMs": 336170,
+      "start": 332.985,
+      "end": 336.258,
+      "startMs": 332985,
+      "endMs": 336258
+    },
+    {
+      "sentenceId": "S086",
+      "beatId": "B07",
+      "text": "Then nervous fear became wild laughter.",
+      "speechStart": 336.346,
+      "speechEnd": 339.609,
+      "speechStartMs": 336346,
+      "speechEndMs": 339609,
+      "start": 336.258,
+      "end": 339.676,
+      "startMs": 336258,
+      "endMs": 339676
+    },
+    {
+      "sentenceId": "S087",
+      "beatId": "B07",
+      "text": "Their laughter changed into loud donkey brays.",
+      "speechStart": 339.742,
+      "speechEnd": 343.449,
+      "speechStartMs": 339742,
+      "speechEndMs": 343449,
+      "start": 339.676,
+      "end": 343.535,
+      "startMs": 339676,
+      "endMs": 343535
+    },
+    {
+      "sentenceId": "S088",
+      "beatId": "B07",
+      "text": "Hands became hooves, and faces became longer.",
+      "speechStart": 343.622,
+      "speechEnd": 347.528,
+      "speechStartMs": 343622,
+      "speechEndMs": 347528,
+      "start": 343.535,
+      "end": 347.632,
+      "startMs": 343535,
+      "endMs": 347632
+    },
+    {
+      "sentenceId": "S089",
+      "beatId": "B07",
+      "text": "Grey hair covered their changing bodies.",
+      "speechStart": 347.736,
+      "speechEnd": 350.808,
+      "speechStartMs": 347736,
+      "speechEndMs": 350808,
+      "start": 347.632,
+      "end": 350.896,
+      "startMs": 347632,
+      "endMs": 350896
+    },
+    {
+      "sentenceId": "S090",
+      "beatId": "B07",
+      "text": "Long tails grew behind them at last.",
+      "speechStart": 350.984,
+      "speechEnd": 353.928,
+      "speechStartMs": 350984,
+      "speechEndMs": 353928,
+      "start": 350.896,
+      "end": 354.039,
+      "startMs": 350896,
+      "endMs": 354039
+    },
+    {
+      "sentenceId": "S091",
+      "beatId": "B07",
+      "text": "Soon two frightened donkeys lay on the floor.",
+      "speechStart": 354.151,
+      "speechEnd": 358.167,
+      "speechStartMs": 354151,
+      "speechEndMs": 358167,
+      "start": 354.039,
+      "end": 358.918,
+      "startMs": 354039,
+      "endMs": 358918
+    },
+    {
+      "sentenceId": "S092",
+      "beatId": "B08",
+      "text": "Outside, the wagon driver heard the braying.",
+      "speechStart": 359.669,
+      "speechEnd": 362.047,
+      "speechStartMs": 359669,
+      "speechEndMs": 362047,
+      "start": 358.918,
+      "end": 362.107,
+      "startMs": 358918,
+      "endMs": 362107
+    },
+    {
+      "sentenceId": "S093",
+      "beatId": "B08",
+      "text": "He entered with ropes and locked the bedroom door.",
+      "speechStart": 362.167,
+      "speechEnd": 365.366,
+      "speechStartMs": 362167,
+      "speechEndMs": 365366,
+      "start": 362.107,
+      "end": 365.486,
+      "startMs": 362107,
+      "endMs": 365486
+    },
+    {
+      "sentenceId": "S094",
+      "beatId": "B08",
+      "text": "Toyland had always hidden his secret business.",
+      "speechStart": 365.606,
+      "speechEnd": 368.806,
+      "speechStartMs": 365606,
+      "speechEndMs": 368806,
+      "start": 365.486,
+      "end": 368.899,
+      "startMs": 365486,
+      "endMs": 368899
+    },
+    {
+      "sentenceId": "S095",
+      "beatId": "B08",
+      "text": "It turned careless children into animals he could sell.",
+      "speechStart": 368.993,
+      "speechEnd": 372.885,
+      "speechStartMs": 368993,
+      "speechEndMs": 372885,
+      "start": 368.899,
+      "end": 373.015,
+      "startMs": 368899,
+      "endMs": 373015
+    },
+    {
+      "sentenceId": "S096",
+      "beatId": "B08",
+      "text": "Pinocchio tried to say his own name.",
+      "speechStart": 373.145,
+      "speechEnd": 376.085,
+      "speechStartMs": 373145,
+      "speechEndMs": 376085,
+      "start": 373.015,
+      "end": 376.189,
+      "startMs": 373015,
+      "endMs": 376189
+    },
+    {
+      "sentenceId": "S097",
+      "beatId": "B08",
+      "text": "Only another sad donkey sound came out.",
+      "speechStart": 376.293,
+      "speechEnd": 379.684,
+      "speechStartMs": 376293,
+      "speechEndMs": 379684,
+      "start": 376.189,
+      "end": 379.78,
+      "startMs": 376189,
+      "endMs": 379780
+    },
+    {
+      "sentenceId": "S098",
+      "beatId": "B08",
+      "text": "Lamp-Wick kicked, but the driver tied both boys.",
+      "speechStart": 379.876,
+      "speechEnd": 384.084,
+      "speechStartMs": 379876,
+      "speechEndMs": 384084,
+      "start": 379.78,
+      "end": 384.204,
+      "startMs": 379780,
+      "endMs": 384204
+    },
+    {
+      "sentenceId": "S099",
+      "beatId": "B08",
+      "text": "He kept them side by side beneath his watch.",
+      "speechStart": 384.324,
+      "speechEnd": 387.523,
+      "speechStartMs": 384324,
+      "speechEndMs": 387523,
+      "start": 384.204,
+      "end": 387.633,
+      "startMs": 384204,
+      "endMs": 387633
+    },
+    {
+      "sentenceId": "S100",
+      "beatId": "B08",
+      "text": "Pinocchio finally understood every warning on the midnight road.",
+      "speechStart": 387.743,
+      "speechEnd": 392.483,
+      "speechStartMs": 387743,
+      "speechEndMs": 392483,
+      "start": 387.633,
+      "end": 392.563,
+      "startMs": 387633,
+      "endMs": 392563
+    },
+    {
+      "sentenceId": "S101",
+      "beatId": "B08",
+      "text": "The tired donkey under the wagon had once been a child.",
+      "speechStart": 392.643,
+      "speechEnd": 396.802,
+      "speechStartMs": 392643,
+      "speechEndMs": 396802,
+      "start": 392.563,
+      "end": 396.936,
+      "startMs": 392563,
+      "endMs": 396936
+    },
+    {
+      "sentenceId": "S102",
+      "beatId": "B08",
+      "text": "He remembered the Fairy’s twelve empty chairs.",
+      "speechStart": 397.069,
+      "speechEnd": 400.402,
+      "speechStartMs": 397069,
+      "speechEndMs": 400402,
+      "start": 396.936,
+      "end": 400.542,
+      "startMs": 396936,
+      "endMs": 400542
+    },
+    {
+      "sentenceId": "S103",
+      "beatId": "B08",
+      "text": "A promised holiday had become a terrible trap.",
+      "speechStart": 400.682,
+      "speechEnd": 403.841,
+      "speechStartMs": 400682,
+      "speechEndMs": 403841,
+      "start": 400.542,
+      "end": 403.916,
+      "startMs": 400542,
+      "endMs": 403916
+    },
+    {
+      "sentenceId": "S104",
+      "beatId": "B08",
+      "text": "Another wagon of laughing children arrived outside.",
+      "speechStart": 403.991,
+      "speechEnd": 407.681,
+      "speechStartMs": 403991,
+      "speechEndMs": 407681,
+      "start": 403.916,
+      "end": 407.744,
+      "startMs": 403916,
+      "endMs": 407744
+    },
+    {
+      "sentenceId": "S105",
+      "beatId": "B08",
+      "text": "Before dawn, the driver announced that the morning market waited.",
+      "speechStart": 407.807,
+      "speechEnd": 411.841,
+      "speechStartMs": 407807,
+      "speechEndMs": 411841,
+      "start": 407.744,
+      "end": 411.916,
+      "startMs": 407744,
+      "endMs": 411916
+    },
+    {
+      "sentenceId": "S106",
+      "beatId": "B08",
+      "text": "Neither frightened friend could escape what morning would bring.",
+      "speechStart": 411.991,
+      "speechEnd": 416.24,
+      "speechStartMs": 411991,
+      "speechEndMs": 416240,
+      "start": 411.916,
+      "end": 416.24,
+      "startMs": 411916,
+      "endMs": 416240
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "The Fairy’s bright house was busy with party work.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "The Fairy’s bright house was busy with party work.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 0.15,
+          "speechEnd": 3.3,
+          "speechStartMs": 150,
+          "speechEndMs": 3300,
+          "start": 0.09,
+          "end": 3.362,
+          "startMs": 90,
+          "endMs": 3362
+        }
+      ],
+      "speechStart": 0.15,
+      "speechEnd": 3.3,
+      "speechStartMs": 150,
+      "speechEndMs": 3300,
+      "start": 0.09,
+      "end": 3.362,
+      "startMs": 90,
+      "endMs": 3362
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "Small cakes, fruit, and sweets waited on a long table.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Small cakes, fruit, and sweets waited on a long table.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 6.886,
+          "speechEnd": 11.938,
+          "speechStartMs": 6886,
+          "speechEndMs": 11938,
+          "start": 6.826,
+          "end": 12.018,
+          "startMs": 6826,
+          "endMs": 12018
+        }
+      ],
+      "speechStart": 6.886,
+      "speechEnd": 11.938,
+      "speechStartMs": 6886,
+      "speechEndMs": 11938,
+      "start": 6.826,
+      "end": 12.018,
+      "startMs": 6826,
+      "endMs": 12018
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "However, he could not find his friend Lamp-Wick.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "However, he could not find his friend Lamp-Wick.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 23.987,
+          "speechEnd": 28.176,
+          "speechStartMs": 23987,
+          "speechEndMs": 28176,
+          "start": 23.927,
+          "end": 28.256,
+          "startMs": 23927,
+          "endMs": 28256
+        }
+      ],
+      "speechStart": 23.987,
+      "speechEnd": 28.176,
+      "speechStartMs": 23987,
+      "speechEndMs": 28176,
+      "start": 23.927,
+      "end": 28.256,
+      "startMs": 23927,
+      "endMs": 28256
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "“Please come to my party tomorrow,” Pinocchio said.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "“Please come to my party tomorrow,” Pinocchio said.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 43.894,
+          "speechEnd": 47.373,
+          "speechStartMs": 43894,
+          "speechEndMs": 47373,
+          "start": 43.834,
+          "end": 47.453,
+          "startMs": 43834,
+          "endMs": 47453
+        }
+      ],
+      "speechStart": 43.894,
+      "speechEnd": 47.373,
+      "speechStartMs": 43894,
+      "speechEndMs": 47373,
+      "start": 43.834,
+      "end": 47.453,
+      "startMs": 43834,
+      "endMs": 47453
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "There were no schools, books, teachers, or lessons.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "There were no schools, books, teachers, or lessons.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 65.744,
+          "speechEnd": 70.57,
+          "speechStartMs": 65744,
+          "speechEndMs": 70570,
+          "start": 65.684,
+          "end": 70.637,
+          "startMs": 65684,
+          "endMs": 70637
+        }
+      ],
+      "speechStart": 65.744,
+      "speechEnd": 70.57,
+      "speechStartMs": 65744,
+      "speechEndMs": 70570,
+      "start": 65.684,
+      "end": 70.637,
+      "startMs": 65684,
+      "endMs": 70637
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Still, a life of easy games sounded wonderful.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Still, a life of easy games sounded wonderful.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 82.436,
+          "speechEnd": 86.728,
+          "speechStartMs": 82436,
+          "speechEndMs": 86728,
+          "start": 82.376,
+          "end": 86.808,
+          "startMs": 82376,
+          "endMs": 86808
+        }
+      ],
+      "speechStart": 82.436,
+      "speechEnd": 86.728,
+      "speechStartMs": 82436,
+      "speechEndMs": 86728,
+      "start": 82.376,
+      "end": 86.808,
+      "startMs": 82376,
+      "endMs": 86808
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "One minute became ten under the bright moon above the quiet fields.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "One minute became ten under the bright moon above the quiet fields.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 93.647,
+          "speechEnd": 98.726,
+          "speechStartMs": 93647,
+          "speechEndMs": 98726,
+          "start": 93.587,
+          "end": 98.806,
+          "startMs": 93587,
+          "endMs": 98806
+        }
+      ],
+      "speechStart": 93.647,
+      "speechEnd": 98.726,
+      "speechStartMs": 93647,
+      "speechEndMs": 98726,
+      "start": 93.587,
+      "end": 98.806,
+      "startMs": 93587,
+      "endMs": 98806
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S026",
+      "beatId": "B02",
+      "text": "By midnight, Pinocchio was still beside him.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "By midnight, Pinocchio was still beside him.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 106.618,
+          "speechEnd": 110.325,
+          "speechStartMs": 106618,
+          "speechEndMs": 110325,
+          "start": 106.558,
+          "end": 110.405,
+          "startMs": 106558,
+          "endMs": 110405
+        }
+      ],
+      "speechStart": 106.618,
+      "speechEnd": 110.325,
+      "speechStartMs": 106618,
+      "speechEndMs": 110325,
+      "start": 106.558,
+      "end": 110.405,
+      "startMs": 106558,
+      "endMs": 110405
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S027",
+      "beatId": "B03",
+      "text": "Soon they heard small bells in the distance.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Soon they heard small bells in the distance.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 111.642,
+          "speechEnd": 114.564,
+          "speechStartMs": 111642,
+          "speechEndMs": 114564,
+          "start": 111.582,
+          "end": 114.644,
+          "startMs": 111582,
+          "endMs": 114644
+        }
+      ],
+      "speechStart": 111.642,
+      "speechEnd": 114.564,
+      "speechStartMs": 111642,
+      "speechEndMs": 114564,
+      "start": 111.582,
+      "end": 114.644,
+      "startMs": 111582,
+      "endMs": 114644
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "Twelve tired donkeys with wet eyes pulled the heavy wagon.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Twelve tired donkeys with wet eyes pulled the heavy wagon.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 123.969,
+          "speechEnd": 129.442,
+          "speechStartMs": 123969,
+          "speechEndMs": 129442,
+          "start": 123.909,
+          "end": 129.522,
+          "startMs": 123909,
+          "endMs": 129522
+        }
+      ],
+      "speechStart": 123.969,
+      "speechEnd": 129.442,
+      "speechStartMs": 123969,
+      "speechEndMs": 129442,
+      "start": 123.909,
+      "end": 129.522,
+      "startMs": 123909,
+      "endMs": 129522
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "Pinocchio remembered his party and stopped.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Pinocchio remembered his party and stopped.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 140.161,
+          "speechEnd": 143.36,
+          "speechStartMs": 140161,
+          "speechEndMs": 143360,
+          "start": 140.101,
+          "end": 143.44,
+          "startMs": 140101,
+          "endMs": 143440
+        }
+      ],
+      "speechStart": 140.161,
+      "speechEnd": 143.36,
+      "speechStartMs": 140161,
+      "speechEndMs": 143360,
+      "start": 140.101,
+      "end": 143.44,
+      "startMs": 140101,
+      "endMs": 143440
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "The driver hit the animal and laughed as if nothing had happened.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "The driver hit the animal and laughed as if nothing had happened.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 152.559,
+          "speechEnd": 156.958,
+          "speechStartMs": 152559,
+          "speechEndMs": 156958,
+          "start": 152.499,
+          "end": 157.038,
+          "startMs": 152499,
+          "endMs": 157038
+        }
+      ],
+      "speechStart": 152.559,
+      "speechEnd": 156.958,
+      "speechStartMs": 152559,
+      "speechEndMs": 156958,
+      "start": 152.499,
+      "end": 157.038,
+      "startMs": 152499,
+      "endMs": 157038
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "Some children raced through crowded squares while others flew large kites.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Some children raced through crowded squares while others flew large kites.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 178.838,
+          "speechEnd": 184.886,
+          "speechStartMs": 178838,
+          "speechEndMs": 184886,
+          "start": 178.778,
+          "end": 184.966,
+          "startMs": 178778,
+          "endMs": 184966
+        }
+      ],
+      "speechStart": 178.838,
+      "speechEnd": 184.886,
+      "speechStartMs": 178838,
+      "speechEndMs": 184886,
+      "start": 178.778,
+      "end": 184.966,
+      "startMs": 178778,
+      "endMs": 184966
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Pinocchio and Lamp-Wick tried every game.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "Pinocchio and Lamp-Wick tried every game.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 198.484,
+          "speechEnd": 202.163,
+          "speechStartMs": 198484,
+          "speechEndMs": 202163,
+          "start": 198.424,
+          "end": 202.243,
+          "startMs": 198424,
+          "endMs": 202243
+        }
+      ],
+      "speechStart": 198.484,
+      "speechEnd": 202.163,
+      "speechStartMs": 198484,
+      "speechEndMs": 202163,
+      "start": 198.424,
+      "end": 202.243,
+      "startMs": 198424,
+      "endMs": 202243
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "Soon the days became one long holiday.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Soon the days became one long holiday.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 213.842,
+          "speechEnd": 218.001,
+          "speechStartMs": 213842,
+          "speechEndMs": 218001,
+          "start": 213.782,
+          "end": 218.073,
+          "startMs": 213782,
+          "endMs": 218073
+        }
+      ],
+      "speechStart": 213.842,
+      "speechEnd": 218.001,
+      "speechStartMs": 213842,
+      "speechEndMs": 218001,
+      "start": 213.782,
+      "end": 218.073,
+      "startMs": 213782,
+      "endMs": 218073
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S052",
+      "beatId": "B04",
+      "text": "He played louder because the memory hurt.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "He played louder because the memory hurt.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 222.133,
+          "speechEnd": 225.44,
+          "speechStartMs": 222133,
+          "speechEndMs": 225440,
+          "start": 222.073,
+          "end": 225.52,
+          "startMs": 222073,
+          "endMs": 225520
+        }
+      ],
+      "speechStart": 222.133,
+      "speechEnd": 225.44,
+      "speechStartMs": 222133,
+      "speechEndMs": 225440,
+      "start": 222.073,
+      "end": 225.52,
+      "startMs": 222073,
+      "endMs": 225520
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "Five months passed without school or useful work.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Five months passed without school or useful work.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 225.797,
+          "speechEnd": 228.981,
+          "speechStartMs": 225797,
+          "speechEndMs": 228981,
+          "start": 225.737,
+          "end": 229.061,
+          "startMs": 225737,
+          "endMs": 229061
+        }
+      ],
+      "speechStart": 225.797,
+      "speechEnd": 228.981,
+      "speechStartMs": 225797,
+      "speechEndMs": 228981,
+      "start": 225.737,
+      "end": 229.061,
+      "startMs": 225737,
+      "endMs": 229061
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "Then the mirror showed his own donkey ears.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "Then the mirror showed his own donkey ears.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 240.147,
+          "speechEnd": 243.459,
+          "speechStartMs": 240147,
+          "speechEndMs": 243459,
+          "start": 240.087,
+          "end": 243.539,
+          "startMs": 240087,
+          "endMs": 243539
+        }
+      ],
+      "speechStart": 240.147,
+      "speechEnd": 243.459,
+      "speechStartMs": 240147,
+      "speechEndMs": 243459,
+      "start": 240.087,
+      "end": 243.539,
+      "startMs": 240087,
+      "endMs": 243539
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio became too frightened to stay alone.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Pinocchio became too frightened to stay alone.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 255.697,
+          "speechEnd": 258.817,
+          "speechStartMs": 255697,
+          "speechEndMs": 258817,
+          "start": 255.637,
+          "end": 258.897,
+          "startMs": 255637,
+          "endMs": 258897
+        }
+      ],
+      "speechStart": 255.697,
+      "speechEnd": 258.817,
+      "speechStartMs": 255697,
+      "speechEndMs": 258817,
+      "start": 255.637,
+      "end": 258.897,
+      "startMs": 255637,
+      "endMs": 258897
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "She knew many illnesses of careless children.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "She knew many illnesses of careless children.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 264.176,
+          "speechEnd": 267.056,
+          "speechStartMs": 264176,
+          "speechEndMs": 267056,
+          "start": 264.116,
+          "end": 267.136,
+          "startMs": 264116,
+          "endMs": 267136
+        }
+      ],
+      "speechStart": 264.176,
+      "speechEnd": 267.056,
+      "speechStartMs": 264176,
+      "speechEndMs": 267056,
+      "start": 264.116,
+      "end": 267.136,
+      "startMs": 264116,
+      "endMs": 267136
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "She checked his ears, hands, and wooden feet.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "She checked his ears, hands, and wooden feet.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 267.678,
+          "speechEnd": 270.898,
+          "speechStartMs": 267678,
+          "speechEndMs": 270898,
+          "start": 267.618,
+          "end": 270.946,
+          "startMs": 267618,
+          "endMs": 270946
+        }
+      ],
+      "speechStart": 267.678,
+      "speechEnd": 270.898,
+      "speechStartMs": 267678,
+      "speechEndMs": 270898,
+      "start": 267.618,
+      "end": 270.946,
+      "startMs": 267618,
+      "endMs": 270946
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "Soon Pinocchio would become a full donkey.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Soon Pinocchio would become a full donkey.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 282.064,
+          "speechEnd": 285.896,
+          "speechStartMs": 282064,
+          "speechEndMs": 285896,
+          "start": 282.004,
+          "end": 285.969,
+          "startMs": 282004,
+          "endMs": 285969
+        }
+      ],
+      "speechStart": 282.064,
+      "speechEnd": 285.896,
+      "speechStartMs": 282064,
+      "speechEndMs": 285896,
+      "start": 282.004,
+      "end": 285.969,
+      "startMs": 282004,
+      "endMs": 285969
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S075",
+      "beatId": "B06",
+      "text": "Pinocchio remembered the donkey under the wagon.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Pinocchio remembered the donkey under the wagon.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 298.954,
+          "speechEnd": 302.014,
+          "speechStartMs": 298954,
+          "speechEndMs": 302014,
+          "start": 298.894,
+          "end": 302.094,
+          "startMs": 298894,
+          "endMs": 302094
+        }
+      ],
+      "speechStart": 298.954,
+      "speechEnd": 302.014,
+      "speechStartMs": 298954,
+      "speechEndMs": 302014,
+      "start": 298.894,
+      "end": 302.094,
+      "startMs": 298894,
+      "endMs": 302094
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S078",
+      "beatId": "B06",
+      "text": "He hurried towards Lamp-Wick’s small house.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "He hurried towards Lamp-Wick’s small house.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 309.026,
+          "speechEnd": 312.013,
+          "speechStartMs": 309026,
+          "speechEndMs": 312013,
+          "start": 308.966,
+          "end": 312.093,
+          "startMs": 308966,
+          "endMs": 312093
+        }
+      ],
+      "speechStart": 309.026,
+      "speechEnd": 312.013,
+      "speechStartMs": 309026,
+      "speechEndMs": 312013,
+      "start": 308.966,
+      "end": 312.093,
+      "startMs": 308966,
+      "endMs": 312093
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "Lamp-Wick opened the door with a huge cap.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Lamp-Wick opened the door with a huge cap.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 313.081,
+          "speechEnd": 315.612,
+          "speechStartMs": 313081,
+          "speechEndMs": 315612,
+          "start": 313.021,
+          "end": 315.692,
+          "startMs": 313021,
+          "endMs": 315692
+        }
+      ],
+      "speechStart": 313.081,
+      "speechEnd": 315.612,
+      "speechStartMs": 313081,
+      "speechEndMs": 315612,
+      "start": 313.021,
+      "end": 315.692,
+      "startMs": 313021,
+      "endMs": 315692
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "They counted to three and uncovered together.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "They counted to three and uncovered together.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 325.755,
+          "speechEnd": 328.811,
+          "speechStartMs": 325755,
+          "speechEndMs": 328811,
+          "start": 325.695,
+          "end": 328.891,
+          "startMs": 325695,
+          "endMs": 328891
+        }
+      ],
+      "speechStart": 325.755,
+      "speechEnd": 328.811,
+      "speechStartMs": 325755,
+      "speechEndMs": 328811,
+      "start": 325.695,
+      "end": 328.891,
+      "startMs": 325695,
+      "endMs": 328891
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S088",
+      "beatId": "B07",
+      "text": "Hands became hooves, and faces became longer.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Hands became hooves, and faces became longer.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 343.622,
+          "speechEnd": 347.528,
+          "speechStartMs": 343622,
+          "speechEndMs": 347528,
+          "start": 343.562,
+          "end": 347.608,
+          "startMs": 343562,
+          "endMs": 347608
+        }
+      ],
+      "speechStart": 343.622,
+      "speechEnd": 347.528,
+      "speechStartMs": 343622,
+      "speechEndMs": 347528,
+      "start": 343.562,
+      "end": 347.608,
+      "startMs": 343562,
+      "endMs": 347608
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "Outside, the wagon driver heard the braying.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Outside, the wagon driver heard the braying.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 359.669,
+          "speechEnd": 362.047,
+          "speechStartMs": 359669,
+          "speechEndMs": 362047,
+          "start": 359.609,
+          "end": 362.107,
+          "startMs": 359609,
+          "endMs": 362107
+        }
+      ],
+      "speechStart": 359.669,
+      "speechEnd": 362.047,
+      "speechStartMs": 359669,
+      "speechEndMs": 362047,
+      "start": 359.609,
+      "end": 362.107,
+      "startMs": 359609,
+      "endMs": 362107
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S097",
+      "beatId": "B08",
+      "text": "Only another sad donkey sound came out.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "Only another sad donkey sound came out.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 376.293,
+          "speechEnd": 379.684,
+          "speechStartMs": 376293,
+          "speechEndMs": 379684,
+          "start": 376.233,
+          "end": 379.764,
+          "startMs": 376233,
+          "endMs": 379764
+        }
+      ],
+      "speechStart": 376.293,
+      "speechEnd": 379.684,
+      "speechStartMs": 376293,
+      "speechEndMs": 379684,
+      "start": 376.233,
+      "end": 379.764,
+      "startMs": 376233,
+      "endMs": 379764
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S102",
+      "beatId": "B08",
+      "text": "He remembered the Fairy’s twelve empty chairs.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "He remembered the Fairy’s twelve empty chairs.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 397.069,
+          "speechEnd": 400.402,
+          "speechStartMs": 397069,
+          "speechEndMs": 400402,
+          "start": 397.009,
+          "end": 400.482,
+          "startMs": 397009,
+          "endMs": 400482
+        }
+      ],
+      "speechStart": 397.069,
+      "speechEnd": 400.402,
+      "speechStartMs": 397069,
+      "speechEndMs": 400402,
+      "start": 397.009,
+      "end": 400.482,
+      "startMs": 397009,
+      "endMs": 400482
+    }
+  ]
+}

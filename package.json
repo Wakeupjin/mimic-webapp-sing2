@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/publish-pinocchio-v3-web-assets.mjs --level=foundation",
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "prebuild": "node scripts/publish-pinocchio-v3-web-assets.mjs --level=foundation",
+    "build": "next build",
     "start": "next start",
     "handoff": "node scripts/ai-handoff.mjs",
     "validate:story-pack": "node scripts/validate-story-pack.mjs && node scripts/validate-story-pack-authored.mjs",
@@ -13,7 +15,8 @@
     "assemble:pinocchio-v3-audiobook": "node scripts/assemble-story-pack-audiobook.mjs",
     "align:pinocchio-v3-audiobook": "node scripts/align-story-pack-audiobook.mjs",
     "validate:pinocchio-v3-audiobook": "node scripts/validate-story-pack-audiobook.mjs",
-    "sync:story-pack-activity-checksums": "node scripts/sync-story-pack-activity-checksums.mjs"
+    "sync:story-pack-activity-checksums": "node scripts/sync-story-pack-activity-checksums.mjs",
+    "publish:pinocchio-v3-web": "node scripts/publish-pinocchio-v3-web-assets.mjs --level=foundation"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",

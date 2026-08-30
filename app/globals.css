@@ -1423,6 +1423,24 @@ body {
   padding: clamp(1rem, 2.8vh, 2.25rem) 0 clamp(2rem, 6vh, 4.5rem);
 }
 
+.select-content.has-notice {
+  flex-direction: column;
+  gap: clamp(0.8rem, 2vh, 1.4rem);
+}
+
+.select-notice {
+  width: min(100%, 42rem);
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(96, 217, 108, 0.45);
+  border-radius: 0.9rem;
+  background: rgba(20, 41, 24, 0.9);
+  color: #dff7e2;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  font-weight: 800;
+  line-height: 1.45;
+  text-align: center;
+}
+
 .select-close,
 .home-menu {
   width: clamp(36px, 3.02vw, 58px);

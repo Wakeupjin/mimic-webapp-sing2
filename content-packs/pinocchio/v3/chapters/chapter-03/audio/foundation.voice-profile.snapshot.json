@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "retrievedAt": "2026-08-30T10:37:18.638Z",
+  "provider": "ElevenLabs",
+  "verification": "voice-endpoint-verified",
+  "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+  "name": "Lily - Velvety Actress",
+  "approvedDisplayName": "Lily",
+  "category": "premade",
+  "labels": {
+    "language": "en",
+    "accent": "british",
+    "use_case": "informative_educational",
+    "age": "middle_aged",
+    "descriptive": "confident",
+    "gender": "female"
+  },
+  "settings": {
+    "stability": 0.5,
+    "use_speaker_boost": true,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "speed": 1
+  },
+  "previewUrl": "https://storage.googleapis.com/eleven-public-prod/premade/voices/pFZP5JQG7iQjIQuC4Bku/89b68b35-b3dd-4348-a84a-a3c13a3c2b30.mp3",
+  "retirementRisk": "ElevenLabs default voices are scheduled for retirement on 2026-12-31; Pinocchio masters and pickups must finish by the internal 2026-11-30 deadline.",
+  "successfulTtsGenerationVerifiedAt": "2026-08-30T10:39:32.662Z"
+}

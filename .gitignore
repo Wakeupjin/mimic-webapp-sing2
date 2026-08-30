@@ -42,3 +42,10 @@ next-env.d.ts
 
 # large video files
 public/videos/*.mp4
+public/books/pinocchio/v3/
+
+# Rebuildable Story Pack audio intermediates stay out of Git. Canonical
+# Chapter masters are versioned; act parts and assembled full masters belong
+# in the content archive/CDN once release QA is complete.
+content-packs/pinocchio/v3/chapters/*/audio/parts/*.mp3
+content-packs/pinocchio/v3/audiobooks/*.mp3

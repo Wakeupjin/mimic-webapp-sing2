@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "level": "foundation",
+  "kind": "full-story-audiobook-master",
+  "generatedAt": "2026-08-30T11:28:52.268Z",
+  "narrator": {
+    "name": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English"
+  },
+  "method": {
+    "studentFacingOutput": "one continuous full-story audio master",
+    "providerRequests": "fewest coherent acts per Chapter because eleven_v3 cannot accept the full book in one HTTP request",
+    "sentenceBySentenceGeneration": false,
+    "chapterAssembly": "decode-concat-reencode with fixed chapter gaps",
+    "chapterGapMs": 1500,
+    "releaseTiming": "draft offsets only; full-master Forced Alignment is required before release"
+  },
+  "buildFingerprint": "sha256:707abe350d7d5d8a095e066b6c8cf7c8005ece0bc67f994ee24ab0559de5b786",
+  "chapters": [
+    {
+      "chapterId": "chapter-01",
+      "audio": "chapters/chapter-01/audio/foundation.master.mp3",
+      "audioSha256": "1033641288432195cb949c9986a4e45320b5621b26ddd846416eebf1460858af",
+      "transcript": "chapters/chapter-01/levels/foundation/master.txt",
+      "transcriptSha256": "4a66578af9e82ea589cb5646590c0051fea0a4e679bf80de55ebe91f72a8aacc",
+      "activities": "chapters/chapter-01/levels/foundation/activities.json",
+      "activitiesSha256": "797463256d422237b7829ab803d8cb8ace738b8b8cc1f8d5b48fe9a47cafe787",
+      "timelineSha256": "1c5aef739d48f95786f083bea58573b085ee9d759239f7c87af0de4853bd8a7a",
+      "provenanceSha256": "f8d1466e8a1daf2605200654b84fb0f69380bba23a413de86f10cbf0c6ea0b34",
+      "duration": 401.68
+    },
+    {
+      "chapterId": "chapter-02",
+      "audio": "chapters/chapter-02/audio/foundation.master.mp3",
+      "audioSha256": "4781ce8fe1b53b130864c52c679873b18986fd15ea5a09c32a9ceaaa04929998",
+      "transcript": "chapters/chapter-02/levels/foundation/master.txt",
+      "transcriptSha256": "d62e4c23b468377f20c300cfa736b8ed47eb438bbdfc084b76a282a12d3ef900",
+      "activities": "chapters/chapter-02/levels/foundation/activities.json",
+      "activitiesSha256": "e376829e66d7ea6a0f8871bccaeacd53d5b42d5547430e01c955080cee0d04ae",
+      "timelineSha256": "a63c630dd83eef0a882adbf2eafb1ca0488b6cc5c8431e851b28b35f0f419ddd",
+      "provenanceSha256": "efeb3465e379597b19f37d48982a74ab1d7df0f99c9b847cd5dcbea07d7e9cc5",
+      "duration": 405.68
+    },
+    {
+      "chapterId": "chapter-03",
+      "audio": "chapters/chapter-03/audio/foundation.master.mp3",
+      "audioSha256": "dbe86aedee0740f0d3c85fea8b434f1e14f50d7108411fcae5493447a93e4cfb",
+      "transcript": "chapters/chapter-03/levels/foundation/master.txt",
+      "transcriptSha256": "01a732c0aafd12e7aae75242890905f942ba7916af5b1dd32116654670708fd9",
+      "activities": "chapters/chapter-03/levels/foundation/activities.json",
+      "activitiesSha256": "270e1324f72d9bd5a1780d8d01b160cc157663829ce2b62cdc067d4b6ffcc775",
+      "timelineSha256": "fc1d6d2bac63e460dfa229295b5e60340e2d63f992d316c354655757e8f7333d",
+      "provenanceSha256": "c5add361956edd56c2d748919de8b406ff473d515b0f9e95a94fbe409b2cc1db",
+      "duration": 402.4
+    },
+    {
+      "chapterId": "chapter-04",
+      "audio": "chapters/chapter-04/audio/foundation.master.mp3",
+      "audioSha256": "3b603df208ade5edbdfdbff46608c5f62a8f99299f31fe43b0c17991b32e4803",
+      "transcript": "chapters/chapter-04/levels/foundation/master.txt",
+      "transcriptSha256": "b6ecaf4a19702800dfb6360bd6a05990e46ca712bf8eadfbe075d41906263b01",
+      "activities": "chapters/chapter-04/levels/foundation/activities.json",
+      "activitiesSha256": "e1d4fb5b4fa5e322b4a944e8a69f74b2d4e09bc4668bd762dd115fcd914b2049",
+      "timelineSha256": "8e97ed2e82a1703286647357e96332f0d05e0a524e6902d69ea8a19f06f11030",
+      "provenanceSha256": "e90ae253c93a059aeac6b832c8ca7317c01d4d0afdb032801b7a3123fb912e38",
+      "duration": 405.36
+    },
+    {
+      "chapterId": "chapter-05",
+      "audio": "chapters/chapter-05/audio/foundation.master.mp3",
+      "audioSha256": "dbbf51e9963c4d81746f09c947f15215091d6b3f11442def2a1d4673f3d39b72",
+      "transcript": "chapters/chapter-05/levels/foundation/master.txt",
+      "transcriptSha256": "782f4c946a95d80ef9447952bbb737480c88638116a681ceb2042c87e315ec9c",
+      "activities": "chapters/chapter-05/levels/foundation/activities.json",
+      "activitiesSha256": "68678db2fd1a66b980ab71e8d06ef97d3dc00a0fe834629cb7b31b700dbfb103",
+      "timelineSha256": "93a0cde11d2f21568d3259114abe49fcdb04bd41adce1b9e76157e19ca7fff75",
+      "provenanceSha256": "fc27008fffe8f7661f6943118dd763e0f879d7bd0f8170b7715f0f7328ca1ec8",
+      "duration": 407.68
+    },
+    {
+      "chapterId": "chapter-06",
+      "audio": "chapters/chapter-06/audio/foundation.master.mp3",
+      "audioSha256": "4a2d8b96ef1474570b2e10f404a3d88a1c251bea4d86491b15f8c4420b0d64e7",
+      "transcript": "chapters/chapter-06/levels/foundation/master.txt",
+      "transcriptSha256": "da0670c1932d960e433f60de6474c47d58080ddcd8783e5ec8926fd77003a794",
+      "activities": "chapters/chapter-06/levels/foundation/activities.json",
+      "activitiesSha256": "8dd3b4a7e6488faef38ac541013a50615da818ba38c4802f961348472ad0db18",
+      "timelineSha256": "9c9e6fcc85c4122aed7ed465353d819682d26b7f2ee6fa173adef6e7b3e1518e",
+      "provenanceSha256": "5bd8b013a7865ac202a80aa180387881678421151955ebf3007ce45618fc18ce",
+      "duration": 429.84
+    },
+    {
+      "chapterId": "chapter-07",
+      "audio": "chapters/chapter-07/audio/foundation.master.mp3",
+      "audioSha256": "d2aa2ec0a56fe2df8220584105ec31095ed36d27a53de6fe78e6e3154c4babd3",
+      "transcript": "chapters/chapter-07/levels/foundation/master.txt",
+      "transcriptSha256": "eba29f62ee64ac86040f3e3cfcff638bb6dcd82243cb85e77ebbe73237e4aa48",
+      "activities": "chapters/chapter-07/levels/foundation/activities.json",
+      "activitiesSha256": "335f3e75d0a54b8d8ec7578dc0b4fd8a452ea64e32f9c7e9c439097d5f93311a",
+      "timelineSha256": "e81ce7c80e4f59d4cf1b6eb31a0a37e0907cdbe5dd025850e31ed1d744ae9abb",
+      "provenanceSha256": "518af2de2db3c5d98219cc860999b0faeeb924bdf39571759ee99f9926b29297",
+      "duration": 394.32
+    },
+    {
+      "chapterId": "chapter-08",
+      "audio": "chapters/chapter-08/audio/foundation.master.mp3",
+      "audioSha256": "3d7905799be82da66f5d5c826ca82ac6051a824916b7059bf4f48a7c233d302d",
+      "transcript": "chapters/chapter-08/levels/foundation/master.txt",
+      "transcriptSha256": "d7a49883ca182416a9920c921bc23de851aa3816d1d6d13d6c1223f612fe6490",
+      "activities": "chapters/chapter-08/levels/foundation/activities.json",
+      "activitiesSha256": "b1093831736bfbb2dedd78bed5be647761fd8683797bc0f9d41c8cce97f4ca57",
+      "timelineSha256": "d4b8e593bdd75649b5a3f7fa7566210fd8b7741a4ddd90054a50e8516101077f",
+      "provenanceSha256": "8074afa6d7a947b7a7f5343041a330d1321972a131f34546a048a94ea81fb7c4",
+      "duration": 406.16
+    },
+    {
+      "chapterId": "chapter-09",
+      "audio": "chapters/chapter-09/audio/foundation.master.mp3",
+      "audioSha256": "48b8707325883895251070a2177509543379b5b2d15b8573e07a312395ac0406",
+      "transcript": "chapters/chapter-09/levels/foundation/master.txt",
+      "transcriptSha256": "1c23171534f93e6cdee2386de76533f699479a25dcbeae1259a3387ae952a6fb",
+      "activities": "chapters/chapter-09/levels/foundation/activities.json",
+      "activitiesSha256": "a678ab857b6890287cfb2768a5d2f5e5cfe1326f3b7b392104c0ecd028c4e79e",
+      "timelineSha256": "3f5e3b83287e9522bbdfeb322d47c22da171854293e48517adcce0eb745a6d40",
+      "provenanceSha256": "e02e4b1a388b85e038dfa466fe77184dcc53917cd66bdb0f28da4114ca3ba6cb",
+      "duration": 416.24
+    },
+    {
+      "chapterId": "chapter-10",
+      "audio": "chapters/chapter-10/audio/foundation.master.mp3",
+      "audioSha256": "dd362ab8cde97bf8ba8098cefe1fdec594fbf51b83c9cbf21a289f70902522c3",
+      "transcript": "chapters/chapter-10/levels/foundation/master.txt",
+      "transcriptSha256": "d03dd15aa1df27ee03f15d691cde82a7934ffdc771b4d99a702940436284758e",
+      "activities": "chapters/chapter-10/levels/foundation/activities.json",
+      "activitiesSha256": "ca246543451fe694584b900c0861f98d39dbfa69afb2ef3bc7e2f024a6c47980",
+      "timelineSha256": "c4ee5f1a771ac5ed958b2eb4ee11bc7da735a688c08b5459db01426776b30af1",
+      "provenanceSha256": "ba3b2a9af5acebb42e7a2c5484eb0d64f37e7a24eed52f0934744742295b7ab9",
+      "duration": 409.68
+    },
+    {
+      "chapterId": "chapter-11",
+      "audio": "chapters/chapter-11/audio/foundation.master.mp3",
+      "audioSha256": "9990467fdabd90a712541e6ab6963ecbdc7eb5ba828959a08c40bd19de759a33",
+      "transcript": "chapters/chapter-11/levels/foundation/master.txt",
+      "transcriptSha256": "0f202e40f79e5653572bc0d40e5add6f326148e8737816a8bb1b37437ef121a9",
+      "activities": "chapters/chapter-11/levels/foundation/activities.json",
+      "activitiesSha256": "ec993876be0a3184669138b5b32fce9da4487a0ddcaa9a5feb6e57bb973e1339",
+      "timelineSha256": "5e2ff30c90cda5f089be7ce24149cd3f46a6c3b8412397d82f56b006c642aa5f",
+      "provenanceSha256": "483650d5348675aaa59cef69185c62e21ddb999701c5d678ddc5b2c394b3b83a",
+      "duration": 379.84
+    },
+    {
+      "chapterId": "chapter-12",
+      "audio": "chapters/chapter-12/audio/foundation.master.mp3",
+      "audioSha256": "d1575015044e499ad629bf41887944dd873418b3d1da0c5f55230f91828ce730",
+      "transcript": "chapters/chapter-12/levels/foundation/master.txt",
+      "transcriptSha256": "047c0f4d2d80923b77f81dbcb8e3b1b50dccd0b881ca3d3c99e8176d86e09202",
+      "activities": "chapters/chapter-12/levels/foundation/activities.json",
+      "activitiesSha256": "cd4d35932c0dff25d8147ab34f2938e122c59ac7a3211337341b59ce3fc06916",
+      "timelineSha256": "41b73eeafc2ab7ecf18e027dcca6ea54c89301cc0cae17a030723c5e56c1ef93",
+      "provenanceSha256": "a1e0331e9daf1c8b2fed1311a36621bd4cb44bb0876fdb1c2a1ff4541a95f37a",
+      "duration": 386.8
+    }
+  ],
+  "output": {
+    "audio": "audiobooks/foundation.full.master.mp3",
+    "audioSha256": "7e6c4168d039b8a43e39cf2b273349792653f3ebb772286e504d6796495ae921",
+    "timeline": "audiobooks/foundation.full.timeline.json",
+    "timelineSha256": "94946b447e4f9c1b6a457eb97c6834085c48c04e33b3f68bd9a8050d7b6f34fe",
+    "transcript": "audiobooks/foundation.full.transcript.txt",
+    "transcriptSha256": "67d20ea4974a46095d2f943fedbe324a390461fe153485ce2fde646cd8296fbf",
+    "spokenTranscript": "audiobooks/foundation.full.spoken-transcript.txt",
+    "spokenTranscriptSha256": "20a7852954d94f9d6f8fc2287fb11c58f958c84934224f36f86d6180e3be3556",
+    "duration": 4862.18
+  }
+}

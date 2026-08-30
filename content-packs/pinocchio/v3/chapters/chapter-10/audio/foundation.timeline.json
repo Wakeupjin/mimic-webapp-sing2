@@ -1,0 +1,2667 @@
+{
+  "schemaVersion": "1.1.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-10",
+  "level": "foundation",
+  "generatedAt": "2026-08-30T11:00:17.353Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accent": "British English",
+  "outputFormat": "mp3_44100_128",
+  "timingPrecision": "milliseconds",
+  "seed": 2701,
+  "source": "single-editorial-master-rendered-as-2-coherent-acts",
+  "alignmentSource": "per-act-elevenlabs-tts-duration-fitted",
+  "masterTextSha256": "d03dd15aa1df27ee03f15d691cde82a7934ffdc771b4d99a702940436284758e",
+  "activitiesSha256": "ca246543451fe694584b900c0861f98d39dbfa69afb2ef3bc7e2f024a6c47980",
+  "duration": 409.68,
+  "acts": [
+    {
+      "actId": "act-01",
+      "beatIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "start": 0,
+      "end": 211.831,
+      "concatenationOffset": 0,
+      "sourceAudioDuration": 211.76,
+      "sourceAlignmentEnd": 211.789,
+      "sourceAlignmentTimeScale": 0.999863071,
+      "requestId": "Pzi9pGBCiDtyaPrjiDJh",
+      "characters": 2425
+    },
+    {
+      "actId": "act-02",
+      "beatIds": [
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "start": 211.831,
+      "end": 409.68,
+      "concatenationOffset": 211.76,
+      "sourceAudioDuration": 197.92,
+      "sourceAlignmentEnd": 197.956,
+      "sourceAlignmentTimeScale": 0.999818141,
+      "requestId": "5vgf94uK5ReE4CAgn07M",
+      "characters": 2433
+    }
+  ],
+  "seams": [
+    {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S052",
+      "beforeSentenceId": "S053",
+      "at": 211.831,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  ],
+  "seam": {
+    "afterActId": "act-01",
+    "beforeActId": "act-02",
+    "afterSentenceId": "S052",
+    "beforeSentenceId": "S053",
+    "at": 211.831,
+    "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+  },
+  "beats": [
+    {
+      "beatId": "B01",
+      "title": "Sold at the Market",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "start": 0.069,
+      "end": 49.496,
+      "startMs": 69,
+      "endMs": 49496
+    },
+    {
+      "beatId": "B02",
+      "title": "The Circus's New Star",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "start": 49.496,
+      "end": 104.448,
+      "startMs": 49496,
+      "endMs": 104448
+    },
+    {
+      "beatId": "B03",
+      "title": "The Fairy in the Audience",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "start": 104.448,
+      "end": 158.555,
+      "startMs": 104448,
+      "endMs": 158555
+    },
+    {
+      "beatId": "B04",
+      "title": "Worth Four Coins",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "start": 158.555,
+      "end": 211.831,
+      "startMs": 158555,
+      "endMs": 211831
+    },
+    {
+      "beatId": "B05",
+      "title": "Beneath the Donkey Skin",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S071",
+      "start": 211.831,
+      "end": 278.258,
+      "startMs": 211831,
+      "endMs": 278258
+    },
+    {
+      "beatId": "B06",
+      "title": "The Blue Goat",
+      "sentenceStart": "S072",
+      "sentenceEnd": "S084",
+      "start": 278.258,
+      "end": 324.627,
+      "startMs": 278258,
+      "endMs": 324627
+    },
+    {
+      "beatId": "B07",
+      "title": "The Terrible Shark",
+      "sentenceStart": "S085",
+      "sentenceEnd": "S091",
+      "start": 324.627,
+      "end": 353.806,
+      "startMs": 324627,
+      "endMs": 353806
+    },
+    {
+      "beatId": "B08",
+      "title": "A Light in the Dark",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S105",
+      "start": 353.806,
+      "end": 409.68,
+      "startMs": 353806,
+      "endMs": 409680
+    }
+  ],
+  "lines": [
+    {
+      "sentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio woke the next morning as a grey donkey.",
+      "speechStart": 0.149,
+      "speechEnd": 3.908,
+      "speechStartMs": 149,
+      "speechEndMs": 3908,
+      "start": 0.069,
+      "end": 3.968,
+      "startMs": 69,
+      "endMs": 3968
+    },
+    {
+      "sentenceId": "S002",
+      "beatId": "B01",
+      "text": "Lamp-Wick stood beside him with his ears down.",
+      "speechStart": 4.028,
+      "speechEnd": 7.148,
+      "speechStartMs": 4028,
+      "speechEndMs": 7148,
+      "start": 3.968,
+      "end": 7.268,
+      "startMs": 3968,
+      "endMs": 7268
+    },
+    {
+      "sentenceId": "S003",
+      "beatId": "B01",
+      "text": "Both boys felt afraid and deeply ashamed.",
+      "speechStart": 7.388,
+      "speechEnd": 11.787,
+      "speechStartMs": 7388,
+      "speechEndMs": 11787,
+      "start": 7.268,
+      "end": 11.927,
+      "startMs": 7268,
+      "endMs": 11927
+    },
+    {
+      "sentenceId": "S004",
+      "beatId": "B01",
+      "text": "The Little Man kicked open the bedroom door.",
+      "speechStart": 12.067,
+      "speechEnd": 15.227,
+      "speechStartMs": 12067,
+      "speechEndMs": 15227,
+      "start": 11.927,
+      "end": 15.333,
+      "startMs": 11927,
+      "endMs": 15333
+    },
+    {
+      "sentenceId": "S005",
+      "beatId": "B01",
+      "text": "He smiled as if nothing bad had happened.",
+      "speechStart": 15.44,
+      "speechEnd": 18.107,
+      "speechStartMs": 15440,
+      "speechEndMs": 18107,
+      "start": 15.333,
+      "end": 18.187,
+      "startMs": 15333,
+      "endMs": 18187
+    },
+    {
+      "sentenceId": "S006",
+      "beatId": "B01",
+      "text": "Then he brushed their coats until they looked bright.",
+      "speechStart": 18.266,
+      "speechEnd": 21.706,
+      "speechStartMs": 18266,
+      "speechEndMs": 21706,
+      "start": 18.187,
+      "end": 21.846,
+      "startMs": 18187,
+      "endMs": 21846
+    },
+    {
+      "sentenceId": "S007",
+      "beatId": "B01",
+      "text": "The boys tried to speak, but only brayed.",
+      "speechStart": 21.986,
+      "speechEnd": 26.265,
+      "speechStartMs": 21986,
+      "speechEndMs": 26265,
+      "start": 21.846,
+      "end": 26.395,
+      "startMs": 21846,
+      "endMs": 26395
+    },
+    {
+      "sentenceId": "S008",
+      "beatId": "B01",
+      "text": "The Little Man led them to a busy market.",
+      "speechStart": 26.525,
+      "speechEnd": 29.545,
+      "speechStartMs": 26525,
+      "speechEndMs": 29545,
+      "start": 26.395,
+      "end": 29.605,
+      "startMs": 26395,
+      "endMs": 29605
+    },
+    {
+      "sentenceId": "S009",
+      "beatId": "B01",
+      "text": "Selling careless boys was his secret business.",
+      "speechStart": 29.665,
+      "speechEnd": 33.544,
+      "speechStartMs": 29665,
+      "speechEndMs": 33544,
+      "start": 29.605,
+      "end": 33.824,
+      "startMs": 29605,
+      "endMs": 33824
+    },
+    {
+      "sentenceId": "S010",
+      "beatId": "B01",
+      "text": "A farmer bought Lamp-Wick for work on his farm.",
+      "speechStart": 34.104,
+      "speechEnd": 37.784,
+      "speechStartMs": 34104,
+      "speechEndMs": 37784,
+      "start": 33.824,
+      "end": 37.964,
+      "startMs": 33824,
+      "endMs": 37964
+    },
+    {
+      "sentenceId": "S011",
+      "beatId": "B01",
+      "text": "A circus owner came to look at Pinocchio.",
+      "speechStart": 38.144,
+      "speechEnd": 41.063,
+      "speechStartMs": 38144,
+      "speechEndMs": 41063,
+      "start": 37.964,
+      "end": 41.197,
+      "startMs": 37964,
+      "endMs": 41197
+    },
+    {
+      "sentenceId": "S012",
+      "beatId": "B01",
+      "text": "He checked the donkey’s legs, teeth, and eyes.",
+      "speechStart": 41.33,
+      "speechEnd": 45.223,
+      "speechStartMs": 41330,
+      "speechEndMs": 45223,
+      "start": 41.197,
+      "end": 45.295,
+      "startMs": 41197,
+      "endMs": 45295
+    },
+    {
+      "sentenceId": "S013",
+      "beatId": "B01",
+      "text": "Then he bought Pinocchio and pulled him away.",
+      "speechStart": 45.367,
+      "speechEnd": 48.902,
+      "speechStartMs": 45367,
+      "speechEndMs": 48902,
+      "start": 45.295,
+      "end": 49.496,
+      "startMs": 45295,
+      "endMs": 49496
+    },
+    {
+      "sentenceId": "S014",
+      "beatId": "B02",
+      "text": "The circus stable was cold and smelled of hay.",
+      "speechStart": 50.09,
+      "speechEnd": 53.622,
+      "speechStartMs": 50090,
+      "speechEndMs": 53622,
+      "start": 49.496,
+      "end": 53.732,
+      "startMs": 49496,
+      "endMs": 53732
+    },
+    {
+      "sentenceId": "S015",
+      "beatId": "B02",
+      "text": "Pinocchio did not want to eat the dry food.",
+      "speechStart": 53.842,
+      "speechEnd": 56.981,
+      "speechStartMs": 53842,
+      "speechEndMs": 56981,
+      "start": 53.732,
+      "end": 57.061,
+      "startMs": 53732,
+      "endMs": 57061
+    },
+    {
+      "sentenceId": "S016",
+      "beatId": "B02",
+      "text": "His new master became angry and punished him.",
+      "speechStart": 57.141,
+      "speechEnd": 60.581,
+      "speechStartMs": 57141,
+      "speechEndMs": 60581,
+      "start": 57.061,
+      "end": 60.694,
+      "startMs": 57061,
+      "endMs": 60694
+    },
+    {
+      "sentenceId": "S017",
+      "beatId": "B02",
+      "text": "Every day, Pinocchio had to learn new tricks.",
+      "speechStart": 60.808,
+      "speechEnd": 64.74,
+      "speechStartMs": 60808,
+      "speechEndMs": 64740,
+      "start": 60.694,
+      "end": 64.847,
+      "startMs": 60694,
+      "endMs": 64847
+    },
+    {
+      "sentenceId": "S018",
+      "beatId": "B02",
+      "text": "He bowed, danced, and counted to the music.",
+      "speechStart": 64.953,
+      "speechEnd": 68.66,
+      "speechStartMs": 64953,
+      "speechEndMs": 68660,
+      "start": 64.847,
+      "end": 68.793,
+      "startMs": 64847,
+      "endMs": 68793
+    },
+    {
+      "sentenceId": "S019",
+      "beatId": "B02",
+      "text": "He walked on two legs around the ring.",
+      "speechStart": 68.927,
+      "speechEnd": 71.779,
+      "speechStartMs": 68927,
+      "speechEndMs": 71779,
+      "start": 68.793,
+      "end": 71.899,
+      "startMs": 68793,
+      "endMs": 71899
+    },
+    {
+      "sentenceId": "S020",
+      "beatId": "B02",
+      "text": "He also jumped through hoops and over boards.",
+      "speechStart": 72.019,
+      "speechEnd": 75.699,
+      "speechStartMs": 72019,
+      "speechEndMs": 75699,
+      "start": 71.899,
+      "end": 75.79,
+      "startMs": 71899,
+      "endMs": 75790
+    },
+    {
+      "sentenceId": "S021",
+      "beatId": "B02",
+      "text": "Bright posters soon covered walls across the town.",
+      "speechStart": 75.882,
+      "speechEnd": 80.098,
+      "speechStartMs": 75882,
+      "speechEndMs": 80098,
+      "start": 75.79,
+      "end": 80.194,
+      "startMs": 75790,
+      "endMs": 80194
+    },
+    {
+      "sentenceId": "S022",
+      "beatId": "B02",
+      "text": "They promised a donkey who danced like a man.",
+      "speechStart": 80.29,
+      "speechEnd": 84.577,
+      "speechStartMs": 80290,
+      "speechEndMs": 84577,
+      "start": 80.194,
+      "end": 84.767,
+      "startMs": 80194,
+      "endMs": 84767
+    },
+    {
+      "sentenceId": "S023",
+      "beatId": "B02",
+      "text": "One evening, many families filled the circus tent.",
+      "speechStart": 84.957,
+      "speechEnd": 89.297,
+      "speechStartMs": 84957,
+      "speechEndMs": 89297,
+      "start": 84.767,
+      "end": 89.417,
+      "startMs": 84767,
+      "endMs": 89417
+    },
+    {
+      "sentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio entered with ribbons and a small hat.",
+      "speechStart": 89.537,
+      "speechEnd": 93.376,
+      "speechStartMs": 89537,
+      "speechEndMs": 93376,
+      "start": 89.417,
+      "end": 93.486,
+      "startMs": 89417,
+      "endMs": 93486
+    },
+    {
+      "sentenceId": "S025",
+      "beatId": "B02",
+      "text": "The crowd cheered, but he felt trapped inside.",
+      "speechStart": 93.596,
+      "speechEnd": 98.256,
+      "speechStartMs": 93596,
+      "speechEndMs": 98256,
+      "start": 93.486,
+      "end": 98.406,
+      "startMs": 93486,
+      "endMs": 98406
+    },
+    {
+      "sentenceId": "S026",
+      "beatId": "B02",
+      "text": "The music started, and Pinocchio gave a deep bow.",
+      "speechStart": 98.556,
+      "speechEnd": 103.935,
+      "speechStartMs": 98556,
+      "speechEndMs": 103935,
+      "start": 98.406,
+      "end": 104.448,
+      "startMs": 98406,
+      "endMs": 104448
+    },
+    {
+      "sentenceId": "S027",
+      "beatId": "B03",
+      "text": "He marched in circles and balanced a glass.",
+      "speechStart": 104.962,
+      "speechEnd": 108.014,
+      "speechStartMs": 104962,
+      "speechEndMs": 108014,
+      "start": 104.448,
+      "end": 108.11,
+      "startMs": 104448,
+      "endMs": 108110
+    },
+    {
+      "sentenceId": "S028",
+      "beatId": "B03",
+      "text": "Then he looked towards a seat near the front.",
+      "speechStart": 108.206,
+      "speechEnd": 111.534,
+      "speechStartMs": 108206,
+      "speechEndMs": 111534,
+      "start": 108.11,
+      "end": 111.794,
+      "startMs": 108110,
+      "endMs": 111794
+    },
+    {
+      "sentenceId": "S029",
+      "beatId": "B03",
+      "text": "A beautiful lady wore his picture around her neck.",
+      "speechStart": 112.054,
+      "speechEnd": 116.573,
+      "speechStartMs": 112054,
+      "speechEndMs": 116573,
+      "start": 111.794,
+      "end": 116.701,
+      "startMs": 111794,
+      "endMs": 116701
+    },
+    {
+      "sentenceId": "S030",
+      "beatId": "B03",
+      "text": "Soft blue hair showed under her silver veil.",
+      "speechStart": 116.829,
+      "speechEnd": 120.972,
+      "speechStartMs": 116829,
+      "speechEndMs": 120972,
+      "start": 116.701,
+      "end": 121.122,
+      "startMs": 116701,
+      "endMs": 121122
+    },
+    {
+      "sentenceId": "S031",
+      "beatId": "B03",
+      "text": "Pinocchio knew that she was the Blue Fairy.",
+      "speechStart": 121.272,
+      "speechEnd": 125.852,
+      "speechStartMs": 121272,
+      "speechEndMs": 125852,
+      "start": 121.122,
+      "end": 126.132,
+      "startMs": 121122,
+      "endMs": 126132
+    },
+    {
+      "sentenceId": "S032",
+      "beatId": "B03",
+      "text": "Sudden hope made him forget his next trick.",
+      "speechStart": 126.412,
+      "speechEnd": 129.931,
+      "speechStartMs": 126412,
+      "speechEndMs": 129931,
+      "start": 126.132,
+      "end": 130.171,
+      "startMs": 126132,
+      "endMs": 130171
+    },
+    {
+      "sentenceId": "S033",
+      "beatId": "B03",
+      "text": "“Fairy, I am here!” he tried to shout.",
+      "speechStart": 130.411,
+      "speechEnd": 134.091,
+      "speechStartMs": 130411,
+      "speechEndMs": 134091,
+      "start": 130.171,
+      "end": 134.181,
+      "startMs": 130171,
+      "endMs": 134181
+    },
+    {
+      "sentenceId": "S034",
+      "beatId": "B03",
+      "text": "His mouth made only a loud donkey sound.",
+      "speechStart": 134.271,
+      "speechEnd": 138.01,
+      "speechStartMs": 134271,
+      "speechEndMs": 138010,
+      "start": 134.181,
+      "end": 138.13,
+      "startMs": 134181,
+      "endMs": 138130
+    },
+    {
+      "sentenceId": "S035",
+      "beatId": "B03",
+      "text": "The crowd laughed because they thought it was funny.",
+      "speechStart": 138.25,
+      "speechEnd": 142.01,
+      "speechStartMs": 138250,
+      "speechEndMs": 142010,
+      "start": 138.13,
+      "end": 142.14,
+      "startMs": 138130,
+      "endMs": 142140
+    },
+    {
+      "sentenceId": "S036",
+      "beatId": "B03",
+      "text": "The Fairy looked sad and left her seat.",
+      "speechStart": 142.27,
+      "speechEnd": 146.249,
+      "speechStartMs": 142270,
+      "speechEndMs": 146249,
+      "start": 142.14,
+      "end": 146.379,
+      "startMs": 142140,
+      "endMs": 146379
+    },
+    {
+      "sentenceId": "S037",
+      "beatId": "B03",
+      "text": "Pinocchio kept watching the empty place.",
+      "speechStart": 146.509,
+      "speechEnd": 150.008,
+      "speechStartMs": 146509,
+      "speechEndMs": 150008,
+      "start": 146.379,
+      "end": 150.148,
+      "startMs": 146379,
+      "endMs": 150148
+    },
+    {
+      "sentenceId": "S038",
+      "beatId": "B03",
+      "text": "The circus owner shouted for the final jump.",
+      "speechStart": 150.288,
+      "speechEnd": 154.248,
+      "speechStartMs": 150288,
+      "speechEndMs": 154248,
+      "start": 150.148,
+      "end": 154.368,
+      "startMs": 150148,
+      "endMs": 154368
+    },
+    {
+      "sentenceId": "S039",
+      "beatId": "B03",
+      "text": "Pinocchio ran towards a bright paper hoop.",
+      "speechStart": 154.488,
+      "speechEnd": 158.327,
+      "speechStartMs": 154488,
+      "speechEndMs": 158327,
+      "start": 154.368,
+      "end": 158.555,
+      "startMs": 154368,
+      "endMs": 158555
+    },
+    {
+      "sentenceId": "S040",
+      "beatId": "B04",
+      "text": "His front feet hit it, and he fell.",
+      "speechStart": 158.783,
+      "speechEnd": 162.207,
+      "speechStartMs": 158783,
+      "speechEndMs": 162207,
+      "start": 158.555,
+      "end": 162.337,
+      "startMs": 158555,
+      "endMs": 162337
+    },
+    {
+      "sentenceId": "S041",
+      "beatId": "B04",
+      "text": "A sharp pain moved through his left leg.",
+      "speechStart": 162.467,
+      "speechEnd": 165.766,
+      "speechStartMs": 162467,
+      "speechEndMs": 165766,
+      "start": 162.337,
+      "end": 165.896,
+      "startMs": 162337,
+      "endMs": 165896
+    },
+    {
+      "sentenceId": "S042",
+      "beatId": "B04",
+      "text": "The music stopped, and the people became quiet.",
+      "speechStart": 166.026,
+      "speechEnd": 170.406,
+      "speechStartMs": 166026,
+      "speechEndMs": 170406,
+      "start": 165.896,
+      "end": 170.536,
+      "startMs": 165896,
+      "endMs": 170536
+    },
+    {
+      "sentenceId": "S043",
+      "beatId": "B04",
+      "text": "The owner only cared about the broken show.",
+      "speechStart": 170.666,
+      "speechEnd": 174.405,
+      "speechStartMs": 170666,
+      "speechEndMs": 174405,
+      "start": 170.536,
+      "end": 174.592,
+      "startMs": 170536,
+      "endMs": 174592
+    },
+    {
+      "sentenceId": "S044",
+      "beatId": "B04",
+      "text": "An animal doctor checked Pinocchio the next morning.",
+      "speechStart": 174.778,
+      "speechEnd": 178.725,
+      "speechStartMs": 174778,
+      "speechEndMs": 178725,
+      "start": 174.592,
+      "end": 178.964,
+      "startMs": 174592,
+      "endMs": 178964
+    },
+    {
+      "sentenceId": "S045",
+      "beatId": "B04",
+      "text": "“This donkey will always walk badly,” he said.",
+      "speechStart": 179.204,
+      "speechEnd": 183.684,
+      "speechStartMs": 179204,
+      "speechEndMs": 183684,
+      "start": 178.964,
+      "end": 183.824,
+      "startMs": 178964,
+      "endMs": 183824
+    },
+    {
+      "sentenceId": "S046",
+      "beatId": "B04",
+      "text": "The owner decided to sell Pinocchio at once.",
+      "speechStart": 183.964,
+      "speechEnd": 187.843,
+      "speechStartMs": 183964,
+      "speechEndMs": 187843,
+      "start": 183.824,
+      "end": 187.955,
+      "startMs": 183824,
+      "endMs": 187955
+    },
+    {
+      "sentenceId": "S047",
+      "beatId": "B04",
+      "text": "Most buyers did not want an injured donkey.",
+      "speechStart": 188.067,
+      "speechEnd": 191.683,
+      "speechStartMs": 188067,
+      "speechEndMs": 191683,
+      "start": 187.955,
+      "end": 191.869,
+      "startMs": 187955,
+      "endMs": 191869
+    },
+    {
+      "sentenceId": "S048",
+      "beatId": "B04",
+      "text": "At last, a man who made drums stopped.",
+      "speechStart": 192.056,
+      "speechEnd": 196.242,
+      "speechStartMs": 192056,
+      "speechEndMs": 196242,
+      "start": 191.869,
+      "end": 196.389,
+      "startMs": 191869,
+      "endMs": 196389
+    },
+    {
+      "sentenceId": "S049",
+      "beatId": "B04",
+      "text": "He looked closely at Pinocchio’s thick skin.",
+      "speechStart": 196.535,
+      "speechEnd": 200.002,
+      "speechStartMs": 196535,
+      "speechEndMs": 200002,
+      "start": 196.389,
+      "end": 200.122,
+      "startMs": 196389,
+      "endMs": 200122
+    },
+    {
+      "sentenceId": "S050",
+      "beatId": "B04",
+      "text": "The man wanted the skin for a drum.",
+      "speechStart": 200.242,
+      "speechEnd": 203.281,
+      "speechStartMs": 200242,
+      "speechEndMs": 203281,
+      "start": 200.122,
+      "end": 203.455,
+      "startMs": 200122,
+      "endMs": 203455
+    },
+    {
+      "sentenceId": "S051",
+      "beatId": "B04",
+      "text": "He bought Pinocchio for only four small coins.",
+      "speechStart": 203.628,
+      "speechEnd": 208.081,
+      "speechStartMs": 203628,
+      "speechEndMs": 208081,
+      "start": 203.455,
+      "end": 208.22,
+      "startMs": 203455,
+      "endMs": 208220
+    },
+    {
+      "sentenceId": "S052",
+      "beatId": "B04",
+      "text": "The man took him to a cliff by the sea.",
+      "speechStart": 208.36,
+      "speechEnd": 211.76,
+      "speechStartMs": 208360,
+      "speechEndMs": 211760,
+      "start": 208.22,
+      "end": 211.831,
+      "startMs": 208220,
+      "endMs": 211831
+    },
+    {
+      "sentenceId": "S053",
+      "beatId": "B05",
+      "text": "He tied a heavy stone around Pinocchio’s neck.",
+      "speechStart": 211.903,
+      "speechEnd": 215.795,
+      "speechStartMs": 211903,
+      "speechEndMs": 215795,
+      "start": 211.831,
+      "end": 215.862,
+      "startMs": 211831,
+      "endMs": 215862
+    },
+    {
+      "sentenceId": "S054",
+      "beatId": "B05",
+      "text": "He tied another rope around one back leg.",
+      "speechStart": 215.928,
+      "speechEnd": 218.995,
+      "speechStartMs": 215928,
+      "speechEndMs": 218995,
+      "start": 215.862,
+      "end": 219.075,
+      "startMs": 215862,
+      "endMs": 219075
+    },
+    {
+      "sentenceId": "S055",
+      "beatId": "B05",
+      "text": "Pinocchio pulled away, but his leg was weak.",
+      "speechStart": 219.155,
+      "speechEnd": 222.674,
+      "speechStartMs": 219155,
+      "speechEndMs": 222674,
+      "start": 219.075,
+      "end": 222.744,
+      "startMs": 219075,
+      "endMs": 222744
+    },
+    {
+      "sentenceId": "S056",
+      "beatId": "B05",
+      "text": "The man talked happily about his new drum.",
+      "speechStart": 222.814,
+      "speechEnd": 225.873,
+      "speechStartMs": 222814,
+      "speechEndMs": 225873,
+      "start": 222.744,
+      "end": 225.953,
+      "startMs": 222744,
+      "endMs": 225953
+    },
+    {
+      "sentenceId": "S057",
+      "beatId": "B05",
+      "text": "Then he pushed the frightened donkey from the cliff.",
+      "speechStart": 226.033,
+      "speechEnd": 229.233,
+      "speechStartMs": 226033,
+      "speechEndMs": 229233,
+      "start": 225.953,
+      "end": 229.343,
+      "startMs": 225953,
+      "endMs": 229343
+    },
+    {
+      "sentenceId": "S058",
+      "beatId": "B05",
+      "text": "Pinocchio fell through the air into cold water.",
+      "speechStart": 229.453,
+      "speechEnd": 233.152,
+      "speechStartMs": 229453,
+      "speechEndMs": 233152,
+      "start": 229.343,
+      "end": 233.222,
+      "startMs": 229343,
+      "endMs": 233222
+    },
+    {
+      "sentenceId": "S059",
+      "beatId": "B05",
+      "text": "The stone pulled him towards the sea floor.",
+      "speechStart": 233.292,
+      "speechEnd": 236.352,
+      "speechStartMs": 233292,
+      "speechEndMs": 236352,
+      "start": 233.222,
+      "end": 236.422,
+      "startMs": 233222,
+      "endMs": 236422
+    },
+    {
+      "sentenceId": "S060",
+      "beatId": "B05",
+      "text": "The man waited above and held the rope.",
+      "speechStart": 236.492,
+      "speechEnd": 239.791,
+      "speechStartMs": 236492,
+      "speechEndMs": 239791,
+      "start": 236.422,
+      "end": 239.891,
+      "startMs": 236422,
+      "endMs": 239891
+    },
+    {
+      "sentenceId": "S061",
+      "beatId": "B05",
+      "text": "Pinocchio sank into dark and silent water.",
+      "speechStart": 239.991,
+      "speechEnd": 243.95,
+      "speechStartMs": 239991,
+      "speechEndMs": 243950,
+      "start": 239.891,
+      "end": 244.07,
+      "startMs": 239891,
+      "endMs": 244070
+    },
+    {
+      "sentenceId": "S062",
+      "beatId": "B05",
+      "text": "He thought about Geppetto and his lost home.",
+      "speechStart": 244.19,
+      "speechEnd": 247.47,
+      "speechStartMs": 244190,
+      "speechEndMs": 247470,
+      "start": 244.07,
+      "end": 247.545,
+      "startMs": 244070,
+      "endMs": 247545
+    },
+    {
+      "sentenceId": "S063",
+      "beatId": "B05",
+      "text": "Suddenly, many little fish swam around him.",
+      "speechStart": 247.62,
+      "speechEnd": 251.709,
+      "speechStartMs": 247620,
+      "speechEndMs": 251709,
+      "start": 247.545,
+      "end": 251.765,
+      "startMs": 247545,
+      "endMs": 251765
+    },
+    {
+      "sentenceId": "S064",
+      "beatId": "B05",
+      "text": "They began eating the grey donkey covering.",
+      "speechStart": 251.821,
+      "speechEnd": 254.668,
+      "speechStartMs": 251821,
+      "speechEndMs": 254668,
+      "start": 251.765,
+      "end": 254.716,
+      "startMs": 251765,
+      "endMs": 254716
+    },
+    {
+      "sentenceId": "S065",
+      "beatId": "B05",
+      "text": "They did not bite the wooden body inside.",
+      "speechStart": 254.764,
+      "speechEnd": 257.388,
+      "speechStartMs": 254764,
+      "speechEndMs": 257388,
+      "start": 254.716,
+      "end": 257.484,
+      "startMs": 254716,
+      "endMs": 257484
+    },
+    {
+      "sentenceId": "S066",
+      "beatId": "B05",
+      "text": "Soon the long ears and tail were gone.",
+      "speechStart": 257.58,
+      "speechEnd": 261.347,
+      "speechStartMs": 257580,
+      "speechEndMs": 261347,
+      "start": 257.484,
+      "end": 261.402,
+      "startMs": 257484,
+      "endMs": 261402
+    },
+    {
+      "sentenceId": "S067",
+      "beatId": "B05",
+      "text": "Pinocchio’s wooden arms and legs appeared again.",
+      "speechStart": 261.457,
+      "speechEnd": 264.746,
+      "speechStartMs": 261457,
+      "speechEndMs": 264746,
+      "start": 261.402,
+      "end": 264.853,
+      "startMs": 261402,
+      "endMs": 264853
+    },
+    {
+      "sentenceId": "S068",
+      "beatId": "B05",
+      "text": "He moved his fingers and kicked both feet.",
+      "speechStart": 264.959,
+      "speechEnd": 267.866,
+      "speechStartMs": 264959,
+      "speechEndMs": 267866,
+      "start": 264.853,
+      "end": 267.936,
+      "startMs": 264853,
+      "endMs": 267936
+    },
+    {
+      "sentenceId": "S069",
+      "beatId": "B05",
+      "text": "The Fairy’s magic had protected him again.",
+      "speechStart": 268.006,
+      "speechEnd": 271.225,
+      "speechStartMs": 268006,
+      "speechEndMs": 271225,
+      "start": 267.936,
+      "end": 271.335,
+      "startMs": 267936,
+      "endMs": 271335
+    },
+    {
+      "sentenceId": "S070",
+      "beatId": "B05",
+      "text": "The man pulled up the rope at last.",
+      "speechStart": 271.445,
+      "speechEnd": 274.425,
+      "speechStartMs": 271445,
+      "speechEndMs": 274425,
+      "start": 271.335,
+      "end": 274.585,
+      "startMs": 271335,
+      "endMs": 274585
+    },
+    {
+      "sentenceId": "S071",
+      "beatId": "B05",
+      "text": "A living wooden puppet came out of the sea.",
+      "speechStart": 274.745,
+      "speechEnd": 277.784,
+      "speechStartMs": 274745,
+      "speechEndMs": 277784,
+      "start": 274.585,
+      "end": 278.258,
+      "startMs": 274585,
+      "endMs": 278258
+    },
+    {
+      "sentenceId": "S072",
+      "beatId": "B06",
+      "text": "The man opened his mouth in great surprise.",
+      "speechStart": 278.732,
+      "speechEnd": 282.423,
+      "speechStartMs": 278732,
+      "speechEndMs": 282423,
+      "start": 278.258,
+      "end": 282.543,
+      "startMs": 278258,
+      "endMs": 282543
+    },
+    {
+      "sentenceId": "S073",
+      "beatId": "B06",
+      "text": "“Where is my donkey?” he asked loudly.",
+      "speechStart": 282.663,
+      "speechEnd": 286.262,
+      "speechStartMs": 282663,
+      "speechEndMs": 286262,
+      "start": 282.543,
+      "end": 286.562,
+      "startMs": 282543,
+      "endMs": 286562
+    },
+    {
+      "sentenceId": "S074",
+      "beatId": "B06",
+      "text": "“I am that donkey,” Pinocchio answered with a laugh.",
+      "speechStart": 286.862,
+      "speechEnd": 290.982,
+      "speechStartMs": 286862,
+      "speechEndMs": 290982,
+      "start": 286.562,
+      "end": 291.075,
+      "startMs": 286562,
+      "endMs": 291075
+    },
+    {
+      "sentenceId": "S075",
+      "beatId": "B06",
+      "text": "He quickly told the man what had happened.",
+      "speechStart": 291.169,
+      "speechEnd": 293.861,
+      "speechStartMs": 291169,
+      "speechEndMs": 293861,
+      "start": 291.075,
+      "end": 293.951,
+      "startMs": 291075,
+      "endMs": 293951
+    },
+    {
+      "sentenceId": "S076",
+      "beatId": "B06",
+      "text": "The angry man tried to catch him again.",
+      "speechStart": 294.041,
+      "speechEnd": 296.821,
+      "speechStartMs": 294041,
+      "speechEndMs": 296821,
+      "start": 293.951,
+      "end": 296.911,
+      "startMs": 293951,
+      "endMs": 296911
+    },
+    {
+      "sentenceId": "S077",
+      "beatId": "B06",
+      "text": "Pinocchio removed the rope and jumped away.",
+      "speechStart": 297,
+      "speechEnd": 300.26,
+      "speechStartMs": 297000,
+      "speechEndMs": 300260,
+      "start": 296.911,
+      "end": 300.34,
+      "startMs": 296911,
+      "endMs": 300340
+    },
+    {
+      "sentenceId": "S078",
+      "beatId": "B06",
+      "text": "His wooden body could swim very well.",
+      "speechStart": 300.42,
+      "speechEnd": 303.379,
+      "speechStartMs": 300420,
+      "speechEndMs": 303379,
+      "start": 300.34,
+      "end": 303.486,
+      "startMs": 300340,
+      "endMs": 303486
+    },
+    {
+      "sentenceId": "S079",
+      "beatId": "B06",
+      "text": "He left the cliff far behind him.",
+      "speechStart": 303.592,
+      "speechEnd": 306.259,
+      "speechStartMs": 303592,
+      "speechEndMs": 306259,
+      "start": 303.486,
+      "end": 306.499,
+      "startMs": 303486,
+      "endMs": 306499
+    },
+    {
+      "sentenceId": "S080",
+      "beatId": "B06",
+      "text": "A white rock stood ahead in the sunlight.",
+      "speechStart": 306.739,
+      "speechEnd": 309.778,
+      "speechStartMs": 306739,
+      "speechEndMs": 309778,
+      "start": 306.499,
+      "end": 309.938,
+      "startMs": 306499,
+      "endMs": 309938
+    },
+    {
+      "sentenceId": "S081",
+      "beatId": "B06",
+      "text": "A small blue Goat waited on the rock.",
+      "speechStart": 310.098,
+      "speechEnd": 313.058,
+      "speechStartMs": 310098,
+      "speechEndMs": 313058,
+      "start": 309.938,
+      "end": 313.168,
+      "startMs": 309938,
+      "endMs": 313168
+    },
+    {
+      "sentenceId": "S082",
+      "beatId": "B06",
+      "text": "She called to him in the Fairy’s voice.",
+      "speechStart": 313.278,
+      "speechEnd": 316.177,
+      "speechStartMs": 313278,
+      "speechEndMs": 316177,
+      "start": 313.168,
+      "end": 316.377,
+      "startMs": 313168,
+      "endMs": 316377
+    },
+    {
+      "sentenceId": "S083",
+      "beatId": "B06",
+      "text": "“Swim faster, Pinocchio!” the Goat cried.",
+      "speechStart": 316.577,
+      "speechEnd": 320.256,
+      "speechStartMs": 316577,
+      "speechEndMs": 320256,
+      "start": 316.377,
+      "end": 320.328,
+      "startMs": 316377,
+      "endMs": 320328
+    },
+    {
+      "sentenceId": "S084",
+      "beatId": "B06",
+      "text": "Then the water behind him made a terrible sound.",
+      "speechStart": 320.4,
+      "speechEnd": 324.096,
+      "speechStartMs": 320400,
+      "speechEndMs": 324096,
+      "start": 320.328,
+      "end": 324.627,
+      "startMs": 320328,
+      "endMs": 324627
+    },
+    {
+      "sentenceId": "S085",
+      "beatId": "B07",
+      "text": "Small fish rushed away from a huge shadow.",
+      "speechStart": 325.159,
+      "speechEnd": 328.895,
+      "speechStartMs": 325159,
+      "speechEndMs": 328895,
+      "start": 324.627,
+      "end": 328.945,
+      "startMs": 324627,
+      "endMs": 328945
+    },
+    {
+      "sentenceId": "S086",
+      "beatId": "B07",
+      "text": "The Terrible Shark opened its cave-like mouth.",
+      "speechStart": 328.995,
+      "speechEnd": 332.734,
+      "speechStartMs": 328995,
+      "speechEndMs": 332734,
+      "start": 328.945,
+      "end": 332.834,
+      "startMs": 328945,
+      "endMs": 332834
+    },
+    {
+      "sentenceId": "S087",
+      "beatId": "B07",
+      "text": "Water pulled Pinocchio towards its great teeth.",
+      "speechStart": 332.934,
+      "speechEnd": 337.053,
+      "speechStartMs": 332934,
+      "speechEndMs": 337053,
+      "start": 332.834,
+      "end": 337.143,
+      "startMs": 332834,
+      "endMs": 337143
+    },
+    {
+      "sentenceId": "S088",
+      "beatId": "B07",
+      "text": "The blue Goat called again from the rock.",
+      "speechStart": 337.233,
+      "speechEnd": 340.173,
+      "speechStartMs": 337233,
+      "speechEndMs": 340173,
+      "start": 337.143,
+      "end": 340.263,
+      "startMs": 337143,
+      "endMs": 340263
+    },
+    {
+      "sentenceId": "S089",
+      "beatId": "B07",
+      "text": "Pinocchio fought hard against the strong water.",
+      "speechStart": 340.353,
+      "speechEnd": 343.932,
+      "speechStartMs": 340353,
+      "speechEndMs": 343932,
+      "start": 340.263,
+      "end": 344.002,
+      "startMs": 340263,
+      "endMs": 344002
+    },
+    {
+      "sentenceId": "S090",
+      "beatId": "B07",
+      "text": "The Shark swallowed him in one great rush.",
+      "speechStart": 344.072,
+      "speechEnd": 348.411,
+      "speechStartMs": 344072,
+      "speechEndMs": 348411,
+      "start": 344.002,
+      "end": 348.531,
+      "startMs": 344002,
+      "endMs": 348531
+    },
+    {
+      "sentenceId": "S091",
+      "beatId": "B07",
+      "text": "Pinocchio fell into cold water and darkness.",
+      "speechStart": 348.651,
+      "speechEnd": 353.29,
+      "speechStartMs": 348651,
+      "speechEndMs": 353290,
+      "start": 348.531,
+      "end": 353.806,
+      "startMs": 348531,
+      "endMs": 353806
+    },
+    {
+      "sentenceId": "S092",
+      "beatId": "B08",
+      "text": "He heard the Shark breathing all around him.",
+      "speechStart": 354.322,
+      "speechEnd": 357.45,
+      "speechStartMs": 354322,
+      "speechEndMs": 357450,
+      "start": 353.806,
+      "end": 357.569,
+      "startMs": 353806,
+      "endMs": 357569
+    },
+    {
+      "sentenceId": "S093",
+      "beatId": "B08",
+      "text": "Pinocchio called out, and someone answered.",
+      "speechStart": 357.689,
+      "speechEnd": 361.689,
+      "speechStartMs": 357689,
+      "speechEndMs": 361689,
+      "start": 357.569,
+      "end": 361.889,
+      "startMs": 357569,
+      "endMs": 361889
+    },
+    {
+      "sentenceId": "S094",
+      "beatId": "B08",
+      "text": "A large Tunny was floating close to him.",
+      "speechStart": 362.089,
+      "speechEnd": 365.288,
+      "speechStartMs": 362089,
+      "speechEndMs": 365288,
+      "start": 361.889,
+      "end": 365.378,
+      "startMs": 361889,
+      "endMs": 365378
+    },
+    {
+      "sentenceId": "S095",
+      "beatId": "B08",
+      "text": "The Tunny had lost all hope of escape.",
+      "speechStart": 365.468,
+      "speechEnd": 368.727,
+      "speechStartMs": 365468,
+      "speechEndMs": 368727,
+      "start": 365.378,
+      "end": 368.821,
+      "startMs": 365378,
+      "endMs": 368821
+    },
+    {
+      "sentenceId": "S096",
+      "beatId": "B08",
+      "text": "He told Pinocchio to accept the dark place.",
+      "speechStart": 368.914,
+      "speechEnd": 372.407,
+      "speechStartMs": 368914,
+      "speechEndMs": 372407,
+      "start": 368.821,
+      "end": 372.517,
+      "startMs": 368821,
+      "endMs": 372517
+    },
+    {
+      "sentenceId": "S097",
+      "beatId": "B08",
+      "text": "Pinocchio would not give up so easily.",
+      "speechStart": 372.627,
+      "speechEnd": 376.006,
+      "speechStartMs": 372627,
+      "speechEndMs": 376006,
+      "start": 372.517,
+      "end": 376.118,
+      "startMs": 372517,
+      "endMs": 376118
+    },
+    {
+      "sentenceId": "S098",
+      "beatId": "B08",
+      "text": "Then he saw a tiny golden light far away.",
+      "speechStart": 376.23,
+      "speechEnd": 380.485,
+      "speechStartMs": 376230,
+      "speechEndMs": 380485,
+      "start": 376.118,
+      "end": 380.659,
+      "startMs": 376118,
+      "endMs": 380659
+    },
+    {
+      "sentenceId": "S099",
+      "beatId": "B08",
+      "text": "No sunlight could enter the Shark’s body.",
+      "speechStart": 380.832,
+      "speechEnd": 384.005,
+      "speechStartMs": 380832,
+      "speechEndMs": 384005,
+      "start": 380.659,
+      "end": 384.265,
+      "startMs": 380659,
+      "endMs": 384265
+    },
+    {
+      "sentenceId": "S100",
+      "beatId": "B08",
+      "text": "“Someone may be there,” Pinocchio told the Tunny.",
+      "speechStart": 384.525,
+      "speechEnd": 388.244,
+      "speechStartMs": 384525,
+      "speechEndMs": 388244,
+      "start": 384.265,
+      "end": 388.364,
+      "startMs": 384265,
+      "endMs": 388364
+    },
+    {
+      "sentenceId": "S101",
+      "beatId": "B08",
+      "text": "He thanked the fish and walked towards the light.",
+      "speechStart": 388.484,
+      "speechEnd": 392.003,
+      "speechStartMs": 388484,
+      "speechEndMs": 392003,
+      "start": 388.364,
+      "end": 392.113,
+      "startMs": 388364,
+      "endMs": 392113
+    },
+    {
+      "sentenceId": "S102",
+      "beatId": "B08",
+      "text": "The path was wet, cold, and completely dark.",
+      "speechStart": 392.223,
+      "speechEnd": 396.882,
+      "speechStartMs": 392223,
+      "speechEndMs": 396882,
+      "start": 392.113,
+      "end": 396.982,
+      "startMs": 392113,
+      "endMs": 396982
+    },
+    {
+      "sentenceId": "S103",
+      "beatId": "B08",
+      "text": "Still, the little light grew brighter with every step.",
+      "speechStart": 397.082,
+      "speechEnd": 401.521,
+      "speechStartMs": 397082,
+      "speechEndMs": 401521,
+      "start": 396.982,
+      "end": 401.621,
+      "startMs": 396982,
+      "endMs": 401621
+    },
+    {
+      "sentenceId": "S104",
+      "beatId": "B08",
+      "text": "Pinocchio was no longer running towards easy fun.",
+      "speechStart": 401.721,
+      "speechEnd": 405.601,
+      "speechStartMs": 401721,
+      "speechEndMs": 405601,
+      "start": 401.621,
+      "end": 405.681,
+      "startMs": 401621,
+      "endMs": 405681
+    },
+    {
+      "sentenceId": "S105",
+      "beatId": "B08",
+      "text": "This time, he was trying to find his way home.",
+      "speechStart": 405.761,
+      "speechEnd": 409.68,
+      "speechStartMs": 405761,
+      "speechEndMs": 409680,
+      "start": 405.681,
+      "end": 409.68,
+      "startMs": 405681,
+      "endMs": 409680
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "Both boys felt afraid and deeply ashamed.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Both boys felt afraid and deeply ashamed.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 7.388,
+          "speechEnd": 11.787,
+          "speechStartMs": 7388,
+          "speechEndMs": 11787,
+          "start": 7.328,
+          "end": 11.867,
+          "startMs": 7328,
+          "endMs": 11867
+        }
+      ],
+      "speechStart": 7.388,
+      "speechEnd": 11.787,
+      "speechStartMs": 7388,
+      "speechEndMs": 11787,
+      "start": 7.328,
+      "end": 11.867,
+      "startMs": 7328,
+      "endMs": 11867
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "He smiled as if nothing bad had happened.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "He smiled as if nothing bad had happened.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 15.44,
+          "speechEnd": 18.107,
+          "speechStartMs": 15440,
+          "speechEndMs": 18107,
+          "start": 15.38,
+          "end": 18.187,
+          "startMs": 15380,
+          "endMs": 18187
+        }
+      ],
+      "speechStart": 15.44,
+      "speechEnd": 18.107,
+      "speechStartMs": 15440,
+      "speechEndMs": 18107,
+      "start": 15.38,
+      "end": 18.187,
+      "startMs": 15380,
+      "endMs": 18187
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "The boys tried to speak, but only brayed.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "The boys tried to speak, but only brayed.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 21.986,
+          "speechEnd": 26.265,
+          "speechStartMs": 21986,
+          "speechEndMs": 26265,
+          "start": 21.926,
+          "end": 26.345,
+          "startMs": 21926,
+          "endMs": 26345
+        }
+      ],
+      "speechStart": 21.986,
+      "speechEnd": 26.265,
+      "speechStartMs": 21986,
+      "speechEndMs": 26265,
+      "start": 21.926,
+      "end": 26.345,
+      "startMs": 21926,
+      "endMs": 26345
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "A circus owner came to look at Pinocchio.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "A circus owner came to look at Pinocchio.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 38.144,
+          "speechEnd": 41.063,
+          "speechStartMs": 38144,
+          "speechEndMs": 41063,
+          "start": 38.084,
+          "end": 41.143,
+          "startMs": 38084,
+          "endMs": 41143
+        }
+      ],
+      "speechStart": 38.144,
+      "speechEnd": 41.063,
+      "speechStartMs": 38144,
+      "speechEndMs": 41063,
+      "start": 38.084,
+      "end": 41.143,
+      "startMs": 38084,
+      "endMs": 41143
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "His new master became angry and punished him.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "His new master became angry and punished him.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 57.141,
+          "speechEnd": 60.581,
+          "speechStartMs": 57141,
+          "speechEndMs": 60581,
+          "start": 57.081,
+          "end": 60.661,
+          "startMs": 57081,
+          "endMs": 60661
+        }
+      ],
+      "speechStart": 57.141,
+      "speechEnd": 60.581,
+      "speechStartMs": 57141,
+      "speechEndMs": 60581,
+      "start": 57.081,
+      "end": 60.661,
+      "startMs": 57081,
+      "endMs": 60661
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S018",
+      "beatId": "B02",
+      "text": "He bowed, danced, and counted to the music.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "He bowed, danced, and counted to the music.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 64.953,
+          "speechEnd": 68.66,
+          "speechStartMs": 64953,
+          "speechEndMs": 68660,
+          "start": 64.893,
+          "end": 68.74,
+          "startMs": 64893,
+          "endMs": 68740
+        }
+      ],
+      "speechStart": 64.953,
+      "speechEnd": 68.66,
+      "speechStartMs": 64953,
+      "speechEndMs": 68660,
+      "start": 64.893,
+      "end": 68.74,
+      "startMs": 64893,
+      "endMs": 68740
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "He also jumped through hoops and over boards.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He also jumped through hoops and over boards.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 72.019,
+          "speechEnd": 75.699,
+          "speechStartMs": 72019,
+          "speechEndMs": 75699,
+          "start": 71.959,
+          "end": 75.779,
+          "startMs": 71959,
+          "endMs": 75779
+        }
+      ],
+      "speechStart": 72.019,
+      "speechEnd": 75.699,
+      "speechStartMs": 72019,
+      "speechEndMs": 75699,
+      "start": 71.959,
+      "end": 75.779,
+      "startMs": 71959,
+      "endMs": 75779
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio entered with ribbons and a small hat.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Pinocchio entered with ribbons and a small hat.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 89.537,
+          "speechEnd": 93.376,
+          "speechStartMs": 89537,
+          "speechEndMs": 93376,
+          "start": 89.477,
+          "end": 93.456,
+          "startMs": 89477,
+          "endMs": 93456
+        }
+      ],
+      "speechStart": 89.537,
+      "speechEnd": 93.376,
+      "speechStartMs": 89537,
+      "speechEndMs": 93376,
+      "start": 89.477,
+      "end": 93.456,
+      "startMs": 89477,
+      "endMs": 93456
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S027",
+      "beatId": "B03",
+      "text": "He marched in circles and balanced a glass.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "He marched in circles and balanced a glass.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 104.962,
+          "speechEnd": 108.014,
+          "speechStartMs": 104962,
+          "speechEndMs": 108014,
+          "start": 104.902,
+          "end": 108.094,
+          "startMs": 104902,
+          "endMs": 108094
+        }
+      ],
+      "speechStart": 104.962,
+      "speechEnd": 108.014,
+      "speechStartMs": 104962,
+      "speechEndMs": 108014,
+      "start": 104.902,
+      "end": 108.094,
+      "startMs": 104902,
+      "endMs": 108094
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S029",
+      "beatId": "B03",
+      "text": "A beautiful lady wore his picture around her neck.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "A beautiful lady wore his picture around her neck.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 112.054,
+          "speechEnd": 116.573,
+          "speechStartMs": 112054,
+          "speechEndMs": 116573,
+          "start": 111.994,
+          "end": 116.653,
+          "startMs": 111994,
+          "endMs": 116653
+        }
+      ],
+      "speechStart": 112.054,
+      "speechEnd": 116.573,
+      "speechStartMs": 112054,
+      "speechEndMs": 116573,
+      "start": 111.994,
+      "end": 116.653,
+      "startMs": 111994,
+      "endMs": 116653
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S033",
+      "beatId": "B03",
+      "text": "“Fairy, I am here!” he tried to shout.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "“Fairy, I am here!” he tried to shout.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 130.411,
+          "speechEnd": 134.091,
+          "speechStartMs": 130411,
+          "speechEndMs": 134091,
+          "start": 130.351,
+          "end": 134.171,
+          "startMs": 130351,
+          "endMs": 134171
+        }
+      ],
+      "speechStart": 130.411,
+      "speechEnd": 134.091,
+      "speechStartMs": 130411,
+      "speechEndMs": 134091,
+      "start": 130.351,
+      "end": 134.171,
+      "startMs": 130351,
+      "endMs": 134171
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "Pinocchio kept watching the empty place.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Pinocchio kept watching the empty place.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 146.509,
+          "speechEnd": 150.008,
+          "speechStartMs": 146509,
+          "speechEndMs": 150008,
+          "start": 146.449,
+          "end": 150.088,
+          "startMs": 146449,
+          "endMs": 150088
+        }
+      ],
+      "speechStart": 146.509,
+      "speechEnd": 150.008,
+      "speechStartMs": 146509,
+      "speechEndMs": 150008,
+      "start": 146.449,
+      "end": 150.088,
+      "startMs": 146449,
+      "endMs": 150088
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "His front feet hit it, and he fell.",
+      "sourceTextRange": [
+        0,
+        35
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "His front feet hit it, and he fell.",
+          "sourceTextRange": [
+            0,
+            35
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 158.783,
+          "speechEnd": 162.207,
+          "speechStartMs": 158783,
+          "speechEndMs": 162207,
+          "start": 158.723,
+          "end": 162.287,
+          "startMs": 158723,
+          "endMs": 162287
+        }
+      ],
+      "speechStart": 158.783,
+      "speechEnd": 162.207,
+      "speechStartMs": 158783,
+      "speechEndMs": 162207,
+      "start": 158.723,
+      "end": 162.287,
+      "startMs": 158723,
+      "endMs": 162287
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S042",
+      "beatId": "B04",
+      "text": "The music stopped, and the people became quiet.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "The music stopped, and the people became quiet.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 166.026,
+          "speechEnd": 170.406,
+          "speechStartMs": 166026,
+          "speechEndMs": 170406,
+          "start": 165.966,
+          "end": 170.486,
+          "startMs": 165966,
+          "endMs": 170486
+        }
+      ],
+      "speechStart": 166.026,
+      "speechEnd": 170.406,
+      "speechStartMs": 166026,
+      "speechEndMs": 170406,
+      "start": 165.966,
+      "end": 170.486,
+      "startMs": 165966,
+      "endMs": 170486
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "The owner decided to sell Pinocchio at once.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "The owner decided to sell Pinocchio at once.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 183.964,
+          "speechEnd": 187.843,
+          "speechStartMs": 183964,
+          "speechEndMs": 187843,
+          "start": 183.904,
+          "end": 187.923,
+          "startMs": 183904,
+          "endMs": 187923
+        }
+      ],
+      "speechStart": 183.964,
+      "speechEnd": 187.843,
+      "speechStartMs": 183964,
+      "speechEndMs": 187843,
+      "start": 183.904,
+      "end": 187.923,
+      "startMs": 183904,
+      "endMs": 187923
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "The man wanted the skin for a drum.",
+      "sourceTextRange": [
+        0,
+        35
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "The man wanted the skin for a drum.",
+          "sourceTextRange": [
+            0,
+            35
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 200.242,
+          "speechEnd": 203.281,
+          "speechStartMs": 200242,
+          "speechEndMs": 203281,
+          "start": 200.182,
+          "end": 203.361,
+          "startMs": 200182,
+          "endMs": 203361
+        }
+      ],
+      "speechStart": 200.242,
+      "speechEnd": 203.281,
+      "speechStartMs": 200242,
+      "speechEndMs": 203281,
+      "start": 200.182,
+      "end": 203.361,
+      "startMs": 200182,
+      "endMs": 203361
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "He tied a heavy stone around Pinocchio’s neck.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "He tied a heavy stone around Pinocchio’s neck.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 211.903,
+          "speechEnd": 215.795,
+          "speechStartMs": 211903,
+          "speechEndMs": 215795,
+          "start": 211.843,
+          "end": 215.862,
+          "startMs": 211843,
+          "endMs": 215862
+        }
+      ],
+      "speechStart": 211.903,
+      "speechEnd": 215.795,
+      "speechStartMs": 211903,
+      "speechEndMs": 215795,
+      "start": 211.843,
+      "end": 215.862,
+      "startMs": 211843,
+      "endMs": 215862
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "The stone pulled him towards the sea floor.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "The stone pulled him towards the sea floor.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 233.292,
+          "speechEnd": 236.352,
+          "speechStartMs": 233292,
+          "speechEndMs": 236352,
+          "start": 233.232,
+          "end": 236.422,
+          "startMs": 233232,
+          "endMs": 236422
+        }
+      ],
+      "speechStart": 233.292,
+      "speechEnd": 236.352,
+      "speechStartMs": 233292,
+      "speechEndMs": 236352,
+      "start": 233.232,
+      "end": 236.422,
+      "startMs": 233232,
+      "endMs": 236422
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S066",
+      "beatId": "B05",
+      "text": "Soon the long ears and tail were gone.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Soon the long ears and tail were gone.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 257.58,
+          "speechEnd": 261.347,
+          "speechStartMs": 257580,
+          "speechEndMs": 261347,
+          "start": 257.52,
+          "end": 261.402,
+          "startMs": 257520,
+          "endMs": 261402
+        }
+      ],
+      "speechStart": 257.58,
+      "speechEnd": 261.347,
+      "speechStartMs": 257580,
+      "speechEndMs": 261347,
+      "start": 257.52,
+      "end": 261.402,
+      "startMs": 257520,
+      "endMs": 261402
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S071",
+      "beatId": "B05",
+      "text": "A living wooden puppet came out of the sea.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "A living wooden puppet came out of the sea.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 274.745,
+          "speechEnd": 277.784,
+          "speechStartMs": 274745,
+          "speechEndMs": 277784,
+          "start": 274.685,
+          "end": 277.864,
+          "startMs": 274685,
+          "endMs": 277864
+        }
+      ],
+      "speechStart": 274.745,
+      "speechEnd": 277.784,
+      "speechStartMs": 274745,
+      "speechEndMs": 277784,
+      "start": 274.685,
+      "end": 277.864,
+      "startMs": 274685,
+      "endMs": 277864
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "The man opened his mouth in great surprise.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "The man opened his mouth in great surprise.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 278.732,
+          "speechEnd": 282.423,
+          "speechStartMs": 278732,
+          "speechEndMs": 282423,
+          "start": 278.672,
+          "end": 282.503,
+          "startMs": 278672,
+          "endMs": 282503
+        }
+      ],
+      "speechStart": 278.732,
+      "speechEnd": 282.423,
+      "speechStartMs": 278732,
+      "speechEndMs": 282423,
+      "start": 278.672,
+      "end": 282.503,
+      "startMs": 278672,
+      "endMs": 282503
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S076",
+      "beatId": "B06",
+      "text": "The angry man tried to catch him again.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "The angry man tried to catch him again.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 294.041,
+          "speechEnd": 296.821,
+          "speechStartMs": 294041,
+          "speechEndMs": 296821,
+          "start": 293.981,
+          "end": 296.901,
+          "startMs": 293981,
+          "endMs": 296901
+        }
+      ],
+      "speechStart": 294.041,
+      "speechEnd": 296.821,
+      "speechStartMs": 294041,
+      "speechEndMs": 296821,
+      "start": 293.981,
+      "end": 296.901,
+      "startMs": 293981,
+      "endMs": 296901
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S081",
+      "beatId": "B06",
+      "text": "A small blue Goat waited on the rock.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "A small blue Goat waited on the rock.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 310.098,
+          "speechEnd": 313.058,
+          "speechStartMs": 310098,
+          "speechEndMs": 313058,
+          "start": 310.038,
+          "end": 313.138,
+          "startMs": 310038,
+          "endMs": 313138
+        }
+      ],
+      "speechStart": 310.098,
+      "speechEnd": 313.058,
+      "speechStartMs": 310098,
+      "speechEndMs": 313058,
+      "start": 310.038,
+      "end": 313.138,
+      "startMs": 310038,
+      "endMs": 313138
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S084",
+      "beatId": "B06",
+      "text": "Then the water behind him made a terrible sound.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Then the water behind him made a terrible sound.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 320.4,
+          "speechEnd": 324.096,
+          "speechStartMs": 320400,
+          "speechEndMs": 324096,
+          "start": 320.34,
+          "end": 324.176,
+          "startMs": 320340,
+          "endMs": 324176
+        }
+      ],
+      "speechStart": 320.4,
+      "speechEnd": 324.096,
+      "speechStartMs": 320400,
+      "speechEndMs": 324096,
+      "start": 320.34,
+      "end": 324.176,
+      "startMs": 320340,
+      "endMs": 324176
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S085",
+      "beatId": "B07",
+      "text": "Small fish rushed away from a huge shadow.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Small fish rushed away from a huge shadow.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 325.159,
+          "speechEnd": 328.895,
+          "speechStartMs": 325159,
+          "speechEndMs": 328895,
+          "start": 325.099,
+          "end": 328.945,
+          "startMs": 325099,
+          "endMs": 328945
+        }
+      ],
+      "speechStart": 325.159,
+      "speechEnd": 328.895,
+      "speechStartMs": 325159,
+      "speechEndMs": 328895,
+      "start": 325.099,
+      "end": 328.945,
+      "startMs": 325099,
+      "endMs": 328945
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Water pulled Pinocchio towards its great teeth.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Water pulled Pinocchio towards its great teeth.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 332.934,
+          "speechEnd": 337.053,
+          "speechStartMs": 332934,
+          "speechEndMs": 337053,
+          "start": 332.874,
+          "end": 337.133,
+          "startMs": 332874,
+          "endMs": 337133
+        }
+      ],
+      "speechStart": 332.934,
+      "speechEnd": 337.053,
+      "speechStartMs": 332934,
+      "speechEndMs": 337053,
+      "start": 332.874,
+      "end": 337.133,
+      "startMs": 332874,
+      "endMs": 337133
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S089",
+      "beatId": "B07",
+      "text": "Pinocchio fought hard against the strong water.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio fought hard against the strong water.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 340.353,
+          "speechEnd": 343.932,
+          "speechStartMs": 340353,
+          "speechEndMs": 343932,
+          "start": 340.293,
+          "end": 344.002,
+          "startMs": 340293,
+          "endMs": 344002
+        }
+      ],
+      "speechStart": 340.353,
+      "speechEnd": 343.932,
+      "speechStartMs": 340353,
+      "speechEndMs": 343932,
+      "start": 340.293,
+      "end": 344.002,
+      "startMs": 340293,
+      "endMs": 344002
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "He heard the Shark breathing all around him.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "He heard the Shark breathing all around him.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 354.322,
+          "speechEnd": 357.45,
+          "speechStartMs": 354322,
+          "speechEndMs": 357450,
+          "start": 354.262,
+          "end": 357.53,
+          "startMs": 354262,
+          "endMs": 357530
+        }
+      ],
+      "speechStart": 354.322,
+      "speechEnd": 357.45,
+      "speechStartMs": 354322,
+      "speechEndMs": 357450,
+      "start": 354.262,
+      "end": 357.53,
+      "startMs": 354262,
+      "endMs": 357530
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S096",
+      "beatId": "B08",
+      "text": "He told Pinocchio to accept the dark place.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "He told Pinocchio to accept the dark place.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 368.914,
+          "speechEnd": 372.407,
+          "speechStartMs": 368914,
+          "speechEndMs": 372407,
+          "start": 368.854,
+          "end": 372.487,
+          "startMs": 368854,
+          "endMs": 372487
+        }
+      ],
+      "speechStart": 368.914,
+      "speechEnd": 372.407,
+      "speechStartMs": 368914,
+      "speechEndMs": 372407,
+      "start": 368.854,
+      "end": 372.487,
+      "startMs": 368854,
+      "endMs": 372487
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S101",
+      "beatId": "B08",
+      "text": "He thanked the fish and walked towards the light.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "He thanked the fish and walked towards the light.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 388.484,
+          "speechEnd": 392.003,
+          "speechStartMs": 388484,
+          "speechEndMs": 392003,
+          "start": 388.424,
+          "end": 392.083,
+          "startMs": 388424,
+          "endMs": 392083
+        }
+      ],
+      "speechStart": 388.484,
+      "speechEnd": 392.003,
+      "speechStartMs": 388484,
+      "speechEndMs": 392003,
+      "start": 388.424,
+      "end": 392.083,
+      "startMs": 388424,
+      "endMs": 392083
+    }
+  ]
+}

@@ -19,9 +19,9 @@ export const BOOK_MONTH = {
   title: "Pinocchio",
   caption: "이번 달 원서",
   hint: "원서 낭독을 들어볼까요?",
-  href: "/book/selecting?id=003:1",
-  coverSrc: "/pinocchio.jpeg",
-  coverAlt: "Pinocchio 원서 표지",
+  href: "/book/pinocchio/1",
+  coverSrc: "/pinocchio-mimic-cover.png",
+  coverAlt: "Mimic 오리지널 피노키오 커버",
   icon: "m" as const,
 };
 

@@ -1,5 +1,7 @@
 export type LessonMode = "watching" | "mimicking" | "guessing" | "word";
 
+export type StoryLevelId = "foundation" | "core" | "studio";
+
 export type Segment = {
   id: string;
   sentenceId?: string;
@@ -70,12 +72,31 @@ export type WordItem = {
   tokens: string[];
 };
 
+export type PinocchioLessonLevel = {
+  lines: { id: string; text: string }[];
+  activities: {
+    mimic: {
+      items: MimicActivityItem[];
+    };
+    guess: { items: GuessItem[] };
+    word: { items: WordItem[] };
+  };
+};
+
+export type PinocchioChapterMedia = {
+  audioSrc: string;
+  timelineSrc?: string;
+  artSrc?: string | null;
+};
+
 export type PinocchioPack = {
   contentId: string;
   course: {
     session: number;
     totalSessions: number;
     minutes: number;
+    level?: StoryLevelId;
+    levelLabelKo?: string;
   };
   story: {
     slug: string;
@@ -91,19 +112,8 @@ export type PinocchioPack = {
       id: string;
       titleKo: string;
       summaryKo: string;
-      lineRanges: { core: [number, number] };
+      lineRanges: Partial<Record<StoryLevelId, [number, number]>>;
     }[];
   };
-  levels: {
-    core: {
-      lines: { id: string; text: string }[];
-      activities: {
-        mimic: {
-          items: MimicActivityItem[];
-        };
-        guess: { items: GuessItem[] };
-        word: { items: WordItem[] };
-      };
-    };
-  };
+  levels: Partial<Record<StoryLevelId, PinocchioLessonLevel>>;
 };

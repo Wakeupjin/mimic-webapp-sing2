@@ -6,6 +6,8 @@ assets/
 !public/prototype-audio/pinocchio-levels/voices/lily-british/*.mp3
 !public/prototype-audio/pinocchio-levels/voices/lily-american/*.mp3
 !public/prototype-audio/pinocchio-v2/session-*/lily-british/*.mp3
+!content-packs/pinocchio/v3/chapters/chapter-*/audio/foundation.master.mp3
+!public/books/pinocchio/v3/foundation/chapter-*/lily-british/master.mp3
 *.mov
 *.avi
 node_modules/

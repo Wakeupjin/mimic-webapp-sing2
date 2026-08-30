@@ -23,7 +23,7 @@ function BookComingSoonContent() {
         <h1 className="text-xl font-semibold text-[#60D96C]" style={{ fontFamily: "Encode Sans, sans-serif" }}>
           {BOOK_MONTH.title}
         </h1>
-        <HeaderCloseLink href="/book/selecting?id=003:1" />
+        <HeaderCloseLink href="/book/pinocchio/1" />
       </div>
 
       <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
@@ -36,7 +36,7 @@ function BookComingSoonContent() {
         <p className="max-w-md text-base text-gray-400 sm:text-lg" style={{ fontFamily: "Encode Sans, sans-serif" }}>
           이 장면의 문장과 오디오를 준비하고 있어요. 준비가 끝나면 바로 학습할 수 있어요.
         </p>
-        <a href="/book/selecting?id=003:1" className="cta-btn cta-primary mt-4 inline-block">
+        <a href="/book/pinocchio/1" className="cta-btn cta-primary mt-4 inline-block">
           장면으로 돌아가기
         </a>
       </div>

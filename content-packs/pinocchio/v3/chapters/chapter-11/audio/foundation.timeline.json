@@ -1,0 +1,2641 @@
+{
+  "schemaVersion": "1.1.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-11",
+  "level": "foundation",
+  "generatedAt": "2026-08-30T11:02:15.835Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accent": "British English",
+  "outputFormat": "mp3_44100_128",
+  "timingPrecision": "milliseconds",
+  "seed": 2711,
+  "source": "single-editorial-master-rendered-as-2-coherent-acts",
+  "alignmentSource": "per-act-elevenlabs-tts-duration-fitted",
+  "masterTextSha256": "0f202e40f79e5653572bc0d40e5add6f326148e8737816a8bb1b37437ef121a9",
+  "activitiesSha256": "ec993876be0a3184669138b5b32fce9da4487a0ddcaa9a5feb6e57bb973e1339",
+  "duration": 379.84,
+  "acts": [
+    {
+      "actId": "act-01",
+      "beatIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "start": 0,
+      "end": 199.82,
+      "concatenationOffset": 0,
+      "sourceAudioDuration": 199.76,
+      "sourceAlignmentEnd": 199.765,
+      "sourceAlignmentTimeScale": 0.999974971,
+      "requestId": "Rgkdo4AUMLkzXtRTukL8",
+      "characters": 2644
+    },
+    {
+      "actId": "act-02",
+      "beatIds": [
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "start": 199.82,
+      "end": 379.84,
+      "concatenationOffset": 199.76,
+      "sourceAudioDuration": 180.08,
+      "sourceAlignmentEnd": 180.101,
+      "sourceAlignmentTimeScale": 0.999883399,
+      "requestId": "8ncsga2xcpRH1xSPn2QK",
+      "characters": 2297
+    }
+  ],
+  "seams": [
+    {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S052",
+      "beforeSentenceId": "S053",
+      "at": 199.82,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  ],
+  "seam": {
+    "afterActId": "act-01",
+    "beforeActId": "act-02",
+    "afterSentenceId": "S052",
+    "beforeSentenceId": "S053",
+    "at": 199.82,
+    "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+  },
+  "beats": [
+    {
+      "beatId": "B01",
+      "title": "The Distant Candle",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "start": 0.125,
+      "end": 55.752,
+      "startMs": 125,
+      "endMs": 55752
+    },
+    {
+      "beatId": "B02",
+      "title": "Father and Son",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "start": 55.752,
+      "end": 108.674,
+      "startMs": 55752,
+      "endMs": 108674
+    },
+    {
+      "beatId": "B03",
+      "title": "The Long Confession",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S040",
+      "start": 108.674,
+      "end": 158.748,
+      "startMs": 108674,
+      "endMs": 158748
+    },
+    {
+      "beatId": "B04",
+      "title": "Two Years in the Dark",
+      "sentenceStart": "S041",
+      "sentenceEnd": "S052",
+      "start": 158.748,
+      "end": 199.82,
+      "startMs": 158748,
+      "endMs": 199820
+    },
+    {
+      "beatId": "B05",
+      "title": "Pinocchio's Promise",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "start": 199.82,
+      "end": 245.766,
+      "startMs": 199820,
+      "endMs": 245766
+    },
+    {
+      "beatId": "B06",
+      "title": "The Open Mouth",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S075",
+      "start": 245.766,
+      "end": 283.118,
+      "startMs": 245766,
+      "endMs": 283118
+    },
+    {
+      "beatId": "B07",
+      "title": "Thrown Back",
+      "sentenceStart": "S076",
+      "sentenceEnd": "S091",
+      "start": 283.118,
+      "end": 338.399,
+      "startMs": 283118,
+      "endMs": 338399
+    },
+    {
+      "beatId": "B08",
+      "title": "Into the Moonlit Sea",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S103",
+      "start": 338.399,
+      "end": 379.84,
+      "startMs": 338399,
+      "endMs": 379840
+    }
+  ],
+  "lines": [
+    {
+      "sentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio left the Tunny and followed the small light through heavy darkness.",
+      "speechStart": 0.205,
+      "speechEnd": 5.645,
+      "speechStartMs": 205,
+      "speechEndMs": 5645,
+      "start": 0.125,
+      "end": 5.705,
+      "startMs": 125,
+      "endMs": 5705
+    },
+    {
+      "sentenceId": "S002",
+      "beatId": "B01",
+      "text": "Cold, greasy water covered the floor under his wooden feet.",
+      "speechStart": 5.765,
+      "speechEnd": 9.525,
+      "speechStartMs": 5765,
+      "speechEndMs": 9525,
+      "start": 5.705,
+      "end": 9.615,
+      "startMs": 5705,
+      "endMs": 9615
+    },
+    {
+      "sentenceId": "S003",
+      "beatId": "B01",
+      "text": "The Shark’s breathing sounded like faraway thunder.",
+      "speechStart": 9.705,
+      "speechEnd": 13.925,
+      "speechStartMs": 9705,
+      "speechEndMs": 13925,
+      "start": 9.615,
+      "end": 14.015,
+      "startMs": 9615,
+      "endMs": 14015
+    },
+    {
+      "sentenceId": "S004",
+      "beatId": "B01",
+      "text": "The golden light seemed like a star inside a black sky.",
+      "speechStart": 14.105,
+      "speechEnd": 18.805,
+      "speechStartMs": 14105,
+      "speechEndMs": 18805,
+      "start": 14.015,
+      "end": 18.925,
+      "startMs": 14015,
+      "endMs": 18925
+    },
+    {
+      "sentenceId": "S005",
+      "beatId": "B01",
+      "text": "Pinocchio kept walking because waiting in one place could not help him.",
+      "speechStart": 19.045,
+      "speechEnd": 23.924,
+      "speechStartMs": 19045,
+      "speechEndMs": 23924,
+      "start": 18.925,
+      "end": 24.036,
+      "startMs": 18925,
+      "endMs": 24036
+    },
+    {
+      "sentenceId": "S006",
+      "beatId": "B01",
+      "text": "Soon he saw a candle burning inside a glass bottle.",
+      "speechStart": 24.148,
+      "speechEnd": 28.004,
+      "speechStartMs": 24148,
+      "speechEndMs": 28004,
+      "start": 24.036,
+      "end": 28.124,
+      "startMs": 24036,
+      "endMs": 28124
+    },
+    {
+      "sentenceId": "S007",
+      "beatId": "B01",
+      "text": "It stood in a bottle on a little table.",
+      "speechStart": 28.244,
+      "speechEnd": 30.964,
+      "speechStartMs": 28244,
+      "speechEndMs": 30964,
+      "start": 28.124,
+      "end": 31.071,
+      "startMs": 28124,
+      "endMs": 31071
+    },
+    {
+      "sentenceId": "S008",
+      "beatId": "B01",
+      "text": "Boxes and wet barrels from a broken ship lay all around.",
+      "speechStart": 31.177,
+      "speechEnd": 36.004,
+      "speechStartMs": 31177,
+      "speechEndMs": 36004,
+      "start": 31.071,
+      "end": 36.138,
+      "startMs": 31071,
+      "endMs": 36138
+    },
+    {
+      "sentenceId": "S009",
+      "beatId": "B01",
+      "text": "An old man sat beside the candle and ate a small fish.",
+      "speechStart": 36.271,
+      "speechEnd": 40.404,
+      "speechStartMs": 36271,
+      "speechEndMs": 40404,
+      "start": 36.138,
+      "end": 40.494,
+      "startMs": 36138,
+      "endMs": 40494
+    },
+    {
+      "sentenceId": "S010",
+      "beatId": "B01",
+      "text": "His white hair and thin face looked familiar.",
+      "speechStart": 40.584,
+      "speechEnd": 43.844,
+      "speechStartMs": 40584,
+      "speechEndMs": 43844,
+      "start": 40.494,
+      "end": 43.974,
+      "startMs": 40494,
+      "endMs": 43974
+    },
+    {
+      "sentenceId": "S011",
+      "beatId": "B01",
+      "text": "Pinocchio moved closer through the dirty water and held his breath.",
+      "speechStart": 44.104,
+      "speechEnd": 49.044,
+      "speechStartMs": 44104,
+      "speechEndMs": 49044,
+      "start": 43.974,
+      "end": 49.164,
+      "startMs": 43974,
+      "endMs": 49164
+    },
+    {
+      "sentenceId": "S012",
+      "beatId": "B01",
+      "text": "The old man slowly looked up at him.",
+      "speechStart": 49.284,
+      "speechEnd": 52.084,
+      "speechStartMs": 49284,
+      "speechEndMs": 52084,
+      "start": 49.164,
+      "end": 52.184,
+      "startMs": 49164,
+      "endMs": 52184
+    },
+    {
+      "sentenceId": "S013",
+      "beatId": "B01",
+      "text": "Pinocchio knew that the man was Geppetto.",
+      "speechStart": 52.284,
+      "speechEnd": 55.364,
+      "speechStartMs": 52284,
+      "speechEndMs": 55364,
+      "start": 52.184,
+      "end": 55.752,
+      "startMs": 52184,
+      "endMs": 55752
+    },
+    {
+      "sentenceId": "S014",
+      "beatId": "B02",
+      "text": "His wooden knees shook with sudden joy, and he almost fell.",
+      "speechStart": 56.14,
+      "speechEnd": 60.403,
+      "speechStartMs": 56140,
+      "speechEndMs": 60403,
+      "start": 55.752,
+      "end": 60.643,
+      "startMs": 55752,
+      "endMs": 60643
+    },
+    {
+      "sentenceId": "S015",
+      "beatId": "B02",
+      "text": "“Father, I have found you!” he cried.",
+      "speechStart": 60.883,
+      "speechEnd": 64.083,
+      "speechStartMs": 60883,
+      "speechEndMs": 64083,
+      "start": 60.643,
+      "end": 64.23,
+      "startMs": 60643,
+      "endMs": 64230
+    },
+    {
+      "sentenceId": "S016",
+      "beatId": "B02",
+      "text": "Geppetto rubbed his eyes in great surprise.",
+      "speechStart": 64.376,
+      "speechEnd": 67.843,
+      "speechStartMs": 64376,
+      "speechEndMs": 67843,
+      "start": 64.23,
+      "end": 67.923,
+      "startMs": 64230,
+      "endMs": 67923
+    },
+    {
+      "sentenceId": "S017",
+      "beatId": "B02",
+      "text": "Pinocchio threw his arms around Geppetto’s neck.",
+      "speechStart": 68.003,
+      "speechEnd": 70.963,
+      "speechStartMs": 68003,
+      "speechEndMs": 70963,
+      "start": 67.923,
+      "end": 71.035,
+      "startMs": 67923,
+      "endMs": 71035
+    },
+    {
+      "sentenceId": "S018",
+      "beatId": "B02",
+      "text": "They laughed and cried together in the weak light.",
+      "speechStart": 71.107,
+      "speechEnd": 74.963,
+      "speechStartMs": 71107,
+      "speechEndMs": 74963,
+      "start": 71.035,
+      "end": 75.063,
+      "startMs": 71035,
+      "endMs": 75063
+    },
+    {
+      "sentenceId": "S019",
+      "beatId": "B02",
+      "text": "For a moment, neither one could speak clearly.",
+      "speechStart": 75.163,
+      "speechEnd": 78.643,
+      "speechStartMs": 75163,
+      "speechEndMs": 78643,
+      "start": 75.063,
+      "end": 78.79,
+      "startMs": 75063,
+      "endMs": 78790
+    },
+    {
+      "sentenceId": "S020",
+      "beatId": "B02",
+      "text": "Geppetto touched the puppet’s face as if checking a wonderful dream.",
+      "speechStart": 78.936,
+      "speechEnd": 83.203,
+      "speechStartMs": 78936,
+      "speechEndMs": 83203,
+      "start": 78.79,
+      "end": 83.313,
+      "startMs": 78790,
+      "endMs": 83313
+    },
+    {
+      "sentenceId": "S021",
+      "beatId": "B02",
+      "text": "Pinocchio promised not to leave him again.",
+      "speechStart": 83.423,
+      "speechEnd": 86.483,
+      "speechStartMs": 83423,
+      "speechEndMs": 86483,
+      "start": 83.313,
+      "end": 86.723,
+      "startMs": 83313,
+      "endMs": 86723
+    },
+    {
+      "sentenceId": "S022",
+      "beatId": "B02",
+      "text": "“Are you really my Pinocchio?” Geppetto asked.",
+      "speechStart": 86.963,
+      "speechEnd": 90.563,
+      "speechStartMs": 86963,
+      "speechEndMs": 90563,
+      "start": 86.723,
+      "end": 90.783,
+      "startMs": 86723,
+      "endMs": 90783
+    },
+    {
+      "sentenceId": "S023",
+      "beatId": "B02",
+      "text": "“Yes, and I searched everywhere for you.”",
+      "speechStart": 91.003,
+      "speechEnd": 94.243,
+      "speechStartMs": 91003,
+      "speechEndMs": 94243,
+      "start": 90.783,
+      "end": 94.363,
+      "startMs": 90783,
+      "endMs": 94363
+    },
+    {
+      "sentenceId": "S024",
+      "beatId": "B02",
+      "text": "The Shark moved, and the candle shook above the small table.",
+      "speechStart": 94.483,
+      "speechEnd": 99.043,
+      "speechStartMs": 94483,
+      "speechEndMs": 99043,
+      "start": 94.363,
+      "end": 99.123,
+      "startMs": 94363,
+      "endMs": 99123
+    },
+    {
+      "sentenceId": "S025",
+      "beatId": "B02",
+      "text": "Still, their dark corner now felt like home.",
+      "speechStart": 99.203,
+      "speechEnd": 102.482,
+      "speechStartMs": 99203,
+      "speechEndMs": 102482,
+      "start": 99.123,
+      "end": 102.578,
+      "startMs": 99123,
+      "endMs": 102578
+    },
+    {
+      "sentenceId": "S026",
+      "beatId": "B02",
+      "text": "Then Geppetto finally asked about Pinocchio’s long and difficult journey.",
+      "speechStart": 102.674,
+      "speechEnd": 108.082,
+      "speechStartMs": 102674,
+      "speechEndMs": 108082,
+      "start": 102.578,
+      "end": 108.674,
+      "startMs": 102578,
+      "endMs": 108674
+    },
+    {
+      "sentenceId": "S027",
+      "beatId": "B03",
+      "text": "Pinocchio began with the book bought for school.",
+      "speechStart": 109.265,
+      "speechEnd": 111.762,
+      "speechStartMs": 109265,
+      "speechEndMs": 111762,
+      "start": 108.674,
+      "end": 111.896,
+      "startMs": 108674,
+      "endMs": 111896
+    },
+    {
+      "sentenceId": "S028",
+      "beatId": "B03",
+      "text": "He admitted selling it for the puppet show.",
+      "speechStart": 112.029,
+      "speechEnd": 114.642,
+      "speechStartMs": 112029,
+      "speechEndMs": 114642,
+      "start": 111.896,
+      "end": 114.789,
+      "startMs": 111896,
+      "endMs": 114789
+    },
+    {
+      "sentenceId": "S029",
+      "beatId": "B03",
+      "text": "He told Geppetto about Fire-Eater and five coins.",
+      "speechStart": 114.935,
+      "speechEnd": 118.722,
+      "speechStartMs": 114935,
+      "speechEndMs": 118722,
+      "start": 114.789,
+      "end": 118.81,
+      "startMs": 114789,
+      "endMs": 118810
+    },
+    {
+      "sentenceId": "S030",
+      "beatId": "B03",
+      "text": "Then he described the clever Fox and Cat.",
+      "speechStart": 118.898,
+      "speechEnd": 122.162,
+      "speechStartMs": 118898,
+      "speechEndMs": 122162,
+      "start": 118.81,
+      "end": 122.295,
+      "startMs": 118810,
+      "endMs": 122295
+    },
+    {
+      "sentenceId": "S031",
+      "beatId": "B03",
+      "text": "He spoke about the false Field of Wonders.",
+      "speechStart": 122.429,
+      "speechEnd": 125.442,
+      "speechStartMs": 122429,
+      "speechEndMs": 125442,
+      "start": 122.295,
+      "end": 125.548,
+      "startMs": 122295,
+      "endMs": 125548
+    },
+    {
+      "sentenceId": "S032",
+      "beatId": "B03",
+      "text": "He also confessed his lies and growing nose.",
+      "speechStart": 125.655,
+      "speechEnd": 129.122,
+      "speechStartMs": 125655,
+      "speechEndMs": 129122,
+      "start": 125.548,
+      "end": 129.202,
+      "startMs": 125548,
+      "endMs": 129202
+    },
+    {
+      "sentenceId": "S033",
+      "beatId": "B03",
+      "text": "The Blue Fairy had saved him many times.",
+      "speechStart": 129.282,
+      "speechEnd": 132.322,
+      "speechStartMs": 129282,
+      "speechEndMs": 132322,
+      "start": 129.202,
+      "end": 132.377,
+      "startMs": 129202,
+      "endMs": 132377
+    },
+    {
+      "sentenceId": "S034",
+      "beatId": "B03",
+      "text": "However, Pinocchio had broken many promises.",
+      "speechStart": 132.432,
+      "speechEnd": 135.842,
+      "speechStartMs": 132432,
+      "speechEndMs": 135842,
+      "start": 132.377,
+      "end": 135.948,
+      "startMs": 132377,
+      "endMs": 135948
+    },
+    {
+      "sentenceId": "S035",
+      "beatId": "B03",
+      "text": "He told Geppetto about prison and the watchdog job.",
+      "speechStart": 136.055,
+      "speechEnd": 139.762,
+      "speechStartMs": 136055,
+      "speechEndMs": 139762,
+      "start": 135.948,
+      "end": 139.895,
+      "startMs": 135948,
+      "endMs": 139895
+    },
+    {
+      "sentenceId": "S036",
+      "beatId": "B03",
+      "text": "He spoke about school fights and the sea.",
+      "speechStart": 140.028,
+      "speechEnd": 143.201,
+      "speechStartMs": 140028,
+      "speechEndMs": 143201,
+      "start": 139.895,
+      "end": 143.361,
+      "startMs": 139895,
+      "endMs": 143361
+    },
+    {
+      "sentenceId": "S037",
+      "beatId": "B03",
+      "text": "On Busy Bee Island, he had started working.",
+      "speechStart": 143.521,
+      "speechEnd": 147.041,
+      "speechStartMs": 143521,
+      "speechEndMs": 147041,
+      "start": 143.361,
+      "end": 147.121,
+      "startMs": 143361,
+      "endMs": 147121
+    },
+    {
+      "sentenceId": "S038",
+      "beatId": "B03",
+      "text": "Then Lamp-Wick had invited him to Toyland.",
+      "speechStart": 147.201,
+      "speechEnd": 150.241,
+      "speechStartMs": 147201,
+      "speechEndMs": 150241,
+      "start": 147.121,
+      "end": 150.351,
+      "startMs": 147121,
+      "endMs": 150351
+    },
+    {
+      "sentenceId": "S039",
+      "beatId": "B03",
+      "text": "Pinocchio had chosen play and become a donkey.",
+      "speechStart": 150.461,
+      "speechEnd": 154.081,
+      "speechStartMs": 150461,
+      "speechEndMs": 154081,
+      "start": 150.351,
+      "end": 154.341,
+      "startMs": 150351,
+      "endMs": 154341
+    },
+    {
+      "sentenceId": "S040",
+      "beatId": "B03",
+      "text": "“I chose fun before love,” he said sadly.",
+      "speechStart": 154.601,
+      "speechEnd": 158.241,
+      "speechStartMs": 154601,
+      "speechEndMs": 158241,
+      "start": 154.341,
+      "end": 158.748,
+      "startMs": 154341,
+      "endMs": 158748
+    },
+    {
+      "sentenceId": "S041",
+      "beatId": "B04",
+      "text": "Geppetto held his son close and forgave him after the story.",
+      "speechStart": 159.254,
+      "speechEnd": 163.441,
+      "speechStartMs": 159254,
+      "speechEndMs": 163441,
+      "start": 158.748,
+      "end": 163.489,
+      "startMs": 158748,
+      "endMs": 163489
+    },
+    {
+      "sentenceId": "S042",
+      "beatId": "B04",
+      "text": "Then he explained why he was inside the Shark.",
+      "speechStart": 163.537,
+      "speechEnd": 166.481,
+      "speechStartMs": 163537,
+      "speechEndMs": 166481,
+      "start": 163.489,
+      "end": 166.614,
+      "startMs": 163489,
+      "endMs": 166614
+    },
+    {
+      "sentenceId": "S043",
+      "beatId": "B04",
+      "text": "He had sailed out to search for Pinocchio.",
+      "speechStart": 166.748,
+      "speechEnd": 169.601,
+      "speechStartMs": 166748,
+      "speechEndMs": 169601,
+      "start": 166.614,
+      "end": 169.801,
+      "startMs": 166614,
+      "endMs": 169801
+    },
+    {
+      "sentenceId": "S044",
+      "beatId": "B04",
+      "text": "A strong storm broke his little boat.",
+      "speechStart": 170.001,
+      "speechEnd": 172.801,
+      "speechStartMs": 170001,
+      "speechEndMs": 172801,
+      "start": 169.801,
+      "end": 172.891,
+      "startMs": 169801,
+      "endMs": 172891
+    },
+    {
+      "sentenceId": "S045",
+      "beatId": "B04",
+      "text": "The Terrible Shark swallowed him with the pieces.",
+      "speechStart": 172.981,
+      "speechEnd": 176.401,
+      "speechStartMs": 172981,
+      "speechEndMs": 176401,
+      "start": 172.891,
+      "end": 176.521,
+      "startMs": 172891,
+      "endMs": 176521
+    },
+    {
+      "sentenceId": "S046",
+      "beatId": "B04",
+      "text": "At first, Geppetto thought he would die there.",
+      "speechStart": 176.641,
+      "speechEnd": 179.84,
+      "speechStartMs": 176641,
+      "speechEndMs": 179840,
+      "start": 176.521,
+      "end": 179.934,
+      "startMs": 176521,
+      "endMs": 179934
+    },
+    {
+      "sentenceId": "S047",
+      "beatId": "B04",
+      "text": "Later, the Shark swallowed a ship with food.",
+      "speechStart": 180.027,
+      "speechEnd": 183.44,
+      "speechStartMs": 180027,
+      "speechEndMs": 183440,
+      "start": 179.934,
+      "end": 183.54,
+      "startMs": 179934,
+      "endMs": 183540
+    },
+    {
+      "sentenceId": "S048",
+      "beatId": "B04",
+      "text": "The ship also carried candles and matches.",
+      "speechStart": 183.64,
+      "speechEnd": 186.88,
+      "speechStartMs": 183640,
+      "speechEndMs": 186880,
+      "start": 183.54,
+      "end": 186.96,
+      "startMs": 183540,
+      "endMs": 186960
+    },
+    {
+      "sentenceId": "S049",
+      "beatId": "B04",
+      "text": "Those things kept Geppetto alive for two years.",
+      "speechStart": 187.04,
+      "speechEnd": 190.4,
+      "speechStartMs": 187040,
+      "speechEndMs": 190400,
+      "start": 186.96,
+      "end": 190.534,
+      "startMs": 186960,
+      "endMs": 190534
+    },
+    {
+      "sentenceId": "S050",
+      "beatId": "B04",
+      "text": "He had counted time by each burning candle.",
+      "speechStart": 190.667,
+      "speechEnd": 193.92,
+      "speechStartMs": 190667,
+      "speechEndMs": 193920,
+      "start": 190.534,
+      "end": 194.06,
+      "startMs": 190534,
+      "endMs": 194060
+    },
+    {
+      "sentenceId": "S051",
+      "beatId": "B04",
+      "text": "Now only a little food was left.",
+      "speechStart": 194.2,
+      "speechEnd": 196.72,
+      "speechStartMs": 194200,
+      "speechEndMs": 196720,
+      "start": 194.06,
+      "end": 196.8,
+      "startMs": 194060,
+      "endMs": 196800
+    },
+    {
+      "sentenceId": "S052",
+      "beatId": "B04",
+      "text": "The candle on the table was also the last.",
+      "speechStart": 196.88,
+      "speechEnd": 199.76,
+      "speechStartMs": 196880,
+      "speechEndMs": 199760,
+      "start": 196.8,
+      "end": 199.82,
+      "startMs": 196800,
+      "endMs": 199820
+    },
+    {
+      "sentenceId": "S053",
+      "beatId": "B05",
+      "text": "“We must escape before it dies,” said Pinocchio.",
+      "speechStart": 199.881,
+      "speechEnd": 203.061,
+      "speechStartMs": 199881,
+      "speechEndMs": 203061,
+      "start": 199.82,
+      "end": 203.221,
+      "startMs": 199820,
+      "endMs": 203221
+    },
+    {
+      "sentenceId": "S054",
+      "beatId": "B05",
+      "text": "Geppetto looked down at his weak legs.",
+      "speechStart": 203.381,
+      "speechEnd": 206.26,
+      "speechStartMs": 203381,
+      "speechEndMs": 206260,
+      "start": 203.221,
+      "end": 206.4,
+      "startMs": 203221,
+      "endMs": 206400
+    },
+    {
+      "sentenceId": "S055",
+      "beatId": "B05",
+      "text": "“I cannot walk far or swim,” he answered.",
+      "speechStart": 206.54,
+      "speechEnd": 210.58,
+      "speechStartMs": 206540,
+      "speechEndMs": 210580,
+      "start": 206.4,
+      "end": 210.71,
+      "startMs": 206400,
+      "endMs": 210710
+    },
+    {
+      "sentenceId": "S056",
+      "beatId": "B05",
+      "text": "Pinocchio did not let fear grow between them.",
+      "speechStart": 210.84,
+      "speechEnd": 214.179,
+      "speechStartMs": 210840,
+      "speechEndMs": 214179,
+      "start": 210.71,
+      "end": 214.319,
+      "startMs": 210710,
+      "endMs": 214319
+    },
+    {
+      "sentenceId": "S057",
+      "beatId": "B05",
+      "text": "“You cared for me, and I will carry you.”",
+      "speechStart": 214.459,
+      "speechEnd": 217.139,
+      "speechStartMs": 214459,
+      "speechEndMs": 217139,
+      "start": 214.319,
+      "end": 217.325,
+      "startMs": 214319,
+      "endMs": 217325
+    },
+    {
+      "sentenceId": "S058",
+      "beatId": "B05",
+      "text": "Geppetto stared at him with proud surprise.",
+      "speechStart": 217.512,
+      "speechEnd": 220.899,
+      "speechStartMs": 217512,
+      "speechEndMs": 220899,
+      "start": 217.325,
+      "end": 220.979,
+      "startMs": 217325,
+      "endMs": 220979
+    },
+    {
+      "sentenceId": "S059",
+      "beatId": "B05",
+      "text": "His careless puppet had become very different.",
+      "speechStart": 221.059,
+      "speechEnd": 224.498,
+      "speechStartMs": 221059,
+      "speechEndMs": 224498,
+      "start": 220.979,
+      "end": 224.618,
+      "startMs": 220979,
+      "endMs": 224618
+    },
+    {
+      "sentenceId": "S060",
+      "beatId": "B05",
+      "text": "Pinocchio looked for a safe way outside.",
+      "speechStart": 224.738,
+      "speechEnd": 227.858,
+      "speechStartMs": 224738,
+      "speechEndMs": 227858,
+      "start": 224.618,
+      "end": 227.978,
+      "startMs": 224618,
+      "endMs": 227978
+    },
+    {
+      "sentenceId": "S061",
+      "beatId": "B05",
+      "text": "Geppetto knew that the old Shark had asthma.",
+      "speechStart": 228.098,
+      "speechEnd": 231.377,
+      "speechStartMs": 228098,
+      "speechEndMs": 231377,
+      "start": 227.978,
+      "end": 231.457,
+      "startMs": 227978,
+      "endMs": 231457
+    },
+    {
+      "sentenceId": "S062",
+      "beatId": "B05",
+      "text": "It slept each night with its mouth open.",
+      "speechStart": 231.537,
+      "speechEnd": 234.497,
+      "speechStartMs": 231537,
+      "speechEndMs": 234497,
+      "start": 231.457,
+      "end": 234.577,
+      "startMs": 231457,
+      "endMs": 234577
+    },
+    {
+      "sentenceId": "S063",
+      "beatId": "B05",
+      "text": "That open mouth could be their way out.",
+      "speechStart": 234.657,
+      "speechEnd": 237.857,
+      "speechStartMs": 234657,
+      "speechEndMs": 237857,
+      "start": 234.577,
+      "end": 237.987,
+      "startMs": 234577,
+      "endMs": 237987
+    },
+    {
+      "sentenceId": "S064",
+      "beatId": "B05",
+      "text": "The candle was short, so they moved quickly.",
+      "speechStart": 238.117,
+      "speechEnd": 241.616,
+      "speechStartMs": 238117,
+      "speechEndMs": 241616,
+      "start": 237.987,
+      "end": 241.763,
+      "startMs": 237987,
+      "endMs": 241763
+    },
+    {
+      "sentenceId": "S065",
+      "beatId": "B05",
+      "text": "Geppetto held the bottle and Pinocchio’s hand.",
+      "speechStart": 241.909,
+      "speechEnd": 245.376,
+      "speechStartMs": 241909,
+      "speechEndMs": 245376,
+      "start": 241.763,
+      "end": 245.766,
+      "startMs": 241763,
+      "endMs": 245766
+    },
+    {
+      "sentenceId": "S066",
+      "beatId": "B06",
+      "text": "Together they climbed through the Shark’s throat.",
+      "speechStart": 246.156,
+      "speechEnd": 249.415,
+      "speechStartMs": 246156,
+      "speechEndMs": 249415,
+      "start": 245.766,
+      "end": 249.47,
+      "startMs": 245766,
+      "endMs": 249470
+    },
+    {
+      "sentenceId": "S067",
+      "beatId": "B06",
+      "text": "The walls moved whenever the monster breathed.",
+      "speechStart": 249.525,
+      "speechEnd": 252.415,
+      "speechStartMs": 249525,
+      "speechEndMs": 252415,
+      "start": 249.47,
+      "end": 252.487,
+      "startMs": 249470,
+      "endMs": 252487
+    },
+    {
+      "sentenceId": "S068",
+      "beatId": "B06",
+      "text": "They walked slowly and made almost no sound.",
+      "speechStart": 252.559,
+      "speechEnd": 256.094,
+      "speechStartMs": 252559,
+      "speechEndMs": 256094,
+      "start": 252.487,
+      "end": 256.241,
+      "startMs": 252487,
+      "endMs": 256241
+    },
+    {
+      "sentenceId": "S069",
+      "beatId": "B06",
+      "text": "At last, cool air touched Pinocchio’s face.",
+      "speechStart": 256.387,
+      "speechEnd": 260.734,
+      "speechStartMs": 256387,
+      "speechEndMs": 260734,
+      "start": 256.241,
+      "end": 260.822,
+      "startMs": 256241,
+      "endMs": 260822
+    },
+    {
+      "sentenceId": "S070",
+      "beatId": "B06",
+      "text": "Moonlight came through the Shark’s great mouth.",
+      "speechStart": 260.91,
+      "speechEnd": 265.093,
+      "speechStartMs": 260910,
+      "speechEndMs": 265093,
+      "start": 260.822,
+      "end": 265.158,
+      "startMs": 260822,
+      "endMs": 265158
+    },
+    {
+      "sentenceId": "S071",
+      "beatId": "B06",
+      "text": "Its tongue looked like a very wide road.",
+      "speechStart": 265.223,
+      "speechEnd": 268.653,
+      "speechStartMs": 265223,
+      "speechEndMs": 268653,
+      "start": 265.158,
+      "end": 268.693,
+      "startMs": 265158,
+      "endMs": 268693
+    },
+    {
+      "sentenceId": "S072",
+      "beatId": "B06",
+      "text": "Three rows of teeth stood before the sea.",
+      "speechStart": 268.733,
+      "speechEnd": 272.133,
+      "speechStartMs": 268733,
+      "speechEndMs": 272133,
+      "start": 268.693,
+      "end": 272.219,
+      "startMs": 268693,
+      "endMs": 272219
+    },
+    {
+      "sentenceId": "S073",
+      "beatId": "B06",
+      "text": "Geppetto looked down and held Pinocchio tightly.",
+      "speechStart": 272.306,
+      "speechEnd": 275.612,
+      "speechStartMs": 272306,
+      "speechEndMs": 275612,
+      "start": 272.219,
+      "end": 275.832,
+      "startMs": 272219,
+      "endMs": 275832
+    },
+    {
+      "sentenceId": "S074",
+      "beatId": "B06",
+      "text": "“Stay near me,” Pinocchio whispered to him.",
+      "speechStart": 276.052,
+      "speechEnd": 279.132,
+      "speechStartMs": 276052,
+      "speechEndMs": 279132,
+      "start": 275.832,
+      "end": 279.236,
+      "startMs": 275832,
+      "endMs": 279236
+    },
+    {
+      "sentenceId": "S075",
+      "beatId": "B06",
+      "text": "They moved towards the edge of the tongue.",
+      "speechStart": 279.34,
+      "speechEnd": 282.651,
+      "speechStartMs": 279340,
+      "speechEndMs": 282651,
+      "start": 279.236,
+      "end": 283.118,
+      "startMs": 279236,
+      "endMs": 283118
+    },
+    {
+      "sentenceId": "S076",
+      "beatId": "B07",
+      "text": "Suddenly, the Shark took a deep breath.",
+      "speechStart": 283.584,
+      "speechEnd": 285.971,
+      "speechStartMs": 283584,
+      "speechEndMs": 285971,
+      "start": 283.118,
+      "end": 286.026,
+      "startMs": 283118,
+      "endMs": 286026
+    },
+    {
+      "sentenceId": "S077",
+      "beatId": "B07",
+      "text": "Its huge body became tight around them.",
+      "speechStart": 286.081,
+      "speechEnd": 288.891,
+      "speechStartMs": 286081,
+      "speechEndMs": 288891,
+      "start": 286.026,
+      "end": 288.971,
+      "startMs": 286026,
+      "endMs": 288971
+    },
+    {
+      "sentenceId": "S078",
+      "beatId": "B07",
+      "text": "Then the Shark gave a powerful sneeze.",
+      "speechStart": 289.051,
+      "speechEnd": 292.73,
+      "speechStartMs": 289051,
+      "speechEndMs": 292730,
+      "start": 288.971,
+      "end": 292.77,
+      "startMs": 288971,
+      "endMs": 292770
+    },
+    {
+      "sentenceId": "S079",
+      "beatId": "B07",
+      "text": "The wind threw father and son backwards.",
+      "speechStart": 292.81,
+      "speechEnd": 296.09,
+      "speechStartMs": 292810,
+      "speechEndMs": 296090,
+      "start": 292.77,
+      "end": 296.146,
+      "startMs": 292770,
+      "endMs": 296146
+    },
+    {
+      "sentenceId": "S080",
+      "beatId": "B07",
+      "text": "They fell down the throat into the stomach.",
+      "speechStart": 296.202,
+      "speechEnd": 299.529,
+      "speechStartMs": 296202,
+      "speechEndMs": 299529,
+      "start": 296.146,
+      "end": 299.579,
+      "startMs": 296146,
+      "endMs": 299579
+    },
+    {
+      "sentenceId": "S081",
+      "beatId": "B07",
+      "text": "The candle hit the water and went out.",
+      "speechStart": 299.629,
+      "speechEnd": 302.089,
+      "speechStartMs": 299629,
+      "speechEndMs": 302089,
+      "start": 299.579,
+      "end": 302.289,
+      "startMs": 299579,
+      "endMs": 302289
+    },
+    {
+      "sentenceId": "S082",
+      "beatId": "B07",
+      "text": "“Now we are lost,” Geppetto said quietly.",
+      "speechStart": 302.489,
+      "speechEnd": 306.489,
+      "speechStartMs": 302489,
+      "speechEndMs": 306489,
+      "start": 302.289,
+      "end": 306.629,
+      "startMs": 302289,
+      "endMs": 306629
+    },
+    {
+      "sentenceId": "S083",
+      "beatId": "B07",
+      "text": "Pinocchio was afraid, but he stayed calm.",
+      "speechStart": 306.769,
+      "speechEnd": 310.568,
+      "speechStartMs": 306769,
+      "speechEndMs": 310568,
+      "start": 306.629,
+      "end": 310.748,
+      "startMs": 306629,
+      "endMs": 310748
+    },
+    {
+      "sentenceId": "S084",
+      "beatId": "B07",
+      "text": "“We are together, and I remember the way.”",
+      "speechStart": 310.928,
+      "speechEnd": 314.528,
+      "speechStartMs": 310928,
+      "speechEndMs": 314528,
+      "start": 310.748,
+      "end": 314.601,
+      "startMs": 310748,
+      "endMs": 314601
+    },
+    {
+      "sentenceId": "S085",
+      "beatId": "B07",
+      "text": "He found Geppetto’s hand in the darkness.",
+      "speechStart": 314.675,
+      "speechEnd": 317.287,
+      "speechStartMs": 314675,
+      "speechEndMs": 317287,
+      "start": 314.601,
+      "end": 317.375,
+      "startMs": 314601,
+      "endMs": 317375
+    },
+    {
+      "sentenceId": "S086",
+      "beatId": "B07",
+      "text": "They climbed the long throat a second time.",
+      "speechStart": 317.463,
+      "speechEnd": 321.047,
+      "speechStartMs": 317463,
+      "speechEndMs": 321047,
+      "start": 317.375,
+      "end": 321.087,
+      "startMs": 317375,
+      "endMs": 321087
+    },
+    {
+      "sentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio waited for the Shark’s slow breathing.",
+      "speechStart": 321.127,
+      "speechEnd": 324.486,
+      "speechStartMs": 321127,
+      "speechEndMs": 324486,
+      "start": 321.087,
+      "end": 324.566,
+      "startMs": 321087,
+      "endMs": 324566
+    },
+    {
+      "sentenceId": "S088",
+      "beatId": "B07",
+      "text": "Then they crossed the tongue very carefully.",
+      "speechStart": 324.646,
+      "speechEnd": 327.926,
+      "speechStartMs": 324646,
+      "speechEndMs": 327926,
+      "start": 324.566,
+      "end": 328.006,
+      "startMs": 324566,
+      "endMs": 328006
+    },
+    {
+      "sentenceId": "S089",
+      "beatId": "B07",
+      "text": "They passed all three rows of teeth.",
+      "speechStart": 328.086,
+      "speechEnd": 331.606,
+      "speechStartMs": 328086,
+      "speechEndMs": 331606,
+      "start": 328.006,
+      "end": 331.686,
+      "startMs": 328006,
+      "endMs": 331686
+    },
+    {
+      "sentenceId": "S090",
+      "beatId": "B07",
+      "text": "At the edge, Geppetto saw the dark sea.",
+      "speechStart": 331.766,
+      "speechEnd": 335.205,
+      "speechStartMs": 331766,
+      "speechEndMs": 335205,
+      "start": 331.686,
+      "end": 335.305,
+      "startMs": 331686,
+      "endMs": 335305
+    },
+    {
+      "sentenceId": "S091",
+      "beatId": "B07",
+      "text": "Pinocchio bent down in front of him.",
+      "speechStart": 335.405,
+      "speechEnd": 338.005,
+      "speechStartMs": 335405,
+      "speechEndMs": 338005,
+      "start": 335.305,
+      "end": 338.399,
+      "startMs": 335305,
+      "endMs": 338399
+    },
+    {
+      "sentenceId": "S092",
+      "beatId": "B08",
+      "text": "Geppetto climbed onto the puppet’s strong back.",
+      "speechStart": 338.794,
+      "speechEnd": 342.004,
+      "speechStartMs": 338794,
+      "speechEndMs": 342004,
+      "start": 338.399,
+      "end": 342.104,
+      "startMs": 338399,
+      "endMs": 342104
+    },
+    {
+      "sentenceId": "S093",
+      "beatId": "B08",
+      "text": "“Hold on tightly, Father,” Pinocchio told him.",
+      "speechStart": 342.204,
+      "speechEnd": 345.284,
+      "speechStartMs": 342204,
+      "speechEndMs": 345284,
+      "start": 342.104,
+      "end": 345.431,
+      "startMs": 342104,
+      "endMs": 345431
+    },
+    {
+      "sentenceId": "S094",
+      "beatId": "B08",
+      "text": "He jumped past the teeth into cold water.",
+      "speechStart": 345.577,
+      "speechEnd": 349.604,
+      "speechStartMs": 345577,
+      "speechEndMs": 349604,
+      "start": 345.431,
+      "end": 349.764,
+      "startMs": 345431,
+      "endMs": 349764
+    },
+    {
+      "sentenceId": "S095",
+      "beatId": "B08",
+      "text": "Geppetto’s weight pulled him down at first.",
+      "speechStart": 349.923,
+      "speechEnd": 353.083,
+      "speechStartMs": 349923,
+      "speechEndMs": 353083,
+      "start": 349.764,
+      "end": 353.111,
+      "startMs": 349764,
+      "endMs": 353111
+    },
+    {
+      "sentenceId": "S096",
+      "beatId": "B08",
+      "text": "Then Pinocchio’s wooden body rose again.",
+      "speechStart": 353.139,
+      "speechEnd": 355.843,
+      "speechStartMs": 353139,
+      "speechEndMs": 355843,
+      "start": 353.111,
+      "end": 355.989,
+      "startMs": 353111,
+      "endMs": 355989
+    },
+    {
+      "sentenceId": "S097",
+      "beatId": "B08",
+      "text": "He began swimming under the bright moon.",
+      "speechStart": 356.136,
+      "speechEnd": 359.202,
+      "speechStartMs": 356136,
+      "speechEndMs": 359202,
+      "start": 355.989,
+      "end": 359.292,
+      "startMs": 355989,
+      "endMs": 359292
+    },
+    {
+      "sentenceId": "S098",
+      "beatId": "B08",
+      "text": "The Shark stayed asleep far behind them.",
+      "speechStart": 359.382,
+      "speechEnd": 362.642,
+      "speechStartMs": 359382,
+      "speechEndMs": 362642,
+      "start": 359.292,
+      "end": 362.775,
+      "startMs": 359292,
+      "endMs": 362775
+    },
+    {
+      "sentenceId": "S099",
+      "beatId": "B08",
+      "text": "No land could be seen across the water.",
+      "speechStart": 362.909,
+      "speechEnd": 365.602,
+      "speechStartMs": 362909,
+      "speechEndMs": 365602,
+      "start": 362.775,
+      "end": 365.712,
+      "startMs": 362775,
+      "endMs": 365712
+    },
+    {
+      "sentenceId": "S100",
+      "beatId": "B08",
+      "text": "Pinocchio used the stars to choose a direction.",
+      "speechStart": 365.822,
+      "speechEnd": 369.361,
+      "speechStartMs": 365822,
+      "speechEndMs": 369361,
+      "start": 365.712,
+      "end": 369.468,
+      "startMs": 365712,
+      "endMs": 369468
+    },
+    {
+      "sentenceId": "S101",
+      "beatId": "B08",
+      "text": "Geppetto rested quietly against his back.",
+      "speechStart": 369.574,
+      "speechEnd": 372.641,
+      "speechStartMs": 369574,
+      "speechEndMs": 372641,
+      "start": 369.468,
+      "end": 372.721,
+      "startMs": 369468,
+      "endMs": 372721
+    },
+    {
+      "sentenceId": "S102",
+      "beatId": "B08",
+      "text": "Every stroke moved them farther from the Shark.",
+      "speechStart": 372.801,
+      "speechEnd": 376.72,
+      "speechStartMs": 372801,
+      "speechEndMs": 376720,
+      "start": 372.721,
+      "end": 376.77,
+      "startMs": 372721,
+      "endMs": 376770
+    },
+    {
+      "sentenceId": "S103",
+      "beatId": "B08",
+      "text": "The sea was dangerous, but they were together.",
+      "speechStart": 376.82,
+      "speechEnd": 379.84,
+      "speechStartMs": 376820,
+      "speechEndMs": 379840,
+      "start": 376.77,
+      "end": 379.84,
+      "startMs": 376770,
+      "endMs": 379840
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio left the Tunny and followed the small light through heavy darkness.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Pinocchio left the Tunny and followed the small light through heavy darkness.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 0.205,
+          "speechEnd": 5.645,
+          "speechStartMs": 205,
+          "speechEndMs": 5645,
+          "start": 0.145,
+          "end": 5.705,
+          "startMs": 145,
+          "endMs": 5705
+        }
+      ],
+      "speechStart": 0.205,
+      "speechEnd": 5.645,
+      "speechStartMs": 205,
+      "speechEndMs": 5645,
+      "start": 0.145,
+      "end": 5.705,
+      "startMs": 145,
+      "endMs": 5705
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "The Shark’s breathing sounded like faraway thunder.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "The Shark’s breathing sounded like faraway thunder.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 9.705,
+          "speechEnd": 13.925,
+          "speechStartMs": 9705,
+          "speechEndMs": 13925,
+          "start": 9.645,
+          "end": 14.005,
+          "startMs": 9645,
+          "endMs": 14005
+        }
+      ],
+      "speechStart": 9.705,
+      "speechEnd": 13.925,
+      "speechStartMs": 9705,
+      "speechEndMs": 13925,
+      "start": 9.645,
+      "end": 14.005,
+      "startMs": 9645,
+      "endMs": 14005
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "Soon he saw a candle burning inside a glass bottle.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "Soon he saw a candle burning inside a glass bottle.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 24.148,
+          "speechEnd": 28.004,
+          "speechStartMs": 24148,
+          "speechEndMs": 28004,
+          "start": 24.088,
+          "end": 28.084,
+          "startMs": 24088,
+          "endMs": 28084
+        }
+      ],
+      "speechStart": 24.148,
+      "speechEnd": 28.004,
+      "speechStartMs": 24148,
+      "speechEndMs": 28004,
+      "start": 24.088,
+      "end": 28.084,
+      "startMs": 24088,
+      "endMs": 28084
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "Pinocchio moved closer through the dirty water and held his breath.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "Pinocchio moved closer through the dirty water and held his breath.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 44.104,
+          "speechEnd": 49.044,
+          "speechStartMs": 44104,
+          "speechEndMs": 49044,
+          "start": 44.044,
+          "end": 49.124,
+          "startMs": 44044,
+          "endMs": 49124
+        }
+      ],
+      "speechStart": 44.104,
+      "speechEnd": 49.044,
+      "speechStartMs": 44104,
+      "speechEndMs": 49044,
+      "start": 44.044,
+      "end": 49.124,
+      "startMs": 44044,
+      "endMs": 49124
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "Geppetto rubbed his eyes in great surprise.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Geppetto rubbed his eyes in great surprise.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 64.376,
+          "speechEnd": 67.843,
+          "speechStartMs": 64376,
+          "speechEndMs": 67843,
+          "start": 64.316,
+          "end": 67.923,
+          "startMs": 64316,
+          "endMs": 67923
+        }
+      ],
+      "speechStart": 64.376,
+      "speechEnd": 67.843,
+      "speechStartMs": 64376,
+      "speechEndMs": 67843,
+      "start": 64.316,
+      "end": 67.923,
+      "startMs": 64316,
+      "endMs": 67923
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Geppetto touched the puppet’s face as if checking a wonderful dream.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Geppetto touched the puppet’s face as if checking a wonderful dream.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 78.936,
+          "speechEnd": 83.203,
+          "speechStartMs": 78936,
+          "speechEndMs": 83203,
+          "start": 78.876,
+          "end": 83.283,
+          "startMs": 78876,
+          "endMs": 83283
+        }
+      ],
+      "speechStart": 78.936,
+      "speechEnd": 83.203,
+      "speechStartMs": 78936,
+      "speechEndMs": 83203,
+      "start": 78.876,
+      "end": 83.283,
+      "startMs": 78876,
+      "endMs": 83283
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S022",
+      "beatId": "B02",
+      "text": "“Are you really my Pinocchio?” Geppetto asked.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "“Are you really my Pinocchio?” Geppetto asked.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 86.963,
+          "speechEnd": 90.563,
+          "speechStartMs": 86963,
+          "speechEndMs": 90563,
+          "start": 86.903,
+          "end": 90.643,
+          "startMs": 86903,
+          "endMs": 90643
+        }
+      ],
+      "speechStart": 86.963,
+      "speechEnd": 90.563,
+      "speechStartMs": 86963,
+      "speechEndMs": 90563,
+      "start": 86.903,
+      "end": 90.643,
+      "startMs": 86903,
+      "endMs": 90643
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "The Shark moved, and the candle shook above the small table.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "The Shark moved, and the candle shook above the small table.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 94.483,
+          "speechEnd": 99.043,
+          "speechStartMs": 94483,
+          "speechEndMs": 99043,
+          "start": 94.423,
+          "end": 99.123,
+          "startMs": 94423,
+          "endMs": 99123
+        }
+      ],
+      "speechStart": 94.483,
+      "speechEnd": 99.043,
+      "speechStartMs": 94483,
+      "speechEndMs": 99043,
+      "start": 94.423,
+      "end": 99.123,
+      "startMs": 94423,
+      "endMs": 99123
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S027",
+      "beatId": "B03",
+      "text": "Pinocchio began with the book bought for school.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Pinocchio began with the book bought for school.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 109.265,
+          "speechEnd": 111.762,
+          "speechStartMs": 109265,
+          "speechEndMs": 111762,
+          "start": 109.205,
+          "end": 111.842,
+          "startMs": 109205,
+          "endMs": 111842
+        }
+      ],
+      "speechStart": 109.265,
+      "speechEnd": 111.762,
+      "speechStartMs": 109265,
+      "speechEndMs": 111762,
+      "start": 109.205,
+      "end": 111.842,
+      "startMs": 109205,
+      "endMs": 111842
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "Then he described the clever Fox and Cat.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Then he described the clever Fox and Cat.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 118.898,
+          "speechEnd": 122.162,
+          "speechStartMs": 118898,
+          "speechEndMs": 122162,
+          "start": 118.838,
+          "end": 122.242,
+          "startMs": 118838,
+          "endMs": 122242
+        }
+      ],
+      "speechStart": 118.898,
+      "speechEnd": 122.162,
+      "speechStartMs": 118898,
+      "speechEndMs": 122162,
+      "start": 118.838,
+      "end": 122.242,
+      "startMs": 118838,
+      "endMs": 122242
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "However, Pinocchio had broken many promises.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "However, Pinocchio had broken many promises.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 132.432,
+          "speechEnd": 135.842,
+          "speechStartMs": 132432,
+          "speechEndMs": 135842,
+          "start": 132.377,
+          "end": 135.922,
+          "startMs": 132377,
+          "endMs": 135922
+        }
+      ],
+      "speechStart": 132.432,
+      "speechEnd": 135.842,
+      "speechStartMs": 132432,
+      "speechEndMs": 135842,
+      "start": 132.377,
+      "end": 135.922,
+      "startMs": 132377,
+      "endMs": 135922
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "On Busy Bee Island, he had started working.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "On Busy Bee Island, he had started working.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 143.521,
+          "speechEnd": 147.041,
+          "speechStartMs": 143521,
+          "speechEndMs": 147041,
+          "start": 143.461,
+          "end": 147.121,
+          "startMs": 143461,
+          "endMs": 147121
+        }
+      ],
+      "speechStart": 143.521,
+      "speechEnd": 147.041,
+      "speechStartMs": 143521,
+      "speechEndMs": 147041,
+      "start": 143.461,
+      "end": 147.121,
+      "startMs": 143461,
+      "endMs": 147121
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "He had sailed out to search for Pinocchio.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "He had sailed out to search for Pinocchio.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 166.748,
+          "speechEnd": 169.601,
+          "speechStartMs": 166748,
+          "speechEndMs": 169601,
+          "start": 166.688,
+          "end": 169.681,
+          "startMs": 166688,
+          "endMs": 169681
+        }
+      ],
+      "speechStart": 166.748,
+      "speechEnd": 169.601,
+      "speechStartMs": 166748,
+      "speechEndMs": 169601,
+      "start": 166.688,
+      "end": 169.681,
+      "startMs": 166688,
+      "endMs": 169681
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S045",
+      "beatId": "B04",
+      "text": "The Terrible Shark swallowed him with the pieces.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "The Terrible Shark swallowed him with the pieces.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 172.981,
+          "speechEnd": 176.401,
+          "speechStartMs": 172981,
+          "speechEndMs": 176401,
+          "start": 172.921,
+          "end": 176.481,
+          "startMs": 172921,
+          "endMs": 176481
+        }
+      ],
+      "speechStart": 172.981,
+      "speechEnd": 176.401,
+      "speechStartMs": 172981,
+      "speechEndMs": 176401,
+      "start": 172.921,
+      "end": 176.481,
+      "startMs": 172921,
+      "endMs": 176481
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Later, the Shark swallowed a ship with food.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Later, the Shark swallowed a ship with food.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 180.027,
+          "speechEnd": 183.44,
+          "speechStartMs": 180027,
+          "speechEndMs": 183440,
+          "start": 179.967,
+          "end": 183.52,
+          "startMs": 179967,
+          "endMs": 183520
+        }
+      ],
+      "speechStart": 180.027,
+      "speechEnd": 183.44,
+      "speechStartMs": 180027,
+      "speechEndMs": 183440,
+      "start": 179.967,
+      "end": 183.52,
+      "startMs": 179967,
+      "endMs": 183520
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "He had counted time by each burning candle.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "He had counted time by each burning candle.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 190.667,
+          "speechEnd": 193.92,
+          "speechStartMs": 190667,
+          "speechEndMs": 193920,
+          "start": 190.607,
+          "end": 194,
+          "startMs": 190607,
+          "endMs": 194000
+        }
+      ],
+      "speechStart": 190.667,
+      "speechEnd": 193.92,
+      "speechStartMs": 190667,
+      "speechEndMs": 193920,
+      "start": 190.607,
+      "end": 194,
+      "startMs": 190607,
+      "endMs": 194000
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "“We must escape before it dies,” said Pinocchio.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "“We must escape before it dies,” said Pinocchio.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 199.881,
+          "speechEnd": 203.061,
+          "speechStartMs": 199881,
+          "speechEndMs": 203061,
+          "start": 199.821,
+          "end": 203.141,
+          "startMs": 199821,
+          "endMs": 203141
+        }
+      ],
+      "speechStart": 199.881,
+      "speechEnd": 203.061,
+      "speechStartMs": 199881,
+      "speechEndMs": 203061,
+      "start": 199.821,
+      "end": 203.141,
+      "startMs": 199821,
+      "endMs": 203141
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "“You cared for me, and I will carry you.”",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“You cared for me, and I will carry you.”",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 214.459,
+          "speechEnd": 217.139,
+          "speechStartMs": 214459,
+          "speechEndMs": 217139,
+          "start": 214.399,
+          "end": 217.219,
+          "startMs": 214399,
+          "endMs": 217219
+        }
+      ],
+      "speechStart": 214.459,
+      "speechEnd": 217.139,
+      "speechStartMs": 214459,
+      "speechEndMs": 217139,
+      "start": 214.399,
+      "end": 217.219,
+      "startMs": 214399,
+      "endMs": 217219
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "It slept each night with its mouth open.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "It slept each night with its mouth open.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 231.537,
+          "speechEnd": 234.497,
+          "speechStartMs": 231537,
+          "speechEndMs": 234497,
+          "start": 231.477,
+          "end": 234.577,
+          "startMs": 231477,
+          "endMs": 234577
+        }
+      ],
+      "speechStart": 231.537,
+      "speechEnd": 234.497,
+      "speechStartMs": 231537,
+      "speechEndMs": 234497,
+      "start": 231.477,
+      "end": 234.577,
+      "startMs": 231477,
+      "endMs": 234577
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "Geppetto held the bottle and Pinocchio’s hand.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Geppetto held the bottle and Pinocchio’s hand.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 241.909,
+          "speechEnd": 245.376,
+          "speechStartMs": 241909,
+          "speechEndMs": 245376,
+          "start": 241.849,
+          "end": 245.456,
+          "startMs": 241849,
+          "endMs": 245456
+        }
+      ],
+      "speechStart": 241.909,
+      "speechEnd": 245.376,
+      "speechStartMs": 241909,
+      "speechEndMs": 245376,
+      "start": 241.849,
+      "end": 245.456,
+      "startMs": 241849,
+      "endMs": 245456
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "Together they climbed through the Shark’s throat.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "Together they climbed through the Shark’s throat.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 246.156,
+          "speechEnd": 249.415,
+          "speechStartMs": 246156,
+          "speechEndMs": 249415,
+          "start": 246.096,
+          "end": 249.47,
+          "startMs": 246096,
+          "endMs": 249470
+        }
+      ],
+      "speechStart": 246.156,
+      "speechEnd": 249.415,
+      "speechStartMs": 246156,
+      "speechEndMs": 249415,
+      "start": 246.096,
+      "end": 249.47,
+      "startMs": 246096,
+      "endMs": 249470
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "At last, cool air touched Pinocchio’s face.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "At last, cool air touched Pinocchio’s face.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 256.387,
+          "speechEnd": 260.734,
+          "speechStartMs": 256387,
+          "speechEndMs": 260734,
+          "start": 256.327,
+          "end": 260.814,
+          "startMs": 256327,
+          "endMs": 260814
+        }
+      ],
+      "speechStart": 256.387,
+      "speechEnd": 260.734,
+      "speechStartMs": 256387,
+      "speechEndMs": 260734,
+      "start": 256.327,
+      "end": 260.814,
+      "startMs": 256327,
+      "endMs": 260814
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "Three rows of teeth stood before the sea.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Three rows of teeth stood before the sea.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 268.733,
+          "speechEnd": 272.133,
+          "speechStartMs": 268733,
+          "speechEndMs": 272133,
+          "start": 268.693,
+          "end": 272.213,
+          "startMs": 268693,
+          "endMs": 272213
+        }
+      ],
+      "speechStart": 268.733,
+      "speechEnd": 272.133,
+      "speechStartMs": 268733,
+      "speechEndMs": 272133,
+      "start": 268.693,
+      "end": 272.213,
+      "startMs": 268693,
+      "endMs": 272213
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S075",
+      "beatId": "B06",
+      "text": "They moved towards the edge of the tongue.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "They moved towards the edge of the tongue.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 279.34,
+          "speechEnd": 282.651,
+          "speechStartMs": 279340,
+          "speechEndMs": 282651,
+          "start": 279.28,
+          "end": 282.731,
+          "startMs": 279280,
+          "endMs": 282731
+        }
+      ],
+      "speechStart": 279.34,
+      "speechEnd": 282.651,
+      "speechStartMs": 279340,
+      "speechEndMs": 282651,
+      "start": 279.28,
+      "end": 282.731,
+      "startMs": 279280,
+      "endMs": 282731
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S076",
+      "beatId": "B07",
+      "text": "Suddenly, the Shark took a deep breath.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Suddenly, the Shark took a deep breath.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 283.584,
+          "speechEnd": 285.971,
+          "speechStartMs": 283584,
+          "speechEndMs": 285971,
+          "start": 283.524,
+          "end": 286.026,
+          "startMs": 283524,
+          "endMs": 286026
+        }
+      ],
+      "speechStart": 283.584,
+      "speechEnd": 285.971,
+      "speechStartMs": 283584,
+      "speechEndMs": 285971,
+      "start": 283.524,
+      "end": 286.026,
+      "startMs": 283524,
+      "endMs": 286026
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S081",
+      "beatId": "B07",
+      "text": "The candle hit the water and went out.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "The candle hit the water and went out.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 299.629,
+          "speechEnd": 302.089,
+          "speechStartMs": 299629,
+          "speechEndMs": 302089,
+          "start": 299.579,
+          "end": 302.169,
+          "startMs": 299579,
+          "endMs": 302169
+        }
+      ],
+      "speechStart": 299.629,
+      "speechEnd": 302.089,
+      "speechStartMs": 299629,
+      "speechEndMs": 302089,
+      "start": 299.579,
+      "end": 302.169,
+      "startMs": 299579,
+      "endMs": 302169
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio waited for the Shark’s slow breathing.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio waited for the Shark’s slow breathing.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 321.127,
+          "speechEnd": 324.486,
+          "speechStartMs": 321127,
+          "speechEndMs": 324486,
+          "start": 321.087,
+          "end": 324.566,
+          "startMs": 321087,
+          "endMs": 324566
+        }
+      ],
+      "speechStart": 321.127,
+      "speechEnd": 324.486,
+      "speechStartMs": 321127,
+      "speechEndMs": 324486,
+      "start": 321.087,
+      "end": 324.566,
+      "startMs": 321087,
+      "endMs": 324566
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "Geppetto climbed onto the puppet’s strong back.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Geppetto climbed onto the puppet’s strong back.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 338.794,
+          "speechEnd": 342.004,
+          "speechStartMs": 338794,
+          "speechEndMs": 342004,
+          "start": 338.734,
+          "end": 342.084,
+          "startMs": 338734,
+          "endMs": 342084
+        }
+      ],
+      "speechStart": 338.794,
+      "speechEnd": 342.004,
+      "speechStartMs": 338794,
+      "speechEndMs": 342004,
+      "start": 338.734,
+      "end": 342.084,
+      "startMs": 338734,
+      "endMs": 342084
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S096",
+      "beatId": "B08",
+      "text": "Then Pinocchio’s wooden body rose again.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "Then Pinocchio’s wooden body rose again.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 353.139,
+          "speechEnd": 355.843,
+          "speechStartMs": 353139,
+          "speechEndMs": 355843,
+          "start": 353.111,
+          "end": 355.923,
+          "startMs": 353111,
+          "endMs": 355923
+        }
+      ],
+      "speechStart": 353.139,
+      "speechEnd": 355.843,
+      "speechStartMs": 353139,
+      "speechEndMs": 355843,
+      "start": 353.111,
+      "end": 355.923,
+      "startMs": 353111,
+      "endMs": 355923
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S100",
+      "beatId": "B08",
+      "text": "Pinocchio used the stars to choose a direction.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Pinocchio used the stars to choose a direction.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 365.822,
+          "speechEnd": 369.361,
+          "speechStartMs": 365822,
+          "speechEndMs": 369361,
+          "start": 365.762,
+          "end": 369.441,
+          "startMs": 365762,
+          "endMs": 369441
+        }
+      ],
+      "speechStart": 365.822,
+      "speechEnd": 369.361,
+      "speechStartMs": 365822,
+      "speechEndMs": 369361,
+      "start": 365.762,
+      "end": 369.441,
+      "startMs": 365762,
+      "endMs": 369441
+    }
+  ]
+}

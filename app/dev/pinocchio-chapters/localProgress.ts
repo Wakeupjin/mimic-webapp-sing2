@@ -8,6 +8,15 @@ const PROGRESS_EVENT = "pinocchio-progress";
 
 export type ChapterProgress = Record<string, LessonMode[]>;
 
+export const LEGACY_PINOCCHIO_PROGRESS_SCOPE = "v2-core";
+export const LEGACY_PINOCCHIO_LESSON_NUMBER_BASE = 300;
+
+function storageKey(scope: string) {
+  return scope === LEGACY_PINOCCHIO_PROGRESS_SCOPE
+    ? STORAGE_KEY
+    : `mimic:pinocchio-chapters:progress:${scope}`;
+}
+
 function sanitizeModes(value: unknown): LessonMode[] {
   if (!Array.isArray(value)) return [];
   return MODE_ORDER.filter((mode) => value.includes(mode));
@@ -24,31 +33,37 @@ function sanitizeProgress(value: unknown): ChapterProgress {
   );
 }
 
-export function readProgress(): ChapterProgress {
+export function readProgress(scope = LEGACY_PINOCCHIO_PROGRESS_SCOPE): ChapterProgress {
   if (typeof window === "undefined") return {};
   try {
-    const saved = window.localStorage.getItem(STORAGE_KEY);
+    const key = storageKey(scope);
+    const saved = window.localStorage.getItem(key);
     if (saved) return sanitizeProgress(JSON.parse(saved));
 
+    if (scope !== LEGACY_PINOCCHIO_PROGRESS_SCOPE) return {};
     const legacy = sanitizeModes(JSON.parse(window.localStorage.getItem(LEGACY_STORAGE_KEY) || "[]"));
     if (!legacy.length) return {};
     const migrated = { "1": legacy };
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
+    window.localStorage.setItem(key, JSON.stringify(migrated));
     return migrated;
   } catch {
     return {};
   }
 }
 
-export function readCompleted(chapterNumber: number) {
-  return readProgress()[String(chapterNumber)] ?? [];
+export function readCompleted(chapterNumber: number, scope = LEGACY_PINOCCHIO_PROGRESS_SCOPE) {
+  return readProgress(scope)[String(chapterNumber)] ?? [];
 }
 
-export function mergeRemoteProgress(rows: ProgressRow[]) {
-  const progress = readProgress();
+export function mergeRemoteProgress(
+  rows: ProgressRow[],
+  scope = LEGACY_PINOCCHIO_PROGRESS_SCOPE,
+  lessonNumberBase = LEGACY_PINOCCHIO_LESSON_NUMBER_BASE,
+) {
+  const progress = readProgress(scope);
 
   for (const row of rows) {
-    const chapterNumber = row.lesson_number - 300;
+    const chapterNumber = row.lesson_number - lessonNumberBase;
     const mode = row.mode as LessonMode;
     if (
       !row.completed
@@ -66,25 +81,29 @@ export function mergeRemoteProgress(rows: ProgressRow[]) {
   }
 
   const merged = sanitizeProgress(progress);
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+  window.localStorage.setItem(storageKey(scope), JSON.stringify(merged));
   return merged;
 }
 
-export function completeMode(chapterNumber: number, mode: LessonMode) {
+export function completeMode(
+  chapterNumber: number,
+  mode: LessonMode,
+  scope = LEGACY_PINOCCHIO_PROGRESS_SCOPE,
+) {
   if (typeof window === "undefined") return;
-  const progress = readProgress();
+  const progress = readProgress(scope);
   const completed = progress[String(chapterNumber)] ?? [];
   progress[String(chapterNumber)] = MODE_ORDER.filter(
     (item) => item === mode || completed.includes(item)
   );
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  window.localStorage.setItem(storageKey(scope), JSON.stringify(progress));
   window.dispatchEvent(new Event(PROGRESS_EVENT));
 }
 
-export function resetProgress() {
+export function resetProgress(scope = LEGACY_PINOCCHIO_PROGRESS_SCOPE) {
   if (typeof window === "undefined") return;
-  window.localStorage.removeItem(STORAGE_KEY);
-  window.localStorage.removeItem(LEGACY_STORAGE_KEY);
+  window.localStorage.removeItem(storageKey(scope));
+  if (scope === LEGACY_PINOCCHIO_PROGRESS_SCOPE) window.localStorage.removeItem(LEGACY_STORAGE_KEY);
   window.dispatchEvent(new Event(PROGRESS_EVENT));
 }
 
