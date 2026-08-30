@@ -12,7 +12,7 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-DEPLOYING
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
@@ -24,7 +24,7 @@ Close the remaining behavioral and microinteraction gaps between Pinocchio Found
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Implemented the full Pinocchio Foundation behavior pass against Sing2: Watch time/seek/resume, Mimic's eight-slot cadence and guarded navigation, Guess's x3/ABC/sound/feedback/auto-next state machine, Word's listen-listen-mimic cadence, fixed chip positions, sound feedback and chameleon reaction, plus per-mode progress hydration. Added pause-safe workflow timers, isolated lock-hint clocks, completed-state guards, and a shared mobile-safe AudioContext.
+Deployed the full Pinocchio Foundation behavior pass against Sing2 to Production. Signed-in live QA verified Watch's playback-synchronized clock and progress bar, Mimic's playback-only active-green slot, Guess's three-view flow and Correct feedback, and Word's listen/listen/mimic sequence, ten visible fixed-position chips, Correct feedback, chameleon eating state, and 01/10 → 02/10 transition. The deployed release also includes seek/resume, guarded navigation, correct/wrong melodies, pause-safe timers, completion persistence, and per-mode remote progress hydration.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
@@ -43,17 +43,17 @@ Implemented the full Pinocchio Foundation behavior pass against Sing2: Watch tim
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-`npm run validate:pinocchio-behavior-parity` passes 26/26; `npm run validate:pinocchio-ui-parity` passes 9/9; `npm run validate:pinocchio-visual-release` passes 5/5; `npx tsc --noEmit` passes; the final 101-page Production build passes after the pause/audio hardening.
+`npm run validate:pinocchio-behavior-parity` passes 26/26; `npm run validate:pinocchio-ui-parity` passes 9/9; `npm run validate:pinocchio-visual-release` passes 5/5; `npx tsc --noEmit` passes; the final 101-page Production build passes. GitHub commit `3579366dc65c7443d47f1fe831b4aa788d3442dd` received a successful Vercel Production status, and signed-in live QA passed all four learning modes on `mimicenglish.vercel.app`.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Local browser QA is authentication-blocked on the separate localhost origin. After the final build, deploy the exact commit through the linked GitHub main → Vercel Production path and verify the signed-in Production routes directly. Keep Pinocchio's explicit completion persistence rather than copying Sing2's known final Guess/Word persistence defects.
+No release blocker remains. The automated browser runtime cannot render Web Audio output, so the live pass verified the exact Correct/Again trigger states while the executable parity suite verifies the C5-E5-G5 and G5-E5-C5 note sequences. Keep Pinocchio's explicit completion persistence rather than copying Sing2's known final Guess/Word persistence defects.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Run the final Production build and diff check, commit the scoped behavior release, push the exact commit to GitHub main, wait for Vercel Production success, then verify Watch/Mimic/Guess/Word on the signed-in live site.
+No implementation action remains. Treat the 26-contract behavior suite as a required release gate for future Pinocchio learning-mode changes.
 <!-- HANDOFF:NEXT_ACTION:END -->

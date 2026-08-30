@@ -1279,3 +1279,13 @@ The shared sound engine now reuses one AudioContext for reliable repeated feedba
 - app/lib/progressGate.ts
 - package.json
 - tests/pinocchio-learning-behavior-parity.test.mjs
+
+## 2026-08-31 — codex / Production behavioral-parity release complete
+
+Published the Sing2 behavioral-parity release through the existing GitHub `main` → Vercel Production pipeline. Commit `3579366dc65c7443d47f1fe831b4aa788d3442dd` received a successful Production deployment status.
+
+Signed-in live verification on `mimicenglish.vercel.app` confirmed: Watch advanced from `00 : 10` to `00 : 12` while its bar moved from 2.67% to 3.13%; Mimic exposed 30 lines and lit exactly one active slot during playback; Guess completed its three-view/A-B-C sequence and showed Correct on the right answer; Word completed listen/listen/mimic, exposed exactly ten visible stable chips, showed Correct with the chameleon eating state, and advanced `01 / 10` to `02 / 10`.
+
+**Validation:** behavior parity 26/26, structural/mobile UI parity 9/9, visual release gate 5/5, TypeScript, diff check, 101-page Production build, Vercel status, and signed-in four-mode live smoke all passed.
+
+**Root cause of the previous incomplete pass:** the earlier release gate proved shared geometry, route wiring, visual assets, and answer visibility, but did not encode click → playback → active-green → feedback sound → counter → next-step behavior. Pinocchio also maintained a separate large state machine from Sing2, so visual parity could pass while runtime timing and feedback still diverged. The new 26-contract executable gate closes that gap while intentionally preserving Pinocchio's stronger completion persistence.
