@@ -12,19 +12,19 @@ Codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-PINOCCHIO CHAPTER 1–12 CORE — POST-MERGE BUILD PASSED, READY FOR MAIN PUSH
+PINOCCHIO CHAPTER 1–12 CORE — PRODUCTION DEPLOYED AND VERIFIED
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Deploy the validated Pinocchio Chapter 1–12 Core course to production and verify the live learning flow
+Review the live Pinocchio Chapter 1–12 Core course and complete human audio/classroom QA
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-The latest production main first reverted PRs #35, #34, and #33, removing Story Finale UI, routes, progress integration, and the story-conversation API while preserving the concept in the product backlog. On top of that clean production state, the former Pinocchio Session 1 pilot is now a data-driven Chapter 1–12 Core course that preserves the Sing 2 Selecting → Watch → Mimic → Guess → Word interaction. All twelve Chapters have independent sequential progress, paid-plan Eleven v3 Lily British masters, exact line/Mimic timelines, original Living Storybook panoramas, 30 ms segment stops, item-level learner gates, and a final Chapter 12 Home exit.
+The latest production main first reverted PRs #35, #34, and #33, removing Story Finale UI, routes, progress integration, and the story-conversation API while preserving the concept in the product backlog. On top of that clean production state, the data-driven Pinocchio Chapter 1–12 Core course was deployed to Vercel Production from merge commit `a314945`. All twelve Chapters preserve the Sing 2 Selecting → Watch → Mimic → Guess → Word interaction and have independent sequential progress, paid-plan Eleven v3 Lily British masters, exact line/Mimic timelines, original Living Storybook panoramas, 30 ms segment stops, item-level learner gates, and a final Chapter 12 Home exit.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
@@ -48,7 +48,7 @@ The latest production main first reverted PRs #35, #34, and #33, removing Story 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-After merging current production main, both Pinocchio content validators, `npx tsc --noEmit`, `git diff --check`, and a clean 40-route `next build` pass. The Core media validator confirms source Chapters 1–36 in order, twelve matching canonical/public MP3-timeline-art sets, 17.63 minutes of continuous Lily narration, 192 Watch lines, 360 Mimic units, 120 Guess items, and 120 Word items. Browser QA traversed every mode in Chapters 1–12 with real Chapter 1/2/12 media and zero console errors. The production Story Finale removal remains intact with no retelling routes.
+After merging current production main, both Pinocchio content validators, `npx tsc --noEmit`, `git diff --check`, and a clean 40-route `next build` pass. Vercel Production reported success. The live Chapter route, Chapter 1/12 MP3s, and Chapter 12 art return 200 with correct content types; browser QA confirms live Chapter 1 Lily playback, Chapter-only terminology, sequential mode gates, and zero console errors. The Core media validator confirms source Chapters 1–36 in order, twelve matching canonical/public MP3-timeline-art sets, 17.63 minutes of continuous Lily narration, 192 Watch lines, 360 Mimic units, 120 Guess items, and 120 Word items. Removed Story Finale routes remain 404.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
@@ -60,5 +60,5 @@ All twelve Core masters still need a human listen-through for emotion, pronuncia
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Run the post-merge validators and production build, push the merged commit to `main`, then verify the live Chapter 1–12 route, audio, art, and Story Finale absence.
+Run a human listen-through of all twelve masters and one sixty-minute classroom pacing pilot before expanding Foundation/Studio media.
 <!-- HANDOFF:NEXT_ACTION:END -->

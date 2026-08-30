@@ -1004,3 +1004,25 @@ Reverted PRs #35, #34, and #33 in reverse order, removing Story Finale UI, route
 - docs/product-backlog.md plus reverse reverts of the Story Finale files from PRs #33-#35
 
 **Open risks:** Existing retelling evaluation rows may remain in Supabase but are no longer read or shown; no production data was changed.
+
+## 2026-08-30 — user / deployment request
+
+Asked to deploy the validated Pinocchio Chapter 1–12 Core course to production.
+
+## 2026-08-30 — codex / production deployment completed
+
+Merged the latest production `main` into the validated Pinocchio branch,
+preserving the production removal of Story Finale, then pushed merge commit
+`a314945` to `main`. Vercel reported the Production deployment successful.
+
+**Validation:** Post-merge TypeScript, both Pinocchio content validators,
+whitespace checks, and the 40-route production build passed. The live route at
+`https://mimic-webapp-sing2.vercel.app/dev/pinocchio-chapters/1` returns 200,
+renders Chapter-only terminology and sequential mode gates, and plays the live
+Chapter 1 Lily MP3. Live Chapter 1 and Chapter 12 masters return `audio/mpeg`,
+Chapter 12 art returns `image/png`, and the removed Story Finale routes remain
+404. Browser console errors: zero.
+
+**Open risks:** Human listen-through, classroom pacing, Foundation/Studio
+media, Lily's 2026-12-31 retirement, and Korean-market rights confirmation
+remain follow-ups.
