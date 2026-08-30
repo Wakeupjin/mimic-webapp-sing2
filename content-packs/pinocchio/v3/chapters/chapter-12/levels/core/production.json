@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-12",
+  "level": "core",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      450,
+      510
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Begin physically exhausted, keep the work sequences steady and warm, hold Lamp-Wick's ending with restraint, and make the transformation quiet and earned.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for learners to process the story.",
+    "beatCues": {
+      "B01": "[with grateful relief]",
+      "B02": "[firmly]",
+      "B03": "[humbly]",
+      "B04": "[steadily]",
+      "B05": "[sorrowfully]",
+      "B06": "[with growing warmth]",
+      "B07": "[selflessly]",
+      "B08": "[with quiet joy]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "Pinocchio v3 Story Pack, all chapters and levels",
+      "note": "The product owner selected Lily as the Pinocchio Story Pack's default British narrator."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": null,
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2422,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:8d814610477fd09b4582d37279c17435a9ca644fd0a8c1c0971c850878c75346",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": null,
+    "activitiesChecksum": "sha256:594dc45d6daceecc489ff0917b775842525b1463c3711c5b5a05c3fee4ff50fb"
+  },
+  "outputs": {
+    "masterAudio": null,
+    "sentenceTimeline": null,
+    "forcedAlignment": null,
+    "provenance": null,
+    "voiceProfileSnapshot": null,
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

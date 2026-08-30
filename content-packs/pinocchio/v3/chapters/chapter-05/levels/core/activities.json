@@ -1,0 +1,1226 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-05",
+  "level": "core",
+  "source": "master.txt",
+  "selectionPolicy": "Thirty unique full source sentences are selected from the continuous Watch master. Each full sentence remains the Mimic item; nested chunks divide delivery only at natural punctuation or meaning boundaries. Every chunk is an exact 2–12-word source range, and fixed midpoint splitting is prohibited.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "At dawn, the blue-haired Fairy sent a Falcon to the oak.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "At dawn, the blue-haired Fairy sent a Falcon to the oak.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Fairy's Rescue”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S002",
+      "beatId": "B01",
+      "text": "Its sharp beak cut the rope, and Pinocchio dropped gently below.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Its sharp beak cut the rope, and Pinocchio dropped gently below.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Fairy's Rescue”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S010",
+      "beatId": "B01",
+      "text": "The Cricket offered a simpler diagnosis: the patient was disobedient.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "The Cricket offered a simpler diagnosis: the patient was disobedient.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Fairy's Rescue”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S012",
+      "beatId": "B01",
+      "text": "His tears proved enough life for the doctors to end their debate.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "His tears proved enough life for the doctors to end their debate.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Fairy's Rescue”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio sat up, saw the dark spoonful, and refused immediately.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio sat up, saw the dark spoonful, and refused immediately.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm, internal pausing, and final-item stress",
+      "selectionReason": "A complete source sentence from “The Bitter Medicine”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Pinocchio grabbed the cup and swallowed every drop in one brave gulp.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Pinocchio grabbed the cup and swallowed every drop in one brave gulp.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Bitter Medicine”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "“Fear often tells a larger story than truth,” the Fairy replied.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "“Fear often tells a larger story than truth,” the Fairy replied.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation, quotation contour, and reporting rhythm",
+      "selectionReason": "A complete source sentence from “The Bitter Medicine”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "Safe in bed, Pinocchio moved four coins from his mouth to his pocket.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Safe in bed,",
+          "sourceTextRange": [
+            0,
+            12
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M08-C02",
+          "text": "Pinocchio moved four coins from his mouth to his pocket.",
+          "sourceTextRange": [
+            13,
+            69
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Bitter Medicine”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S026",
+      "beatId": "B03",
+      "text": "The Fairy asked how he had come to the oak alone.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "The Fairy asked how he had come to the oak alone.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “A Nose Full of Lies”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "At once, his nose stretched across the pillow.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "At once, his nose stretched across the pillow.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “A Nose Full of Lies”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S036",
+      "beatId": "B03",
+      "text": "“A lie becomes visible even when nobody can see your nose,” she said.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "“A lie becomes visible even when nobody can see your nose,”",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M11-C02",
+          "text": "she said.",
+          "sourceTextRange": [
+            60,
+            69
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "dialogue intonation, quotation contour, and reporting rhythm",
+      "selectionReason": "A complete source sentence from “A Nose Full of Lies”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "Pinocchio confessed that four coins were still safely hidden in his pocket.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Pinocchio confessed that four coins were still safely hidden in his pocket.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “A Nose Full of Lies”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S039",
+      "beatId": "B04",
+      "text": "The Fairy called Woodpeckers to shorten the troublesome nose.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "The Fairy called Woodpeckers to shorten the troublesome nose.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Straight Road”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S042",
+      "beatId": "B04",
+      "text": "The Fairy said Geppetto was coming and might arrive by morning.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "The Fairy said Geppetto was coming and might arrive by morning.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Straight Road”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S044",
+      "beatId": "B04",
+      "text": "He begged to meet his father on the road and guide him home.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "He begged to meet his father on the road",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M15-C02",
+          "text": "and guide him home.",
+          "sourceTextRange": [
+            41,
+            60
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Straight Road”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "“A straight road still requires a steady choice,” she reminded him.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "“A straight road still requires a steady choice,” she reminded him.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation, quotation contour, and reporting rhythm",
+      "selectionReason": "A complete source sentence from “The Straight Road”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S049",
+      "beatId": "B05",
+      "text": "Near the edge of town, two familiar figures waited beside a fountain.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Near the edge of town, two familiar figures waited beside a fountain.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Same Sweet Promise”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S050",
+      "beatId": "B05",
+      "text": "The Fox leaned on one leg, and the Cat wore a new bandage.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "The Fox leaned on one leg,",
+          "sourceTextRange": [
+            0,
+            26
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M18-C02",
+          "text": "and the Cat wore a new bandage.",
+          "sourceTextRange": [
+            27,
+            58
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Same Sweet Promise”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "Pinocchio remembered the Fairy’s warning and began to walk past them.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Pinocchio remembered the Fairy’s warning and began to walk past them.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Same Sweet Promise”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "The strange town should have warned him, but hope closed his eyes.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "The strange town should have warned him, but hope closed his eyes.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast connector, clause boundary, and main stress",
+      "selectionReason": "A complete source sentence from “The Same Sweet Promise”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "At the Field of Wonders, the Fox selected a patch of dry earth.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "At the Field of Wonders,",
+          "sourceTextRange": [
+            0,
+            24
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M21-C02",
+          "text": "the Fox selected a patch of dry earth.",
+          "sourceTextRange": [
+            25,
+            63
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “Four Coins in the Earth”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "The Fox instructed him to fetch more water from a distant stream.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "The Fox instructed him to fetch more water from a distant stream.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “Four Coins in the Earth”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "One hour passed, then another, but the earth remained empty.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "One hour passed, then another, but the earth remained empty.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast connector, clause boundary, and main stress",
+      "selectionReason": "A complete source sentence from “Four Coins in the Earth”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S073",
+      "beatId": "B07",
+      "text": "A Parrot nearby began laughing at him.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "A Parrot nearby began laughing at him.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Parrot's Truth”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S076",
+      "beatId": "B07",
+      "text": "While Pinocchio fetched water, the Fox and Cat had stolen every coin.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "While Pinocchio fetched water, the Fox and Cat had stolen every coin.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Parrot's Truth”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "Pinocchio ran to the courthouse and demanded justice.",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Pinocchio ran to the courthouse and demanded justice.",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “The Parrot's Truth”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S080",
+      "beatId": "B08",
+      "text": "A stern Gorilla judge listened while guards recorded the complaint.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "A stern Gorilla judge listened while guards recorded the complaint.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “Justice Turned Upside Down”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S083",
+      "beatId": "B08",
+      "text": "“This puppet has been foolish enough to lose his own money,” he said.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "“This puppet has been foolish enough to lose his own money,”",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M28-C02",
+          "text": "he said.",
+          "sourceTextRange": [
+            61,
+            69
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "dialogue intonation, quotation contour, and reporting rhythm",
+      "selectionReason": "A complete source sentence from “Justice Turned Upside Down”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S096",
+      "beatId": "B08",
+      "text": "At last, a royal celebration brought an order releasing every criminal.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "At last, a royal celebration brought an order releasing every criminal.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “Justice Turned Upside Down”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "Ahead waited a long road where clever words would not be enough.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Ahead waited a long road where clever words would not be enough.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural story pacing",
+      "selectionReason": "A complete source sentence from “Justice Turned Upside Down”; nested chunks preserve its syntax while giving the learner natural breath and meaning boundaries."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The Falcon cuts the rope and completes the Fairy’s first rescue order.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S002",
+          "text": "Its sharp beak cut the rope, and Pinocchio dropped gently below."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S030",
+          "text": "At once, his nose stretched across the pillow."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S058",
+          "text": "Pinocchio remembered the Fairy’s warning and began to walk past them."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G02",
+      "beatId": "B01",
+      "cue": "The Cricket identifies disobedience as Pinocchio’s real problem.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S036",
+          "text": "“A lie becomes visible even when nobody can see your nose,” she said."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S010",
+          "text": "The Cricket offered a simpler diagnosis: the patient was disobedient."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S069",
+          "text": "The Fox instructed him to fetch more water from a distant stream."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G03",
+      "beatId": "B02",
+      "cue": "Pinocchio responds to the Rabbits’ warning by swallowing every drop of medicine.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S042",
+          "text": "The Fairy said Geppetto was coming and might arrive by morning."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S076",
+          "text": "While Pinocchio fetched water, the Fox and Cat had stolen every coin."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S020",
+          "text": "Pinocchio grabbed the cup and swallowed every drop in one brave gulp."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G04",
+      "beatId": "B03",
+      "cue": "Pinocchio’s first lie immediately changes the length of his nose.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S030",
+          "text": "At once, his nose stretched across the pillow."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S058",
+          "text": "Pinocchio remembered the Fairy’s warning and began to walk past them."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S084",
+          "text": "“Therefore, prison will give him time to become wiser.”"
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G05",
+      "beatId": "B03",
+      "cue": "The Fairy explains that lies become visible even without a growing nose.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S069",
+          "text": "The Fox instructed him to fetch more water from a distant stream."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S036",
+          "text": "“A lie becomes visible even when nobody can see your nose,” she said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S002",
+          "text": "Its sharp beak cut the rope, and Pinocchio dropped gently below."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G06",
+      "beatId": "B04",
+      "cue": "The Fairy tells Pinocchio that Geppetto may arrive by morning.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S076",
+          "text": "While Pinocchio fetched water, the Fox and Cat had stolen every coin."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S010",
+          "text": "The Cricket offered a simpler diagnosis: the patient was disobedient."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S042",
+          "text": "The Fairy said Geppetto was coming and might arrive by morning."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G07",
+      "beatId": "B05",
+      "cue": "Remembering the Fairy’s warning almost helps Pinocchio reject the swindlers.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S058",
+          "text": "Pinocchio remembered the Fairy’s warning and began to walk past them."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S084",
+          "text": "“Therefore, prison will give him time to become wiser.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S020",
+          "text": "Pinocchio grabbed the cup and swallowed every drop in one brave gulp."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G08",
+      "beatId": "B06",
+      "cue": "The Fox sends Pinocchio away and creates time to steal the buried coins.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S002",
+          "text": "Its sharp beak cut the rope, and Pinocchio dropped gently below."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S069",
+          "text": "The Fox instructed him to fetch more water from a distant stream."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S030",
+          "text": "At once, his nose stretched across the pillow."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G09",
+      "beatId": "B07",
+      "cue": "The Parrot states what happened while Pinocchio was fetching water.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S010",
+          "text": "The Cricket offered a simpler diagnosis: the patient was disobedient."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S036",
+          "text": "“A lie becomes visible even when nobody can see your nose,” she said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S076",
+          "text": "While Pinocchio fetched water, the Fox and Cat had stolen every coin."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "The judge decides that prison should make the cheated victim wiser.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S084",
+          "text": "“Therefore, prison will give him time to become wiser.”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S020",
+          "text": "Pinocchio grabbed the cup and swallowed every drop in one brave gulp."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S042",
+          "text": "The Fairy said Geppetto was coming and might arrive by morning."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Exact but incompatible moments from distant beats of the same continuous Chapter; actor, cause, timing, or consequence differs from the cue."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "Though wooden, Pinocchio seemed weakened by sorrow.",
+      "tokens": [
+        "Though",
+        "wooden,",
+        "Pinocchio",
+        "seemed",
+        "weakened",
+        "by",
+        "sorrow."
+      ],
+      "focus": "reduced Though concessive clause followed by a linking-verb main clause"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S010",
+      "beatId": "B01",
+      "text": "The Cricket offered a simpler diagnosis: the patient was disobedient.",
+      "tokens": [
+        "The",
+        "Cricket",
+        "offered",
+        "a",
+        "simpler",
+        "diagnosis:",
+        "the",
+        "patient",
+        "was",
+        "disobedient."
+      ],
+      "focus": "colon introducing an explanatory independent clause"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "She explained that unpleasant help could still be necessary help.",
+      "tokens": [
+        "She",
+        "explained",
+        "that",
+        "unpleasant",
+        "help",
+        "could",
+        "still",
+        "be",
+        "necessary",
+        "help."
+      ],
+      "focus": "that content clause containing modal could and linking verb be"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Pinocchio grabbed the cup and swallowed every drop in one brave gulp.",
+      "tokens": [
+        "Pinocchio",
+        "grabbed",
+        "the",
+        "cup",
+        "and",
+        "swallowed",
+        "every",
+        "drop",
+        "in",
+        "one",
+        "brave",
+        "gulp."
+      ],
+      "focus": "two simple-past actions coordinated with and"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "“Fear often tells a larger story than truth,” the Fairy replied.",
+      "tokens": [
+        "“Fear",
+        "often",
+        "tells",
+        "a",
+        "larger",
+        "story",
+        "than",
+        "truth,”",
+        "the",
+        "Fairy",
+        "replied."
+      ],
+      "focus": "larger than comparison inside direct speech plus a reporting clause"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "At once, his nose stretched across the pillow.",
+      "tokens": [
+        "At",
+        "once,",
+        "his",
+        "nose",
+        "stretched",
+        "across",
+        "the",
+        "pillow."
+      ],
+      "focus": "fronted At once sequence phrase followed by a simple-past clause"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S036",
+      "beatId": "B03",
+      "text": "“A lie becomes visible even when nobody can see your nose,” she said.",
+      "tokens": [
+        "“A",
+        "lie",
+        "becomes",
+        "visible",
+        "even",
+        "when",
+        "nobody",
+        "can",
+        "see",
+        "your",
+        "nose,”",
+        "she",
+        "said."
+      ],
+      "focus": "even when clause and modal can inside direct speech plus a reporting clause"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "“A straight road still requires a steady choice,” she reminded him.",
+      "tokens": [
+        "“A",
+        "straight",
+        "road",
+        "still",
+        "requires",
+        "a",
+        "steady",
+        "choice,”",
+        "she",
+        "reminded",
+        "him."
+      ],
+      "focus": "direct speech with adverb still followed by a reporting clause"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "The Fox instructed him to fetch more water from a distant stream.",
+      "tokens": [
+        "The",
+        "Fox",
+        "instructed",
+        "him",
+        "to",
+        "fetch",
+        "more",
+        "water",
+        "from",
+        "a",
+        "distant",
+        "stream."
+      ],
+      "focus": "instructed + object + to-infinitive complement"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S084",
+      "beatId": "B08",
+      "text": "“Therefore, prison will give him time to become wiser.”",
+      "tokens": [
+        "“Therefore,",
+        "prison",
+        "will",
+        "give",
+        "him",
+        "time",
+        "to",
+        "become",
+        "wiser.”"
+      ],
+      "focus": "fronted Therefore result marker plus modal will and a to-infinitive"
+    }
+  ]
+}

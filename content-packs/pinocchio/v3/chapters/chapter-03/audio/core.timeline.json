@@ -1,0 +1,2677 @@
+{
+  "schemaVersion": "1.1.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-03",
+  "level": "core",
+  "generatedAt": "2026-08-30T10:08:54.309Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accent": "British English",
+  "outputFormat": "mp3_44100_128",
+  "timingPrecision": "milliseconds",
+  "seed": 2411,
+  "source": "single-editorial-master-rendered-as-2-coherent-acts",
+  "alignmentSource": "per-act-elevenlabs-tts-duration-fitted",
+  "masterTextSha256": "7979ea17efbf553dc4b25269e9be0fd79cd6a858e68a3901e489666b9e48e7d8",
+  "activitiesSha256": "33cf7a9e8500591b591477682fcab1839a8d93eb71f9fa9809888bf7e7c1cef7",
+  "duration": 527.36,
+  "acts": [
+    {
+      "actId": "act-01",
+      "beatIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "start": 0,
+      "end": 289.138,
+      "concatenationOffset": 0,
+      "sourceAudioDuration": 288.96,
+      "sourceAlignmentEnd": 288.996,
+      "sourceAlignmentTimeScale": 0.999875431,
+      "requestId": "RRtEra5Ns0yCvJt9Na4X",
+      "characters": 3466
+    },
+    {
+      "actId": "act-02",
+      "beatIds": [
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "start": 289.138,
+      "end": 527.36,
+      "concatenationOffset": 288.96,
+      "sourceAudioDuration": 238.4,
+      "sourceAlignmentEnd": 238.424,
+      "sourceAlignmentTimeScale": 0.999899339,
+      "requestId": "kKlVcoRJaAeqPMj61JEz",
+      "characters": 3380
+    }
+  ],
+  "seams": [
+    {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S052",
+      "beforeSentenceId": "S053",
+      "at": 289.138,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  ],
+  "seam": {
+    "afterActId": "act-01",
+    "beforeActId": "act-02",
+    "afterSentenceId": "S052",
+    "beforeSentenceId": "S053",
+    "at": 289.138,
+    "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+  },
+  "beats": [
+    {
+      "beatId": "B01",
+      "title": "School or Music",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "start": 0.077,
+      "end": 67.143,
+      "startMs": 77,
+      "endMs": 67143
+    },
+    {
+      "beatId": "B02",
+      "title": "The Price of a Ticket",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S025",
+      "start": 67.143,
+      "end": 133.292,
+      "startMs": 67143,
+      "endMs": 133292
+    },
+    {
+      "beatId": "B03",
+      "title": "A Family of Puppets",
+      "sentenceStart": "S026",
+      "sentenceEnd": "S039",
+      "start": 133.292,
+      "end": 216.123,
+      "startMs": 133292,
+      "endMs": 216123
+    },
+    {
+      "beatId": "B04",
+      "title": "Fire Eater's Threat",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "start": 216.123,
+      "end": 289.138,
+      "startMs": 216123,
+      "endMs": 289138
+    },
+    {
+      "beatId": "B05",
+      "title": "Danger Moves to Harlequin",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S062",
+      "start": 289.138,
+      "end": 337.049,
+      "startMs": 289138,
+      "endMs": 337049
+    },
+    {
+      "beatId": "B06",
+      "title": "Burn Me Instead",
+      "sentenceStart": "S063",
+      "sentenceEnd": "S072",
+      "start": 337.049,
+      "end": 382.416,
+      "startMs": 337049,
+      "endMs": 382416
+    },
+    {
+      "beatId": "B07",
+      "title": "A Feast, Not a Fire",
+      "sentenceStart": "S073",
+      "sentenceEnd": "S090",
+      "start": 382.416,
+      "end": 465.853,
+      "startMs": 382416,
+      "endMs": 465853
+    },
+    {
+      "beatId": "B08",
+      "title": "One More Surprise",
+      "sentenceStart": "S091",
+      "sentenceEnd": "S103",
+      "start": 465.853,
+      "end": 527.36,
+      "startMs": 465853,
+      "endMs": 527360
+    }
+  ],
+  "lines": [
+    {
+      "sentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio left home proudly, carrying the alphabet primer beneath his arm.",
+      "speechStart": 0.157,
+      "speechEnd": 5.106,
+      "speechStartMs": 157,
+      "speechEndMs": 5106,
+      "start": 0.077,
+      "end": 5.193,
+      "startMs": 77,
+      "endMs": 5193
+    },
+    {
+      "sentenceId": "S002",
+      "beatId": "B01",
+      "text": "He imagined learning quickly and bringing Geppetto comfort in old age.",
+      "speechStart": 5.279,
+      "speechEnd": 10.506,
+      "speechStartMs": 5279,
+      "speechEndMs": 10506,
+      "start": 5.193,
+      "end": 10.599,
+      "startMs": 5193,
+      "endMs": 10599
+    },
+    {
+      "sentenceId": "S003",
+      "beatId": "B01",
+      "text": "First he would read, then write, then master every number.",
+      "speechStart": 10.693,
+      "speechEnd": 16.345,
+      "speechStartMs": 10693,
+      "speechEndMs": 16345,
+      "start": 10.599,
+      "end": 16.495,
+      "startMs": 10599,
+      "endMs": 16495
+    },
+    {
+      "sentenceId": "S004",
+      "beatId": "B01",
+      "text": "One day, he might earn enough to buy back the winter coat.",
+      "speechStart": 16.645,
+      "speechEnd": 20.744,
+      "speechStartMs": 16645,
+      "speechEndMs": 20744,
+      "start": 16.495,
+      "end": 20.851,
+      "startMs": 16495,
+      "endMs": 20851
+    },
+    {
+      "sentenceId": "S005",
+      "beatId": "B01",
+      "text": "These excellent plans marched beside him along the road to school.",
+      "speechStart": 20.957,
+      "speechEnd": 25.544,
+      "speechStartMs": 20957,
+      "speechEndMs": 25544,
+      "start": 20.851,
+      "end": 25.664,
+      "startMs": 20851,
+      "endMs": 25664
+    },
+    {
+      "sentenceId": "S006",
+      "beatId": "B01",
+      "text": "For several streets, Pinocchio walked with the seriousness of a scholar.",
+      "speechStart": 25.784,
+      "speechEnd": 30.983,
+      "speechStartMs": 25784,
+      "speechEndMs": 30983,
+      "start": 25.664,
+      "end": 31.087,
+      "startMs": 25664,
+      "endMs": 31087
+    },
+    {
+      "sentenceId": "S007",
+      "beatId": "B01",
+      "text": "Then a lively burst of drums and pipes floated over the rooftops.",
+      "speechStart": 31.191,
+      "speechEnd": 36.342,
+      "speechStartMs": 31191,
+      "speechEndMs": 36342,
+      "start": 31.087,
+      "end": 36.462,
+      "startMs": 31087,
+      "endMs": 36462
+    },
+    {
+      "sentenceId": "S008",
+      "beatId": "B01",
+      "text": "His feet slowed, although he told them firmly to continue forwards.",
+      "speechStart": 36.582,
+      "speechEnd": 42.022,
+      "speechStartMs": 36582,
+      "speechEndMs": 42022,
+      "start": 36.462,
+      "end": 42.262,
+      "startMs": 36462,
+      "endMs": 42262
+    },
+    {
+      "sentenceId": "S009",
+      "beatId": "B01",
+      "text": "“School lasts all day, but music may vanish,” he reasoned.",
+      "speechStart": 42.502,
+      "speechEnd": 48.021,
+      "speechStartMs": 42502,
+      "speechEndMs": 48021,
+      "start": 42.262,
+      "end": 48.101,
+      "startMs": 42262,
+      "endMs": 48101
+    },
+    {
+      "sentenceId": "S010",
+      "beatId": "B01",
+      "text": "He decided to listen for only one minute and then hurry back.",
+      "speechStart": 48.181,
+      "speechEnd": 52.18,
+      "speechStartMs": 48181,
+      "speechEndMs": 52180,
+      "start": 48.101,
+      "end": 52.33,
+      "startMs": 48101,
+      "endMs": 52330
+    },
+    {
+      "sentenceId": "S011",
+      "beatId": "B01",
+      "text": "The sound led him away from school and into a crowded square.",
+      "speechStart": 52.48,
+      "speechEnd": 57.22,
+      "speechStartMs": 52480,
+      "speechEndMs": 57220,
+      "start": 52.33,
+      "end": 57.305,
+      "startMs": 52330,
+      "endMs": 57305
+    },
+    {
+      "sentenceId": "S012",
+      "beatId": "B01",
+      "text": "Bright flags danced above a travelling puppet theatre.",
+      "speechStart": 57.391,
+      "speechEnd": 61.539,
+      "speechStartMs": 57391,
+      "speechEndMs": 61539,
+      "start": 57.305,
+      "end": 61.624,
+      "startMs": 57305,
+      "endMs": 61624
+    },
+    {
+      "sentenceId": "S013",
+      "beatId": "B01",
+      "text": "Already, the alphabet primer felt heavier beneath his arm.",
+      "speechStart": 61.709,
+      "speechEnd": 66.339,
+      "speechStartMs": 61709,
+      "speechEndMs": 66339,
+      "start": 61.624,
+      "end": 67.143,
+      "startMs": 61624,
+      "endMs": 67143
+    },
+    {
+      "sentenceId": "S014",
+      "beatId": "B02",
+      "text": "A painted sign promised battles, laughter, heroes, and astonishing surprises.",
+      "speechStart": 67.948,
+      "speechEnd": 75.627,
+      "speechStartMs": 67948,
+      "speechEndMs": 75627,
+      "start": 67.143,
+      "end": 75.777,
+      "startMs": 67143,
+      "endMs": 75777
+    },
+    {
+      "sentenceId": "S015",
+      "beatId": "B02",
+      "text": "Pinocchio pushed through the crowd and reached the ticket booth.",
+      "speechStart": 75.927,
+      "speechEnd": 80.346,
+      "speechStartMs": 75927,
+      "speechEndMs": 80346,
+      "start": 75.777,
+      "end": 80.466,
+      "startMs": 75777,
+      "endMs": 80466
+    },
+    {
+      "sentenceId": "S016",
+      "beatId": "B02",
+      "text": "The ticket cost four pennies, but he did not own one.",
+      "speechStart": 80.586,
+      "speechEnd": 85.465,
+      "speechStartMs": 80586,
+      "speechEndMs": 85465,
+      "start": 80.466,
+      "end": 85.625,
+      "startMs": 80466,
+      "endMs": 85625
+    },
+    {
+      "sentenceId": "S017",
+      "beatId": "B02",
+      "text": "He offered his paper jacket, his bark shoes, and his bread cap.",
+      "speechStart": 85.785,
+      "speechEnd": 91.625,
+      "speechStartMs": 85785,
+      "speechEndMs": 91625,
+      "start": 85.625,
+      "end": 91.755,
+      "startMs": 85625,
+      "endMs": 91755
+    },
+    {
+      "sentenceId": "S018",
+      "beatId": "B02",
+      "text": "The ticket seller refused every strange piece of clothing.",
+      "speechStart": 91.885,
+      "speechEnd": 96.104,
+      "speechStartMs": 91885,
+      "speechEndMs": 96104,
+      "start": 91.755,
+      "end": 96.254,
+      "startMs": 91755,
+      "endMs": 96254
+    },
+    {
+      "sentenceId": "S019",
+      "beatId": "B02",
+      "text": "Pinocchio looked down at the primer Geppetto had bought with his coat.",
+      "speechStart": 96.404,
+      "speechEnd": 100.903,
+      "speechStartMs": 96404,
+      "speechEndMs": 100903,
+      "start": 96.254,
+      "end": 101.023,
+      "startMs": 96254,
+      "endMs": 101023
+    },
+    {
+      "sentenceId": "S020",
+      "beatId": "B02",
+      "text": "For one sharp moment, he remembered his father shivering at home.",
+      "speechStart": 101.143,
+      "speechEnd": 106.263,
+      "speechStartMs": 101143,
+      "speechEndMs": 106263,
+      "start": 101.023,
+      "end": 106.383,
+      "startMs": 101023,
+      "endMs": 106383
+    },
+    {
+      "sentenceId": "S021",
+      "beatId": "B02",
+      "text": "Then the drums rolled again, and the promise of excitement won.",
+      "speechStart": 106.503,
+      "speechEnd": 111.943,
+      "speechStartMs": 106503,
+      "speechEndMs": 111943,
+      "start": 106.383,
+      "end": 112.223,
+      "startMs": 106383,
+      "endMs": 112223
+    },
+    {
+      "sentenceId": "S022",
+      "beatId": "B02",
+      "text": "A boy bought the primer, and Pinocchio exchanged sacrifice for a ticket.",
+      "speechStart": 112.502,
+      "speechEnd": 118.581,
+      "speechStartMs": 112502,
+      "speechEndMs": 118581,
+      "start": 112.223,
+      "end": 118.728,
+      "startMs": 112223,
+      "endMs": 118728
+    },
+    {
+      "sentenceId": "S023",
+      "beatId": "B02",
+      "text": "He rushed inside before regret could catch him.",
+      "speechStart": 118.874,
+      "speechEnd": 122.181,
+      "speechStartMs": 118874,
+      "speechEndMs": 122181,
+      "start": 118.728,
+      "end": 122.325,
+      "startMs": 118728,
+      "endMs": 122325
+    },
+    {
+      "sentenceId": "S024",
+      "beatId": "B02",
+      "text": "Rows of children faced a tiny stage covered by a red curtain.",
+      "speechStart": 122.469,
+      "speechEnd": 127.78,
+      "speechStartMs": 122469,
+      "speechEndMs": 127780,
+      "start": 122.325,
+      "end": 127.92,
+      "startMs": 122325,
+      "endMs": 127920
+    },
+    {
+      "sentenceId": "S025",
+      "beatId": "B02",
+      "text": "Pinocchio squeezed onto a bench as the lamps grew dim.",
+      "speechStart": 128.06,
+      "speechEnd": 132.739,
+      "speechStartMs": 128060,
+      "speechEndMs": 132739,
+      "start": 127.92,
+      "end": 133.292,
+      "startMs": 127920,
+      "endMs": 133292
+    },
+    {
+      "sentenceId": "S026",
+      "beatId": "B03",
+      "text": "The curtain rose upon Harlequin and Punchinello arguing in a painted garden.",
+      "speechStart": 133.844,
+      "speechEnd": 139.46,
+      "speechStartMs": 133844,
+      "speechEndMs": 139460,
+      "start": 133.292,
+      "end": 139.553,
+      "startMs": 133292,
+      "endMs": 139553
+    },
+    {
+      "sentenceId": "S027",
+      "beatId": "B03",
+      "text": "Their wooden arms waved, and their painted mouths traded ridiculous insults.",
+      "speechStart": 139.646,
+      "speechEnd": 146.018,
+      "speechStartMs": 139646,
+      "speechEndMs": 146018,
+      "start": 139.553,
+      "end": 146.148,
+      "startMs": 139553,
+      "endMs": 146148
+    },
+    {
+      "sentenceId": "S028",
+      "beatId": "B03",
+      "text": "The audience laughed until Harlequin suddenly stopped in the middle of a line.",
+      "speechStart": 146.278,
+      "speechEnd": 151.537,
+      "speechStartMs": 146278,
+      "speechEndMs": 151537,
+      "start": 146.148,
+      "end": 151.711,
+      "startMs": 146148,
+      "endMs": 151711
+    },
+    {
+      "sentenceId": "S029",
+      "beatId": "B03",
+      "text": "He leaned beyond the footlights and stared directly at Pinocchio.",
+      "speechStart": 151.884,
+      "speechEnd": 157.056,
+      "speechStartMs": 151884,
+      "speechEndMs": 157056,
+      "start": 151.711,
+      "end": 157.356,
+      "startMs": 151711,
+      "endMs": 157356
+    },
+    {
+      "sentenceId": "S030",
+      "beatId": "B03",
+      "text": "“Look, brothers and sisters,” he cried, “one of our own has come!”",
+      "speechStart": 157.656,
+      "speechEnd": 163.696,
+      "speechStartMs": 157656,
+      "speechEndMs": 163696,
+      "start": 157.356,
+      "end": 163.816,
+      "startMs": 157356,
+      "endMs": 163816
+    },
+    {
+      "sentenceId": "S031",
+      "beatId": "B03",
+      "text": "Every puppet onstage turned towards the wooden boy.",
+      "speechStart": 163.936,
+      "speechEnd": 168.495,
+      "speechStartMs": 163936,
+      "speechEndMs": 168495,
+      "start": 163.816,
+      "end": 168.591,
+      "startMs": 163816,
+      "endMs": 168591
+    },
+    {
+      "sentenceId": "S032",
+      "beatId": "B03",
+      "text": "They abandoned the play, scrambled into the audience, and lifted him high.",
+      "speechStart": 168.687,
+      "speechEnd": 175.094,
+      "speechStartMs": 168687,
+      "speechEndMs": 175094,
+      "start": 168.591,
+      "end": 175.169,
+      "startMs": 168591,
+      "endMs": 175169
+    },
+    {
+      "sentenceId": "S033",
+      "beatId": "B03",
+      "text": "Pinocchio had never been welcomed with such immediate, noisy affection.",
+      "speechStart": 175.244,
+      "speechEnd": 180.733,
+      "speechStartMs": 175244,
+      "speechEndMs": 180733,
+      "start": 175.169,
+      "end": 180.803,
+      "startMs": 175169,
+      "endMs": 180803
+    },
+    {
+      "sentenceId": "S034",
+      "beatId": "B03",
+      "text": "The puppets called him cousin, brother, traveller, and honoured guest.",
+      "speechStart": 180.873,
+      "speechEnd": 187.053,
+      "speechStartMs": 180873,
+      "speechEndMs": 187053,
+      "start": 180.803,
+      "end": 187.133,
+      "startMs": 180803,
+      "endMs": 187133
+    },
+    {
+      "sentenceId": "S035",
+      "beatId": "B03",
+      "text": "Together they danced while the musicians played faster and faster.",
+      "speechStart": 187.213,
+      "speechEnd": 192.332,
+      "speechStartMs": 187213,
+      "speechEndMs": 192332,
+      "start": 187.133,
+      "end": 192.417,
+      "startMs": 187133,
+      "endMs": 192417
+    },
+    {
+      "sentenceId": "S036",
+      "beatId": "B03",
+      "text": "Children clapped, though nobody understood why the story had stopped.",
+      "speechStart": 192.501,
+      "speechEnd": 197.691,
+      "speechStartMs": 192501,
+      "speechEndMs": 197691,
+      "start": 192.417,
+      "end": 197.821,
+      "startMs": 192417,
+      "endMs": 197821
+    },
+    {
+      "sentenceId": "S037",
+      "beatId": "B03",
+      "text": "For a few glorious minutes, Pinocchio forgot school, money, and consequences.",
+      "speechStart": 197.951,
+      "speechEnd": 205.37,
+      "speechStartMs": 197951,
+      "speechEndMs": 205370,
+      "start": 197.821,
+      "end": 205.522,
+      "startMs": 197821,
+      "endMs": 205522
+    },
+    {
+      "sentenceId": "S038",
+      "beatId": "B03",
+      "text": "Then a heavy boot struck the floor behind the curtain.",
+      "speechStart": 205.674,
+      "speechEnd": 210.73,
+      "speechStartMs": 205674,
+      "speechEndMs": 210730,
+      "start": 205.522,
+      "end": 210.85,
+      "startMs": 205522,
+      "endMs": 210850
+    },
+    {
+      "sentenceId": "S039",
+      "beatId": "B03",
+      "text": "The music broke off, and every puppet froze.",
+      "speechStart": 210.97,
+      "speechEnd": 215.529,
+      "speechStartMs": 210970,
+      "speechEndMs": 215529,
+      "start": 210.85,
+      "end": 216.123,
+      "startMs": 210850,
+      "endMs": 216123
+    },
+    {
+      "sentenceId": "S040",
+      "beatId": "B04",
+      "text": "The theatre belonged to a huge man known as Fire Eater.",
+      "speechStart": 216.717,
+      "speechEnd": 222.288,
+      "speechStartMs": 216717,
+      "speechEndMs": 222288,
+      "start": 216.123,
+      "end": 222.363,
+      "startMs": 216123,
+      "endMs": 222363
+    },
+    {
+      "sentenceId": "S041",
+      "beatId": "B04",
+      "text": "His black beard reached the ground and moved like a dark curtain.",
+      "speechStart": 222.438,
+      "speechEnd": 227.768,
+      "speechStartMs": 222438,
+      "speechEndMs": 227768,
+      "start": 222.363,
+      "end": 227.908,
+      "startMs": 222363,
+      "endMs": 227908
+    },
+    {
+      "sentenceId": "S042",
+      "beatId": "B04",
+      "text": "His eyes were red, his voice thunderous, and his whip cracked loudly.",
+      "speechStart": 228.048,
+      "speechEnd": 235.607,
+      "speechStartMs": 228048,
+      "speechEndMs": 235607,
+      "start": 227.908,
+      "end": 235.847,
+      "startMs": 227908,
+      "endMs": 235847
+    },
+    {
+      "sentenceId": "S043",
+      "beatId": "B04",
+      "text": "“Who has ruined my performance?” he demanded from the wings.",
+      "speechStart": 236.087,
+      "speechEnd": 241.526,
+      "speechStartMs": 236087,
+      "speechEndMs": 241526,
+      "start": 235.847,
+      "end": 241.666,
+      "startMs": 235847,
+      "endMs": 241666
+    },
+    {
+      "sentenceId": "S044",
+      "beatId": "B04",
+      "text": "The puppets pointed nervously towards Pinocchio.",
+      "speechStart": 241.806,
+      "speechEnd": 245.765,
+      "speechStartMs": 241806,
+      "speechEndMs": 245765,
+      "start": 241.666,
+      "end": 245.909,
+      "startMs": 241666,
+      "endMs": 245909
+    },
+    {
+      "sentenceId": "S045",
+      "beatId": "B04",
+      "text": "Fire Eater seized him by the collar and carried him backstage.",
+      "speechStart": 246.053,
+      "speechEnd": 251.645,
+      "speechStartMs": 246053,
+      "speechEndMs": 251645,
+      "start": 245.909,
+      "end": 251.72,
+      "startMs": 245909,
+      "endMs": 251720
+    },
+    {
+      "sentenceId": "S046",
+      "beatId": "B04",
+      "text": "Pinocchio’s courage disappeared as quickly as the theatre music.",
+      "speechStart": 251.795,
+      "speechEnd": 256.084,
+      "speechStartMs": 251795,
+      "speechEndMs": 256084,
+      "start": 251.72,
+      "end": 256.181,
+      "startMs": 251720,
+      "endMs": 256181
+    },
+    {
+      "sentenceId": "S047",
+      "beatId": "B04",
+      "text": "Behind the scenery, a great fire was roasting the owner’s supper.",
+      "speechStart": 256.278,
+      "speechEnd": 261.603,
+      "speechStartMs": 256278,
+      "speechEndMs": 261603,
+      "start": 256.181,
+      "end": 261.663,
+      "startMs": 256181,
+      "endMs": 261663
+    },
+    {
+      "sentenceId": "S048",
+      "beatId": "B04",
+      "text": "Unfortunately, the flames were dying before the meat was cooked.",
+      "speechStart": 261.723,
+      "speechEnd": 266.643,
+      "speechStartMs": 261723,
+      "speechEndMs": 266643,
+      "start": 261.663,
+      "end": 266.787,
+      "startMs": 261663,
+      "endMs": 266787
+    },
+    {
+      "sentenceId": "S049",
+      "beatId": "B04",
+      "text": "Fire Eater examined Pinocchio as if measuring a bundle of firewood.",
+      "speechStart": 266.931,
+      "speechEnd": 272.082,
+      "speechStartMs": 266931,
+      "speechEndMs": 272082,
+      "start": 266.787,
+      "end": 272.362,
+      "startMs": 266787,
+      "endMs": 272362
+    },
+    {
+      "sentenceId": "S050",
+      "beatId": "B04",
+      "text": "“A dry wooden puppet should burn beautifully,” he announced.",
+      "speechStart": 272.642,
+      "speechEnd": 277.921,
+      "speechStartMs": 272642,
+      "speechEndMs": 277921,
+      "start": 272.362,
+      "end": 278.051,
+      "startMs": 272362,
+      "endMs": 278051
+    },
+    {
+      "sentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio shook so hard that his joints knocked together.",
+      "speechStart": 278.181,
+      "speechEnd": 283.121,
+      "speechStartMs": 278181,
+      "speechEndMs": 283121,
+      "start": 278.051,
+      "end": 283.294,
+      "startMs": 278051,
+      "endMs": 283294
+    },
+    {
+      "sentenceId": "S052",
+      "beatId": "B04",
+      "text": "He cried for Geppetto and described his father alone without a coat.",
+      "speechStart": 283.468,
+      "speechEnd": 288.96,
+      "speechStartMs": 283468,
+      "speechEndMs": 288960,
+      "start": 283.294,
+      "end": 289.138,
+      "startMs": 283294,
+      "endMs": 289138
+    },
+    {
+      "sentenceId": "S053",
+      "beatId": "B05",
+      "text": "Fire Eater raised his eyebrows, but his terrible face did not soften.",
+      "speechStart": 289.317,
+      "speechEnd": 294.405,
+      "speechStartMs": 289317,
+      "speechEndMs": 294405,
+      "start": 289.138,
+      "end": 294.477,
+      "startMs": 289138,
+      "endMs": 294477
+    },
+    {
+      "sentenceId": "S054",
+      "beatId": "B05",
+      "text": "Then he gave three enormous sneezes that shook the hanging scenery.",
+      "speechStart": 294.548,
+      "speechEnd": 300.004,
+      "speechStartMs": 294548,
+      "speechEndMs": 300004,
+      "start": 294.477,
+      "end": 300.084,
+      "startMs": 294477,
+      "endMs": 300084
+    },
+    {
+      "sentenceId": "S055",
+      "beatId": "B05",
+      "text": "The puppets whispered that sneezing was his secret sign of compassion.",
+      "speechStart": 300.164,
+      "speechEnd": 304.803,
+      "speechStartMs": 300164,
+      "speechEndMs": 304803,
+      "start": 300.084,
+      "end": 304.903,
+      "startMs": 300084,
+      "endMs": 304903
+    },
+    {
+      "sentenceId": "S056",
+      "beatId": "B05",
+      "text": "Pinocchio saw a small opening for hope and begged again.",
+      "speechStart": 305.003,
+      "speechEnd": 309.443,
+      "speechStartMs": 305003,
+      "speechEndMs": 309443,
+      "start": 304.903,
+      "end": 309.539,
+      "startMs": 304903,
+      "endMs": 309539
+    },
+    {
+      "sentenceId": "S057",
+      "beatId": "B05",
+      "text": "Fire Eater grumbled that he could not eat an uncooked supper.",
+      "speechStart": 309.635,
+      "speechEnd": 313.683,
+      "speechStartMs": 309635,
+      "speechEndMs": 313683,
+      "start": 309.539,
+      "end": 313.802,
+      "startMs": 309539,
+      "endMs": 313802
+    },
+    {
+      "sentenceId": "S058",
+      "beatId": "B05",
+      "text": "He decided to spare Pinocchio and burn Harlequin instead.",
+      "speechStart": 313.922,
+      "speechEnd": 318.082,
+      "speechStartMs": 313922,
+      "speechEndMs": 318082,
+      "start": 313.802,
+      "end": 318.202,
+      "startMs": 313802,
+      "endMs": 318202
+    },
+    {
+      "sentenceId": "S059",
+      "beatId": "B05",
+      "text": "Two assistants dragged the cheerful puppet towards the weakening fire.",
+      "speechStart": 318.322,
+      "speechEnd": 322.962,
+      "speechStartMs": 318322,
+      "speechEndMs": 322962,
+      "start": 318.202,
+      "end": 323.072,
+      "startMs": 318202,
+      "endMs": 323072
+    },
+    {
+      "sentenceId": "S060",
+      "beatId": "B05",
+      "text": "Harlequin called goodbye to his friends and tried to smile bravely.",
+      "speechStart": 323.182,
+      "speechEnd": 327.361,
+      "speechStartMs": 323182,
+      "speechEndMs": 327361,
+      "start": 323.072,
+      "end": 327.471,
+      "startMs": 323072,
+      "endMs": 327471
+    },
+    {
+      "sentenceId": "S061",
+      "beatId": "B05",
+      "text": "The other puppets covered their faces, unable to watch.",
+      "speechStart": 327.581,
+      "speechEnd": 331.281,
+      "speechStartMs": 327581,
+      "speechEndMs": 331281,
+      "start": 327.471,
+      "end": 331.391,
+      "startMs": 327471,
+      "endMs": 331391
+    },
+    {
+      "sentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio realised that his rescue had merely moved the danger elsewhere.",
+      "speechStart": 331.501,
+      "speechEnd": 336.4,
+      "speechStartMs": 331501,
+      "speechEndMs": 336400,
+      "start": 331.391,
+      "end": 337.049,
+      "startMs": 331391,
+      "endMs": 337049
+    },
+    {
+      "sentenceId": "S063",
+      "beatId": "B06",
+      "text": "Relief turned bitter, and he stepped between Harlequin and the flames.",
+      "speechStart": 337.697,
+      "speechEnd": 342.046,
+      "speechStartMs": 337697,
+      "speechEndMs": 342046,
+      "start": 337.049,
+      "end": 342.156,
+      "startMs": 337049,
+      "endMs": 342156
+    },
+    {
+      "sentenceId": "S064",
+      "beatId": "B06",
+      "text": "“Burn me instead,” he said, though his voice trembled.",
+      "speechStart": 342.266,
+      "speechEnd": 346.245,
+      "speechStartMs": 342266,
+      "speechEndMs": 346245,
+      "start": 342.156,
+      "end": 346.405,
+      "startMs": 342156,
+      "endMs": 346405
+    },
+    {
+      "sentenceId": "S065",
+      "beatId": "B06",
+      "text": "“I cannot save myself by letting an innocent friend suffer.”",
+      "speechStart": 346.565,
+      "speechEnd": 350.405,
+      "speechStartMs": 346565,
+      "speechEndMs": 350405,
+      "start": 346.405,
+      "end": 350.549,
+      "startMs": 346405,
+      "endMs": 350549
+    },
+    {
+      "sentenceId": "S066",
+      "beatId": "B06",
+      "text": "Fire Eater stared at him as if seeing the puppet for the first time.",
+      "speechStart": 350.693,
+      "speechEnd": 355.124,
+      "speechStartMs": 350693,
+      "speechEndMs": 355124,
+      "start": 350.549,
+      "end": 355.231,
+      "startMs": 350549,
+      "endMs": 355231
+    },
+    {
+      "sentenceId": "S067",
+      "beatId": "B06",
+      "text": "He ordered the assistants to place Harlequin beside Pinocchio.",
+      "speechStart": 355.337,
+      "speechEnd": 359.044,
+      "speechStartMs": 355337,
+      "speechEndMs": 359044,
+      "start": 355.231,
+      "end": 359.264,
+      "startMs": 355231,
+      "endMs": 359264
+    },
+    {
+      "sentenceId": "S068",
+      "beatId": "B06",
+      "text": "“Do you understand what you are offering?” the theatre owner asked.",
+      "speechStart": 359.484,
+      "speechEnd": 363.763,
+      "speechStartMs": 359484,
+      "speechEndMs": 363763,
+      "start": 359.264,
+      "end": 363.893,
+      "startMs": 359264,
+      "endMs": 363893
+    },
+    {
+      "sentenceId": "S069",
+      "beatId": "B06",
+      "text": "Pinocchio swallowed his fear and nodded.",
+      "speechStart": 364.023,
+      "speechEnd": 367.043,
+      "speechStartMs": 364023,
+      "speechEndMs": 367043,
+      "start": 363.893,
+      "end": 367.163,
+      "startMs": 363893,
+      "endMs": 367163
+    },
+    {
+      "sentenceId": "S070",
+      "beatId": "B06",
+      "text": "He thought of Geppetto, who had surrendered his coat without complaint.",
+      "speechStart": 367.283,
+      "speechEnd": 371.683,
+      "speechStartMs": 367283,
+      "speechEndMs": 371683,
+      "start": 367.163,
+      "end": 371.748,
+      "startMs": 367163,
+      "endMs": 371748
+    },
+    {
+      "sentenceId": "S071",
+      "beatId": "B06",
+      "text": "Perhaps courage, like kindness, required giving up something precious.",
+      "speechStart": 371.813,
+      "speechEnd": 376.962,
+      "speechStartMs": 371813,
+      "speechEndMs": 376962,
+      "start": 371.748,
+      "end": 377.082,
+      "startMs": 371748,
+      "endMs": 377082
+    },
+    {
+      "sentenceId": "S072",
+      "beatId": "B06",
+      "text": "The fire cracked behind him, and the whole company waited.",
+      "speechStart": 377.202,
+      "speechEnd": 381.762,
+      "speechStartMs": 377202,
+      "speechEndMs": 381762,
+      "start": 377.082,
+      "end": 382.416,
+      "startMs": 377082,
+      "endMs": 382416
+    },
+    {
+      "sentenceId": "S073",
+      "beatId": "B07",
+      "text": "Fire Eater’s beard quivered, his nose wrinkled, and another sneeze exploded.",
+      "speechStart": 383.071,
+      "speechEnd": 388.481,
+      "speechStartMs": 383071,
+      "speechEndMs": 388481,
+      "start": 382.416,
+      "end": 388.721,
+      "startMs": 382416,
+      "endMs": 388721
+    },
+    {
+      "sentenceId": "S074",
+      "beatId": "B07",
+      "text": "“I cannot burn either of you,” he roared, wiping his eyes.",
+      "speechStart": 388.961,
+      "speechEnd": 393.76,
+      "speechStartMs": 388961,
+      "speechEndMs": 393760,
+      "start": 388.721,
+      "end": 393.825,
+      "startMs": 388721,
+      "endMs": 393825
+    },
+    {
+      "sentenceId": "S075",
+      "beatId": "B07",
+      "text": "Instead, he ordered the cooks to finish supper without extra firewood.",
+      "speechStart": 393.89,
+      "speechEnd": 398.16,
+      "speechStartMs": 393890,
+      "speechEndMs": 398160,
+      "start": 393.825,
+      "end": 398.27,
+      "startMs": 393825,
+      "endMs": 398270
+    },
+    {
+      "sentenceId": "S076",
+      "beatId": "B07",
+      "text": "Harlequin threw his arms around Pinocchio with grateful relief.",
+      "speechStart": 398.38,
+      "speechEnd": 402.48,
+      "speechStartMs": 398380,
+      "speechEndMs": 402480,
+      "start": 398.27,
+      "end": 402.57,
+      "startMs": 398270,
+      "endMs": 402570
+    },
+    {
+      "sentenceId": "S077",
+      "beatId": "B07",
+      "text": "The other puppets cheered until the ropes above them trembled.",
+      "speechStart": 402.66,
+      "speechEnd": 406.319,
+      "speechStartMs": 402660,
+      "speechEndMs": 406319,
+      "start": 402.57,
+      "end": 406.423,
+      "startMs": 402570,
+      "endMs": 406423
+    },
+    {
+      "sentenceId": "S078",
+      "beatId": "B07",
+      "text": "Even Fire Eater pretended not to enjoy their happiness.",
+      "speechStart": 406.527,
+      "speechEnd": 410.079,
+      "speechStartMs": 406527,
+      "speechEndMs": 410079,
+      "start": 406.423,
+      "end": 410.199,
+      "startMs": 406423,
+      "endMs": 410199
+    },
+    {
+      "sentenceId": "S079",
+      "beatId": "B07",
+      "text": "He demanded silence, but his next sneeze ruined the command.",
+      "speechStart": 410.319,
+      "speechEnd": 415.118,
+      "speechStartMs": 410319,
+      "speechEndMs": 415118,
+      "start": 410.199,
+      "end": 415.214,
+      "startMs": 410199,
+      "endMs": 415214
+    },
+    {
+      "sentenceId": "S080",
+      "beatId": "B07",
+      "text": "That night, the theatre became a feast instead of a tragedy.",
+      "speechStart": 415.31,
+      "speechEnd": 419.118,
+      "speechStartMs": 415310,
+      "speechEndMs": 419118,
+      "start": 415.214,
+      "end": 419.188,
+      "startMs": 415214,
+      "endMs": 419188
+    },
+    {
+      "sentenceId": "S081",
+      "beatId": "B07",
+      "text": "The puppets shared bread, fruit, music, and stories behind the stage.",
+      "speechStart": 419.258,
+      "speechEnd": 424.477,
+      "speechStartMs": 419258,
+      "speechEndMs": 424477,
+      "start": 419.188,
+      "end": 424.597,
+      "startMs": 419188,
+      "endMs": 424597
+    },
+    {
+      "sentenceId": "S082",
+      "beatId": "B07",
+      "text": "Pinocchio described Geppetto’s painted fire and the sold winter coat.",
+      "speechStart": 424.717,
+      "speechEnd": 429.677,
+      "speechStartMs": 424717,
+      "speechEndMs": 429677,
+      "start": 424.597,
+      "end": 429.781,
+      "startMs": 424597,
+      "endMs": 429781
+    },
+    {
+      "sentenceId": "S083",
+      "beatId": "B07",
+      "text": "Each detail made Fire Eater’s fierce expression slightly less severe.",
+      "speechStart": 429.885,
+      "speechEnd": 434.796,
+      "speechStartMs": 429885,
+      "speechEndMs": 434796,
+      "start": 429.781,
+      "end": 434.916,
+      "startMs": 429781,
+      "endMs": 434916
+    },
+    {
+      "sentenceId": "S084",
+      "beatId": "B07",
+      "text": "He asked where Geppetto lived and whether the old man worked alone.",
+      "speechStart": 435.036,
+      "speechEnd": 439.356,
+      "speechStartMs": 435036,
+      "speechEndMs": 439356,
+      "start": 434.916,
+      "end": 439.476,
+      "startMs": 434916,
+      "endMs": 439476
+    },
+    {
+      "sentenceId": "S085",
+      "beatId": "B07",
+      "text": "Pinocchio answered honestly, without decorating the truth.",
+      "speechStart": 439.596,
+      "speechEnd": 443.435,
+      "speechStartMs": 439596,
+      "speechEndMs": 443435,
+      "start": 439.476,
+      "end": 443.569,
+      "startMs": 439476,
+      "endMs": 443569
+    },
+    {
+      "sentenceId": "S086",
+      "beatId": "B07",
+      "text": "It was a small but important change after his excuses at home.",
+      "speechStart": 443.702,
+      "speechEnd": 447.995,
+      "speechStartMs": 443702,
+      "speechEndMs": 447995,
+      "start": 443.569,
+      "end": 448.115,
+      "startMs": 443569,
+      "endMs": 448115
+    },
+    {
+      "sentenceId": "S087",
+      "beatId": "B07",
+      "text": "Fire Eater said nothing more and walked away into his private wagon.",
+      "speechStart": 448.235,
+      "speechEnd": 452.874,
+      "speechStartMs": 448235,
+      "speechEndMs": 452874,
+      "start": 448.115,
+      "end": 452.994,
+      "startMs": 448115,
+      "endMs": 452994
+    },
+    {
+      "sentenceId": "S088",
+      "beatId": "B07",
+      "text": "Harlequin thanked Pinocchio for refusing an easy escape.",
+      "speechStart": 453.114,
+      "speechEnd": 457.194,
+      "speechStartMs": 453114,
+      "speechEndMs": 457194,
+      "start": 452.994,
+      "end": 457.414,
+      "startMs": 452994,
+      "endMs": 457414
+    },
+    {
+      "sentenceId": "S089",
+      "beatId": "B07",
+      "text": "“Today you behaved like a true brother,” he said.",
+      "speechStart": 457.634,
+      "speechEnd": 461.034,
+      "speechStartMs": 457634,
+      "speechEndMs": 461034,
+      "start": 457.414,
+      "end": 461.134,
+      "startMs": 457414,
+      "endMs": 461134
+    },
+    {
+      "sentenceId": "S090",
+      "beatId": "B07",
+      "text": "Pinocchio felt prouder of that sentence than of all the applause.",
+      "speechStart": 461.234,
+      "speechEnd": 465.273,
+      "speechStartMs": 461234,
+      "speechEndMs": 465273,
+      "start": 461.134,
+      "end": 465.853,
+      "startMs": 461134,
+      "endMs": 465853
+    },
+    {
+      "sentenceId": "S091",
+      "beatId": "B08",
+      "text": "Still, the empty space beneath his arm reminded him of the primer.",
+      "speechStart": 466.433,
+      "speechEnd": 470.406,
+      "speechStartMs": 466433,
+      "speechEndMs": 470406,
+      "start": 465.853,
+      "end": 470.552,
+      "startMs": 465853,
+      "endMs": 470552
+    },
+    {
+      "sentenceId": "S092",
+      "beatId": "B08",
+      "text": "He admitted that he had sold it and expected Geppetto’s disappointment.",
+      "speechStart": 470.699,
+      "speechEnd": 475.365,
+      "speechStartMs": 470699,
+      "speechEndMs": 475365,
+      "start": 470.552,
+      "end": 475.505,
+      "startMs": 470552,
+      "endMs": 475505
+    },
+    {
+      "sentenceId": "S093",
+      "beatId": "B08",
+      "text": "Harlequin told him that brave choices could follow foolish ones.",
+      "speechStart": 475.645,
+      "speechEnd": 480.085,
+      "speechStartMs": 475645,
+      "speechEndMs": 480085,
+      "start": 475.505,
+      "end": 480.185,
+      "startMs": 475505,
+      "endMs": 480185
+    },
+    {
+      "sentenceId": "S094",
+      "beatId": "B08",
+      "text": "The first mistake did not have to command the rest of the day.",
+      "speechStart": 480.285,
+      "speechEnd": 484.244,
+      "speechStartMs": 480285,
+      "speechEndMs": 484244,
+      "start": 480.185,
+      "end": 484.336,
+      "startMs": 480185,
+      "endMs": 484336
+    },
+    {
+      "sentenceId": "S095",
+      "beatId": "B08",
+      "text": "Before dawn, the company performed a special dance in Pinocchio’s honour.",
+      "speechStart": 484.427,
+      "speechEnd": 489.204,
+      "speechStartMs": 484427,
+      "speechEndMs": 489204,
+      "start": 484.336,
+      "end": 489.316,
+      "startMs": 484336,
+      "endMs": 489316
+    },
+    {
+      "sentenceId": "S096",
+      "beatId": "B08",
+      "text": "Fire Eater watched from the shadows, pretending to count the chairs.",
+      "speechStart": 489.428,
+      "speechEnd": 494.403,
+      "speechStartMs": 489428,
+      "speechEndMs": 494403,
+      "start": 489.316,
+      "end": 494.451,
+      "startMs": 489316,
+      "endMs": 494451
+    },
+    {
+      "sentenceId": "S097",
+      "beatId": "B08",
+      "text": "When the final note ended, he called Pinocchio forwards.",
+      "speechStart": 494.499,
+      "speechEnd": 498.483,
+      "speechStartMs": 494499,
+      "speechEndMs": 498483,
+      "start": 494.451,
+      "end": 498.723,
+      "startMs": 494451,
+      "endMs": 498723
+    },
+    {
+      "sentenceId": "S098",
+      "beatId": "B08",
+      "text": "“You caused chaos,” he said, “but you also showed courage.”",
+      "speechStart": 498.963,
+      "speechEnd": 504.242,
+      "speechStartMs": 498963,
+      "speechEndMs": 504242,
+      "start": 498.723,
+      "end": 504.362,
+      "startMs": 498723,
+      "endMs": 504362
+    },
+    {
+      "sentenceId": "S099",
+      "beatId": "B08",
+      "text": "The giant reached into a heavy purse hidden beneath his beard.",
+      "speechStart": 504.482,
+      "speechEnd": 508.482,
+      "speechStartMs": 504482,
+      "speechEndMs": 508482,
+      "start": 504.362,
+      "end": 508.538,
+      "startMs": 504362,
+      "endMs": 508538
+    },
+    {
+      "sentenceId": "S100",
+      "beatId": "B08",
+      "text": "Something inside it rang with the clear sound of coins.",
+      "speechStart": 508.594,
+      "speechEnd": 512.801,
+      "speechStartMs": 508594,
+      "speechEndMs": 512801,
+      "start": 508.538,
+      "end": 512.921,
+      "startMs": 508538,
+      "endMs": 512921
+    },
+    {
+      "sentenceId": "S101",
+      "beatId": "B08",
+      "text": "Pinocchio wondered whether the dangerous theatre had one more surprise.",
+      "speechStart": 513.041,
+      "speechEnd": 517.521,
+      "speechStartMs": 513041,
+      "speechEndMs": 517521,
+      "start": 512.921,
+      "end": 517.621,
+      "startMs": 512921,
+      "endMs": 517621
+    },
+    {
+      "sentenceId": "S102",
+      "beatId": "B08",
+      "text": "Outside, morning waited, along with the road back to Geppetto.",
+      "speechStart": 517.721,
+      "speechEnd": 523.04,
+      "speechStartMs": 517721,
+      "speechEndMs": 523040,
+      "start": 517.621,
+      "end": 523.096,
+      "startMs": 517621,
+      "endMs": 523096
+    },
+    {
+      "sentenceId": "S103",
+      "beatId": "B08",
+      "text": "This time, he meant to carry home more than another promise.",
+      "speechStart": 523.152,
+      "speechEnd": 527.36,
+      "speechStartMs": 523152,
+      "speechEndMs": 527360,
+      "start": 523.096,
+      "end": 527.36,
+      "startMs": 523096,
+      "endMs": 527360
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio left home proudly, carrying the alphabet primer beneath his arm.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Pinocchio left home proudly, carrying the alphabet primer beneath his arm.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 0.157,
+          "speechEnd": 5.106,
+          "speechStartMs": 157,
+          "speechEndMs": 5106,
+          "start": 0.097,
+          "end": 5.186,
+          "startMs": 97,
+          "endMs": 5186
+        }
+      ],
+      "speechStart": 0.157,
+      "speechEnd": 5.106,
+      "speechStartMs": 157,
+      "speechEndMs": 5106,
+      "start": 0.097,
+      "end": 5.186,
+      "startMs": 97,
+      "endMs": 5186
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S008",
+      "beatId": "B01",
+      "text": "His feet slowed, although he told them firmly to continue forwards.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "His feet slowed, although he told them firmly to continue forwards.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 36.582,
+          "speechEnd": 42.022,
+          "speechStartMs": 36582,
+          "speechEndMs": 42022,
+          "start": 36.522,
+          "end": 42.102,
+          "startMs": 36522,
+          "endMs": 42102
+        }
+      ],
+      "speechStart": 36.582,
+      "speechEnd": 42.022,
+      "speechStartMs": 36582,
+      "speechEndMs": 42022,
+      "start": 36.522,
+      "end": 42.102,
+      "startMs": 36522,
+      "endMs": 42102
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "“School lasts all day, but music may vanish,” he reasoned.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "“School lasts all day, but music may vanish,” he reasoned.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 42.502,
+          "speechEnd": 48.021,
+          "speechStartMs": 42502,
+          "speechEndMs": 48021,
+          "start": 42.442,
+          "end": 48.101,
+          "startMs": 42442,
+          "endMs": 48101
+        }
+      ],
+      "speechStart": 42.502,
+      "speechEnd": 48.021,
+      "speechStartMs": 42502,
+      "speechEndMs": 48021,
+      "start": 42.442,
+      "end": 48.101,
+      "startMs": 42442,
+      "endMs": 48101
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "Already, the alphabet primer felt heavier beneath his arm.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "Already, the alphabet primer felt heavier beneath his arm.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 61.709,
+          "speechEnd": 66.339,
+          "speechStartMs": 61709,
+          "speechEndMs": 66339,
+          "start": 61.649,
+          "end": 66.419,
+          "startMs": 61649,
+          "endMs": 66419
+        }
+      ],
+      "speechStart": 61.709,
+      "speechEnd": 66.339,
+      "speechStartMs": 61709,
+      "speechEndMs": 66339,
+      "start": 61.649,
+      "end": 66.419,
+      "startMs": 61649,
+      "endMs": 66419
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S015",
+      "beatId": "B02",
+      "text": "Pinocchio pushed through the crowd and reached the ticket booth.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio pushed through the crowd and reached the ticket booth.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 75.927,
+          "speechEnd": 80.346,
+          "speechStartMs": 75927,
+          "speechEndMs": 80346,
+          "start": 75.867,
+          "end": 80.426,
+          "startMs": 75867,
+          "endMs": 80426
+        }
+      ],
+      "speechStart": 75.927,
+      "speechEnd": 80.346,
+      "speechStartMs": 75927,
+      "speechEndMs": 80346,
+      "start": 75.867,
+      "end": 80.426,
+      "startMs": 75867,
+      "endMs": 80426
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "The ticket cost four pennies, but he did not own one.",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "The ticket cost four pennies, but he did not own one.",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 80.586,
+          "speechEnd": 85.465,
+          "speechStartMs": 80586,
+          "speechEndMs": 85465,
+          "start": 80.526,
+          "end": 85.545,
+          "startMs": 80526,
+          "endMs": 85545
+        }
+      ],
+      "speechStart": 80.586,
+      "speechEnd": 85.465,
+      "speechStartMs": 80586,
+      "speechEndMs": 85465,
+      "start": 80.526,
+      "end": 85.545,
+      "startMs": 80526,
+      "endMs": 85545
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "He rushed inside before regret could catch him.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He rushed inside before regret could catch him.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 118.874,
+          "speechEnd": 122.181,
+          "speechStartMs": 118874,
+          "speechEndMs": 122181,
+          "start": 118.814,
+          "end": 122.261,
+          "startMs": 118814,
+          "endMs": 122261
+        }
+      ],
+      "speechStart": 118.874,
+      "speechEnd": 122.181,
+      "speechStartMs": 118874,
+      "speechEndMs": 122181,
+      "start": 118.814,
+      "end": 122.261,
+      "startMs": 118814,
+      "endMs": 122261
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "Pinocchio squeezed onto a bench as the lamps grew dim.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Pinocchio squeezed onto a bench as the lamps grew dim.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 128.06,
+          "speechEnd": 132.739,
+          "speechStartMs": 128060,
+          "speechEndMs": 132739,
+          "start": 128,
+          "end": 132.819,
+          "startMs": 128000,
+          "endMs": 132819
+        }
+      ],
+      "speechStart": 128.06,
+      "speechEnd": 132.739,
+      "speechStartMs": 128060,
+      "speechEndMs": 132739,
+      "start": 128,
+      "end": 132.819,
+      "startMs": 128000,
+      "endMs": 132819
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "The audience laughed until Harlequin suddenly stopped in the middle of a line.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "The audience laughed",
+          "sourceTextRange": [
+            0,
+            20
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 146.278,
+          "speechEnd": 148.178,
+          "speechStartMs": 146278,
+          "speechEndMs": 148178,
+          "start": 146.218,
+          "end": 148.218,
+          "startMs": 146218,
+          "endMs": 148218
+        },
+        {
+          "chunkId": "M09-C02",
+          "text": "until Harlequin suddenly stopped in the middle of a line.",
+          "sourceTextRange": [
+            21,
+            78
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 148.258,
+          "speechEnd": 151.537,
+          "speechStartMs": 148258,
+          "speechEndMs": 151537,
+          "start": 148.218,
+          "end": 151.617,
+          "startMs": 148218,
+          "endMs": 151617
+        }
+      ],
+      "speechStart": 146.278,
+      "speechEnd": 151.537,
+      "speechStartMs": 146278,
+      "speechEndMs": 151537,
+      "start": 146.218,
+      "end": 151.617,
+      "startMs": 146218,
+      "endMs": 151617
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S033",
+      "beatId": "B03",
+      "text": "Pinocchio had never been welcomed with such immediate, noisy affection.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Pinocchio had never been welcomed with such immediate, noisy affection.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 175.244,
+          "speechEnd": 180.733,
+          "speechStartMs": 175244,
+          "speechEndMs": 180733,
+          "start": 175.184,
+          "end": 180.803,
+          "startMs": 175184,
+          "endMs": 180803
+        }
+      ],
+      "speechStart": 175.244,
+      "speechEnd": 180.733,
+      "speechStartMs": 175244,
+      "speechEndMs": 180733,
+      "start": 175.184,
+      "end": 180.803,
+      "startMs": 175184,
+      "endMs": 180803
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "Together they danced while the musicians played faster and faster.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Together they danced while the musicians played faster and faster.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 187.213,
+          "speechEnd": 192.332,
+          "speechStartMs": 187213,
+          "speechEndMs": 192332,
+          "start": 187.153,
+          "end": 192.412,
+          "startMs": 187153,
+          "endMs": 192412
+        }
+      ],
+      "speechStart": 187.213,
+      "speechEnd": 192.332,
+      "speechStartMs": 187213,
+      "speechEndMs": 192332,
+      "start": 187.153,
+      "end": 192.412,
+      "startMs": 187153,
+      "endMs": 192412
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "For a few glorious minutes, Pinocchio forgot school, money, and consequences.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "For a few glorious minutes, Pinocchio forgot school, money, and consequences.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 197.951,
+          "speechEnd": 205.37,
+          "speechStartMs": 197951,
+          "speechEndMs": 205370,
+          "start": 197.891,
+          "end": 205.45,
+          "startMs": 197891,
+          "endMs": 205450
+        }
+      ],
+      "speechStart": 197.951,
+      "speechEnd": 205.37,
+      "speechStartMs": 197951,
+      "speechEndMs": 205370,
+      "start": 197.891,
+      "end": 205.45,
+      "startMs": 197891,
+      "endMs": 205450
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "The theatre belonged to a huge man known as Fire Eater.",
+      "sourceTextRange": [
+        0,
+        55
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "The theatre belonged to a huge man known as Fire Eater.",
+          "sourceTextRange": [
+            0,
+            55
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 216.717,
+          "speechEnd": 222.288,
+          "speechStartMs": 216717,
+          "speechEndMs": 222288,
+          "start": 216.657,
+          "end": 222.363,
+          "startMs": 216657,
+          "endMs": 222363
+        }
+      ],
+      "speechStart": 216.717,
+      "speechEnd": 222.288,
+      "speechStartMs": 216717,
+      "speechEndMs": 222288,
+      "start": 216.657,
+      "end": 222.363,
+      "startMs": 216657,
+      "endMs": 222363
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "“Who has ruined my performance?” he demanded from the wings.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "“Who has ruined my performance?” he demanded from the wings.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 236.087,
+          "speechEnd": 241.526,
+          "speechStartMs": 236087,
+          "speechEndMs": 241526,
+          "start": 236.027,
+          "end": 241.606,
+          "startMs": 236027,
+          "endMs": 241606
+        }
+      ],
+      "speechStart": 236.087,
+      "speechEnd": 241.526,
+      "speechStartMs": 236087,
+      "speechEndMs": 241526,
+      "start": 236.027,
+      "end": 241.606,
+      "startMs": 236027,
+      "endMs": 241606
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "Unfortunately, the flames were dying before the meat was cooked.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Unfortunately, the flames were dying before the meat was cooked.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 261.723,
+          "speechEnd": 266.643,
+          "speechStartMs": 261723,
+          "speechEndMs": 266643,
+          "start": 261.663,
+          "end": 266.723,
+          "startMs": 261663,
+          "endMs": 266723
+        }
+      ],
+      "speechStart": 261.723,
+      "speechEnd": 266.643,
+      "speechStartMs": 261723,
+      "speechEndMs": 266643,
+      "start": 261.663,
+      "end": 266.723,
+      "startMs": 261663,
+      "endMs": 266723
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio shook so hard that his joints knocked together.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Pinocchio shook so hard that his joints knocked together.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 278.181,
+          "speechEnd": 283.121,
+          "speechStartMs": 278181,
+          "speechEndMs": 283121,
+          "start": 278.121,
+          "end": 283.201,
+          "startMs": 278121,
+          "endMs": 283201
+        }
+      ],
+      "speechStart": 278.181,
+      "speechEnd": 283.121,
+      "speechStartMs": 278181,
+      "speechEndMs": 283121,
+      "start": 278.121,
+      "end": 283.201,
+      "startMs": 278121,
+      "endMs": 283201
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "Pinocchio saw a small opening for hope and begged again.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Pinocchio saw a small opening for hope and begged again.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 305.003,
+          "speechEnd": 309.443,
+          "speechStartMs": 305003,
+          "speechEndMs": 309443,
+          "start": 304.943,
+          "end": 309.523,
+          "startMs": 304943,
+          "endMs": 309523
+        }
+      ],
+      "speechStart": 305.003,
+      "speechEnd": 309.443,
+      "speechStartMs": 305003,
+      "speechEndMs": 309443,
+      "start": 304.943,
+      "end": 309.523,
+      "startMs": 304943,
+      "endMs": 309523
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "He decided to spare Pinocchio and burn Harlequin instead.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "He decided to spare Pinocchio and burn Harlequin instead.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 313.922,
+          "speechEnd": 318.082,
+          "speechStartMs": 313922,
+          "speechEndMs": 318082,
+          "start": 313.862,
+          "end": 318.162,
+          "startMs": 313862,
+          "endMs": 318162
+        }
+      ],
+      "speechStart": 313.922,
+      "speechEnd": 318.082,
+      "speechStartMs": 313922,
+      "speechEndMs": 318082,
+      "start": 313.862,
+      "end": 318.162,
+      "startMs": 313862,
+      "endMs": 318162
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "Two assistants dragged the cheerful puppet towards the weakening fire.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Two assistants dragged the cheerful puppet towards the weakening fire.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 318.322,
+          "speechEnd": 322.962,
+          "speechStartMs": 318322,
+          "speechEndMs": 322962,
+          "start": 318.262,
+          "end": 323.042,
+          "startMs": 318262,
+          "endMs": 323042
+        }
+      ],
+      "speechStart": 318.322,
+      "speechEnd": 322.962,
+      "speechStartMs": 318322,
+      "speechEndMs": 322962,
+      "start": 318.262,
+      "end": 323.042,
+      "startMs": 318262,
+      "endMs": 323042
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio realised that his rescue had merely moved the danger elsewhere.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Pinocchio realised that his rescue had merely moved the danger elsewhere.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 331.501,
+          "speechEnd": 336.4,
+          "speechStartMs": 331501,
+          "speechEndMs": 336400,
+          "start": 331.441,
+          "end": 336.48,
+          "startMs": 331441,
+          "endMs": 336480
+        }
+      ],
+      "speechStart": 331.501,
+      "speechEnd": 336.4,
+      "speechStartMs": 331501,
+      "speechEndMs": 336400,
+      "start": 331.441,
+      "end": 336.48,
+      "startMs": 331441,
+      "endMs": 336480
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "“I cannot save myself by letting an innocent friend suffer.”",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "“I cannot save myself by letting an innocent friend suffer.”",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 346.565,
+          "speechEnd": 350.405,
+          "speechStartMs": 346565,
+          "speechEndMs": 350405,
+          "start": 346.505,
+          "end": 350.485,
+          "startMs": 346505,
+          "endMs": 350485
+        }
+      ],
+      "speechStart": 346.565,
+      "speechEnd": 350.405,
+      "speechStartMs": 346565,
+      "speechEndMs": 350405,
+      "start": 346.505,
+      "end": 350.485,
+      "startMs": 346505,
+      "endMs": 350485
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "Fire Eater stared at him as if seeing the puppet for the first time.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Fire Eater stared at him",
+          "sourceTextRange": [
+            0,
+            24
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 350.693,
+          "speechEnd": 352.885,
+          "speechStartMs": 350693,
+          "speechEndMs": 352885,
+          "start": 350.633,
+          "end": 352.898,
+          "startMs": 350633,
+          "endMs": 352898
+        },
+        {
+          "chunkId": "M22-C02",
+          "text": "as if seeing the puppet for the first time.",
+          "sourceTextRange": [
+            25,
+            68
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 352.912,
+          "speechEnd": 355.124,
+          "speechStartMs": 352912,
+          "speechEndMs": 355124,
+          "start": 352.898,
+          "end": 355.204,
+          "startMs": 352898,
+          "endMs": 355204
+        }
+      ],
+      "speechStart": 350.693,
+      "speechEnd": 355.124,
+      "speechStartMs": 350693,
+      "speechEndMs": 355124,
+      "start": 350.633,
+      "end": 355.204,
+      "startMs": 350633,
+      "endMs": 355204
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "He thought of Geppetto, who had surrendered his coat without complaint.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "He thought of Geppetto, who had surrendered his coat without complaint.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 367.283,
+          "speechEnd": 371.683,
+          "speechStartMs": 367283,
+          "speechEndMs": 371683,
+          "start": 367.223,
+          "end": 371.748,
+          "startMs": 367223,
+          "endMs": 371748
+        }
+      ],
+      "speechStart": 367.283,
+      "speechEnd": 371.683,
+      "speechStartMs": 367283,
+      "speechEndMs": 371683,
+      "start": 367.223,
+      "end": 371.748,
+      "startMs": 367223,
+      "endMs": 371748
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "The fire cracked behind him, and the whole company waited.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "The fire cracked behind him, and the whole company waited.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 377.202,
+          "speechEnd": 381.762,
+          "speechStartMs": 377202,
+          "speechEndMs": 381762,
+          "start": 377.142,
+          "end": 381.842,
+          "startMs": 377142,
+          "endMs": 381842
+        }
+      ],
+      "speechStart": 377.202,
+      "speechEnd": 381.762,
+      "speechStartMs": 377202,
+      "speechEndMs": 381762,
+      "start": 377.142,
+      "end": 381.842,
+      "startMs": 377142,
+      "endMs": 381842
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S074",
+      "beatId": "B07",
+      "text": "“I cannot burn either of you,” he roared, wiping his eyes.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "“I cannot burn either of you,” he roared, wiping his eyes.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 388.961,
+          "speechEnd": 393.76,
+          "speechStartMs": 388961,
+          "speechEndMs": 393760,
+          "start": 388.901,
+          "end": 393.825,
+          "startMs": 388901,
+          "endMs": 393825
+        }
+      ],
+      "speechStart": 388.961,
+      "speechEnd": 393.76,
+      "speechStartMs": 388961,
+      "speechEndMs": 393760,
+      "start": 388.901,
+      "end": 393.825,
+      "startMs": 388901,
+      "endMs": 393825
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S076",
+      "beatId": "B07",
+      "text": "Harlequin threw his arms around Pinocchio with grateful relief.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Harlequin threw his arms around Pinocchio with grateful relief.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 398.38,
+          "speechEnd": 402.48,
+          "speechStartMs": 398380,
+          "speechEndMs": 402480,
+          "start": 398.32,
+          "end": 402.56,
+          "startMs": 398320,
+          "endMs": 402560
+        }
+      ],
+      "speechStart": 398.38,
+      "speechEnd": 402.48,
+      "speechStartMs": 398380,
+      "speechEndMs": 402480,
+      "start": 398.32,
+      "end": 402.56,
+      "startMs": 398320,
+      "endMs": 402560
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S090",
+      "beatId": "B07",
+      "text": "Pinocchio felt prouder of that sentence than of all the applause.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio felt prouder of that sentence than of all the applause.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 461.234,
+          "speechEnd": 465.273,
+          "speechStartMs": 461234,
+          "speechEndMs": 465273,
+          "start": 461.174,
+          "end": 465.353,
+          "startMs": 461174,
+          "endMs": 465353
+        }
+      ],
+      "speechStart": 461.234,
+      "speechEnd": 465.273,
+      "speechStartMs": 461234,
+      "speechEndMs": 465273,
+      "start": 461.174,
+      "end": 465.353,
+      "startMs": 461174,
+      "endMs": 465353
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "He admitted that he had sold it and expected Geppetto’s disappointment.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "He admitted that he had sold it and expected Geppetto’s disappointment.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 470.699,
+          "speechEnd": 475.365,
+          "speechStartMs": 470699,
+          "speechEndMs": 475365,
+          "start": 470.639,
+          "end": 475.445,
+          "startMs": 470639,
+          "endMs": 475445
+        }
+      ],
+      "speechStart": 470.699,
+      "speechEnd": 475.365,
+      "speechStartMs": 470699,
+      "speechEndMs": 475365,
+      "start": 470.639,
+      "end": 475.445,
+      "startMs": 470639,
+      "endMs": 475445
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S098",
+      "beatId": "B08",
+      "text": "“You caused chaos,” he said, “but you also showed courage.”",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“You caused chaos,” he said, “but you also showed courage.”",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 498.963,
+          "speechEnd": 504.242,
+          "speechStartMs": 498963,
+          "speechEndMs": 504242,
+          "start": 498.903,
+          "end": 504.322,
+          "startMs": 498903,
+          "endMs": 504322
+        }
+      ],
+      "speechStart": 498.963,
+      "speechEnd": 504.242,
+      "speechStartMs": 498963,
+      "speechEndMs": 504242,
+      "start": 498.903,
+      "end": 504.322,
+      "startMs": 498903,
+      "endMs": 504322
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "This time, he meant to carry home more than another promise.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "This time, he meant to carry home more than another promise.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 523.152,
+          "speechEnd": 527.36,
+          "speechStartMs": 523152,
+          "speechEndMs": 527360,
+          "start": 523.096,
+          "end": 527.36,
+          "startMs": 523096,
+          "endMs": 527360
+        }
+      ],
+      "speechStart": 523.152,
+      "speechEnd": 527.36,
+      "speechStartMs": 523152,
+      "speechEndMs": 527360,
+      "start": 523.096,
+      "end": 527.36,
+      "startMs": 523096,
+      "endMs": 527360
+    }
+  ]
+}

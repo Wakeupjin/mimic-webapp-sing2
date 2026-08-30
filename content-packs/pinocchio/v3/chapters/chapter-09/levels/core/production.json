@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-09",
+  "level": "core",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      450,
+      510
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Make Lamp-Wick’s invitation genuinely seductive, fill Toyland with bright speed, then slow the performance as hidden consequences become frighteningly physical.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for young learners to process the story.",
+    "beatCues": {
+      "B01": "[warmly]",
+      "B02": "[temptingly]",
+      "B03": "[uneasily]",
+      "B04": "[wildly joyful]",
+      "B05": "[slowing]",
+      "B06": "[gravely]",
+      "B07": "[in frightened disbelief]",
+      "B08": "[somberly]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "Lily is approved as the Pinocchio-specific British narrator under narrator-policy.json; retain every generated master and provenance record before the internal production deadline."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2409,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:0bdd2a0ea8b912b8c84496a56f6c68b9f09405e432d8cefcfe8b0c9ac80be1fd",
+    "requests": [],
+    "seams": [],
+    "activitiesChecksum": "sha256:edad0be029e4e413520a458c77f8dd52d5b1ba94356c716d7f1be793db6141de"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-09/audio/core.master.mp3",
+    "sentenceTimeline": "chapters/chapter-09/audio/core.timeline.json",
+    "forcedAlignment": "chapters/chapter-09/audio/core.alignment.json",
+    "provenance": "chapters/chapter-09/audio/provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-09/audio/voice-profile.snapshot.json",
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

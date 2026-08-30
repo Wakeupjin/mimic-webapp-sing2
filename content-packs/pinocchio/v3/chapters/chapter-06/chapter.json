@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-06",
+  "number": 6,
+  "status": "content-complete-audio-pending",
+  "titles": {
+    "en": "The Snake, the Trap, and the Dog",
+    "ko": "뱀과 덫과 충직한 개"
+  },
+  "sourceChapters": [
+    20,
+    21,
+    22,
+    23
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Released from prison, Pinocchio tries to return to the Blue Fairy and begin again.",
+    "closing": "Pinocchio swims into the storm, determined not to abandon Geppetto again.",
+    "next": "After a night in the sea, Pinocchio reaches a working island and searches for news of his father."
+  },
+  "learningObjective": "Explain how consequences shape later choices using cause, contrast, confession, and renewed purpose.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Road Back",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Test Pinocchio’s hopeful return with a comic but dangerous roadside obstacle."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "Hunger in the Vineyard",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Turn physical hunger into a knowingly dishonest choice and immediate consequence."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The Watchdog’s Collar",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "purpose": "Make punishment concrete and reveal how badly Pinocchio has misused freedom."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "The Weasels’ Bargain",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Offer Pinocchio an easy corrupt bargain that mirrors his recent theft."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Honesty Earns Freedom",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "purpose": "Show that truthful action cannot erase the past but can change the next outcome."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "The Fairy’s Memorial Stone",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S078",
+      "purpose": "Let Pinocchio face grief without escaping or inventing an excuse."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "News from the Pigeon",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S091",
+      "purpose": "Restore hope through news of Geppetto’s long and costly search."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "Into the Storm",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S105",
+      "purpose": "Transform impulsive action into a courageous attempt to repair abandonment."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json"
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

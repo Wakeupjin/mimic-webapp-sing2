@@ -1,0 +1,33 @@
+{
+  "actId": "act-01",
+  "beatIds": [
+    "B01",
+    "B02",
+    "B03",
+    "B04"
+  ],
+  "requestId": "gud5iRgvWniZRSspjqAl",
+  "traceId": "7390ff07af831c8484c88feeb5269941",
+  "characterCost": "1819",
+  "characters": 3308,
+  "inputSha256": "9454b97cf9424f1ab24d27932f5818a559c052bbb25184f846608627d71d5233",
+  "modelId": "eleven_v3",
+  "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+  "seed": 2411,
+  "outputFormat": "mp3_44100_128",
+  "languageCode": "en",
+  "applyTextNormalization": "auto",
+  "voiceSettings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "use_speaker_boost": true
+  },
+  "generationConfigurationSha256": "c8076bd342dc411afb504450691a73fa0cab3ba9011e08dd36176cbbaad002ac",
+  "requestStitching": "not-supported-by-eleven-v3",
+  "generatedAt": "2026-08-30T09:00:33.938Z",
+  "audioSha256": "7218ea992d44fc359a25546f11eefc6326a7c90412841a2130e4a9ae3182183e",
+  "alignmentSha256": "d842130c842bc9bbb0992ca56dff0a537fbf323fbce77ed3111b483367a4ee34",
+  "checksumBackfilledAt": "2026-08-30T10:08:52.500Z",
+  "checksumBackfillEvidence": "audio-verified-against-existing-provenance; alignment-text-verified-against-locked-input"
+}

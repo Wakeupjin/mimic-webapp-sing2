@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-10",
+  "level": "foundation",
+  "status": "automated-pass-human-review-pending",
+  "metrics": {
+    "sentenceCount": 105,
+    "wordCount": 837,
+    "estimatedDurationSeconds": 448.4,
+    "referenceWordsPerMinute": 112,
+    "mimicCount": 30,
+    "guessCount": 10,
+    "wordCountItems": 10,
+    "beatCount": 8,
+    "masterSha256": "d03dd15aa1df27ee03f15d691cde82a7934ffdc771b4d99a702940436284758e",
+    "activitiesSha256": "ca246543451fe694584b900c0861f98d39dbfa69afb2ef3bc7e2f024a6c47980"
+  },
+  "automatedValidation": {
+    "command": "node scripts/validate-story-pack-authored.mjs",
+    "status": "pending-rerun-after-story-correction",
+    "lastRunAt": "2026-08-30"
+  },
+  "humanApprovals": {
+    "editorial": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "learning": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "voice": {
+      "status": "story-pack-approved",
+      "reviewer": "product-owner",
+      "reviewedAt": "2026-08-30"
+    },
+    "audio": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "rights": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "release": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  },
+  "blockingIssues": [
+    "Named editorial and learning approval not recorded.",
+    "Audio generation, human listen-through, visual beats, and product preview are not complete.",
+    "Target-territory rights review remains pending."
+  ],
+  "independentLearningReview": {
+    "status": "agent-review-completed-human-approval-pending",
+    "reviewerType": "independent-ai-content-qa",
+    "reviewedAt": "2026-08-30",
+    "scope": [
+      "30 unique Mimic source sentences",
+      "full-sentence item contract with nested 2–12-word chunks",
+      "exact source ranges and complete chunk reconstruction",
+      "minimum three Mimic sentences across each of eight beats",
+      "learner-facing Guess cue and answer grounding",
+      "Word source quality, structure focus, and token reconstruction"
+    ],
+    "evidence": {
+      "mimicItemCount": 30,
+      "uniqueMimicSourceCount": 30,
+      "flatSplitItemsRemaining": 0,
+      "activitiesSha256": "ca246543451fe694584b900c0861f98d39dbfa69afb2ef3bc7e2f024a6c47980",
+      "humanLearningApproval": "pending"
+    },
+    "note": "This evidence records an independent agent review only; it is not a human approval."
+  }
+}

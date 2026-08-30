@@ -1,9 +1,9 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "storyPackId": "pinocchio-story-v3",
   "chapterId": "chapter-01",
   "level": "core",
-  "generatedAt": "2026-08-30T07:28:59.412Z",
+  "generatedAt": "2026-08-30T10:08:43.594Z",
   "provider": "ElevenLabs",
   "modelId": "eleven_v3",
   "voice": {
@@ -12,10 +12,12 @@
   },
   "accent": "British English",
   "outputFormat": "mp3_44100_128",
+  "timingPrecision": "milliseconds",
   "seed": 2411,
-  "source": "single-editorial-master-rendered-as-two-coherent-acts",
-  "alignmentSource": "per-act-elevenlabs-tts",
+  "source": "single-editorial-master-rendered-as-2-coherent-acts",
+  "alignmentSource": "per-act-elevenlabs-tts-duration-fitted",
   "masterTextSha256": "95b40a5d571ec73a806fbaac0e1c8e4d7d518b5a07a00b3cf67bc6fb38e8cf81",
+  "activitiesSha256": "59b95628131b7798b243ed80371eb856f8a3195bf3122410fb9e38d8953d22c9",
   "duration": 490.32,
   "acts": [
     {
@@ -27,7 +29,11 @@
         "B04"
       ],
       "start": 0,
-      "end": 235.526,
+      "end": 235.517,
+      "concatenationOffset": 0,
+      "sourceAudioDuration": 235.28,
+      "sourceAlignmentEnd": 235.297,
+      "sourceAlignmentTimeScale": 0.999927751,
       "requestId": "ZiPrnspR1NbVASRYz5wG",
       "characters": 2977
     },
@@ -39,16 +45,33 @@
         "B07",
         "B08"
       ],
-      "start": 235.526,
+      "start": 235.517,
       "end": 490.32,
+      "concatenationOffset": 235.28,
+      "sourceAudioDuration": 255.04,
+      "sourceAlignmentEnd": 255.063,
+      "sourceAlignmentTimeScale": 0.999909826,
       "requestId": "1CVwgn9P4ykTkjNbq0NC",
       "characters": 3195
     }
   ],
+  "seams": [
+    {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S054",
+      "beforeSentenceId": "S055",
+      "at": 235.517,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  ],
   "seam": {
+    "afterActId": "act-01",
+    "beforeActId": "act-02",
     "afterSentenceId": "S054",
     "beforeSentenceId": "S055",
-    "at": 235.526
+    "at": 235.517,
+    "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
   },
   "beats": [
     {
@@ -57,63 +80,79 @@
       "sentenceStart": "S001",
       "sentenceEnd": "S013",
       "start": 0.197,
-      "end": 64.377
+      "end": 64.373,
+      "startMs": 197,
+      "endMs": 64373
     },
     {
       "beatId": "B02",
       "title": "A Very Peculiar Block",
       "sentenceStart": "S014",
       "sentenceEnd": "S027",
-      "start": 64.377,
-      "end": 120.912
+      "start": 64.373,
+      "end": 120.903,
+      "startMs": 64373,
+      "endMs": 120903
     },
     {
       "beatId": "B03",
       "title": "Geppetto's Wonderful Plan",
       "sentenceStart": "S028",
       "sentenceEnd": "S039",
-      "start": 120.912,
-      "end": 173.417
+      "start": 120.903,
+      "end": 173.405,
+      "startMs": 120903,
+      "endMs": 173405
     },
     {
       "beatId": "B04",
       "title": "An Insult and a Quarrel",
       "sentenceStart": "S040",
       "sentenceEnd": "S054",
-      "start": 173.417,
-      "end": 235.526
+      "start": 173.405,
+      "end": 235.517,
+      "startMs": 173405,
+      "endMs": 235517
     },
     {
       "beatId": "B05",
       "title": "A Name for a New Boy",
       "sentenceStart": "S055",
       "sentenceEnd": "S066",
-      "start": 235.526,
-      "end": 291.661
+      "start": 235.517,
+      "end": 291.656,
+      "startMs": 235517,
+      "endMs": 291656
     },
     {
       "beatId": "B06",
       "title": "Pinocchio Takes Shape",
       "sentenceStart": "S067",
       "sentenceEnd": "S080",
-      "start": 291.661,
-      "end": 354.666
+      "start": 291.656,
+      "end": 354.655,
+      "startMs": 291656,
+      "endMs": 354655
     },
     {
       "beatId": "B07",
       "title": "The Great Escape",
       "sentenceStart": "S081",
       "sentenceEnd": "S091",
-      "start": 354.666,
-      "end": 413.715
+      "start": 354.655,
+      "end": 413.698,
+      "startMs": 354655,
+      "endMs": 413698
     },
     {
       "beatId": "B08",
       "title": "The Wrong Man Goes to Prison",
       "sentenceStart": "S092",
       "sentenceEnd": "S105",
-      "start": 413.715,
-      "end": 490.32
+      "start": 413.698,
+      "end": 490.32,
+      "startMs": 413698,
+      "endMs": 490320
     }
   ],
   "lines": [
@@ -122,486 +161,702 @@
       "beatId": "B01",
       "text": "Long ago, in a quiet Tuscan town, an old carpenter named Master Cherry worked alone in his dusty shop.",
       "speechStart": 0.277,
-      "speechEnd": 8.165,
+      "speechEnd": 8.164,
+      "speechStartMs": 277,
+      "speechEndMs": 8164,
       "start": 0.197,
-      "end": 8.218
+      "end": 8.218,
+      "startMs": 197,
+      "endMs": 8218
     },
     {
       "sentenceId": "S002",
       "beatId": "B01",
       "text": "Everyone called him Master Cherry because his nose was round and red whenever he grew excited.",
-      "speechStart": 8.272,
-      "speechEnd": 15.725,
+      "speechStart": 8.271,
+      "speechEnd": 15.724,
+      "speechStartMs": 8271,
+      "speechEndMs": 15724,
       "start": 8.218,
-      "end": 15.79
+      "end": 15.789,
+      "startMs": 8218,
+      "endMs": 15789
     },
     {
       "sentenceId": "S003",
       "beatId": "B01",
       "text": "One winter morning, he discovered a plain block of wood beside his bench.",
-      "speechStart": 15.855,
-      "speechEnd": 20.645,
-      "start": 15.79,
-      "end": 20.752
+      "speechStart": 15.854,
+      "speechEnd": 20.644,
+      "speechStartMs": 15854,
+      "speechEndMs": 20644,
+      "start": 15.789,
+      "end": 20.75,
+      "startMs": 15789,
+      "endMs": 20750
     },
     {
       "sentenceId": "S004",
       "beatId": "B01",
       "text": "It did not look rare or valuable.",
-      "speechStart": 20.858,
-      "speechEnd": 23.285,
-      "start": 20.752,
-      "end": 23.358
+      "speechStart": 20.856,
+      "speechEnd": 23.283,
+      "speechStartMs": 20856,
+      "speechEndMs": 23283,
+      "start": 20.75,
+      "end": 23.357,
+      "startMs": 20750,
+      "endMs": 23357
     },
     {
       "sentenceId": "S005",
       "beatId": "B01",
       "text": "Still, it seemed perfect for a table leg.",
-      "speechStart": 23.432,
-      "speechEnd": 26.645,
-      "start": 23.358,
-      "end": 26.725
+      "speechStart": 23.43,
+      "speechEnd": 26.643,
+      "speechStartMs": 23430,
+      "speechEndMs": 26643,
+      "start": 23.357,
+      "end": 26.723,
+      "startMs": 23357,
+      "endMs": 26723
     },
     {
       "sentenceId": "S006",
       "beatId": "B01",
       "text": "Master Cherry rubbed his hands, lifted his axe, and whispered, “This will do nicely.”",
-      "speechStart": 26.805,
-      "speechEnd": 34.485,
-      "start": 26.725,
-      "end": 34.514
+      "speechStart": 26.803,
+      "speechEnd": 34.483,
+      "speechStartMs": 26803,
+      "speechEndMs": 34483,
+      "start": 26.723,
+      "end": 34.511,
+      "startMs": 26723,
+      "endMs": 34511
     },
     {
       "sentenceId": "S007",
       "beatId": "B01",
       "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”",
-      "speechStart": 34.542,
-      "speechEnd": 40.645,
-      "start": 34.514,
-      "end": 40.665
+      "speechStart": 34.54,
+      "speechEnd": 40.642,
+      "speechStartMs": 34540,
+      "speechEndMs": 40642,
+      "start": 34.511,
+      "end": 40.662,
+      "startMs": 34511,
+      "endMs": 40662
     },
     {
       "sentenceId": "S008",
       "beatId": "B01",
       "text": "The carpenter froze.",
-      "speechStart": 40.685,
-      "speechEnd": 42.005,
-      "start": 40.665,
-      "end": 42.125
+      "speechStart": 40.682,
+      "speechEnd": 42.002,
+      "speechStartMs": 40682,
+      "speechEndMs": 42002,
+      "start": 40.662,
+      "end": 42.122,
+      "startMs": 40662,
+      "endMs": 42122
     },
     {
       "sentenceId": "S009",
       "beatId": "B01",
       "text": "He searched beneath the bench, behind the door, and inside every cupboard.",
-      "speechStart": 42.245,
-      "speechEnd": 47.285,
-      "start": 42.125,
-      "end": 47.431
+      "speechStart": 42.242,
+      "speechEnd": 47.282,
+      "speechStartMs": 42242,
+      "speechEndMs": 47282,
+      "start": 42.122,
+      "end": 47.428,
+      "startMs": 42122,
+      "endMs": 47428
     },
     {
       "sentenceId": "S010",
       "beatId": "B01",
       "text": "No one was there.",
-      "speechStart": 47.578,
-      "speechEnd": 48.965,
-      "start": 47.431,
-      "end": 49.205
+      "speechStart": 47.575,
+      "speechEnd": 48.961,
+      "speechStartMs": 47575,
+      "speechEndMs": 48961,
+      "start": 47.428,
+      "end": 49.201,
+      "startMs": 47428,
+      "endMs": 49201
     },
     {
       "sentenceId": "S011",
       "beatId": "B01",
       "text": "“I must have imagined it,” he decided, though his knees had begun to shake.",
-      "speechStart": 49.445,
-      "speechEnd": 54.405,
-      "start": 49.205,
-      "end": 54.538
+      "speechStart": 49.441,
+      "speechEnd": 54.401,
+      "speechStartMs": 49441,
+      "speechEndMs": 54401,
+      "start": 49.201,
+      "end": 54.535,
+      "startMs": 49201,
+      "endMs": 54535
     },
     {
       "sentenceId": "S012",
       "beatId": "B01",
       "text": "He raised the axe again.",
-      "speechStart": 54.672,
-      "speechEnd": 56.645,
-      "start": 54.538,
-      "end": 56.741
+      "speechStart": 54.668,
+      "speechEnd": 56.641,
+      "speechStartMs": 54668,
+      "speechEndMs": 56641,
+      "start": 54.535,
+      "end": 56.737,
+      "startMs": 54535,
+      "endMs": 56737
     },
     {
       "sentenceId": "S013",
       "beatId": "B01",
       "text": "This time, the axe came down, and the voice cried, “Oh! You hurt me!”",
-      "speechStart": 56.837,
-      "speechEnd": 64.245,
-      "start": 56.741,
-      "end": 64.377
+      "speechStart": 56.833,
+      "speechEnd": 64.24,
+      "speechStartMs": 56833,
+      "speechEndMs": 64240,
+      "start": 56.737,
+      "end": 64.373,
+      "startMs": 56737,
+      "endMs": 64373
     },
     {
       "sentenceId": "S014",
       "beatId": "B02",
       "text": "Master Cherry dropped the axe and stared at the block.",
-      "speechStart": 64.51,
-      "speechEnd": 67.765,
-      "start": 64.377,
-      "end": 67.985
+      "speechStart": 64.505,
+      "speechEnd": 67.76,
+      "speechStartMs": 64505,
+      "speechEndMs": 67760,
+      "start": 64.373,
+      "end": 67.98,
+      "startMs": 64373,
+      "endMs": 67980
     },
     {
       "sentenceId": "S015",
       "beatId": "B02",
       "text": "A piece of wood could not speak, yet this one clearly had opinions.",
-      "speechStart": 68.205,
-      "speechEnd": 73.525,
-      "start": 67.985,
-      "end": 73.672
+      "speechStart": 68.2,
+      "speechEnd": 73.52,
+      "speechStartMs": 68200,
+      "speechEndMs": 73520,
+      "start": 67.98,
+      "end": 73.666,
+      "startMs": 67980,
+      "endMs": 73666
     },
     {
       "sentenceId": "S016",
       "beatId": "B02",
       "text": "He tried to smooth its rough surface with a plane.",
-      "speechStart": 73.818,
-      "speechEnd": 77.125,
-      "start": 73.672,
-      "end": 77.235
+      "speechStart": 73.813,
+      "speechEnd": 77.119,
+      "speechStartMs": 73813,
+      "speechEndMs": 77119,
+      "start": 73.666,
+      "end": 77.229,
+      "startMs": 73666,
+      "endMs": 77229
     },
     {
       "sentenceId": "S017",
       "beatId": "B02",
       "text": "The moment the tool scraped across it, the wood laughed like a cheeky child.",
-      "speechStart": 77.345,
-      "speechEnd": 83.365,
-      "start": 77.235,
-      "end": 83.445
+      "speechStart": 77.339,
+      "speechEnd": 83.359,
+      "speechStartMs": 77339,
+      "speechEndMs": 83359,
+      "start": 77.229,
+      "end": 83.439,
+      "startMs": 77229,
+      "endMs": 83439
     },
     {
       "sentenceId": "S018",
       "beatId": "B02",
       "text": "Master Cherry stumbled backwards and landed in a basket of shavings.",
-      "speechStart": 83.525,
-      "speechEnd": 88.645,
-      "start": 83.445,
-      "end": 88.725
+      "speechStart": 83.519,
+      "speechEnd": 88.639,
+      "speechStartMs": 83519,
+      "speechEndMs": 88639,
+      "start": 83.439,
+      "end": 88.719,
+      "startMs": 83439,
+      "endMs": 88719
     },
     {
       "sentenceId": "S019",
       "beatId": "B02",
       "text": "His face went pale, then red, then pale again.",
-      "speechStart": 88.805,
-      "speechEnd": 93.285,
-      "start": 88.725,
-      "end": 93.505
+      "speechStart": 88.799,
+      "speechEnd": 93.278,
+      "speechStartMs": 88799,
+      "speechEndMs": 93278,
+      "start": 88.719,
+      "end": 93.498,
+      "startMs": 88719,
+      "endMs": 93498
     },
     {
       "sentenceId": "S020",
       "beatId": "B02",
       "text": "“There must be a trick,” he muttered.",
-      "speechStart": 93.725,
-      "speechEnd": 96.325,
-      "start": 93.505,
-      "end": 96.471
+      "speechStart": 93.718,
+      "speechEnd": 96.318,
+      "speechStartMs": 93718,
+      "speechEndMs": 96318,
+      "start": 93.498,
+      "end": 96.465,
+      "startMs": 93498,
+      "endMs": 96465
     },
     {
       "sentenceId": "S021",
       "beatId": "B02",
       "text": "He tapped the block gently with one finger.",
-      "speechStart": 96.618,
-      "speechEnd": 99.445,
-      "start": 96.471,
-      "end": 99.535
+      "speechStart": 96.611,
+      "speechEnd": 99.438,
+      "speechStartMs": 96611,
+      "speechEndMs": 99438,
+      "start": 96.465,
+      "end": 99.528,
+      "startMs": 96465,
+      "endMs": 99528
     },
     {
       "sentenceId": "S022",
       "beatId": "B02",
       "text": "The wood remained silent.",
-      "speechStart": 99.625,
-      "speechEnd": 101.606,
-      "start": 99.535,
-      "end": 101.752
+      "speechStart": 99.618,
+      "speechEnd": 101.599,
+      "speechStartMs": 99618,
+      "speechEndMs": 101599,
+      "start": 99.528,
+      "end": 101.745,
+      "startMs": 99528,
+      "endMs": 101745
     },
     {
       "sentenceId": "S023",
       "beatId": "B02",
       "text": "He tapped it a little harder.",
-      "speechStart": 101.898,
-      "speechEnd": 103.845,
-      "start": 101.752,
-      "end": 103.952
+      "speechStart": 101.891,
+      "speechEnd": 103.837,
+      "speechStartMs": 101891,
+      "speechEndMs": 103837,
+      "start": 101.745,
+      "end": 103.944,
+      "startMs": 101745,
+      "endMs": 103944
     },
     {
       "sentenceId": "S024",
       "beatId": "B02",
       "text": "It gave a long, offended groan.",
-      "speechStart": 104.058,
-      "speechEnd": 107.045,
-      "start": 103.952,
-      "end": 107.219
+      "speechStart": 104.05,
+      "speechEnd": 107.037,
+      "speechStartMs": 104050,
+      "speechEndMs": 107037,
+      "start": 103.944,
+      "end": 107.211,
+      "startMs": 103944,
+      "endMs": 107211
     },
     {
       "sentenceId": "S025",
       "beatId": "B02",
       "text": "At that exact moment, someone knocked loudly at the shop door.",
-      "speechStart": 107.392,
-      "speechEnd": 112.165,
-      "start": 107.219,
-      "end": 112.234
+      "speechStart": 107.384,
+      "speechEnd": 112.157,
+      "speechStartMs": 107384,
+      "speechEndMs": 112157,
+      "start": 107.211,
+      "end": 112.225,
+      "startMs": 107211,
+      "endMs": 112225
     },
     {
       "sentenceId": "S026",
       "beatId": "B02",
       "text": "Master Cherry nearly jumped out of his apron.",
-      "speechStart": 112.302,
-      "speechEnd": 115.525,
-      "start": 112.234,
-      "end": 115.619
+      "speechStart": 112.294,
+      "speechEnd": 115.517,
+      "speechStartMs": 112294,
+      "speechEndMs": 115517,
+      "start": 112.225,
+      "end": 115.61,
+      "startMs": 112225,
+      "endMs": 115610
     },
     {
       "sentenceId": "S027",
       "beatId": "B02",
       "text": "He pushed the strange block into a corner and called, “Come in!”",
-      "speechStart": 115.712,
-      "speechEnd": 120.405,
-      "start": 115.619,
-      "end": 120.912
+      "speechStart": 115.704,
+      "speechEnd": 120.396,
+      "speechStartMs": 115704,
+      "speechEndMs": 120396,
+      "start": 115.61,
+      "end": 120.903,
+      "startMs": 115610,
+      "endMs": 120903
     },
     {
       "sentenceId": "S028",
       "beatId": "B03",
       "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
-      "speechStart": 121.418,
-      "speechEnd": 125.365,
-      "start": 120.912,
-      "end": 125.485
+      "speechStart": 121.409,
+      "speechEnd": 125.356,
+      "speechStartMs": 121409,
+      "speechEndMs": 125356,
+      "start": 120.903,
+      "end": 125.476,
+      "startMs": 120903,
+      "endMs": 125476
     },
     {
       "sentenceId": "S029",
       "beatId": "B03",
       "text": "He was poor, but his imagination was richer than any king’s treasure room.",
-      "speechStart": 125.605,
-      "speechEnd": 130.805,
-      "start": 125.485,
-      "end": 131.025
+      "speechStart": 125.596,
+      "speechEnd": 130.796,
+      "speechStartMs": 125596,
+      "speechEndMs": 130796,
+      "start": 125.476,
+      "end": 131.016,
+      "startMs": 125476,
+      "endMs": 131016
     },
     {
       "sentenceId": "S030",
       "beatId": "B03",
       "text": "“I have a wonderful plan,” he announced.",
-      "speechStart": 131.245,
-      "speechEnd": 134.405,
-      "start": 131.025,
-      "end": 134.565
+      "speechStart": 131.236,
+      "speechEnd": 134.395,
+      "speechStartMs": 131236,
+      "speechEndMs": 134395,
+      "start": 131.016,
+      "end": 134.555,
+      "startMs": 131016,
+      "endMs": 134555
     },
     {
       "sentenceId": "S031",
       "beatId": "B03",
       "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”",
-      "speechStart": 134.725,
-      "speechEnd": 140.405,
-      "start": 134.565,
-      "end": 140.496
+      "speechStart": 134.715,
+      "speechEnd": 140.395,
+      "speechStartMs": 134715,
+      "speechEndMs": 140395,
+      "start": 134.555,
+      "end": 140.486,
+      "startMs": 134555,
+      "endMs": 140486
     },
     {
       "sentenceId": "S032",
       "beatId": "B03",
       "text": "Master Cherry blinked.",
-      "speechStart": 140.588,
-      "speechEnd": 142.645,
-      "start": 140.496,
-      "end": 142.725
+      "speechStart": 140.578,
+      "speechEnd": 142.635,
+      "speechStartMs": 140578,
+      "speechEndMs": 142635,
+      "start": 140.486,
+      "end": 142.715,
+      "startMs": 140486,
+      "endMs": 142715
     },
     {
       "sentenceId": "S033",
       "beatId": "B03",
       "text": "The puppet could travel with him and earn money for bread and wine.",
-      "speechStart": 142.805,
-      "speechEnd": 147.365,
-      "start": 142.725,
-      "end": 147.469
+      "speechStart": 142.795,
+      "speechEnd": 147.354,
+      "speechStartMs": 142795,
+      "speechEndMs": 147354,
+      "start": 142.715,
+      "end": 147.458,
+      "startMs": 142715,
+      "endMs": 147458
     },
     {
       "sentenceId": "S034",
       "beatId": "B03",
       "text": "More than money, Geppetto wanted company in his small, lonely home.",
-      "speechStart": 147.573,
-      "speechEnd": 153.365,
-      "start": 147.469,
-      "end": 153.605
+      "speechStart": 147.562,
+      "speechEnd": 153.354,
+      "speechStartMs": 147562,
+      "speechEndMs": 153354,
+      "start": 147.458,
+      "end": 153.594,
+      "startMs": 147458,
+      "endMs": 153594
     },
     {
       "sentenceId": "S035",
       "beatId": "B03",
       "text": "“I only need a piece of wood with a little character,” he said.",
-      "speechStart": 153.845,
-      "speechEnd": 158.005,
-      "start": 153.605,
-      "end": 158.101
+      "speechStart": 153.834,
+      "speechEnd": 157.994,
+      "speechStartMs": 153834,
+      "speechEndMs": 157994,
+      "start": 153.594,
+      "end": 158.09,
+      "startMs": 153594,
+      "endMs": 158090
     },
     {
       "sentenceId": "S036",
       "beatId": "B03",
       "text": "From the corner came a soft snort.",
-      "speechStart": 158.197,
-      "speechEnd": 161.285,
-      "start": 158.101,
-      "end": 161.353
+      "speechStart": 158.186,
+      "speechEnd": 161.273,
+      "speechStartMs": 158186,
+      "speechEndMs": 161273,
+      "start": 158.09,
+      "end": 161.342,
+      "startMs": 158090,
+      "endMs": 161342
     },
     {
       "sentenceId": "S037",
       "beatId": "B03",
       "text": "Master Cherry glanced nervously at the block.",
-      "speechStart": 161.422,
-      "speechEnd": 164.565,
-      "start": 161.353,
-      "end": 164.64
+      "speechStart": 161.41,
+      "speechEnd": 164.553,
+      "speechStartMs": 161410,
+      "speechEndMs": 164553,
+      "start": 161.342,
+      "end": 164.628,
+      "startMs": 161342,
+      "endMs": 164628
     },
     {
       "sentenceId": "S038",
       "beatId": "B03",
       "text": "Perhaps, he thought, this troublesome wood belonged with Geppetto.",
-      "speechStart": 164.715,
-      "speechEnd": 169.605,
-      "start": 164.64,
-      "end": 169.845
+      "speechStart": 164.703,
+      "speechEnd": 169.593,
+      "speechStartMs": 164703,
+      "speechEndMs": 169593,
+      "start": 164.628,
+      "end": 169.833,
+      "startMs": 164628,
+      "endMs": 169833
     },
     {
       "sentenceId": "S039",
       "beatId": "B03",
       "text": "“Take that piece over there,” he offered.",
-      "speechStart": 170.085,
-      "speechEnd": 173.165,
-      "start": 169.845,
-      "end": 173.417
+      "speechStart": 170.073,
+      "speechEnd": 173.152,
+      "speechStartMs": 170073,
+      "speechEndMs": 173152,
+      "start": 169.833,
+      "end": 173.405,
+      "startMs": 169833,
+      "endMs": 173405
     },
     {
       "sentenceId": "S040",
       "beatId": "B04",
       "text": "Geppetto bent down to examine the block.",
-      "speechStart": 173.67,
-      "speechEnd": 176.537,
-      "start": 173.417,
-      "end": 176.574
+      "speechStart": 173.657,
+      "speechEnd": 176.524,
+      "speechStartMs": 173657,
+      "speechEndMs": 176524,
+      "start": 173.405,
+      "end": 176.561,
+      "startMs": 173405,
+      "endMs": 176561
     },
     {
       "sentenceId": "S041",
       "beatId": "B04",
       "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
-      "speechStart": 176.611,
-      "speechEnd": 182.017,
-      "start": 176.574,
-      "end": 182.147
+      "speechStart": 176.598,
+      "speechEnd": 182.004,
+      "speechStartMs": 176598,
+      "speechEndMs": 182004,
+      "start": 176.561,
+      "end": 182.134,
+      "startMs": 176561,
+      "endMs": 182134
     },
     {
       "sentenceId": "S042",
       "beatId": "B04",
       "text": "Polendina was a rude nickname for Geppetto, inspired by his corn-yellow wig.",
-      "speechStart": 182.277,
-      "speechEnd": 188.417,
-      "start": 182.147,
-      "end": 188.564
+      "speechStart": 182.264,
+      "speechEnd": 188.403,
+      "speechStartMs": 182264,
+      "speechEndMs": 188403,
+      "start": 182.134,
+      "end": 188.55,
+      "startMs": 182134,
+      "endMs": 188550
     },
     {
       "sentenceId": "S043",
       "beatId": "B04",
       "text": "Geppetto spun round, furious.",
-      "speechStart": 188.71,
-      "speechEnd": 191.777,
-      "start": 188.564,
-      "end": 191.937
+      "speechStart": 188.696,
+      "speechEnd": 191.763,
+      "speechStartMs": 188696,
+      "speechEndMs": 191763,
+      "start": 188.55,
+      "end": 191.923,
+      "startMs": 188550,
+      "endMs": 191923
     },
     {
       "sentenceId": "S044",
       "beatId": "B04",
       "text": "“Who said that?”",
-      "speechStart": 192.097,
-      "speechEnd": 193.377,
-      "start": 191.937,
-      "end": 193.457
+      "speechStart": 192.083,
+      "speechEnd": 193.363,
+      "speechStartMs": 192083,
+      "speechEndMs": 193363,
+      "start": 191.923,
+      "end": 193.443,
+      "startMs": 191923,
+      "endMs": 193443
     },
     {
       "sentenceId": "S045",
       "beatId": "B04",
       "text": "Master Cherry lifted both hands and swore it was not him.",
-      "speechStart": 193.537,
-      "speechEnd": 198.337,
-      "start": 193.457,
-      "end": 198.412
+      "speechStart": 193.523,
+      "speechEnd": 198.323,
+      "speechStartMs": 193523,
+      "speechEndMs": 198323,
+      "start": 193.443,
+      "end": 198.398,
+      "startMs": 193443,
+      "endMs": 198398
     },
     {
       "sentenceId": "S046",
       "beatId": "B04",
       "text": "Neither man believed the other.",
-      "speechStart": 198.487,
-      "speechEnd": 200.817,
-      "start": 198.412,
-      "end": 200.87
+      "speechStart": 198.473,
+      "speechEnd": 200.802,
+      "speechStartMs": 198473,
+      "speechEndMs": 200802,
+      "start": 198.398,
+      "end": 200.856,
+      "startMs": 198398,
+      "endMs": 200856
     },
     {
       "sentenceId": "S047",
       "beatId": "B04",
       "text": "Their argument became a storm of accusations, stamping feet, and flying insults.",
-      "speechStart": 200.924,
-      "speechEnd": 207.457,
-      "start": 200.87,
-      "end": 207.677
+      "speechStart": 200.909,
+      "speechEnd": 207.442,
+      "speechStartMs": 200909,
+      "speechEndMs": 207442,
+      "start": 200.856,
+      "end": 207.662,
+      "startMs": 200856,
+      "endMs": 207662
     },
     {
       "sentenceId": "S048",
       "beatId": "B04",
       "text": "A moment later, they were rolling across the floor like two angry sacks of flour.",
-      "speechStart": 207.897,
-      "speechEnd": 214.217,
-      "start": 207.677,
-      "end": 214.303
+      "speechStart": 207.882,
+      "speechEnd": 214.202,
+      "speechStartMs": 207882,
+      "speechEndMs": 214202,
+      "start": 207.662,
+      "end": 214.288,
+      "startMs": 207662,
+      "endMs": 214288
     },
     {
       "sentenceId": "S049",
       "beatId": "B04",
       "text": "At last, breathless and embarrassed, they stopped.",
-      "speechStart": 214.39,
-      "speechEnd": 218.497,
-      "start": 214.303,
-      "end": 218.644
+      "speechStart": 214.375,
+      "speechEnd": 218.481,
+      "speechStartMs": 214375,
+      "speechEndMs": 218481,
+      "start": 214.288,
+      "end": 218.628,
+      "startMs": 214288,
+      "endMs": 218628
     },
     {
       "sentenceId": "S050",
       "beatId": "B04",
       "text": "Geppetto straightened Master Cherry’s collar.",
-      "speechStart": 218.79,
-      "speechEnd": 221.697,
-      "start": 218.644,
-      "end": 221.772
+      "speechStart": 218.774,
+      "speechEnd": 221.681,
+      "speechStartMs": 218774,
+      "speechEndMs": 221681,
+      "start": 218.628,
+      "end": 221.755,
+      "startMs": 218628,
+      "endMs": 221755
     },
     {
       "sentenceId": "S051",
       "beatId": "B04",
       "text": "Master Cherry dusted Geppetto’s coat.",
-      "speechStart": 221.846,
-      "speechEnd": 224.817,
-      "start": 221.772,
-      "end": 225.057
+      "speechStart": 221.83,
+      "speechEnd": 224.801,
+      "speechStartMs": 221830,
+      "speechEndMs": 224801,
+      "start": 221.755,
+      "end": 225.041,
+      "startMs": 221755,
+      "endMs": 225041
     },
     {
       "sentenceId": "S052",
       "beatId": "B04",
       "text": "“Friends again?” Geppetto asked.",
-      "speechStart": 225.297,
-      "speechEnd": 228.097,
-      "start": 225.057,
-      "end": 228.257
+      "speechStart": 225.281,
+      "speechEnd": 228.081,
+      "speechStartMs": 225281,
+      "speechEndMs": 228081,
+      "start": 225.041,
+      "end": 228.241,
+      "startMs": 225041,
+      "endMs": 228241
     },
     {
       "sentenceId": "S053",
       "beatId": "B04",
       "text": "“Friends again,” Master Cherry replied.",
-      "speechStart": 228.417,
-      "speechEnd": 231.297,
-      "start": 228.257,
-      "end": 231.387
+      "speechStart": 228.4,
+      "speechEnd": 231.28,
+      "speechStartMs": 228400,
+      "speechEndMs": 231280,
+      "start": 228.241,
+      "end": 231.37,
+      "startMs": 228241,
+      "endMs": 231370
     },
     {
       "sentenceId": "S054",
       "beatId": "B04",
       "text": "The block gave a quiet, satisfied chuckle.",
-      "speechStart": 231.477,
-      "speechEnd": 235.297,
-      "start": 231.387,
-      "end": 235.526
+      "speechStart": 231.46,
+      "speechEnd": 235.28,
+      "speechStartMs": 231460,
+      "speechEndMs": 235280,
+      "start": 231.37,
+      "end": 235.517,
+      "startMs": 231370,
+      "endMs": 235517
     },
     {
       "sentenceId": "S055",
@@ -609,700 +864,1894 @@
       "text": "Master Cherry quickly wrapped the block and placed it in Geppetto’s arms.",
       "speechStart": 235.755,
       "speechEnd": 240.486,
-      "start": 235.526,
-      "end": 240.606
+      "speechStartMs": 235755,
+      "speechEndMs": 240486,
+      "start": 235.517,
+      "end": 240.606,
+      "startMs": 235517,
+      "endMs": 240606
     },
     {
       "sentenceId": "S056",
       "beatId": "B05",
       "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd.",
       "speechStart": 240.726,
-      "speechEnd": 247.926,
+      "speechEnd": 247.925,
+      "speechStartMs": 240726,
+      "speechEndMs": 247925,
       "start": 240.606,
-      "end": 248.032
+      "end": 248.031,
+      "startMs": 240606,
+      "endMs": 248031
     },
     {
       "sentenceId": "S057",
       "beatId": "B05",
       "text": "He imagined music, applause, and warm meals shared beside the fire.",
-      "speechStart": 248.139,
-      "speechEnd": 254.766,
-      "start": 248.032,
-      "end": 254.821
+      "speechStart": 248.138,
+      "speechEnd": 254.764,
+      "speechStartMs": 248138,
+      "speechEndMs": 254764,
+      "start": 248.031,
+      "end": 254.819,
+      "startMs": 248031,
+      "endMs": 254819
     },
     {
       "sentenceId": "S058",
       "beatId": "B05",
       "text": "His real home was only one small room beneath a staircase.",
-      "speechStart": 254.876,
-      "speechEnd": 259.286,
-      "start": 254.821,
-      "end": 259.446
+      "speechStart": 254.874,
+      "speechEnd": 259.284,
+      "speechStartMs": 254874,
+      "speechEndMs": 259284,
+      "start": 254.819,
+      "end": 259.444,
+      "startMs": 254819,
+      "endMs": 259444
     },
     {
       "sentenceId": "S059",
       "beatId": "B05",
       "text": "A painted fire on the wall had to pretend to keep him warm.",
-      "speechStart": 259.606,
-      "speechEnd": 264.086,
-      "start": 259.446,
-      "end": 264.206
+      "speechStart": 259.604,
+      "speechEnd": 264.083,
+      "speechStartMs": 259604,
+      "speechEndMs": 264083,
+      "start": 259.444,
+      "end": 264.203,
+      "startMs": 259444,
+      "endMs": 264203
     },
     {
       "sentenceId": "S060",
       "beatId": "B05",
       "text": "Geppetto set the wood on his workbench and lit a little lamp.",
-      "speechStart": 264.326,
-      "speechEnd": 268.806,
-      "start": 264.206,
-      "end": 268.986
+      "speechStart": 264.323,
+      "speechEnd": 268.803,
+      "speechStartMs": 264323,
+      "speechEndMs": 268803,
+      "start": 264.203,
+      "end": 268.983,
+      "startMs": 264203,
+      "endMs": 268983
     },
     {
       "sentenceId": "S061",
       "beatId": "B05",
       "text": "“What shall I call you?” he wondered.",
-      "speechStart": 269.166,
-      "speechEnd": 271.686,
-      "start": 268.986,
-      "end": 271.779
+      "speechStart": 269.163,
+      "speechEnd": 271.683,
+      "speechStartMs": 269163,
+      "speechEndMs": 271683,
+      "start": 268.983,
+      "end": 271.776,
+      "startMs": 268983,
+      "endMs": 271776
     },
     {
       "sentenceId": "S062",
       "beatId": "B05",
       "text": "After a moment, he smiled.",
-      "speechStart": 271.873,
-      "speechEnd": 274.486,
-      "start": 271.779,
-      "end": 274.686
+      "speechStart": 271.87,
+      "speechEnd": 274.482,
+      "speechStartMs": 271870,
+      "speechEndMs": 274482,
+      "start": 271.776,
+      "end": 274.682,
+      "startMs": 271776,
+      "endMs": 274682
     },
     {
       "sentenceId": "S063",
       "beatId": "B05",
       "text": "“I shall call you Pinocchio.”",
-      "speechStart": 274.886,
-      "speechEnd": 277.526,
-      "start": 274.686,
-      "end": 277.646
+      "speechStart": 274.882,
+      "speechEnd": 277.522,
+      "speechStartMs": 274882,
+      "speechEndMs": 277522,
+      "start": 274.682,
+      "end": 277.642,
+      "startMs": 274682,
+      "endMs": 277642
     },
     {
       "sentenceId": "S064",
       "beatId": "B05",
       "text": "The name sounded bright, quick, and full of adventure.",
-      "speechStart": 277.766,
-      "speechEnd": 282.566,
-      "start": 277.646,
-      "end": 282.712
+      "speechStart": 277.762,
+      "speechEnd": 282.562,
+      "speechStartMs": 277762,
+      "speechEndMs": 282562,
+      "start": 277.642,
+      "end": 282.708,
+      "startMs": 277642,
+      "endMs": 282708
     },
     {
       "sentenceId": "S065",
       "beatId": "B05",
       "text": "Geppetto sharpened his tools with great care.",
-      "speechStart": 282.859,
-      "speechEnd": 286.166,
-      "start": 282.712,
-      "end": 286.326
+      "speechStart": 282.855,
+      "speechEnd": 286.161,
+      "speechStartMs": 282855,
+      "speechEndMs": 286161,
+      "start": 282.708,
+      "end": 286.321,
+      "startMs": 282708,
+      "endMs": 286321
     },
     {
       "sentenceId": "S066",
       "beatId": "B05",
       "text": "“Let us make a boy,” he said, “and perhaps a family too.”",
-      "speechStart": 286.486,
-      "speechEnd": 291.046,
-      "start": 286.326,
-      "end": 291.661
+      "speechStart": 286.481,
+      "speechEnd": 291.041,
+      "speechStartMs": 286481,
+      "speechEndMs": 291041,
+      "start": 286.321,
+      "end": 291.656,
+      "startMs": 286321,
+      "endMs": 291656
     },
     {
       "sentenceId": "S067",
       "beatId": "B06",
       "text": "Under the lamplight, Geppetto carved the hair, forehead, and two lively eyes.",
-      "speechStart": 292.276,
-      "speechEnd": 298.486,
-      "start": 291.661,
-      "end": 298.596
+      "speechStart": 292.271,
+      "speechEnd": 298.48,
+      "speechStartMs": 292271,
+      "speechEndMs": 298480,
+      "start": 291.656,
+      "end": 298.59,
+      "startMs": 291656,
+      "endMs": 298590
     },
     {
       "sentenceId": "S068",
       "beatId": "B06",
       "text": "The moment the eyes appeared, they stared directly at him.",
-      "speechStart": 298.706,
-      "speechEnd": 303.206,
-      "start": 298.596,
-      "end": 303.426
+      "speechStart": 298.7,
+      "speechEnd": 303.2,
+      "speechStartMs": 298700,
+      "speechEndMs": 303200,
+      "start": 298.59,
+      "end": 303.42,
+      "startMs": 298590,
+      "endMs": 303420
     },
     {
       "sentenceId": "S069",
       "beatId": "B06",
       "text": "“It is polite to look kindly at your father,” Geppetto said.",
-      "speechStart": 303.646,
-      "speechEnd": 307.846,
-      "start": 303.426,
-      "end": 307.946
+      "speechStart": 303.64,
+      "speechEnd": 307.839,
+      "speechStartMs": 303640,
+      "speechEndMs": 307839,
+      "start": 303.42,
+      "end": 307.939,
+      "startMs": 303420,
+      "endMs": 307939
     },
     {
       "sentenceId": "S070",
       "beatId": "B06",
       "text": "The eyes rolled towards the ceiling.",
-      "speechStart": 308.046,
-      "speechEnd": 311.446,
-      "start": 307.946,
-      "end": 311.558
+      "speechStart": 308.039,
+      "speechEnd": 311.439,
+      "speechStartMs": 308039,
+      "speechEndMs": 311439,
+      "start": 307.939,
+      "end": 311.551,
+      "startMs": 307939,
+      "endMs": 311551
     },
     {
       "sentenceId": "S071",
       "beatId": "B06",
       "text": "Next, he carved a nose.",
-      "speechStart": 311.67,
-      "speechEnd": 313.926,
-      "start": 311.558,
-      "end": 314.006
+      "speechStart": 311.663,
+      "speechEnd": 313.919,
+      "speechStartMs": 311663,
+      "speechEndMs": 313919,
+      "start": 311.551,
+      "end": 313.999,
+      "startMs": 311551,
+      "endMs": 313999
     },
     {
       "sentenceId": "S072",
       "beatId": "B06",
       "text": "The nose grew longer and longer, no matter how often Geppetto shortened it.",
-      "speechStart": 314.086,
-      "speechEnd": 320.566,
-      "start": 314.006,
-      "end": 320.726
+      "speechStart": 314.079,
+      "speechEnd": 320.558,
+      "speechStartMs": 314079,
+      "speechEndMs": 320558,
+      "start": 313.999,
+      "end": 320.718,
+      "startMs": 313999,
+      "endMs": 320718
     },
     {
       "sentenceId": "S073",
       "beatId": "B06",
       "text": "Geppetto sighed and continued.",
-      "speechStart": 320.886,
-      "speechEnd": 323.606,
-      "start": 320.726,
-      "end": 323.752
+      "speechStart": 320.878,
+      "speechEnd": 323.598,
+      "speechStartMs": 320878,
+      "speechEndMs": 323598,
+      "start": 320.718,
+      "end": 323.745,
+      "startMs": 320718,
+      "endMs": 323745
     },
     {
       "sentenceId": "S074",
       "beatId": "B06",
       "text": "He shaped a mouth, and the mouth immediately began to grin.",
-      "speechStart": 323.899,
-      "speechEnd": 329.086,
-      "start": 323.752,
-      "end": 329.138
+      "speechStart": 323.891,
+      "speechEnd": 329.078,
+      "speechStartMs": 323891,
+      "speechEndMs": 329078,
+      "start": 323.745,
+      "end": 329.13,
+      "startMs": 323745,
+      "endMs": 329130
     },
     {
       "sentenceId": "S075",
       "beatId": "B06",
       "text": "Then it laughed at him.",
-      "speechStart": 329.19,
-      "speechEnd": 331.046,
-      "start": 329.138,
-      "end": 331.286
+      "speechStart": 329.182,
+      "speechEnd": 331.037,
+      "speechStartMs": 329182,
+      "speechEndMs": 331037,
+      "start": 329.13,
+      "end": 331.277,
+      "startMs": 329130,
+      "endMs": 331277
     },
     {
       "sentenceId": "S076",
       "beatId": "B06",
       "text": "“You have not even got a body, and already you are rude.”",
-      "speechStart": 331.526,
-      "speechEnd": 335.606,
-      "start": 331.286,
-      "end": 335.696
+      "speechStart": 331.517,
+      "speechEnd": 335.597,
+      "speechStartMs": 331517,
+      "speechEndMs": 335597,
+      "start": 331.277,
+      "end": 335.687,
+      "startMs": 331277,
+      "endMs": 335687
     },
     {
       "sentenceId": "S077",
       "beatId": "B06",
       "text": "The grin only widened.",
-      "speechStart": 335.786,
-      "speechEnd": 338.326,
-      "start": 335.696,
-      "end": 338.473
+      "speechStart": 335.777,
+      "speechEnd": 338.317,
+      "speechStartMs": 335777,
+      "speechEndMs": 338317,
+      "start": 335.687,
+      "end": 338.463,
+      "startMs": 335687,
+      "endMs": 338463
     },
     {
       "sentenceId": "S078",
       "beatId": "B06",
       "text": "Geppetto carved the chin, neck, shoulders, arms, and hands.",
-      "speechStart": 338.619,
-      "speechEnd": 345.286,
-      "start": 338.473,
-      "end": 345.433
+      "speechStart": 338.61,
+      "speechEnd": 345.276,
+      "speechStartMs": 338610,
+      "speechEndMs": 345276,
+      "start": 338.463,
+      "end": 345.423,
+      "startMs": 338463,
+      "endMs": 345423
     },
     {
       "sentenceId": "S079",
       "beatId": "B06",
       "text": "As soon as the hands were finished, they snatched away his yellow wig.",
-      "speechStart": 345.579,
-      "speechEnd": 350.406,
-      "start": 345.433,
-      "end": 350.506
+      "speechStart": 345.569,
+      "speechEnd": 350.396,
+      "speechStartMs": 345569,
+      "speechEndMs": 350396,
+      "start": 345.423,
+      "end": 350.496,
+      "startMs": 345423,
+      "endMs": 350496
     },
     {
       "sentenceId": "S080",
       "beatId": "B06",
       "text": "Pinocchio waved it like a flag and laughed.",
-      "speechStart": 350.606,
-      "speechEnd": 354.326,
-      "start": 350.506,
-      "end": 354.666
+      "speechStart": 350.596,
+      "speechEnd": 354.315,
+      "speechStartMs": 350596,
+      "speechEndMs": 354315,
+      "start": 350.496,
+      "end": 354.655,
+      "startMs": 350496,
+      "endMs": 354655
     },
     {
       "sentenceId": "S081",
       "beatId": "B07",
       "text": "“Give that back,” Geppetto ordered, though sadness had begun to replace his anger.",
-      "speechStart": 355.006,
-      "speechEnd": 360.326,
-      "start": 354.666,
-      "end": 360.486
+      "speechStart": 354.995,
+      "speechEnd": 360.315,
+      "speechStartMs": 354995,
+      "speechEndMs": 360315,
+      "start": 354.655,
+      "end": 360.475,
+      "startMs": 354655,
+      "endMs": 360475
     },
     {
       "sentenceId": "S082",
       "beatId": "B07",
       "text": "He finished the puppet’s body, legs, and feet, wiping away a tear as he worked.",
-      "speechStart": 360.646,
-      "speechEnd": 367.446,
-      "start": 360.486,
-      "end": 367.526
+      "speechStart": 360.635,
+      "speechEnd": 367.434,
+      "speechStartMs": 360635,
+      "speechEndMs": 367434,
+      "start": 360.475,
+      "end": 367.514,
+      "startMs": 360475,
+      "endMs": 367514
     },
     {
       "sentenceId": "S083",
       "beatId": "B07",
       "text": "When Geppetto placed him on the floor and took his hands, Pinocchio kicked his father’s nose and wriggled free.",
-      "speechStart": 367.606,
-      "speechEnd": 375.366,
-      "start": 367.526,
-      "end": 375.486
+      "speechStart": 367.594,
+      "speechEnd": 375.353,
+      "speechStartMs": 367594,
+      "speechEndMs": 375353,
+      "start": 367.514,
+      "end": 375.473,
+      "startMs": 367514,
+      "endMs": 375473
     },
     {
       "sentenceId": "S084",
       "beatId": "B07",
       "text": "One step became two, and two steps became a wild dash around the room.",
-      "speechStart": 375.606,
-      "speechEnd": 381.846,
-      "start": 375.486,
-      "end": 381.966
+      "speechStart": 375.593,
+      "speechEnd": 381.833,
+      "speechStartMs": 375593,
+      "speechEndMs": 381833,
+      "start": 375.473,
+      "end": 381.953,
+      "startMs": 375473,
+      "endMs": 381953
     },
     {
       "sentenceId": "S085",
       "beatId": "B07",
       "text": "Pinocchio kicked over a stool, leapt across the bed, and raced towards the door.",
-      "speechStart": 382.086,
-      "speechEnd": 388.246,
-      "start": 381.966,
-      "end": 388.406
+      "speechStart": 382.073,
+      "speechEnd": 388.232,
+      "speechStartMs": 382073,
+      "speechEndMs": 388232,
+      "start": 381.953,
+      "end": 388.392,
+      "startMs": 381953,
+      "endMs": 388392
     },
     {
       "sentenceId": "S086",
       "beatId": "B07",
       "text": "“Stop!” cried Geppetto.",
-      "speechStart": 388.566,
-      "speechEnd": 391.006,
-      "start": 388.406,
-      "end": 391.061
+      "speechStart": 388.552,
+      "speechEnd": 390.992,
+      "speechStartMs": 388552,
+      "speechEndMs": 390992,
+      "start": 388.392,
+      "end": 391.047,
+      "startMs": 388392,
+      "endMs": 391047
     },
     {
       "sentenceId": "S087",
       "beatId": "B07",
       "text": "The puppet pulled the latch and shot into the street.",
-      "speechStart": 391.116,
-      "speechEnd": 394.726,
-      "start": 391.061,
-      "end": 394.846
+      "speechStart": 391.102,
+      "speechEnd": 394.712,
+      "speechStartMs": 391102,
+      "speechEndMs": 394712,
+      "start": 391.047,
+      "end": 394.832,
+      "startMs": 391047,
+      "endMs": 394832
     },
     {
       "sentenceId": "S088",
       "beatId": "B07",
       "text": "He ran between market stalls, startled chickens, and laughing children.",
-      "speechStart": 394.966,
-      "speechEnd": 400.646,
-      "start": 394.846,
-      "end": 400.793
+      "speechStart": 394.952,
+      "speechEnd": 400.631,
+      "speechStartMs": 394952,
+      "speechEndMs": 400631,
+      "start": 394.832,
+      "end": 400.778,
+      "startMs": 394832,
+      "endMs": 400778
     },
     {
       "sentenceId": "S089",
       "beatId": "B07",
       "text": "Geppetto hurried after him in his slippers, calling his name.",
-      "speechStart": 400.939,
-      "speechEnd": 405.286,
-      "start": 400.793,
-      "end": 405.406
+      "speechStart": 400.924,
+      "speechEnd": 405.271,
+      "speechStartMs": 400924,
+      "speechEndMs": 405271,
+      "start": 400.778,
+      "end": 405.391,
+      "startMs": 400778,
+      "endMs": 405391
     },
     {
       "sentenceId": "S090",
       "beatId": "B07",
       "text": "Pinocchio did not look back.",
-      "speechStart": 405.526,
-      "speechEnd": 408.006,
-      "start": 405.406,
-      "end": 408.076
+      "speechStart": 405.511,
+      "speechEnd": 407.99,
+      "speechStartMs": 405511,
+      "speechEndMs": 407990,
+      "start": 405.391,
+      "end": 408.06,
+      "startMs": 405391,
+      "endMs": 408060
     },
     {
       "sentenceId": "S091",
       "beatId": "B07",
       "text": "Freedom felt too exciting, and consequences were still a mystery.",
-      "speechStart": 408.146,
-      "speechEnd": 413.446,
-      "start": 408.076,
-      "end": 413.715
+      "speechStart": 408.13,
+      "speechEnd": 413.43,
+      "speechStartMs": 408130,
+      "speechEndMs": 413430,
+      "start": 408.06,
+      "end": 413.698,
+      "startMs": 408060,
+      "endMs": 413698
     },
     {
       "sentenceId": "S092",
       "beatId": "B08",
       "text": "A police constable heard the commotion and stood in the middle of the road.",
-      "speechStart": 413.983,
-      "speechEnd": 418.783,
-      "start": 413.715,
-      "end": 418.848
+      "speechStart": 413.967,
+      "speechEnd": 418.766,
+      "speechStartMs": 413967,
+      "speechEndMs": 418766,
+      "start": 413.698,
+      "end": 418.831,
+      "startMs": 413698,
+      "endMs": 418831
     },
     {
       "sentenceId": "S093",
       "beatId": "B08",
       "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
-      "speechStart": 418.913,
-      "speechEnd": 424.663,
-      "start": 418.848,
-      "end": 424.763
+      "speechStart": 418.896,
+      "speechEnd": 424.646,
+      "speechStartMs": 418896,
+      "speechEndMs": 424646,
+      "start": 418.831,
+      "end": 424.746,
+      "startMs": 418831,
+      "endMs": 424746
     },
     {
       "sentenceId": "S094",
       "beatId": "B08",
       "text": "His wooden legs continued running in the air.",
-      "speechStart": 424.863,
-      "speechEnd": 428.183,
-      "start": 424.763,
-      "end": 428.329
+      "speechStart": 424.846,
+      "speechEnd": 428.166,
+      "speechStartMs": 424846,
+      "speechEndMs": 428166,
+      "start": 424.746,
+      "end": 428.312,
+      "startMs": 424746,
+      "endMs": 428312
     },
     {
       "sentenceId": "S095",
       "beatId": "B08",
       "text": "Geppetto arrived, breathless and relieved.",
-      "speechStart": 428.476,
-      "speechEnd": 432.183,
-      "start": 428.329,
-      "end": 432.403
+      "speechStart": 428.459,
+      "speechEnd": 432.165,
+      "speechStartMs": 428459,
+      "speechEndMs": 432165,
+      "start": 428.312,
+      "end": 432.385,
+      "startMs": 428312,
+      "endMs": 432385
     },
     {
       "sentenceId": "S096",
       "beatId": "B08",
       "text": "“Thank goodness,” he said.",
-      "speechStart": 432.623,
-      "speechEnd": 434.983,
-      "start": 432.403,
-      "end": 435.123
+      "speechStart": 432.605,
+      "speechEnd": 434.965,
+      "speechStartMs": 432605,
+      "speechEndMs": 434965,
+      "start": 432.385,
+      "end": 435.105,
+      "startMs": 432385,
+      "endMs": 435105
     },
     {
       "sentenceId": "S097",
       "beatId": "B08",
       "text": "“He is my boy, and I shall take him home.”",
-      "speechStart": 435.263,
-      "speechEnd": 438.263,
-      "start": 435.123,
-      "end": 438.437
+      "speechStart": 435.245,
+      "speechEnd": 438.245,
+      "speechStartMs": 435245,
+      "speechEndMs": 438245,
+      "start": 435.105,
+      "end": 438.418,
+      "startMs": 435105,
+      "endMs": 438418
     },
     {
       "sentenceId": "S098",
       "beatId": "B08",
       "text": "Geppetto reached for Pinocchio’s ears, then discovered that he had forgotten to carve them.",
-      "speechStart": 438.61,
-      "speechEnd": 444.503,
-      "start": 438.437,
-      "end": 444.591
+      "speechStart": 438.592,
+      "speechEnd": 444.484,
+      "speechStartMs": 438592,
+      "speechEndMs": 444484,
+      "start": 438.418,
+      "end": 444.572,
+      "startMs": 438418,
+      "endMs": 444572
     },
     {
       "sentenceId": "S099",
       "beatId": "B08",
       "text": "When he caught the puppet by the neck instead, Pinocchio threw himself onto the road and refused to move.",
-      "speechStart": 444.679,
-      "speechEnd": 453.023,
-      "start": 444.591,
-      "end": 453.088
+      "speechStart": 444.66,
+      "speechEnd": 453.003,
+      "speechStartMs": 444660,
+      "speechEndMs": 453003,
+      "start": 444.572,
+      "end": 453.068,
+      "startMs": 444572,
+      "endMs": 453068
     },
     {
       "sentenceId": "S100",
       "beatId": "B08",
       "text": "The crowd misunderstood the scene and began accusing Geppetto of treating his son cruelly.",
-      "speechStart": 453.153,
-      "speechEnd": 459.223,
-      "start": 453.088,
-      "end": 459.323
+      "speechStart": 453.133,
+      "speechEnd": 459.203,
+      "speechStartMs": 453133,
+      "speechEndMs": 459203,
+      "start": 453.068,
+      "end": 459.303,
+      "startMs": 453068,
+      "endMs": 459303
     },
     {
       "sentenceId": "S101",
       "beatId": "B08",
       "text": "The constable listened to the loudest voices instead of examining the facts.",
-      "speechStart": 459.423,
-      "speechEnd": 464.983,
-      "start": 459.323,
-      "end": 465.13
+      "speechStart": 459.403,
+      "speechEnd": 464.962,
+      "speechStartMs": 459403,
+      "speechEndMs": 464962,
+      "start": 459.303,
+      "end": 465.109,
+      "startMs": 459303,
+      "endMs": 465109
     },
     {
       "sentenceId": "S102",
       "beatId": "B08",
       "text": "He released Pinocchio and took Geppetto by the arm.",
-      "speechStart": 465.276,
-      "speechEnd": 469.063,
-      "start": 465.13,
-      "end": 469.173
+      "speechStart": 465.255,
+      "speechEnd": 469.042,
+      "speechStartMs": 465255,
+      "speechEndMs": 469042,
+      "start": 465.109,
+      "end": 469.152,
+      "startMs": 465109,
+      "endMs": 469152
     },
     {
       "sentenceId": "S103",
       "beatId": "B08",
       "text": "Pinocchio raced away while Geppetto was led to prison as evening settled over the town.",
-      "speechStart": 469.283,
-      "speechEnd": 475.463,
-      "start": 469.173,
-      "end": 475.683
+      "speechStart": 469.262,
+      "speechEnd": 475.441,
+      "speechStartMs": 469262,
+      "speechEndMs": 475441,
+      "start": 469.152,
+      "end": 475.661,
+      "startMs": 469152,
+      "endMs": 475661
     },
     {
       "sentenceId": "S104",
       "beatId": "B08",
       "text": "“Oh, Pinocchio,” he sighed, “I made you with love, but I forgot to give you sense.”",
-      "speechStart": 475.903,
-      "speechEnd": 483.143,
-      "start": 475.683,
-      "end": 483.273
+      "speechStart": 475.881,
+      "speechEnd": 483.121,
+      "speechStartMs": 475881,
+      "speechEndMs": 483121,
+      "start": 475.661,
+      "end": 483.251,
+      "startMs": 475661,
+      "endMs": 483251
     },
     {
       "sentenceId": "S105",
       "beatId": "B08",
       "text": "And somewhere ahead, the wooden boy’s first hard lesson was already waiting.",
-      "speechStart": 483.403,
-      "speechEnd": 490.343,
-      "start": 483.273,
-      "end": 490.32
+      "speechStart": 483.381,
+      "speechEnd": 490.32,
+      "speechStartMs": 483381,
+      "speechEndMs": 490320,
+      "start": 483.251,
+      "end": 490.32,
+      "startMs": 483251,
+      "endMs": 490320
     }
   ],
   "mimicItems": [
     {
       "id": "M01",
-      "sourceSentenceId": "S003",
+      "sourceSentenceId": "S001",
       "beatId": "B01",
-      "text": "One winter morning, he discovered a plain block of wood beside his bench.",
-      "start": 15.735,
-      "end": 20.745
+      "text": "Long ago, in a quiet Tuscan town, an old carpenter named Master Cherry worked alone in his dusty shop.",
+      "sourceTextRange": [
+        0,
+        102
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Long ago, in a quiet Tuscan town,",
+          "sourceTextRange": [
+            0,
+            33
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 0.277,
+          "speechEnd": 3.365,
+          "speechStartMs": 277,
+          "speechEndMs": 3365,
+          "start": 0.217,
+          "end": 3.391,
+          "startMs": 217,
+          "endMs": 3391
+        },
+        {
+          "chunkId": "M01-C02",
+          "text": "an old carpenter named Master Cherry worked alone in his dusty shop.",
+          "sourceTextRange": [
+            34,
+            102
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 3.418,
+          "speechEnd": 8.164,
+          "speechStartMs": 3418,
+          "speechEndMs": 8164,
+          "start": 3.391,
+          "end": 8.218,
+          "startMs": 3391,
+          "endMs": 8218
+        }
+      ],
+      "speechStart": 0.277,
+      "speechEnd": 8.164,
+      "speechStartMs": 277,
+      "speechEndMs": 8164,
+      "start": 0.217,
+      "end": 8.218,
+      "startMs": 217,
+      "endMs": 8218
     },
     {
       "id": "M02",
-      "sourceSentenceId": "S006",
+      "sourceSentenceId": "S005",
       "beatId": "B01",
-      "text": "Master Cherry rubbed his hands, lifted his axe, and whispered, “This will do nicely.”",
-      "start": 26.685,
-      "end": 34.585
+      "text": "Still, it seemed perfect for a table leg.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Still, it seemed perfect for a table leg.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 23.43,
+          "speechEnd": 26.643,
+          "speechStartMs": 23430,
+          "speechEndMs": 26643,
+          "start": 23.37,
+          "end": 26.723,
+          "startMs": 23370,
+          "endMs": 26723
+        }
+      ],
+      "speechStart": 23.43,
+      "speechEnd": 26.643,
+      "speechStartMs": 23430,
+      "speechEndMs": 26643,
+      "start": 23.37,
+      "end": 26.723,
+      "startMs": 23370,
+      "endMs": 26723
     },
     {
       "id": "M03",
-      "sourceSentenceId": "S007",
+      "sourceSentenceId": "S009",
       "beatId": "B01",
-      "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”",
-      "start": 34.422,
-      "end": 40.745
+      "text": "He searched beneath the bench, behind the door, and inside every cupboard.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "He searched beneath the bench, behind the door, and inside every cupboard.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 42.242,
+          "speechEnd": 47.282,
+          "speechStartMs": 42242,
+          "speechEndMs": 47282,
+          "start": 42.182,
+          "end": 47.362,
+          "startMs": 42182,
+          "endMs": 47362
+        }
+      ],
+      "speechStart": 42.242,
+      "speechEnd": 47.282,
+      "speechStartMs": 42242,
+      "speechEndMs": 47282,
+      "start": 42.182,
+      "end": 47.362,
+      "startMs": 42182,
+      "endMs": 47362
     },
     {
       "id": "M04",
-      "sourceSentenceId": "S011",
+      "sourceSentenceId": "S012",
       "beatId": "B01",
-      "text": "“I must have imagined it,” he decided, though his knees had begun to shake.",
-      "start": 49.325,
-      "end": 54.505
+      "text": "He raised the axe again.",
+      "sourceTextRange": [
+        0,
+        24
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "He raised the axe again.",
+          "sourceTextRange": [
+            0,
+            24
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 54.668,
+          "speechEnd": 56.641,
+          "speechStartMs": 54668,
+          "speechEndMs": 56641,
+          "start": 54.608,
+          "end": 56.721,
+          "startMs": 54608,
+          "endMs": 56721
+        }
+      ],
+      "speechStart": 54.668,
+      "speechEnd": 56.641,
+      "speechStartMs": 54668,
+      "speechEndMs": 56641,
+      "start": 54.608,
+      "end": 56.721,
+      "startMs": 54608,
+      "endMs": 56721
     },
     {
       "id": "M05",
       "sourceSentenceId": "S015",
       "beatId": "B02",
       "text": "A piece of wood could not speak, yet this one clearly had opinions.",
-      "start": 68.085,
-      "end": 73.625
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "A piece of wood could not speak,",
+          "sourceTextRange": [
+            0,
+            32
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 68.2,
+          "speechEnd": 71.04,
+          "speechStartMs": 68200,
+          "speechEndMs": 71040,
+          "start": 68.14,
+          "end": 71.08,
+          "startMs": 68140,
+          "endMs": 71080
+        },
+        {
+          "chunkId": "M05-C02",
+          "text": "yet this one clearly had opinions.",
+          "sourceTextRange": [
+            33,
+            67
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 71.12,
+          "speechEnd": 73.52,
+          "speechStartMs": 71120,
+          "speechEndMs": 73520,
+          "start": 71.08,
+          "end": 73.6,
+          "startMs": 71080,
+          "endMs": 73600
+        }
+      ],
+      "speechStart": 68.2,
+      "speechEnd": 73.52,
+      "speechStartMs": 68200,
+      "speechEndMs": 73520,
+      "start": 68.14,
+      "end": 73.6,
+      "startMs": 68140,
+      "endMs": 73600
     },
     {
       "id": "M06",
-      "sourceSentenceId": "S017",
+      "sourceSentenceId": "S020",
       "beatId": "B02",
-      "text": "The moment the tool scraped across it, the wood laughed like a cheeky child.",
-      "start": 77.225,
-      "end": 83.465
+      "text": "“There must be a trick,” he muttered.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "“There must be a trick,” he muttered.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 93.718,
+          "speechEnd": 96.318,
+          "speechStartMs": 93718,
+          "speechEndMs": 96318,
+          "start": 93.658,
+          "end": 96.398,
+          "startMs": 93658,
+          "endMs": 96398
+        }
+      ],
+      "speechStart": 93.718,
+      "speechEnd": 96.318,
+      "speechStartMs": 93718,
+      "speechEndMs": 96318,
+      "start": 93.658,
+      "end": 96.398,
+      "startMs": 93658,
+      "endMs": 96398
     },
     {
       "id": "M07",
-      "sourceSentenceId": "S025",
+      "sourceSentenceId": "S021",
       "beatId": "B02",
-      "text": "At that exact moment, someone knocked loudly at the shop door.",
-      "start": 107.272,
-      "end": 112.265
+      "text": "He tapped the block gently with one finger.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He tapped the block gently with one finger.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 96.611,
+          "speechEnd": 99.438,
+          "speechStartMs": 96611,
+          "speechEndMs": 99438,
+          "start": 96.551,
+          "end": 99.518,
+          "startMs": 96551,
+          "endMs": 99518
+        }
+      ],
+      "speechStart": 96.611,
+      "speechEnd": 99.438,
+      "speechStartMs": 96611,
+      "speechEndMs": 99438,
+      "start": 96.551,
+      "end": 99.518,
+      "startMs": 96551,
+      "endMs": 99518
     },
     {
       "id": "M08",
-      "sourceSentenceId": "S028",
-      "beatId": "B03",
-      "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
-      "start": 121.298,
-      "end": 125.465
+      "sourceSentenceId": "S026",
+      "beatId": "B02",
+      "text": "Master Cherry nearly jumped out of his apron.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Master Cherry nearly jumped out of his apron.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 112.294,
+          "speechEnd": 115.517,
+          "speechStartMs": 112294,
+          "speechEndMs": 115517,
+          "start": 112.234,
+          "end": 115.597,
+          "startMs": 112234,
+          "endMs": 115597
+        }
+      ],
+      "speechStart": 112.294,
+      "speechEnd": 115.517,
+      "speechStartMs": 112294,
+      "speechEndMs": 115517,
+      "start": 112.234,
+      "end": 115.597,
+      "startMs": 112234,
+      "endMs": 115597
     },
     {
       "id": "M09",
-      "sourceSentenceId": "S029",
+      "sourceSentenceId": "S028",
       "beatId": "B03",
-      "text": "He was poor, but his imagination was richer than any king’s treasure room.",
-      "start": 125.485,
-      "end": 130.905
+      "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 121.409,
+          "speechEnd": 125.356,
+          "speechStartMs": 121409,
+          "speechEndMs": 125356,
+          "start": 121.349,
+          "end": 125.436,
+          "startMs": 121349,
+          "endMs": 125436
+        }
+      ],
+      "speechStart": 121.409,
+      "speechEnd": 125.356,
+      "speechStartMs": 121409,
+      "speechEndMs": 125356,
+      "start": 121.349,
+      "end": 125.436,
+      "startMs": 121349,
+      "endMs": 125436
     },
     {
       "id": "M10",
       "sourceSentenceId": "S031",
       "beatId": "B03",
       "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”",
-      "start": 134.605,
-      "end": 140.505
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "“I shall make a wooden boy who can dance,",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 134.715,
+          "speechEnd": 137.915,
+          "speechStartMs": 134715,
+          "speechEndMs": 137915,
+          "start": 134.655,
+          "end": 137.955,
+          "startMs": 134655,
+          "endMs": 137955
+        },
+        {
+          "chunkId": "M10-C02",
+          "text": "fence, and turn somersaults.”",
+          "sourceTextRange": [
+            42,
+            71
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 137.995,
+          "speechEnd": 140.395,
+          "speechStartMs": 137995,
+          "speechEndMs": 140395,
+          "start": 137.955,
+          "end": 140.475,
+          "startMs": 137955,
+          "endMs": 140475
+        }
+      ],
+      "speechStart": 134.715,
+      "speechEnd": 140.395,
+      "speechStartMs": 134715,
+      "speechEndMs": 140395,
+      "start": 134.655,
+      "end": 140.475,
+      "startMs": 134655,
+      "endMs": 140475
     },
     {
       "id": "M11",
       "sourceSentenceId": "S034",
       "beatId": "B03",
       "text": "More than money, Geppetto wanted company in his small, lonely home.",
-      "start": 147.453,
-      "end": 153.465
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "More than money, Geppetto wanted company in his small, lonely home.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 147.562,
+          "speechEnd": 153.354,
+          "speechStartMs": 147562,
+          "speechEndMs": 153354,
+          "start": 147.502,
+          "end": 153.434,
+          "startMs": 147502,
+          "endMs": 153434
+        }
+      ],
+      "speechStart": 147.562,
+      "speechEnd": 153.354,
+      "speechStartMs": 147562,
+      "speechEndMs": 153354,
+      "start": 147.502,
+      "end": 153.434,
+      "startMs": 147502,
+      "endMs": 153434
     },
     {
       "id": "M12",
-      "sourceSentenceId": "S041",
-      "beatId": "B04",
-      "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
-      "start": 176.491,
-      "end": 182.117
+      "sourceSentenceId": "S039",
+      "beatId": "B03",
+      "text": "“Take that piece over there,” he offered.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "“Take that piece over there,” he offered.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 170.073,
+          "speechEnd": 173.152,
+          "speechStartMs": 170073,
+          "speechEndMs": 173152,
+          "start": 170.013,
+          "end": 173.232,
+          "startMs": 170013,
+          "endMs": 173232
+        }
+      ],
+      "speechStart": 170.073,
+      "speechEnd": 173.152,
+      "speechStartMs": 170073,
+      "speechEndMs": 173152,
+      "start": 170.013,
+      "end": 173.232,
+      "startMs": 170013,
+      "endMs": 173232
     },
     {
       "id": "M13",
-      "sourceSentenceId": "S047",
+      "sourceSentenceId": "S041",
       "beatId": "B04",
-      "text": "Their argument became a storm of accusations, stamping feet, and flying insults.",
-      "start": 200.804,
-      "end": 207.557
+      "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 176.598,
+          "speechEnd": 182.004,
+          "speechStartMs": 176598,
+          "speechEndMs": 182004,
+          "start": 176.561,
+          "end": 182.084,
+          "startMs": 176561,
+          "endMs": 182084
+        }
+      ],
+      "speechStart": 176.598,
+      "speechEnd": 182.004,
+      "speechStartMs": 176598,
+      "speechEndMs": 182004,
+      "start": 176.561,
+      "end": 182.084,
+      "startMs": 176561,
+      "endMs": 182084
     },
     {
       "id": "M14",
-      "sourceSentenceId": "S048",
+      "sourceSentenceId": "S045",
       "beatId": "B04",
-      "text": "A moment later, they were rolling across the floor like two angry sacks of flour.",
-      "start": 207.777,
-      "end": 214.317
+      "text": "Master Cherry lifted both hands and swore it was not him.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "Master Cherry lifted both hands and swore it was not him.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 193.523,
+          "speechEnd": 198.323,
+          "speechStartMs": 193523,
+          "speechEndMs": 198323,
+          "start": 193.463,
+          "end": 198.398,
+          "startMs": 193463,
+          "endMs": 198398
+        }
+      ],
+      "speechStart": 193.523,
+      "speechEnd": 198.323,
+      "speechStartMs": 193523,
+      "speechEndMs": 198323,
+      "start": 193.463,
+      "end": 198.398,
+      "startMs": 193463,
+      "endMs": 198398
     },
     {
       "id": "M15",
-      "sourceSentenceId": "S056",
-      "beatId": "B05",
-      "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd.",
-      "start": 240.606,
-      "end": 248.026
+      "sourceSentenceId": "S049",
+      "beatId": "B04",
+      "text": "At last, breathless and embarrassed, they stopped.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "At last, breathless and embarrassed, they stopped.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 214.375,
+          "speechEnd": 218.481,
+          "speechStartMs": 214375,
+          "speechEndMs": 218481,
+          "start": 214.315,
+          "end": 218.561,
+          "startMs": 214315,
+          "endMs": 218561
+        }
+      ],
+      "speechStart": 214.375,
+      "speechEnd": 218.481,
+      "speechStartMs": 214375,
+      "speechEndMs": 218481,
+      "start": 214.315,
+      "end": 218.561,
+      "startMs": 214315,
+      "endMs": 218561
     },
     {
       "id": "M16",
-      "sourceSentenceId": "S057",
-      "beatId": "B05",
-      "text": "He imagined music, applause, and warm meals shared beside the fire.",
-      "start": 248.019,
-      "end": 254.866
+      "sourceSentenceId": "S054",
+      "beatId": "B04",
+      "text": "The block gave a quiet, satisfied chuckle.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "The block gave a quiet, satisfied chuckle.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 231.46,
+          "speechEnd": 235.28,
+          "speechStartMs": 231460,
+          "speechEndMs": 235280,
+          "start": 231.4,
+          "end": 235.36,
+          "startMs": 231400,
+          "endMs": 235360
+        }
+      ],
+      "speechStart": 231.46,
+      "speechEnd": 235.28,
+      "speechStartMs": 231460,
+      "speechEndMs": 235280,
+      "start": 231.4,
+      "end": 235.36,
+      "startMs": 231400,
+      "endMs": 235360
     },
     {
       "id": "M17",
-      "sourceSentenceId": "S059",
+      "sourceSentenceId": "S057",
       "beatId": "B05",
-      "text": "A painted fire on the wall had to pretend to keep him warm.",
-      "start": 259.486,
-      "end": 264.186
+      "text": "He imagined music, applause, and warm meals shared beside the fire.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "He imagined music, applause, and warm meals shared beside the fire.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 248.138,
+          "speechEnd": 254.764,
+          "speechStartMs": 248138,
+          "speechEndMs": 254764,
+          "start": 248.078,
+          "end": 254.819,
+          "startMs": 248078,
+          "endMs": 254819
+        }
+      ],
+      "speechStart": 248.138,
+      "speechEnd": 254.764,
+      "speechStartMs": 248138,
+      "speechEndMs": 254764,
+      "start": 248.078,
+      "end": 254.819,
+      "startMs": 248078,
+      "endMs": 254819
     },
     {
       "id": "M18",
-      "sourceSentenceId": "S066",
+      "sourceSentenceId": "S061",
       "beatId": "B05",
-      "text": "“Let us make a boy,” he said, “and perhaps a family too.”",
-      "start": 286.366,
-      "end": 291.146
+      "text": "“What shall I call you?” he wondered.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“What shall I call you?” he wondered.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 269.163,
+          "speechEnd": 271.683,
+          "speechStartMs": 269163,
+          "speechEndMs": 271683,
+          "start": 269.103,
+          "end": 271.763,
+          "startMs": 269103,
+          "endMs": 271763
+        }
+      ],
+      "speechStart": 269.163,
+      "speechEnd": 271.683,
+      "speechStartMs": 269163,
+      "speechEndMs": 271683,
+      "start": 269.103,
+      "end": 271.763,
+      "startMs": 269103,
+      "endMs": 271763
     },
     {
       "id": "M19",
-      "sourceSentenceId": "S068",
-      "beatId": "B06",
-      "text": "The moment the eyes appeared, they stared directly at him.",
-      "start": 298.586,
-      "end": 303.306
+      "sourceSentenceId": "S064",
+      "beatId": "B05",
+      "text": "The name sounded bright, quick, and full of adventure.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "The name sounded bright, quick, and full of adventure.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 277.762,
+          "speechEnd": 282.562,
+          "speechStartMs": 277762,
+          "speechEndMs": 282562,
+          "start": 277.702,
+          "end": 282.642,
+          "startMs": 277702,
+          "endMs": 282642
+        }
+      ],
+      "speechStart": 277.762,
+      "speechEnd": 282.562,
+      "speechStartMs": 277762,
+      "speechEndMs": 282562,
+      "start": 277.702,
+      "end": 282.642,
+      "startMs": 277702,
+      "endMs": 282642
     },
     {
       "id": "M20",
-      "sourceSentenceId": "S072",
-      "beatId": "B06",
-      "text": "The nose grew longer and longer, no matter how often Geppetto shortened it.",
-      "start": 313.966,
-      "end": 320.666
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "Geppetto sharpened his tools with great care.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Geppetto sharpened his tools with great care.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 282.855,
+          "speechEnd": 286.161,
+          "speechStartMs": 282855,
+          "speechEndMs": 286161,
+          "start": 282.795,
+          "end": 286.241,
+          "startMs": 282795,
+          "endMs": 286241
+        }
+      ],
+      "speechStart": 282.855,
+      "speechEnd": 286.161,
+      "speechStartMs": 282855,
+      "speechEndMs": 286161,
+      "start": 282.795,
+      "end": 286.241,
+      "startMs": 282795,
+      "endMs": 286241
     },
     {
       "id": "M21",
-      "sourceSentenceId": "S074",
+      "sourceSentenceId": "S069",
       "beatId": "B06",
-      "text": "He shaped a mouth, and the mouth immediately began to grin.",
-      "start": 323.779,
-      "end": 329.186
+      "text": "“It is polite to look kindly at your father,” Geppetto said.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "“It is polite to look kindly at your father,” Geppetto said.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 303.64,
+          "speechEnd": 307.839,
+          "speechStartMs": 303640,
+          "speechEndMs": 307839,
+          "start": 303.58,
+          "end": 307.919,
+          "startMs": 303580,
+          "endMs": 307919
+        }
+      ],
+      "speechStart": 303.64,
+      "speechEnd": 307.839,
+      "speechStartMs": 303640,
+      "speechEndMs": 307839,
+      "start": 303.58,
+      "end": 307.919,
+      "startMs": 303580,
+      "endMs": 307919
     },
     {
       "id": "M22",
-      "sourceSentenceId": "S079",
+      "sourceSentenceId": "S074",
       "beatId": "B06",
-      "text": "As soon as the hands were finished, they snatched away his yellow wig.",
-      "start": 345.459,
-      "end": 350.506
+      "text": "He shaped a mouth, and the mouth immediately began to grin.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "He shaped a mouth, and the mouth immediately began to grin.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 323.891,
+          "speechEnd": 329.078,
+          "speechStartMs": 323891,
+          "speechEndMs": 329078,
+          "start": 323.831,
+          "end": 329.13,
+          "startMs": 323831,
+          "endMs": 329130
+        }
+      ],
+      "speechStart": 323.891,
+      "speechEnd": 329.078,
+      "speechStartMs": 323891,
+      "speechEndMs": 329078,
+      "start": 323.831,
+      "end": 329.13,
+      "startMs": 323831,
+      "endMs": 329130
     },
     {
       "id": "M23",
-      "sourceSentenceId": "S084",
-      "beatId": "B07",
-      "text": "One step became two, and two steps became a wild dash around the room.",
-      "start": 375.486,
-      "end": 381.946
+      "sourceSentenceId": "S078",
+      "beatId": "B06",
+      "text": "Geppetto carved the chin, neck, shoulders, arms, and hands.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Geppetto carved the chin, neck, shoulders, arms, and hands.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 338.61,
+          "speechEnd": 345.276,
+          "speechStartMs": 338610,
+          "speechEndMs": 345276,
+          "start": 338.55,
+          "end": 345.356,
+          "startMs": 338550,
+          "endMs": 345356
+        }
+      ],
+      "speechStart": 338.61,
+      "speechEnd": 345.276,
+      "speechStartMs": 338610,
+      "speechEndMs": 345276,
+      "start": 338.55,
+      "end": 345.356,
+      "startMs": 338550,
+      "endMs": 345356
     },
     {
       "id": "M24",
-      "sourceSentenceId": "S085",
-      "beatId": "B07",
-      "text": "Pinocchio kicked over a stool, leapt across the bed, and raced towards the door.",
-      "start": 381.966,
-      "end": 388.346
+      "sourceSentenceId": "S080",
+      "beatId": "B06",
+      "text": "Pinocchio waved it like a flag and laughed.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Pinocchio waved it like a flag and laughed.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 350.596,
+          "speechEnd": 354.315,
+          "speechStartMs": 350596,
+          "speechEndMs": 354315,
+          "start": 350.536,
+          "end": 354.395,
+          "startMs": 350536,
+          "endMs": 354395
+        }
+      ],
+      "speechStart": 350.596,
+      "speechEnd": 354.315,
+      "speechStartMs": 350596,
+      "speechEndMs": 354315,
+      "start": 350.536,
+      "end": 354.395,
+      "startMs": 350536,
+      "endMs": 354395
     },
     {
       "id": "M25",
-      "sourceSentenceId": "S087",
+      "sourceSentenceId": "S084",
       "beatId": "B07",
-      "text": "The puppet pulled the latch and shot into the street.",
-      "start": 390.996,
-      "end": 394.826
+      "text": "One step became two, and two steps became a wild dash around the room.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "One step became two,",
+          "sourceTextRange": [
+            0,
+            20
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 375.593,
+          "speechEnd": 377.953,
+          "speechStartMs": 375593,
+          "speechEndMs": 377953,
+          "start": 375.533,
+          "end": 377.998,
+          "startMs": 375533,
+          "endMs": 377998
+        },
+        {
+          "chunkId": "M25-C02",
+          "text": "and two steps became a wild dash around the room.",
+          "sourceTextRange": [
+            21,
+            70
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 378.043,
+          "speechEnd": 381.833,
+          "speechStartMs": 378043,
+          "speechEndMs": 381833,
+          "start": 377.998,
+          "end": 381.913,
+          "startMs": 377998,
+          "endMs": 381913
+        }
+      ],
+      "speechStart": 375.593,
+      "speechEnd": 381.833,
+      "speechStartMs": 375593,
+      "speechEndMs": 381833,
+      "start": 375.533,
+      "end": 381.913,
+      "startMs": 375533,
+      "endMs": 381913
     },
     {
       "id": "M26",
-      "sourceSentenceId": "S091",
+      "sourceSentenceId": "S089",
       "beatId": "B07",
-      "text": "Freedom felt too exciting, and consequences were still a mystery.",
-      "start": 408.026,
-      "end": 413.546
+      "text": "Geppetto hurried after him in his slippers, calling his name.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Geppetto hurried after him in his slippers, calling his name.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 400.924,
+          "speechEnd": 405.271,
+          "speechStartMs": 400924,
+          "speechEndMs": 405271,
+          "start": 400.864,
+          "end": 405.351,
+          "startMs": 400864,
+          "endMs": 405351
+        }
+      ],
+      "speechStart": 400.924,
+      "speechEnd": 405.271,
+      "speechStartMs": 400924,
+      "speechEndMs": 405271,
+      "start": 400.864,
+      "end": 405.351,
+      "startMs": 400864,
+      "endMs": 405351
     },
     {
       "id": "M27",
-      "sourceSentenceId": "S093",
-      "beatId": "B08",
-      "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
-      "start": 418.793,
-      "end": 424.763
+      "sourceSentenceId": "S091",
+      "beatId": "B07",
+      "text": "Freedom felt too exciting, and consequences were still a mystery.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Freedom felt too exciting, and consequences were still a mystery.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 408.13,
+          "speechEnd": 413.43,
+          "speechStartMs": 408130,
+          "speechEndMs": 413430,
+          "start": 408.07,
+          "end": 413.51,
+          "startMs": 408070,
+          "endMs": 413510
+        }
+      ],
+      "speechStart": 408.13,
+      "speechEnd": 413.43,
+      "speechStartMs": 408130,
+      "speechEndMs": 413430,
+      "start": 408.07,
+      "end": 413.51,
+      "startMs": 408070,
+      "endMs": 413510
     },
     {
       "id": "M28",
-      "sourceSentenceId": "S099",
+      "sourceSentenceId": "S093",
       "beatId": "B08",
-      "text": "When he caught the puppet by the neck instead, Pinocchio threw himself onto the road and refused to move.",
-      "start": 444.559,
-      "end": 453.123
+      "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
+      "sourceTextRange": [
+        0,
+        82
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Pinocchio tried to slip past,",
+          "sourceTextRange": [
+            0,
+            29
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 418.896,
+          "speechEnd": 421.366,
+          "speechStartMs": 418896,
+          "speechEndMs": 421366,
+          "start": 418.836,
+          "end": 421.386,
+          "startMs": 418836,
+          "endMs": 421386
+        },
+        {
+          "chunkId": "M28-C02",
+          "text": "but the constable caught him by his remarkable nose.",
+          "sourceTextRange": [
+            30,
+            82
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 421.406,
+          "speechEnd": 424.646,
+          "speechStartMs": 421406,
+          "speechEndMs": 424646,
+          "start": 421.386,
+          "end": 424.726,
+          "startMs": 421386,
+          "endMs": 424726
+        }
+      ],
+      "speechStart": 418.896,
+      "speechEnd": 424.646,
+      "speechStartMs": 418896,
+      "speechEndMs": 424646,
+      "start": 418.836,
+      "end": 424.726,
+      "startMs": 418836,
+      "endMs": 424726
     },
     {
       "id": "M29",
-      "sourceSentenceId": "S101",
+      "sourceSentenceId": "S102",
       "beatId": "B08",
-      "text": "The constable listened to the loudest voices instead of examining the facts.",
-      "start": 459.303,
-      "end": 465.083
+      "text": "He released Pinocchio and took Geppetto by the arm.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "He released Pinocchio and took Geppetto by the arm.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 465.255,
+          "speechEnd": 469.042,
+          "speechStartMs": 465255,
+          "speechEndMs": 469042,
+          "start": 465.195,
+          "end": 469.122,
+          "startMs": 465195,
+          "endMs": 469122
+        }
+      ],
+      "speechStart": 465.255,
+      "speechEnd": 469.042,
+      "speechStartMs": 465255,
+      "speechEndMs": 469042,
+      "start": 465.195,
+      "end": 469.122,
+      "startMs": 465195,
+      "endMs": 469122
     },
     {
       "id": "M30",
       "sourceSentenceId": "S105",
       "beatId": "B08",
       "text": "And somewhere ahead, the wooden boy’s first hard lesson was already waiting.",
-      "start": 483.283,
-      "end": 490.32
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "And somewhere ahead, the wooden boy’s first hard lesson was already waiting.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 483.381,
+          "speechEnd": 490.32,
+          "speechStartMs": 483381,
+          "speechEndMs": 490320,
+          "start": 483.321,
+          "end": 490.32,
+          "startMs": 483321,
+          "endMs": 490320
+        }
+      ],
+      "speechStart": 483.381,
+      "speechEnd": 490.32,
+      "speechStartMs": 483381,
+      "speechEndMs": 490320,
+      "start": 483.321,
+      "end": 490.32,
+      "startMs": 483321,
+      "endMs": 490320
     }
   ]
 }

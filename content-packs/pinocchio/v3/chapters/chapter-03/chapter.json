@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-03",
+  "number": 3,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "The Puppet Theatre",
+    "ko": "인형극장의 선택"
+  },
+  "sourceChapters": [
+    9,
+    10,
+    11
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Pinocchio starts towards school with Geppetto's sacrificed coat transformed into a primer.",
+    "closing": "After saving Harlequin, Pinocchio stands before Fire Eater as coins ring inside the theatre owner's purse.",
+    "next": "A generous gift meant for Geppetto will attract two polished strangers on the road home."
+  },
+  "learningObjective": "Narrate temptation, danger, and moral courage with persuasive contrast, escalating action, and purposeful dialogue.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "School or Music",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Establish sincere plans and the first small turn away from them."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "The Price of a Ticket",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S025",
+      "purpose": "Make the primer sale feel like a conscious exchange of sacrifice for pleasure."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "A Family of Puppets",
+      "sentenceStart": "S026",
+      "sentenceEnd": "S039",
+      "purpose": "Give Pinocchio an intoxicating welcome before authority enters."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "Fire Eater's Threat",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Shift the theatre from joy to a credible but child-safe danger."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Danger Moves to Harlequin",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S062",
+      "purpose": "Show that being spared is not the same as solving the moral problem."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Burn Me Instead",
+      "sentenceStart": "S063",
+      "sentenceEnd": "S072",
+      "purpose": "Let Pinocchio act courageously despite visible fear."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "A Feast, Not a Fire",
+      "sentenceStart": "S073",
+      "sentenceEnd": "S090",
+      "purpose": "Release the tension and let honest speech follow brave action."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "One More Surprise",
+      "sentenceStart": "S091",
+      "sentenceEnd": "S103",
+      "purpose": "Acknowledge the lost primer and carry hope towards the next chapter."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json",
+      "beatRanges": [
+        {
+          "beatId": "B01",
+          "order": 1,
+          "title": "School or Music",
+          "sentenceStart": "S001",
+          "sentenceEnd": "S013",
+          "purpose": "Establish sincere plans and the first small turn away from them."
+        },
+        {
+          "beatId": "B02",
+          "order": 2,
+          "title": "The Price of a Ticket",
+          "sentenceStart": "S014",
+          "sentenceEnd": "S025",
+          "purpose": "Make the primer sale feel like a conscious exchange of sacrifice for pleasure."
+        },
+        {
+          "beatId": "B03",
+          "order": 3,
+          "title": "A Family of Puppets",
+          "sentenceStart": "S026",
+          "sentenceEnd": "S040",
+          "purpose": "Give Pinocchio an intoxicating welcome before authority enters."
+        },
+        {
+          "beatId": "B04",
+          "order": 4,
+          "title": "Fire Eater's Threat",
+          "sentenceStart": "S041",
+          "sentenceEnd": "S055",
+          "purpose": "Shift the theatre from joy to a credible but child-safe danger."
+        },
+        {
+          "beatId": "B05",
+          "order": 5,
+          "title": "Danger Moves to Harlequin",
+          "sentenceStart": "S056",
+          "sentenceEnd": "S064",
+          "purpose": "Show that being spared is not the same as solving the moral problem."
+        },
+        {
+          "beatId": "B06",
+          "order": 6,
+          "title": "Burn Me Instead",
+          "sentenceStart": "S065",
+          "sentenceEnd": "S077",
+          "purpose": "Let Pinocchio act courageously despite visible fear."
+        },
+        {
+          "beatId": "B07",
+          "order": 7,
+          "title": "A Feast, Not a Fire",
+          "sentenceStart": "S078",
+          "sentenceEnd": "S096",
+          "purpose": "Release the tension and let honest speech follow brave action."
+        },
+        {
+          "beatId": "B08",
+          "order": 8,
+          "title": "One More Surprise",
+          "sentenceStart": "S097",
+          "sentenceEnd": "S109",
+          "purpose": "Acknowledge the lost primer and carry hope towards the next chapter."
+        }
+      ]
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

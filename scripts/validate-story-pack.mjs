@@ -171,10 +171,11 @@ if (record) {
         const activitiesPath = resolveInside(dirname(chapterPath), chapter.levels?.[goldenLevel]?.activities, "Activities path");
         const productionPath = resolveInside(dirname(chapterPath), chapter.levels?.[goldenLevel]?.production, "Production path");
         const masterText = readText(masterPath, "Golden master");
+        const activitiesText = readText(activitiesPath, "Golden learning activities source");
         const activities = readJson(activitiesPath, "Golden learning activities");
         const production = readJson(productionPath, "Golden production record");
 
-        if (masterText && activities && production) {
+        if (masterText && activitiesText && activities && production) {
           const sentences = masterText
             .split(/\r?\n/)
             .map((sentence) => sentence.trim())
@@ -187,11 +188,17 @@ if (record) {
             ((words.length / production.targets.referenceWordsPerMinute) * 60).toFixed(1),
           );
           const masterChecksum = createHash("sha256").update(masterText).digest("hex");
+          const activitiesChecksum = createHash("sha256").update(activitiesText).digest("hex");
 
           check(
             production.generation?.scriptChecksum === `sha256:${masterChecksum}`,
             "Production script checksum does not match the canonical master.",
           );
+          check(
+            production.generation?.activitiesChecksum === `sha256:${activitiesChecksum}`,
+            "Production activities checksum does not match the canonical activities.",
+          );
+          check(latestQa?.metrics?.activitiesSha256 === activitiesChecksum, "QA activities checksum is stale.");
           check(
             latestQa?.metrics?.masterSha256 === masterChecksum,
             "QA master checksum does not match the canonical master.",
@@ -223,14 +230,34 @@ if (record) {
           check(expectedBeatStart === sentences.length, "The eight beats must cover every master sentence exactly once.");
 
           check(activities.mimic?.length === 30, "Mimic must contain exactly 30 selections.");
+          check(activities.schemaVersion === "1.1.0", "Activities must use nested Mimic schema 1.1.0.");
           check(activities.guess?.length === 10, "Guess must contain exactly 10 items.");
           check(activities.word?.length === 10, "Word must contain exactly 10 items.");
 
-          const mimicSourceIds = activities.mimic?.map((item) => item.sourceSentenceId) ?? [];
-          check(hasUniqueValues(mimicSourceIds), "Mimic source sentences must be unique.");
+          const mimicSentenceIds = activities.mimic?.map((item) => item.sourceSentenceId) ?? [];
+          check(hasUniqueValues(mimicSentenceIds), "Mimic must select 30 unique source sentences.");
           for (const item of activities.mimic ?? []) {
-            check(sentenceMap.get(item.sourceSentenceId) === item.text, `${item.id} is not an exact master sentence.`);
+            const source = sentenceMap.get(item.sourceSentenceId);
+            const [from, to] = item.sourceTextRange ?? [];
+            check(from === 0 && to === source?.length && item.text === source, `${item.id} must retain its complete source sentence.`);
             check(Boolean(item.selectionReason), `${item.id} is missing an editorial selection reason.`);
+            const chunks = item.chunks ?? [];
+            check(chunks.length >= 1, `${item.id} has no practice chunks.`);
+            let previousTo = 0;
+            for (const [index, chunk] of chunks.entries()) {
+              const [chunkFrom, chunkTo] = chunk.sourceTextRange ?? [];
+              const chunkWords = chunk.text?.split(/\s+/).filter(Boolean).length ?? 0;
+              check(chunk.chunkId === `${item.id}-C${String(index + 1).padStart(2, "0")}`, `${item.id} chunk IDs are not sequential.`);
+              check(chunk.part === index + 1 && chunk.parts === chunks.length, `${item.id}/${chunk.chunkId} part metadata differs.`);
+              check(Number.isInteger(chunkFrom) && Number.isInteger(chunkTo) && chunkFrom >= previousTo && chunkTo > chunkFrom, `${item.id}/${chunk.chunkId} has invalid bounds.`);
+              check(/^\s*$/.test(source?.slice(previousTo, chunkFrom) ?? "x"), `${item.id}/${chunk.chunkId} skips non-space text.`);
+              check(source?.slice(chunkFrom, chunkTo) === chunk.text, `${item.id}/${chunk.chunkId} is not an exact source range.`);
+              check(chunkWords >= 2 && chunkWords <= 12, `${item.id}/${chunk.chunkId} must contain 2–12 words.`);
+              previousTo = chunkTo;
+            }
+            check(/^\s*$/.test(source?.slice(previousTo) ?? "x"), `${item.id} chunks do not cover the full sentence.`);
+            const sentenceWords = source?.split(/\s+/).filter(Boolean).length ?? 0;
+            check(sentenceWords <= 12 ? chunks.length === 1 : chunks.length >= 2, `${item.id} chunk count does not match sentence length.`);
           }
 
           const correctPositions = { A: 0, B: 0, C: 0 };
@@ -347,29 +374,50 @@ if (record) {
                 }
               }
               check(timeline?.mimicItems?.length === 30, "Audio timeline must contain 30 Mimic selections.");
+              check(timeline?.activitiesSha256 === activitiesChecksum, "Audio timeline activities checksum is stale.");
               for (const item of timeline?.mimicItems ?? []) {
                 const authored = activities.mimic.find((candidate) => candidate.id === item.id);
+                check(Boolean(authored && authored.sourceSentenceId === item.sourceSentenceId && authored.text === item.text), `${item.id} audio range differs from the authored Mimic selection.`);
                 check(
-                  Boolean(
-                    authored &&
-                      authored.sourceSentenceId === item.sourceSentenceId &&
-                      authored.text === item.text,
-                  ),
-                  `${item.id} audio range differs from the authored Mimic selection.`,
+                  JSON.stringify(authored?.sourceTextRange) === JSON.stringify(item.sourceTextRange),
+                  `${item.id} audio source-text range differs from the authored Mimic sentence.`,
                 );
                 check(item.start >= 0 && item.end > item.start, `${item.id} has invalid audio bounds.`);
+                check(
+                  Number.isInteger(item.speechStartMs) && Number.isInteger(item.speechEndMs) && item.speechEndMs > item.speechStartMs,
+                  `${item.id} is missing millisecond speech bounds.`,
+                );
+                check(item.chunks?.length === authored?.chunks?.length, `${item.id} audio chunk count differs.`);
+                for (const chunk of item.chunks ?? []) {
+                  const authoredChunk = authored?.chunks?.find((candidate) => candidate.chunkId === chunk.chunkId);
+                  check(Boolean(authoredChunk), `${item.id}/${chunk.chunkId} was not authored.`);
+                  check(chunk.text === authoredChunk?.text, `${item.id}/${chunk.chunkId} audio text differs.`);
+                  check(
+                    JSON.stringify(chunk.sourceTextRange) === JSON.stringify(authoredChunk?.sourceTextRange),
+                    `${item.id}/${chunk.chunkId} audio range differs.`,
+                  );
+                  check(
+                    Number.isInteger(chunk.speechStartMs) && Number.isInteger(chunk.speechEndMs) && chunk.speechEndMs > chunk.speechStartMs,
+                    `${item.id}/${chunk.chunkId} is missing millisecond speech bounds.`,
+                  );
+                }
               }
               check(timeline?.beats?.length === 8, "Audio timeline must contain eight beat ranges.");
               check(
-                ["elevenlabs-forced-alignment", "per-act-elevenlabs-tts"].includes(timeline?.alignmentSource),
+                [
+                  "elevenlabs-forced-alignment",
+                  "per-act-elevenlabs-tts",
+                  "per-act-elevenlabs-tts-duration-fitted",
+                ].includes(timeline?.alignmentSource),
                 "Timeline has an unknown alignment source.",
               );
               warn(
                 timeline?.alignmentSource === "elevenlabs-forced-alignment",
-                "Final Forced Alignment was unavailable; the timeline uses the two source-act timestamp offsets.",
+                "Final Forced Alignment was unavailable; the Chapter timeline uses duration-fitted source-act timestamps and remains pre-release timing.",
               );
               check(Boolean(alignment), "Final alignment evidence is missing.");
               check(provenance?.source?.sha256 === masterChecksum, "Audio provenance points to a different master script.");
+              check(provenance?.source?.activitiesSha256 === activitiesChecksum, "Audio provenance points to different learning activities.");
               check(provenance?.provider?.voice?.id === production.provider.voiceId, "Audio provenance voice ID differs.");
               check(provenance?.provider?.modelId === production.provider.modelId, "Audio provenance model differs.");
               check(provenance?.provider?.commercialPaidPlanConfirmed === true, "Commercial paid-plan evidence is missing.");

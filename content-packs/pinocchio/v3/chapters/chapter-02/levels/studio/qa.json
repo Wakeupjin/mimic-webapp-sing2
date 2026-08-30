@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-02",
+  "level": "studio",
+  "status": "automated-structure-pass-human-review-pending",
+  "metrics": {
+    "sentenceCount": 103,
+    "wordCount": 1197,
+    "estimatedDurationSeconds": 495.3,
+    "mimicCount": 30,
+    "guessCount": 10,
+    "wordCountItems": 10,
+    "beatCount": 8,
+    "masterSha256": "98de88f3e9830a776b4ff3492e4d0258a65aef37e30592485a4dfea5ea2e0bd1",
+    "actualDurationSeconds": null,
+    "audioBytes": null,
+    "audioSha256": null,
+    "alignmentSource": null,
+    "providerRequestCount": 0,
+    "providerReportedCharacterCost": null,
+    "activitiesSha256": "cead571090d9b089b708839e21f6af7ecfebe5a00696516e4a6c462010f91795"
+  },
+  "automatedValidation": {
+    "command": "node scripts/validate-story-pack-authored.mjs",
+    "status": "passed",
+    "lastRunAt": "2026-08-30"
+  },
+  "humanApprovals": {
+    "editorial": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "learning": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "voice": {
+      "status": "narrator-approved",
+      "reviewer": "product-owner",
+      "reviewedAt": "2026-08-30"
+    },
+    "audio": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "rights": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "release": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  },
+  "blockingIssues": [
+    "Named editorial and learning approval not recorded.",
+    "Human listen-through, visual beats, and product preview are not complete.",
+    "Lily batch generation should finish by the 2026-11-30 internal cutoff ahead of the scheduled 2026-12-31 voice retirement.",
+    "Target-territory rights review remains pending."
+  ],
+  "independentLearningReview": {
+    "status": "agent-review-completed-human-approval-pending",
+    "reviewerType": "independent-ai-content-qa",
+    "reviewedAt": "2026-08-30",
+    "scope": [
+      "30 unique Mimic source sentences",
+      "full-sentence item contract with nested 2–12-word chunks",
+      "exact source ranges and complete chunk reconstruction",
+      "eight-beat learning coverage",
+      "Guess cue-to-answer grounding",
+      "Word structure focus and exact token reconstruction"
+    ],
+    "evidence": {
+      "mimicItemCount": 30,
+      "uniqueMimicSourceCount": 30,
+      "flatSplitItemsRemaining": 0,
+      "humanLearningApproval": "pending"
+    },
+    "note": "This evidence records an independent agent review only; it is not a human approval."
+  }
+}

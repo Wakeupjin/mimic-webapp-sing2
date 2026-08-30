@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-07",
+  "number": 7,
+  "status": "content-complete-audio-pending",
+  "titles": {
+    "en": "The Sea and the Land of Busy Bees",
+    "ko": "바다와 부지런한 벌들의 나라"
+  },
+  "sourceChapters": [
+    24,
+    25,
+    26
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "After swimming through the storm, Pinocchio reaches an island with no sign of Geppetto.",
+    "closing": "A false rumour brings Pinocchio away from school and into a confrontation on the beach.",
+    "next": "The beach quarrel turns dangerous, forcing Pinocchio to choose between escape and responsibility."
+  },
+  "learningObjective": "Connect honest work, repeated habits, and temptation while explaining how daily choices build character.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Shore and the Dolphin",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Carry Pinocchio from exhausted survival to frightening news of the Shark."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "A Town That Works",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Contrast Pinocchio’s hunger with a community built on contribution."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The First Honest Meal",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "purpose": "Make humble physical work produce a concrete and satisfying reward."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "The Fairy Grown",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Reunite Pinocchio with the Fairy while showing that time and choices have consequences."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "A Promise to Learn",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "purpose": "Define becoming human as a pattern of responsible actions rather than magic."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Better Habits",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S078",
+      "purpose": "Show gradual growth through study, restraint, and repeated effort."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Rumour of the Shark",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S091",
+      "purpose": "Use concern for Geppetto as the emotional opening for temptation."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "Away from the Lesson",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S105",
+      "purpose": "Let a seemingly brief exception carry Pinocchio beyond his intended boundary."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json"
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

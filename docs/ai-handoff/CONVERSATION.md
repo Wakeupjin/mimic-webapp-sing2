@@ -1087,3 +1087,55 @@ Generated the Pinocchio v3 Core Chapter 1 Lily ElevenLabs v3 Golden master from 
 Pinocchio v3 Core Chapter 1 Golden audiobook master, sentence/Mimic alignment, and reproducible ElevenLabs provenance are complete. Human listen-through is the release gate before batch production.
 
 **Validation:** Story Pack validator, TypeScript, generator syntax, FFprobe format/duration, loudness, checksums, request-count, sentence-count, beat-count, and Mimic-range checks passed.
+
+## 2026-08-30 17:35:46 — codex / work started
+
+Objective: Complete Pinocchio v3 as twelve-Chapter Foundation, Core, and Studio Story Packs, then generate the final Lily British narration set before voice retirement
+
+## 2026-08-30 19:14:09 — codex / checkpoint
+
+Authored and independently AI-reviewed all 36 Pinocchio v3 Chapter-level packs across Foundation, Core, and Studio; enforced 30 unique Mimic source sentences with nested natural-breath chunks; corrected cross-Chapter continuity and learning activities; hardened paid-generation resume, multi-act seams, checksums, final full-master assembly, and release-only Forced Alignment; refreshed Core Chapters 1-3 nested timelines offline without TTS charges.
+
+**Next action:** Complete the nested Mimic UI adapter, record named human editorial and learning approvals, then generate the remaining Lily masters within an explicit billed-character cap; assemble and Forced Align one final full-story master per level before production release.
+
+**Validation:** npm run validate:story-pack passed; 36 authored levels, 37,286 words, 1,080 Mimic items, 360 Guess, 360 Word, zero structural errors. Core Chapters 1-3 reused cached paid acts and rebuilt nested timelines with no network TTS calls. node --check and git diff --check passed after fixes.
+
+**Files:**
+- content-packs/pinocchio/v3
+- content-studio/STORY_PACK_STANDARD.md
+- scripts/generate-story-pack-golden-audio.mjs
+- scripts/generate-pinocchio-v3-audio-batch.mjs
+- scripts/assemble-story-pack-audiobook.mjs
+- scripts/align-story-pack-audiobook.mjs
+- scripts/validate-story-pack-authored.mjs
+- scripts/validate-story-pack-audiobook.mjs
+
+**Open risks:** Named human editorial/learning approvals remain pending; full-master Forced Alignment is blocked by the current restricted ElevenLabs key's missing endpoint access; exact account credits cannot be read with the key, while remaining narration is estimated at 210,451 characters; rights and human continuity listening remain release blockers.
+
+
+## 2026-08-30 19:18:56 — nested-mimic-ui-adapter / work
+
+Added a legacy-compatible nested Mimic UI adapter: thirty authored parent sentences stay learner-facing, v3 chunks use their exact millisecond playback handles and run in order, and ArrowLeft/ArrowRight start the destination sentence with active slot feedback. TypeScript, diff check, and direct v2/v3 adapter smoke tests passed. Production book routes still load v2 pack/media; selecting v3 pack/timeline remains separate wiring.
+
+## 2026-08-30 19:21:34 — codex / checkpoint
+
+Completed the Pinocchio v3 asset standard and all 36 Foundation/Core/Studio Chapter packs, including 30 unique Mimic source sentences per Chapter with nested natural-breath chunks. Refreshed cached Core Chapters 1-3 millisecond timelines with no new TTS calls. Added multi-act-safe generation, resumable artifact hashes, one-master assembly, release-only full-master Forced Alignment, full-audiobook validation, and a legacy-compatible local Mimic adapter that practices nested chunks with keyboard autoplay and active-state feedback.
+
+**Next action:** Connect the production /book/pinocchio loader to the v3 Chapter/level pack and published media URLs. After named human editorial/learning approval and an explicit credit cap, generate the remaining Lily audio, assemble one master per level, enable Forced Alignment access, align the final masters, then run rights/listen/product release QA.
+
+**Validation:** npm run validate:story-pack passed with 36 authored levels, 37,286 words, 1,080 Mimic parents, 360 Guess, 360 Word, and zero errors. npx tsc --noEmit passed. v3 Chapter 1 adapter smoke: 30 parents with exact nested chunk playback; v2 smoke: 30 parent/single-chunk regression pass. git diff --check passed before checkpoint.
+
+**Files:**
+- app/dev/pinocchio-chapters/lessonData.ts
+- app/dev/pinocchio-chapters/types.ts
+- app/dev/pinocchio-session-1/[mode]/page.tsx
+- content-packs/pinocchio/v3
+- content-studio/STORY_PACK_STANDARD.md
+- scripts/generate-story-pack-golden-audio.mjs
+- scripts/generate-pinocchio-v3-audio-batch.mjs
+- scripts/assemble-story-pack-audiobook.mjs
+- scripts/align-story-pack-audiobook.mjs
+- scripts/validate-story-pack-authored.mjs
+- scripts/validate-story-pack-audiobook.mjs
+
+**Open risks:** Production book routes still load v2 data/media and need explicit v3 loader wiring. Named human editorial/learning approvals, rights approval, and continuity listening remain pending. Current restricted ElevenLabs key cannot access subscription usage or Forced Alignment. Remaining audio estimate is 210,451 billed characters; full batch must not start without a credit cap.

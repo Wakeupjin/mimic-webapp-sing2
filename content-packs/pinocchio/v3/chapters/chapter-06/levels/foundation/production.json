@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-06",
+  "level": "foundation",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 112,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      430,
+      540
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear British storybook narrator using concrete language, gentle emotion, and generous learner processing time.",
+    "performance": "Keep every action easy to follow. Let humour and concern come through naturally without turning simple language into childish performance. Mix roadside absurdity with the humiliation of the collar, make Pinocchio’s honest choice quietly meaningful, then build emotional urgency towards the stormy sea.",
+    "pacing": "Use coherent acts, meaningful pauses at beat turns, and enough space for learners without resetting between sentences.",
+    "beatCues": {
+      "B01": "[hopefully]",
+      "B02": "[with rueful suspense]",
+      "B03": "[humbled]",
+      "B04": "[quietly firm]",
+      "B05": "[with relief]",
+      "B06": "[grieving]",
+      "B07": "[urgently]",
+      "B08": "[bravely]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "Lily is approved under narrator-policy.json; retain the canonical master, parts, timeline, and provenance before the internal production deadline."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2661,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:da0670c1932d960e433f60de6474c47d58080ddcd8783e5ec8926fd77003a794",
+    "requests": [],
+    "seams": [],
+    "activitiesChecksum": "sha256:8dd3b4a7e6488faef38ac541013a50615da818ba38c4802f961348472ad0db18"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-06/audio/foundation.master.mp3",
+    "sentenceTimeline": "chapters/chapter-06/audio/foundation.timeline.json",
+    "forcedAlignment": "chapters/chapter-06/audio/foundation.alignment.json",
+    "provenance": "chapters/chapter-06/audio/foundation.provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-06/audio/foundation.voice-profile.snapshot.json",
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

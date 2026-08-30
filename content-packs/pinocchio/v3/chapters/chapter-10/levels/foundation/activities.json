@@ -1,0 +1,1142 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-10",
+  "level": "foundation",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "Both boys felt afraid and deeply ashamed.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Both boys felt afraid and deeply ashamed.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Sold at the Market” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "He smiled as if nothing bad had happened.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "He smiled as if nothing bad had happened.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Sold at the Market” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "The boys tried to speak, but only brayed.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "The boys tried to speak, but only brayed.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Sold at the Market” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "A circus owner came to look at Pinocchio.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "A circus owner came to look at Pinocchio.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Sold at the Market” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "His new master became angry and punished him.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "His new master became angry and punished him.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Circus's New Star” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S018",
+      "beatId": "B02",
+      "text": "He bowed, danced, and counted to the music.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "He bowed, danced, and counted to the music.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Circus's New Star” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "He also jumped through hoops and over boards.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He also jumped through hoops and over boards.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Circus's New Star” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio entered with ribbons and a small hat.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Pinocchio entered with ribbons and a small hat.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Circus's New Star” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S027",
+      "beatId": "B03",
+      "text": "He marched in circles and balanced a glass.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "He marched in circles and balanced a glass.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy in the Audience” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S029",
+      "beatId": "B03",
+      "text": "A beautiful lady wore his picture around her neck.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "A beautiful lady wore his picture around her neck.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy in the Audience” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S033",
+      "beatId": "B03",
+      "text": "“Fairy, I am here!” he tried to shout.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "“Fairy, I am here!” he tried to shout.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy in the Audience” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "Pinocchio kept watching the empty place.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Pinocchio kept watching the empty place.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy in the Audience” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "His front feet hit it, and he fell.",
+      "sourceTextRange": [
+        0,
+        35
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "His front feet hit it, and he fell.",
+          "sourceTextRange": [
+            0,
+            35
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Worth Four Coins” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S042",
+      "beatId": "B04",
+      "text": "The music stopped, and the people became quiet.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "The music stopped, and the people became quiet.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Worth Four Coins” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "The owner decided to sell Pinocchio at once.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "The owner decided to sell Pinocchio at once.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Worth Four Coins” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "The man wanted the skin for a drum.",
+      "sourceTextRange": [
+        0,
+        35
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "The man wanted the skin for a drum.",
+          "sourceTextRange": [
+            0,
+            35
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Worth Four Coins” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "He tied a heavy stone around Pinocchio’s neck.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "He tied a heavy stone around Pinocchio’s neck.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Beneath the Donkey Skin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "The stone pulled him towards the sea floor.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "The stone pulled him towards the sea floor.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Beneath the Donkey Skin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S066",
+      "beatId": "B05",
+      "text": "Soon the long ears and tail were gone.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Soon the long ears and tail were gone.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Beneath the Donkey Skin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S071",
+      "beatId": "B05",
+      "text": "A living wooden puppet came out of the sea.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "A living wooden puppet came out of the sea.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Beneath the Donkey Skin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "The man opened his mouth in great surprise.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "The man opened his mouth in great surprise.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Blue Goat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S076",
+      "beatId": "B06",
+      "text": "The angry man tried to catch him again.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "The angry man tried to catch him again.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Blue Goat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S081",
+      "beatId": "B06",
+      "text": "A small blue Goat waited on the rock.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "A small blue Goat waited on the rock.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Blue Goat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S084",
+      "beatId": "B06",
+      "text": "Then the water behind him made a terrible sound.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Then the water behind him made a terrible sound.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Blue Goat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S085",
+      "beatId": "B07",
+      "text": "Small fish rushed away from a huge shadow.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Small fish rushed away from a huge shadow.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Terrible Shark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Water pulled Pinocchio towards its great teeth.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Water pulled Pinocchio towards its great teeth.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Terrible Shark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S089",
+      "beatId": "B07",
+      "text": "Pinocchio fought hard against the strong water.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio fought hard against the strong water.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Terrible Shark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "He heard the Shark breathing all around him.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "He heard the Shark breathing all around him.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Light in the Dark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S096",
+      "beatId": "B08",
+      "text": "He told Pinocchio to accept the dark place.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "He told Pinocchio to accept the dark place.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Light in the Dark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S101",
+      "beatId": "B08",
+      "text": "He thanked the fish and walked towards the light.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "He thanked the fish and walked towards the light.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Light in the Dark” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The Little Man's pleasant manner hides the business that made him rich.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "Selling careless boys was his secret business."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S034",
+          "text": "His mouth made only a loud donkey sound."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S067",
+          "text": "Pinocchio’s wooden arms and legs appeared again."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Daily training turns Pinocchio into a controlled circus performer.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S041",
+          "text": "A sharp pain moved through his left leg."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S082",
+          "text": "She called to him in the Fairy’s voice."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S017",
+          "text": "Every day, Pinocchio had to learn new tricks."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "A clear detail in the audience lets Pinocchio recognise the Blue Fairy.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S050",
+          "text": "The man wanted the skin for a drum."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S031",
+          "text": "Pinocchio knew that she was the Blue Fairy."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S090",
+          "text": "The Shark swallowed him in one great rush."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G04",
+      "beatId": "B03",
+      "cue": "Pinocchio tries to call the Fairy but cannot produce human speech.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S034",
+          "text": "His mouth made only a loud donkey sound."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S067",
+          "text": "Pinocchio’s wooden arms and legs appeared again."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S098",
+          "text": "Then he saw a tiny golden light far away."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G05",
+      "beatId": "B04",
+      "cue": "The missed jump injures the leg that the circus needs.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S082",
+          "text": "She called to him in the Fairy’s voice."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S009",
+          "text": "Selling careless boys was his secret business."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S041",
+          "text": "A sharp pain moved through his left leg."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G06",
+      "beatId": "B04",
+      "cue": "The next buyer reveals the single use he sees for Pinocchio.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S090",
+          "text": "The Shark swallowed him in one great rush."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S050",
+          "text": "The man wanted the skin for a drum."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S017",
+          "text": "Every day, Pinocchio had to learn new tricks."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G07",
+      "beatId": "B05",
+      "cue": "The sea removes the donkey form and reveals the wooden body beneath.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S067",
+          "text": "Pinocchio’s wooden arms and legs appeared again."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S098",
+          "text": "Then he saw a tiny golden light far away."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S031",
+          "text": "Pinocchio knew that she was the Blue Fairy."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G08",
+      "beatId": "B06",
+      "cue": "A blue figure on a white rock calls Pinocchio towards safety.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "Selling careless boys was his secret business."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S034",
+          "text": "His mouth made only a loud donkey sound."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S082",
+          "text": "She called to him in the Fairy’s voice."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G09",
+      "beatId": "B07",
+      "cue": "The Terrible Shark ends the escape by swallowing Pinocchio.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S017",
+          "text": "Every day, Pinocchio had to learn new tricks."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S090",
+          "text": "The Shark swallowed him in one great rush."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S041",
+          "text": "A sharp pain moved through his left leg."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "A distant light gives Pinocchio a reason to keep moving in the darkness.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S098",
+          "text": "Then he saw a tiny golden light far away."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S031",
+          "text": "Pinocchio knew that she was the Blue Fairy."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S050",
+          "text": "The man wanted the skin for a drum."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "Selling careless boys was his secret business.",
+      "tokens": [
+        "Selling",
+        "careless",
+        "boys",
+        "was",
+        "his",
+        "secret",
+        "business."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "Every day, Pinocchio had to learn new tricks.",
+      "tokens": [
+        "Every",
+        "day,",
+        "Pinocchio",
+        "had",
+        "to",
+        "learn",
+        "new",
+        "tricks."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "Pinocchio knew that she was the Blue Fairy.",
+      "tokens": [
+        "Pinocchio",
+        "knew",
+        "that",
+        "she",
+        "was",
+        "the",
+        "Blue",
+        "Fairy."
+      ],
+      "focus": "rebuild the main clause and its linked that-clause"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "His mouth made only a loud donkey sound.",
+      "tokens": [
+        "His",
+        "mouth",
+        "made",
+        "only",
+        "a",
+        "loud",
+        "donkey",
+        "sound."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S041",
+      "beatId": "B04",
+      "text": "A sharp pain moved through his left leg.",
+      "tokens": [
+        "A",
+        "sharp",
+        "pain",
+        "moved",
+        "through",
+        "his",
+        "left",
+        "leg."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "The man wanted the skin for a drum.",
+      "tokens": [
+        "The",
+        "man",
+        "wanted",
+        "the",
+        "skin",
+        "for",
+        "a",
+        "drum."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S067",
+      "beatId": "B05",
+      "text": "Pinocchio’s wooden arms and legs appeared again.",
+      "tokens": [
+        "Pinocchio’s",
+        "wooden",
+        "arms",
+        "and",
+        "legs",
+        "appeared",
+        "again."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S082",
+      "beatId": "B06",
+      "text": "She called to him in the Fairy’s voice.",
+      "tokens": [
+        "She",
+        "called",
+        "to",
+        "him",
+        "in",
+        "the",
+        "Fairy’s",
+        "voice."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S090",
+      "beatId": "B07",
+      "text": "The Shark swallowed him in one great rush.",
+      "tokens": [
+        "The",
+        "Shark",
+        "swallowed",
+        "him",
+        "in",
+        "one",
+        "great",
+        "rush."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S098",
+      "beatId": "B08",
+      "text": "Then he saw a tiny golden light far away.",
+      "tokens": [
+        "Then",
+        "he",
+        "saw",
+        "a",
+        "tiny",
+        "golden",
+        "light",
+        "far",
+        "away."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    }
+  ]
+}

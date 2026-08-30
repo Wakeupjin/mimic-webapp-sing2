@@ -1,0 +1,1194 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-12",
+  "level": "studio",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "Geppetto shivered from cold, fear, and the weakness of long hunger.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Geppetto shivered from cold, fear, and the weakness of long hunger.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Tunny's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "A familiar voice, warm despite its roughness, answered beside them.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "A familiar voice, warm despite its roughness, answered beside them.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Tunny's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "He offered his broad back and lifted both exhausted travellers.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "He offered his broad back and lifted both exhausted travellers.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Tunny's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "At dawn, Pinocchio stepped ashore first and supported Geppetto onto the sand.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "At dawn, Pinocchio stepped ashore first and supported Geppetto onto the sand.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Tunny's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "The Cat had truly lost his sight, while the Fox had sold his tail.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "The Cat had truly lost his sight,",
+          "sourceTextRange": [
+            0,
+            33
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M05-C02",
+          "text": "while the Fox had sold his tail.",
+          "sourceTextRange": [
+            34,
+            66
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “False Friends Again” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S018",
+      "beatId": "B02",
+      "text": "They greeted their former victim sweetly and stretched out empty hands.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "They greeted their former victim sweetly and stretched out empty hands.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “False Friends Again” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "He recalled the false field, the stolen coins, and his undeserved imprisonment.",
+      "sourceTextRange": [
+        0,
+        79
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He recalled the false field, the stolen coins, and his undeserved imprisonment.",
+          "sourceTextRange": [
+            0,
+            79
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “False Friends Again” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "He simply supported Geppetto and continued along the road without argument.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "He simply supported Geppetto and continued along the road without argument.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “False Friends Again” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S029",
+      "beatId": "B03",
+      "text": "The room appeared empty until father and son looked towards the ceiling.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "The room appeared empty until father and son looked towards the ceiling.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “An Honest Apology” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S033",
+      "beatId": "B03",
+      "text": "Now he lowered his head and named the violence as his own mistake.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Now he lowered his head",
+          "sourceTextRange": [
+            0,
+            23
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M10-C02",
+          "text": "and named the violence as his own mistake.",
+          "sourceTextRange": [
+            24,
+            66
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “An Honest Apology” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "The Cricket recognised an apology that asked for no easy escape.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "The Cricket recognised an apology that asked for no easy escape.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “An Honest Apology” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "The Blue Fairy, disguised as the blue Goat, had provided it yesterday.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "The Blue Fairy, disguised as the blue Goat, had provided it yesterday.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “An Honest Apology” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "His father urgently needed warm milk, but they possessed no money.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "His father urgently needed warm milk, but they possessed no money.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “One Hundred Buckets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S042",
+      "beatId": "B04",
+      "text": "The farmer offered one full glass in exchange for useful labour.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "The farmer offered one full glass in exchange for useful labour.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “One Hundred Buckets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "Whenever exhaustion suggested stopping, he pictured Geppetto waiting in the cottage.",
+      "sourceTextRange": [
+        0,
+        84
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Whenever exhaustion suggested stopping, he pictured Geppetto waiting in the cottage.",
+          "sourceTextRange": [
+            0,
+            84
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “One Hundred Buckets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "The following morning, he returned and accepted the same difficult bargain.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "The following morning, he returned and accepted the same difficult bargain.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “One Hundred Buckets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "During his first visit, Pinocchio noticed a failing donkey inside the stable.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "During his first visit, Pinocchio noticed a failing donkey inside the stable.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick's Last Lesson” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "“I am Lamp-Wick,” came the faint and unmistakable answer.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“I am Lamp-Wick,” came the faint and unmistakable answer.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick's Last Lesson” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S061",
+      "beatId": "B05",
+      "text": "The farmer saw only an animal whose market value had disappeared.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "The farmer saw only an animal whose market value had disappeared.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick's Last Lesson” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S064",
+      "beatId": "B05",
+      "text": "Grief could not repair the past, but it deepened his future choices.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Grief could not repair the past, but it deepened his future choices.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick's Last Lesson” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Pinocchio returned to the well at dawn for the next five months.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "Pinocchio returned to the well at dawn for the next five months.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Work by Day, Study by Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "On bright afternoons, they travelled the nearby road together.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "On bright afternoons, they travelled the nearby road together.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Work by Day, Study by Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S074",
+      "beatId": "B06",
+      "text": "Every completed page offered a satisfaction that effortless amusement never could.",
+      "sourceTextRange": [
+        0,
+        82
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Every completed page offered a satisfaction that effortless amusement never could.",
+          "sourceTextRange": [
+            0,
+            82
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Work by Day, Study by Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S078",
+      "beatId": "B06",
+      "text": "For once, the promised reward had been earned rather than advertised.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "For once, the promised reward had been earned rather than advertised.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Work by Day, Study by Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "On his way to market, the Fairy’s familiar Snail called his name.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "On his way to market, the Fairy’s familiar Snail called his name.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Fifty Pennies” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "He gave the Snail all fifty pennies for the Fairy’s care.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "He gave the Snail all fifty pennies for the Fairy’s care.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Fifty Pennies” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio quietly replied that nothing suitable had been available.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio quietly replied that nothing suitable had been available.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Fifty Pennies” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S091",
+      "beatId": "B08",
+      "text": "In a dream, the Blue Fairy appeared healthy, radiant, and smiling.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "In a dream, the Blue Fairy appeared healthy, radiant, and smiling.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Real Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S096",
+      "beatId": "B08",
+      "text": "He looked down and discovered warm living hands instead of painted wood.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "He looked down and discovered warm living hands instead of painted wood.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Real Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S102",
+      "beatId": "B08",
+      "text": "Against a chair rested the empty wooden puppet he had once been.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Against a chair rested the empty wooden puppet he had once been.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Real Boy” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "How had the Tunny managed to reach Pinocchio and Geppetto in the open sea?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S008",
+          "text": "The Tunny had followed the path Pinocchio opened through the Shark."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S043",
+          "text": "Pinocchio had to draw one hundred buckets from a deep stone well."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S072",
+          "text": "Without ink, he crushed dark berries and shaped a pointed writing stick."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Pinocchio sets a firm boundary when the Fox and Cat approach again.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S057",
+          "text": "“I am Lamp-Wick,” came the faint and unmistakable answer."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S083",
+          "text": "He gave the Snail all fifty pennies for the Fairy’s care."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S021",
+          "text": "“You deceived me once, but you will never deceive me again.”"
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "Pinocchio accepts responsibility while placing Geppetto's need first.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S065",
+          "text": "Pinocchio returned to the well at dawn for the next five months."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S034",
+          "text": "“Punish me if you must, but please shelter my weakened father.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S093",
+          "text": "“You protected others precisely when doing so required sacrifice,” she told him."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "Farmer John names the exact labour required for a glass of milk.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S043",
+          "text": "Pinocchio had to draw one hundred buckets from a deep stone well."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S072",
+          "text": "Without ink, he crushed dark berries and shaped a pointed writing stick."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S105",
+          "text": "Patience, courage, discipline, and love had transformed him much earlier."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "The weak donkey reveals the identity Pinocchio feared.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S083",
+          "text": "He gave the Snail all fifty pennies for the Fairy’s care."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S008",
+          "text": "The Tunny had followed the path Pinocchio opened through the Shark."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S057",
+          "text": "“I am Lamp-Wick,” came the faint and unmistakable answer."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "One hard bargain becomes a daily habit that supports Geppetto.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S093",
+          "text": "“You protected others precisely when doing so required sacrifice,” she told him."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S065",
+          "text": "Pinocchio returned to the well at dawn for the next five months."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S021",
+          "text": "“You deceived me once, but you will never deceive me again.”"
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Pinocchio creates a writing tool from simple materials.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S072",
+          "text": "Without ink, he crushed dark berries and shaped a pointed writing stick."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S105",
+          "text": "Patience, courage, discipline, and love had transformed him much earlier."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S034",
+          "text": "“Punish me if you must, but please shelter my weakened father.”"
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "The Fairy's illness changes what Pinocchio does with his savings.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S008",
+          "text": "The Tunny had followed the path Pinocchio opened through the Shark."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S043",
+          "text": "Pinocchio had to draw one hundred buckets from a deep stone well."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S083",
+          "text": "He gave the Snail all fifty pennies for the Fairy’s care."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "The Fairy explains why Pinocchio's recent choices matter.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S021",
+          "text": "“You deceived me once, but you will never deceive me again.”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S093",
+          "text": "“You protected others precisely when doing so required sacrifice,” she told him."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S057",
+          "text": "“I am Lamp-Wick,” came the faint and unmistakable answer."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "The ending separates the instant bodily miracle from the slower inner change.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S105",
+          "text": "Patience, courage, discipline, and love had transformed him much earlier."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S034",
+          "text": "“Punish me if you must, but please shelter my weakened father.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S065",
+          "text": "Pinocchio returned to the well at dawn for the next five months."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S008",
+      "beatId": "B01",
+      "text": "The Tunny had followed the path Pinocchio opened through the Shark.",
+      "tokens": [
+        "The",
+        "Tunny",
+        "had",
+        "followed",
+        "the",
+        "path",
+        "Pinocchio",
+        "opened",
+        "through",
+        "the",
+        "Shark."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S021",
+      "beatId": "B02",
+      "text": "“You deceived me once, but you will never deceive me again.”",
+      "tokens": [
+        "“You",
+        "deceived",
+        "me",
+        "once,",
+        "but",
+        "you",
+        "will",
+        "never",
+        "deceive",
+        "me",
+        "again.”"
+      ],
+      "focus": "rebuild the complete spoken thought with its clause links and punctuation"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "“Punish me if you must, but please shelter my weakened father.”",
+      "tokens": [
+        "“Punish",
+        "me",
+        "if",
+        "you",
+        "must,",
+        "but",
+        "please",
+        "shelter",
+        "my",
+        "weakened",
+        "father.”"
+      ],
+      "focus": "rebuild the complete spoken thought with its clause links and punctuation"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "Pinocchio had to draw one hundred buckets from a deep stone well.",
+      "tokens": [
+        "Pinocchio",
+        "had",
+        "to",
+        "draw",
+        "one",
+        "hundred",
+        "buckets",
+        "from",
+        "a",
+        "deep",
+        "stone",
+        "well."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "“I am Lamp-Wick,” came the faint and unmistakable answer.",
+      "tokens": [
+        "“I",
+        "am",
+        "Lamp-Wick,”",
+        "came",
+        "the",
+        "faint",
+        "and",
+        "unmistakable",
+        "answer."
+      ],
+      "focus": "rebuild the complete spoken thought with its clause links and punctuation"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Pinocchio returned to the well at dawn for the next five months.",
+      "tokens": [
+        "Pinocchio",
+        "returned",
+        "to",
+        "the",
+        "well",
+        "at",
+        "dawn",
+        "for",
+        "the",
+        "next",
+        "five",
+        "months."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "Without ink, he crushed dark berries and shaped a pointed writing stick.",
+      "tokens": [
+        "Without",
+        "ink,",
+        "he",
+        "crushed",
+        "dark",
+        "berries",
+        "and",
+        "shaped",
+        "a",
+        "pointed",
+        "writing",
+        "stick."
+      ],
+      "focus": "rebuild the time, condition, or circumstance frame and the main clause"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "He gave the Snail all fifty pennies for the Fairy’s care.",
+      "tokens": [
+        "He",
+        "gave",
+        "the",
+        "Snail",
+        "all",
+        "fifty",
+        "pennies",
+        "for",
+        "the",
+        "Fairy’s",
+        "care."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S093",
+      "beatId": "B08",
+      "text": "“You protected others precisely when doing so required sacrifice,” she told him.",
+      "tokens": [
+        "“You",
+        "protected",
+        "others",
+        "precisely",
+        "when",
+        "doing",
+        "so",
+        "required",
+        "sacrifice,”",
+        "she",
+        "told",
+        "him."
+      ],
+      "focus": "rebuild the quoted words, reporting clause, and dialogue punctuation"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S105",
+      "beatId": "B08",
+      "text": "Patience, courage, discipline, and love had transformed him much earlier.",
+      "tokens": [
+        "Patience,",
+        "courage,",
+        "discipline,",
+        "and",
+        "love",
+        "had",
+        "transformed",
+        "him",
+        "much",
+        "earlier."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    }
+  ]
+}

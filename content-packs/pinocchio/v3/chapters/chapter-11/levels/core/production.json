@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-11",
+  "level": "core",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      450,
+      510
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Hold the darkness patiently, let the reunion breathe, make the confession urgent but intelligible, and carry the escape with quiet resolve.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for learners to process the story.",
+    "beatCues": {
+      "B01": "[hushed]",
+      "B02": "[with astonished joy]",
+      "B03": "[honestly, gathering momentum]",
+      "B04": "[wearily]",
+      "B05": "[firmly]",
+      "B06": "[with quiet suspense]",
+      "B07": "[startled, then resolute]",
+      "B08": "[bravely]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "Pinocchio v3 Story Pack, all chapters and levels",
+      "note": "The product owner selected Lily as the Pinocchio Story Pack's default British narrator."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": null,
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2421,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:c7de9e1c15794e4ad4fa67c35e09038ab221f5a82ddd651260a9eb4d02872f28",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": null,
+    "activitiesChecksum": "sha256:5957c54bdccca2aceb61b7b15745f4afc2552d2a2bbe2e91aa379e6f582379b3"
+  },
+  "outputs": {
+    "masterAudio": null,
+    "sentenceTimeline": null,
+    "forcedAlignment": null,
+    "provenance": null,
+    "voiceProfileSnapshot": null,
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

@@ -1,0 +1,1188 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-03",
+  "level": "core",
+  "source": "master.txt",
+  "selectionPolicy": "Thirty unique full source sentences are selected from the continuous Watch master. Each full sentence remains the Mimic item; its chunks divide delivery only at natural punctuation or meaning boundaries. Every chunk is an exact 2–12-word source range, and fixed midpoint splitting is prohibited.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio left home proudly, carrying the alphabet primer beneath his arm.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Pinocchio left home proudly, carrying the alphabet primer beneath his arm.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “School or Music”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S008",
+      "beatId": "B01",
+      "text": "His feet slowed, although he told them firmly to continue forwards.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "His feet slowed, although he told them firmly to continue forwards.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “School or Music”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "“School lasts all day, but music may vanish,” he reasoned.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "“School lasts all day, but music may vanish,” he reasoned.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “School or Music”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "Already, the alphabet primer felt heavier beneath his arm.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "Already, the alphabet primer felt heavier beneath his arm.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “School or Music”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S015",
+      "beatId": "B02",
+      "text": "Pinocchio pushed through the crowd and reached the ticket booth.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio pushed through the crowd and reached the ticket booth.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Price of a Ticket”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "The ticket cost four pennies, but he did not own one.",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "The ticket cost four pennies, but he did not own one.",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “The Price of a Ticket”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "He rushed inside before regret could catch him.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He rushed inside before regret could catch him.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Price of a Ticket”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "Pinocchio squeezed onto a bench as the lamps grew dim.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Pinocchio squeezed onto a bench as the lamps grew dim.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Price of a Ticket”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "The audience laughed until Harlequin suddenly stopped in the middle of a line.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "The audience laughed",
+          "sourceTextRange": [
+            0,
+            20
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M09-C02",
+          "text": "until Harlequin suddenly stopped in the middle of a line.",
+          "sourceTextRange": [
+            21,
+            78
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “A Family of Puppets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S033",
+      "beatId": "B03",
+      "text": "Pinocchio had never been welcomed with such immediate, noisy affection.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Pinocchio had never been welcomed with such immediate, noisy affection.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Family of Puppets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "Together they danced while the musicians played faster and faster.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Together they danced while the musicians played faster and faster.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “A Family of Puppets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "For a few glorious minutes, Pinocchio forgot school, money, and consequences.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "For a few glorious minutes, Pinocchio forgot school, money, and consequences.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “A Family of Puppets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "The theatre belonged to a huge man known as Fire Eater.",
+      "sourceTextRange": [
+        0,
+        55
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "The theatre belonged to a huge man known as Fire Eater.",
+          "sourceTextRange": [
+            0,
+            55
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Fire Eater's Threat”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "“Who has ruined my performance?” he demanded from the wings.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "“Who has ruined my performance?” he demanded from the wings.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Fire Eater's Threat”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "Unfortunately, the flames were dying before the meat was cooked.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Unfortunately, the flames were dying before the meat was cooked.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “Fire Eater's Threat”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio shook so hard that his joints knocked together.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Pinocchio shook so hard that his joints knocked together.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "cause-and-effect phrasing",
+      "selectionReason": "A complete source sentence from “Fire Eater's Threat”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "Pinocchio saw a small opening for hope and begged again.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Pinocchio saw a small opening for hope and begged again.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Danger Moves to Harlequin”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "He decided to spare Pinocchio and burn Harlequin instead.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "He decided to spare Pinocchio and burn Harlequin instead.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “Danger Moves to Harlequin”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "Two assistants dragged the cheerful puppet towards the weakening fire.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Two assistants dragged the cheerful puppet towards the weakening fire.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Danger Moves to Harlequin”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio realised that his rescue had merely moved the danger elsewhere.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Pinocchio realised that his rescue had merely moved the danger elsewhere.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Danger Moves to Harlequin”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "“I cannot save myself by letting an innocent friend suffer.”",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "“I cannot save myself by letting an innocent friend suffer.”",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Burn Me Instead”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "Fire Eater stared at him as if seeing the puppet for the first time.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Fire Eater stared at him",
+          "sourceTextRange": [
+            0,
+            24
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M22-C02",
+          "text": "as if seeing the puppet for the first time.",
+          "sourceTextRange": [
+            25,
+            68
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Burn Me Instead”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "He thought of Geppetto, who had surrendered his coat without complaint.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "He thought of Geppetto, who had surrendered his coat without complaint.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Burn Me Instead”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "The fire cracked behind him, and the whole company waited.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "The fire cracked behind him, and the whole company waited.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Burn Me Instead”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S074",
+      "beatId": "B07",
+      "text": "“I cannot burn either of you,” he roared, wiping his eyes.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "“I cannot burn either of you,” he roared, wiping his eyes.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “A Feast, Not a Fire”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S076",
+      "beatId": "B07",
+      "text": "Harlequin threw his arms around Pinocchio with grateful relief.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Harlequin threw his arms around Pinocchio with grateful relief.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Feast, Not a Fire”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S090",
+      "beatId": "B07",
+      "text": "Pinocchio felt prouder of that sentence than of all the applause.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio felt prouder of that sentence than of all the applause.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Feast, Not a Fire”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "He admitted that he had sold it and expected Geppetto’s disappointment.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "He admitted that he had sold it and expected Geppetto’s disappointment.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “One More Surprise”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S098",
+      "beatId": "B08",
+      "text": "“You caused chaos,” he said, “but you also showed courage.”",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“You caused chaos,” he said, “but you also showed courage.”",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “One More Surprise”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "This time, he meant to carry home more than another promise.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "This time, he meant to carry home more than another promise.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “One More Surprise”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "Pinocchio persuades himself that stopping for music is reasonable.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "“School lasts all day, but music may vanish,” he reasoned."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S005",
+          "text": "These excellent plans marched beside him along the road to school."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "Already, the alphabet primer felt heavier beneath his arm."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "The primer is traded for immediate excitement.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S017",
+          "text": "He offered his paper jacket, his bark shoes, and his bread cap."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S022",
+          "text": "A boy bought the primer, and Pinocchio exchanged sacrifice for a ticket."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S024",
+          "text": "Rows of children faced a tiny stage covered by a red curtain."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "Harlequin recognises Pinocchio as one of the puppet family.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S027",
+          "text": "Their wooden arms waved, and their painted mouths traded ridiculous insults."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S034",
+          "text": "The puppets called him cousin, brother, traveller, and honoured guest."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S030",
+          "text": "“Look, brothers and sisters,” he cried, “one of our own has come!”"
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "Fire Eater demands to know who stopped his performance.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S043",
+          "text": "“Who has ruined my performance?” he demanded from the wings."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S040",
+          "text": "The theatre belonged to a huge man known as Fire Eater."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S045",
+          "text": "Fire Eater seized him by the collar and carried him backstage."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G05",
+      "beatId": "B04",
+      "cue": "The theatre owner identifies Pinocchio as possible firewood.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S047",
+          "text": "Behind the scenery, a great fire was roasting the owner’s supper."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S050",
+          "text": "“A dry wooden puppet should burn beautifully,” he announced."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S052",
+          "text": "He cried for Geppetto and described his father alone without a coat."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G06",
+      "beatId": "B05",
+      "cue": "Fire Eater transfers the danger from Pinocchio to Harlequin.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S054",
+          "text": "Then he gave three enormous sneezes that shook the hanging scenery."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S061",
+          "text": "The other puppets covered their faces, unable to watch."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S058",
+          "text": "He decided to spare Pinocchio and burn Harlequin instead."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Pinocchio volunteers to face the danger instead of his friend.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S064",
+          "text": "“Burn me instead,” he said, though his voice trembled."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S062",
+          "text": "Pinocchio realised that his rescue had merely moved the danger elsewhere."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S068",
+          "text": "“Do you understand what you are offering?” the theatre owner asked."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "Fire Eater finally spares both puppets.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S071",
+          "text": "Perhaps courage, like kindness, required giving up something precious."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S074",
+          "text": "“I cannot burn either of you,” he roared, wiping his eyes."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S077",
+          "text": "The other puppets cheered until the ropes above them trembled."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G09",
+      "beatId": "B07",
+      "cue": "Pinocchio tells Fire Eater the truth without improving the story.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S082",
+          "text": "Pinocchio described Geppetto’s painted fire and the sold winter coat."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S089",
+          "text": "“Today you behaved like a true brother,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S085",
+          "text": "Pinocchio answered honestly, without decorating the truth."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Fire Eater judges both the chaos and the courage.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S098",
+          "text": "“You caused chaos,” he said, “but you also showed courage.”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S095",
+          "text": "Before dawn, the company performed a special dance in Pinocchio’s honour."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S101",
+          "text": "Pinocchio wondered whether the dangerous theatre had one more surprise."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "These excellent plans marched beside him along the road to school.",
+      "tokens": [
+        "These",
+        "excellent",
+        "plans",
+        "marched",
+        "beside",
+        "him",
+        "along",
+        "the",
+        "road",
+        "to",
+        "school."
+      ],
+      "focus": "simple-past clause with a destination prepositional phrase"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "“School lasts all day, but music may vanish,” he reasoned.",
+      "tokens": [
+        "“School",
+        "lasts",
+        "all",
+        "day,",
+        "but",
+        "music",
+        "may",
+        "vanish,”",
+        "he",
+        "reasoned."
+      ],
+      "focus": "direct speech joining contrasting clauses with but"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S022",
+      "beatId": "B02",
+      "text": "A boy bought the primer, and Pinocchio exchanged sacrifice for a ticket.",
+      "tokens": [
+        "A",
+        "boy",
+        "bought",
+        "the",
+        "primer,",
+        "and",
+        "Pinocchio",
+        "exchanged",
+        "sacrifice",
+        "for",
+        "a",
+        "ticket."
+      ],
+      "focus": "two independent clauses coordinated with and"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "“Look, brothers and sisters,” he cried, “one of our own has come!”",
+      "tokens": [
+        "“Look,",
+        "brothers",
+        "and",
+        "sisters,”",
+        "he",
+        "cried,",
+        "“one",
+        "of",
+        "our",
+        "own",
+        "has",
+        "come!”"
+      ],
+      "focus": "imperative Look, direct address, and a reporting clause"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "The theatre belonged to a huge man known as Fire Eater.",
+      "tokens": [
+        "The",
+        "theatre",
+        "belonged",
+        "to",
+        "a",
+        "huge",
+        "man",
+        "known",
+        "as",
+        "Fire",
+        "Eater."
+      ],
+      "focus": "belonged to prepositional verb plus the reduced passive phrase known as"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "“A dry wooden puppet should burn beautifully,” he announced.",
+      "tokens": [
+        "“A",
+        "dry",
+        "wooden",
+        "puppet",
+        "should",
+        "burn",
+        "beautifully,”",
+        "he",
+        "announced."
+      ],
+      "focus": "direct speech with modal should and a reporting clause"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S064",
+      "beatId": "B06",
+      "text": "“Burn me instead,” he said, though his voice trembled.",
+      "tokens": [
+        "“Burn",
+        "me",
+        "instead,”",
+        "he",
+        "said,",
+        "though",
+        "his",
+        "voice",
+        "trembled."
+      ],
+      "focus": "imperative direct speech followed by a though contrast clause"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S074",
+      "beatId": "B07",
+      "text": "“I cannot burn either of you,” he roared, wiping his eyes.",
+      "tokens": [
+        "“I",
+        "cannot",
+        "burn",
+        "either",
+        "of",
+        "you,”",
+        "he",
+        "roared,",
+        "wiping",
+        "his",
+        "eyes."
+      ],
+      "focus": "cannot plus either for two rejected alternatives in direct speech"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S085",
+      "beatId": "B07",
+      "text": "Pinocchio answered honestly, without decorating the truth.",
+      "tokens": [
+        "Pinocchio",
+        "answered",
+        "honestly,",
+        "without",
+        "decorating",
+        "the",
+        "truth."
+      ],
+      "focus": "without followed by an -ing complement"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S094",
+      "beatId": "B08",
+      "text": "The first mistake did not have to command the rest of the day.",
+      "tokens": [
+        "The",
+        "first",
+        "mistake",
+        "did",
+        "not",
+        "have",
+        "to",
+        "command",
+        "the",
+        "rest",
+        "of",
+        "the",
+        "day."
+      ],
+      "focus": "semi-modal have to followed by a base-form verb"
+    }
+  ]
+}

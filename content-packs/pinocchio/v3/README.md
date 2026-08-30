@@ -9,19 +9,23 @@ Pinocchio Book Track. It does not replace the published v2 course.
 - one selected level per learner: Foundation, Core, or Studio;
 - each Chapter uses `Watch → Mimic → Guess → Word`;
 - Watch is a real six-to-ten-minute narrative master;
-- Mimic is thirty sentences selected from that master, not the whole master
-  stretched into thirty fragments;
+- Mimic selects thirty unique, high-value source sentences from that master;
+  each stays one learner-facing item, while long sentences contain nested
+  practice chunks split only at natural thought and breath boundaries;
 - Guess and Word are grounded in the same canonical master.
 
 ## Current gate
 
-Core Chapter 1 is the Golden Chapter draft. Its script and learning selections
-are complete; narration, timestamps, visuals, and human listening approval are
-still pending. Chapters 2–12 are season-mapped but are not production-ready.
+All thirty-six Chapter-level scripts are authored. Lily
+(`pFZP5JQG7iQjIQuC4Bku`) is approved as the British narrator for this finite
+twelve-Chapter, three-level Story Pack. Continuing paid batch narration remains
+gated behind named human editorial and learning approval. A generated audio
+file is not approved merely because its timestamps validate.
 
-Do not generate commercial audio or publish this pack until the named human
-reviewer approves the Chapter 1 script and a durable narrator. Provider preview
-names are not sufficient provenance: record the immutable voice ID and settings.
+Lily is scheduled to retire from future generation on 2026-12-31, so all
+approved masters and pickups must finish by the internal 2026-11-30 deadline.
+Store the audio, sentence timeline, request evidence, settings, and checksums as
+company assets. See `narrator-policy.json` for the immutable production decision.
 
 ## Validate
 
@@ -29,5 +33,5 @@ names are not sufficient provenance: record the immutable voice ID and settings.
 npm run validate:story-pack
 ```
 
-The validator checks the pack structure, twelve-Chapter map, Core Chapter 1
-duration envelope, exact activity sourcing, and release-state claims.
+The validator checks the pack structure, twelve-Chapter map, every authored
+level's duration envelope, exact activity sourcing, and release-state claims.

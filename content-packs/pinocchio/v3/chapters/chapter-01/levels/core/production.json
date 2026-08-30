@@ -2,15 +2,20 @@
   "schemaVersion": "1.0.0",
   "chapterId": "chapter-01",
   "level": "core",
-  "status": "audio-generated-technical-pass",
+  "status": "audio-generated-technical-review-pending",
   "targets": {
     "watchDurationSeconds": 480,
     "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
       450,
       510
     ],
-    "referenceWordsPerMinute": 128,
-    "singleEditorialMaster": true
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
   },
   "narrationDirection": {
     "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
@@ -41,13 +46,13 @@
     "accent": "British English",
     "accentTag": "[British accent]",
     "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
-    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T09:06:16.073Z",
     "approved": true,
     "approval": {
       "role": "product-owner",
       "approvedAt": "2026-08-30",
-      "scope": "Pinocchio v3 Core Chapter 1 Golden Sample only",
-      "note": "Lily is approved for the Golden Sample. A durable narrator A/B is required before batch production because the default voice is scheduled for retirement."
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "Lily is the approved British narrator for this finite Story Pack. Finish masters and pickups by 2026-11-30, ahead of the provider retirement date."
     }
   },
   "generation": {
@@ -103,13 +108,16 @@
     ],
     "seams": [
       {
+        "afterActId": "act-01",
+        "beforeActId": "act-02",
         "afterSentenceId": "S054",
         "beforeSentenceId": "S055",
-        "atSeconds": 235.526,
+        "atSeconds": 235.517,
+        "timingBasis": "per-act-elevenlabs-tts-duration-fitted",
         "humanQaStatus": "pending"
       }
     ],
-    "generatedAt": "2026-08-30T07:28:59.412Z",
+    "generatedAt": "2026-08-30T10:08:43.594Z",
     "operator": "codex",
     "cost": {
       "billedCharactersEstimate": 6172,
@@ -117,7 +125,8 @@
       "ttsApiListPriceEstimateUsd": 0.617,
       "forcedAlignmentListPriceEstimateUsd": 0.029,
       "note": "List-price estimates only; the account plan, included credits, voice multiplier, taxes, and retries may change actual billing."
-    }
+    },
+    "activitiesChecksum": "sha256:59b95628131b7798b243ed80371eb856f8a3195bf3122410fb9e38d8953d22c9"
   },
   "outputs": {
     "masterAudio": "chapters/chapter-01/audio/core.master.mp3",

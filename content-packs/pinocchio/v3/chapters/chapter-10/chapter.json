@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-10",
+  "number": 10,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "Donkey Days",
+    "ko": "당나귀가 된 날들"
+  },
+  "sourceChapters": [33, 34],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Pinocchio and Lamp-Wick have become donkeys after surrendering themselves to Toyland.",
+    "closing": "Swallowed by the Terrible Shark, Pinocchio leaves the hopeless Tunny and follows a mysterious light.",
+    "next": "The light inside the Shark leads Pinocchio to the father he has spent so long trying to find."
+  },
+  "learningObjective": "Explain exploitation, consequence, and renewed agency using cause-and-effect links, contrast, and emotionally controlled narration.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "Sold at the Market",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Reveal the hidden business behind Toyland and separate the two transformed friends."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "The Circus's New Star",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Show Pinocchio being trained and displayed as an obedient product."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The Fairy in the Audience",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "purpose": "Turn a glittering performance into a painful attempt to reach the Fairy."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "Worth Four Coins",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Connect Pinocchio's distraction and injury to another owner's cold calculation."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Beneath the Donkey Skin",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S071",
+      "purpose": "Move through the sea ordeal into the restoration of Pinocchio's wooden form."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "The Blue Goat",
+      "sentenceStart": "S072",
+      "sentenceEnd": "S084",
+      "purpose": "Give Pinocchio a brief taste of freedom and a visible sign of the Fairy's care."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Terrible Shark",
+      "sentenceStart": "S085",
+      "sentenceEnd": "S091",
+      "purpose": "Overwhelm the hopeful escape with the scale and force of a new danger."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "A Light in the Dark",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S105",
+      "purpose": "Contrast the Tunny's resignation with Pinocchio's newly purposeful courage."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json"
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

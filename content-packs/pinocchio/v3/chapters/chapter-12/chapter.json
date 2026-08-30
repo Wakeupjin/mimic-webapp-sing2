@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-12",
+  "number": 12,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "A Real Boy",
+    "ko": "진짜 아이가 되다"
+  },
+  "sourceChapters": [36],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Pinocchio is carrying Geppetto through the open sea, but his strength is failing before they reach shore.",
+    "closing": "After months of work, study, and generous choices, Pinocchio becomes a real boy and shares a renewed home with Geppetto.",
+    "next": "The complete story closes with a family transformed by sustained choices rather than shortcuts."
+  },
+  "learningObjective": "Explain how repeated choices reveal character using evidence, contrast, habit language, and a complete reflective conclusion.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Tunny's Rescue",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Bring father and son safely from open water to the beginning of an ordinary life."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "False Friends Again",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Prove Pinocchio's changed judgment when the Fox and Cat try their old language again."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "An Honest Apology",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "purpose": "Show accountability through a direct apology to the Talking Cricket and care for Geppetto."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "One Hundred Buckets",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Turn difficult daily labour into a concrete expression of love."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Lamp-Wick's Last Lesson",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S064",
+      "purpose": "Let Pinocchio face the human cost of Toyland and carry the lesson forward."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Work by Day, Study by Night",
+      "sentenceStart": "S065",
+      "sentenceEnd": "S078",
+      "purpose": "Build transformation through patient habits rather than a single dramatic promise."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Fifty Pennies",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S090",
+      "purpose": "Test Pinocchio's priorities when the Fairy needs the reward he saved for himself."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "A Real Boy",
+      "sentenceStart": "S091",
+      "sentenceEnd": "S106",
+      "purpose": "Make the magical transformation the visible result of a change already completed through action."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json",
+      "beatRanges": [
+        {"beatId": "B01", "sentenceStart": "S001", "sentenceEnd": "S013"},
+        {"beatId": "B02", "sentenceStart": "S014", "sentenceEnd": "S026"},
+        {"beatId": "B03", "sentenceStart": "S027", "sentenceEnd": "S039"},
+        {"beatId": "B04", "sentenceStart": "S040", "sentenceEnd": "S052"},
+        {"beatId": "B05", "sentenceStart": "S053", "sentenceEnd": "S064"},
+        {"beatId": "B06", "sentenceStart": "S065", "sentenceEnd": "S079"},
+        {"beatId": "B07", "sentenceStart": "S080", "sentenceEnd": "S091"},
+        {"beatId": "B08", "sentenceStart": "S092", "sentenceEnd": "S109"}
+      ]
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

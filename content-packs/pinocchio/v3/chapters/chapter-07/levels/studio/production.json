@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-07",
+  "level": "studio",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 145,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      440,
+      540
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, nuanced British storybook narrator with precise imagery, emotional restraint, and confident long-form rhythm.",
+    "performance": "Shape subtext, suspense, wit, and consequence through phrasing and contrast while keeping every sentence natural to speak. Open with exhausted survival and fear of the Shark, brighten around earned food and reunion with the Fairy, then let growing confidence meet believable temptation.",
+    "pacing": "Use coherent acts, meaningful pauses at beat turns, and enough space for learners without resetting between sentences.",
+    "beatCues": {
+      "B01": "[exhausted but hopeful]",
+      "B02": "[briskly]",
+      "B03": "[humbly]",
+      "B04": "[tenderly]",
+      "B05": "[sincerely]",
+      "B06": "[steadily]",
+      "B07": "[temptingly]",
+      "B08": "[uneasily]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "Lily is approved under narrator-policy.json; retain the canonical master, parts, timeline, and provenance before the internal production deadline."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2672,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:589bb09e28882b53165b62708909e7b23d7b184e0e97f0ceb22ee7a7832bdd45",
+    "requests": [],
+    "seams": [],
+    "activitiesChecksum": "sha256:17afeda07994416b94d014390e660105bf6ef53aaba8cf9ed0e2e317a1a5d471"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-07/audio/studio.master.mp3",
+    "sentenceTimeline": "chapters/chapter-07/audio/studio.timeline.json",
+    "forcedAlignment": "chapters/chapter-07/audio/studio.alignment.json",
+    "provenance": "chapters/chapter-07/audio/studio.provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-07/audio/studio.voice-profile.snapshot.json",
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

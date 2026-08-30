@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-03",
+  "level": "core",
+  "status": "audio-generated-technical-review-pending",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      450,
+      510
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Make the music irresistible, the theatre joyous, Fire Eater enormous but human, and Pinocchio's offer for Harlequin genuinely brave.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for young learners to process the story.",
+    "beatCues": {
+      "B01": "[hopefully, then tempted]",
+      "B02": "[with uneasy temptation]",
+      "B03": "[joyfully]",
+      "B04": "[with controlled thunder]",
+      "B05": "[gravely]",
+      "B06": "[bravely, without exaggeration]",
+      "B07": "[with relieved warmth]",
+      "B08": "[quietly hopeful]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T09:10:30.040Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "Pinocchio v3 Chapters 1–12, all three reading levels",
+      "note": "The product owner selected Lily's British voice as the Pinocchio narrator for batch production."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2411,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:7979ea17efbf553dc4b25269e9be0fd79cd6a858e68a3901e489666b9e48e7d8",
+    "requests": [
+      {
+        "actId": "act-01",
+        "requestId": "RRtEra5Ns0yCvJt9Na4X",
+        "traceId": "542845d896a959a5511467d1900eb629",
+        "characters": 3466,
+        "characterCost": "1906",
+        "inputSha256": "bf2d0af583af9f87145710e4380f150ec427c30fad8b5805e1db3ef12d0296a9"
+      },
+      {
+        "actId": "act-02",
+        "requestId": "kKlVcoRJaAeqPMj61JEz",
+        "traceId": "97976698da914db501e7170e05064742",
+        "characters": 3380,
+        "characterCost": "1859",
+        "inputSha256": "b797fabe74cebcae2f0661c405447d7a16cf4ea77dc5883d0a4eb64033fa6da7"
+      }
+    ],
+    "seams": [
+      {
+        "afterActId": "act-01",
+        "beforeActId": "act-02",
+        "afterSentenceId": "S052",
+        "beforeSentenceId": "S053",
+        "atSeconds": 289.138,
+        "timingBasis": "per-act-elevenlabs-tts-duration-fitted",
+        "humanQaStatus": "pending"
+      }
+    ],
+    "generatedAt": "2026-08-30T10:08:54.309Z",
+    "operator": "codex",
+    "cost": {
+      "billedCharactersEstimate": 6846,
+      "providerReportedCharacterCost": 3765,
+      "ttsApiListPriceEstimateUsd": 0.685,
+      "forcedAlignmentListPriceEstimateUsd": 0.029,
+      "note": "List-price estimates only; the account plan, included credits, voice multiplier, taxes, and retries may change actual billing."
+    },
+    "activitiesChecksum": "sha256:33cf7a9e8500591b591477682fcab1839a8d93eb71f9fa9809888bf7e7c1cef7"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-03/audio/core.master.mp3",
+    "sentenceTimeline": "chapters/chapter-03/audio/core.timeline.json",
+    "forcedAlignment": "chapters/chapter-03/audio/core.alignment.json",
+    "provenance": "chapters/chapter-03/audio/provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-03/audio/voice-profile.snapshot.json",
+    "checksum": "sha256:da34cd19b02acc640638f437e11e464d2d09f180216e6ed3a7aedbec3b1f11db"
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

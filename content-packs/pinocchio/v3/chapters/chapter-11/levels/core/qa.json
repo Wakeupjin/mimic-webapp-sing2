@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-11",
+  "level": "core",
+  "status": "automated-structure-pass-human-review-pending",
+  "metrics": {
+    "sentenceCount": 103,
+    "wordCount": 1076,
+    "estimatedDurationSecondsAt128Wpm": 504.4,
+    "mimicCount": 30,
+    "guessCount": 10,
+    "wordCountItems": 10,
+    "beatCount": 8,
+    "masterSha256": "c7de9e1c15794e4ad4fa67c35e09038ab221f5a82ddd651260a9eb4d02872f28",
+    "activitiesSha256": "5957c54bdccca2aceb61b7b15745f4afc2552d2a2bbe2e91aa379e6f582379b3",
+    "mimicChunkCount": 31
+  },
+  "automatedValidation": {
+    "command": "local chapter-pack structural and reference audit",
+    "status": "passed-included-core-scope; full-pack-awaits-deferred-level-migrations",
+    "lastRunAt": "2026-08-30"
+  },
+  "humanApprovals": {
+    "editorial": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "learning": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "voice": {
+      "status": "story-pack-approved",
+      "reviewer": "product-owner",
+      "reviewedAt": "2026-08-30"
+    },
+    "audio": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "rights": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "release": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  },
+  "blockingIssues": [
+    "Named editorial and learning approval not recorded.",
+    "Audio generation, human listen-through, visual beats, and product preview are not complete.",
+    "Target-territory rights review remains pending."
+  ],
+  "activityReview": {
+    "mimicBoundaries": {
+      "status": "passed-manual-270-source-sentence-and-chunk-audit",
+      "reviewedAt": "2026-08-30",
+      "rule": "Every currently unblocked Core Mimic item is one unique full source sentence. All nested chunks are exact 2–12-word source ranges cut only at natural breath or meaning boundaries; no midpoint split remains."
+    },
+    "exactSourceText": "passed-270-mimic-90-guess-90-word-source-audit",
+    "guessCueAnswerSemantics": "exact-source-validated-existing-authoring-retained",
+    "wordGrammarFocus": "rebuilt-and-manually-reviewed-90-items",
+    "validatorNote": "Generic golden validation passes. The authored validator reports no errors for this included Core scope; full-pack validation remains blocked by Foundation/Studio and deferred Core chapter migrations outside this task."
+  }
+}

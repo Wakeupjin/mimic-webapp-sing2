@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-08",
+  "level": "foundation",
+  "status": "automated-pass-human-review-pending",
+  "metrics": {
+    "sentenceCount": 105,
+    "wordCount": 827,
+    "estimatedDurationSeconds": 443,
+    "mimicCount": 30,
+    "guessCount": 10,
+    "wordCountItems": 10,
+    "beatCount": 8,
+    "masterSha256": "d7a49883ca182416a9920c921bc23de851aa3816d1d6d13d6c1223f612fe6490",
+    "actualDurationSeconds": null,
+    "audioBytes": null,
+    "audioSha256": null,
+    "alignmentSource": null,
+    "providerRequestCount": 0,
+    "providerReportedCharacterCost": 0,
+    "activitiesSha256": "b1093831736bfbb2dedd78bed5be647761fd8683797bc0f9d41c8cce97f4ca57"
+  },
+  "automatedValidation": {
+    "command": "node scripts/validate-story-pack-authored.mjs",
+    "status": "pending-rerun-after-story-correction",
+    "lastRunAt": "2026-08-30"
+  },
+  "humanApprovals": {
+    "editorial": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "learning": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "voice": {
+      "status": "pinocchio-narrator-approved",
+      "reviewer": "product-owner",
+      "reviewedAt": "2026-08-30"
+    },
+    "audio": {
+      "status": "not-generated",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "rights": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "release": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  },
+  "blockingIssues": [
+    "Named editorial and learning approval not recorded.",
+    "Lily master audio, timeline, and human listen-through are not complete.",
+    "Visual beats and product preview are not complete.",
+    "Target-territory rights review remains pending."
+  ],
+  "independentLearningReview": {
+    "status": "agent-review-completed-human-approval-pending",
+    "reviewerType": "independent-ai-content-qa",
+    "reviewedAt": "2026-08-30",
+    "scope": [
+      "30 unique Mimic source sentences",
+      "full-sentence item contract with nested 2–12-word chunks",
+      "exact source ranges and complete chunk reconstruction",
+      "minimum three Mimic sentences across each of eight beats",
+      "learner-facing Guess cue and answer grounding",
+      "Word source quality, structure focus, and token reconstruction"
+    ],
+    "evidence": {
+      "mimicItemCount": 30,
+      "uniqueMimicSourceCount": 30,
+      "flatSplitItemsRemaining": 0,
+      "activitiesSha256": "b1093831736bfbb2dedd78bed5be647761fd8683797bc0f9d41c8cce97f4ca57",
+      "humanLearningApproval": "pending"
+    },
+    "note": "This evidence records an independent agent review only; it is not a human approval."
+  }
+}

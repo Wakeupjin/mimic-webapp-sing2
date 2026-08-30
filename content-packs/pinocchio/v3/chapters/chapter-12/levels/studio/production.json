@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-12",
+  "level": "studio",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 145,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      440,
+      540
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Begin physically exhausted, keep daily labour steady and warm, hold Lamp-Wick's ending with restraint, and make the transformation quiet and earned.",
+    "levelDelivery": "Use varied pace and precise emphasis; carry subtext without making the language sound literary or distant.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for learners to process the story.",
+    "beatCues": {
+      "B01": "[with grateful relief]",
+      "B02": "[firmly]",
+      "B03": "[humbly]",
+      "B04": "[steadily]",
+      "B05": "[sorrowfully]",
+      "B06": "[with growing warmth]",
+      "B07": "[selflessly]",
+      "B08": "[with quiet joy]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "Lily is the approved British narrator for the complete Pinocchio v3 Story Pack."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": null,
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2723,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:f21ce4678c27301e03b86e89082129aad9b04fb5028b00f0f79d499e95eac7ca",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": null,
+    "activitiesChecksum": "sha256:a5a3ae1f6ddc110a38e6f29d52158ce0f28d43793f78bbfd11b494f63d2dbe1a"
+  },
+  "outputs": {
+    "masterAudio": null,
+    "sentenceTimeline": null,
+    "forcedAlignment": null,
+    "provenance": null,
+    "voiceProfileSnapshot": null,
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-04",
+  "level": "core",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 128,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      450,
+      510
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Begin with generous hope, make the swindlers charming but suspicious, darken the road gradually, and treat the oak cliffhanger solemnly without graphic detail.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for young learners to process the story.",
+    "beatCues": {
+      "B01": "[generously]",
+      "B02": "[smoothly, with a trace of suspicion]",
+      "B03": "[with sly humour]",
+      "B04": "[uneasily]",
+      "B05": "[with rising suspense]",
+      "B06": "[hushed and urgent]",
+      "B07": "[solemnly]",
+      "B08": "[quietly, then hopefully]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "Pinocchio v3 Chapters 1–12, all three reading levels",
+      "note": "The product owner selected Lily's British voice as the Pinocchio narrator for batch production."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2411,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:9f255eebd2eaa5fc115ea4b7c20c7e933cf8ecb9b02ad42a510a00ab2c0b866e",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": {
+      "billedCharactersEstimate": 6480,
+      "providerReportedCharacterCost": null,
+      "ttsApiListPriceEstimateUsd": 0.648,
+      "forcedAlignmentListPriceEstimateUsd": null,
+      "note": "List-price estimate only; included plan credits, voice multipliers, taxes, and retries may change actual billing."
+    },
+    "activitiesChecksum": "sha256:372933aa01464a60486eb59e3276d9a55d3c2f1da09a99ad0c7021b51f0c6484"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-04/audio/core.master.mp3",
+    "sentenceTimeline": "chapters/chapter-04/audio/core.timeline.json",
+    "forcedAlignment": "chapters/chapter-04/audio/core.alignment.json",
+    "provenance": "chapters/chapter-04/audio/provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-04/audio/voice-profile.snapshot.json",
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "shared": {
+    "plotRule": "All levels preserve the same eight beats, actions, consequences, opening continuity, and closing hook.",
+    "watchMinutes": {
+      "minimum": 6,
+      "preferred": 8,
+      "maximum": 10
+    },
+    "activities": {
+      "mimic": 30,
+      "guess": 10,
+      "word": 10
+    },
+    "audioRule": "Generate the fewest coherent acts from one editorial master and derive every sentence and Mimic phrase at integer millisecond precision from that master.",
+    "mimicSelectionRule": "Select exactly 30 unique source sentences per Chapter and level. Each remains one learner-facing Mimic item.",
+    "mimicChunkRule": "Each Mimic sentence contains one or more exact contiguous chunks. Keep chunks to 2–12 words; all chunks rebuild that exact sentence in order."
+  },
+  "levels": {
+    "foundation": {
+      "readingBand": "A1–A2",
+      "words": {
+        "minimum": 820,
+        "preferred": 900,
+        "maximum": 980
+      },
+      "referenceWordsPerMinute": 112,
+      "sentenceGuidance": "Mostly 6–12 words; one clear idea per sentence; concrete verbs and explicit subjects.",
+      "languageGuidance": "Use high-frequency vocabulary, chronological connectors, direct cause and result, and dialogue that is easy to repeat."
+    },
+    "core": {
+      "readingBand": "A2–B1",
+      "words": {
+        "minimum": 950,
+        "preferred": 1030,
+        "maximum": 1100
+      },
+      "referenceWordsPerMinute": 128,
+      "sentenceGuidance": "Mostly 8–16 words with natural variation and connected cause-and-reaction rhythm.",
+      "languageGuidance": "Use contemporary natural narration, playable dialogue, emotional consequences, and useful spoken chunks."
+    },
+    "studio": {
+      "readingBand": "B1–B2",
+      "words": {
+        "minimum": 1100,
+        "preferred": 1180,
+        "maximum": 1280
+      },
+      "referenceWordsPerMinute": 145,
+      "sentenceGuidance": "Mix concise impact lines with controlled complex sentences; preserve speakability and performance rhythm.",
+      "languageGuidance": "Use richer description, subtext, tension, precise verbs, and varied connections without literary padding."
+    }
+  }
+}

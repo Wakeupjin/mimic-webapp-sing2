@@ -15,6 +15,12 @@ One Story Pack may be:
 The user always receives a coherent Monthly Pack. Story length is never padded
 to satisfy an arbitrary ninety-minute target.
 
+For a longform Story Pack, each language level also produces one continuous
+student-facing audiobook master and one canonical transcript covering the
+entire season. A provider's request ceiling may require coherent Chapter or act
+requests; the final asset is still one master, and sentence-by-sentence TTS is
+never an acceptable substitute.
+
 ## Required architecture
 
 ```text
@@ -35,7 +41,9 @@ story-pack/
 ```
 
 Foundation and Studio use the same level directory contract when their status
-advances beyond `planned`.
+advances beyond `planned`. When a level has a different sentence count from the
+canonical level, its `chapter.json` level entry supplies eight `beatRanges`;
+conceptual beat titles and outcomes remain shared.
 
 ## Narrative and curriculum are different layers
 
@@ -44,11 +52,23 @@ selected curriculum derived from it.
 
 - Watch target: naturally six to ten minutes per chapter when the story has the
   capacity; the pack records its own justified target.
-- Mimic: thirty high-value speaking sentences selected from the exact master.
+- Mimic: thirty high-value, unique source sentences selected from the master.
+  Each remains one learner-facing item; a long sentence carries nested practice
+  chunks divided at natural thought and breath boundaries.
 - Guess: ten retrieval or inference items grounded in the master.
 - Word: ten exact master sentences rebuilt and spoken.
 - Watch and Mimic use one editorial chapter master. Sentence audio is aligned
   from the master, never generated as thirty unrelated TTS calls.
+- Every sentence, Mimic item, and nested practice chunk records integer
+  millisecond speech bounds. Chunks retain their source sentence ID and exact character range,
+  so the learner hears the original continuous performance without timing drift.
+- Exact ranges prove technical correctness, not speakability. A separate
+  learning-editor review must reject splits between a determiner and noun,
+  subject and predicate, preposition and object, auxiliary and main verb, or any
+  other boundary that a human narrator would not naturally breathe at.
+- Transcript lock comes before paid narration. Any text change invalidates the
+  affected narration request, alignment, checksums, and downstream full-story
+  master until they are regenerated from the revised canonical text.
 
 For an eight-minute v3 chapter that exceeds a provider request limit, preserve
 one editorial master while generating in the fewest coherent acts or through a
@@ -66,10 +86,48 @@ different language. They are alternatives, not cumulative class time.
 Visual beats and canon are reused; scripts, narration, and selected activities
 are versioned by level.
 
+### Mimic activity contract (`activities.json` 1.1)
+
+```json
+{
+  "id": "M01",
+  "sourceSentenceId": "S014",
+  "text": "The complete selected source sentence stays here.",
+  "sourceTextRange": [0, 49],
+  "chunks": [
+    {
+      "chunkId": "M01-C01",
+      "text": "The complete selected source sentence",
+      "sourceTextRange": [0, 37],
+      "part": 1,
+      "parts": 2
+    },
+    {
+      "chunkId": "M01-C02",
+      "text": "stays here.",
+      "sourceTextRange": [38, 49],
+      "part": 2,
+      "parts": 2
+    }
+  ]
+}
+```
+
+The example is structural, not production copy. A Chapter contains thirty
+unique source sentences. Nested chunks are the playback/practice cuts and do
+not inflate that count.
+
+Timelines expose two bounds: `speechStartMs/speechEndMs` are the exact aligned
+spoken characters; `startMs/endMs` may add a small playback handle so consonants
+are not clipped. Scoring and text highlighting use the speech bounds. Listening
+controls may use the padded playback bounds.
+
 ## Lifecycle
 
-`draft → review → approved → staged → published → archived`
+`draft → editorial-lock → narrated → aligned → approved → staged → published → archived`
 
+- `editorial-lock` requires independent narrative and learning-activity review;
+  automated exact-range checks alone cannot authorize paid generation.
 - `approved` requires rights, editorial, learning, media, and technical QA.
 - `published` requires a named human approval record and deploy evidence.
 - Published files are immutable. Corrections create a new pack version.

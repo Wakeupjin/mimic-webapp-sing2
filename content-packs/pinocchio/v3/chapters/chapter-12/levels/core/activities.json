@@ -1,0 +1,1177 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-12",
+  "level": "core",
+  "source": "master.txt",
+  "selectionPolicy": "Thirty unique full source sentences are selected from the continuous Watch master. Each full sentence remains the Mimic item; its chunks divide delivery only at natural punctuation or meaning boundaries. Every chunk is an exact 2–12-word source range, and fixed midpoint splitting is prohibited.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio swam through the night with Geppetto clinging to his back.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Pinocchio swam through the night with Geppetto clinging to his back.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Tunny's Rescue”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "“Help, Father,” Pinocchio whispered as they began to sink.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "“Help, Father,” Pinocchio whispered as they began to sink.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Tunny's Rescue”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S008",
+      "beatId": "B01",
+      "text": "The Tunny had followed Pinocchio’s escape route.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "The Tunny had followed Pinocchio’s escape route.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Tunny's Rescue”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S010",
+      "beatId": "B01",
+      "text": "At dawn, Pinocchio helped Geppetto step onto the sand.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "At dawn, Pinocchio helped Geppetto step onto the sand.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Tunny's Rescue”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "The Cat could no longer see, and the Fox had lost his tail.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "The Cat could no longer see,",
+          "sourceTextRange": [
+            0,
+            28
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M05-C02",
+          "text": "and the Fox had lost his tail.",
+          "sourceTextRange": [
+            29,
+            59
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “False Friends Again”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S018",
+      "beatId": "B02",
+      "text": "They called Pinocchio their dear friend and asked him for money.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "They called Pinocchio their dear friend and asked him for money.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “False Friends Again”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S022",
+      "beatId": "B02",
+      "text": "The Fox offered excuses while the Cat repeated every final word.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "The Fox offered excuses while the Cat repeated every final word.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “False Friends Again”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S026",
+      "beatId": "B02",
+      "text": "He could recognise a shortcut now, even when it spoke kindly.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "He could recognise a shortcut now, even when it spoke kindly.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “False Friends Again”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "The Talking Cricket sat quietly upon a wooden beam.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "The Talking Cricket sat quietly upon a wooden beam.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “An Honest Apology”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "He reminded Pinocchio of the hammer thrown many months before.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "He reminded Pinocchio of the hammer thrown many months before.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “An Honest Apology”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "The Cricket saw that the apology contained no excuse.",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "The Cricket saw that the apology contained no excuse.",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “An Honest Apology”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S038",
+      "beatId": "B03",
+      "text": "Pinocchio wept when he learnt that she believed him lost.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Pinocchio wept when he learnt that she believed him lost.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “An Honest Apology”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "Geppetto needed warm milk, but Pinocchio had no money.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Geppetto needed warm milk, but Pinocchio had no money.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “One Hundred Buckets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "Whenever he wanted to stop, he pictured Geppetto waiting in bed.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "Whenever he wanted to stop, he pictured Geppetto waiting in bed.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “One Hundred Buckets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S049",
+      "beatId": "B04",
+      "text": "Pinocchio carried it home carefully without tasting a single drop.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Pinocchio carried it home carefully without tasting a single drop.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “One Hundred Buckets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S052",
+      "beatId": "B04",
+      "text": "Day by day, the milk restored colour and strength to Geppetto.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Day by day, the milk restored colour and strength to Geppetto.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “One Hundred Buckets”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "During his first visit, Pinocchio noticed a donkey inside the stable.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "During his first visit, Pinocchio noticed a donkey inside the stable.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Lamp-Wick's Last Lesson”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "“I am Lamp-Wick,” came the faint reply.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“I am Lamp-Wick,” came the faint reply.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Lamp-Wick's Last Lesson”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "Pinocchio recognised the friend who had led him towards Toyland.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Pinocchio recognised the friend who had led him towards Toyland.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Lamp-Wick's Last Lesson”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S063",
+      "beatId": "B05",
+      "text": "He carried the milk home in silence and told Geppetto everything.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "He carried the milk home in silence and told Geppetto everything.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Lamp-Wick's Last Lesson”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Pinocchio returned to the well every morning for five months.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "Pinocchio returned to the well every morning for five months.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Work by Day, Study by Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "On bright afternoons, they explored the road outside the cottage.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "On bright afternoons, they explored the road outside the cottage.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Work by Day, Study by Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S075",
+      "beatId": "B06",
+      "text": "Geppetto grew healthier, and their humble room became peaceful.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Geppetto grew healthier, and their humble room became peaceful.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Work by Day, Study by Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S076",
+      "beatId": "B06",
+      "text": "Pinocchio saved fifty pennies after paying their daily needs.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Pinocchio saved fifty pennies after paying their daily needs.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “Work by Day, Study by Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S082",
+      "beatId": "B07",
+      "text": "Pinocchio opened his purse without counting the cost again.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Pinocchio opened his purse without counting the cost again.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Fifty Pennies”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "“My old clothes can wait, but she cannot,” he explained.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "“My old clothes can wait, but she cannot,” he explained.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Fifty Pennies”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S088",
+      "beatId": "B07",
+      "text": "After Geppetto slept, the puppet made sixteen baskets instead of eight.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "After Geppetto slept, the puppet made sixteen baskets instead of eight.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “The Fifty Pennies”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S091",
+      "beatId": "B08",
+      "text": "In a dream, the Blue Fairy appeared healthy and smiling.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "In a dream, the Blue Fairy appeared healthy and smiling.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Real Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S101",
+      "beatId": "B08",
+      "text": "“You changed our home by changing your choices,” Geppetto answered.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“You changed our home by changing your choices,” Geppetto answered.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “A Real Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S106",
+      "beatId": "B08",
+      "text": "At last, Geppetto and his real boy were safely home together.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "At last, Geppetto and his real boy were safely home together.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Real Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "An old companion turns Pinocchio's failed swim into a successful rescue.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "He offered his broad back and carried both travellers towards land."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S004",
+          "text": "The puppet’s strokes weakened as the dark coast remained distant."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "Father and son began walking slowly in search of food and shelter."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Pinocchio sets a clear boundary with the Fox and Cat.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S017",
+          "text": "Years of trickery had left them hungry, lonely, and without trust."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S024",
+          "text": "He simply took Geppetto’s arm and continued along the road."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S021",
+          "text": "“You fooled me once, but you will not fool me again.”"
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "Pinocchio accepts responsibility while placing Geppetto's need first.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S031",
+          "text": "He reminded Pinocchio of the hammer thrown many months before."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S034",
+          "text": "“Punish me if you must, but please help my father,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S036",
+          "text": "He welcomed them both and offered the cottage as their home."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "Farmer John names the exact labour required for one glass of milk.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S043",
+          "text": "Pinocchio had to draw one hundred buckets from a deep well."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S040",
+          "text": "Geppetto needed warm milk, but Pinocchio had no money."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S048",
+          "text": "Farmer John handed him a full glass of warm, sweet milk."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "The exhausted donkey reveals the identity that Pinocchio feared.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S053",
+          "text": "During his first visit, Pinocchio noticed a donkey inside the stable."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S060",
+          "text": "Lamp-Wick died before Pinocchio could offer comfort or forgiveness."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S057",
+          "text": "“I am Lamp-Wick,” came the faint reply."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "Pinocchio turns one hard bargain into a daily five-month habit.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S063",
+          "text": "He carried the milk home in silence and told Geppetto everything."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S065",
+          "text": "Pinocchio returned to the well every morning for five months."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S072",
+          "text": "For ink, he crushed blackberries and wrote with a pointed stick."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Pinocchio creates writing tools from inexpensive natural materials.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S072",
+          "text": "For ink, he crushed blackberries and wrote with a pointed stick."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S068",
+          "text": "With patient hands, he built Geppetto a comfortable rolling chair."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S076",
+          "text": "Pinocchio saved fifty pennies after paying their daily needs."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "The Fairy's illness changes what Pinocchio does with his savings.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S079",
+          "text": "On his way to market, a familiar Snail called his name."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S085",
+          "text": "He promised to work twice as hard and send more soon."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S082",
+          "text": "Pinocchio opened his purse without counting the cost again."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "The Fairy explains why Pinocchio's recent choices matter.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S091",
+          "text": "In a dream, the Blue Fairy appeared healthy and smiling."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S093",
+          "text": "“You cared for others when doing so cost you something,” she said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S095",
+          "text": "When Pinocchio woke, sunlight filled a beautiful furnished room."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "The ending distinguishes the instant bodily miracle from the slower inner change.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S105",
+          "text": "Patience, courage, work, and love had changed him long before."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S098",
+          "text": "A new suit waited nearby, and fifty gold coins filled a purse."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S102",
+          "text": "Against one chair rested the empty wooden puppet he had been."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true moments from the resolution with a different motive, timing, or result."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio swam through the night with Geppetto clinging to his back.",
+      "tokens": [
+        "Pinocchio",
+        "swam",
+        "through",
+        "the",
+        "night",
+        "with",
+        "Geppetto",
+        "clinging",
+        "to",
+        "his",
+        "back."
+      ],
+      "focus": "with + noun + -ing supplement describing a simultaneous action"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "Years of trickery had left them hungry, lonely, and without trust.",
+      "tokens": [
+        "Years",
+        "of",
+        "trickery",
+        "had",
+        "left",
+        "them",
+        "hungry,",
+        "lonely,",
+        "and",
+        "without",
+        "trust."
+      ],
+      "focus": "past perfect followed by a three-part complement"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "“Punish me if you must, but please help my father,” he said.",
+      "tokens": [
+        "“Punish",
+        "me",
+        "if",
+        "you",
+        "must,",
+        "but",
+        "please",
+        "help",
+        "my",
+        "father,”",
+        "he",
+        "said."
+      ],
+      "focus": "if-clause and but-contrast inside a polite direct request"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "Pinocchio had to draw one hundred buckets from a deep well.",
+      "tokens": [
+        "Pinocchio",
+        "had",
+        "to",
+        "draw",
+        "one",
+        "hundred",
+        "buckets",
+        "from",
+        "a",
+        "deep",
+        "well."
+      ],
+      "focus": "semi-modal had to expressing obligation"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "“I am Lamp-Wick,” came the faint reply.",
+      "tokens": [
+        "“I",
+        "am",
+        "Lamp-Wick,”",
+        "came",
+        "the",
+        "faint",
+        "reply."
+      ],
+      "focus": "inverted reporting clause following direct speech"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Pinocchio returned to the well every morning for five months.",
+      "tokens": [
+        "Pinocchio",
+        "returned",
+        "to",
+        "the",
+        "well",
+        "every",
+        "morning",
+        "for",
+        "five",
+        "months."
+      ],
+      "focus": "simple past with the routine frequency phrase every morning"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "For ink, he crushed blackberries and wrote with a pointed stick.",
+      "tokens": [
+        "For",
+        "ink,",
+        "he",
+        "crushed",
+        "blackberries",
+        "and",
+        "wrote",
+        "with",
+        "a",
+        "pointed",
+        "stick."
+      ],
+      "focus": "fronted purpose phrase followed by coordinated past actions"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S082",
+      "beatId": "B07",
+      "text": "Pinocchio opened his purse without counting the cost again.",
+      "tokens": [
+        "Pinocchio",
+        "opened",
+        "his",
+        "purse",
+        "without",
+        "counting",
+        "the",
+        "cost",
+        "again."
+      ],
+      "focus": "without followed by an -ing complement"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S093",
+      "beatId": "B08",
+      "text": "“You cared for others when doing so cost you something,” she said.",
+      "tokens": [
+        "“You",
+        "cared",
+        "for",
+        "others",
+        "when",
+        "doing",
+        "so",
+        "cost",
+        "you",
+        "something,”",
+        "she",
+        "said."
+      ],
+      "focus": "When + -ing clause inside direct speech plus a reporting clause"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S105",
+      "beatId": "B08",
+      "text": "Patience, courage, work, and love had changed him long before.",
+      "tokens": [
+        "Patience,",
+        "courage,",
+        "work,",
+        "and",
+        "love",
+        "had",
+        "changed",
+        "him",
+        "long",
+        "before."
+      ],
+      "focus": "four-item subject list, past perfect, and a long-before time phrase"
+    }
+  ]
+}

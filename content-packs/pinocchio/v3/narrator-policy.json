@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "status": "approved-for-batch-production",
+  "decision": {
+    "narratorRole": "primary-story-narrator",
+    "provider": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "displayName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "approvedBy": "product-owner",
+    "approvedAt": "2026-08-30",
+    "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+    "reason": "The Golden Chapter established the warm, clear, emotionally present storybook performance selected for this title."
+  },
+  "productionWindow": {
+    "providerRetirementDate": "2026-12-31",
+    "internalGenerationDeadline": "2026-11-30",
+    "status": "time-bounded-production-window",
+    "rule": "Finish the approved masters and any pickups before the internal deadline; do not rely on future regeneration from this voice."
+  },
+  "assetPolicy": {
+    "commercialPaidPlanRequired": true,
+    "storeCanonicalMaster": true,
+    "storeGenerationParts": true,
+    "storeSentenceTimeline": true,
+    "storeRequestAndChecksumProvenance": true,
+    "sentenceBySentenceGenerationAllowed": false,
+    "publishedMastersRemainImmutable": true,
+    "futureCorrections": "Create a versioned replacement master with an approved available voice; never silently overwrite a published Lily master."
+  },
+  "futureVoiceChoice": {
+    "requiredForThisProduction": false,
+    "maleAlternative": "Darian may be evaluated later as an optional user-selectable narrator pack.",
+    "newTitles": "Choose an available narrator per title and keep the immutable voice ID in that Story Pack."
+  }
+}

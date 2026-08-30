@@ -1,249 +1,779 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "chapterId": "chapter-01",
   "level": "core",
   "source": "master.txt",
-  "selectionPolicy": "Learning items are editorial selections from the full Watch master. They are not the full script divided into activities.",
+  "selectionPolicy": "Thirty unique full source sentences are selected from the continuous Watch master. Each full sentence remains the Mimic item; its chunks divide delivery only at natural punctuation or meaning boundaries. Every chunk is an exact 2–12-word source range, and fixed midpoint splitting is prohibited.",
   "mimic": [
     {
       "id": "M01",
-      "sourceSentenceId": "S003",
+      "sourceSentenceId": "S001",
       "beatId": "B01",
-      "text": "One winter morning, he discovered a plain block of wood beside his bench.",
-      "focus": "time opener and narrative stress",
-      "selectionReason": "A clear scene-setting sentence with useful storytelling rhythm."
+      "text": "Long ago, in a quiet Tuscan town, an old carpenter named Master Cherry worked alone in his dusty shop.",
+      "sourceTextRange": [
+        0,
+        102
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Long ago, in a quiet Tuscan town,",
+          "sourceTextRange": [
+            0,
+            33
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M01-C02",
+          "text": "an old carpenter named Master Cherry worked alone in his dusty shop.",
+          "sourceTextRange": [
+            34,
+            102
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “The Unexpected Voice”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M02",
-      "sourceSentenceId": "S006",
+      "sourceSentenceId": "S005",
       "beatId": "B01",
-      "text": "Master Cherry rubbed his hands, lifted his axe, and whispered, “This will do nicely.”",
-      "focus": "linked action sequence",
-      "selectionReason": "Practises three coordinated actions followed by expressive dialogue."
+      "text": "Still, it seemed perfect for a table leg.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Still, it seemed perfect for a table leg.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Unexpected Voice”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M03",
-      "sourceSentenceId": "S007",
+      "sourceSentenceId": "S009",
       "beatId": "B01",
-      "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”",
-      "focus": "before-clause and emotional contrast",
-      "selectionReason": "Carries the Chapter's first surprise and a reusable time clause."
+      "text": "He searched beneath the bench, behind the door, and inside every cupboard.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "He searched beneath the bench, behind the door, and inside every cupboard.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “The Unexpected Voice”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M04",
-      "sourceSentenceId": "S011",
+      "sourceSentenceId": "S012",
       "beatId": "B01",
-      "text": "“I must have imagined it,” he decided, though his knees had begun to shake.",
-      "focus": "concession with though",
-      "selectionReason": "Pairs spoken confidence with physical fear."
+      "text": "He raised the axe again.",
+      "sourceTextRange": [
+        0,
+        24
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "He raised the axe again.",
+          "sourceTextRange": [
+            0,
+            24
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Unexpected Voice”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M05",
       "sourceSentenceId": "S015",
       "beatId": "B02",
       "text": "A piece of wood could not speak, yet this one clearly had opinions.",
-      "focus": "contrast with yet",
-      "selectionReason": "Compact cause of comedy with a high-value contrast pattern."
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "A piece of wood could not speak,",
+          "sourceTextRange": [
+            0,
+            32
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M05-C02",
+          "text": "yet this one clearly had opinions.",
+          "sourceTextRange": [
+            33,
+            67
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “A Very Peculiar Block”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M06",
-      "sourceSentenceId": "S017",
+      "sourceSentenceId": "S020",
       "beatId": "B02",
-      "text": "The moment the tool scraped across it, the wood laughed like a cheeky child.",
-      "focus": "immediate reaction and simile",
-      "selectionReason": "Combines precise timing, sound, and characterisation."
+      "text": "“There must be a trick,” he muttered.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "“There must be a trick,” he muttered.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “A Very Peculiar Block”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M07",
-      "sourceSentenceId": "S025",
+      "sourceSentenceId": "S021",
       "beatId": "B02",
-      "text": "At that exact moment, someone knocked loudly at the shop door.",
-      "focus": "dramatic timing",
-      "selectionReason": "A versatile suspense connector with strong sentence stress."
+      "text": "He tapped the block gently with one finger.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "He tapped the block gently with one finger.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Very Peculiar Block”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M08",
-      "sourceSentenceId": "S028",
-      "beatId": "B03",
-      "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
-      "focus": "participial description",
-      "selectionReason": "Introduces a character through two concise visual details."
+      "sourceSentenceId": "S026",
+      "beatId": "B02",
+      "text": "Master Cherry nearly jumped out of his apron.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Master Cherry nearly jumped out of his apron.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Very Peculiar Block”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M09",
-      "sourceSentenceId": "S029",
+      "sourceSentenceId": "S028",
       "beatId": "B03",
-      "text": "He was poor, but his imagination was richer than any king’s treasure room.",
-      "focus": "but-contrast and comparison",
-      "selectionReason": "Expresses poverty and inner richness in one memorable line."
+      "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Geppetto's Wonderful Plan”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M10",
       "sourceSentenceId": "S031",
       "beatId": "B03",
       "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”",
-      "focus": "future intention and list rhythm",
-      "selectionReason": "States Geppetto's plan with playful three-part rhythm."
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "“I shall make a wooden boy who can dance,",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M10-C02",
+          "text": "fence, and turn somersaults.”",
+          "sourceTextRange": [
+            42,
+            71
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Geppetto's Wonderful Plan”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M11",
       "sourceSentenceId": "S034",
       "beatId": "B03",
       "text": "More than money, Geppetto wanted company in his small, lonely home.",
-      "focus": "emotional contrast and phrasing",
-      "selectionReason": "Reveals the emotional motive beneath the practical plan."
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "More than money, Geppetto wanted company in his small, lonely home.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “Geppetto's Wonderful Plan”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M12",
-      "sourceSentenceId": "S041",
-      "beatId": "B04",
-      "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
-      "focus": "before-clause and quoted greeting",
-      "selectionReason": "Creates comic interruption with a repeatable time pattern."
+      "sourceSentenceId": "S039",
+      "beatId": "B03",
+      "text": "“Take that piece over there,” he offered.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "“Take that piece over there,” he offered.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Geppetto's Wonderful Plan”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M13",
-      "sourceSentenceId": "S047",
+      "sourceSentenceId": "S041",
       "beatId": "B04",
-      "text": "Their argument became a storm of accusations, stamping feet, and flying insults.",
-      "focus": "metaphor and list stress",
-      "selectionReason": "Turns conflict into a vivid, speakable image."
+      "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “An Insult and a Quarrel”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M14",
-      "sourceSentenceId": "S048",
+      "sourceSentenceId": "S045",
       "beatId": "B04",
-      "text": "A moment later, they were rolling across the floor like two angry sacks of flour.",
-      "focus": "sequence marker and simile",
-      "selectionReason": "A physical comic beat with clear rhythm and imagery."
+      "text": "Master Cherry lifted both hands and swore it was not him.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "Master Cherry lifted both hands and swore it was not him.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “An Insult and a Quarrel”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M15",
-      "sourceSentenceId": "S056",
-      "beatId": "B05",
-      "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd.",
-      "focus": "simultaneous action and imagination",
-      "selectionReason": "Moves from physical journey to inner hope in one sentence."
+      "sourceSentenceId": "S049",
+      "beatId": "B04",
+      "text": "At last, breathless and embarrassed, they stopped.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "At last, breathless and embarrassed, they stopped.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “An Insult and a Quarrel”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M16",
-      "sourceSentenceId": "S057",
-      "beatId": "B05",
-      "text": "He imagined music, applause, and warm meals shared beside the fire.",
-      "focus": "three-part list and warmth",
-      "selectionReason": "A short expressive line built around concrete desires."
+      "sourceSentenceId": "S054",
+      "beatId": "B04",
+      "text": "The block gave a quiet, satisfied chuckle.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "The block gave a quiet, satisfied chuckle.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “An Insult and a Quarrel”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M17",
-      "sourceSentenceId": "S059",
+      "sourceSentenceId": "S057",
       "beatId": "B05",
-      "text": "A painted fire on the wall had to pretend to keep him warm.",
-      "focus": "personification and contrast",
-      "selectionReason": "Shows poverty through one memorable visual sentence."
+      "text": "He imagined music, applause, and warm meals shared beside the fire.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "He imagined music, applause, and warm meals shared beside the fire.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “A Name for a New Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M18",
-      "sourceSentenceId": "S066",
+      "sourceSentenceId": "S061",
       "beatId": "B05",
-      "text": "“Let us make a boy,” he said, “and perhaps a family too.”",
-      "focus": "invitation and emotional subtext",
-      "selectionReason": "Connects the act of making with the deeper family theme."
+      "text": "“What shall I call you?” he wondered.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“What shall I call you?” he wondered.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “A Name for a New Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M19",
-      "sourceSentenceId": "S068",
-      "beatId": "B06",
-      "text": "The moment the eyes appeared, they stared directly at him.",
-      "focus": "immediate reaction",
-      "selectionReason": "A concise magical transformation with strong stress."
+      "sourceSentenceId": "S064",
+      "beatId": "B05",
+      "text": "The name sounded bright, quick, and full of adventure.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "The name sounded bright, quick, and full of adventure.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “A Name for a New Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M20",
-      "sourceSentenceId": "S072",
-      "beatId": "B06",
-      "text": "The nose grew longer and longer, no matter how often Geppetto shortened it.",
-      "focus": "repetition and no-matter clause",
-      "selectionReason": "Uses a useful persistence pattern around the iconic nose."
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "Geppetto sharpened his tools with great care.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Geppetto sharpened his tools with great care.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Name for a New Boy”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M21",
-      "sourceSentenceId": "S074",
+      "sourceSentenceId": "S069",
       "beatId": "B06",
-      "text": "He shaped a mouth, and the mouth immediately began to grin.",
-      "focus": "linked action and result",
-      "selectionReason": "A clean cause-and-reaction sentence for connected speech."
+      "text": "“It is polite to look kindly at your father,” Geppetto said.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "“It is polite to look kindly at your father,” Geppetto said.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Pinocchio Takes Shape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M22",
-      "sourceSentenceId": "S079",
+      "sourceSentenceId": "S074",
       "beatId": "B06",
-      "text": "As soon as the hands were finished, they snatched away his yellow wig.",
-      "focus": "as-soon-as clause",
-      "selectionReason": "Pairs a high-value connector with a comic action."
+      "text": "He shaped a mouth, and the mouth immediately began to grin.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "He shaped a mouth, and the mouth immediately began to grin.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Pinocchio Takes Shape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M23",
-      "sourceSentenceId": "S084",
-      "beatId": "B07",
-      "text": "One step became two, and two steps became a wild dash around the room.",
-      "focus": "parallel rhythm and escalation",
-      "selectionReason": "Makes a fast escalation easy to hear and reproduce."
+      "sourceSentenceId": "S078",
+      "beatId": "B06",
+      "text": "Geppetto carved the chin, neck, shoulders, arms, and hands.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Geppetto carved the chin, neck, shoulders, arms, and hands.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “Pinocchio Takes Shape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M24",
-      "sourceSentenceId": "S085",
-      "beatId": "B07",
-      "text": "Pinocchio kicked over a stool, leapt across the bed, and raced towards the door.",
-      "focus": "three-action sequence",
-      "selectionReason": "Practises energetic past-tense verbs in one visual line."
+      "sourceSentenceId": "S080",
+      "beatId": "B06",
+      "text": "Pinocchio waved it like a flag and laughed.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Pinocchio waved it like a flag and laughed.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Pinocchio Takes Shape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M25",
-      "sourceSentenceId": "S087",
+      "sourceSentenceId": "S084",
       "beatId": "B07",
-      "text": "The puppet pulled the latch and shot into the street.",
-      "focus": "linked actions and release",
-      "selectionReason": "A compact escape sentence with a strong final beat."
+      "text": "One step became two, and two steps became a wild dash around the room.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "One step became two,",
+          "sourceTextRange": [
+            0,
+            20
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M25-C02",
+          "text": "and two steps became a wild dash around the room.",
+          "sourceTextRange": [
+            21,
+            70
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Great Escape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M26",
-      "sourceSentenceId": "S091",
+      "sourceSentenceId": "S089",
       "beatId": "B07",
-      "text": "Freedom felt too exciting, and consequences were still a mystery.",
-      "focus": "abstract contrast made simple",
-      "selectionReason": "Summarises Pinocchio's emotional logic without moralising."
+      "text": "Geppetto hurried after him in his slippers, calling his name.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Geppetto hurried after him in his slippers, calling his name.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Great Escape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M27",
-      "sourceSentenceId": "S093",
-      "beatId": "B08",
-      "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
-      "focus": "attempt and reversal",
-      "selectionReason": "A useful tried-to-but pattern tied to a memorable action."
+      "sourceSentenceId": "S091",
+      "beatId": "B07",
+      "text": "Freedom felt too exciting, and consequences were still a mystery.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Freedom felt too exciting, and consequences were still a mystery.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Great Escape”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M28",
-      "sourceSentenceId": "S099",
+      "sourceSentenceId": "S093",
       "beatId": "B08",
-      "text": "When he caught the puppet by the neck instead, Pinocchio threw himself onto the road and refused to move.",
-      "focus": "when-clause and physical reaction",
-      "selectionReason": "Shows the action that causes the crowd to misunderstand Geppetto."
+      "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
+      "sourceTextRange": [
+        0,
+        82
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Pinocchio tried to slip past,",
+          "sourceTextRange": [
+            0,
+            29
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M28-C02",
+          "text": "but the constable caught him by his remarkable nose.",
+          "sourceTextRange": [
+            30,
+            82
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “The Wrong Man Goes to Prison”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M29",
-      "sourceSentenceId": "S101",
+      "sourceSentenceId": "S102",
       "beatId": "B08",
-      "text": "The constable listened to the loudest voices instead of examining the facts.",
-      "focus": "instead-of contrast",
-      "selectionReason": "A memorable consequence line with a reusable contrast frame."
+      "text": "He released Pinocchio and took Geppetto by the arm.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "He released Pinocchio and took Geppetto by the arm.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Wrong Man Goes to Prison”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     },
     {
       "id": "M30",
       "sourceSentenceId": "S105",
       "beatId": "B08",
       "text": "And somewhere ahead, the wooden boy’s first hard lesson was already waiting.",
-      "focus": "forward hook and sentence stress",
-      "selectionReason": "Closes the Chapter while pulling the learner into the next one."
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "And somewhere ahead, the wooden boy’s first hard lesson was already waiting.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Wrong Man Goes to Prison”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
     }
   ],
   "guess": [
@@ -252,9 +782,21 @@
       "beatId": "B01",
       "cue": "Master Cherry raises his axe and hears an impossible warning.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S007", "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”" },
-        { "id": "B", "sourceSentenceId": "S013", "text": "This time, the axe came down, and the voice cried, “Oh! You hurt me!”" },
-        { "id": "C", "sourceSentenceId": "S025", "text": "At that exact moment, someone knocked loudly at the shop door." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S007",
+          "text": "Before the blade touched the wood, a tiny voice cried, “Please don’t hit me!”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S013",
+          "text": "This time, the axe came down, and the voice cried, “Oh! You hurt me!”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S025",
+          "text": "At that exact moment, someone knocked loudly at the shop door."
+        }
       ],
       "correctOptionId": "A",
       "distractorStrategy": "Other surprising sounds from the same opening sequence."
@@ -264,9 +806,21 @@
       "beatId": "B01",
       "cue": "The empty shop makes Master Cherry doubt what he heard, even while his body shows fear.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S020", "text": "“There must be a trick,” he muttered." },
-        { "id": "B", "sourceSentenceId": "S011", "text": "“I must have imagined it,” he decided, though his knees had begun to shake." },
-        { "id": "C", "sourceSentenceId": "S030", "text": "“I have a wonderful plan,” he announced." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S020",
+          "text": "“There must be a trick,” he muttered."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S011",
+          "text": "“I must have imagined it,” he decided, though his knees had begun to shake."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S030",
+          "text": "“I have a wonderful plan,” he announced."
+        }
       ],
       "correctOptionId": "B",
       "distractorStrategy": "Plausible quotations with different motives."
@@ -276,9 +830,21 @@
       "beatId": "B02",
       "cue": "The plane touches the block and proves that the wood reacts like a child.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S009", "text": "He searched beneath the bench, behind the door, and inside every cupboard." },
-        { "id": "B", "sourceSentenceId": "S054", "text": "The block gave a quiet, satisfied chuckle." },
-        { "id": "C", "sourceSentenceId": "S017", "text": "The moment the tool scraped across it, the wood laughed like a cheeky child." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "He searched beneath the bench, behind the door, and inside every cupboard."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S054",
+          "text": "The block gave a quiet, satisfied chuckle."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S017",
+          "text": "The moment the tool scraped across it, the wood laughed like a cheeky child."
+        }
       ],
       "correctOptionId": "C",
       "distractorStrategy": "One search action and one later laugh compete with the exact reaction."
@@ -288,9 +854,21 @@
       "beatId": "B03",
       "cue": "Geppetto describes the wooden performer he wants to create.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S031", "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”" },
-        { "id": "B", "sourceSentenceId": "S063", "text": "“I shall call you Pinocchio.”" },
-        { "id": "C", "sourceSentenceId": "S086", "text": "“Stop!” cried Geppetto." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S031",
+          "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S063",
+          "text": "“I shall call you Pinocchio.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S086",
+          "text": "“Stop!” cried Geppetto."
+        }
       ],
       "correctOptionId": "A",
       "distractorStrategy": "Other Geppetto quotations from later actions."
@@ -300,9 +878,21 @@
       "beatId": "B04",
       "cue": "The hidden voice insults Geppetto before he even touches the wood.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S053", "text": "“Friends again,” Master Cherry replied." },
-        { "id": "B", "sourceSentenceId": "S041", "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”" },
-        { "id": "C", "sourceSentenceId": "S097", "text": "“He is my boy, and I shall take him home.”" }
+        {
+          "id": "A",
+          "sourceSentenceId": "S053",
+          "text": "“Friends again,” Master Cherry replied."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S041",
+          "text": "Before he touched it, the hidden voice called, “Good afternoon, Polendina!”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S097",
+          "text": "“He is my boy, and I shall take him home.”"
+        }
       ],
       "correctOptionId": "B",
       "distractorStrategy": "Other dialogue lines with different speakers and intentions."
@@ -312,9 +902,21 @@
       "beatId": "B05",
       "cue": "Geppetto chooses the name that sounds bright and full of adventure.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S030", "text": "“I have a wonderful plan,” he announced." },
-        { "id": "B", "sourceSentenceId": "S052", "text": "“Friends again?” Geppetto asked." },
-        { "id": "C", "sourceSentenceId": "S063", "text": "“I shall call you Pinocchio.”" }
+        {
+          "id": "A",
+          "sourceSentenceId": "S030",
+          "text": "“I have a wonderful plan,” he announced."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S052",
+          "text": "“Friends again?” Geppetto asked."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S063",
+          "text": "“I shall call you Pinocchio.”"
+        }
       ],
       "correctOptionId": "C",
       "distractorStrategy": "Other first-person Geppetto dialogue."
@@ -324,9 +926,21 @@
       "beatId": "B06",
       "cue": "Geppetto cannot control the most famous feature of the puppet's face.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S072", "text": "The nose grew longer and longer, no matter how often Geppetto shortened it." },
-        { "id": "B", "sourceSentenceId": "S084", "text": "One step became two, and two steps became a wild dash around the room." },
-        { "id": "C", "sourceSentenceId": "S093", "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S072",
+          "text": "The nose grew longer and longer, no matter how often Geppetto shortened it."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S084",
+          "text": "One step became two, and two steps became a wild dash around the room."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S093",
+          "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose."
+        }
       ],
       "correctOptionId": "A",
       "distractorStrategy": "Other escalation or nose-related actions."
@@ -336,9 +950,21 @@
       "beatId": "B07",
       "cue": "Pinocchio opens the way out and begins his first escape.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S056", "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd." },
-        { "id": "B", "sourceSentenceId": "S087", "text": "The puppet pulled the latch and shot into the street." },
-        { "id": "C", "sourceSentenceId": "S102", "text": "He released Pinocchio and took Geppetto by the arm." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S056",
+          "text": "As Geppetto walked home through the narrow streets, he imagined the puppet bowing before a delighted crowd."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S087",
+          "text": "The puppet pulled the latch and shot into the street."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S102",
+          "text": "He released Pinocchio and took Geppetto by the arm."
+        }
       ],
       "correctOptionId": "B",
       "distractorStrategy": "Other street movement or release moments."
@@ -348,9 +974,21 @@
       "beatId": "B08",
       "cue": "The constable makes a bad decision because he follows noise rather than facts.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S045", "text": "Master Cherry lifted both hands and swore it was not him." },
-        { "id": "B", "sourceSentenceId": "S096", "text": "“Thank goodness,” he said." },
-        { "id": "C", "sourceSentenceId": "S101", "text": "The constable listened to the loudest voices instead of examining the facts." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S045",
+          "text": "Master Cherry lifted both hands and swore it was not him."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S096",
+          "text": "“Thank goodness,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S101",
+          "text": "The constable listened to the loudest voices instead of examining the facts."
+        }
       ],
       "correctOptionId": "C",
       "distractorStrategy": "Other reactions that do not express the constable's error."
@@ -360,9 +998,21 @@
       "beatId": "B08",
       "cue": "Geppetto names the painful gap between the love he gave and the judgment Pinocchio lacks.",
       "options": [
-        { "id": "A", "sourceSentenceId": "S104", "text": "“Oh, Pinocchio,” he sighed, “I made you with love, but I forgot to give you sense.”" },
-        { "id": "B", "sourceSentenceId": "S066", "text": "“Let us make a boy,” he said, “and perhaps a family too.”" },
-        { "id": "C", "sourceSentenceId": "S011", "text": "“I must have imagined it,” he decided, though his knees had begun to shake." }
+        {
+          "id": "A",
+          "sourceSentenceId": "S104",
+          "text": "“Oh, Pinocchio,” he sighed, “I made you with love, but I forgot to give you sense.”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S066",
+          "text": "“Let us make a boy,” he said, “and perhaps a family too.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S011",
+          "text": "“I must have imagined it,” he decided, though his knees had begun to shake."
+        }
       ],
       "correctOptionId": "A",
       "distractorStrategy": "Other emotional dialogue from earlier hopes and fears."
@@ -374,80 +1024,213 @@
       "sourceSentenceId": "S003",
       "beatId": "B01",
       "text": "One winter morning, he discovered a plain block of wood beside his bench.",
-      "tokens": ["One", "winter", "morning,", "he", "discovered", "a", "plain", "block", "of", "wood", "beside", "his", "bench."],
-      "focus": "time phrase followed by subject and past-tense action"
+      "tokens": [
+        "One",
+        "winter",
+        "morning,",
+        "he",
+        "discovered",
+        "a",
+        "plain",
+        "block",
+        "of",
+        "wood",
+        "beside",
+        "his",
+        "bench."
+      ],
+      "focus": "fronted time noun phrase followed by a simple-past main clause"
     },
     {
       "id": "W02",
       "sourceSentenceId": "S015",
       "beatId": "B02",
       "text": "A piece of wood could not speak, yet this one clearly had opinions.",
-      "tokens": ["A", "piece", "of", "wood", "could", "not", "speak,", "yet", "this", "one", "clearly", "had", "opinions."],
-      "focus": "modal negative and yet-contrast"
+      "tokens": [
+        "A",
+        "piece",
+        "of",
+        "wood",
+        "could",
+        "not",
+        "speak,",
+        "yet",
+        "this",
+        "one",
+        "clearly",
+        "had",
+        "opinions."
+      ],
+      "focus": "modal could with negation and a yet-contrast clause"
     },
     {
       "id": "W03",
       "sourceSentenceId": "S028",
       "beatId": "B03",
       "text": "Geppetto entered, wearing a patched coat and a hopeful smile.",
-      "tokens": ["Geppetto", "entered,", "wearing", "a", "patched", "coat", "and", "a", "hopeful", "smile."],
-      "focus": "main action plus participial description"
+      "tokens": [
+        "Geppetto",
+        "entered,",
+        "wearing",
+        "a",
+        "patched",
+        "coat",
+        "and",
+        "a",
+        "hopeful",
+        "smile."
+      ],
+      "focus": "supplementary -ing phrase adding a simultaneous description"
     },
     {
       "id": "W04",
       "sourceSentenceId": "S031",
       "beatId": "B03",
       "text": "“I shall make a wooden boy who can dance, fence, and turn somersaults.”",
-      "tokens": ["“I", "shall", "make", "a", "wooden", "boy", "who", "can", "dance,", "fence,", "and", "turn", "somersaults.”"],
-      "focus": "future intention and relative clause"
+      "tokens": [
+        "“I",
+        "shall",
+        "make",
+        "a",
+        "wooden",
+        "boy",
+        "who",
+        "can",
+        "dance,",
+        "fence,",
+        "and",
+        "turn",
+        "somersaults.”"
+      ],
+      "focus": "who-relative clause, modal can, and a three-action list"
     },
     {
       "id": "W05",
       "sourceSentenceId": "S047",
       "beatId": "B04",
       "text": "Their argument became a storm of accusations, stamping feet, and flying insults.",
-      "tokens": ["Their", "argument", "became", "a", "storm", "of", "accusations,", "stamping", "feet,", "and", "flying", "insults."],
-      "focus": "became-complement and coordinated list"
+      "tokens": [
+        "Their",
+        "argument",
+        "became",
+        "a",
+        "storm",
+        "of",
+        "accusations,",
+        "stamping",
+        "feet,",
+        "and",
+        "flying",
+        "insults."
+      ],
+      "focus": "linking verb became followed by a three-part of-list"
     },
     {
       "id": "W06",
       "sourceSentenceId": "S066",
       "beatId": "B05",
       "text": "“Let us make a boy,” he said, “and perhaps a family too.”",
-      "tokens": ["“Let", "us", "make", "a", "boy,”", "he", "said,", "“and", "perhaps", "a", "family", "too.”"],
-      "focus": "quoted invitation and reporting clause"
+      "tokens": [
+        "“Let",
+        "us",
+        "make",
+        "a",
+        "boy,”",
+        "he",
+        "said,",
+        "“and",
+        "perhaps",
+        "a",
+        "family",
+        "too.”"
+      ],
+      "focus": "let us imperative, reporting clause, and coordinated suggestion"
     },
     {
       "id": "W07",
       "sourceSentenceId": "S068",
       "beatId": "B06",
       "text": "The moment the eyes appeared, they stared directly at him.",
-      "tokens": ["The", "moment", "the", "eyes", "appeared,", "they", "stared", "directly", "at", "him."],
-      "focus": "immediate-time clause and pronoun reference"
+      "tokens": [
+        "The",
+        "moment",
+        "the",
+        "eyes",
+        "appeared,",
+        "they",
+        "stared",
+        "directly",
+        "at",
+        "him."
+      ],
+      "focus": "fronted time clause beginning The moment"
     },
     {
       "id": "W08",
       "sourceSentenceId": "S084",
       "beatId": "B07",
       "text": "One step became two, and two steps became a wild dash around the room.",
-      "tokens": ["One", "step", "became", "two,", "and", "two", "steps", "became", "a", "wild", "dash", "around", "the", "room."],
-      "focus": "parallel clauses and escalation"
+      "tokens": [
+        "One",
+        "step",
+        "became",
+        "two,",
+        "and",
+        "two",
+        "steps",
+        "became",
+        "a",
+        "wild",
+        "dash",
+        "around",
+        "the",
+        "room."
+      ],
+      "focus": "parallel and-coordination with repeated became"
     },
     {
       "id": "W09",
       "sourceSentenceId": "S093",
       "beatId": "B08",
       "text": "Pinocchio tried to slip past, but the constable caught him by his remarkable nose.",
-      "tokens": ["Pinocchio", "tried", "to", "slip", "past,", "but", "the", "constable", "caught", "him", "by", "his", "remarkable", "nose."],
-      "focus": "tried-to action followed by but-reversal"
+      "tokens": [
+        "Pinocchio",
+        "tried",
+        "to",
+        "slip",
+        "past,",
+        "but",
+        "the",
+        "constable",
+        "caught",
+        "him",
+        "by",
+        "his",
+        "remarkable",
+        "nose."
+      ],
+      "focus": "tried to infinitive followed by a but-contrast clause"
     },
     {
       "id": "W10",
       "sourceSentenceId": "S101",
       "beatId": "B08",
       "text": "The constable listened to the loudest voices instead of examining the facts.",
-      "tokens": ["The", "constable", "listened", "to", "the", "loudest", "voices", "instead", "of", "examining", "the", "facts."],
-      "focus": "listened-to collocation and instead-of contrast"
+      "tokens": [
+        "The",
+        "constable",
+        "listened",
+        "to",
+        "the",
+        "loudest",
+        "voices",
+        "instead",
+        "of",
+        "examining",
+        "the",
+        "facts."
+      ],
+      "focus": "instead of followed by an -ing complement"
     }
   ]
 }

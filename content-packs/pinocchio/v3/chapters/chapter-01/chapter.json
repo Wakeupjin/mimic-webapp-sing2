@@ -8,7 +8,11 @@
     "en": "A Voice in the Wood",
     "ko": "나무 속의 목소리"
   },
-  "sourceChapters": [1, 2, 3],
+  "sourceChapters": [
+    1,
+    2,
+    3
+  ],
   "canonicalLevel": "core",
   "continuity": {
     "opening": "Master Cherry discovers an unexplained block of wood in his shop.",
@@ -83,7 +87,79 @@
     }
   ],
   "levels": {
-    "foundation": { "status": "planned" },
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json",
+      "beatRanges": [
+        {
+          "beatId": "B01",
+          "order": 1,
+          "title": "The Unexpected Voice",
+          "sentenceStart": "S001",
+          "sentenceEnd": "S013",
+          "purpose": "Open with ordinary work interrupted by an impossible voice."
+        },
+        {
+          "beatId": "B02",
+          "order": 2,
+          "title": "A Very Peculiar Block",
+          "sentenceStart": "S014",
+          "sentenceEnd": "S027",
+          "purpose": "Prove that the wood reacts like a mischievous child."
+        },
+        {
+          "beatId": "B03",
+          "order": 3,
+          "title": "Geppetto's Wonderful Plan",
+          "sentenceStart": "S028",
+          "sentenceEnd": "S039",
+          "purpose": "Give Geppetto both a practical plan and an emotional need."
+        },
+        {
+          "beatId": "B04",
+          "order": 4,
+          "title": "An Insult and a Quarrel",
+          "sentenceStart": "S040",
+          "sentenceEnd": "S055",
+          "purpose": "Let the wood cause comic trouble before it has a body."
+        },
+        {
+          "beatId": "B05",
+          "order": 5,
+          "title": "A Name for a New Boy",
+          "sentenceStart": "S056",
+          "sentenceEnd": "S068",
+          "purpose": "Turn a block of wood into Geppetto's hope for a family."
+        },
+        {
+          "beatId": "B06",
+          "order": 6,
+          "title": "Pinocchio Takes Shape",
+          "sentenceStart": "S069",
+          "sentenceEnd": "S083",
+          "purpose": "Reveal Pinocchio's lively character as each feature is carved."
+        },
+        {
+          "beatId": "B07",
+          "order": 7,
+          "title": "The Great Escape",
+          "sentenceStart": "S084",
+          "sentenceEnd": "S093",
+          "purpose": "Convert first steps into an impulsive flight from home."
+        },
+        {
+          "beatId": "B08",
+          "order": 8,
+          "title": "The Wrong Man Goes to Prison",
+          "sentenceStart": "S094",
+          "sentenceEnd": "S107",
+          "purpose": "End with Pinocchio free and Geppetto bearing the consequence."
+        }
+      ]
+    },
     "core": {
       "status": "script-and-learning-draft",
       "master": "levels/core/master.txt",
@@ -91,6 +167,78 @@
       "production": "levels/core/production.json",
       "qa": "levels/core/qa.json"
     },
-    "studio": { "status": "planned" }
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json",
+      "beatRanges": [
+        {
+          "beatId": "B01",
+          "order": 1,
+          "title": "The Unexpected Voice",
+          "sentenceStart": "S001",
+          "sentenceEnd": "S013",
+          "purpose": "Open with ordinary work interrupted by an impossible voice."
+        },
+        {
+          "beatId": "B02",
+          "order": 2,
+          "title": "A Very Peculiar Block",
+          "sentenceStart": "S014",
+          "sentenceEnd": "S027",
+          "purpose": "Prove that the wood reacts like a mischievous child."
+        },
+        {
+          "beatId": "B03",
+          "order": 3,
+          "title": "Geppetto's Wonderful Plan",
+          "sentenceStart": "S028",
+          "sentenceEnd": "S039",
+          "purpose": "Give Geppetto both a practical plan and an emotional need."
+        },
+        {
+          "beatId": "B04",
+          "order": 4,
+          "title": "An Insult and a Quarrel",
+          "sentenceStart": "S040",
+          "sentenceEnd": "S055",
+          "purpose": "Let the wood cause comic trouble before it has a body."
+        },
+        {
+          "beatId": "B05",
+          "order": 5,
+          "title": "A Name for a New Boy",
+          "sentenceStart": "S056",
+          "sentenceEnd": "S067",
+          "purpose": "Turn a block of wood into Geppetto's hope for a family."
+        },
+        {
+          "beatId": "B06",
+          "order": 6,
+          "title": "Pinocchio Takes Shape",
+          "sentenceStart": "S068",
+          "sentenceEnd": "S083",
+          "purpose": "Reveal Pinocchio's lively character as each feature is carved."
+        },
+        {
+          "beatId": "B07",
+          "order": 7,
+          "title": "The Great Escape",
+          "sentenceStart": "S084",
+          "sentenceEnd": "S092",
+          "purpose": "Convert first steps into an impulsive flight from home."
+        },
+        {
+          "beatId": "B08",
+          "order": 8,
+          "title": "The Wrong Man Goes to Prison",
+          "sentenceStart": "S093",
+          "sentenceEnd": "S106",
+          "purpose": "End with Pinocchio free and Geppetto bearing the consequence."
+        }
+      ]
+    }
   }
 }

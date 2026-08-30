@@ -7,26 +7,31 @@ published.
 
 - [x] Twelve-Chapter arc covers original Chapters 1–36 once.
 - [x] Core Chapter 1 has one canonical narrative master.
-- [x] Core Chapter 1 is inside the seven-and-a-half to eight-and-a-half-minute
-  Golden target at the reference narration rate.
-- [x] Thirty Mimic selections are exact sentences from the master.
+- [x] Core Chapter 1 is inside the natural six-to-ten-minute Watch range and
+  near the preferred eight-minute target.
+- [x] Thirty unique Mimic source sentences per Chapter and level are exact and
+  independently edited; long sentences contain nested chunks with natural
+  thought and breath boundaries.
 - [x] Ten Guess items and ten Word items are grounded in the master.
 - [ ] Editorial/canon review by a named human.
 - [ ] Learning-level review by a named human.
-- [ ] Durable narrator and immutable voice ID approved.
-- [ ] Commercial voice-plan eligibility recorded.
-- [ ] Full narration generated with request/job provenance and cost.
-- [ ] Sentence timestamps aligned from the completed master narration.
+- [x] Lily British narrator and immutable voice ID approved for this Story Pack.
+- [x] Commercial paid-plan eligibility recorded.
+- [x] Golden Chapter narration generated with request/job provenance and cost.
+- [x] Golden Chapter sentence timestamps aligned from the completed master narration.
 - [ ] Eight visual beats licensed or generated and reviewed.
 - [ ] Human continuity listen-through passes pace, emotion, seams, pronunciation,
   silence, and level fit.
 - [ ] Product preview passes Watch, Mimic, Guess, Word, keyboard, progress, and
   mobile QA.
+- [ ] Each level's twelve Chapter masters are assembled into one full-story
+  audio master, transcript, and millisecond-offset timeline.
 - [ ] Target-territory rights review approved.
 - [ ] Named release approval and rollback evidence recorded.
 
 ## Batch-production gate
 
-Chapters 2–12 may move from outline to script only after the Chapter 1 Golden
-Sample is approved. Batch generation before that decision multiplies voice,
-pacing, and pedagogy mistakes—and burns credits doing it.
+All three-level scripts are authored. Generate or resume Lily audio only after
+all narrative masters and learning selections pass both automated validation
+and independent editorial review. Then listen through every act and Chapter seam
+before assembling and releasing the three full-story masters.

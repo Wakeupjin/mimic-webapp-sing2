@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-11",
+  "number": 11,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "Inside the Shark",
+    "ko": "상어 배 속에서"
+  },
+  "sourceChapters": [35],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Inside the Terrible Shark, Pinocchio follows a faint light after refusing to surrender with the Tunny.",
+    "closing": "Pinocchio escapes the sleeping Shark with Geppetto on his back and begins swimming across the open sea.",
+    "next": "When Pinocchio's strength fails, an old companion must help father and son reach land."
+  },
+  "learningObjective": "Retell a reunion and rescue through confession, promise, suspense, and determined action while maintaining a clear emotional arc.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Distant Candle",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Guide Pinocchio from darkness to the astonishing recognition of a familiar face."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "Father and Son",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Let the long-awaited reunion breathe before explanation begins."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The Long Confession",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S040",
+      "purpose": "Condense Pinocchio's journey into an honest account of repeated choices and consequences."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "Two Years in the Dark",
+      "sentenceStart": "S041",
+      "sentenceEnd": "S052",
+      "purpose": "Explain Geppetto's survival while making the final candle a visible deadline."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Pinocchio's Promise",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "purpose": "Reverse the parent-child relationship as Pinocchio chooses to carry the father who carried him."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "The Open Mouth",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S075",
+      "purpose": "Build quiet suspense as they cross the sleeping Shark towards moonlit freedom."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "Thrown Back",
+      "sentenceStart": "S076",
+      "sentenceEnd": "S091",
+      "purpose": "Turn a comic sneeze into a serious test of Pinocchio's steadiness after failure."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "Into the Moonlit Sea",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S103",
+      "purpose": "Complete the escape with Pinocchio physically bearing responsibility for Geppetto."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json"
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

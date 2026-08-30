@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-03",
+  "level": "foundation",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 112,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      430,
+      540
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator with simple language, patient timing, and gentle playfulness.",
+    "performance": "Make the music irresistible, the theatre joyous, Fire Eater enormous but human, and Pinocchio's offer for Harlequin genuinely brave. Keep every action concrete and every dialogue line easy for a beginning learner to repeat.",
+    "pacing": "Use short complete thoughts, clear pauses at beat turns, and enough space for beginning learners to follow each action.",
+    "beatCues": {
+      "B01": "[hopefully, then tempted]",
+      "B02": "[with uneasy temptation]",
+      "B03": "[joyfully]",
+      "B04": "[with controlled thunder]",
+      "B05": "[gravely]",
+      "B06": "[bravely, without exaggeration]",
+      "B07": "[with relieved warmth]",
+      "B08": "[quietly hopeful]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "advanced idioms",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "The product owner selected Lily's British voice as the Pinocchio narrator for batch production."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2411,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:01a732c0aafd12e7aae75242890905f942ba7916af5b1dd32116654670708fd9",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": {
+      "billedCharactersEstimate": 5043,
+      "providerReportedCharacterCost": null,
+      "ttsApiListPriceEstimateUsd": 0.504,
+      "forcedAlignmentListPriceEstimateUsd": null,
+      "note": "List-price estimate only; included plan credits, voice multipliers, taxes, and retries may change actual billing."
+    },
+    "activitiesChecksum": "sha256:270e1324f72d9bd5a1780d8d01b160cc157663829ce2b62cdc067d4b6ffcc775"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-03/audio/foundation.master.mp3",
+    "sentenceTimeline": "chapters/chapter-03/audio/foundation.timeline.json",
+    "forcedAlignment": "chapters/chapter-03/audio/foundation.alignment.json",
+    "provenance": "chapters/chapter-03/audio/foundation.provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-03/audio/foundation.voice-profile.snapshot.json",
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

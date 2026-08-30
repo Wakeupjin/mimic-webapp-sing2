@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-02",
+  "level": "studio",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 145,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      440,
+      540
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator with mature phrasing, precise subtext, and restrained wit.",
+    "performance": "Move from stubborn comedy into cold loneliness, then warm the performance around the pears, apology, new feet, and primer. Preserve richer description and emotional subtext without slowing into literary recital.",
+    "pacing": "Shape complete thoughts, allow meaningful silence at beat turns, and keep complex sentences conversational rather than ornate.",
+    "beatCues": {
+      "B01": "[with quiet unease]",
+      "B02": "[sharply, then hollow]",
+      "B03": "[with comic disappointment]",
+      "B04": "[cold and tired]",
+      "B05": "[with startled concern]",
+      "B06": "[tenderly]",
+      "B07": "[hopefully]",
+      "B08": "[softly, with resolve]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "ornate literary recital",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "The product owner selected Lily's British voice as the Pinocchio narrator for batch production."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": "two-act-v3-fallback",
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2411,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:98de88f3e9830a776b4ff3492e4d0258a65aef37e30592485a4dfea5ea2e0bd1",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": {
+      "billedCharactersEstimate": 7733,
+      "providerReportedCharacterCost": null,
+      "ttsApiListPriceEstimateUsd": 0.773,
+      "forcedAlignmentListPriceEstimateUsd": null,
+      "note": "List-price estimate only; included plan credits, voice multipliers, taxes, and retries may change actual billing."
+    },
+    "activitiesChecksum": "sha256:cead571090d9b089b708839e21f6af7ecfebe5a00696516e4a6c462010f91795"
+  },
+  "outputs": {
+    "masterAudio": "chapters/chapter-02/audio/studio.master.mp3",
+    "sentenceTimeline": "chapters/chapter-02/audio/studio.timeline.json",
+    "forcedAlignment": "chapters/chapter-02/audio/studio.alignment.json",
+    "provenance": "chapters/chapter-02/audio/studio.provenance.json",
+    "voiceProfileSnapshot": "chapters/chapter-02/audio/studio.voice-profile.snapshot.json",
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

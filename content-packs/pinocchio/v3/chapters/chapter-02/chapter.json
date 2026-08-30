@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-02",
+  "number": 2,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "Hunger, Home, and Sacrifice",
+    "ko": "배고픔과 아버지의 희생"
+  },
+  "sourceChapters": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Pinocchio returns to the empty room after Geppetto has been taken to prison.",
+    "closing": "Pinocchio leaves for school carrying the primer Geppetto bought by selling his only warm coat.",
+    "next": "Music from a travelling puppet theatre will test whether Pinocchio can honour that sacrifice."
+  },
+  "learningObjective": "Connect warning, choice, consequence, apology, and sacrifice using clear time clauses and emotional contrast.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Cricket's Warning",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Set freedom against the practical value of work, study, and advice."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "Anger and an Empty Cupboard",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S025",
+      "purpose": "Turn rejected advice into loneliness and immediate hunger."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The Dinner That Escapes",
+      "sentenceStart": "S026",
+      "sentenceEnd": "S038",
+      "purpose": "Use comic disappointment to make the warning feel true."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "A Cold and Hungry Night",
+      "sentenceStart": "S039",
+      "sentenceEnd": "S051",
+      "purpose": "Move the adventure into rain, rejection, and exhausted regret."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "The Missing Feet",
+      "sentenceStart": "S052",
+      "sentenceEnd": "S064",
+      "purpose": "Reveal the physical consequence and bring Geppetto home."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Geppetto's Three Pears",
+      "sentenceStart": "S065",
+      "sentenceEnd": "S079",
+      "purpose": "Show sacrifice becoming visible through hunger and gratitude."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "A Promise and New Feet",
+      "sentenceStart": "S080",
+      "sentenceEnd": "S088",
+      "purpose": "Let hope return while keeping the gap between promises and action visible."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "The Coat Becomes a Book",
+      "sentenceStart": "S089",
+      "sentenceEnd": "S104",
+      "purpose": "End with Geppetto's quiet sacrifice and the next test already approaching."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json",
+      "beatRanges": [
+        {
+          "beatId": "B01",
+          "order": 1,
+          "title": "The Cricket's Warning",
+          "sentenceStart": "S001",
+          "sentenceEnd": "S013",
+          "purpose": "Set freedom against the practical value of work, study, and advice."
+        },
+        {
+          "beatId": "B02",
+          "order": 2,
+          "title": "Anger and an Empty Cupboard",
+          "sentenceStart": "S014",
+          "sentenceEnd": "S025",
+          "purpose": "Turn rejected advice into loneliness and immediate hunger."
+        },
+        {
+          "beatId": "B03",
+          "order": 3,
+          "title": "The Dinner That Escapes",
+          "sentenceStart": "S026",
+          "sentenceEnd": "S040",
+          "purpose": "Use comic disappointment to make the warning feel true."
+        },
+        {
+          "beatId": "B04",
+          "order": 4,
+          "title": "A Cold and Hungry Night",
+          "sentenceStart": "S041",
+          "sentenceEnd": "S052",
+          "purpose": "Move the adventure into rain, rejection, and exhausted regret."
+        },
+        {
+          "beatId": "B05",
+          "order": 5,
+          "title": "The Missing Feet",
+          "sentenceStart": "S053",
+          "sentenceEnd": "S066",
+          "purpose": "Reveal the physical consequence and bring Geppetto home."
+        },
+        {
+          "beatId": "B06",
+          "order": 6,
+          "title": "Geppetto's Three Pears",
+          "sentenceStart": "S067",
+          "sentenceEnd": "S082",
+          "purpose": "Show sacrifice becoming visible through hunger and gratitude."
+        },
+        {
+          "beatId": "B07",
+          "order": 7,
+          "title": "A Promise and New Feet",
+          "sentenceStart": "S083",
+          "sentenceEnd": "S091",
+          "purpose": "Let hope return while keeping the gap between promises and action visible."
+        },
+        {
+          "beatId": "B08",
+          "order": 8,
+          "title": "The Coat Becomes a Book",
+          "sentenceStart": "S092",
+          "sentenceEnd": "S107",
+          "purpose": "End with Geppetto's quiet sacrifice and the next test already approaching."
+        }
+      ]
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json",
+      "beatRanges": [
+        {
+          "beatId": "B01",
+          "order": 1,
+          "title": "The Cricket's Warning",
+          "sentenceStart": "S001",
+          "sentenceEnd": "S013",
+          "purpose": "Set freedom against the practical value of work, study, and advice."
+        },
+        {
+          "beatId": "B02",
+          "order": 2,
+          "title": "Anger and an Empty Cupboard",
+          "sentenceStart": "S014",
+          "sentenceEnd": "S025",
+          "purpose": "Turn rejected advice into loneliness and immediate hunger."
+        },
+        {
+          "beatId": "B03",
+          "order": 3,
+          "title": "The Dinner That Escapes",
+          "sentenceStart": "S026",
+          "sentenceEnd": "S038",
+          "purpose": "Use comic disappointment to make the warning feel true."
+        },
+        {
+          "beatId": "B04",
+          "order": 4,
+          "title": "A Cold and Hungry Night",
+          "sentenceStart": "S039",
+          "sentenceEnd": "S051",
+          "purpose": "Move the adventure into rain, rejection, and exhausted regret."
+        },
+        {
+          "beatId": "B05",
+          "order": 5,
+          "title": "The Missing Feet",
+          "sentenceStart": "S052",
+          "sentenceEnd": "S064",
+          "purpose": "Reveal the physical consequence and bring Geppetto home."
+        },
+        {
+          "beatId": "B06",
+          "order": 6,
+          "title": "Geppetto's Three Pears",
+          "sentenceStart": "S065",
+          "sentenceEnd": "S079",
+          "purpose": "Show sacrifice becoming visible through hunger and gratitude."
+        },
+        {
+          "beatId": "B07",
+          "order": 7,
+          "title": "A Promise and New Feet",
+          "sentenceStart": "S080",
+          "sentenceEnd": "S088",
+          "purpose": "Let hope return while keeping the gap between promises and action visible."
+        },
+        {
+          "beatId": "B08",
+          "order": 8,
+          "title": "The Coat Becomes a Book",
+          "sentenceStart": "S089",
+          "sentenceEnd": "S103",
+          "purpose": "End with Geppetto's quiet sacrifice and the next test already approaching."
+        }
+      ]
+    }
+  }
+}

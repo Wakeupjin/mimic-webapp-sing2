@@ -8,6 +8,12 @@ learns that love, courage, truth, and responsibility are what make him real.
 The twelve Chapters form one complete story. Each Chapter must also have its own
 desire, complication, consequence, and forward pull so it works as a class.
 
+Each level ultimately ships as one continuous full-story audiobook master plus
+one canonical transcript. Provider request limits may require a Chapter to be
+performed in the fewest coherent acts, but sentence-by-sentence generation is
+forbidden. The twelve approved Chapter masters are assembled into the single
+student-facing story master with fixed Chapter gaps and one offset timeline.
+
 ## Canon
 
 - Pinocchio begins impulsive, curious, funny, and emotionally young. He is not
@@ -37,12 +43,22 @@ abstract moral lectures, padded description, and repeated plot summaries.
 ## Learning continuity
 
 - Watch carries the whole Chapter narrative.
-- Mimic selects thirty exact, high-value sentences across all beats.
+- Mimic selects thirty unique, exact source sentences across all beats. Long
+  sentences carry nested chunks cut at meaningful phrase boundaries from the
+  same continuous narration; they are never regenerated as isolated clips.
 - Guess tests visual prediction, event retrieval, and simple inference.
 - Word rebuilds ten exact sentences that reward grammar and chunk awareness.
 - Foundation and Studio preserve the same eight beats and consequences as Core.
 - A level change must never change who acted, what happened, or why the next
   Chapter begins.
+- Every Chapter timeline and full-story timeline records integer millisecond
+  bounds for sentences, beats, and Mimic phrases.
+- A text edit reopens the affected Chapter. Its narration and timeline cannot be
+  carried forward merely because the old audio still plays.
+- `level-specs.json` is the measurable language-band contract. Lower levels
+  achieve comparable Watch time through shorter language and slower delivery;
+  higher levels use richer language and a natural faster rate. Never pad a
+  level with repeated plot.
 
 ## Twelve-Chapter arc
 
@@ -58,15 +74,15 @@ abstract moral lectures, padded description, and repeated plot summaries.
    another bad choice make trust the central conflict.
 6. The Snake, the Trap, and the Dog — punishment, work, and an unexpected act
    of loyalty show the first signs of change.
-7. The Sea and the Terrible Dogfish — Pinocchio searches for Geppetto and sees
-   how far his choices have carried both of them.
-8. The Land of Busy Bees — honest work and reunion with the Fairy make a better
-   life possible, but discipline still has to become a habit.
+7. The Sea and the Land of Busy Bees — Pinocchio searches for Geppetto, earns
+   his first honest meal, reunites with the Fairy, and begins building better habits.
+8. The Beach and a Better Year — a false Shark rumour leads to the beach,
+   where responsibility, reciprocal rescue, and a year of effort move him forward.
 9. The Land of Toys — a final promise is traded for endless play, and pleasure
    without responsibility reveals its cost.
 10. Donkey Days — Pinocchio is exploited, injured, and thrown into the sea,
     where he regains his wooden form but loses his freedom again.
-11. Inside the Dogfish — Pinocchio finds Geppetto and must become the brave,
+11. Inside the Shark — Pinocchio finds Geppetto and must become the brave,
     practical child his father needs.
 12. A Real Boy — escape, work, care, and restitution complete the transformation
     that magic alone could never provide.

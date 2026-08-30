@@ -12,39 +12,51 @@
     "modes": ["watch", "mimic", "guess", "word"],
     "watchTargetMinutes": { "minimum": 6, "preferred": 8, "maximum": 10 },
     "mimicItemsPerChapter": 30,
+    "mimicSourceSentencePolicy": "thirty-unique-sentences-with-nested-natural-breath-chunks",
     "guessItemsPerChapter": 10,
     "wordItemsPerChapter": 10
   },
+  "fullStoryOutputs": {
+    "oneContinuousMasterPerLevel": true,
+    "oneCanonicalTranscriptPerLevel": true,
+    "chapterGapMilliseconds": 1500,
+    "timingPrecision": "milliseconds",
+    "timingContract": "speechStartMs/speechEndMs are exact aligned speech; startMs/endMs are optional padded playback handles.",
+    "sentenceBySentenceGenerationAllowed": false,
+    "assembly": "Twelve coherent Chapter masters become one student-facing full-story master for each level."
+  },
   "rights": "rights.json",
+  "narratorPolicy": "narrator-policy.json",
+  "levelSpecs": "level-specs.json",
   "storyBible": "story-bible.md",
   "seasonMap": "season-map.json",
   "levels": {
     "foundation": {
-      "status": "planned",
+      "status": "authored-automated-qa-pass-human-review-pending",
       "purpose": "Concrete, high-frequency language with shorter speakable sentences."
     },
     "core": {
-      "status": "golden-chapter-draft",
+      "status": "authored-automated-qa-pass-human-review-pending",
       "purpose": "Natural cause-and-reaction language with an everyday narrative rhythm."
     },
     "studio": {
-      "status": "planned",
+      "status": "authored-automated-qa-pass-human-review-pending",
       "purpose": "Richer description, voice, tension, and complex connections."
     }
   },
   "chapters": [
-    { "number": 1, "slug": "a-voice-in-the-wood", "path": "chapters/chapter-01/chapter.json", "status": "golden-draft" },
-    { "number": 2, "slug": "hunger-home-and-sacrifice", "path": "season-map.json#chapter-02", "status": "outline-ready" },
-    { "number": 3, "slug": "the-puppet-theater", "path": "season-map.json#chapter-03", "status": "outline-ready" },
-    { "number": 4, "slug": "five-coins-and-a-dangerous-road", "path": "season-map.json#chapter-04", "status": "outline-ready" },
-    { "number": 5, "slug": "the-blue-fairy-and-the-field-of-wonders", "path": "season-map.json#chapter-05", "status": "outline-ready" },
-    { "number": 6, "slug": "the-snake-the-trap-and-the-dog", "path": "season-map.json#chapter-06", "status": "outline-ready" },
-    { "number": 7, "slug": "the-sea-and-the-terrible-dogfish", "path": "season-map.json#chapter-07", "status": "outline-ready" },
-    { "number": 8, "slug": "the-land-of-busy-bees", "path": "season-map.json#chapter-08", "status": "outline-ready" },
-    { "number": 9, "slug": "the-land-of-toys", "path": "season-map.json#chapter-09", "status": "outline-ready" },
-    { "number": 10, "slug": "donkey-days", "path": "season-map.json#chapter-10", "status": "outline-ready" },
-    { "number": 11, "slug": "inside-the-dogfish", "path": "season-map.json#chapter-11", "status": "outline-ready" },
-    { "number": 12, "slug": "a-real-boy", "path": "season-map.json#chapter-12", "status": "outline-ready" }
+    { "number": 1, "slug": "a-voice-in-the-wood", "path": "chapters/chapter-01/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 2, "slug": "hunger-home-and-sacrifice", "path": "chapters/chapter-02/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 3, "slug": "the-puppet-theater", "path": "chapters/chapter-03/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 4, "slug": "five-coins-and-a-dangerous-road", "path": "chapters/chapter-04/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 5, "slug": "the-blue-fairy-and-the-field-of-wonders", "path": "chapters/chapter-05/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 6, "slug": "the-snake-the-trap-and-the-dog", "path": "chapters/chapter-06/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 7, "slug": "the-sea-and-the-land-of-busy-bees", "path": "chapters/chapter-07/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 8, "slug": "the-beach-and-a-better-year", "path": "chapters/chapter-08/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 9, "slug": "the-land-of-toys", "path": "chapters/chapter-09/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 10, "slug": "donkey-days", "path": "chapters/chapter-10/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 11, "slug": "inside-the-shark", "path": "chapters/chapter-11/chapter.json", "status": "three-level-script-and-learning-draft" },
+    { "number": 12, "slug": "a-real-boy", "path": "chapters/chapter-12/chapter.json", "status": "three-level-script-and-learning-draft" }
   ],
   "qa": {
     "standard": "../../../content-studio/STORY_PACK_STANDARD.md",
@@ -54,6 +66,6 @@
   "release": {
     "replacesProductionVersion": false,
     "currentProductionVersion": "../v2/manifest.json",
-    "nextGate": "Human approval of the Core Chapter 1 script and durable narrator before paid audio generation."
+    "nextGate": "Record named human editorial and learning approvals, complete Lily generation, assemble one full master per level, then Forced Align each final full master before release."
   }
 }

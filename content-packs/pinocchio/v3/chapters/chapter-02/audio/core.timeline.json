@@ -1,0 +1,2690 @@
+{
+  "schemaVersion": "1.1.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-02",
+  "level": "core",
+  "generatedAt": "2026-08-30T10:08:54.344Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accent": "British English",
+  "outputFormat": "mp3_44100_128",
+  "timingPrecision": "milliseconds",
+  "seed": 2411,
+  "source": "single-editorial-master-rendered-as-2-coherent-acts",
+  "alignmentSource": "per-act-elevenlabs-tts-duration-fitted",
+  "masterTextSha256": "e8acd1cbb0a97099eb60c2a9f895874f4b054a91e487527a445c03d99ee73dc2",
+  "activitiesSha256": "eff96491e5a31823603368af4d02d701e249ec12d4449ccd730c7d3b5f9c5c35",
+  "duration": 542.48,
+  "acts": [
+    {
+      "actId": "act-01",
+      "beatIds": [
+        "B01",
+        "B02",
+        "B03",
+        "B04"
+      ],
+      "start": 0,
+      "end": 264.388,
+      "concatenationOffset": 0,
+      "sourceAudioDuration": 264.32,
+      "sourceAlignmentEnd": 264.24,
+      "sourceAlignmentTimeScale": 1,
+      "requestId": "gud5iRgvWniZRSspjqAl",
+      "characters": 3308
+    },
+    {
+      "actId": "act-02",
+      "beatIds": [
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "start": 264.388,
+      "end": 542.48,
+      "concatenationOffset": 264.32,
+      "sourceAudioDuration": 278.16,
+      "sourceAlignmentEnd": 278.178,
+      "sourceAlignmentTimeScale": 0.999935293,
+      "requestId": "Y1oUv8stoZNT6hdiRIoz",
+      "characters": 3533
+    }
+  ],
+  "seams": [
+    {
+      "afterActId": "act-01",
+      "beforeActId": "act-02",
+      "afterSentenceId": "S051",
+      "beforeSentenceId": "S052",
+      "at": 264.388,
+      "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+    }
+  ],
+  "seam": {
+    "afterActId": "act-01",
+    "beforeActId": "act-02",
+    "afterSentenceId": "S051",
+    "beforeSentenceId": "S052",
+    "at": 264.388,
+    "timingBasis": "per-act-elevenlabs-tts-duration-fitted"
+  },
+  "beats": [
+    {
+      "beatId": "B01",
+      "title": "The Cricket's Warning",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "start": 0.13,
+      "end": 64.667,
+      "startMs": 130,
+      "endMs": 64667
+    },
+    {
+      "beatId": "B02",
+      "title": "Anger and an Empty Cupboard",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S025",
+      "start": 64.667,
+      "end": 129.267,
+      "startMs": 64667,
+      "endMs": 129267
+    },
+    {
+      "beatId": "B03",
+      "title": "The Dinner That Escapes",
+      "sentenceStart": "S026",
+      "sentenceEnd": "S038",
+      "start": 129.267,
+      "end": 194.035,
+      "startMs": 129267,
+      "endMs": 194035
+    },
+    {
+      "beatId": "B04",
+      "title": "A Cold and Hungry Night",
+      "sentenceStart": "S039",
+      "sentenceEnd": "S051",
+      "start": 194.035,
+      "end": 264.388,
+      "startMs": 194035,
+      "endMs": 264388
+    },
+    {
+      "beatId": "B05",
+      "title": "The Missing Feet",
+      "sentenceStart": "S052",
+      "sentenceEnd": "S064",
+      "start": 264.388,
+      "end": 332.061,
+      "startMs": 264388,
+      "endMs": 332061
+    },
+    {
+      "beatId": "B06",
+      "title": "Geppetto's Three Pears",
+      "sentenceStart": "S065",
+      "sentenceEnd": "S079",
+      "start": 332.061,
+      "end": 412.023,
+      "startMs": 332061,
+      "endMs": 412023
+    },
+    {
+      "beatId": "B07",
+      "title": "A Promise and New Feet",
+      "sentenceStart": "S080",
+      "sentenceEnd": "S088",
+      "start": 412.023,
+      "end": 458.655,
+      "startMs": 412023,
+      "endMs": 458655
+    },
+    {
+      "beatId": "B08",
+      "title": "The Coat Becomes a Book",
+      "sentenceStart": "S089",
+      "sentenceEnd": "S104",
+      "start": 458.655,
+      "end": 542.48,
+      "startMs": 458655,
+      "endMs": 542480
+    }
+  ],
+  "lines": [
+    {
+      "sentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio raced home, expecting Geppetto beside the lamp.",
+      "speechStart": 0.21,
+      "speechEnd": 3.28,
+      "speechStartMs": 210,
+      "speechEndMs": 3280,
+      "start": 0.13,
+      "end": 3.36,
+      "startMs": 130,
+      "endMs": 3360
+    },
+    {
+      "sentenceId": "S002",
+      "beatId": "B01",
+      "text": "Instead, the room was dark, cold, and empty.",
+      "speechStart": 3.44,
+      "speechEnd": 8.48,
+      "speechStartMs": 3440,
+      "speechEndMs": 8480,
+      "start": 3.36,
+      "end": 8.654,
+      "startMs": 3360,
+      "endMs": 8654
+    },
+    {
+      "sentenceId": "S003",
+      "beatId": "B01",
+      "text": "He called for his father, but only the walls answered.",
+      "speechStart": 8.827,
+      "speechEnd": 12.56,
+      "speechStartMs": 8827,
+      "speechEndMs": 12560,
+      "start": 8.654,
+      "end": 12.664,
+      "startMs": 8654,
+      "endMs": 12664
+    },
+    {
+      "sentenceId": "S004",
+      "beatId": "B01",
+      "text": "From a shadow near the hearth came a slow, patient chirp.",
+      "speechStart": 12.768,
+      "speechEnd": 17.6,
+      "speechStartMs": 12768,
+      "speechEndMs": 17600,
+      "start": 12.664,
+      "end": 17.76,
+      "startMs": 12664,
+      "endMs": 17760
+    },
+    {
+      "sentenceId": "S005",
+      "beatId": "B01",
+      "text": "A Talking Cricket stepped forward and bowed gravely.",
+      "speechStart": 17.92,
+      "speechEnd": 21.68,
+      "speechStartMs": 17920,
+      "speechEndMs": 21680,
+      "start": 17.76,
+      "end": 21.92,
+      "startMs": 17760,
+      "endMs": 21920
+    },
+    {
+      "sentenceId": "S006",
+      "beatId": "B01",
+      "text": "“Children who reject good advice often meet avoidable trouble,” he said.",
+      "speechStart": 22.16,
+      "speechEnd": 28,
+      "speechStartMs": 22160,
+      "speechEndMs": 28000,
+      "start": 21.92,
+      "end": 28.14,
+      "startMs": 21920,
+      "endMs": 28140
+    },
+    {
+      "sentenceId": "S007",
+      "beatId": "B01",
+      "text": "Pinocchio folded his arms and called advice boring.",
+      "speechStart": 28.28,
+      "speechEnd": 32.48,
+      "speechStartMs": 28280,
+      "speechEndMs": 32480,
+      "start": 28.14,
+      "end": 32.587,
+      "startMs": 28140,
+      "endMs": 32587
+    },
+    {
+      "sentenceId": "S008",
+      "beatId": "B01",
+      "text": "He wanted to eat, drink, sleep, and wander wherever he pleased.",
+      "speechStart": 32.693,
+      "speechEnd": 38.08,
+      "speechStartMs": 32693,
+      "speechEndMs": 38080,
+      "start": 32.587,
+      "end": 38.2,
+      "startMs": 32587,
+      "endMs": 38200
+    },
+    {
+      "sentenceId": "S009",
+      "beatId": "B01",
+      "text": "The Cricket warned that such freedom could quickly become hunger.",
+      "speechStart": 38.32,
+      "speechEnd": 42.48,
+      "speechStartMs": 38320,
+      "speechEndMs": 42480,
+      "start": 38.2,
+      "end": 42.72,
+      "startMs": 38200,
+      "endMs": 42720
+    },
+    {
+      "sentenceId": "S010",
+      "beatId": "B01",
+      "text": "“Then I shall simply find a generous dinner,” Pinocchio replied.",
+      "speechStart": 42.96,
+      "speechEnd": 47.36,
+      "speechStartMs": 42960,
+      "speechEndMs": 47360,
+      "start": 42.72,
+      "end": 47.52,
+      "startMs": 42720,
+      "endMs": 47520
+    },
+    {
+      "sentenceId": "S011",
+      "beatId": "B01",
+      "text": "“People usually earn their dinners,” said the Cricket, “by work or study.”",
+      "speechStart": 47.68,
+      "speechEnd": 53.84,
+      "speechStartMs": 47680,
+      "speechEndMs": 53840,
+      "start": 47.52,
+      "end": 53.97,
+      "startMs": 47520,
+      "endMs": 53970
+    },
+    {
+      "sentenceId": "S012",
+      "beatId": "B01",
+      "text": "The puppet stamped his foot and ordered the visitor to leave.",
+      "speechStart": 54.1,
+      "speechEnd": 58.72,
+      "speechStartMs": 54100,
+      "speechEndMs": 58720,
+      "start": 53.97,
+      "end": 58.84,
+      "startMs": 53970,
+      "endMs": 58840
+    },
+    {
+      "sentenceId": "S013",
+      "beatId": "B01",
+      "text": "Yet the Cricket remained, because honest warnings are rarely convenient.",
+      "speechStart": 58.96,
+      "speechEnd": 64.08,
+      "speechStartMs": 58960,
+      "speechEndMs": 64080,
+      "start": 58.84,
+      "end": 64.667,
+      "startMs": 58840,
+      "endMs": 64667
+    },
+    {
+      "sentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio’s anger rose faster than his judgment could follow.",
+      "speechStart": 65.254,
+      "speechEnd": 68.72,
+      "speechStartMs": 65254,
+      "speechEndMs": 68720,
+      "start": 64.667,
+      "end": 68.88,
+      "startMs": 64667,
+      "endMs": 68880
+    },
+    {
+      "sentenceId": "S015",
+      "beatId": "B02",
+      "text": "He seized a wooden mallet and threw it across the room.",
+      "speechStart": 69.04,
+      "speechEnd": 73.2,
+      "speechStartMs": 69040,
+      "speechEndMs": 73200,
+      "start": 68.88,
+      "end": 73.31,
+      "startMs": 68880,
+      "endMs": 73310
+    },
+    {
+      "sentenceId": "S016",
+      "beatId": "B02",
+      "text": "The mallet struck the wall where the Cricket had been standing.",
+      "speechStart": 73.42,
+      "speechEnd": 77.44,
+      "speechStartMs": 73420,
+      "speechEndMs": 77440,
+      "start": 73.31,
+      "end": 77.547,
+      "startMs": 73310,
+      "endMs": 77547
+    },
+    {
+      "sentenceId": "S017",
+      "beatId": "B02",
+      "text": "After one final chirp, the small adviser disappeared into the darkness.",
+      "speechStart": 77.653,
+      "speechEnd": 83.92,
+      "speechStartMs": 77653,
+      "speechEndMs": 83920,
+      "start": 77.547,
+      "end": 84.025,
+      "startMs": 77547,
+      "endMs": 84025
+    },
+    {
+      "sentenceId": "S018",
+      "beatId": "B02",
+      "text": "Silence filled the room, and Pinocchio suddenly felt less brave.",
+      "speechStart": 84.13,
+      "speechEnd": 90.24,
+      "speechStartMs": 84130,
+      "speechEndMs": 90240,
+      "start": 84.025,
+      "end": 90.413,
+      "startMs": 84025,
+      "endMs": 90414
+    },
+    {
+      "sentenceId": "S019",
+      "beatId": "B02",
+      "text": "He told himself that he needed nobody, especially that scolding insect.",
+      "speechStart": 90.587,
+      "speechEnd": 96.32,
+      "speechStartMs": 90587,
+      "speechEndMs": 96320,
+      "start": 90.413,
+      "end": 96.493,
+      "startMs": 90414,
+      "endMs": 96494
+    },
+    {
+      "sentenceId": "S020",
+      "beatId": "B02",
+      "text": "At that moment, his empty stomach growled like a restless dog.",
+      "speechStart": 96.667,
+      "speechEnd": 101.84,
+      "speechStartMs": 96667,
+      "speechEndMs": 101840,
+      "start": 96.493,
+      "end": 101.987,
+      "startMs": 96494,
+      "endMs": 101987
+    },
+    {
+      "sentenceId": "S021",
+      "beatId": "B02",
+      "text": "He searched the cupboard and found only dust.",
+      "speechStart": 102.133,
+      "speechEnd": 105.52,
+      "speechStartMs": 102133,
+      "speechEndMs": 105520,
+      "start": 101.987,
+      "end": 105.68,
+      "startMs": 101987,
+      "endMs": 105680
+    },
+    {
+      "sentenceId": "S022",
+      "beatId": "B02",
+      "text": "He opened a jar, a basket, and even an old saucepan.",
+      "speechStart": 105.84,
+      "speechEnd": 110.56,
+      "speechStartMs": 105840,
+      "speechEndMs": 110560,
+      "start": 105.68,
+      "end": 110.654,
+      "startMs": 105680,
+      "endMs": 110654
+    },
+    {
+      "sentenceId": "S023",
+      "beatId": "B02",
+      "text": "Every container offered the same disappointing answer: absolutely nothing.",
+      "speechStart": 110.747,
+      "speechEnd": 118.16,
+      "speechStartMs": 110747,
+      "speechEndMs": 118160,
+      "start": 110.654,
+      "end": 118.28,
+      "startMs": 110654,
+      "endMs": 118280
+    },
+    {
+      "sentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio blamed Geppetto, the Cricket, and the unfairness of the world.",
+      "speechStart": 118.4,
+      "speechEnd": 124.32,
+      "speechStartMs": 118400,
+      "speechEndMs": 124320,
+      "start": 118.28,
+      "end": 124.48,
+      "startMs": 118280,
+      "endMs": 124480
+    },
+    {
+      "sentenceId": "S025",
+      "beatId": "B02",
+      "text": "He did not yet think of blaming the choices he had made.",
+      "speechStart": 124.64,
+      "speechEnd": 128.64,
+      "speechStartMs": 124640,
+      "speechEndMs": 128640,
+      "start": 124.48,
+      "end": 129.267,
+      "startMs": 124480,
+      "endMs": 129267
+    },
+    {
+      "sentenceId": "S026",
+      "beatId": "B03",
+      "text": "Then he noticed one white egg lying beneath a heap of shavings.",
+      "speechStart": 129.894,
+      "speechEnd": 134.72,
+      "speechStartMs": 129894,
+      "speechEndMs": 134720,
+      "start": 129.267,
+      "end": 134.84,
+      "startMs": 129267,
+      "endMs": 134840
+    },
+    {
+      "sentenceId": "S027",
+      "beatId": "B03",
+      "text": "His hunger turned the ordinary egg into a magnificent feast.",
+      "speechStart": 134.96,
+      "speechEnd": 140.24,
+      "speechStartMs": 134960,
+      "speechEndMs": 140240,
+      "start": 134.84,
+      "end": 140.4,
+      "startMs": 134840,
+      "endMs": 140400
+    },
+    {
+      "sentenceId": "S028",
+      "beatId": "B03",
+      "text": "He set a pan on the painted fire before remembering it was unreal.",
+      "speechStart": 140.56,
+      "speechEnd": 145.52,
+      "speechStartMs": 140560,
+      "speechEndMs": 145520,
+      "start": 140.4,
+      "end": 145.627,
+      "startMs": 140400,
+      "endMs": 145627
+    },
+    {
+      "sentenceId": "S029",
+      "beatId": "B03",
+      "text": "After much searching, he found a tiny brazier and lit it.",
+      "speechStart": 145.733,
+      "speechEnd": 150.56,
+      "speechStartMs": 145733,
+      "speechEndMs": 150560,
+      "start": 145.627,
+      "end": 150.8,
+      "startMs": 145627,
+      "endMs": 150800
+    },
+    {
+      "sentenceId": "S030",
+      "beatId": "B03",
+      "text": "“At last, fortune has remembered me,” he said, cracking the shell.",
+      "speechStart": 151.04,
+      "speechEnd": 157.16,
+      "speechStartMs": 151040,
+      "speechEndMs": 157160,
+      "start": 150.8,
+      "end": 157.202,
+      "startMs": 150800,
+      "endMs": 157203
+    },
+    {
+      "sentenceId": "S031",
+      "beatId": "B03",
+      "text": "Instead of a golden yolk, a lively chick popped into the air.",
+      "speechStart": 157.245,
+      "speechEnd": 161.84,
+      "speechStartMs": 157245,
+      "speechEndMs": 161840,
+      "start": 157.202,
+      "end": 162.06,
+      "startMs": 157203,
+      "endMs": 162060
+    },
+    {
+      "sentenceId": "S032",
+      "beatId": "B03",
+      "text": "“Thank you for opening the door,” it chirped cheerfully.",
+      "speechStart": 162.28,
+      "speechEnd": 166.08,
+      "speechStartMs": 162280,
+      "speechEndMs": 166080,
+      "start": 162.06,
+      "end": 166.19,
+      "startMs": 162060,
+      "endMs": 166190
+    },
+    {
+      "sentenceId": "S033",
+      "beatId": "B03",
+      "text": "The chick explained that its mother had hidden the egg there.",
+      "speechStart": 166.3,
+      "speechEnd": 169.84,
+      "speechStartMs": 166300,
+      "speechEndMs": 169840,
+      "start": 166.19,
+      "end": 169.92,
+      "startMs": 166190,
+      "endMs": 169920
+    },
+    {
+      "sentenceId": "S034",
+      "beatId": "B03",
+      "text": "Then it fluttered through the window and vanished across the rooftops.",
+      "speechStart": 170,
+      "speechEnd": 174.4,
+      "speechStartMs": 170000,
+      "speechEndMs": 174400,
+      "start": 169.92,
+      "end": 174.54,
+      "startMs": 169920,
+      "endMs": 174540
+    },
+    {
+      "sentenceId": "S035",
+      "beatId": "B03",
+      "text": "Pinocchio stared at the empty shell with his mouth hanging open.",
+      "speechStart": 174.68,
+      "speechEnd": 179.2,
+      "speechStartMs": 174680,
+      "speechEndMs": 179200,
+      "start": 174.54,
+      "end": 179.31,
+      "startMs": 174540,
+      "endMs": 179310
+    },
+    {
+      "sentenceId": "S036",
+      "beatId": "B03",
+      "text": "His grand dinner had escaped before reaching the pan.",
+      "speechStart": 179.42,
+      "speechEnd": 183.28,
+      "speechStartMs": 179420,
+      "speechEndMs": 183280,
+      "start": 179.31,
+      "end": 183.4,
+      "startMs": 179310,
+      "endMs": 183400
+    },
+    {
+      "sentenceId": "S037",
+      "beatId": "B03",
+      "text": "For the first time, the Cricket’s warning sounded less like an insult.",
+      "speechStart": 183.52,
+      "speechEnd": 188.48,
+      "speechStartMs": 183520,
+      "speechEndMs": 188480,
+      "start": 183.4,
+      "end": 188.566,
+      "startMs": 183400,
+      "endMs": 188567
+    },
+    {
+      "sentenceId": "S038",
+      "beatId": "B03",
+      "text": "Still, pride stopped Pinocchio from admitting that the Cricket was right.",
+      "speechStart": 188.653,
+      "speechEnd": 193.52,
+      "speechStartMs": 188653,
+      "speechEndMs": 193520,
+      "start": 188.566,
+      "end": 194.035,
+      "startMs": 188567,
+      "endMs": 194035
+    },
+    {
+      "sentenceId": "S039",
+      "beatId": "B04",
+      "text": "He decided that strangers in town would surely feed a hungry boy.",
+      "speechStart": 194.549,
+      "speechEnd": 198.8,
+      "speechStartMs": 194549,
+      "speechEndMs": 198800,
+      "start": 194.035,
+      "end": 198.91,
+      "startMs": 194035,
+      "endMs": 198910
+    },
+    {
+      "sentenceId": "S040",
+      "beatId": "B04",
+      "text": "Outside, rain swept through the streets and shutters were tightly closed.",
+      "speechStart": 199.02,
+      "speechEnd": 205.28,
+      "speechStartMs": 199020,
+      "speechEndMs": 205280,
+      "start": 198.91,
+      "end": 205.41,
+      "startMs": 198910,
+      "endMs": 205410
+    },
+    {
+      "sentenceId": "S041",
+      "beatId": "B04",
+      "text": "Pinocchio knocked at one door and politely asked for a little bread.",
+      "speechStart": 205.54,
+      "speechEnd": 210.88,
+      "speechStartMs": 205540,
+      "speechEndMs": 210880,
+      "start": 205.41,
+      "end": 211.02,
+      "startMs": 205410,
+      "endMs": 211020
+    },
+    {
+      "sentenceId": "S042",
+      "beatId": "B04",
+      "text": "A sleepy man appeared upstairs holding a large basin.",
+      "speechStart": 211.16,
+      "speechEnd": 215.28,
+      "speechStartMs": 211160,
+      "speechEndMs": 215280,
+      "start": 211.02,
+      "end": 215.52,
+      "startMs": 211020,
+      "endMs": 215520
+    },
+    {
+      "sentenceId": "S043",
+      "beatId": "B04",
+      "text": "“Wait there,” the man called, and Pinocchio imagined hot soup.",
+      "speechStart": 215.76,
+      "speechEnd": 221.12,
+      "speechStartMs": 215760,
+      "speechEndMs": 221120,
+      "start": 215.52,
+      "end": 221.32,
+      "startMs": 215520,
+      "endMs": 221320
+    },
+    {
+      "sentenceId": "S044",
+      "beatId": "B04",
+      "text": "A moment later, icy water poured over his wooden head.",
+      "speechStart": 221.52,
+      "speechEnd": 226.16,
+      "speechStartMs": 221520,
+      "speechEndMs": 226160,
+      "start": 221.32,
+      "end": 226.293,
+      "startMs": 221320,
+      "endMs": 226294
+    },
+    {
+      "sentenceId": "S045",
+      "beatId": "B04",
+      "text": "He ran away shivering while the man slammed the window shut.",
+      "speechStart": 226.427,
+      "speechEnd": 231.52,
+      "speechStartMs": 226427,
+      "speechEndMs": 231520,
+      "start": 226.293,
+      "end": 231.613,
+      "startMs": 226294,
+      "endMs": 231614
+    },
+    {
+      "sentenceId": "S046",
+      "beatId": "B04",
+      "text": "At another house, a dog barked so fiercely that he fled again.",
+      "speechStart": 231.707,
+      "speechEnd": 236.48,
+      "speechStartMs": 231707,
+      "speechEndMs": 236480,
+      "start": 231.613,
+      "end": 236.59,
+      "startMs": 231614,
+      "endMs": 236590
+    },
+    {
+      "sentenceId": "S047",
+      "beatId": "B04",
+      "text": "The rain grew heavier, and each dark lane looked more unfriendly.",
+      "speechStart": 236.7,
+      "speechEnd": 242.24,
+      "speechStartMs": 236700,
+      "speechEndMs": 242240,
+      "start": 236.59,
+      "end": 242.427,
+      "startMs": 236590,
+      "endMs": 242427
+    },
+    {
+      "sentenceId": "S048",
+      "beatId": "B04",
+      "text": "By midnight, Pinocchio’s brave adventure had become miserable.",
+      "speechStart": 242.613,
+      "speechEnd": 247.84,
+      "speechStartMs": 242613,
+      "speechEndMs": 247840,
+      "start": 242.427,
+      "end": 248,
+      "startMs": 242427,
+      "endMs": 248000
+    },
+    {
+      "sentenceId": "S049",
+      "beatId": "B04",
+      "text": "He returned home soaked, hungry, exhausted, and ashamed.",
+      "speechStart": 248.16,
+      "speechEnd": 254.88,
+      "speechStartMs": 248160,
+      "speechEndMs": 254880,
+      "start": 248,
+      "end": 255.01,
+      "startMs": 248000,
+      "endMs": 255010
+    },
+    {
+      "sentenceId": "S050",
+      "beatId": "B04",
+      "text": "The Cricket was gone, and there was nobody to hear his apology.",
+      "speechStart": 255.14,
+      "speechEnd": 260.28,
+      "speechStartMs": 255140,
+      "speechEndMs": 260280,
+      "start": 255.01,
+      "end": 260.355,
+      "startMs": 255010,
+      "endMs": 260355
+    },
+    {
+      "sentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio placed his wet feet on the brazier to warm them.",
+      "speechStart": 260.43,
+      "speechEnd": 264.24,
+      "speechStartMs": 260430,
+      "speechEndMs": 264240,
+      "start": 260.355,
+      "end": 264.388,
+      "startMs": 260355,
+      "endMs": 264388
+    },
+    {
+      "sentenceId": "S052",
+      "beatId": "B05",
+      "text": "He promised himself that he would rest for only one minute.",
+      "speechStart": 264.537,
+      "speechEnd": 268.493,
+      "speechStartMs": 264537,
+      "speechEndMs": 268493,
+      "start": 264.388,
+      "end": 268.527,
+      "startMs": 264388,
+      "endMs": 268527
+    },
+    {
+      "sentenceId": "S053",
+      "beatId": "B05",
+      "text": "Within seconds, his eyes closed and his head dropped forward.",
+      "speechStart": 268.562,
+      "speechEnd": 272.812,
+      "speechStartMs": 268562,
+      "speechEndMs": 272812,
+      "start": 268.527,
+      "end": 272.899,
+      "startMs": 268527,
+      "endMs": 272899
+    },
+    {
+      "sentenceId": "S054",
+      "beatId": "B05",
+      "text": "While he slept, the little fire quietly burned through both wooden feet.",
+      "speechStart": 272.985,
+      "speechEnd": 278.812,
+      "speechStartMs": 272985,
+      "speechEndMs": 278812,
+      "start": 272.899,
+      "end": 278.907,
+      "startMs": 272899,
+      "endMs": 278907
+    },
+    {
+      "sentenceId": "S055",
+      "beatId": "B05",
+      "text": "Morning sunlight found him snoring beside a pile of warm ashes.",
+      "speechStart": 279.002,
+      "speechEnd": 284.332,
+      "speechStartMs": 279002,
+      "speechEndMs": 284332,
+      "start": 278.907,
+      "end": 284.552,
+      "startMs": 278907,
+      "endMs": 284552
+    },
+    {
+      "sentenceId": "S056",
+      "beatId": "B05",
+      "text": "A loud knock woke him, followed by Geppetto’s familiar voice.",
+      "speechStart": 284.772,
+      "speechEnd": 289.211,
+      "speechStartMs": 284772,
+      "speechEndMs": 289211,
+      "start": 284.552,
+      "end": 289.341,
+      "startMs": 284552,
+      "endMs": 289341
+    },
+    {
+      "sentenceId": "S057",
+      "beatId": "B05",
+      "text": "Pinocchio jumped up joyfully and immediately crashed onto the floor.",
+      "speechStart": 289.471,
+      "speechEnd": 294.171,
+      "speechStartMs": 289471,
+      "speechEndMs": 294171,
+      "start": 289.341,
+      "end": 294.305,
+      "startMs": 289341,
+      "endMs": 294305
+    },
+    {
+      "sentenceId": "S058",
+      "beatId": "B05",
+      "text": "He looked down and discovered that both his feet had disappeared.",
+      "speechStart": 294.438,
+      "speechEnd": 298.651,
+      "speechStartMs": 294438,
+      "speechEndMs": 298651,
+      "start": 294.305,
+      "end": 298.891,
+      "startMs": 294305,
+      "endMs": 298891
+    },
+    {
+      "sentenceId": "S059",
+      "beatId": "B05",
+      "text": "“Open the door,” Geppetto called, unaware of the strange disaster.",
+      "speechStart": 299.131,
+      "speechEnd": 304.33,
+      "speechStartMs": 299131,
+      "speechEndMs": 304330,
+      "start": 298.891,
+      "end": 304.55,
+      "startMs": 298891,
+      "endMs": 304550
+    },
+    {
+      "sentenceId": "S060",
+      "beatId": "B05",
+      "text": "“I cannot,” Pinocchio cried, “because somebody has eaten my feet!”",
+      "speechStart": 304.77,
+      "speechEnd": 310.49,
+      "speechStartMs": 304770,
+      "speechEndMs": 310490,
+      "start": 304.55,
+      "end": 310.69,
+      "startMs": 304550,
+      "endMs": 310690
+    },
+    {
+      "sentenceId": "S061",
+      "beatId": "B05",
+      "text": "Geppetto suspected another foolish game and told him to stop joking.",
+      "speechStart": 310.89,
+      "speechEnd": 316.25,
+      "speechStartMs": 310890,
+      "speechEndMs": 316250,
+      "start": 310.69,
+      "end": 316.4,
+      "startMs": 310690,
+      "endMs": 316400
+    },
+    {
+      "sentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio tried to crawl, but his wooden body rolled backwards.",
+      "speechStart": 316.55,
+      "speechEnd": 321.529,
+      "speechStartMs": 316550,
+      "speechEndMs": 321529,
+      "start": 316.4,
+      "end": 321.676,
+      "startMs": 316400,
+      "endMs": 321676
+    },
+    {
+      "sentenceId": "S063",
+      "beatId": "B05",
+      "text": "At last, Geppetto climbed through the window with a worried expression.",
+      "speechStart": 321.822,
+      "speechEnd": 326.489,
+      "speechStartMs": 321822,
+      "speechEndMs": 326489,
+      "start": 321.676,
+      "end": 326.649,
+      "startMs": 321676,
+      "endMs": 326649
+    },
+    {
+      "sentenceId": "S064",
+      "beatId": "B05",
+      "text": "He found his son helpless on the floor and forgot his anger.",
+      "speechStart": 326.809,
+      "speechEnd": 331.449,
+      "speechStartMs": 326809,
+      "speechEndMs": 331449,
+      "start": 326.649,
+      "end": 332.061,
+      "startMs": 326649,
+      "endMs": 332061
+    },
+    {
+      "sentenceId": "S065",
+      "beatId": "B06",
+      "text": "Before asking questions, Geppetto lifted Pinocchio gently.",
+      "speechStart": 332.674,
+      "speechEnd": 337.048,
+      "speechStartMs": 332674,
+      "speechEndMs": 337048,
+      "start": 332.061,
+      "end": 337.118,
+      "startMs": 332061,
+      "endMs": 337118
+    },
+    {
+      "sentenceId": "S066",
+      "beatId": "B06",
+      "text": "Pinocchio poured out the night’s events in one breathless confession.",
+      "speechStart": 337.188,
+      "speechEnd": 342.248,
+      "speechStartMs": 337188,
+      "speechEndMs": 342248,
+      "start": 337.118,
+      "end": 342.368,
+      "startMs": 337118,
+      "endMs": 342368
+    },
+    {
+      "sentenceId": "S067",
+      "beatId": "B06",
+      "text": "He spoke of the Cricket, the mallet, the egg, and the rain.",
+      "speechStart": 342.488,
+      "speechEnd": 347.408,
+      "speechStartMs": 342488,
+      "speechEndMs": 347408,
+      "start": 342.368,
+      "end": 347.481,
+      "startMs": 342368,
+      "endMs": 347481
+    },
+    {
+      "sentenceId": "S068",
+      "beatId": "B06",
+      "text": "He added several excuses that made himself sound innocent.",
+      "speechStart": 347.555,
+      "speechEnd": 351.607,
+      "speechStartMs": 347555,
+      "speechEndMs": 351607,
+      "start": 347.481,
+      "end": 351.794,
+      "startMs": 347481,
+      "endMs": 351794
+    },
+    {
+      "sentenceId": "S069",
+      "beatId": "B06",
+      "text": "Geppetto listened until the room became quiet again.",
+      "speechStart": 351.98,
+      "speechEnd": 355.847,
+      "speechStartMs": 351980,
+      "speechEndMs": 355847,
+      "start": 351.794,
+      "end": 356.127,
+      "startMs": 351794,
+      "endMs": 356127
+    },
+    {
+      "sentenceId": "S070",
+      "beatId": "B06",
+      "text": "“Hunger can teach what good advice could not,” he said gently.",
+      "speechStart": 356.407,
+      "speechEnd": 361.447,
+      "speechStartMs": 356407,
+      "speechEndMs": 361447,
+      "start": 356.127,
+      "end": 361.503,
+      "startMs": 356127,
+      "endMs": 361503
+    },
+    {
+      "sentenceId": "S071",
+      "beatId": "B06",
+      "text": "From his pocket, he produced three small pears, his own breakfast.",
+      "speechStart": 361.559,
+      "speechEnd": 366.806,
+      "speechStartMs": 361559,
+      "speechEndMs": 366806,
+      "start": 361.503,
+      "end": 366.946,
+      "startMs": 361503,
+      "endMs": 366946
+    },
+    {
+      "sentenceId": "S072",
+      "beatId": "B06",
+      "text": "Pinocchio demanded that Geppetto peel them and remove every core.",
+      "speechStart": 367.086,
+      "speechEnd": 372.646,
+      "speechStartMs": 367086,
+      "speechEndMs": 372646,
+      "start": 366.946,
+      "end": 372.766,
+      "startMs": 366946,
+      "endMs": 372766
+    },
+    {
+      "sentenceId": "S073",
+      "beatId": "B06",
+      "text": "The hungry puppet ate the soft fruit and asked for more.",
+      "speechStart": 372.886,
+      "speechEnd": 377.606,
+      "speechStartMs": 372886,
+      "speechEndMs": 377606,
+      "start": 372.766,
+      "end": 377.779,
+      "startMs": 372766,
+      "endMs": 377779
+    },
+    {
+      "sentenceId": "S074",
+      "beatId": "B06",
+      "text": "Geppetto silently placed the peels and cores on the table.",
+      "speechStart": 377.953,
+      "speechEnd": 382.805,
+      "speechStartMs": 377953,
+      "speechEndMs": 382805,
+      "start": 377.779,
+      "end": 382.915,
+      "startMs": 377779,
+      "endMs": 382915
+    },
+    {
+      "sentenceId": "S075",
+      "beatId": "B06",
+      "text": "Pinocchio complained, then noticed how tired his father looked.",
+      "speechStart": 383.025,
+      "speechEnd": 388.085,
+      "speechStartMs": 383025,
+      "speechEndMs": 388085,
+      "start": 382.915,
+      "end": 388.231,
+      "startMs": 382915,
+      "endMs": 388231
+    },
+    {
+      "sentenceId": "S076",
+      "beatId": "B06",
+      "text": "He remembered that Geppetto had returned from a cold prison cell.",
+      "speechStart": 388.378,
+      "speechEnd": 392.805,
+      "speechStartMs": 388378,
+      "speechEndMs": 392805,
+      "start": 388.231,
+      "end": 392.933,
+      "startMs": 388231,
+      "endMs": 392933
+    },
+    {
+      "sentenceId": "S077",
+      "beatId": "B06",
+      "text": "Slowly, Pinocchio ate the peels, then the cores, leaving nothing behind.",
+      "speechStart": 393.061,
+      "speechEnd": 399.684,
+      "speechStartMs": 393061,
+      "speechEndMs": 399684,
+      "start": 392.933,
+      "end": 399.984,
+      "startMs": 392933,
+      "endMs": 399984
+    },
+    {
+      "sentenceId": "S078",
+      "beatId": "B06",
+      "text": "“I never knew that simple food could taste so good,” he admitted.",
+      "speechStart": 400.284,
+      "speechEnd": 405.764,
+      "speechStartMs": 400284,
+      "speechEndMs": 405764,
+      "start": 399.984,
+      "end": 405.937,
+      "startMs": 399984,
+      "endMs": 405937
+    },
+    {
+      "sentenceId": "S079",
+      "beatId": "B06",
+      "text": "Geppetto smiled, because gratitude had finally entered the little room.",
+      "speechStart": 406.111,
+      "speechEnd": 411.443,
+      "speechStartMs": 406111,
+      "speechEndMs": 411443,
+      "start": 405.937,
+      "end": 412.023,
+      "startMs": 405937,
+      "endMs": 412023
+    },
+    {
+      "sentenceId": "S080",
+      "beatId": "B07",
+      "text": "Pinocchio looked at his missing feet and began to cry.",
+      "speechStart": 412.603,
+      "speechEnd": 415.684,
+      "speechStartMs": 412603,
+      "speechEndMs": 415684,
+      "start": 412.023,
+      "end": 415.817,
+      "startMs": 412023,
+      "endMs": 415817
+    },
+    {
+      "sentenceId": "S081",
+      "beatId": "B07",
+      "text": "He promised to study, work, listen, and care for his father.",
+      "speechStart": 415.95,
+      "speechEnd": 421.123,
+      "speechStartMs": 415950,
+      "speechEndMs": 421123,
+      "start": 415.817,
+      "end": 421.296,
+      "startMs": 415817,
+      "endMs": 421296
+    },
+    {
+      "sentenceId": "S082",
+      "beatId": "B07",
+      "text": "Geppetto knew that promises were easier to make than to keep.",
+      "speechStart": 421.47,
+      "speechEnd": 425.683,
+      "speechStartMs": 421470,
+      "speechEndMs": 425683,
+      "start": 421.296,
+      "end": 425.795,
+      "startMs": 421296,
+      "endMs": 425795
+    },
+    {
+      "sentenceId": "S083",
+      "beatId": "B07",
+      "text": "Even so, he chose hope and began carving two new feet.",
+      "speechStart": 425.907,
+      "speechEnd": 431.682,
+      "speechStartMs": 425907,
+      "speechEndMs": 431682,
+      "start": 425.795,
+      "end": 431.816,
+      "startMs": 425795,
+      "endMs": 431816
+    },
+    {
+      "sentenceId": "S084",
+      "beatId": "B07",
+      "text": "He measured carefully while Pinocchio tried to remain perfectly still.",
+      "speechStart": 431.949,
+      "speechEnd": 436.802,
+      "speechStartMs": 431949,
+      "speechEndMs": 436802,
+      "start": 431.816,
+      "end": 436.946,
+      "startMs": 431816,
+      "endMs": 436946
+    },
+    {
+      "sentenceId": "S085",
+      "beatId": "B07",
+      "text": "Soon, two neat wooden feet stood ready beside the workbench.",
+      "speechStart": 437.09,
+      "speechEnd": 442.561,
+      "speechStartMs": 437090,
+      "speechEndMs": 442561,
+      "start": 436.946,
+      "end": 442.721,
+      "startMs": 436946,
+      "endMs": 442721
+    },
+    {
+      "sentenceId": "S086",
+      "beatId": "B07",
+      "text": "Geppetto fixed them firmly and warned against wild testing.",
+      "speechStart": 442.881,
+      "speechEnd": 447.921,
+      "speechStartMs": 442881,
+      "speechEndMs": 447921,
+      "start": 442.721,
+      "end": 448.061,
+      "startMs": 442721,
+      "endMs": 448061
+    },
+    {
+      "sentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio immediately danced around the room, but this time he stopped.",
+      "speechStart": 448.201,
+      "speechEnd": 453.201,
+      "speechStartMs": 448201,
+      "speechEndMs": 453201,
+      "start": 448.061,
+      "end": 453.321,
+      "startMs": 448061,
+      "endMs": 453321
+    },
+    {
+      "sentenceId": "S088",
+      "beatId": "B07",
+      "text": "He hugged Geppetto and repeated his promise to attend school.",
+      "speechStart": 453.441,
+      "speechEnd": 458.36,
+      "speechStartMs": 453441,
+      "speechEndMs": 458360,
+      "start": 453.321,
+      "end": 458.655,
+      "startMs": 453321,
+      "endMs": 458655
+    },
+    {
+      "sentenceId": "S089",
+      "beatId": "B08",
+      "text": "The next morning, Geppetto made him clothes from humble materials.",
+      "speechStart": 458.95,
+      "speechEnd": 463.205,
+      "speechStartMs": 458950,
+      "speechEndMs": 463205,
+      "start": 458.655,
+      "end": 463.305,
+      "startMs": 458655,
+      "endMs": 463305
+    },
+    {
+      "sentenceId": "S090",
+      "beatId": "B08",
+      "text": "The jacket was coloured paper, the shoes were strips of tree bark.",
+      "speechStart": 463.405,
+      "speechEnd": 468.245,
+      "speechStartMs": 463405,
+      "speechEndMs": 468245,
+      "start": 463.305,
+      "end": 468.335,
+      "startMs": 463305,
+      "endMs": 468335
+    },
+    {
+      "sentenceId": "S091",
+      "beatId": "B08",
+      "text": "His cap was shaped from a piece of bread and painted brightly.",
+      "speechStart": 468.425,
+      "speechEnd": 472.885,
+      "speechStartMs": 468425,
+      "speechEndMs": 472885,
+      "start": 468.335,
+      "end": 473.034,
+      "startMs": 468335,
+      "endMs": 473034
+    },
+    {
+      "sentenceId": "S092",
+      "beatId": "B08",
+      "text": "Pinocchio admired himself as though he were dressed like a prince.",
+      "speechStart": 473.184,
+      "speechEnd": 477.924,
+      "speechStartMs": 473184,
+      "speechEndMs": 477924,
+      "start": 473.034,
+      "end": 478.036,
+      "startMs": 473034,
+      "endMs": 478036
+    },
+    {
+      "sentenceId": "S093",
+      "beatId": "B08",
+      "text": "Then he remembered that every proper pupil needed a schoolbook.",
+      "speechStart": 478.148,
+      "speechEnd": 483.604,
+      "speechStartMs": 478148,
+      "speechEndMs": 483604,
+      "start": 478.036,
+      "end": 483.79,
+      "startMs": 478036,
+      "endMs": 483790
+    },
+    {
+      "sentenceId": "S094",
+      "beatId": "B08",
+      "text": "Geppetto’s smile faded, for his pockets contained no money at all.",
+      "speechStart": 483.977,
+      "speechEnd": 489.123,
+      "speechStartMs": 483977,
+      "speechEndMs": 489123,
+      "start": 483.79,
+      "end": 489.383,
+      "startMs": 483790,
+      "endMs": 489383
+    },
+    {
+      "sentenceId": "S095",
+      "beatId": "B08",
+      "text": "“Wait here,” he said, pulling on his old winter coat.",
+      "speechStart": 489.643,
+      "speechEnd": 493.603,
+      "speechStartMs": 489643,
+      "speechEndMs": 493603,
+      "start": 489.383,
+      "end": 493.763,
+      "startMs": 489383,
+      "endMs": 493763
+    },
+    {
+      "sentenceId": "S096",
+      "beatId": "B08",
+      "text": "He went into the freezing street while Pinocchio practised writing his name.",
+      "speechStart": 493.923,
+      "speechEnd": 499.203,
+      "speechStartMs": 493923,
+      "speechEndMs": 499203,
+      "start": 493.763,
+      "end": 499.316,
+      "startMs": 493763,
+      "endMs": 499316
+    },
+    {
+      "sentenceId": "S097",
+      "beatId": "B08",
+      "text": "Later, Geppetto returned carrying a new alphabet primer.",
+      "speechStart": 499.43,
+      "speechEnd": 504.242,
+      "speechStartMs": 499430,
+      "speechEndMs": 504242,
+      "start": 499.316,
+      "end": 504.349,
+      "startMs": 499316,
+      "endMs": 504349
+    },
+    {
+      "sentenceId": "S098",
+      "beatId": "B08",
+      "text": "He was trembling, and his thin shirt offered no protection from winter.",
+      "speechStart": 504.455,
+      "speechEnd": 509.442,
+      "speechStartMs": 504455,
+      "speechEndMs": 509442,
+      "start": 504.349,
+      "end": 509.722,
+      "startMs": 504349,
+      "endMs": 509722
+    },
+    {
+      "sentenceId": "S099",
+      "beatId": "B08",
+      "text": "“Where is your coat?” Pinocchio asked, already knowing the answer.",
+      "speechStart": 510.002,
+      "speechEnd": 515.042,
+      "speechStartMs": 510002,
+      "speechEndMs": 515042,
+      "start": 509.722,
+      "end": 515.302,
+      "startMs": 509722,
+      "endMs": 515302
+    },
+    {
+      "sentenceId": "S100",
+      "beatId": "B08",
+      "text": "“It made me too warm,” Geppetto replied with an unconvincing laugh.",
+      "speechStart": 515.562,
+      "speechEnd": 520.801,
+      "speechStartMs": 515562,
+      "speechEndMs": 520801,
+      "start": 515.302,
+      "end": 520.941,
+      "startMs": 515302,
+      "endMs": 520941
+    },
+    {
+      "sentenceId": "S101",
+      "beatId": "B08",
+      "text": "Pinocchio pressed the precious book against his wooden heart.",
+      "speechStart": 521.081,
+      "speechEnd": 525.041,
+      "speechStartMs": 521081,
+      "speechEndMs": 525041,
+      "start": 520.941,
+      "end": 525.161,
+      "startMs": 520941,
+      "endMs": 525161
+    },
+    {
+      "sentenceId": "S102",
+      "beatId": "B08",
+      "text": "For once, he understood that love could be measured by what someone surrendered.",
+      "speechStart": 525.281,
+      "speechEnd": 530.881,
+      "speechStartMs": 525281,
+      "speechEndMs": 530881,
+      "start": 525.161,
+      "end": 531.067,
+      "startMs": 525161,
+      "endMs": 531067
+    },
+    {
+      "sentenceId": "S103",
+      "beatId": "B08",
+      "text": "At sunrise, he stepped towards school wearing Geppetto’s sacrifice.",
+      "speechStart": 531.254,
+      "speechEnd": 537.04,
+      "speechStartMs": 531254,
+      "speechEndMs": 537040,
+      "start": 531.067,
+      "end": 537.11,
+      "startMs": 531067,
+      "endMs": 537110
+    },
+    {
+      "sentenceId": "S104",
+      "beatId": "B08",
+      "text": "Yet somewhere along the road, another temptation was tuning its instruments.",
+      "speechStart": 537.18,
+      "speechEnd": 542.48,
+      "speechStartMs": 537180,
+      "speechEndMs": 542480,
+      "start": 537.11,
+      "end": 542.48,
+      "startMs": 537110,
+      "endMs": 542480
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio raced home, expecting Geppetto beside the lamp.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Pinocchio raced home, expecting Geppetto beside the lamp.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 0.21,
+          "speechEnd": 3.28,
+          "speechStartMs": 210,
+          "speechEndMs": 3280,
+          "start": 0.15,
+          "end": 3.36,
+          "startMs": 150,
+          "endMs": 3360
+        }
+      ],
+      "speechStart": 0.21,
+      "speechEnd": 3.28,
+      "speechStartMs": 210,
+      "speechEndMs": 3280,
+      "start": 0.15,
+      "end": 3.36,
+      "startMs": 150,
+      "endMs": 3360
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "A Talking Cricket stepped forward and bowed gravely.",
+      "sourceTextRange": [
+        0,
+        52
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "A Talking Cricket stepped forward and bowed gravely.",
+          "sourceTextRange": [
+            0,
+            52
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 17.92,
+          "speechEnd": 21.68,
+          "speechStartMs": 17920,
+          "speechEndMs": 21680,
+          "start": 17.86,
+          "end": 21.76,
+          "startMs": 17860,
+          "endMs": 21760
+        }
+      ],
+      "speechStart": 17.92,
+      "speechEnd": 21.68,
+      "speechStartMs": 17920,
+      "speechEndMs": 21680,
+      "start": 17.86,
+      "end": 21.76,
+      "startMs": 17860,
+      "endMs": 21760
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S010",
+      "beatId": "B01",
+      "text": "“Then I shall simply find a generous dinner,” Pinocchio replied.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "“Then I shall simply find a generous dinner,” Pinocchio replied.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 42.96,
+          "speechEnd": 47.36,
+          "speechStartMs": 42960,
+          "speechEndMs": 47360,
+          "start": 42.9,
+          "end": 47.44,
+          "startMs": 42900,
+          "endMs": 47440
+        }
+      ],
+      "speechStart": 42.96,
+      "speechEnd": 47.36,
+      "speechStartMs": 42960,
+      "speechEndMs": 47360,
+      "start": 42.9,
+      "end": 47.44,
+      "startMs": 42900,
+      "endMs": 47440
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "Yet the Cricket remained, because honest warnings are rarely convenient.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "Yet the Cricket remained, because honest warnings are rarely convenient.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 58.96,
+          "speechEnd": 64.08,
+          "speechStartMs": 58960,
+          "speechEndMs": 64080,
+          "start": 58.9,
+          "end": 64.16,
+          "startMs": 58900,
+          "endMs": 64160
+        }
+      ],
+      "speechStart": 58.96,
+      "speechEnd": 64.08,
+      "speechStartMs": 58960,
+      "speechEndMs": 64080,
+      "start": 58.9,
+      "end": 64.16,
+      "startMs": 58900,
+      "endMs": 64160
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio’s anger rose faster than his judgment could follow.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio’s anger rose faster than his judgment could follow.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 65.254,
+          "speechEnd": 68.72,
+          "speechStartMs": 65254,
+          "speechEndMs": 68720,
+          "start": 65.194,
+          "end": 68.8,
+          "startMs": 65194,
+          "endMs": 68800
+        }
+      ],
+      "speechStart": 65.254,
+      "speechEnd": 68.72,
+      "speechStartMs": 65254,
+      "speechEndMs": 68720,
+      "start": 65.194,
+      "end": 68.8,
+      "startMs": 65194,
+      "endMs": 68800
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S018",
+      "beatId": "B02",
+      "text": "Silence filled the room, and Pinocchio suddenly felt less brave.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Silence filled the room, and Pinocchio suddenly felt less brave.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 84.13,
+          "speechEnd": 90.24,
+          "speechStartMs": 84130,
+          "speechEndMs": 90240,
+          "start": 84.07,
+          "end": 90.32,
+          "startMs": 84070,
+          "endMs": 90320
+        }
+      ],
+      "speechStart": 84.13,
+      "speechEnd": 90.24,
+      "speechStartMs": 84130,
+      "speechEndMs": 90240,
+      "start": 84.07,
+      "end": 90.32,
+      "startMs": 84070,
+      "endMs": 90320
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "Every container offered the same disappointing answer: absolutely nothing.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "Every container offered the same disappointing answer: absolutely nothing.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 110.747,
+          "speechEnd": 118.16,
+          "speechStartMs": 110747,
+          "speechEndMs": 118160,
+          "start": 110.687,
+          "end": 118.24,
+          "startMs": 110687,
+          "endMs": 118240
+        }
+      ],
+      "speechStart": 110.747,
+      "speechEnd": 118.16,
+      "speechStartMs": 110747,
+      "speechEndMs": 118160,
+      "start": 110.687,
+      "end": 118.24,
+      "startMs": 110687,
+      "endMs": 118240
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio blamed Geppetto, the Cricket, and the unfairness of the world.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Pinocchio blamed Geppetto, the Cricket, and the unfairness of the world.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 118.4,
+          "speechEnd": 124.32,
+          "speechStartMs": 118400,
+          "speechEndMs": 124320,
+          "start": 118.34,
+          "end": 124.4,
+          "startMs": 118340,
+          "endMs": 124400
+        }
+      ],
+      "speechStart": 118.4,
+      "speechEnd": 124.32,
+      "speechStartMs": 118400,
+      "speechEndMs": 124320,
+      "start": 118.34,
+      "end": 124.4,
+      "startMs": 118340,
+      "endMs": 124400
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "He set a pan on the painted fire before remembering it was unreal.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "He set a pan on the painted fire",
+          "sourceTextRange": [
+            0,
+            32
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 140.56,
+          "speechEnd": 143.04,
+          "speechStartMs": 140560,
+          "speechEndMs": 143040,
+          "start": 140.5,
+          "end": 143.085,
+          "startMs": 140500,
+          "endMs": 143086
+        },
+        {
+          "chunkId": "M09-C02",
+          "text": "before remembering it was unreal.",
+          "sourceTextRange": [
+            33,
+            66
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 143.131,
+          "speechEnd": 145.52,
+          "speechStartMs": 143131,
+          "speechEndMs": 145520,
+          "start": 143.085,
+          "end": 145.6,
+          "startMs": 143086,
+          "endMs": 145600
+        }
+      ],
+      "speechStart": 140.56,
+      "speechEnd": 145.52,
+      "speechStartMs": 140560,
+      "speechEndMs": 145520,
+      "start": 140.5,
+      "end": 145.6,
+      "startMs": 140500,
+      "endMs": 145600
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "“At last, fortune has remembered me,” he said, cracking the shell.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "“At last, fortune has remembered me,” he said, cracking the shell.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 151.04,
+          "speechEnd": 157.16,
+          "speechStartMs": 151040,
+          "speechEndMs": 157160,
+          "start": 150.98,
+          "end": 157.202,
+          "startMs": 150980,
+          "endMs": 157202
+        }
+      ],
+      "speechStart": 151.04,
+      "speechEnd": 157.16,
+      "speechStartMs": 151040,
+      "speechEndMs": 157160,
+      "start": 150.98,
+      "end": 157.202,
+      "startMs": 150980,
+      "endMs": 157202
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "Pinocchio stared at the empty shell with his mouth hanging open.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Pinocchio stared at the empty shell with his mouth hanging open.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 174.68,
+          "speechEnd": 179.2,
+          "speechStartMs": 174680,
+          "speechEndMs": 179200,
+          "start": 174.62,
+          "end": 179.28,
+          "startMs": 174620,
+          "endMs": 179280
+        }
+      ],
+      "speechStart": 174.68,
+      "speechEnd": 179.2,
+      "speechStartMs": 174680,
+      "speechEndMs": 179200,
+      "start": 174.62,
+      "end": 179.28,
+      "startMs": 174620,
+      "endMs": 179280
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S038",
+      "beatId": "B03",
+      "text": "Still, pride stopped Pinocchio from admitting that the Cricket was right.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Still, pride stopped Pinocchio from admitting that the Cricket was right.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 188.653,
+          "speechEnd": 193.52,
+          "speechStartMs": 188653,
+          "speechEndMs": 193520,
+          "start": 188.593,
+          "end": 193.6,
+          "startMs": 188593,
+          "endMs": 193600
+        }
+      ],
+      "speechStart": 188.653,
+      "speechEnd": 193.52,
+      "speechStartMs": 188653,
+      "speechEndMs": 193520,
+      "start": 188.593,
+      "end": 193.6,
+      "startMs": 188593,
+      "endMs": 193600
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "“Wait there,” the man called, and Pinocchio imagined hot soup.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "“Wait there,” the man called, and Pinocchio imagined hot soup.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 215.76,
+          "speechEnd": 221.12,
+          "speechStartMs": 215760,
+          "speechEndMs": 221120,
+          "start": 215.7,
+          "end": 221.2,
+          "startMs": 215700,
+          "endMs": 221200
+        }
+      ],
+      "speechStart": 215.76,
+      "speechEnd": 221.12,
+      "speechStartMs": 215760,
+      "speechEndMs": 221120,
+      "start": 215.7,
+      "end": 221.2,
+      "startMs": 215700,
+      "endMs": 221200
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S045",
+      "beatId": "B04",
+      "text": "He ran away shivering while the man slammed the window shut.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "He ran away shivering while the man slammed the window shut.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 226.427,
+          "speechEnd": 231.52,
+          "speechStartMs": 226427,
+          "speechEndMs": 231520,
+          "start": 226.367,
+          "end": 231.6,
+          "startMs": 226367,
+          "endMs": 231600
+        }
+      ],
+      "speechStart": 226.427,
+      "speechEnd": 231.52,
+      "speechStartMs": 226427,
+      "speechEndMs": 231520,
+      "start": 226.367,
+      "end": 231.6,
+      "startMs": 226367,
+      "endMs": 231600
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "By midnight, Pinocchio’s brave adventure had become miserable.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "By midnight, Pinocchio’s brave adventure had become miserable.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 242.613,
+          "speechEnd": 247.84,
+          "speechStartMs": 242613,
+          "speechEndMs": 247840,
+          "start": 242.553,
+          "end": 247.92,
+          "startMs": 242553,
+          "endMs": 247920
+        }
+      ],
+      "speechStart": 242.613,
+      "speechEnd": 247.84,
+      "speechStartMs": 242613,
+      "speechEndMs": 247840,
+      "start": 242.553,
+      "end": 247.92,
+      "startMs": 242553,
+      "endMs": 247920
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio placed his wet feet on the brazier to warm them.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Pinocchio placed his wet feet on the brazier to warm them.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 260.43,
+          "speechEnd": 264.24,
+          "speechStartMs": 260430,
+          "speechEndMs": 264240,
+          "start": 260.37,
+          "end": 264.32,
+          "startMs": 260370,
+          "endMs": 264320
+        }
+      ],
+      "speechStart": 260.43,
+      "speechEnd": 264.24,
+      "speechStartMs": 260430,
+      "speechEndMs": 264240,
+      "start": 260.37,
+      "end": 264.32,
+      "startMs": 260370,
+      "endMs": 264320
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S055",
+      "beatId": "B05",
+      "text": "Morning sunlight found him snoring beside a pile of warm ashes.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Morning sunlight found him snoring beside a pile of warm ashes.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 279.002,
+          "speechEnd": 284.332,
+          "speechStartMs": 279002,
+          "speechEndMs": 284332,
+          "start": 278.942,
+          "end": 284.412,
+          "startMs": 278942,
+          "endMs": 284412
+        }
+      ],
+      "speechStart": 279.002,
+      "speechEnd": 284.332,
+      "speechStartMs": 279002,
+      "speechEndMs": 284332,
+      "start": 278.942,
+      "end": 284.412,
+      "startMs": 278942,
+      "endMs": 284412
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "“Open the door,” Geppetto called, unaware of the strange disaster.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“Open the door,” Geppetto called, unaware of the strange disaster.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 299.131,
+          "speechEnd": 304.33,
+          "speechStartMs": 299131,
+          "speechEndMs": 304330,
+          "start": 299.071,
+          "end": 304.41,
+          "startMs": 299071,
+          "endMs": 304410
+        }
+      ],
+      "speechStart": 299.131,
+      "speechEnd": 304.33,
+      "speechStartMs": 299131,
+      "speechEndMs": 304330,
+      "start": 299.071,
+      "end": 304.41,
+      "startMs": 299071,
+      "endMs": 304410
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "“I cannot,” Pinocchio cried, “because somebody has eaten my feet!”",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "“I cannot,” Pinocchio cried, “because somebody has eaten my feet!”",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 304.77,
+          "speechEnd": 310.49,
+          "speechStartMs": 304770,
+          "speechEndMs": 310490,
+          "start": 304.71,
+          "end": 310.57,
+          "startMs": 304710,
+          "endMs": 310570
+        }
+      ],
+      "speechStart": 304.77,
+      "speechEnd": 310.49,
+      "speechStartMs": 304770,
+      "speechEndMs": 310490,
+      "start": 304.71,
+      "end": 310.57,
+      "startMs": 304710,
+      "endMs": 310570
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio tried to crawl, but his wooden body rolled backwards.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Pinocchio tried to crawl, but his wooden body rolled backwards.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 316.55,
+          "speechEnd": 321.529,
+          "speechStartMs": 316550,
+          "speechEndMs": 321529,
+          "start": 316.49,
+          "end": 321.609,
+          "startMs": 316490,
+          "endMs": 321609
+        }
+      ],
+      "speechStart": 316.55,
+      "speechEnd": 321.529,
+      "speechStartMs": 316550,
+      "speechEndMs": 321529,
+      "start": 316.49,
+      "end": 321.609,
+      "startMs": 316490,
+      "endMs": 321609
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Before asking questions, Geppetto lifted Pinocchio gently.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "Before asking questions, Geppetto lifted Pinocchio gently.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 332.674,
+          "speechEnd": 337.048,
+          "speechStartMs": 332674,
+          "speechEndMs": 337048,
+          "start": 332.614,
+          "end": 337.118,
+          "startMs": 332614,
+          "endMs": 337118
+        }
+      ],
+      "speechStart": 332.674,
+      "speechEnd": 337.048,
+      "speechStartMs": 332674,
+      "speechEndMs": 337048,
+      "start": 332.614,
+      "end": 337.118,
+      "startMs": 332614,
+      "endMs": 337118
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "“Hunger can teach what good advice could not,” he said gently.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "“Hunger can teach what good advice could not,” he said gently.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 356.407,
+          "speechEnd": 361.447,
+          "speechStartMs": 356407,
+          "speechEndMs": 361447,
+          "start": 356.347,
+          "end": 361.503,
+          "startMs": 356347,
+          "endMs": 361503
+        }
+      ],
+      "speechStart": 356.407,
+      "speechEnd": 361.447,
+      "speechStartMs": 356407,
+      "speechEndMs": 361447,
+      "start": 356.347,
+      "end": 361.503,
+      "startMs": 356347,
+      "endMs": 361503
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S074",
+      "beatId": "B06",
+      "text": "Geppetto silently placed the peels and cores on the table.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Geppetto silently placed the peels and cores on the table.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 377.953,
+          "speechEnd": 382.805,
+          "speechStartMs": 377953,
+          "speechEndMs": 382805,
+          "start": 377.893,
+          "end": 382.885,
+          "startMs": 377893,
+          "endMs": 382885
+        }
+      ],
+      "speechStart": 377.953,
+      "speechEnd": 382.805,
+      "speechStartMs": 377953,
+      "speechEndMs": 382805,
+      "start": 377.893,
+      "end": 382.885,
+      "startMs": 377893,
+      "endMs": 382885
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S079",
+      "beatId": "B06",
+      "text": "Geppetto smiled, because gratitude had finally entered the little room.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Geppetto smiled, because gratitude had finally entered the little room.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 406.111,
+          "speechEnd": 411.443,
+          "speechStartMs": 406111,
+          "speechEndMs": 411443,
+          "start": 406.051,
+          "end": 411.523,
+          "startMs": 406051,
+          "endMs": 411523
+        }
+      ],
+      "speechStart": 406.111,
+      "speechEnd": 411.443,
+      "speechStartMs": 406111,
+      "speechEndMs": 411443,
+      "start": 406.051,
+      "end": 411.523,
+      "startMs": 406051,
+      "endMs": 411523
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S080",
+      "beatId": "B07",
+      "text": "Pinocchio looked at his missing feet and began to cry.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Pinocchio looked at his missing feet and began to cry.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 412.603,
+          "speechEnd": 415.684,
+          "speechStartMs": 412603,
+          "speechEndMs": 415684,
+          "start": 412.543,
+          "end": 415.764,
+          "startMs": 412543,
+          "endMs": 415764
+        }
+      ],
+      "speechStart": 412.603,
+      "speechEnd": 415.684,
+      "speechStartMs": 412603,
+      "speechEndMs": 415684,
+      "start": 412.543,
+      "end": 415.764,
+      "startMs": 412543,
+      "endMs": 415764
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "He measured carefully while Pinocchio tried to remain perfectly still.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "He measured carefully while Pinocchio tried to remain perfectly still.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 431.949,
+          "speechEnd": 436.802,
+          "speechStartMs": 431949,
+          "speechEndMs": 436802,
+          "start": 431.889,
+          "end": 436.882,
+          "startMs": 431889,
+          "endMs": 436882
+        }
+      ],
+      "speechStart": 431.949,
+      "speechEnd": 436.802,
+      "speechStartMs": 431949,
+      "speechEndMs": 436802,
+      "start": 431.889,
+      "end": 436.882,
+      "startMs": 431889,
+      "endMs": 436882
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio immediately danced around the room, but this time he stopped.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio immediately danced around the room, but this time he stopped.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 448.201,
+          "speechEnd": 453.201,
+          "speechStartMs": 448201,
+          "speechEndMs": 453201,
+          "start": 448.141,
+          "end": 453.281,
+          "startMs": 448141,
+          "endMs": 453281
+        }
+      ],
+      "speechStart": 448.201,
+      "speechEnd": 453.201,
+      "speechStartMs": 448201,
+      "speechEndMs": 453201,
+      "start": 448.141,
+      "end": 453.281,
+      "startMs": 448141,
+      "endMs": 453281
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S089",
+      "beatId": "B08",
+      "text": "The next morning, Geppetto made him clothes from humble materials.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "The next morning, Geppetto made him clothes from humble materials.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 458.95,
+          "speechEnd": 463.205,
+          "speechStartMs": 458950,
+          "speechEndMs": 463205,
+          "start": 458.89,
+          "end": 463.285,
+          "startMs": 458890,
+          "endMs": 463285
+        }
+      ],
+      "speechStart": 458.95,
+      "speechEnd": 463.205,
+      "speechStartMs": 458950,
+      "speechEndMs": 463205,
+      "start": 458.89,
+      "end": 463.285,
+      "startMs": 458890,
+      "endMs": 463285
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S099",
+      "beatId": "B08",
+      "text": "“Where is your coat?” Pinocchio asked, already knowing the answer.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“Where is your coat?” Pinocchio asked, already knowing the answer.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1,
+          "speechStart": 510.002,
+          "speechEnd": 515.042,
+          "speechStartMs": 510002,
+          "speechEndMs": 515042,
+          "start": 509.942,
+          "end": 515.122,
+          "startMs": 509942,
+          "endMs": 515122
+        }
+      ],
+      "speechStart": 510.002,
+      "speechEnd": 515.042,
+      "speechStartMs": 510002,
+      "speechEndMs": 515042,
+      "start": 509.942,
+      "end": 515.122,
+      "startMs": 509942,
+      "endMs": 515122
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S102",
+      "beatId": "B08",
+      "text": "For once, he understood that love could be measured by what someone surrendered.",
+      "sourceTextRange": [
+        0,
+        80
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "For once, he understood",
+          "sourceTextRange": [
+            0,
+            23
+          ],
+          "part": 1,
+          "parts": 2,
+          "speechStart": 525.281,
+          "speechEnd": 527.521,
+          "speechStartMs": 525281,
+          "speechEndMs": 527521,
+          "start": 525.221,
+          "end": 527.537,
+          "startMs": 525221,
+          "endMs": 527537
+        },
+        {
+          "chunkId": "M30-C02",
+          "text": "that love could be measured by what someone surrendered.",
+          "sourceTextRange": [
+            24,
+            80
+          ],
+          "part": 2,
+          "parts": 2,
+          "speechStart": 527.553,
+          "speechEnd": 530.881,
+          "speechStartMs": 527553,
+          "speechEndMs": 530881,
+          "start": 527.537,
+          "end": 530.961,
+          "startMs": 527537,
+          "endMs": 530961
+        }
+      ],
+      "speechStart": 525.281,
+      "speechEnd": 530.881,
+      "speechStartMs": 525281,
+      "speechEndMs": 530881,
+      "start": 525.221,
+      "end": 530.961,
+      "startMs": 525221,
+      "endMs": 530961
+    }
+  ]
+}

@@ -1,0 +1,1221 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-02",
+  "level": "studio",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S002",
+      "beatId": "B01",
+      "text": "Instead, darkness filled the narrow room, and the painted fire offered no comfort.",
+      "sourceTextRange": [
+        0,
+        82
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Instead, darkness filled the narrow room,",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M01-C02",
+          "text": "and the painted fire offered no comfort.",
+          "sourceTextRange": [
+            42,
+            82
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Cricket's Warning” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "The Cricket warned that freedom without judgment usually arrived at hunger.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "The Cricket warned that freedom without judgment usually arrived at hunger.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Cricket's Warning” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "“Most dinners,” the Cricket noted, “are earned through work, skill, or study.”",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "“Most dinners,” the Cricket noted, “are earned through work, skill, or study.”",
+          "sourceTextRange": [
+            0,
+            78
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Cricket's Warning” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "The Cricket stayed, since necessary truths rarely choose a convenient moment.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "The Cricket stayed, since necessary truths rarely choose a convenient moment.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Cricket's Warning” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio’s temper surged ahead before his young judgment could catch it.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio’s temper surged ahead before his young judgment could catch it.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Anger and an Empty Cupboard” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "After one fading chirp, the small adviser vanished into the surrounding darkness.",
+      "sourceTextRange": [
+        0,
+        81
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "After one fading chirp, the small adviser vanished into the surrounding darkness.",
+          "sourceTextRange": [
+            0,
+            81
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Anger and an Empty Cupboard” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "His empty stomach answered with a growl fierce enough to embarrass him.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "His empty stomach answered with a growl fierce enough to embarrass him.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Anger and an Empty Cupboard” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "Blaming his own choices remained the one possibility he refused to examine.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Blaming his own choices remained the one possibility he refused to examine.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Anger and an Empty Cupboard” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S026",
+      "beatId": "B03",
+      "text": "Then a white egg appeared beneath the bench among a nest of shavings.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Then a white egg appeared",
+          "sourceTextRange": [
+            0,
+            25
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M09-C02",
+          "text": "beneath the bench among a nest of shavings.",
+          "sourceTextRange": [
+            26,
+            69
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Dinner That Escapes” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "Instead of yolk, a bright chick burst upwards with astonishing energy.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Instead of yolk, a bright chick burst upwards with astonishing energy.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Dinner That Escapes” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "Pinocchio regarded the empty shell, speechless with hunger and disbelief.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Pinocchio regarded the empty shell, speechless with hunger and disbelief.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Dinner That Escapes” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "For the first time, the Cricket’s warning sounded inconveniently accurate.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "For the first time, the Cricket’s warning sounded inconveniently accurate.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Dinner That Escapes” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S040",
+      "beatId": "B04",
+      "text": "Outside, winter rain swept the lanes while every shutter remained firmly closed.",
+      "sourceTextRange": [
+        0,
+        80
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Outside, winter rain swept the lanes while every shutter remained firmly closed.",
+          "sourceTextRange": [
+            0,
+            80
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Cold and Hungry Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S044",
+      "beatId": "B04",
+      "text": "A heartbeat later, icy water crashed over the puppet’s wooden head.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "A heartbeat later, icy water crashed over the puppet’s wooden head.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Cold and Hungry Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "By midnight, a brave adventure had collapsed into a miserable search for shelter.",
+      "sourceTextRange": [
+        0,
+        81
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "By midnight, a brave adventure had collapsed",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M15-C02",
+          "text": "into a miserable search for shelter.",
+          "sourceTextRange": [
+            45,
+            81
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Cold and Hungry Night” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio stretched his dripping feet towards the brazier’s last red glow.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Pinocchio stretched his dripping feet towards the brazier’s last red glow.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Cold and Hungry Night” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S054",
+      "beatId": "B05",
+      "text": "While he dreamed, the quiet coals steadily consumed both unguarded feet.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "While he dreamed, the quiet coals steadily consumed both unguarded feet.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Missing Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "A pounding knock woke him, followed by Geppetto’s anxious voice.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "A pounding knock woke him, followed by Geppetto’s anxious voice.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Missing Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "Looking down, he realised that both wooden feet had completely vanished.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Looking down, he realised that both wooden feet had completely vanished.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Missing Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S063",
+      "beatId": "B05",
+      "text": "Eventually, Geppetto climbed through the window, irritation changing instantly to concern.",
+      "sourceTextRange": [
+        0,
+        90
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Eventually, Geppetto climbed through the window, irritation changing instantly to concern.",
+          "sourceTextRange": [
+            0,
+            90
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Missing Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S067",
+      "beatId": "B06",
+      "text": "He mentioned the Cricket, the mallet, the egg, the rain, and the burned feet.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "He mentioned the Cricket, the mallet,",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M21-C02",
+          "text": "the egg, the rain, and the burned feet.",
+          "sourceTextRange": [
+            38,
+            77
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Three Pears” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "“Hunger has taught what patient advice could not,” he said without triumph.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "“Hunger has taught what patient advice could not,” he said without triumph.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Three Pears” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S077",
+      "beatId": "B06",
+      "text": "Slowly, Pinocchio ate the peels and then the cores, wasting nothing.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Slowly, Pinocchio ate the peels and then the cores, wasting nothing.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Three Pears” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S082",
+      "beatId": "B07",
+      "text": "Geppetto understood that promises required less effort than changed behaviour.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Geppetto understood that promises required less effort than changed behaviour.",
+          "sourceTextRange": [
+            0,
+            78
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Promise and New Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "He measured and carved while Pinocchio fought the urge to wriggle.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "He measured and carved while Pinocchio fought the urge to wriggle.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Promise and New Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio danced around the room, but for once he stopped when asked.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Pinocchio danced around the room, but for once he stopped when asked.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Promise and New Feet” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S089",
+      "beatId": "B08",
+      "text": "The following morning, Geppetto fashioned clothes from whatever poverty provided.",
+      "sourceTextRange": [
+        0,
+        81
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "The following morning, Geppetto fashioned clothes from whatever poverty provided.",
+          "sourceTextRange": [
+            0,
+            81
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Coat Becomes a Book” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "Then he remembered that a proper student needed an alphabet primer.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Then he remembered that a proper student needed an alphabet primer.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Coat Becomes a Book” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S098",
+      "beatId": "B08",
+      "text": "“Father, where is your coat?” Pinocchio asked, although understanding had arrived.",
+      "sourceTextRange": [
+        0,
+        82
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“Father, where is your coat?” Pinocchio asked, although understanding had arrived.",
+          "sourceTextRange": [
+            0,
+            82
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Coat Becomes a Book” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "Somewhere along that road, temptation was already tuning drums and pipes.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Somewhere along that road, temptation was already tuning drums and pipes.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Coat Becomes a Book” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The Cricket connects careless freedom with hunger.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "The Cricket warned that freedom without judgment usually arrived at hunger."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S006",
+          "text": "“Young people who refuse good advice often manufacture their own trouble,” he observed."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S012",
+          "text": "The puppet stamped hard and commanded his unwelcome adviser to disappear."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Anger makes Pinocchio throw the mallet before thinking.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S018",
+          "text": "Silence settled heavily, and Pinocchio’s victory felt unexpectedly lonely."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S015",
+          "text": "He snatched up a wooden mallet and flung it across the room."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S024",
+          "text": "Pinocchio blamed Geppetto, the Cricket, and a world arranged against him."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "The egg opens into a living surprise instead of food.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S027",
+          "text": "Hunger transformed that ordinary egg into an imaginary royal banquet."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S035",
+          "text": "Pinocchio regarded the empty shell, speechless with hunger and disbelief."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S031",
+          "text": "Instead of yolk, a bright chick burst upwards with astonishing energy."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "Pinocchio expects soup but receives an icy shock.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S044",
+          "text": "A heartbeat later, icy water crashed over the puppet’s wooden head."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S041",
+          "text": "Pinocchio knocked at one house and requested a small piece of bread."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S046",
+          "text": "At another doorway, a furious dog made the invitation equally clear."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "The quiet coals create the next morning's physical consequence.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S052",
+          "text": "He intended to rest for one brief minute before finding a solution."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S054",
+          "text": "While he dreamed, the quiet coals steadily consumed both unguarded feet."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S058",
+          "text": "Looking down, he realised that both wooden feet had completely vanished."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "Geppetto offers Pinocchio the breakfast he intended to eat.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S065",
+          "text": "Before demanding explanations, Geppetto gathered the frightened puppet into his arms."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S074",
+          "text": "Geppetto placed the discarded peels and cores upon the empty table."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S071",
+          "text": "From his pocket, he produced three modest pears intended for his own breakfast."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "What action shows Pinocchio replacing wasteful complaint with gratitude?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S077",
+          "text": "Slowly, Pinocchio ate the peels and then the cores, wasting nothing."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S073",
+          "text": "He devoured the soft pieces and immediately complained that they were insufficient."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S079",
+          "text": "Geppetto smiled because gratitude, however late, had entered their poor home."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "Love persuades Geppetto to risk trusting another promise.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S080",
+          "text": "Pinocchio glanced at his missing feet and began to weep with genuine shame."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S083",
+          "text": "Yet love persuaded him to hope, and he selected two fresh pieces of wood."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S086",
+          "text": "Geppetto fixed them securely and advised caution during their first use."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "The primer arrives while Geppetto returns without his coat.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S092",
+          "text": "Then he remembered that a proper student needed an alphabet primer."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S099",
+          "text": "“It was far too warm,” Geppetto replied with an unsuccessful laugh."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S096",
+          "text": "Much later, Geppetto returned with a bright new primer under his arm."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Pinocchio finally understands the meaning of the sacrifice.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S101",
+          "text": "At last, he understood that love sometimes became visible through what was surrendered."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S098",
+          "text": "“Father, where is your coat?” Pinocchio asked, although understanding had arrived."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S103",
+          "text": "Somewhere along that road, temptation was already tuning drums and pipes."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Nearby narrative lines preserve the setting or motive while changing the decisive evidence or action."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "“Young people who refuse good advice often manufacture their own trouble,” he observed.",
+      "tokens": [
+        "“Young",
+        "people",
+        "who",
+        "refuse",
+        "good",
+        "advice",
+        "often",
+        "manufacture",
+        "their",
+        "own",
+        "trouble,”",
+        "he",
+        "observed."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "The Cricket stayed, since necessary truths rarely choose a convenient moment.",
+      "tokens": [
+        "The",
+        "Cricket",
+        "stayed,",
+        "since",
+        "necessary",
+        "truths",
+        "rarely",
+        "choose",
+        "a",
+        "convenient",
+        "moment."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "After one fading chirp, the small adviser vanished into the surrounding darkness.",
+      "tokens": [
+        "After",
+        "one",
+        "fading",
+        "chirp,",
+        "the",
+        "small",
+        "adviser",
+        "vanished",
+        "into",
+        "the",
+        "surrounding",
+        "darkness."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "Instead of yolk, a bright chick burst upwards with astonishing energy.",
+      "tokens": [
+        "Instead",
+        "of",
+        "yolk,",
+        "a",
+        "bright",
+        "chick",
+        "burst",
+        "upwards",
+        "with",
+        "astonishing",
+        "energy."
+      ],
+      "focus": "rebuild the contrast and preserve the clause relationship"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S044",
+      "beatId": "B04",
+      "text": "A heartbeat later, icy water crashed over the puppet’s wooden head.",
+      "tokens": [
+        "A",
+        "heartbeat",
+        "later,",
+        "icy",
+        "water",
+        "crashed",
+        "over",
+        "the",
+        "puppet’s",
+        "wooden",
+        "head."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S054",
+      "beatId": "B05",
+      "text": "While he dreamed, the quiet coals steadily consumed both unguarded feet.",
+      "tokens": [
+        "While",
+        "he",
+        "dreamed,",
+        "the",
+        "quiet",
+        "coals",
+        "steadily",
+        "consumed",
+        "both",
+        "unguarded",
+        "feet."
+      ],
+      "focus": "rebuild the contrast and preserve the clause relationship"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "“I cannot,” Pinocchio wailed, “because somebody has eaten my feet!”",
+      "tokens": [
+        "“I",
+        "cannot,”",
+        "Pinocchio",
+        "wailed,",
+        "“because",
+        "somebody",
+        "has",
+        "eaten",
+        "my",
+        "feet!”"
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "“Hunger has taught what patient advice could not,” he said without triumph.",
+      "tokens": [
+        "“Hunger",
+        "has",
+        "taught",
+        "what",
+        "patient",
+        "advice",
+        "could",
+        "not,”",
+        "he",
+        "said",
+        "without",
+        "triumph."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "Yet love persuaded him to hope, and he selected two fresh pieces of wood.",
+      "tokens": [
+        "Yet",
+        "love",
+        "persuaded",
+        "him",
+        "to",
+        "hope,",
+        "and",
+        "he",
+        "selected",
+        "two",
+        "fresh",
+        "pieces",
+        "of",
+        "wood."
+      ],
+      "focus": "rebuild the contrast and preserve the clause relationship"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S101",
+      "beatId": "B08",
+      "text": "At last, he understood that love sometimes became visible through what was surrendered.",
+      "tokens": [
+        "At",
+        "last,",
+        "he",
+        "understood",
+        "that",
+        "love",
+        "sometimes",
+        "became",
+        "visible",
+        "through",
+        "what",
+        "was",
+        "surrendered."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    }
+  ]
+}

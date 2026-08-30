@@ -1,0 +1,1182 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-11",
+  "level": "studio",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "Around him, the Shark’s breathing rolled like distant thunder through a cavern.",
+      "sourceTextRange": [
+        0,
+        79
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Around him, the Shark’s breathing rolled like distant thunder through a cavern.",
+          "sourceTextRange": [
+            0,
+            79
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Distant Candle” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "Pinocchio continued because patient movement offered more hope than surrender.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Pinocchio continued because patient movement offered more hope than surrender.",
+          "sourceTextRange": [
+            0,
+            78
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Distant Candle” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "It stood upon a small table among scattered boxes and barrels.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "It stood upon a small table among scattered boxes and barrels.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Distant Candle” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "Pinocchio moved closer, afraid that hope might be inventing what he saw.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "Pinocchio moved closer, afraid that hope might be inventing what he saw.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Distant Candle” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "Geppetto rubbed his eyes, suspicious of another dream created by loneliness.",
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Geppetto rubbed his eyes, suspicious of another dream created by loneliness.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Father and Son” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Geppetto touched the puppet’s face as though testing an impossible miracle.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Geppetto touched the puppet’s face as though testing an impossible miracle.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Father and Son” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S022",
+      "beatId": "B02",
+      "text": "“Are you truly my own Pinocchio?” Geppetto asked in wonder.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "“Are you truly my own Pinocchio?” Geppetto asked in wonder.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Father and Son” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "The monster shifted, making the bottle tremble above the table.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "The monster shifted, making the bottle tremble above the table.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Father and Son” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S027",
+      "beatId": "B03",
+      "text": "Pinocchio began with the schoolbook purchased through his father’s only coat.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Pinocchio began with the schoolbook purchased through his father’s only coat.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Long Confession” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "He confessed prison, the watchdog’s collar, and the green fisherman’s net.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "He confessed prison, the watchdog’s collar, and the green fisherman’s net.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Long Confession” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "Yet even that progress had been abandoned when Lamp-Wick promised Toyland.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Yet even that progress had been abandoned when Lamp-Wick promised Toyland.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Long Confession” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S040",
+      "beatId": "B03",
+      "text": "Geppetto listened without interruption, allowing honesty to complete its difficult work.",
+      "sourceTextRange": [
+        0,
+        88
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Geppetto listened without interruption, allowing honesty to complete its difficult work.",
+          "sourceTextRange": [
+            0,
+            88
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Long Confession” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "He had built a fragile boat and sailed away searching for Pinocchio.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "He had built a fragile boat and sailed away searching for Pinocchio.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Two Years in the Dark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Later, the Shark swallowed a merchant ship loaded with useful provisions.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "Later, the Shark swallowed a merchant ship loaded with useful provisions.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Two Years in the Dark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "He measured time through shrinking candles and the whitening of his beard.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "He measured time through shrinking candles and the whitening of his beard.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Two Years in the Dark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S052",
+      "beatId": "B04",
+      "text": "Once that candle failed, direction and warmth would vanish together.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Once that candle failed, direction and warmth would vanish together.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Two Years in the Dark” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "“Then we must leave before it dies,” Pinocchio answered immediately.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "“Then we must leave before it dies,” Pinocchio answered immediately.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio's Promise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "The promise astonished Geppetto more than any magical event in the story.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "The promise astonished Geppetto more than any magical event in the story.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio's Promise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "If they moved silently, the jaws might become a doorway instead of a prison.",
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "If they moved silently,",
+          "sourceTextRange": [
+            0,
+            23
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M19-C02",
+          "text": "the jaws might become a doorway instead of a prison.",
+          "sourceTextRange": [
+            24,
+            76
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio's Promise” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "Together they began the slippery climb through the monster’s vast throat.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Together they began the slippery climb through the monster’s vast throat.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio's Promise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "The walls tightened and released with each slow, sleeping breath.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "The walls tightened and released with each slow, sleeping breath.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Open Mouth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "Moonlight entered through the open jaws and silvered the enormous tongue.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Moonlight entered through the open jaws and silvered the enormous tongue.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Open Mouth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "Geppetto stared at the drop and tightened his grip on Pinocchio.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Geppetto stared at the drop and tightened his grip on Pinocchio.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Open Mouth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S075",
+      "beatId": "B06",
+      "text": "Suddenly, its breathing gathered into one deep and dangerous pressure.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Suddenly, its breathing gathered into one deep and dangerous pressure.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Open Mouth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S076",
+      "beatId": "B07",
+      "text": "The entire body tightened around the breath it could not contain.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "The entire body tightened around the breath it could not contain.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Thrown Back” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S081",
+      "beatId": "B07",
+      "text": "“Now there is no hope,” Geppetto whispered, unable to hide his fear.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "“Now there is no hope,” Geppetto whispered, unable to hide his fear.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Thrown Back” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "This time, Pinocchio waited until every breath became slow and even.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "This time, Pinocchio waited until every breath became slow and even.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Thrown Back” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "“Hold tightly, Father,” Pinocchio said, though his own courage trembled.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "“Hold tightly, Father,” Pinocchio said, though his own courage trembled.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Into the Moonlit Sea” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S096",
+      "beatId": "B08",
+      "text": "Behind them, the Shark continued sleeping beneath the peaceful moon.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "Behind them, the Shark continued sleeping beneath the peaceful moon.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Into the Moonlit Sea” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S100",
+      "beatId": "B08",
+      "text": "Every stroke carried them farther from the body that had imprisoned them.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Every stroke carried them farther from the body that had imprisoned them.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Into the Moonlit Sea” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The distant glow becomes the object that has kept Geppetto alive.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S006",
+          "text": "Gradually, the mystery became a candle burning inside a glass bottle."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S039",
+          "text": "“I kept choosing excitement before the people who loved me,” Pinocchio concluded."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S061",
+          "text": "During those deep sleeps, its enormous mouth remained partly open."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G02",
+      "beatId": "B01",
+      "cue": "Pinocchio finally identifies the prisoner beside the candle.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S047",
+          "text": "Later, the Shark swallowed a merchant ship loaded with useful provisions."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S077",
+          "text": "The Shark sneezed with the force and noise of a cannon."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "Within the narrow candlelight, Pinocchio recognised his missing father."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G03",
+      "beatId": "B02",
+      "cue": "Father and son act on their recognition before explanations begin.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S056",
+          "text": "“You carried me through childhood; tonight, I will carry you.”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S017",
+          "text": "Then Pinocchio embraced the thin neck he had remembered for so long."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S083",
+          "text": "“We still have each other, and I remember the path,” he replied."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G04",
+      "beatId": "B03",
+      "cue": "Pinocchio states the choice that connects his many mistakes.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S039",
+          "text": "“I kept choosing excitement before the people who loved me,” Pinocchio concluded."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S061",
+          "text": "During those deep sleeps, its enormous mouth remained partly open."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S093",
+          "text": "He sprang beyond the teeth and plunged into the cold sea."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G05",
+      "beatId": "B04",
+      "cue": "A swallowed ship explains how Geppetto survived for two years.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S077",
+          "text": "The Shark sneezed with the force and noise of a cannon."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S006",
+          "text": "Gradually, the mystery became a candle burning inside a glass bottle."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S047",
+          "text": "Later, the Shark swallowed a merchant ship loaded with useful provisions."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G06",
+      "beatId": "B05",
+      "cue": "Pinocchio promises to carry the father who once carried him.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S083",
+          "text": "“We still have each other, and I remember the path,” he replied."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S056",
+          "text": "“You carried me through childhood; tonight, I will carry you.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "Within the narrow candlelight, Pinocchio recognised his missing father."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G07",
+      "beatId": "B05",
+      "cue": "The Shark's sleeping habit creates a possible doorway.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S061",
+          "text": "During those deep sleeps, its enormous mouth remained partly open."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S093",
+          "text": "He sprang beyond the teeth and plunged into the cold sea."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S017",
+          "text": "Then Pinocchio embraced the thin neck he had remembered for so long."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "A powerful reflex destroys their first escape attempt.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S006",
+          "text": "Gradually, the mystery became a candle burning inside a glass bottle."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S039",
+          "text": "“I kept choosing excitement before the people who loved me,” Pinocchio concluded."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S077",
+          "text": "The Shark sneezed with the force and noise of a cannon."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G09",
+      "beatId": "B07",
+      "cue": "Pinocchio answers Geppetto's despair with what they still possess.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S013",
+          "text": "Within the narrow candlelight, Pinocchio recognised his missing father."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S083",
+          "text": "“We still have each other, and I remember the path,” he replied."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S047",
+          "text": "Later, the Shark swallowed a merchant ship loaded with useful provisions."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Father and son cross the final boundary into the sea.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S093",
+          "text": "He sprang beyond the teeth and plunged into the cold sea."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S017",
+          "text": "Then Pinocchio embraced the thin neck he had remembered for so long."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S056",
+          "text": "“You carried me through childhood; tonight, I will carry you.”"
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "Gradually, the mystery became a candle burning inside a glass bottle.",
+      "tokens": [
+        "Gradually,",
+        "the",
+        "mystery",
+        "became",
+        "a",
+        "candle",
+        "burning",
+        "inside",
+        "a",
+        "glass",
+        "bottle."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "Within the narrow candlelight, Pinocchio recognised his missing father.",
+      "tokens": [
+        "Within",
+        "the",
+        "narrow",
+        "candlelight,",
+        "Pinocchio",
+        "recognised",
+        "his",
+        "missing",
+        "father."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "Then Pinocchio embraced the thin neck he had remembered for so long.",
+      "tokens": [
+        "Then",
+        "Pinocchio",
+        "embraced",
+        "the",
+        "thin",
+        "neck",
+        "he",
+        "had",
+        "remembered",
+        "for",
+        "so",
+        "long."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S039",
+      "beatId": "B03",
+      "text": "“I kept choosing excitement before the people who loved me,” Pinocchio concluded.",
+      "tokens": [
+        "“I",
+        "kept",
+        "choosing",
+        "excitement",
+        "before",
+        "the",
+        "people",
+        "who",
+        "loved",
+        "me,”",
+        "Pinocchio",
+        "concluded."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Later, the Shark swallowed a merchant ship loaded with useful provisions.",
+      "tokens": [
+        "Later,",
+        "the",
+        "Shark",
+        "swallowed",
+        "a",
+        "merchant",
+        "ship",
+        "loaded",
+        "with",
+        "useful",
+        "provisions."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "“You carried me through childhood; tonight, I will carry you.”",
+      "tokens": [
+        "“You",
+        "carried",
+        "me",
+        "through",
+        "childhood;",
+        "tonight,",
+        "I",
+        "will",
+        "carry",
+        "you.”"
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S061",
+      "beatId": "B05",
+      "text": "During those deep sleeps, its enormous mouth remained partly open.",
+      "tokens": [
+        "During",
+        "those",
+        "deep",
+        "sleeps,",
+        "its",
+        "enormous",
+        "mouth",
+        "remained",
+        "partly",
+        "open."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S077",
+      "beatId": "B07",
+      "text": "The Shark sneezed with the force and noise of a cannon.",
+      "tokens": [
+        "The",
+        "Shark",
+        "sneezed",
+        "with",
+        "the",
+        "force",
+        "and",
+        "noise",
+        "of",
+        "a",
+        "cannon."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "“We still have each other, and I remember the path,” he replied.",
+      "tokens": [
+        "“We",
+        "still",
+        "have",
+        "each",
+        "other,",
+        "and",
+        "I",
+        "remember",
+        "the",
+        "path,”",
+        "he",
+        "replied."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S093",
+      "beatId": "B08",
+      "text": "He sprang beyond the teeth and plunged into the cold sea.",
+      "tokens": [
+        "He",
+        "sprang",
+        "beyond",
+        "the",
+        "teeth",
+        "and",
+        "plunged",
+        "into",
+        "the",
+        "cold",
+        "sea."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    }
+  ]
+}

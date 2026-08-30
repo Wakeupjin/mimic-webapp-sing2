@@ -25,5 +25,9 @@
   },
   "generationConfigurationSha256": "c8076bd342dc411afb504450691a73fa0cab3ba9011e08dd36176cbbaad002ac",
   "requestStitching": "not-supported-by-eleven-v3",
-  "generatedAt": "2026-08-30T07:28:43.999Z"
+  "generatedAt": "2026-08-30T07:28:43.999Z",
+  "audioSha256": "2e8ae14a6f29a91c528de4eb7861e8a90a665a1bb90dc0e582548a89e9085ff5",
+  "alignmentSha256": "4dc42eac1717ba12bd123c6adef8f4cc4d2f16cf77b8a80a7dfad3fb8ba756d6",
+  "checksumBackfilledAt": "2026-08-30T10:07:48.488Z",
+  "checksumBackfillEvidence": "audio-verified-against-existing-provenance; alignment-text-verified-against-locked-input"
 }

@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-05",
+  "number": 5,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "The Blue Fairy and the Field of Wonders",
+    "ko": "푸른 요정과 기적의 들판"
+  },
+  "sourceChapters": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "The blue-haired Fairy sends a Falcon to rescue Pinocchio from the oak.",
+    "closing": "Pinocchio leaves prison free but still aware that he has not mastered the lesson behind his repeated choices.",
+    "next": "On the road back, Pinocchio will face further injustice and discover that Geppetto has vanished while searching for him."
+  },
+  "learningObjective": "Explain how fear, lying, and wishful thinking reinforce one another through clear cause-and-effect language.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The Fairy's Rescue",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Move from danger into magical care and a sharply comic diagnosis."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "The Bitter Medicine",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S025",
+      "purpose": "Contrast imagined fear with the manageable truth."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "A Nose Full of Lies",
+      "sentenceStart": "S026",
+      "sentenceEnd": "S038",
+      "purpose": "Make each lie create a visible and escalating consequence."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "The Straight Road",
+      "sentenceStart": "S039",
+      "sentenceEnd": "S048",
+      "purpose": "Restore Pinocchio and give him one simple instruction."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "The Same Sweet Promise",
+      "sentenceStart": "S049",
+      "sentenceEnd": "S065",
+      "purpose": "Show Pinocchio recognising the swindlers yet choosing their story again."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Four Coins in the Earth",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S072",
+      "purpose": "Stage the ritual of the trick and the long, empty wait."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Parrot's Truth",
+      "sentenceStart": "S073",
+      "sentenceEnd": "S079",
+      "purpose": "Replace the imagined fortune with an unmistakable explanation."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "Justice Turned Upside Down",
+      "sentenceStart": "S080",
+      "sentenceEnd": "S103",
+      "purpose": "Expose Simpleton Town's logic and end with freedom that solves no deeper problem."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json"
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

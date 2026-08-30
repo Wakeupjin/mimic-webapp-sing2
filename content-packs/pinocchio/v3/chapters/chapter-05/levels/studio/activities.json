@@ -1,0 +1,1240 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-05",
+  "level": "studio",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S004",
+      "beatId": "B01",
+      "text": "There, the Fairy settled him beside a fire that glowed like a second sunrise.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "There, the Fairy settled him beside a fire",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M01-C02",
+          "text": "that glowed like a second sunrise.",
+          "sourceTextRange": [
+            43,
+            77
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy's Rescue” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "Concerned by this peculiar silence, she summoned three celebrated doctors.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Concerned by this peculiar silence, she summoned three celebrated doctors.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "The Raven solemnly agreed that the exact opposite remained equally possible.",
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "The Raven solemnly agreed that the exact opposite remained equally possible.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "The Fairy dismissed the doctors, then prepared a spoonful of bitter medicine.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "The Fairy dismissed the doctors, then prepared a spoonful of bitter medicine.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Fairy's Rescue” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio sat upright, examined its dark surface, and refused with impressive speed.",
+      "sourceTextRange": [
+        0,
+        84
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio sat upright, examined its dark surface, and refused with impressive speed.",
+          "sourceTextRange": [
+            0,
+            84
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Bitter Medicine” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "Pinocchio tightened his mouth, determined to outlast both medicine and reason.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Pinocchio tightened his mouth, determined to outlast both medicine and reason.",
+          "sourceTextRange": [
+            0,
+            78
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Bitter Medicine” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Pinocchio seized the cup and swallowed everything before the Rabbits reached his bed.",
+      "sourceTextRange": [
+        0,
+        85
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "Pinocchio seized the cup",
+          "sourceTextRange": [
+            0,
+            24
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M07-C02",
+          "text": "and swallowed everything before the Rabbits reached his bed.",
+          "sourceTextRange": [
+            25,
+            85
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Bitter Medicine” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "In bed, Pinocchio moved four coins from his mouth to his pocket.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "In bed, Pinocchio moved four coins from his mouth to his pocket.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Bitter Medicine” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "Once the Fox and Cat entered the tale, however, his brave voice weakened.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Once the Fox and Cat entered the tale,",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M09-C02",
+          "text": "however, his brave voice weakened.",
+          "sourceTextRange": [
+            39,
+            73
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Nose Full of Lies” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S029",
+      "beatId": "B03",
+      "text": "“Somewhere on the road, every coin simply disappeared,” he claimed.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "“Somewhere on the road, every coin simply disappeared,” he claimed.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Nose Full of Lies” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "Branches burst from the enormous nose and pinned their owner beneath them.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Branches burst from the enormous nose and pinned their owner beneath them.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Nose Full of Lies” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S038",
+      "beatId": "B03",
+      "text": "He admitted choosing the miracle because patience had sounded less exciting.",
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "He admitted choosing the miracle because patience had sounded less exciting.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Nose Full of Lies” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S039",
+      "beatId": "B04",
+      "text": "The Fairy summoned Woodpeckers, whose rapid beaks reduced the wooden evidence.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "The Fairy summoned Woodpeckers, whose rapid beaks reduced the wooden evidence.",
+          "sourceTextRange": [
+            0,
+            78
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Straight Road” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S044",
+      "beatId": "B04",
+      "text": "He begged permission to meet his father and escort him through the forest.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "He begged permission to meet his father",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M14-C02",
+          "text": "and escort him through the forest.",
+          "sourceTextRange": [
+            40,
+            74
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Straight Road” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "“Even a straight path demands steady feet,” she warned him gently.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "“Even a straight path demands steady feet,” she warned him gently.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Straight Road” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "With every step, he rehearsed the honest confession Geppetto deserved to hear.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "With every step, he rehearsed the honest confession Geppetto deserved to hear.",
+          "sourceTextRange": [
+            0,
+            78
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Straight Road” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S049",
+      "beatId": "B05",
+      "text": "Near Simpleton Town, two familiar silhouettes waited beside a cracked fountain.",
+      "sourceTextRange": [
+        0,
+        79
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Near Simpleton Town, two familiar silhouettes waited beside a cracked fountain.",
+          "sourceTextRange": [
+            0,
+            79
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Sweet Promise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S054",
+      "beatId": "B05",
+      "text": "Pinocchio reminded them that their disappearance had left him with the bill.",
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "Pinocchio reminded them that their disappearance had left him with the bill.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Sweet Promise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "The Fox then painted a golden tree, heavy with enough coins for a lifetime.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "The Fox then painted a golden tree,",
+          "sourceTextRange": [
+            0,
+            35
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M19-C02",
+          "text": "heavy with enough coins for a lifetime.",
+          "sourceTextRange": [
+            36,
+            75
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Sweet Promise” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S064",
+      "beatId": "B05",
+      "text": "Honest workers looked thin, yet successful tricksters wore silk and jewels.",
+      "sourceTextRange": [
+        0,
+        75
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Honest workers looked thin, yet successful tricksters wore silk and jewels.",
+          "sourceTextRange": [
+            0,
+            75
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Sweet Promise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S067",
+      "beatId": "B06",
+      "text": "Pinocchio buried his four coins with the care of a hopeful gardener.",
+      "sourceTextRange": [
+        0,
+        68
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "Pinocchio buried his four coins with the care of a hopeful gardener.",
+          "sourceTextRange": [
+            0,
+            68
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Four Coins in the Earth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "The Fox sent him towards a distant stream for one final jug.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "The Fox sent him towards a distant stream for one final jug.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Four Coins in the Earth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S071",
+      "beatId": "B06",
+      "text": "He watched the silent ground, waiting for the first golden leaf to emerge.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "He watched the silent ground,",
+          "sourceTextRange": [
+            0,
+            29
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M23-C02",
+          "text": "waiting for the first golden leaf to emerge.",
+          "sourceTextRange": [
+            30,
+            74
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "thought-group boundaries, clause linking, and sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Four Coins in the Earth” with 2 reviewed natural breathing units."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "An hour became two, while the dry soil produced nothing but dust.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "An hour became two, while the dry soil produced nothing but dust.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Four Coins in the Earth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S073",
+      "beatId": "B07",
+      "text": "From a nearby branch, a Parrot began laughing with merciless delight.",
+      "sourceTextRange": [
+        0,
+        69
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "From a nearby branch, a Parrot began laughing with merciless delight.",
+          "sourceTextRange": [
+            0,
+            69
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Parrot's Truth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S076",
+      "beatId": "B07",
+      "text": "While Pinocchio fetched water, the Fox and Cat had recovered every coin.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "While Pinocchio fetched water, the Fox and Cat had recovered every coin.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Parrot's Truth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "Furious and ashamed, Pinocchio rushed to the courthouse demanding justice.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Furious and ashamed, Pinocchio rushed to the courthouse demanding justice.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Parrot's Truth” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S080",
+      "beatId": "B08",
+      "text": "A stern Gorilla judge received his complaint while sleepy guards recorded it.",
+      "sourceTextRange": [
+        0,
+        77
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "A stern Gorilla judge received his complaint while sleepy guards recorded it.",
+          "sourceTextRange": [
+            0,
+            77
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Justice Turned Upside Down” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S089",
+      "beatId": "B08",
+      "text": "Pinocchio had nothing remaining to hide, invest, exaggerate, or promise.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "Pinocchio had nothing remaining to hide, invest, exaggerate, or promise.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Justice Turned Upside Down” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S101",
+      "beatId": "B08",
+      "text": "Pinocchio stepped into daylight, determined to find both Geppetto and the Fairy.",
+      "sourceTextRange": [
+        0,
+        80
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Pinocchio stepped into daylight, determined to find both Geppetto and the Fairy.",
+          "sourceTextRange": [
+            0,
+            80
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Justice Turned Upside Down” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "How does the Fairy’s strange medical consultation begin?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S007",
+          "text": "An Owl arrived with grave wisdom, a Raven with questions, and a Cricket with honesty."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S043",
+          "text": "Joy pulled Pinocchio from bed before strength had fully returned to him."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S076",
+          "text": "While Pinocchio fetched water, the Fox and Cat had recovered every coin."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "What reason do the black Rabbits give for approaching Pinocchio’s bed?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S057",
+          "text": "The famous Field of Wonders, he whispered, lay almost within sight."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S019",
+          "text": "They announced that they collected patients who chose danger over treatment."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S091",
+          "text": "Twice, a pleasing story had defeated a truth he already understood."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "Which physical consequence makes Pinocchio’s lies impossible to hide?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S069",
+          "text": "The Fox sent him towards a distant stream for one final jug."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S007",
+          "text": "An Owl arrived with grave wisdom, a Raven with questions, and a Cricket with honesty."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S032",
+          "text": "The nose stretched beyond the bed until its tip pressed against the wall."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "What action reveals how powerfully hope has restored Pinocchio?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S043",
+          "text": "Joy pulled Pinocchio from bed before strength had fully returned to him."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S076",
+          "text": "While Pinocchio fetched water, the Fox and Cat had recovered every coin."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S019",
+          "text": "They announced that they collected patients who chose danger over treatment."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "Which claim makes the Field of Wonders feel immediately reachable?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S091",
+          "text": "Twice, a pleasing story had defeated a truth he already understood."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S057",
+          "text": "The famous Field of Wonders, he whispered, lay almost within sight."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S032",
+          "text": "The nose stretched beyond the bed until its tip pressed against the wall."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "How does the Fox remove Pinocchio from the buried gold at the crucial moment?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S007",
+          "text": "An Owl arrived with grave wisdom, a Raven with questions, and a Cricket with honesty."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S043",
+          "text": "Joy pulled Pinocchio from bed before strength had fully returned to him."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S069",
+          "text": "The Fox sent him towards a distant stream for one final jug."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G07",
+      "beatId": "B07",
+      "cue": "What did the Fox and Cat accomplish during Pinocchio’s absence?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S076",
+          "text": "While Pinocchio fetched water, the Fox and Cat had recovered every coin."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S019",
+          "text": "They announced that they collected patients who chose danger over treatment."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S057",
+          "text": "The famous Field of Wonders, he whispered, lay almost within sight."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G08",
+      "beatId": "B08",
+      "cue": "What pattern does Pinocchio identify after losing the coins a second time?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S032",
+          "text": "The nose stretched beyond the bed until its tip pressed against the wall."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S091",
+          "text": "Twice, a pleasing story had defeated a truth he already understood."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S069",
+          "text": "The Fox sent him towards a distant stream for one final jug."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G09",
+      "beatId": "B05",
+      "cue": "Which image turns the Fox’s promise into an irresistible fantasy?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S091",
+          "text": "Twice, a pleasing story had defeated a truth he already understood."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S032",
+          "text": "The nose stretched beyond the bed until its tip pressed against the wall."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S059",
+          "text": "The Fox then painted a golden tree, heavy with enough coins for a lifetime."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Why can Pinocchio no longer blame ignorance for following the swindlers?",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S093",
+          "text": "He had recognised the trap clearly and entered it of his own choice."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S032",
+          "text": "The nose stretched beyond the bed until its tip pressed against the wall."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S069",
+          "text": "The Fox sent him towards a distant stream for one final jug."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Complete events from other beats in the same Chapter."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S008",
+      "beatId": "B01",
+      "text": "After lengthy thought, the Owl announced that Pinocchio might possibly be alive.",
+      "tokens": [
+        "After",
+        "lengthy",
+        "thought,",
+        "the",
+        "Owl",
+        "announced",
+        "that",
+        "Pinocchio",
+        "might",
+        "possibly",
+        "be",
+        "alive."
+      ],
+      "focus": "rebuild the time, condition, or circumstance frame and the main clause"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Pinocchio seized the cup and swallowed everything before the Rabbits reached his bed.",
+      "tokens": [
+        "Pinocchio",
+        "seized",
+        "the",
+        "cup",
+        "and",
+        "swallowed",
+        "everything",
+        "before",
+        "the",
+        "Rabbits",
+        "reached",
+        "his",
+        "bed."
+      ],
+      "focus": "rebuild the time, condition, or circumstance frame and the main clause"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S033",
+      "beatId": "B03",
+      "text": "Desperate now, he insisted that no gold had ever belonged to him.",
+      "tokens": [
+        "Desperate",
+        "now,",
+        "he",
+        "insisted",
+        "that",
+        "no",
+        "gold",
+        "had",
+        "ever",
+        "belonged",
+        "to",
+        "him."
+      ],
+      "focus": "rebuild the main clause and its linked that-clause"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S044",
+      "beatId": "B04",
+      "text": "He begged permission to meet his father and escort him through the forest.",
+      "tokens": [
+        "He",
+        "begged",
+        "permission",
+        "to",
+        "meet",
+        "his",
+        "father",
+        "and",
+        "escort",
+        "him",
+        "through",
+        "the",
+        "forest."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "Pinocchio remembered the Fairy’s instruction and managed several steps past them.",
+      "tokens": [
+        "Pinocchio",
+        "remembered",
+        "the",
+        "Fairy’s",
+        "instruction",
+        "and",
+        "managed",
+        "several",
+        "steps",
+        "past",
+        "them."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "When Pinocchio returned, both advisers had disappeared with remarkable efficiency.",
+      "tokens": [
+        "When",
+        "Pinocchio",
+        "returned,",
+        "both",
+        "advisers",
+        "had",
+        "disappeared",
+        "with",
+        "remarkable",
+        "efficiency."
+      ],
+      "focus": "rebuild the time, condition, or circumstance frame and the main clause"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S077",
+      "beatId": "B07",
+      "text": "He clawed through the soil and uncovered only four neat, empty holes.",
+      "tokens": [
+        "He",
+        "clawed",
+        "through",
+        "the",
+        "soil",
+        "and",
+        "uncovered",
+        "only",
+        "four",
+        "neat,",
+        "empty",
+        "holes."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "This failure could not be excused by hunger, darkness, or surprise.",
+      "tokens": [
+        "This",
+        "failure",
+        "could",
+        "not",
+        "be",
+        "excused",
+        "by",
+        "hunger,",
+        "darkness,",
+        "or",
+        "surprise."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "In Pinocchio’s mind, Geppetto exchanged hunger and cold for comfort and peace.",
+      "tokens": [
+        "In",
+        "Pinocchio’s",
+        "mind,",
+        "Geppetto",
+        "exchanged",
+        "hunger",
+        "and",
+        "cold",
+        "for",
+        "comfort",
+        "and",
+        "peace."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S094",
+      "beatId": "B08",
+      "text": "Days passed as Pinocchio listened to prisoners celebrate their dishonest achievements.",
+      "tokens": [
+        "Days",
+        "passed",
+        "as",
+        "Pinocchio",
+        "listened",
+        "to",
+        "prisoners",
+        "celebrate",
+        "their",
+        "dishonest",
+        "achievements."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    }
+  ]
+}

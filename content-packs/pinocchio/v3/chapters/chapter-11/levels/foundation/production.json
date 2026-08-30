@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-11",
+  "level": "foundation",
+  "status": "audio-not-generated",
+  "targets": {
+    "watchDurationSeconds": 480,
+    "acceptedGoldenRangeSeconds": [
+      360,
+      600
+    ],
+    "referenceWordsPerMinute": 112,
+    "singleEditorialMaster": true,
+    "preferredGoldenRangeSeconds": [
+      430,
+      540
+    ],
+    "durationPolicy": "Six to ten minutes is the acceptance window; eight minutes is the editorial target, never a reason to trim a natural performance."
+  },
+  "narrationDirection": {
+    "voiceCharacter": "Warm, clear, emotionally present British storybook narrator; human timing and restrained playfulness.",
+    "performance": "Hold the darkness patiently, let the reunion breathe, keep the confession clear, and carry the second escape attempt with quiet resolve.",
+    "levelDelivery": "Give each short sentence enough space to land while preserving continuity across the full story.",
+    "pacing": "Use complete thoughts, meaningful pauses at beat turns, and enough silence for learners to process the story.",
+    "beatCues": {
+      "B01": "[hushed]",
+      "B02": "[with astonished joy]",
+      "B03": "[honestly, gathering momentum]",
+      "B04": "[wearily]",
+      "B05": "[firmly]",
+      "B06": "[with quiet suspense]",
+      "B07": "[startled, then resolute]",
+      "B08": "[bravely]"
+    },
+    "avoid": [
+      "trailer-announcer intensity",
+      "sentence-by-sentence reset timing",
+      "robotic equal pauses",
+      "overacting every quotation"
+    ]
+  },
+  "provider": {
+    "name": "ElevenLabs",
+    "modelId": "eleven_v3",
+    "voiceCandidateName": "Lily",
+    "voiceId": "pFZP5JQG7iQjIQuC4Bku",
+    "accent": "British English",
+    "accentTag": "[British accent]",
+    "commercialPlanSnapshot": "user-confirmed-paid-2026-08-30",
+    "voiceAvailabilityVerifiedAt": "2026-08-30T07:25:55.854Z",
+    "approved": true,
+    "approval": {
+      "role": "product-owner",
+      "approvedAt": "2026-08-30",
+      "scope": "All twelve Chapters and all three language levels of Pinocchio v3",
+      "note": "Lily is the approved British narrator for the complete Pinocchio v3 Story Pack."
+    }
+  },
+  "generation": {
+    "strategyPreference": [
+      "studio-v3-long-form",
+      "two-act-v3-fallback"
+    ],
+    "selectedStrategy": null,
+    "sentenceBySentenceGenerationAllowed": false,
+    "requestStitchingSupported": false,
+    "requestCharacterLimit": 5000,
+    "outputFormat": "mp3_44100_128",
+    "seed": 2711,
+    "actPlan": [
+      {
+        "actId": "act-01",
+        "beatIds": [
+          "B01",
+          "B02",
+          "B03",
+          "B04"
+        ]
+      },
+      {
+        "actId": "act-02",
+        "beatIds": [
+          "B05",
+          "B06",
+          "B07",
+          "B08"
+        ]
+      }
+    ],
+    "finalAlignment": "ElevenLabs Forced Alignment preferred; per-act timestamp fallback allowed only when recorded.",
+    "scriptChecksum": "sha256:0f202e40f79e5653572bc0d40e5add6f326148e8737816a8bb1b37437ef121a9",
+    "requests": [],
+    "seams": [],
+    "generatedAt": null,
+    "operator": null,
+    "cost": null,
+    "activitiesChecksum": "sha256:ec993876be0a3184669138b5b32fce9da4487a0ddcaa9a5feb6e57bb973e1339"
+  },
+  "outputs": {
+    "masterAudio": null,
+    "sentenceTimeline": null,
+    "forcedAlignment": null,
+    "provenance": null,
+    "voiceProfileSnapshot": null,
+    "checksum": null
+  },
+  "humanListen": {
+    "status": "pending",
+    "reviewer": null,
+    "reviewedAt": null,
+    "notes": null
+  }
+}

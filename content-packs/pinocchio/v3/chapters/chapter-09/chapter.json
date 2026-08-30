@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-09",
+  "number": 9,
+  "status": "content-complete-audio-pending",
+  "titles": {
+    "en": "The Land of Toys",
+    "ko": "장난감 나라"
+  },
+  "sourceChapters": [
+    30,
+    31,
+    32
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "The Fairy prepares to celebrate Pinocchio’s transformation into a real boy.",
+    "closing": "Transformed into Donkeys, Pinocchio and Lamp-Wick discover Toyland’s trap as the morning market waits.",
+    "next": "At the market, the friends will be separated and Pinocchio will be sold to a circus."
+  },
+  "learningObjective": "Explain how seductive promises hide delayed costs using contrast, warning, accumulation, and consequence.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "Tomorrow a Real Boy",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Place earned transformation within reach before the final temptation begins."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "Lamp-Wick’s Invitation",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Make a life without duty sound attractive enough to challenge Pinocchio’s progress."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The Midnight Wagon",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "purpose": "Surround Pinocchio’s choice with visible warnings that he consciously ignores."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "Endless Play",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Deliver Toyland’s immediate pleasure while letting responsibility and time disappear."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Five Months Later",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "purpose": "Reveal the delayed physical cost after pleasure has become routine."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "Donkey Fever",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S078",
+      "purpose": "Name the consequence and connect it to months of repeated choices."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Same Ears",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S088",
+      "purpose": "Let shared fear turn into the complete loss of human speech and agency."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "The Trap Revealed",
+      "sentenceStart": "S089",
+      "sentenceEnd": "S105",
+      "purpose": "Expose the commercial system behind Toyland and end with the morning market waiting."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json",
+      "beatRanges": [
+        {"beatId": "B01", "sentenceStart": "S001", "sentenceEnd": "S013"},
+        {"beatId": "B02", "sentenceStart": "S014", "sentenceEnd": "S026"},
+        {"beatId": "B03", "sentenceStart": "S027", "sentenceEnd": "S040"},
+        {"beatId": "B04", "sentenceStart": "S041", "sentenceEnd": "S052"},
+        {"beatId": "B05", "sentenceStart": "S053", "sentenceEnd": "S065"},
+        {"beatId": "B06", "sentenceStart": "S066", "sentenceEnd": "S078"},
+        {"beatId": "B07", "sentenceStart": "S079", "sentenceEnd": "S091"},
+        {"beatId": "B08", "sentenceStart": "S092", "sentenceEnd": "S106"}
+      ]
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json",
+      "beatRanges": [
+        {"beatId": "B01", "sentenceStart": "S001", "sentenceEnd": "S013"},
+        {"beatId": "B02", "sentenceStart": "S014", "sentenceEnd": "S026"},
+        {"beatId": "B03", "sentenceStart": "S027", "sentenceEnd": "S039"},
+        {"beatId": "B04", "sentenceStart": "S040", "sentenceEnd": "S052"},
+        {"beatId": "B05", "sentenceStart": "S053", "sentenceEnd": "S065"},
+        {"beatId": "B06", "sentenceStart": "S066", "sentenceEnd": "S078"},
+        {"beatId": "B07", "sentenceStart": "S079", "sentenceEnd": "S091"},
+        {"beatId": "B08", "sentenceStart": "S092", "sentenceEnd": "S104"}
+      ]
+    }
+  }
+}

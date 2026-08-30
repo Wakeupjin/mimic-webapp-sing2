@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-09",
+  "level": "foundation",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "The Fairy’s bright house was busy with party work.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "The Fairy’s bright house was busy with party work.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Tomorrow a Real Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "Small cakes, fruit, and sweets waited on a long table.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "Small cakes, fruit, and sweets waited on a long table.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Tomorrow a Real Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "However, he could not find his friend Lamp-Wick.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "However, he could not find his friend Lamp-Wick.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Tomorrow a Real Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "“Please come to my party tomorrow,” Pinocchio said.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "“Please come to my party tomorrow,” Pinocchio said.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Tomorrow a Real Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "There were no schools, books, teachers, or lessons.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "There were no schools, books, teachers, or lessons.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick’s Invitation” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Still, a life of easy games sounded wonderful.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Still, a life of easy games sounded wonderful.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick’s Invitation” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "One minute became ten under the bright moon above the quiet fields.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "One minute became ten under the bright moon above the quiet fields.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick’s Invitation” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S026",
+      "beatId": "B02",
+      "text": "By midnight, Pinocchio was still beside him.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "By midnight, Pinocchio was still beside him.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Lamp-Wick’s Invitation” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S027",
+      "beatId": "B03",
+      "text": "Soon they heard small bells in the distance.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Soon they heard small bells in the distance.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Midnight Wagon” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "Twelve tired donkeys with wet eyes pulled the heavy wagon.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Twelve tired donkeys with wet eyes pulled the heavy wagon.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Midnight Wagon” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "Pinocchio remembered his party and stopped.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Pinocchio remembered his party and stopped.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Midnight Wagon” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S037",
+      "beatId": "B03",
+      "text": "The driver hit the animal and laughed as if nothing had happened.",
+      "sourceTextRange": [
+        0,
+        65
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "The driver hit the animal and laughed as if nothing had happened.",
+          "sourceTextRange": [
+            0,
+            65
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Midnight Wagon” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "Some children raced through crowded squares while others flew large kites.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Some children raced through crowded squares while others flew large kites.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Endless Play” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Pinocchio and Lamp-Wick tried every game.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "Pinocchio and Lamp-Wick tried every game.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Endless Play” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "Soon the days became one long holiday.",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Soon the days became one long holiday.",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Endless Play” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S052",
+      "beatId": "B04",
+      "text": "He played louder because the memory hurt.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "He played louder because the memory hurt.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Endless Play” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "Five months passed without school or useful work.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Five months passed without school or useful work.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Five Months Later” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "Then the mirror showed his own donkey ears.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "Then the mirror showed his own donkey ears.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Five Months Later” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio became too frightened to stay alone.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "Pinocchio became too frightened to stay alone.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Five Months Later” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "She knew many illnesses of careless children.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "She knew many illnesses of careless children.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Five Months Later” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S066",
+      "beatId": "B06",
+      "text": "She checked his ears, hands, and wooden feet.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "She checked his ears, hands, and wooden feet.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Donkey Fever” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "Soon Pinocchio would become a full donkey.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Soon Pinocchio would become a full donkey.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Donkey Fever” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S075",
+      "beatId": "B06",
+      "text": "Pinocchio remembered the donkey under the wagon.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Pinocchio remembered the donkey under the wagon.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Donkey Fever” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S078",
+      "beatId": "B06",
+      "text": "He hurried towards Lamp-Wick’s small house.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "He hurried towards Lamp-Wick’s small house.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Donkey Fever” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "Lamp-Wick opened the door with a huge cap.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Lamp-Wick opened the door with a huge cap.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Ears” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "They counted to three and uncovered together.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "They counted to three and uncovered together.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Ears” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S088",
+      "beatId": "B07",
+      "text": "Hands became hooves, and faces became longer.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Hands became hooves, and faces became longer.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Same Ears” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "Outside, the wagon driver heard the braying.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Outside, the wagon driver heard the braying.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Trap Revealed” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S097",
+      "beatId": "B08",
+      "text": "Only another sad donkey sound came out.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "Only another sad donkey sound came out.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Trap Revealed” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S102",
+      "beatId": "B08",
+      "text": "He remembered the Fairy’s twelve empty chairs.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "He remembered the Fairy’s twelve empty chairs.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Trap Revealed” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The Fairy has prepared the reward Pinocchio is meant to receive the next morning.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S002",
+          "text": "Tomorrow, Pinocchio would become a real boy."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S047",
+          "text": "Pinocchio and Lamp-Wick tried every game."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S076",
+          "text": "Now he knew that it had been a child."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Lamp-Wick explains why Toyland seems free from every duty.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S057",
+          "text": "Then the mirror showed his own donkey ears."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S084",
+          "text": "Two pairs of donkey ears stood straight up."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S016",
+          "text": "There were no schools, books, teachers, or lessons."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "One of the animals pulling the wagon gives Pinocchio a direct warning.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S068",
+          "text": "“You have Donkey Fever,” she told him."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S036",
+          "text": "“Turn back before you become like me.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S087",
+          "text": "Their laughter changed into loud donkey brays."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "Pinocchio and Lamp-Wick throw themselves into Toyland's attractions.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S047",
+          "text": "Pinocchio and Lamp-Wick tried every game."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S076",
+          "text": "Now he knew that it had been a child."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S100",
+          "text": "Pinocchio finally understood every warning on the midnight road."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "The mirror confirms the first physical sign of the hidden cost.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S084",
+          "text": "Two pairs of donkey ears stood straight up."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S002",
+          "text": "Tomorrow, Pinocchio would become a real boy."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S057",
+          "text": "Then the mirror showed his own donkey ears."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "The Marmot names the illness that cannot be reversed.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S087",
+          "text": "Their laughter changed into loud donkey brays."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S068",
+          "text": "“You have Donkey Fever,” she told him."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S016",
+          "text": "There were no schools, books, teachers, or lessons."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Pinocchio finally understands who the warning donkey once was.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S076",
+          "text": "Now he knew that it had been a child."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S100",
+          "text": "Pinocchio finally understood every warning on the midnight road."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S036",
+          "text": "“Turn back before you become like me.”"
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "The two boys reveal that the same change is happening to both.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S002",
+          "text": "Tomorrow, Pinocchio would become a real boy."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S047",
+          "text": "Pinocchio and Lamp-Wick tried every game."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S084",
+          "text": "Two pairs of donkey ears stood straight up."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G09",
+      "beatId": "B07",
+      "cue": "Human laughter becomes the sound of complete transformation.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S016",
+          "text": "There were no schools, books, teachers, or lessons."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S087",
+          "text": "Their laughter changed into loud donkey brays."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S057",
+          "text": "Then the mirror showed his own donkey ears."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Pinocchio finally understands the warnings he ignored on the midnight road.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S100",
+          "text": "Pinocchio finally understood every warning on the midnight road."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S036",
+          "text": "“Turn back before you become like me.”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S068",
+          "text": "“You have Donkey Fever,” she told him."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other true sentences from different moments; the described action, cause, or result identifies the target."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S002",
+      "beatId": "B01",
+      "text": "Tomorrow, Pinocchio would become a real boy.",
+      "tokens": [
+        "Tomorrow,",
+        "Pinocchio",
+        "would",
+        "become",
+        "a",
+        "real",
+        "boy."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S016",
+      "beatId": "B02",
+      "text": "There were no schools, books, teachers, or lessons.",
+      "tokens": [
+        "There",
+        "were",
+        "no",
+        "schools,",
+        "books,",
+        "teachers,",
+        "or",
+        "lessons."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S036",
+      "beatId": "B03",
+      "text": "“Turn back before you become like me.”",
+      "tokens": [
+        "“Turn",
+        "back",
+        "before",
+        "you",
+        "become",
+        "like",
+        "me.”"
+      ],
+      "focus": "rebuild the complete spoken thought with its clause links and punctuation"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S047",
+      "beatId": "B04",
+      "text": "Pinocchio and Lamp-Wick tried every game.",
+      "tokens": [
+        "Pinocchio",
+        "and",
+        "Lamp-Wick",
+        "tried",
+        "every",
+        "game."
+      ],
+      "focus": "rebuild coordinated words or actions in their original order"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "Then the mirror showed his own donkey ears.",
+      "tokens": [
+        "Then",
+        "the",
+        "mirror",
+        "showed",
+        "his",
+        "own",
+        "donkey",
+        "ears."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "“You have Donkey Fever,” she told him.",
+      "tokens": [
+        "“You",
+        "have",
+        "Donkey",
+        "Fever,”",
+        "she",
+        "told",
+        "him."
+      ],
+      "focus": "rebuild the quoted words, reporting clause, and dialogue punctuation"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S076",
+      "beatId": "B06",
+      "text": "Now he knew that it had been a child.",
+      "tokens": [
+        "Now",
+        "he",
+        "knew",
+        "that",
+        "it",
+        "had",
+        "been",
+        "a",
+        "child."
+      ],
+      "focus": "rebuild the main clause and its linked that-clause"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "Two pairs of donkey ears stood straight up.",
+      "tokens": [
+        "Two",
+        "pairs",
+        "of",
+        "donkey",
+        "ears",
+        "stood",
+        "straight",
+        "up."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Their laughter changed into loud donkey brays.",
+      "tokens": [
+        "Their",
+        "laughter",
+        "changed",
+        "into",
+        "loud",
+        "donkey",
+        "brays."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S100",
+      "beatId": "B08",
+      "text": "Pinocchio finally understood every warning on the midnight road.",
+      "tokens": [
+        "Pinocchio",
+        "finally",
+        "understood",
+        "every",
+        "warning",
+        "on",
+        "the",
+        "midnight",
+        "road."
+      ],
+      "focus": "rebuild the complete subject–verb thought with its modifiers in place"
+    }
+  ]
+}

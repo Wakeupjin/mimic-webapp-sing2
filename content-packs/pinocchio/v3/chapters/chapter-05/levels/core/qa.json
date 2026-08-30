@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "chapter-05",
+  "level": "core",
+  "status": "automated-structure-pass-human-review-pending",
+  "metrics": {
+    "sentenceCount": 103,
+    "wordCount": 1091,
+    "estimatedDurationSecondsAt128Wpm": 511.4,
+    "mimicCount": 30,
+    "guessCount": 10,
+    "wordCountItems": 10,
+    "beatCount": 8,
+    "masterSha256": "6096afd11e1fb2fae251372fd55b1fdf49ac2c8777d30e667a75ab038b0147d1",
+    "actualDurationSeconds": null,
+    "audioBytes": null,
+    "audioSha256": null,
+    "alignmentSource": null,
+    "providerRequestCount": 0,
+    "providerReportedCharacterCost": null,
+    "activitiesSha256": "2b71c33e515b3e7dfa7c867d58fa5bbccfc4aab4c608d4eb563a3af34c0ddf8e",
+    "mimicChunkCount": 36
+  },
+  "automatedValidation": {
+    "command": "Pinocchio v3 Core Chapters 02–05 structural authoring audit",
+    "status": "passed-official-scoped-activity-validation",
+    "lastRunAt": "2026-08-30"
+  },
+  "humanApprovals": {
+    "editorial": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "learning": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "voice": {
+      "status": "narrator-approved",
+      "reviewer": "product-owner",
+      "reviewedAt": "2026-08-30"
+    },
+    "audio": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "rights": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    "release": {
+      "status": "pending",
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  },
+  "blockingIssues": [
+    "Named editorial and learning approval not recorded.",
+    "Human listen-through, visual beats, and product preview are not complete.",
+    "Lily batch generation should finish by the 2026-11-30 internal cutoff ahead of the scheduled 2026-12-31 voice retirement.",
+    "Target-territory rights review remains pending."
+  ],
+  "activityReview": {
+    "mimicBoundaries": {
+      "status": "passed-manual-90-source-sentence-and-chunk-audit",
+      "reviewedAt": "2026-08-30",
+      "rule": "Each Mimic item is one unique full source sentence; nested chunks are exact 2–12-word ranges divided only at natural breath or meaning boundaries."
+    },
+    "exactSourceText": "passed-90-mimic-30-guess-30-word-source-audit",
+    "guessCueAnswerSemantics": "revalidated-and-manually-reviewed-10-items",
+    "wordGrammarFocus": "rebuilt-and-manually-reviewed-10-items",
+    "validatorNote": "Official authored validator reports zero errors for this Core Chapter after source, beat, checksum, and nested-chunk validation."
+  },
+  "independentLearningReview": {
+    "status": "agent-review-completed-human-approval-pending",
+    "reviewerType": "independent-ai-content-qa",
+    "reviewedAt": "2026-08-30",
+    "scope": [
+      "30 unique Mimic source sentences",
+      "full-sentence item contract with nested 2–12-word chunks",
+      "exact source ranges and complete chunk reconstruction",
+      "eight-beat learning coverage with at least three sentences per beat",
+      "Guess cue-to-answer grounding and exact option text",
+      "Word structure focus and exact token reconstruction"
+    ],
+    "evidence": {
+      "mimicItemCount": 30,
+      "uniqueMimicSourceCount": 30,
+      "mimicChunkCount": 36,
+      "flatSplitItemsRemaining": 0,
+      "guessItemsReviewed": 10,
+      "wordItemsReviewed": 10,
+      "humanLearningApproval": "pending"
+    },
+    "note": "This evidence records an independent AI content review only; editorial and learning approvals remain pending for named human reviewers."
+  }
+}

@@ -1,0 +1,1197 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-06",
+  "level": "core",
+  "source": "master.txt",
+  "selectionPolicy": "Thirty unique full source sentences are selected from the continuous Watch master. Each full sentence remains the Mimic item; its chunks divide delivery only at natural punctuation or meaning boundaries. Every chunk is an exact 2–12-word source range, and fixed midpoint splitting is prohibited.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "When the prison gate opened, Pinocchio hurried towards the Fairy’s house.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "When the prison gate opened, Pinocchio hurried towards the Fairy’s house.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Road Back”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S004",
+      "beatId": "B01",
+      "text": "The road crossed a lonely field beneath the afternoon sun.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "The road crossed a lonely field beneath the afternoon sun.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Road Back”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S010",
+      "beatId": "B01",
+      "text": "Pinocchio tried to step over it, but the great tail rose.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "Pinocchio tried to step over it, but the great tail rose.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “The Road Back”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "It laughed until it collapsed across the road, leaving Pinocchio free to pass.",
+      "sourceTextRange": [
+        0,
+        78
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "It laughed until it collapsed across the road,",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M04-C02",
+          "text": "leaving Pinocchio free to pass.",
+          "sourceTextRange": [
+            47,
+            78
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Road Back”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio cleaned his face, but evening approached.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio cleaned his face, but evening approached.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “Hunger in the Vineyard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "“I shall take only one bunch,” he told himself.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "“I shall take only one bunch,” he told himself.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Hunger in the Vineyard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "Pinocchio remembered the Woodpecker, the Cat, and every ignored warning.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "Pinocchio remembered the Woodpecker, the Cat, and every ignored warning.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “Hunger in the Vineyard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S026",
+      "beatId": "B02",
+      "text": "He remained trapped until a farmer arrived carrying a lantern.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "He remained trapped until a farmer arrived carrying a lantern.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “Hunger in the Vineyard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "When he saw Pinocchio, he frowned at the ruined vines.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "When he saw Pinocchio, he frowned at the ruined vines.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Watchdog’s Collar”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "Pinocchio explained that hunger had tempted him towards the grapes.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "Pinocchio explained that hunger had tempted him towards the grapes.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Watchdog’s Collar”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "The farmer’s watchdog, Melampo, had died days before.",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "The farmer’s watchdog, Melampo, had died days before.",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Watchdog’s Collar”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S038",
+      "beatId": "B03",
+      "text": "Pinocchio crouched beside the kennel, humiliated and unable to escape.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Pinocchio crouched beside the kennel, humiliated and unable to escape.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Watchdog’s Collar”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S041",
+      "beatId": "B04",
+      "text": "They were surprised to find Pinocchio where Melampo had once slept.",
+      "sourceTextRange": [
+        0,
+        67
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "They were surprised to find Pinocchio where Melampo had once slept.",
+          "sourceTextRange": [
+            0,
+            67
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Weasels’ Bargain”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S045",
+      "beatId": "B04",
+      "text": "“Accept the same arrangement,” she whispered, “and everyone will be satisfied.”",
+      "sourceTextRange": [
+        0,
+        79
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "“Accept the same arrangement,” she whispered, “and everyone will be satisfied.”",
+          "sourceTextRange": [
+            0,
+            79
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Weasels’ Bargain”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S049",
+      "beatId": "B04",
+      "text": "The Weasels crept inside while Pinocchio waited beside the door.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "The Weasels crept inside while Pinocchio waited beside the door.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Weasels’ Bargain”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S051",
+      "beatId": "B04",
+      "text": "He barked until lights appeared in the farmhouse windows.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "He barked until lights appeared in the farmhouse windows.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Weasels’ Bargain”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S053",
+      "beatId": "B05",
+      "text": "He asked Pinocchio how he had discovered their secret arrangement.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "He asked Pinocchio how he had discovered their secret arrangement.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Honesty Earns Freedom”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S058",
+      "beatId": "B05",
+      "text": "“You stole my grapes, but tonight you protected what was mine.”",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“You stole my grapes, but tonight you protected what was mine.”",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Honesty Earns Freedom”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "“Remember the promise when you are hungry,” the farmer replied.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "“Remember the promise when you are hungry,” the farmer replied.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Honesty Earns Freedom”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S063",
+      "beatId": "B05",
+      "text": "Honesty had not cancelled his mistake, but it had changed his next choice.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Honesty had not cancelled his mistake,",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M20-C02",
+          "text": "but it had changed his next choice.",
+          "sourceTextRange": [
+            39,
+            74
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “Honesty Earns Freedom”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "They claimed that Pinocchio’s desertion had broken her heart.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "They claimed that Pinocchio’s desertion had broken her heart.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Fairy’s Memorial Stone”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S072",
+      "beatId": "B06",
+      "text": "Pinocchio wept until his voice became a dry wooden whisper.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Pinocchio wept until his voice became a dry wooden whisper.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Fairy’s Memorial Stone”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S075",
+      "beatId": "B06",
+      "text": "The sky darkened while he remained beside the silent stone.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "The sky darkened while he remained beside the silent stone.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Fairy’s Memorial Stone”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S078",
+      "beatId": "B06",
+      "text": "A Pigeon circled the field and landed beside the stone.",
+      "sourceTextRange": [
+        0,
+        55
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "A Pigeon circled the field and landed beside the stone.",
+          "sourceTextRange": [
+            0,
+            55
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Fairy’s Memorial Stone”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "The bird had known Geppetto and recognised the puppet immediately.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "The bird had known Geppetto and recognised the puppet immediately.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “News from the Pigeon”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "Pinocchio sprang up, suddenly filled with hope and fear.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "Pinocchio sprang up, suddenly filled with hope and fear.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “News from the Pigeon”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S091",
+      "beatId": "B07",
+      "text": "Far offshore, a tiny boat climbed and disappeared between enormous waves.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Far offshore, a tiny boat climbed and disappeared between enormous waves.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “News from the Pigeon”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S092",
+      "beatId": "B08",
+      "text": "Pinocchio narrowed his eyes and recognised Geppetto at the oars.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Pinocchio narrowed his eyes and recognised Geppetto at the oars.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Into the Storm”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S095",
+      "beatId": "B08",
+      "text": "Before he could turn the boat, a dark wall of water struck it.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "Before he could turn the boat,",
+          "sourceTextRange": [
+            0,
+            30
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M29-C02",
+          "text": "a dark wall of water struck it.",
+          "sourceTextRange": [
+            31,
+            62
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “Into the Storm”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "Still, Pinocchio kicked towards the darkness where the boat had disappeared.",
+      "sourceTextRange": [
+        0,
+        76
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "Still, Pinocchio kicked towards the darkness where the boat had disappeared.",
+          "sourceTextRange": [
+            0,
+            76
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Into the Storm”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The terrifying roadblock ends in an absurd escape.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S013",
+          "text": "It laughed until it collapsed across the road, leaving Pinocchio free to pass."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S044",
+          "text": "They kept seven and secretly gave Melampo one for staying silent."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S081",
+          "text": "For months, Geppetto had crossed towns, forests, and distant roads."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Hunger leads Pinocchio to cross a boundary he knows is wrong.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S055",
+          "text": "Instead, he repeated every word of the Weasels’ offer."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S018",
+          "text": "He climbed over the wall and reached between the leaves."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S086",
+          "text": "“Climb onto my back,” said the Pigeon, lowering one broad wing."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "The farmer assigns Pinocchio the humiliating job of guarding the chickens.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S067",
+          "text": "Words carved upon it said the Blue Fairy had died of sorrow."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S096",
+          "text": "For one terrible moment, both the boat and Geppetto vanished."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S036",
+          "text": "“Tonight, you will guard my chickens in his place,” he said."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "The Weasels reveal the payment that bought Melampo’s silence.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S044",
+          "text": "They kept seven and secretly gave Melampo one for staying silent."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S081",
+          "text": "For months, Geppetto had crossed towns, forests, and distant roads."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S105",
+          "text": "He knew only that, this time, he would not abandon his father."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "Pinocchio reports the entire dishonest offer instead of claiming easy glory.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S086",
+          "text": "“Climb onto my back,” said the Pigeon, lowering one broad wing."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S055",
+          "text": "Instead, he repeated every word of the Weasels’ offer."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "It laughed until it collapsed across the road, leaving Pinocchio free to pass."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "At the vanished cottage, a carved message makes loss feel final.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S096",
+          "text": "For one terrible moment, both the boat and Geppetto vanished."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S018",
+          "text": "He climbed over the wall and reached between the leaves."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S067",
+          "text": "Words carved upon it said the Blue Fairy had died of sorrow."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G07",
+      "beatId": "B07",
+      "cue": "The Pigeon explains how long Geppetto has searched for his son.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S081",
+          "text": "For months, Geppetto had crossed towns, forests, and distant roads."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S105",
+          "text": "He knew only that, this time, he would not abandon his father."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S036",
+          "text": "“Tonight, you will guard my chickens in his place,” he said."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "The Pigeon offers the only way to reach the distant coast quickly.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S013",
+          "text": "It laughed until it collapsed across the road, leaving Pinocchio free to pass."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S086",
+          "text": "“Climb onto my back,” said the Pigeon, lowering one broad wing."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S044",
+          "text": "They kept seven and secretly gave Melampo one for staying silent."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "A wave hides both Geppetto and his boat from the watching crowd.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S018",
+          "text": "He climbed over the wall and reached between the leaves."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S055",
+          "text": "Instead, he repeated every word of the Weasels’ offer."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S096",
+          "text": "For one terrible moment, both the boat and Geppetto vanished."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Pinocchio chooses not to abandon his father again.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S105",
+          "text": "He knew only that, this time, he would not abandon his father."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S036",
+          "text": "“Tonight, you will guard my chickens in his place,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S067",
+          "text": "Words carved upon it said the Blue Fairy had died of sorrow."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Other exact moments from distant beats of the same continuous Chapter; plausible in isolation but incompatible with the cue’s actor, cause, or consequence."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S003",
+      "beatId": "B01",
+      "text": "This time, he meant to apologise without another excuse.",
+      "tokens": [
+        "This",
+        "time,",
+        "he",
+        "meant",
+        "to",
+        "apologise",
+        "without",
+        "another",
+        "excuse."
+      ],
+      "focus": "meant followed by a to-infinitive complement"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S015",
+      "beatId": "B02",
+      "text": "He had eaten nothing since leaving prison, and hunger sharpened every smell.",
+      "tokens": [
+        "He",
+        "had",
+        "eaten",
+        "nothing",
+        "since",
+        "leaving",
+        "prison,",
+        "and",
+        "hunger",
+        "sharpened",
+        "every",
+        "smell."
+      ],
+      "focus": "past perfect plus since + -ing time phrase and an and-clause"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "When he saw Pinocchio, he frowned at the ruined vines.",
+      "tokens": [
+        "When",
+        "he",
+        "saw",
+        "Pinocchio,",
+        "he",
+        "frowned",
+        "at",
+        "the",
+        "ruined",
+        "vines."
+      ],
+      "focus": "When time clause followed by the main action"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S041",
+      "beatId": "B04",
+      "text": "They were surprised to find Pinocchio where Melampo had once slept.",
+      "tokens": [
+        "They",
+        "were",
+        "surprised",
+        "to",
+        "find",
+        "Pinocchio",
+        "where",
+        "Melampo",
+        "had",
+        "once",
+        "slept."
+      ],
+      "focus": "to-infinitive complement plus a where clause containing past perfect"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S055",
+      "beatId": "B05",
+      "text": "Instead, he repeated every word of the Weasels’ offer.",
+      "tokens": [
+        "Instead,",
+        "he",
+        "repeated",
+        "every",
+        "word",
+        "of",
+        "the",
+        "Weasels’",
+        "offer."
+      ],
+      "focus": "fronted Instead transition contrasting this action with the expected one"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "They claimed that Pinocchio’s desertion had broken her heart.",
+      "tokens": [
+        "They",
+        "claimed",
+        "that",
+        "Pinocchio’s",
+        "desertion",
+        "had",
+        "broken",
+        "her",
+        "heart."
+      ],
+      "focus": "that content clause containing past perfect"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S081",
+      "beatId": "B07",
+      "text": "For months, Geppetto had crossed towns, forests, and distant roads.",
+      "tokens": [
+        "For",
+        "months,",
+        "Geppetto",
+        "had",
+        "crossed",
+        "towns,",
+        "forests,",
+        "and",
+        "distant",
+        "roads."
+      ],
+      "focus": "past perfect followed by a three-place list"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S089",
+      "beatId": "B07",
+      "text": "By morning, the smell of salt reached them from the sea.",
+      "tokens": [
+        "By",
+        "morning,",
+        "the",
+        "smell",
+        "of",
+        "salt",
+        "reached",
+        "them",
+        "from",
+        "the",
+        "sea."
+      ],
+      "focus": "fronted By morning time phrase followed by the main clause"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S098",
+      "beatId": "B08",
+      "text": "He remembered every road his father had travelled to find him.",
+      "tokens": [
+        "He",
+        "remembered",
+        "every",
+        "road",
+        "his",
+        "father",
+        "had",
+        "travelled",
+        "to",
+        "find",
+        "him."
+      ],
+      "focus": "omitted-that relative clause plus past perfect and a purpose infinitive"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S105",
+      "beatId": "B08",
+      "text": "He knew only that, this time, he would not abandon his father.",
+      "tokens": [
+        "He",
+        "knew",
+        "only",
+        "that,",
+        "this",
+        "time,",
+        "he",
+        "would",
+        "not",
+        "abandon",
+        "his",
+        "father."
+      ],
+      "focus": "that content clause with negative modal would not"
+    }
+  ]
+}

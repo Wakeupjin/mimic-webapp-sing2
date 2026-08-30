@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-08",
+  "number": 8,
+  "status": "content-complete-audio-pending",
+  "titles": {
+    "en": "The Beach and a Better Year",
+    "ko": "해변의 위기와 더 나은 한 해"
+  },
+  "sourceChapters": [
+    27,
+    28,
+    29
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "On the beach, Pinocchio discovers that his classmates invented the Shark rumour.",
+    "closing": "After a year of better choices, Pinocchio is promised humanity, but Lamp-Wick is waiting with one last temptation.",
+    "next": "On the eve of becoming human, Pinocchio hears about a country where nobody studies or works."
+  },
+  "learningObjective": "Retell conflict and rescue by separating blame from responsibility and showing how change is proven over time.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "The False Rumour",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Reveal the classmates’ deception and push Pinocchio from restraint towards anger."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "A Battle of Books",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S026",
+      "purpose": "Turn a comic quarrel into real harm without celebrating the violence."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "Wrongly Accused",
+      "sentenceStart": "S027",
+      "sentenceEnd": "S039",
+      "purpose": "Separate Pinocchio’s responsibility for fighting from blame for Eugene’s injury."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "Saving Alidoro",
+      "sentenceStart": "S040",
+      "sentenceEnd": "S052",
+      "purpose": "Make Pinocchio risk freedom to rescue the dog pursuing him."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "The Green Fisherman",
+      "sentenceStart": "S053",
+      "sentenceEnd": "S065",
+      "purpose": "Place Pinocchio in absurd but genuine danger after his escape."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "A Rescue Repaid",
+      "sentenceStart": "S066",
+      "sentenceEnd": "S078",
+      "purpose": "Complete the reciprocal rescue and return responsibility to Pinocchio."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Slow Door",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S091",
+      "purpose": "Use impatience and comic punishment to expose a habit that still needs work."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "A Better Year",
+      "sentenceStart": "S092",
+      "sentenceEnd": "S105",
+      "purpose": "Demonstrate lasting change through repeated effort before the next temptation arrives."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json"
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}

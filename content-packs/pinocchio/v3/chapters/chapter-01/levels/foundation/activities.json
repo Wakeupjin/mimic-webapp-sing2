@@ -1,0 +1,1146 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-01",
+  "level": "foundation",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S002",
+      "beatId": "B01",
+      "text": "He was an old carpenter with a round, red nose.",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "He was an old carpenter with a round, red nose.",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Unexpected Voice” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S004",
+      "beatId": "B01",
+      "text": "The block stood beside his busy workbench.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "The block stood beside his busy workbench.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Unexpected Voice” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "Before he hit the wood, a voice cried, “Please stop!”",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "Before he hit the wood, a voice cried, “Please stop!”",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Unexpected Voice” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S011",
+      "beatId": "B01",
+      "text": "“I heard nothing,” he said, although his legs shook.",
+      "sourceTextRange": [
+        0,
+        52
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "“I heard nothing,” he said, although his legs shook.",
+          "sourceTextRange": [
+            0,
+            52
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Unexpected Voice” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Master Cherry dropped the axe and stared at the block.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Master Cherry dropped the axe and stared at the block.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Very Peculiar Block” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "The tool touched the wood, and the block began laughing.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "The tool touched the wood, and the block began laughing.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Very Peculiar Block” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "“Someone is playing a trick,” he whispered.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "“Someone is playing a trick,” he whispered.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Very Peculiar Block” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S025",
+      "beatId": "B02",
+      "text": "Just then, someone knocked loudly on the shop door.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Just then, someone knocked loudly on the shop door.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Very Peculiar Block” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "Geppetto entered in an old coat with many patches.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Geppetto entered in an old coat with many patches.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Wonderful Plan” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "“I have a wonderful plan,” he told his friend.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "“I have a wonderful plan,” he told his friend.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Wonderful Plan” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "“I will make a wooden boy who can dance.”",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "“I will make a wooden boy who can dance.”",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Wonderful Plan” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "But Geppetto also wanted someone beside him at home.",
+      "sourceTextRange": [
+        0,
+        52
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "But Geppetto also wanted someone beside him at home.",
+          "sourceTextRange": [
+            0,
+            52
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Geppetto's Wonderful Plan” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S042",
+      "beatId": "B04",
+      "text": "Before he touched it, a voice called, “Hello, Polendina!”",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Before he touched it, a voice called, “Hello, Polendina!”",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “An Insult and a Quarrel” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "They shouted, waved their arms, and stamped their feet.",
+      "sourceTextRange": [
+        0,
+        55
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "They shouted, waved their arms, and stamped their feet.",
+          "sourceTextRange": [
+            0,
+            55
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “An Insult and a Quarrel” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S049",
+      "beatId": "B04",
+      "text": "Soon they rolled across the floor in a silly fight.",
+      "sourceTextRange": [
+        0,
+        51
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "Soon they rolled across the floor in a silly fight.",
+          "sourceTextRange": [
+            0,
+            51
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “An Insult and a Quarrel” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S053",
+      "beatId": "B04",
+      "text": "“Are we friends again?” Geppetto asked.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "“Are we friends again?” Geppetto asked.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “An Insult and a Quarrel” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S057",
+      "beatId": "B05",
+      "text": "On the way home, Geppetto imagined a happy crowd.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "On the way home, Geppetto imagined a happy crowd.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Name for a New Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "A fire painted on the wall gave no heat.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "A fire painted on the wall gave no heat.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Name for a New Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "“Your name will be Pinocchio.”",
+      "sourceTextRange": [
+        0,
+        30
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "“Your name will be Pinocchio.”",
+          "sourceTextRange": [
+            0,
+            30
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Name for a New Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S068",
+      "beatId": "B05",
+      "text": "“Let us make a boy and a family,” he said.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "“Let us make a boy and a family,” he said.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Name for a New Boy” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "First, he carved the hair, head, and two eyes.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "First, he carved the hair, head, and two eyes.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio Takes Shape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S073",
+      "beatId": "B06",
+      "text": "Next, Geppetto made a long nose.",
+      "sourceTextRange": [
+        0,
+        32
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "Next, Geppetto made a long nose.",
+          "sourceTextRange": [
+            0,
+            32
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio Takes Shape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S076",
+      "beatId": "B06",
+      "text": "The mouth smiled and started laughing at him.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "The mouth smiled and started laughing at him.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio Takes Shape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S080",
+      "beatId": "B06",
+      "text": "The new hands quickly took his yellow wig.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "The new hands quickly took his yellow wig.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Pinocchio Takes Shape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "Then Geppetto placed Pinocchio on the floor.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Then Geppetto placed Pinocchio on the floor.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Great Escape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S086",
+      "beatId": "B07",
+      "text": "One step became two, and then he started running.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "One step became two, and then he started running.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Great Escape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S089",
+      "beatId": "B07",
+      "text": "Pinocchio opened the door and ran outside.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio opened the door and ran outside.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Great Escape” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S094",
+      "beatId": "B08",
+      "text": "A police officer stood in the middle of the road.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "A police officer stood in the middle of the road.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Wrong Man Goes to Prison” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S099",
+      "beatId": "B08",
+      "text": "“I will take him safely home now.”",
+      "sourceTextRange": [
+        0,
+        34
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“I will take him safely home now.”",
+          "sourceTextRange": [
+            0,
+            34
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Wrong Man Goes to Prison” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "The officer listened to the crowd, not the facts.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "The officer listened to the crowd, not the facts.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Wrong Man Goes to Prison” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "Master Cherry hears a warning before the axe lands.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S007",
+          "text": "Before he hit the wood, a voice cried, “Please stop!”"
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S005",
+          "text": "It looked strong enough for a table leg."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "The axe hit, and the voice shouted, “That hurt me!”"
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "The plane makes the strange block laugh.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S014",
+          "text": "Master Cherry dropped the axe and stared at the block."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S017",
+          "text": "The tool touched the wood, and the block began laughing."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S024",
+          "text": "A long, unhappy sound came from inside the wood."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "Geppetto says what kind of puppet he wants.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S029",
+          "text": "He had little money, but he had big ideas."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S036",
+          "text": "“I only need a good piece of wood,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S031",
+          "text": "“I will make a wooden boy who can dance.”"
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G04",
+      "beatId": "B03",
+      "cue": "Geppetto wants more than money from the new boy.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S034",
+          "text": "But Geppetto also wanted someone beside him at home."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S033",
+          "text": "The puppet could perform and earn money for food."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S039",
+          "text": "He decided that Geppetto should take it."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G05",
+      "beatId": "B04",
+      "cue": "The hidden voice uses the rude nickname.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S040",
+          "text": "“You can use that block,” he said quickly."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S042",
+          "text": "Before he touched it, a voice called, “Hello, Polendina!”"
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S046",
+          "text": "Master Cherry said he had not spoken."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G06",
+      "beatId": "B05",
+      "cue": "Geppetto chooses the wooden boy's name.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S061",
+          "text": "Geppetto put the block on his workbench."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S068",
+          "text": "“Let us make a boy and a family,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S065",
+          "text": "“Your name will be Pinocchio.”"
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "The nose grows again after Geppetto cuts it.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S074",
+          "text": "He cut it shorter, but it grew again."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S070",
+          "text": "The new eyes looked straight at him."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S076",
+          "text": "The mouth smiled and started laughing at him."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "Pinocchio opens the door and escapes.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S084",
+          "text": "Then Geppetto placed Pinocchio on the floor."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S089",
+          "text": "Pinocchio opened the door and ran outside."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S092",
+          "text": "Pinocchio did not turn around."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "The officer stops Pinocchio by his nose.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S094",
+          "text": "A police officer stood in the middle of the road."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S100",
+          "text": "Geppetto reached for ears that he had never carved."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S095",
+          "text": "He caught Pinocchio by his very long nose."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "The officer takes the wrong person away.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S104",
+          "text": "He let Pinocchio go and took Geppetto away."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S102",
+          "text": "People thought Geppetto was hurting the wooden boy."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S107",
+          "text": "Pinocchio’s first hard lesson was now very close."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S007",
+      "beatId": "B01",
+      "text": "Before he hit the wood, a voice cried, “Please stop!”",
+      "tokens": [
+        "Before",
+        "he",
+        "hit",
+        "the",
+        "wood,",
+        "a",
+        "voice",
+        "cried,",
+        "“Please",
+        "stop!”"
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S015",
+      "beatId": "B02",
+      "text": "Wood could not talk, but this block clearly could.",
+      "tokens": [
+        "Wood",
+        "could",
+        "not",
+        "talk,",
+        "but",
+        "this",
+        "block",
+        "clearly",
+        "could."
+      ],
+      "focus": "rebuild the contrast and preserve the clause relationship"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "“I will make a wooden boy who can dance.”",
+      "tokens": [
+        "“I",
+        "will",
+        "make",
+        "a",
+        "wooden",
+        "boy",
+        "who",
+        "can",
+        "dance.”"
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S034",
+      "beatId": "B03",
+      "text": "But Geppetto also wanted someone beside him at home.",
+      "tokens": [
+        "But",
+        "Geppetto",
+        "also",
+        "wanted",
+        "someone",
+        "beside",
+        "him",
+        "at",
+        "home."
+      ],
+      "focus": "rebuild the contrast and preserve the clause relationship"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "They shouted, waved their arms, and stamped their feet.",
+      "tokens": [
+        "They",
+        "shouted,",
+        "waved",
+        "their",
+        "arms,",
+        "and",
+        "stamped",
+        "their",
+        "feet."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S065",
+      "beatId": "B05",
+      "text": "“Your name will be Pinocchio.”",
+      "tokens": [
+        "“Your",
+        "name",
+        "will",
+        "be",
+        "Pinocchio.”"
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S074",
+      "beatId": "B06",
+      "text": "He cut it shorter, but it grew again.",
+      "tokens": [
+        "He",
+        "cut",
+        "it",
+        "shorter,",
+        "but",
+        "it",
+        "grew",
+        "again."
+      ],
+      "focus": "rebuild the contrast and preserve the clause relationship"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S089",
+      "beatId": "B07",
+      "text": "Pinocchio opened the door and ran outside.",
+      "tokens": [
+        "Pinocchio",
+        "opened",
+        "the",
+        "door",
+        "and",
+        "ran",
+        "outside."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S095",
+      "beatId": "B08",
+      "text": "He caught Pinocchio by his very long nose.",
+      "tokens": [
+        "He",
+        "caught",
+        "Pinocchio",
+        "by",
+        "his",
+        "very",
+        "long",
+        "nose."
+      ],
+      "focus": "rebuild the complete subject–verb thought in natural English order"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S103",
+      "beatId": "B08",
+      "text": "The officer listened to the crowd, not the facts.",
+      "tokens": [
+        "The",
+        "officer",
+        "listened",
+        "to",
+        "the",
+        "crowd,",
+        "not",
+        "the",
+        "facts."
+      ],
+      "focus": "rebuild the event sequence and coordinated clause structure"
+    }
+  ]
+}

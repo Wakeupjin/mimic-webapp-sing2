@@ -1,0 +1,1143 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-03",
+  "level": "foundation",
+  "source": "master.txt",
+  "selectionPolicy": "Mimic uses 30 unique exact Watch sentences. Every item retains the full sentence and exposes one or more reviewed natural 2–12-word chunks for millisecond alignment. Guess and Word use exact full sentences from the same editorial master.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S002",
+      "beatId": "B01",
+      "text": "He planned to learn and help Geppetto later.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "He planned to learn and help Geppetto later.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “School or Music” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "These good plans went with him towards school.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "These good plans went with him towards school.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “School or Music” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "“School stays all day, but music can leave,” he thought.",
+      "sourceTextRange": [
+        0,
+        56
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "“School stays all day, but music can leave,” he thought.",
+          "sourceTextRange": [
+            0,
+            56
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “School or Music” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "The alphabet book suddenly felt heavy under his arm.",
+      "sourceTextRange": [
+        0,
+        52
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "The alphabet book suddenly felt heavy under his arm.",
+          "sourceTextRange": [
+            0,
+            52
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “School or Music” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "A large sign promised battles, heroes, and funny surprises.",
+      "sourceTextRange": [
+        0,
+        59
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "A large sign promised battles, heroes, and funny surprises.",
+          "sourceTextRange": [
+            0,
+            59
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Price of a Ticket” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "He offered his paper coat and bark shoes.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "He offered his paper coat and bark shoes.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “The Price of a Ticket” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S020",
+      "beatId": "B02",
+      "text": "Pinocchio looked at the book from Geppetto’s coat.",
+      "sourceTextRange": [
+        0,
+        50
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "Pinocchio looked at the book from Geppetto’s coat.",
+          "sourceTextRange": [
+            0,
+            50
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Price of a Ticket” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "Another boy bought the book from Pinocchio.",
+      "sourceTextRange": [
+        0,
+        43
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Another boy bought the book from Pinocchio.",
+          "sourceTextRange": [
+            0,
+            43
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “The Price of a Ticket” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S026",
+      "beatId": "B03",
+      "text": "Children sat in front of a small stage.",
+      "sourceTextRange": [
+        0,
+        39
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "Children sat in front of a small stage.",
+          "sourceTextRange": [
+            0,
+            39
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Family of Puppets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "The curtain opened on Harlequin and Punchinello.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "The curtain opened on Harlequin and Punchinello.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Family of Puppets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S032",
+      "beatId": "B03",
+      "text": "“Look, friends!” he cried. “A brother is here!”",
+      "sourceTextRange": [
+        0,
+        47
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "“Look, friends!” he cried. “A brother is here!”",
+          "sourceTextRange": [
+            0,
+            47
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Family of Puppets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "Together, they lifted him above the happy crowd.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Together, they lifted him above the happy crowd.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Family of Puppets” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S041",
+      "beatId": "B04",
+      "text": "Then a heavy boot hit the floor backstage.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "Then a heavy boot hit the floor backstage.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Fire Eater's Threat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "The theatre belonged to a huge man called Fire Eater.",
+      "sourceTextRange": [
+        0,
+        53
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "The theatre belonged to a huge man called Fire Eater.",
+          "sourceTextRange": [
+            0,
+            53
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Fire Eater's Threat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S046",
+      "beatId": "B04",
+      "text": "“Who stopped my show?” he asked angrily.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "“Who stopped my show?” he asked angrily.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Fire Eater's Threat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S050",
+      "beatId": "B04",
+      "text": "A large fire was cooking Fire Eater’s dinner.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "A large fire was cooking Fire Eater’s dinner.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Fire Eater's Threat” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S056",
+      "beatId": "B05",
+      "text": "Fire Eater listened, but his face stayed hard.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Fire Eater listened, but his face stayed hard.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Danger Moves to Harlequin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "Pinocchio saw some hope and asked again.",
+      "sourceTextRange": [
+        0,
+        40
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "Pinocchio saw some hope and asked again.",
+          "sourceTextRange": [
+            0,
+            40
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Danger Moves to Harlequin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S061",
+      "beatId": "B05",
+      "text": "He decided to save Pinocchio and burn Harlequin.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "He decided to save Pinocchio and burn Harlequin.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “Danger Moves to Harlequin” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Pinocchio saw that his friend was now in danger.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Pinocchio saw that his friend was now in danger.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “Burn Me Instead” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "“Please burn me instead,” Pinocchio said.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "“Please burn me instead,” Pinocchio said.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Burn Me Instead” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S069",
+      "beatId": "B06",
+      "text": "“I will not let my friend die for me.”",
+      "sourceTextRange": [
+        0,
+        38
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "“I will not let my friend die for me.”",
+          "sourceTextRange": [
+            0,
+            38
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Burn Me Instead” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S073",
+      "beatId": "B06",
+      "text": "Pinocchio felt afraid, but he nodded.",
+      "sourceTextRange": [
+        0,
+        37
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Pinocchio felt afraid, but he nodded.",
+          "sourceTextRange": [
+            0,
+            37
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast, clause linking, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “Burn Me Instead” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S078",
+      "beatId": "B07",
+      "text": "Fire Eater’s nose moved, and he sneezed again.",
+      "sourceTextRange": [
+        0,
+        46
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Fire Eater’s nose moved, and he sneezed again.",
+          "sourceTextRange": [
+            0,
+            46
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Feast, Not a Fire” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S081",
+      "beatId": "B07",
+      "text": "Harlequin hugged Pinocchio with great joy.",
+      "sourceTextRange": [
+        0,
+        42
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Harlequin hugged Pinocchio with great joy.",
+          "sourceTextRange": [
+            0,
+            42
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "clear sentence stress, complete-thought pacing, and confident delivery",
+      "selectionReason": "Uses one complete Watch sentence from “A Feast, Not a Fire” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S085",
+      "beatId": "B07",
+      "text": "That night, the puppets shared a large meal.",
+      "sourceTextRange": [
+        0,
+        44
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "That night, the puppets shared a large meal.",
+          "sourceTextRange": [
+            0,
+            44
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Feast, Not a Fire” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S090",
+      "beatId": "B07",
+      "text": "He asked where Geppetto lived and worked.",
+      "sourceTextRange": [
+        0,
+        41
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "He asked where Geppetto lived and worked.",
+          "sourceTextRange": [
+            0,
+            41
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “A Feast, Not a Fire” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S097",
+      "beatId": "B08",
+      "text": "Then he remembered the missing alphabet book.",
+      "sourceTextRange": [
+        0,
+        45
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "Then he remembered the missing alphabet book.",
+          "sourceTextRange": [
+            0,
+            45
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “One More Surprise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S104",
+      "beatId": "B08",
+      "text": "“You made trouble, but you were brave,” he said.",
+      "sourceTextRange": [
+        0,
+        48
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“You made trouble, but you were brave,” he said.",
+          "sourceTextRange": [
+            0,
+            48
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intention, natural phrasing, and final stress",
+      "selectionReason": "Uses one complete Watch sentence from “One More Surprise” with 1 reviewed natural breathing unit."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S109",
+      "beatId": "B08",
+      "text": "This time, he wanted to bring Geppetto real help.",
+      "sourceTextRange": [
+        0,
+        49
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "This time, he wanted to bring Geppetto real help.",
+          "sourceTextRange": [
+            0,
+            49
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "sequence, clause rhythm, and clear sentence stress",
+      "selectionReason": "Uses one complete Watch sentence from “One More Surprise” with 1 reviewed natural breathing unit."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "Pinocchio gives himself a reason to stop before school.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "“School stays all day, but music can leave,” he thought."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S005",
+          "text": "These good plans went with him towards school."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S013",
+          "text": "The alphabet book suddenly felt heavy under his arm."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Pinocchio sells the alphabet book for the ticket.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S017",
+          "text": "He offered his paper coat and bark shoes."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S023",
+          "text": "Another boy bought the book from Pinocchio."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S025",
+          "text": "He went inside before he could feel sorry."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "Harlequin welcomes Pinocchio as a brother.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S028",
+          "text": "The curtain opened on Harlequin and Punchinello."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S037",
+          "text": "The puppets called him brother, cousin, and friend."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S032",
+          "text": "“Look, friends!” he cried. “A brother is here!”"
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "Fire Eater asks who stopped his show.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S046",
+          "text": "“Who stopped my show?” he asked angrily."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S043",
+          "text": "The theatre belonged to a huge man called Fire Eater."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S048",
+          "text": "Fire Eater picked him up and carried him backstage."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G05",
+      "beatId": "B04",
+      "cue": "Fire Eater thinks Pinocchio can become firewood.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S050",
+          "text": "A large fire was cooking Fire Eater’s dinner."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S053",
+          "text": "“A wooden puppet will burn well,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S055",
+          "text": "He called for Geppetto and spoke about the lost coat."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G06",
+      "beatId": "B05",
+      "cue": "Fire Eater moves the danger to Harlequin.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S058",
+          "text": "The other puppets said that sneezing showed kindness."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S064",
+          "text": "The other puppets covered their faces sadly."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S061",
+          "text": "He decided to save Pinocchio and burn Harlequin."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Pinocchio asks to take Harlequin's place.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S068",
+          "text": "“Please burn me instead,” Pinocchio said."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S065",
+          "text": "Pinocchio saw that his friend was now in danger."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S072",
+          "text": "“Do you understand your choice?” he asked."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "Fire Eater decides to save both puppets.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S075",
+          "text": "Maybe courage also meant giving up something important."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S079",
+          "text": "“I will not burn either puppet,” he shouted."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S082",
+          "text": "All the puppets cheered and danced around them."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G09",
+      "beatId": "B07",
+      "cue": "Pinocchio answers Fire Eater honestly.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S088",
+          "text": "He explained the painted fire and the sold coat."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S095",
+          "text": "“You acted like a true brother,” he said."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S091",
+          "text": "Pinocchio answered him honestly this time."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Fire Eater says Pinocchio caused trouble but showed courage.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S104",
+          "text": "“You made trouble, but you were brave,” he said."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S101",
+          "text": "Before morning, the puppets danced for Pinocchio."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S107",
+          "text": "Pinocchio heard the bright sound of gold."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Simple lines from the same chapter keep the people or place but change the key action."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "These good plans went with him towards school.",
+      "tokens": [
+        "These",
+        "good",
+        "plans",
+        "went",
+        "with",
+        "him",
+        "towards",
+        "school."
+      ],
+      "focus": "rebuild the complete subject–verb thought in natural English order"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S009",
+      "beatId": "B01",
+      "text": "“School stays all day, but music can leave,” he thought.",
+      "tokens": [
+        "“School",
+        "stays",
+        "all",
+        "day,",
+        "but",
+        "music",
+        "can",
+        "leave,”",
+        "he",
+        "thought."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "Another boy bought the book from Pinocchio.",
+      "tokens": [
+        "Another",
+        "boy",
+        "bought",
+        "the",
+        "book",
+        "from",
+        "Pinocchio."
+      ],
+      "focus": "rebuild the complete subject–verb thought in natural English order"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S032",
+      "beatId": "B03",
+      "text": "“Look, friends!” he cried. “A brother is here!”",
+      "tokens": [
+        "“Look,",
+        "friends!”",
+        "he",
+        "cried.",
+        "“A",
+        "brother",
+        "is",
+        "here!”"
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "The theatre belonged to a huge man called Fire Eater.",
+      "tokens": [
+        "The",
+        "theatre",
+        "belonged",
+        "to",
+        "a",
+        "huge",
+        "man",
+        "called",
+        "Fire",
+        "Eater."
+      ],
+      "focus": "rebuild the complete subject–verb thought in natural English order"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S053",
+      "beatId": "B04",
+      "text": "“A wooden puppet will burn well,” he said.",
+      "tokens": [
+        "“A",
+        "wooden",
+        "puppet",
+        "will",
+        "burn",
+        "well,”",
+        "he",
+        "said."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S068",
+      "beatId": "B06",
+      "text": "“Please burn me instead,” Pinocchio said.",
+      "tokens": [
+        "“Please",
+        "burn",
+        "me",
+        "instead,”",
+        "Pinocchio",
+        "said."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S079",
+      "beatId": "B07",
+      "text": "“I will not burn either puppet,” he shouted.",
+      "tokens": [
+        "“I",
+        "will",
+        "not",
+        "burn",
+        "either",
+        "puppet,”",
+        "he",
+        "shouted."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S091",
+      "beatId": "B07",
+      "text": "Pinocchio answered him honestly this time.",
+      "tokens": [
+        "Pinocchio",
+        "answered",
+        "him",
+        "honestly",
+        "this",
+        "time."
+      ],
+      "focus": "rebuild the complete subject–verb thought in natural English order"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S104",
+      "beatId": "B08",
+      "text": "“You made trouble, but you were brave,” he said.",
+      "tokens": [
+        "“You",
+        "made",
+        "trouble,",
+        "but",
+        "you",
+        "were",
+        "brave,”",
+        "he",
+        "said."
+      ],
+      "focus": "rebuild direct speech with speaker intention and final punctuation"
+    }
+  ]
+}

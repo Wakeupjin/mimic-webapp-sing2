@@ -1,0 +1,1194 @@
+{
+  "schemaVersion": "1.1.0",
+  "chapterId": "chapter-02",
+  "level": "core",
+  "source": "master.txt",
+  "selectionPolicy": "Thirty unique full source sentences are selected from the continuous Watch master. Each full sentence remains the Mimic item; its chunks divide delivery only at natural punctuation or meaning boundaries. Every chunk is an exact 2–12-word source range, and fixed midpoint splitting is prohibited.",
+  "mimic": [
+    {
+      "id": "M01",
+      "sourceSentenceId": "S001",
+      "beatId": "B01",
+      "text": "Pinocchio raced home, expecting Geppetto beside the lamp.",
+      "sourceTextRange": [
+        0,
+        57
+      ],
+      "chunks": [
+        {
+          "chunkId": "M01-C01",
+          "text": "Pinocchio raced home, expecting Geppetto beside the lamp.",
+          "sourceTextRange": [
+            0,
+            57
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Cricket's Warning”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M02",
+      "sourceSentenceId": "S005",
+      "beatId": "B01",
+      "text": "A Talking Cricket stepped forward and bowed gravely.",
+      "sourceTextRange": [
+        0,
+        52
+      ],
+      "chunks": [
+        {
+          "chunkId": "M02-C01",
+          "text": "A Talking Cricket stepped forward and bowed gravely.",
+          "sourceTextRange": [
+            0,
+            52
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Cricket's Warning”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M03",
+      "sourceSentenceId": "S010",
+      "beatId": "B01",
+      "text": "“Then I shall simply find a generous dinner,” Pinocchio replied.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M03-C01",
+          "text": "“Then I shall simply find a generous dinner,” Pinocchio replied.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Cricket's Warning”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M04",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "Yet the Cricket remained, because honest warnings are rarely convenient.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M04-C01",
+          "text": "Yet the Cricket remained, because honest warnings are rarely convenient.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “The Cricket's Warning”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M05",
+      "sourceSentenceId": "S014",
+      "beatId": "B02",
+      "text": "Pinocchio’s anger rose faster than his judgment could follow.",
+      "sourceTextRange": [
+        0,
+        61
+      ],
+      "chunks": [
+        {
+          "chunkId": "M05-C01",
+          "text": "Pinocchio’s anger rose faster than his judgment could follow.",
+          "sourceTextRange": [
+            0,
+            61
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Anger and an Empty Cupboard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M06",
+      "sourceSentenceId": "S018",
+      "beatId": "B02",
+      "text": "Silence filled the room, and Pinocchio suddenly felt less brave.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M06-C01",
+          "text": "Silence filled the room, and Pinocchio suddenly felt less brave.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Anger and an Empty Cupboard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M07",
+      "sourceSentenceId": "S023",
+      "beatId": "B02",
+      "text": "Every container offered the same disappointing answer: absolutely nothing.",
+      "sourceTextRange": [
+        0,
+        74
+      ],
+      "chunks": [
+        {
+          "chunkId": "M07-C01",
+          "text": "Every container offered the same disappointing answer: absolutely nothing.",
+          "sourceTextRange": [
+            0,
+            74
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Anger and an Empty Cupboard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M08",
+      "sourceSentenceId": "S024",
+      "beatId": "B02",
+      "text": "Pinocchio blamed Geppetto, the Cricket, and the unfairness of the world.",
+      "sourceTextRange": [
+        0,
+        72
+      ],
+      "chunks": [
+        {
+          "chunkId": "M08-C01",
+          "text": "Pinocchio blamed Geppetto, the Cricket, and the unfairness of the world.",
+          "sourceTextRange": [
+            0,
+            72
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "list rhythm and final-item stress",
+      "selectionReason": "A complete source sentence from “Anger and an Empty Cupboard”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M09",
+      "sourceSentenceId": "S028",
+      "beatId": "B03",
+      "text": "He set a pan on the painted fire before remembering it was unreal.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M09-C01",
+          "text": "He set a pan on the painted fire",
+          "sourceTextRange": [
+            0,
+            32
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M09-C02",
+          "text": "before remembering it was unreal.",
+          "sourceTextRange": [
+            33,
+            66
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “The Dinner That Escapes”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M10",
+      "sourceSentenceId": "S030",
+      "beatId": "B03",
+      "text": "“At last, fortune has remembered me,” he said, cracking the shell.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M10-C01",
+          "text": "“At last, fortune has remembered me,” he said, cracking the shell.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Dinner That Escapes”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M11",
+      "sourceSentenceId": "S035",
+      "beatId": "B03",
+      "text": "Pinocchio stared at the empty shell with his mouth hanging open.",
+      "sourceTextRange": [
+        0,
+        64
+      ],
+      "chunks": [
+        {
+          "chunkId": "M11-C01",
+          "text": "Pinocchio stared at the empty shell with his mouth hanging open.",
+          "sourceTextRange": [
+            0,
+            64
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Dinner That Escapes”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M12",
+      "sourceSentenceId": "S038",
+      "beatId": "B03",
+      "text": "Still, pride stopped Pinocchio from admitting that the Cricket was right.",
+      "sourceTextRange": [
+        0,
+        73
+      ],
+      "chunks": [
+        {
+          "chunkId": "M12-C01",
+          "text": "Still, pride stopped Pinocchio from admitting that the Cricket was right.",
+          "sourceTextRange": [
+            0,
+            73
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Dinner That Escapes”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M13",
+      "sourceSentenceId": "S043",
+      "beatId": "B04",
+      "text": "“Wait there,” the man called, and Pinocchio imagined hot soup.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M13-C01",
+          "text": "“Wait there,” the man called, and Pinocchio imagined hot soup.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “A Cold and Hungry Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M14",
+      "sourceSentenceId": "S045",
+      "beatId": "B04",
+      "text": "He ran away shivering while the man slammed the window shut.",
+      "sourceTextRange": [
+        0,
+        60
+      ],
+      "chunks": [
+        {
+          "chunkId": "M14-C01",
+          "text": "He ran away shivering while the man slammed the window shut.",
+          "sourceTextRange": [
+            0,
+            60
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “A Cold and Hungry Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M15",
+      "sourceSentenceId": "S048",
+      "beatId": "B04",
+      "text": "By midnight, Pinocchio’s brave adventure had become miserable.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M15-C01",
+          "text": "By midnight, Pinocchio’s brave adventure had become miserable.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Cold and Hungry Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M16",
+      "sourceSentenceId": "S051",
+      "beatId": "B04",
+      "text": "Pinocchio placed his wet feet on the brazier to warm them.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M16-C01",
+          "text": "Pinocchio placed his wet feet on the brazier to warm them.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Cold and Hungry Night”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M17",
+      "sourceSentenceId": "S055",
+      "beatId": "B05",
+      "text": "Morning sunlight found him snoring beside a pile of warm ashes.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M17-C01",
+          "text": "Morning sunlight found him snoring beside a pile of warm ashes.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Missing Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M18",
+      "sourceSentenceId": "S059",
+      "beatId": "B05",
+      "text": "“Open the door,” Geppetto called, unaware of the strange disaster.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M18-C01",
+          "text": "“Open the door,” Geppetto called, unaware of the strange disaster.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Missing Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M19",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "“I cannot,” Pinocchio cried, “because somebody has eaten my feet!”",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M19-C01",
+          "text": "“I cannot,” Pinocchio cried, “because somebody has eaten my feet!”",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Missing Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M20",
+      "sourceSentenceId": "S062",
+      "beatId": "B05",
+      "text": "Pinocchio tried to crawl, but his wooden body rolled backwards.",
+      "sourceTextRange": [
+        0,
+        63
+      ],
+      "chunks": [
+        {
+          "chunkId": "M20-C01",
+          "text": "Pinocchio tried to crawl, but his wooden body rolled backwards.",
+          "sourceTextRange": [
+            0,
+            63
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “The Missing Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M21",
+      "sourceSentenceId": "S065",
+      "beatId": "B06",
+      "text": "Before asking questions, Geppetto lifted Pinocchio gently.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M21-C01",
+          "text": "Before asking questions, Geppetto lifted Pinocchio gently.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “Geppetto's Three Pears”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M22",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "“Hunger can teach what good advice could not,” he said gently.",
+      "sourceTextRange": [
+        0,
+        62
+      ],
+      "chunks": [
+        {
+          "chunkId": "M22-C01",
+          "text": "“Hunger can teach what good advice could not,” he said gently.",
+          "sourceTextRange": [
+            0,
+            62
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “Geppetto's Three Pears”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M23",
+      "sourceSentenceId": "S074",
+      "beatId": "B06",
+      "text": "Geppetto silently placed the peels and cores on the table.",
+      "sourceTextRange": [
+        0,
+        58
+      ],
+      "chunks": [
+        {
+          "chunkId": "M23-C01",
+          "text": "Geppetto silently placed the peels and cores on the table.",
+          "sourceTextRange": [
+            0,
+            58
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “Geppetto's Three Pears”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M24",
+      "sourceSentenceId": "S079",
+      "beatId": "B06",
+      "text": "Geppetto smiled, because gratitude had finally entered the little room.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M24-C01",
+          "text": "Geppetto smiled, because gratitude had finally entered the little room.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "cause-and-effect phrasing",
+      "selectionReason": "A complete source sentence from “Geppetto's Three Pears”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M25",
+      "sourceSentenceId": "S080",
+      "beatId": "B07",
+      "text": "Pinocchio looked at his missing feet and began to cry.",
+      "sourceTextRange": [
+        0,
+        54
+      ],
+      "chunks": [
+        {
+          "chunkId": "M25-C01",
+          "text": "Pinocchio looked at his missing feet and began to cry.",
+          "sourceTextRange": [
+            0,
+            54
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “A Promise and New Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M26",
+      "sourceSentenceId": "S084",
+      "beatId": "B07",
+      "text": "He measured carefully while Pinocchio tried to remain perfectly still.",
+      "sourceTextRange": [
+        0,
+        70
+      ],
+      "chunks": [
+        {
+          "chunkId": "M26-C01",
+          "text": "He measured carefully while Pinocchio tried to remain perfectly still.",
+          "sourceTextRange": [
+            0,
+            70
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "time-clause phrasing and main-clause stress",
+      "selectionReason": "A complete source sentence from “A Promise and New Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M27",
+      "sourceSentenceId": "S087",
+      "beatId": "B07",
+      "text": "Pinocchio immediately danced around the room, but this time he stopped.",
+      "sourceTextRange": [
+        0,
+        71
+      ],
+      "chunks": [
+        {
+          "chunkId": "M27-C01",
+          "text": "Pinocchio immediately danced around the room, but this time he stopped.",
+          "sourceTextRange": [
+            0,
+            71
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "contrast and clause-level pausing",
+      "selectionReason": "A complete source sentence from “A Promise and New Feet”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M28",
+      "sourceSentenceId": "S089",
+      "beatId": "B08",
+      "text": "The next morning, Geppetto made him clothes from humble materials.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M28-C01",
+          "text": "The next morning, Geppetto made him clothes from humble materials.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Coat Becomes a Book”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M29",
+      "sourceSentenceId": "S099",
+      "beatId": "B08",
+      "text": "“Where is your coat?” Pinocchio asked, already knowing the answer.",
+      "sourceTextRange": [
+        0,
+        66
+      ],
+      "chunks": [
+        {
+          "chunkId": "M29-C01",
+          "text": "“Where is your coat?” Pinocchio asked, already knowing the answer.",
+          "sourceTextRange": [
+            0,
+            66
+          ],
+          "part": 1,
+          "parts": 1
+        }
+      ],
+      "focus": "dialogue intonation and reporting-clause rhythm",
+      "selectionReason": "A complete source sentence from “The Coat Becomes a Book”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    },
+    {
+      "id": "M30",
+      "sourceSentenceId": "S102",
+      "beatId": "B08",
+      "text": "For once, he understood that love could be measured by what someone surrendered.",
+      "sourceTextRange": [
+        0,
+        80
+      ],
+      "chunks": [
+        {
+          "chunkId": "M30-C01",
+          "text": "For once, he understood",
+          "sourceTextRange": [
+            0,
+            23
+          ],
+          "part": 1,
+          "parts": 2
+        },
+        {
+          "chunkId": "M30-C02",
+          "text": "that love could be measured by what someone surrendered.",
+          "sourceTextRange": [
+            24,
+            80
+          ],
+          "part": 2,
+          "parts": 2
+        }
+      ],
+      "focus": "complete-thought stress and natural pacing",
+      "selectionReason": "A complete source sentence from “The Coat Becomes a Book”; delivery chunks preserve the full syntax while giving the learner natural breath and meaning boundaries."
+    }
+  ],
+  "guess": [
+    {
+      "id": "G01",
+      "beatId": "B01",
+      "cue": "The Cricket explains why complete freedom can become painful.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S009",
+          "text": "The Cricket warned that such freedom could quickly become hunger."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S003",
+          "text": "He called for his father, but only the walls answered."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S012",
+          "text": "The puppet stamped his foot and ordered the visitor to leave."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G02",
+      "beatId": "B02",
+      "cue": "Pinocchio reacts to advice before thinking through the result.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S018",
+          "text": "Silence filled the room, and Pinocchio suddenly felt less brave."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S015",
+          "text": "He seized a wooden mallet and threw it across the room."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S024",
+          "text": "Pinocchio blamed Geppetto, the Cricket, and the unfairness of the world."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G03",
+      "beatId": "B03",
+      "cue": "The egg opens, but it does not provide the dinner Pinocchio expects.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S027",
+          "text": "His hunger turned the ordinary egg into a magnificent feast."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S035",
+          "text": "Pinocchio stared at the empty shell with his mouth hanging open."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S031",
+          "text": "Instead of a golden yolk, a lively chick popped into the air."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G04",
+      "beatId": "B04",
+      "cue": "A promise of hot food turns into a cold shock.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S044",
+          "text": "A moment later, icy water poured over his wooden head."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S041",
+          "text": "Pinocchio knocked at one door and politely asked for a little bread."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S046",
+          "text": "At another house, a dog barked so fiercely that he fled again."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G05",
+      "beatId": "B05",
+      "cue": "Pinocchio discovers the consequence of sleeping beside the brazier.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S054",
+          "text": "While he slept, the little fire quietly burned through both wooden feet."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S058",
+          "text": "He looked down and discovered that both his feet had disappeared."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S061",
+          "text": "Geppetto suspected another foolish game and told him to stop joking."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G06",
+      "beatId": "B06",
+      "cue": "Geppetto gives Pinocchio the food he had saved for himself.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S065",
+          "text": "Before asking questions, Geppetto lifted Pinocchio gently."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S074",
+          "text": "Geppetto silently placed the peels and cores on the table."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S071",
+          "text": "From his pocket, he produced three small pears, his own breakfast."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G07",
+      "beatId": "B06",
+      "cue": "Pinocchio's behaviour changes when he notices Geppetto's exhaustion.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S077",
+          "text": "Slowly, Pinocchio ate the peels, then the cores, leaving nothing behind."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S073",
+          "text": "The hungry puppet ate the soft fruit and asked for more."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S079",
+          "text": "Geppetto smiled, because gratitude had finally entered the little room."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G08",
+      "beatId": "B07",
+      "cue": "Geppetto chooses hope after hearing another promise.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S081",
+          "text": "He promised to study, work, listen, and care for his father."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S083",
+          "text": "Even so, he chose hope and began carving two new feet."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S086",
+          "text": "Geppetto fixed them firmly and warned against wild testing."
+        }
+      ],
+      "correctOptionId": "B",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G09",
+      "beatId": "B08",
+      "cue": "The schoolbook appears, but Geppetto returns without winter protection.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S093",
+          "text": "Then he remembered that every proper pupil needed a schoolbook."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S100",
+          "text": "“It made me too warm,” Geppetto replied with an unconvincing laugh."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S097",
+          "text": "Later, Geppetto returned carrying a new alphabet primer."
+        }
+      ],
+      "correctOptionId": "C",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    },
+    {
+      "id": "G10",
+      "beatId": "B08",
+      "cue": "Pinocchio finally understands what the primer cost his father.",
+      "options": [
+        {
+          "id": "A",
+          "sourceSentenceId": "S102",
+          "text": "For once, he understood that love could be measured by what someone surrendered."
+        },
+        {
+          "id": "B",
+          "sourceSentenceId": "S099",
+          "text": "“Where is your coat?” Pinocchio asked, already knowing the answer."
+        },
+        {
+          "id": "C",
+          "sourceSentenceId": "S104",
+          "text": "Yet somewhere along the road, another temptation was tuning its instruments."
+        }
+      ],
+      "correctOptionId": "A",
+      "distractorStrategy": "Plausible lines from the same chapter preserve the setting or speaker but change the decisive action."
+    }
+  ],
+  "word": [
+    {
+      "id": "W01",
+      "sourceSentenceId": "S006",
+      "beatId": "B01",
+      "text": "“Children who reject good advice often meet avoidable trouble,” he said.",
+      "tokens": [
+        "“Children",
+        "who",
+        "reject",
+        "good",
+        "advice",
+        "often",
+        "meet",
+        "avoidable",
+        "trouble,”",
+        "he",
+        "said."
+      ],
+      "focus": "who-relative clause inside direct speech with a reporting clause"
+    },
+    {
+      "id": "W02",
+      "sourceSentenceId": "S013",
+      "beatId": "B01",
+      "text": "Yet the Cricket remained, because honest warnings are rarely convenient.",
+      "tokens": [
+        "Yet",
+        "the",
+        "Cricket",
+        "remained,",
+        "because",
+        "honest",
+        "warnings",
+        "are",
+        "rarely",
+        "convenient."
+      ],
+      "focus": "fronted Yet contrast followed by a because reason clause"
+    },
+    {
+      "id": "W03",
+      "sourceSentenceId": "S017",
+      "beatId": "B02",
+      "text": "After one final chirp, the small adviser disappeared into the darkness.",
+      "tokens": [
+        "After",
+        "one",
+        "final",
+        "chirp,",
+        "the",
+        "small",
+        "adviser",
+        "disappeared",
+        "into",
+        "the",
+        "darkness."
+      ],
+      "focus": "fronted After time phrase followed by a simple-past main clause"
+    },
+    {
+      "id": "W04",
+      "sourceSentenceId": "S031",
+      "beatId": "B03",
+      "text": "Instead of a golden yolk, a lively chick popped into the air.",
+      "tokens": [
+        "Instead",
+        "of",
+        "a",
+        "golden",
+        "yolk,",
+        "a",
+        "lively",
+        "chick",
+        "popped",
+        "into",
+        "the",
+        "air."
+      ],
+      "focus": "instead of noun phrase marking an unexpected contrast"
+    },
+    {
+      "id": "W05",
+      "sourceSentenceId": "S044",
+      "beatId": "B04",
+      "text": "A moment later, icy water poured over his wooden head.",
+      "tokens": [
+        "A",
+        "moment",
+        "later,",
+        "icy",
+        "water",
+        "poured",
+        "over",
+        "his",
+        "wooden",
+        "head."
+      ],
+      "focus": "fronted sequence phrase followed by a simple-past main clause"
+    },
+    {
+      "id": "W06",
+      "sourceSentenceId": "S054",
+      "beatId": "B05",
+      "text": "While he slept, the little fire quietly burned through both wooden feet.",
+      "tokens": [
+        "While",
+        "he",
+        "slept,",
+        "the",
+        "little",
+        "fire",
+        "quietly",
+        "burned",
+        "through",
+        "both",
+        "wooden",
+        "feet."
+      ],
+      "focus": "While time clause followed by the main action"
+    },
+    {
+      "id": "W07",
+      "sourceSentenceId": "S060",
+      "beatId": "B05",
+      "text": "“I cannot,” Pinocchio cried, “because somebody has eaten my feet!”",
+      "tokens": [
+        "“I",
+        "cannot,”",
+        "Pinocchio",
+        "cried,",
+        "“because",
+        "somebody",
+        "has",
+        "eaten",
+        "my",
+        "feet!”"
+      ],
+      "focus": "direct speech with cannot and a because reason clause"
+    },
+    {
+      "id": "W08",
+      "sourceSentenceId": "S070",
+      "beatId": "B06",
+      "text": "“Hunger can teach what good advice could not,” he said gently.",
+      "tokens": [
+        "“Hunger",
+        "can",
+        "teach",
+        "what",
+        "good",
+        "advice",
+        "could",
+        "not,”",
+        "he",
+        "said",
+        "gently."
+      ],
+      "focus": "contrasting modals can and could plus a what-clause"
+    },
+    {
+      "id": "W09",
+      "sourceSentenceId": "S083",
+      "beatId": "B07",
+      "text": "Even so, he chose hope and began carving two new feet.",
+      "tokens": [
+        "Even",
+        "so,",
+        "he",
+        "chose",
+        "hope",
+        "and",
+        "began",
+        "carving",
+        "two",
+        "new",
+        "feet."
+      ],
+      "focus": "concessive transition Even so followed by coordinated past actions"
+    },
+    {
+      "id": "W10",
+      "sourceSentenceId": "S102",
+      "beatId": "B08",
+      "text": "For once, he understood that love could be measured by what someone surrendered.",
+      "tokens": [
+        "For",
+        "once,",
+        "he",
+        "understood",
+        "that",
+        "love",
+        "could",
+        "be",
+        "measured",
+        "by",
+        "what",
+        "someone",
+        "surrendered."
+      ],
+      "focus": "that content clause with modal passive could be measured and a what-clause"
+    }
+  ]
+}

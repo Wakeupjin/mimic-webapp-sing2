@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "storyPackId": "pinocchio-story-v3",
+  "chapterId": "chapter-04",
+  "number": 4,
+  "status": "script-and-learning-draft",
+  "titles": {
+    "en": "Five Coins and a Dangerous Road",
+    "ko": "다섯 금화와 위험한 길"
+  },
+  "sourceChapters": [
+    12,
+    13,
+    14,
+    15
+  ],
+  "canonicalLevel": "core",
+  "continuity": {
+    "opening": "Fire Eater rewards Pinocchio's courage with five gold coins intended for Geppetto.",
+    "closing": "Pinocchio hangs helpless in the storm as someone in the Fairy's white house finally sends help.",
+    "next": "The blue-haired Fairy will rescue Pinocchio and ask him to tell the truth about the missing coins."
+  },
+  "learningObjective": "Distinguish persuasive promises from trustworthy evidence while narrating mounting suspense with restraint.",
+  "beats": [
+    {
+      "beatId": "B01",
+      "order": 1,
+      "title": "Five Golden Promises",
+      "sentenceStart": "S001",
+      "sentenceEnd": "S013",
+      "purpose": "Give the coins an emotional purpose before the swindlers appear."
+    },
+    {
+      "beatId": "B02",
+      "order": 2,
+      "title": "The Field of Wonders",
+      "sentenceStart": "S014",
+      "sentenceEnd": "S028",
+      "purpose": "Show how flattery and an easy miracle defeat an honest warning."
+    },
+    {
+      "beatId": "B03",
+      "order": 3,
+      "title": "The Red Lobster Inn",
+      "sentenceStart": "S029",
+      "sentenceEnd": "S038",
+      "purpose": "Use sly comedy to reveal who benefits from the supposed friendship."
+    },
+    {
+      "beatId": "B04",
+      "order": 4,
+      "title": "The Bill and the Warning",
+      "sentenceStart": "S039",
+      "sentenceEnd": "S054",
+      "purpose": "Let evidence accumulate while pride keeps Pinocchio moving forwards."
+    },
+    {
+      "beatId": "B05",
+      "order": 5,
+      "title": "Assassins on the Road",
+      "sentenceStart": "S055",
+      "sentenceEnd": "S067",
+      "purpose": "Transform the friendly strangers into a fast, recognisable threat."
+    },
+    {
+      "beatId": "B06",
+      "order": 6,
+      "title": "The Silent White House",
+      "sentenceStart": "S068",
+      "sentenceEnd": "S078",
+      "purpose": "Offer visible safety, then delay it to deepen suspense."
+    },
+    {
+      "beatId": "B07",
+      "order": 7,
+      "title": "The Great Oak",
+      "sentenceStart": "S079",
+      "sentenceEnd": "S085",
+      "purpose": "Present the cliffhanger solemnly without graphic detail."
+    },
+    {
+      "beatId": "B08",
+      "order": 8,
+      "title": "A Light Behind the Shutter",
+      "sentenceStart": "S086",
+      "sentenceEnd": "S102",
+      "purpose": "Turn wealth into regret and reveal that rescue has begun."
+    }
+  ],
+  "levels": {
+    "foundation": {
+      "status": "script-and-learning-draft",
+      "master": "levels/foundation/master.txt",
+      "activities": "levels/foundation/activities.json",
+      "production": "levels/foundation/production.json",
+      "qa": "levels/foundation/qa.json",
+      "beatRanges": [
+        {
+          "beatId": "B01",
+          "order": 1,
+          "title": "Five Golden Promises",
+          "sentenceStart": "S001",
+          "sentenceEnd": "S015",
+          "purpose": "Give the coins an emotional purpose before the swindlers appear."
+        },
+        {
+          "beatId": "B02",
+          "order": 2,
+          "title": "The Field of Wonders",
+          "sentenceStart": "S016",
+          "sentenceEnd": "S030",
+          "purpose": "Show how flattery and an easy miracle defeat an honest warning."
+        },
+        {
+          "beatId": "B03",
+          "order": 3,
+          "title": "The Red Lobster Inn",
+          "sentenceStart": "S031",
+          "sentenceEnd": "S039",
+          "purpose": "Use sly comedy to reveal who benefits from the supposed friendship."
+        },
+        {
+          "beatId": "B04",
+          "order": 4,
+          "title": "The Bill and the Warning",
+          "sentenceStart": "S040",
+          "sentenceEnd": "S056",
+          "purpose": "Let evidence accumulate while pride keeps Pinocchio moving forwards."
+        },
+        {
+          "beatId": "B05",
+          "order": 5,
+          "title": "Assassins on the Road",
+          "sentenceStart": "S057",
+          "sentenceEnd": "S070",
+          "purpose": "Transform the friendly strangers into a fast, recognisable threat."
+        },
+        {
+          "beatId": "B06",
+          "order": 6,
+          "title": "The Silent White House",
+          "sentenceStart": "S071",
+          "sentenceEnd": "S082",
+          "purpose": "Offer visible safety, then delay it to deepen suspense."
+        },
+        {
+          "beatId": "B07",
+          "order": 7,
+          "title": "The Great Oak",
+          "sentenceStart": "S083",
+          "sentenceEnd": "S090",
+          "purpose": "Present the cliffhanger solemnly without graphic detail."
+        },
+        {
+          "beatId": "B08",
+          "order": 8,
+          "title": "A Light Behind the Shutter",
+          "sentenceStart": "S091",
+          "sentenceEnd": "S108",
+          "purpose": "Turn wealth into regret and reveal that rescue has begun."
+        }
+      ]
+    },
+    "core": {
+      "status": "script-and-learning-draft",
+      "master": "levels/core/master.txt",
+      "activities": "levels/core/activities.json",
+      "production": "levels/core/production.json",
+      "qa": "levels/core/qa.json"
+    },
+    "studio": {
+      "status": "script-and-learning-draft",
+      "master": "levels/studio/master.txt",
+      "activities": "levels/studio/activities.json",
+      "production": "levels/studio/production.json",
+      "qa": "levels/studio/qa.json"
+    }
+  }
+}
