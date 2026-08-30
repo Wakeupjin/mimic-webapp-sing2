@@ -19,10 +19,10 @@ import {
   chapterMedia,
   chapterRoot,
   estimatedTimeline,
+  mimicPracticeItems,
   MODE_ORDER,
   modeHref,
   parseChapterNumber,
-  sourceLineForMimic,
 } from "../../pinocchio-chapters/lessonData";
 import {
   canOpenChapter,
@@ -371,8 +371,10 @@ function MimicMode() {
   const router = useRouter();
   const { chapterNumber, pack, timeline } = useLesson();
   const level = pack.levels.core;
-  const total = level.activities.mimic.items.length;
+  const practiceItems = useMemo(() => mimicPracticeItems(pack, timeline), [pack, timeline]);
+  const total = practiceItems.length;
   const [current, setCurrent] = useState(0);
+  const [activeChunkIndex, setActiveChunkIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const [activeSlot, setActiveSlot] = useState<number | null>(null);
   const [feedbackOpen, setFeedbackOpen] = useState(false);
@@ -383,27 +385,37 @@ function MimicMode() {
   const [maxReached, setMaxReached] = useState(0);
   const stepTimerRef = useRef<number | null>(null);
   const engine = useLessonAudio();
-  const activeLine = sourceLineForMimic(pack, current);
+  const currentPractice = practiceItems[current];
+  const activeLine = currentPractice?.sourceLineIndex ?? 0;
 
-  const clearStepTimer = () => {
+  const clearStepTimer = useCallback(() => {
     if (stepTimerRef.current !== null) window.clearTimeout(stepTimerRef.current);
     stepTimerRef.current = null;
-  };
+  }, []);
 
-  const runStep = useCallback((slot: number, lineIndex = current) => {
+  const runStep = useCallback((slot: number, lineIndex = current, chunkIndex = activeChunkIndex) => {
     if (complete) return;
+    const practice = practiceItems[lineIndex];
+    const chunk = practice?.chunks[chunkIndex];
+    if (!practice || !chunk) return;
     clearStepTimer();
     setStarted(true);
     setPaused(false);
+    setActiveChunkIndex(chunkIndex);
     setActiveSlot(slot);
-    engine.playRange(timeline.mimicItems[lineIndex], MIMIC_MUTED_STEPS.has(slot), () => {
+    engine.playRange(chunk, MIMIC_MUTED_STEPS.has(slot), () => {
       setActiveSlot(null);
-      if (slot < 7) stepTimerRef.current = window.setTimeout(() => runStep(slot + 1, lineIndex), 800);
-      else setFeedbackOpen(true);
+      if (slot < 7) {
+        stepTimerRef.current = window.setTimeout(() => runStep(slot + 1, lineIndex, chunkIndex), 800);
+      } else if (chunkIndex < practice.chunks.length - 1) {
+        stepTimerRef.current = window.setTimeout(() => runStep(0, lineIndex, chunkIndex + 1), 800);
+      } else {
+        setFeedbackOpen(true);
+      }
     });
-  }, [complete, current, engine]);
+  }, [activeChunkIndex, clearStepTimer, complete, current, engine, practiceItems]);
 
-  useEffect(() => () => clearStepTimer(), []);
+  useEffect(() => () => clearStepTimer(), [clearStepTimer]);
 
   const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); markModeComplete(chapterNumber, "mimicking"); setComplete(true); setFeedbackOpen(false); };
   const chooseLine = (index: number, autoplay = false, unlock = false) => {
@@ -411,11 +423,12 @@ function MimicMode() {
     clearStepTimer();
     engine.stop();
     setCurrent(index);
+    setActiveChunkIndex(0);
     setActiveSlot(null);
     setFeedbackOpen(false);
     setLineListOpen(false);
     setPaused(false);
-    if (autoplay) runStep(0, index);
+    if (autoplay) runStep(0, index, 0);
   };
   const advance = () => {
     const nextIndex = current + 1;
@@ -424,6 +437,19 @@ function MimicMode() {
   };
   const next = () => { if (!feedbackOpen) current >= total - 1 ? finish() : advance(); };
   const prev = () => { if (!feedbackOpen && current > 0) chooseLine(current - 1, true); };
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        prev();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        next();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [current, feedbackOpen, total]);
   const feedback = (hard: boolean) => {
     if (hard) setHardLines((items) => items.includes(current) ? items : [...items, current]);
     setFeedbackOpen(false);
@@ -433,7 +459,7 @@ function MimicMode() {
     if ((event.target as HTMLElement).closest("button,a") || !started || complete || feedbackOpen) return;
     if (engine.isPlaying) { engine.pause(); setPaused(true); } else { engine.resume(); setPaused(false); }
   };
-  const again = () => { setCurrent(0); setMaxReached(0); setStarted(false); setActiveSlot(null); setComplete(false); setHardLines([]); engine.stop(); engine.seek(0); };
+  const again = () => { setCurrent(0); setActiveChunkIndex(0); setMaxReached(0); setStarted(false); setActiveSlot(null); setComplete(false); setHardLines([]); engine.stop(); engine.seek(0); };
 
   const review = (
     <div className={styles.reviewCard}>
@@ -467,6 +493,11 @@ function MimicMode() {
       controls={
         <div className="mimic-dock">
           <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => { if (!feedbackOpen) runStep(slot); }} activeIndex={activeSlot} />
+          {currentPractice?.chunks.length > 1 ? (
+            <p className="text-center text-[10px] font-bold tracking-[0.18em] text-[#60D96C] sm:text-xs" aria-live="polite">
+              PHRASE {activeChunkIndex + 1} / {currentPractice.chunks.length}
+            </p>
+          ) : null}
           <button type="button" className="mimic-count" aria-expanded={lineListOpen} aria-label="문장 목록" onClick={() => setLineListOpen((open) => !open)}>
             <span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{total}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
           </button>
