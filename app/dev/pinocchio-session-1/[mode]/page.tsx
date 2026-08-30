@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from "react";
 import ClickToStartOverlay from "../../../components/ClickToStartOverlay";
 import ControlTriangle from "../../../components/ControlTriangle";
 import { FullscreenIcon, HeaderIconButton } from "../../../components/HeaderIcons";
@@ -11,44 +11,88 @@ import MimicLineList from "../../../components/MimicLineList";
 import PauseOverlay from "../../../components/PauseOverlay";
 import PlaybackControls from "../../../components/PlaybackControls";
 import { useFullscreen } from "../../../hooks/useFullscreen";
+import { getChapterPack, TOTAL_CHAPTERS } from "../../pinocchio-chapters/data";
 import {
-  ART_SRC,
-  AUDIO_SRC,
-  LESSON_ROOT,
+  chapterMedia,
+  chapterRoot,
+  estimatedTimeline,
   MODE_ORDER,
-  level,
   modeHref,
-  pack,
+  parseChapterNumber,
   sourceLineForMimic,
-  timeline,
-  type GuessItem,
-  type LessonMode,
-  type Segment,
-  type WordItem,
-} from "../lessonData";
-import { canOpenMode, completeMode, readCompleted } from "../localProgress";
-import styles from "../pinocchio-session-1.module.css";
+} from "../../pinocchio-chapters/lessonData";
+import {
+  canOpenChapter,
+  canOpenMode,
+  completeMode,
+  latestOpenChapter,
+  readCompleted,
+  readProgress,
+} from "../../pinocchio-chapters/localProgress";
+import type { LessonMode, PinocchioPack, Segment, Timeline, WordItem } from "../../pinocchio-chapters/types";
+import styles from "../../pinocchio-chapters/pinocchio-chapters.module.css";
 
 const FOCUS_X = ["4%", "12%", "24%", "36%", "48%", "62%", "76%", "92%"];
 const MIMIC_MUTED_STEPS = new Set([3, 5, 7]);
 
+type LessonContextValue = {
+  chapterNumber: number;
+  pack: PinocchioPack;
+  timeline: Timeline;
+  audioSrc: string;
+};
+
+const LessonContext = createContext<LessonContextValue | null>(null);
+
+function useLesson() {
+  const lesson = useContext(LessonContext);
+  if (!lesson) throw new Error("Pinocchio lesson context is missing");
+  return lesson;
+}
+
 function useLessonAudio(onFullEnded?: () => void) {
+  const { audioSrc, timeline } = useLesson();
   const audioRef = useRef<HTMLAudioElement>(null);
   const segmentEndRef = useRef<number | null>(null);
   const segmentCallbackRef = useRef<(() => void) | null>(null);
+  const fallbackTimerRef = useRef<number | null>(null);
+  const boundaryTimerRef = useRef<number | null>(null);
   const fullEndedRef = useRef(onFullEnded);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(timeline.duration);
+  const [mediaMissing, setMediaMissing] = useState(false);
 
   useEffect(() => { fullEndedRef.current = onFullEnded; }, [onFullEnded]);
 
+  useEffect(() => {
+    setCurrentTime(0);
+    setDuration(timeline.duration);
+    setMediaMissing(false);
+  }, [audioSrc, timeline.duration]);
+
+  const clearFallbackTimer = useCallback(() => {
+    if (fallbackTimerRef.current !== null) window.clearTimeout(fallbackTimerRef.current);
+    fallbackTimerRef.current = null;
+  }, []);
+
+  const clearBoundaryTimer = useCallback(() => {
+    if (boundaryTimerRef.current !== null) window.clearInterval(boundaryTimerRef.current);
+    boundaryTimerRef.current = null;
+  }, []);
+
+  useEffect(() => () => {
+    clearFallbackTimer();
+    clearBoundaryTimer();
+  }, [clearBoundaryTimer, clearFallbackTimer]);
+
   const finishSegment = useCallback(() => {
+    clearBoundaryTimer();
     const callback = segmentCallbackRef.current;
     segmentEndRef.current = null;
     segmentCallbackRef.current = null;
     if (callback) window.setTimeout(callback, 0);
-  }, []);
+  }, [clearBoundaryTimer]);
 
   const onTimeUpdate = useCallback((audio: HTMLAudioElement) => {
     setCurrentTime(audio.currentTime);
@@ -64,35 +108,70 @@ function useLessonAudio(onFullEnded?: () => void) {
   const playRange = useCallback((segment: Segment, muted = false, onEnded?: () => void) => {
     const audio = audioRef.current;
     if (!audio) return;
+    clearFallbackTimer();
+    clearBoundaryTimer();
     audio.pause();
     audio.muted = muted;
     audio.currentTime = segment.start;
     segmentEndRef.current = segment.end;
     segmentCallbackRef.current = onEnded || null;
     setCurrentTime(segment.start);
-    void audio.play();
-  }, []);
+    void audio.play()
+      .then(() => {
+        boundaryTimerRef.current = window.setInterval(() => {
+          const currentAudio = audioRef.current;
+          const end = segmentEndRef.current;
+          if (!currentAudio || end === null || currentAudio.currentTime < end - 0.025) return;
+          currentAudio.pause();
+          currentAudio.currentTime = Math.min(end, currentAudio.duration || end);
+          setCurrentTime(currentAudio.currentTime);
+          finishSegment();
+        }, 30);
+      })
+      .catch(() => {
+        clearBoundaryTimer();
+        audio.pause();
+        segmentEndRef.current = null;
+        segmentCallbackRef.current = null;
+        setIsPlaying(false);
+        setMediaMissing(true);
+        if (onEnded) fallbackTimerRef.current = window.setTimeout(onEnded, 260);
+      });
+  }, [clearBoundaryTimer, clearFallbackTimer, finishSegment]);
 
   const playFull = useCallback((restart = false) => {
     const audio = audioRef.current;
     if (!audio) return;
+    clearFallbackTimer();
+    clearBoundaryTimer();
     segmentEndRef.current = null;
     segmentCallbackRef.current = null;
     audio.muted = false;
     if (restart || audio.currentTime >= audio.duration - .1) audio.currentTime = 0;
-    void audio.play();
-  }, []);
+    void audio.play().catch(() => {
+      setIsPlaying(false);
+      setMediaMissing(true);
+    });
+  }, [clearBoundaryTimer, clearFallbackTimer]);
 
   const pause = useCallback(() => audioRef.current?.pause(), []);
-  const resume = useCallback(() => { if (audioRef.current) void audioRef.current.play(); }, []);
+  const resume = useCallback(() => {
+    if (!audioRef.current) return;
+    void audioRef.current.play().catch(() => {
+      setIsPlaying(false);
+      setMediaMissing(true);
+    });
+  }, []);
   const stop = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
+    clearFallbackTimer();
+    clearBoundaryTimer();
     audio.pause();
     audio.muted = false;
     segmentEndRef.current = null;
     segmentCallbackRef.current = null;
-  }, []);
+  }, [clearBoundaryTimer, clearFallbackTimer]);
   const seek = useCallback((seconds: number) => {
     if (!audioRef.current) return;
     audioRef.current.currentTime = seconds;
@@ -102,9 +181,10 @@ function useLessonAudio(onFullEnded?: () => void) {
   const audio = (
     <audio
       ref={audioRef}
-      src={AUDIO_SRC}
+      src={audioSrc}
       preload="auto"
-      onLoadedMetadata={(event) => setDuration(event.currentTarget.duration)}
+      onLoadedMetadata={(event) => { setDuration(event.currentTarget.duration); setMediaMissing(false); }}
+      onError={() => setMediaMissing(true)}
       onPlay={() => setIsPlaying(true)}
       onPause={() => setIsPlaying(false)}
       onTimeUpdate={(event) => onTimeUpdate(event.currentTarget)}
@@ -117,10 +197,10 @@ function useLessonAudio(onFullEnded?: () => void) {
     />
   );
 
-  return { audio, audioRef, isPlaying, currentTime, duration, playRange, playFull, pause, resume, stop, seek };
+  return { audio, audioRef, isPlaying, currentTime, duration, mediaMissing, playRange, playFull, pause, resume, stop, seek };
 }
 
-function activeSourceLine(time: number) {
+function activeSourceLine(time: number, timeline: Timeline) {
   const index = timeline.lines.findIndex((line, lineIndex, lines) => time >= line.start && time < (lines[lineIndex + 1]?.start ?? Infinity));
   return Math.max(0, index);
 }
@@ -133,6 +213,10 @@ function StoryStage({ activeLine, dim = false, faded = false, caption, onClick, 
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   children?: ReactNode;
 }) {
+  const { chapterNumber, pack } = useLesson();
+  const [artMissing, setArtMissing] = useState(false);
+  const { artSrc } = chapterMedia(chapterNumber);
+  useEffect(() => setArtMissing(false), [artSrc]);
   const beatIndex = Math.max(0, pack.livingStorybook.beats.findIndex((beat) => {
     const [start, end] = beat.lineRanges.core;
     return activeLine >= start && activeLine <= end;
@@ -143,7 +227,20 @@ function StoryStage({ activeLine, dim = false, faded = false, caption, onClick, 
       style={{ "--focus-x": FOCUS_X[beatIndex] } as CSSProperties}
       onClick={onClick}
     >
-      <img className={styles.stageArt} src={ART_SRC} alt="피노키오 Session 1 Living Storybook 장면" />
+      {!artMissing ? (
+        <img
+          className={styles.stageArt}
+          src={artSrc}
+          alt={`피노키오 Chapter ${chapterNumber}: ${pack.story.titleKo} Living Storybook 장면`}
+          onError={() => setArtMissing(true)}
+        />
+      ) : (
+        <div className={styles.stageArtFallback} role="img" aria-label={`Chapter ${chapterNumber} 아트 준비 중`}>
+          <span>CHAPTER {chapterNumber}</span>
+          <strong>{pack.story.titleEn}</strong>
+          <p>{pack.story.synopsisKo}</p>
+        </div>
+      )}
       <div className={styles.stageVignette} />
       {caption ? <p className={styles.storyCaption}>{caption}</p> : null}
       {children}
@@ -152,10 +249,11 @@ function StoryStage({ activeLine, dim = false, faded = false, caption, onClick, 
 }
 
 function StageActions({ onSkip }: { onSkip?: () => void }) {
+  const { chapterNumber } = useLesson();
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   return (
     <div className={styles.topActions}>
-      <Link href={LESSON_ROOT} className="watch-back" aria-label="뒤로">
+      <Link href={chapterRoot(chapterNumber)} className="watch-back" aria-label="뒤로">
         <img src="/home/back.svg" alt="" className="h-full w-full" />
       </Link>
       <div className={styles.topActionsRight}>
@@ -168,7 +266,19 @@ function StageActions({ onSkip }: { onSkip?: () => void }) {
   );
 }
 
-function Completion({ onAgain, onNext, review }: { onAgain: () => void; onNext: () => void; review?: ReactNode }) {
+function Completion({
+  onAgain,
+  onNext,
+  review,
+  nextLabel = "Next",
+  nextCaption = "Let's go",
+}: {
+  onAgain: () => void;
+  onNext: () => void;
+  review?: ReactNode;
+  nextLabel?: string;
+  nextCaption?: string;
+}) {
   return (
     <div className={styles.completionOverlay}>
       <div className={styles.completionStack}>
@@ -181,9 +291,9 @@ function Completion({ onAgain, onNext, review }: { onAgain: () => void; onNext: 
           <div className={styles.completionButtonWrap}>
             <button type="button" className="select-mode is-open" onClick={onNext}>
               <img src="/Subject.png" alt="" className="select-chameleon" />
-              Next
+              {nextLabel}
             </button>
-            <p className="cta-go">Let&apos;s go</p>
+            <p className="cta-go">{nextCaption}</p>
           </div>
         </div>
       </div>
@@ -193,11 +303,12 @@ function Completion({ onAgain, onNext, review }: { onAgain: () => void; onNext: 
 
 function WatchMode() {
   const router = useRouter();
+  const { chapterNumber, pack, timeline } = useLesson();
   const [started, setStarted] = useState(false);
   const [complete, setComplete] = useState(false);
-  const finish = useCallback(() => { completeMode("watching"); setComplete(true); }, []);
+  const finish = useCallback(() => { completeMode(chapterNumber, "watching"); setComplete(true); }, [chapterNumber]);
   const engine = useLessonAudio(finish);
-  const activeLine = activeSourceLine(engine.currentTime);
+  const activeLine = activeSourceLine(engine.currentTime, timeline);
   const percent = complete ? 100 : Math.min(100, (engine.currentTime / Math.max(1, engine.duration)) * 100);
 
   const handleStageClick = (event: MouseEvent<HTMLDivElement>) => {
@@ -211,21 +322,22 @@ function WatchMode() {
   return (
     <LessonShell
       hideHeader
-      footer={<p className="watch-chapter">SESSION 1</p>}
+      footer={<p className="watch-chapter">CHAPTER {chapterNumber}</p>}
       video={
         <StoryStage activeLine={activeLine} faded={complete} onClick={handleStageClick}>
           {engine.audio}
           <StageActions onSkip={complete ? undefined : skip} />
+          {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>오디오 준비 중 · SKIP으로 Chapter 흐름을 확인할 수 있어요</p> : null}
           {!started && !complete ? (
             <ClickToStartOverlay
               onClick={() => { setStarted(true); engine.playFull(true); }}
               text="이야기를 듣고 장면을 따라가요"
-              description="Lily의 연속 낭독과 Living Storybook으로 Session 1을 먼저 경험해요."
+              description={`Lily의 연속 낭독과 Living Storybook으로 Chapter ${chapterNumber} · ${pack.story.titleKo}를 경험해요.`}
               actionLabel="시작"
             />
           ) : null}
           {started && !engine.isPlaying && !complete && engine.currentTime > 0 ? <PauseOverlay /> : null}
-          {complete ? <Completion onAgain={again} onNext={() => router.push(modeHref("mimicking"))} /> : null}
+          {complete ? <Completion onAgain={again} onNext={() => router.push(modeHref(chapterNumber, "mimicking"))} /> : null}
         </StoryStage>
       }
       controls={
@@ -247,6 +359,9 @@ function WatchMode() {
 
 function MimicMode() {
   const router = useRouter();
+  const { chapterNumber, pack, timeline } = useLesson();
+  const level = pack.levels.core;
+  const total = level.activities.mimic.items.length;
   const [current, setCurrent] = useState(0);
   const [started, setStarted] = useState(false);
   const [activeSlot, setActiveSlot] = useState<number | null>(null);
@@ -255,9 +370,10 @@ function MimicMode() {
   const [paused, setPaused] = useState(false);
   const [complete, setComplete] = useState(false);
   const [hardLines, setHardLines] = useState<number[]>([]);
+  const [maxReached, setMaxReached] = useState(0);
   const stepTimerRef = useRef<number | null>(null);
   const engine = useLessonAudio();
-  const activeLine = sourceLineForMimic(current);
+  const activeLine = sourceLineForMimic(pack, current);
 
   const clearStepTimer = () => {
     if (stepTimerRef.current !== null) window.clearTimeout(stepTimerRef.current);
@@ -279,8 +395,9 @@ function MimicMode() {
 
   useEffect(() => () => clearStepTimer(), []);
 
-  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(29); completeMode("mimicking"); setComplete(true); setFeedbackOpen(false); };
-  const chooseLine = (index: number, autoplay = false) => {
+  const finish = () => { clearStepTimer(); engine.stop(); setCurrent(total - 1); setMaxReached(total - 1); completeMode(chapterNumber, "mimicking"); setComplete(true); setFeedbackOpen(false); };
+  const chooseLine = (index: number, autoplay = false, unlock = false) => {
+    if (!unlock && index > maxReached) return;
     clearStepTimer();
     engine.stop();
     setCurrent(index);
@@ -290,18 +407,23 @@ function MimicMode() {
     setPaused(false);
     if (autoplay) runStep(0, index);
   };
-  const next = () => { if (!feedbackOpen) current >= 29 ? finish() : chooseLine(current + 1, true); };
+  const advance = () => {
+    const nextIndex = current + 1;
+    setMaxReached((value) => Math.max(value, nextIndex));
+    chooseLine(nextIndex, true, true);
+  };
+  const next = () => { if (!feedbackOpen) current >= total - 1 ? finish() : advance(); };
   const prev = () => { if (!feedbackOpen && current > 0) chooseLine(current - 1, true); };
   const feedback = (hard: boolean) => {
     if (hard) setHardLines((items) => items.includes(current) ? items : [...items, current]);
     setFeedbackOpen(false);
-    if (current >= 29) finish(); else chooseLine(current + 1, true);
+    if (current >= total - 1) finish(); else advance();
   };
   const togglePause = (event: MouseEvent<HTMLDivElement>) => {
     if ((event.target as HTMLElement).closest("button,a") || !started || complete || feedbackOpen) return;
     if (engine.isPlaying) { engine.pause(); setPaused(true); } else { engine.resume(); setPaused(false); }
   };
-  const again = () => { setCurrent(0); setStarted(false); setActiveSlot(null); setComplete(false); setHardLines([]); engine.stop(); engine.seek(0); };
+  const again = () => { setCurrent(0); setMaxReached(0); setStarted(false); setActiveSlot(null); setComplete(false); setHardLines([]); engine.stop(); engine.seek(0); };
 
   const review = (
     <div className={styles.reviewCard}>
@@ -318,7 +440,8 @@ function MimicMode() {
         <StoryStage activeLine={activeLine} faded={complete} onClick={togglePause}>
           {engine.audio}
           <StageActions onSkip={complete ? undefined : finish} />
-          {lineListOpen && !complete ? <MimicLineList total={30} currentIndex={current} canOpen={() => true} onSelect={(index) => chooseLine(index, true)} /> : null}
+          {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 연습 흐름은 계속 확인할 수 있어요</p> : null}
+          {lineListOpen && !complete ? <MimicLineList total={total} currentIndex={current} canOpen={(index) => index <= maxReached} onSelect={(index) => chooseLine(index, true)} /> : null}
           {!started && !complete ? <ClickToStartOverlay onClick={() => runStep(0)} text="듣고 따라 말해요" description="먼저 듣고, 소리 없이 한 번 더 말하며 30개 문장을 연습해요." actionLabel="시작" /> : null}
           {paused && !complete ? <PauseOverlay /> : null}
           {feedbackOpen && !complete ? (
@@ -328,14 +451,14 @@ function MimicMode() {
               <div className={styles.feedbackActions}><button type="button" onClick={() => feedback(false)}>쉬웠어요</button><button type="button" onClick={() => feedback(true)}>어려웠어요</button></div>
             </div>
           ) : null}
-          {complete ? <Completion review={review} onAgain={again} onNext={() => router.push(modeHref("guessing"))} /> : null}
+          {complete ? <Completion review={review} onAgain={again} onNext={() => router.push(modeHref(chapterNumber, "guessing"))} /> : null}
         </StoryStage>
       }
       controls={
         <div className="mimic-dock">
           <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => { if (!feedbackOpen) runStep(slot); }} activeIndex={activeSlot} />
           <button type="button" className="mimic-count" aria-expanded={lineListOpen} aria-label="문장 목록" onClick={() => setLineListOpen((open) => !open)}>
-            <span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">30</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
+            <span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{total}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
           </button>
         </div>
       }
@@ -345,6 +468,8 @@ function MimicMode() {
 
 function GuessMode() {
   const router = useRouter();
+  const { chapterNumber, pack, timeline } = useLesson();
+  const level = pack.levels.core;
   const [current, setCurrent] = useState(0);
   const [started, setStarted] = useState(false);
   const [ready, setReady] = useState(false);
@@ -353,6 +478,7 @@ function GuessMode() {
   const [showAgain, setShowAgain] = useState(false);
   const [complete, setComplete] = useState(false);
   const [lineListOpen, setLineListOpen] = useState(false);
+  const [maxReached, setMaxReached] = useState(0);
   const timerRef = useRef<number | null>(null);
   const engine = useLessonAudio();
   const items = level.activities.guess.items;
@@ -376,7 +502,7 @@ function GuessMode() {
     playAt(0);
   }, [engine, items]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); completeMode("guessing"); setComplete(true); setReady(false); };
+  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); completeMode(chapterNumber, "guessing"); setComplete(true); setReady(false); };
   const answer = (label: string) => {
     if (!ready || complete) return;
     setReady(false);
@@ -385,15 +511,25 @@ function GuessMode() {
       timerRef.current = window.setTimeout(() => {
         setShowCorrect(false);
         if (current >= items.length - 1) finish();
-        else { const next = current + 1; setCurrent(next); playQuestion(next); }
+        else { const next = current + 1; setMaxReached((value) => Math.max(value, next)); setCurrent(next); playQuestion(next); }
       }, 950);
     } else {
       setShowAgain(true);
       timerRef.current = window.setTimeout(() => { setShowAgain(false); setReady(true); }, 950);
     }
   };
-  const jump = (index: number) => { clearTimer(); engine.stop(); setCurrent(index); setLineListOpen(false); setShowCorrect(false); setShowAgain(false); playQuestion(index); };
-  const again = () => { clearTimer(); engine.stop(); setCurrent(0); setStarted(false); setReady(false); setComplete(false); };
+  const jump = (index: number) => {
+    if (index > maxReached) return;
+    clearTimer();
+    engine.stop();
+    setStarted(true);
+    setCurrent(index);
+    setLineListOpen(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    playQuestion(index);
+  };
+  const again = () => { clearTimer(); engine.stop(); setCurrent(0); setMaxReached(0); setStarted(false); setReady(false); setComplete(false); };
 
   return (
     <LessonShell
@@ -402,11 +538,12 @@ function GuessMode() {
         <StoryStage activeLine={question.audioLineIndex} dim={!started || complete} faded={complete}>
           {engine.audio}
           <StageActions onSkip={complete ? undefined : finish} />
-          {lineListOpen && !complete ? <MimicLineList total={items.length} currentIndex={current} canOpen={() => true} onSelect={jump} /> : null}
+          {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 선택 흐름은 계속 확인할 수 있어요</p> : null}
+          {lineListOpen && !complete ? <MimicLineList total={items.length} currentIndex={current} canOpen={(index) => index <= maxReached} onSelect={jump} /> : null}
           {!started && !complete ? <ClickToStartOverlay onClick={() => { setStarted(true); playQuestion(0); }} text="소리 없는 장면을 보고 대사를 골라요" description="세 문장을 차례로 듣고, 장면에 맞는 문장을 A·B·C에서 고르세요." actionLabel="시작" /> : null}
           {showCorrect ? <p className="guess-banner is-correct">Correct</p> : null}
           {showAgain ? <p className="guess-banner is-again">Again</p> : null}
-          {complete ? <Completion onAgain={again} onNext={() => router.push(modeHref("word"))} /> : null}
+          {complete ? <Completion onAgain={again} onNext={() => router.push(modeHref(chapterNumber, "word"))} /> : null}
         </StoryStage>
       }
       controls={
@@ -414,9 +551,9 @@ function GuessMode() {
           <div className="guess-abc">
             <ControlTriangle direction="left" label="이전 문제" disabled={current === 0} onClick={() => jump(Math.max(0, current - 1))} />
             {["A", "B", "C"].map((label) => <button key={label} type="button" className={`guess-opt ${playingLabel === label ? "is-playing" : ""}`} disabled={!ready} onClick={() => answer(label)}>{label}</button>)}
-            <ControlTriangle direction="right" label="다음 문제" disabled={current >= items.length - 1} onClick={() => jump(Math.min(items.length - 1, current + 1))} />
+            <ControlTriangle direction="right" label="다음 문제" disabled={current >= maxReached} onClick={() => jump(Math.min(maxReached, current + 1))} />
           </div>
-          <button type="button" className="mimic-count" aria-label="문제 목록" onClick={() => setLineListOpen((open) => !open)}><span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">10</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" /></button>
+          <button type="button" className="mimic-count" aria-label="문제 목록" onClick={() => setLineListOpen((open) => !open)}><span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{items.length}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" /></button>
         </div>
       }
     />
@@ -424,11 +561,19 @@ function GuessMode() {
 }
 
 function normalizedTokens(item: WordItem) {
-  return item.tokens.reduce<string[]>((tokens, token) => {
-    if (/^[,.;:!?]$/.test(token) && tokens.length) tokens[tokens.length - 1] += token;
-    else tokens.push(token);
-    return tokens;
-  }, []);
+  const tokens: string[] = [];
+  for (let index = 0; index < item.tokens.length; index += 1) {
+    const token = item.tokens[index];
+    if (/^[-–—]$/.test(token) && tokens.length && item.tokens[index + 1]) {
+      tokens[tokens.length - 1] += `${token}${item.tokens[index + 1]}`;
+      index += 1;
+    } else if (/^[,.;:!?]$/.test(token) && tokens.length) {
+      tokens[tokens.length - 1] += token;
+    } else {
+      tokens.push(token);
+    }
+  }
+  return tokens;
 }
 
 function shuffledTokens(tokens: string[], seed: number) {
@@ -444,6 +589,8 @@ function shuffledTokens(tokens: string[], seed: number) {
 
 function WordMode() {
   const router = useRouter();
+  const { chapterNumber, pack, timeline } = useLesson();
+  const level = pack.levels.core;
   const [current, setCurrent] = useState(0);
   const [started, setStarted] = useState(false);
   const [phase, setPhase] = useState<"listening" | "arranging">("listening");
@@ -453,6 +600,7 @@ function WordMode() {
   const [showAgain, setShowAgain] = useState(false);
   const [complete, setComplete] = useState(false);
   const [lineListOpen, setLineListOpen] = useState(false);
+  const [maxReached, setMaxReached] = useState(0);
   const timerRef = useRef<number | null>(null);
   const engine = useLessonAudio();
   const items = level.activities.word.items;
@@ -468,6 +616,7 @@ function WordMode() {
   const playSequence = useCallback((questionIndex: number) => {
     const nextItem = items[questionIndex];
     const segment = timeline.lines[nextItem.lineIndex];
+    setStarted(true);
     setPhase("listening");
     const playAt = (slot: number) => {
       setActiveSlot(slot);
@@ -479,7 +628,7 @@ function WordMode() {
     playAt(0);
   }, [engine, items]);
 
-  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); completeMode("word"); setComplete(true); };
+  const finish = () => { clearTimer(); engine.stop(); setCurrent(items.length - 1); setMaxReached(items.length - 1); completeMode(chapterNumber, "word"); setComplete(true); };
   const submit = () => {
     if (phase !== "arranging" || selected.length !== tokens.length) return;
     const correct = selected.every((id, index) => id === index);
@@ -488,73 +637,158 @@ function WordMode() {
       timerRef.current = window.setTimeout(() => {
         setShowCorrect(false);
         if (current >= items.length - 1) finish();
-        else { const next = current + 1; setCurrent(next); setSelected([]); playSequence(next); }
+        else { const next = current + 1; setMaxReached((value) => Math.max(value, next)); setCurrent(next); setSelected([]); playSequence(next); }
       }, 900);
     } else {
       setShowAgain(true);
       timerRef.current = window.setTimeout(() => { setShowAgain(false); setSelected([]); }, 900);
     }
   };
-  const jump = (index: number) => { clearTimer(); engine.stop(); setCurrent(index); setSelected([]); setLineListOpen(false); setShowCorrect(false); setShowAgain(false); playSequence(index); };
-  const again = () => { clearTimer(); engine.stop(); setCurrent(0); setStarted(false); setPhase("listening"); setSelected([]); setComplete(false); };
+  const jump = (index: number) => {
+    if (index > maxReached) return;
+    clearTimer();
+    engine.stop();
+    setStarted(true);
+    setCurrent(index);
+    setSelected([]);
+    setLineListOpen(false);
+    setShowCorrect(false);
+    setShowAgain(false);
+    playSequence(index);
+  };
+  const again = () => { clearTimer(); engine.stop(); setCurrent(0); setMaxReached(0); setStarted(false); setPhase("listening"); setSelected([]); setComplete(false); };
   const selectToken = (id: number) => { if (phase === "arranging") setSelected((items) => [...items, id]); };
   const renderChip = (token: { id: number; text: string }, compact = false) => <button key={token.id} type="button" className={`word-chip ${compact ? "is-compact" : ""}`} onClick={() => selectToken(token.id)} disabled={phase !== "arranging"}>{token.text}</button>;
 
   return (
     <LessonShell hideHeader compactStage>
       <div className={`word-board ${phase === "arranging" && !complete ? "is-arranging" : ""}`}>
-        <div className="word-chips-side">{phase === "arranging" ? available.slice(0, mid).map((token) => renderChip(token)) : null}</div>
+        <div className="word-chips-side">{phase === "arranging" && !complete ? available.slice(0, mid).map((token) => renderChip(token)) : null}</div>
         <div className={`word-main-stack ${styles.wordMainStack} flex min-h-0 flex-1 flex-col items-center justify-center`}>
           <div className="flex w-full min-h-0 items-center justify-center">
             <div className={`word-video watch-frame relative aspect-video w-full max-h-full overflow-hidden ${activeSlot === 2 ? "is-live" : ""}`}>
               <StoryStage activeLine={item.lineIndex} dim={!started || complete} faded={complete}>
                 {engine.audio}
                 <StageActions onSkip={complete ? undefined : finish} />
-                {lineListOpen && !complete ? <MimicLineList total={items.length} currentIndex={current} canOpen={() => true} onSelect={jump} /> : null}
+                {engine.mediaMissing && !complete ? <p className={styles.mediaNotice}>Chapter {chapterNumber} 오디오 준비 중 · 단어 흐름은 계속 확인할 수 있어요</p> : null}
+                {lineListOpen && !complete ? <MimicLineList total={items.length} currentIndex={current} canOpen={(index) => index <= maxReached} onSelect={jump} /> : null}
                 {!started && !complete ? <ClickToStartOverlay onClick={() => { setStarted(true); playSequence(0); }} text="단어를 바르게 배열해요" description="문장을 두 번 듣고, 소리 없이 한 번 말한 뒤 단어를 올바른 순서로 놓아 보세요." actionLabel="시작" /> : null}
                 {selected.length && !complete ? <div className="word-sentence">{selected.map((id, index) => <button key={`${id}-${index}`} type="button" className="word-sentence-item" onClick={() => setSelected((values) => values.filter((_, itemIndex) => itemIndex !== index))}>{tokens[id]}</button>)}</div> : null}
                 {showCorrect ? <p className="guess-banner is-correct">Correct</p> : null}
                 {showAgain ? <p className="guess-banner is-again">Again</p> : null}
-                {complete ? <Completion onAgain={again} onNext={() => router.push(LESSON_ROOT)} /> : null}
+                {complete ? (
+                  <Completion
+                    onAgain={again}
+                    onNext={() => router.push(chapterNumber < TOTAL_CHAPTERS ? chapterRoot(chapterNumber + 1) : "/dev/pinocchio-levels")}
+                    nextLabel={chapterNumber < TOTAL_CHAPTERS ? "Next" : "Home"}
+                    nextCaption={chapterNumber < TOTAL_CHAPTERS ? "Let's go" : "12개 Chapter 끝!"}
+                  />
+                ) : null}
               </StoryStage>
             </div>
           </div>
           <div className="word-chips-mobile">{phase === "arranging" && !complete ? available.map((token) => renderChip(token, true)) : null}</div>
           <div className="word-dock relative z-20 w-full justify-center overflow-x-auto pt-1">
             <div className="word-bar">
-              <ControlTriangle direction="left" label="다시 듣기" onClick={() => engine.playRange(timeline.lines[item.lineIndex])} />
+              <ControlTriangle
+                direction="left"
+                label="다시 듣기"
+                disabled={phase !== "arranging"}
+                onClick={() => { setStarted(true); engine.playRange(timeline.lines[item.lineIndex]); }}
+              />
               {[0, 1].map((slot) => <div key={slot} className={`ctrl-slot is-listen ${activeSlot === slot ? "is-active" : ""}`} style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}><span className="ctrl-play-icon" /></div>)}
               <div className={`ctrl-slot is-mimic ${activeSlot === 2 ? "is-active" : ""}`} style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}><span className="ctrl-mute-letter">m</span></div>
               <ControlTriangle direction="right" label="전체 다시 듣기" onClick={() => playSequence(current)} />
               <button type="button" onClick={() => setSelected((values) => values.slice(0, -1))} disabled={!selected.length} className="flex shrink-0 items-center justify-center rounded-lg bg-[#2a2a2a] text-xl font-bold text-white disabled:opacity-40" style={{ width: "var(--ctrl-size)", height: "var(--ctrl-size)" }}>⌫</button>
             </div>
-            <button type="button" className="mimic-count" aria-label="문제 목록" onClick={() => setLineListOpen((open) => !open)}><span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">10</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" /></button>
+            <button type="button" className="mimic-count" aria-label="문제 목록" onClick={() => setLineListOpen((open) => !open)}><span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{items.length}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" /></button>
           </div>
           {!complete ? <button type="button" className={`word-submit relative z-20 mb-1 mt-1 ${selected.length === tokens.length ? "hover:scale-105" : "opacity-40"}`} onClick={submit} disabled={selected.length !== tokens.length || phase !== "arranging"}><img src="/Subject.png" alt="완성한 문장 제출" /></button> : null}
         </div>
-        <div className="word-chips-side">{phase === "arranging" ? available.slice(mid).map((token) => renderChip(token)) : null}</div>
+        <div className="word-chips-side">{phase === "arranging" && !complete ? available.slice(mid).map((token) => renderChip(token)) : null}</div>
       </div>
     </LessonShell>
   );
 }
 
 export default function PinocchioLessonModePage() {
-  const params = useParams<{ mode: string }>();
+  const params = useParams<{ chapter?: string; mode: string }>();
   const router = useRouter();
   const mode = params.mode as LessonMode;
+  const parsedChapter = parseChapterNumber(params.chapter);
+  const chapterNumber = params.chapter === undefined ? 1 : parsedChapter;
+  const pack = chapterNumber ? getChapterPack(chapterNumber) : undefined;
+  const fallbackTimeline = useMemo(
+    () => pack ? estimatedTimeline(pack) : null,
+    [pack]
+  );
+  const [timeline, setTimeline] = useState<Timeline | null>(fallbackTimeline);
   const [allowed, setAllowed] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (!MODE_ORDER.includes(mode)) { setAllowed(false); return; }
-    const nextAllowed = canOpenMode(mode, readCompleted());
-    setAllowed(nextAllowed);
-    if (!nextAllowed) router.replace(LESSON_ROOT);
-  }, [mode, router]);
+    if (!chapterNumber || !pack || !MODE_ORDER.includes(mode)) {
+      setAllowed(false);
+      router.replace(chapterRoot(1));
+      return;
+    }
 
-  if (allowed !== true) return <main className="min-h-screen bg-black" />;
-  if (mode === "watching") return <WatchMode />;
-  if (mode === "mimicking") return <MimicMode />;
-  if (mode === "guessing") return <GuessMode />;
-  if (mode === "word") return <WordMode />;
-  return <main className="flex min-h-screen items-center justify-center bg-black text-white"><Link href={LESSON_ROOT}>Session 1으로 돌아가기</Link></main>;
+    const progress = readProgress();
+    if (!canOpenChapter(chapterNumber, progress)) {
+      setAllowed(false);
+      router.replace(chapterRoot(latestOpenChapter(progress)));
+      return;
+    }
+
+    const nextAllowed = canOpenMode(mode, readCompleted(chapterNumber));
+    setAllowed(nextAllowed);
+    if (!nextAllowed) router.replace(chapterRoot(chapterNumber));
+  }, [chapterNumber, mode, pack, router]);
+
+  useEffect(() => {
+    if (!chapterNumber || !fallbackTimeline) return;
+    const controller = new AbortController();
+    setTimeline(fallbackTimeline);
+
+    void fetch(chapterMedia(chapterNumber).timelineSrc, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Timeline returned ${response.status}`);
+        return response.json() as Promise<Timeline>;
+      })
+      .then((nextTimeline) => {
+        const valid = Number.isFinite(nextTimeline.duration)
+          && nextTimeline.lines?.length === pack?.levels.core.lines.length
+          && nextTimeline.mimicItems?.length === pack?.levels.core.activities.mimic.items.length;
+        if (valid) setTimeline(nextTimeline);
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setTimeline(fallbackTimeline);
+      });
+
+    return () => controller.abort();
+  }, [chapterNumber, fallbackTimeline, pack]);
+
+  if (allowed !== true || !chapterNumber || !pack || !timeline) return <main className="min-h-screen bg-black" />;
+
+  const lesson = {
+    chapterNumber,
+    pack,
+    timeline,
+    audioSrc: chapterMedia(chapterNumber).audioSrc,
+  };
+
+  let content: ReactNode = null;
+  if (mode === "watching") content = <WatchMode />;
+  else if (mode === "mimicking") content = <MimicMode />;
+  else if (mode === "guessing") content = <GuessMode />;
+  else if (mode === "word") content = <WordMode />;
+
+  return (
+    <LessonContext.Provider value={lesson}>
+      {content ?? (
+        <main className="flex min-h-screen items-center justify-center bg-black text-white">
+          <Link href={chapterRoot(chapterNumber)}>Chapter {chapterNumber}으로 돌아가기</Link>
+        </main>
+      )}
+    </LessonContext.Provider>
+  );
 }

@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-10",
+  "contentChecksum": "abad0ffbc55eb17431cdf51b4500f3558cb3bf035bd03c3fb2d8e7ad17ed2391",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:25:46.380Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2410,
+  "requestId": "Tbroaz5USsb21qlr0LhB",
+  "billedCharactersEstimate": 1248,
+  "duration": 84.005,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "A circus owner bought Donkey Pinocchio and trained him through punishment.",
+      "start": 0.383,
+      "end": 4.747
+    },
+    {
+      "id": "line-02",
+      "text": "Soon the animal performed bows, dances, and dangerous jumps before crowds.",
+      "start": 4.747,
+      "end": 11.328
+    },
+    {
+      "id": "line-03",
+      "text": "During one bright performance, Pinocchio recognized the Blue Fairy in the audience.",
+      "start": 11.328,
+      "end": 16.983
+    },
+    {
+      "id": "line-04",
+      "text": "He tried to call her name, but his mouth produced only a donkey's bray.",
+      "start": 16.983,
+      "end": 22.191
+    },
+    {
+      "id": "line-05",
+      "text": "Confused and distracted, Pinocchio missed a jump and injured one leg.",
+      "start": 22.191,
+      "end": 27.635
+    },
+    {
+      "id": "line-06",
+      "text": "The circus owner immediately sold the lame donkey for almost nothing.",
+      "start": 27.635,
+      "end": 32.91
+    },
+    {
+      "id": "line-07",
+      "text": "His next owner cared only about using the skin for a drumhead.",
+      "start": 32.91,
+      "end": 37.145
+    },
+    {
+      "id": "line-08",
+      "text": "The man tied a heavy stone to Pinocchio and dropped him underwater.",
+      "start": 37.145,
+      "end": 42.739
+    },
+    {
+      "id": "line-09",
+      "text": "Hungry fish consumed the donkey covering while the protected wooden body remained.",
+      "start": 42.739,
+      "end": 48.413
+    },
+    {
+      "id": "line-10",
+      "text": "When the rope rose, the surprised buyer found a living marionette instead.",
+      "start": 48.413,
+      "end": 54.47
+    },
+    {
+      "id": "line-11",
+      "text": "Pinocchio slipped free and explained that the Fairy had protected him.",
+      "start": 54.47,
+      "end": 59.221
+    },
+    {
+      "id": "line-12",
+      "text": "While he swam away, an azure Goat called from a white rock.",
+      "start": 59.221,
+      "end": 64.895
+    },
+    {
+      "id": "line-13",
+      "text": "Before he could reach safety, the Terrible Shark appeared nearby.",
+      "start": 64.895,
+      "end": 69.581
+    },
+    {
+      "id": "line-14",
+      "text": "Its mouth opened like a cave and pulled the swimmer inward.",
+      "start": 69.581,
+      "end": 74.658
+    },
+    {
+      "id": "line-15",
+      "text": "Pinocchio was swallowed before he could change direction.",
+      "start": 74.658,
+      "end": 78.332
+    },
+    {
+      "id": "line-16",
+      "text": "In the darkness, a large Tunny explained that escape seemed impossible.",
+      "start": 78.332,
+      "end": 84.005
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "A circus owner bought Donkey Pinocchio",
+      "start": 0.343,
+      "end": 2.583
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "and trained him through punishment.",
+      "start": 2.503,
+      "end": 4.743
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "Soon the animal performed bows,",
+      "start": 4.731,
+      "end": 7.783
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "dances, and dangerous jumps before crowds.",
+      "start": 7.654,
+      "end": 10.983
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "During one bright performance,",
+      "start": 11.654,
+      "end": 13.623
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "Pinocchio recognized the Blue Fairy in the audience.",
+      "start": 13.443,
+      "end": 17.023
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "He tried to call her name,",
+      "start": 16.923,
+      "end": 18.983
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "but his mouth produced only a donkey's bray.",
+      "start": 18.783,
+      "end": 21.703
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Confused and distracted, Pinocchio missed a jump",
+      "start": 22.658,
+      "end": 26.105
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "and injured one leg.",
+      "start": 25.985,
+      "end": 27.625
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "The circus owner immediately sold",
+      "start": 27.625,
+      "end": 30.345
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "the lame donkey for almost nothing.",
+      "start": 30.145,
+      "end": 32.505
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "His next owner cared only about",
+      "start": 33.295,
+      "end": 35.305
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "using the skin for a drumhead.",
+      "start": 35.138,
+      "end": 37.145
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "The man tied a heavy stone to Pinocchio",
+      "start": 37.125,
+      "end": 40.585
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "and dropped him underwater.",
+      "start": 40.445,
+      "end": 42.265
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "Hungry fish consumed the donkey covering",
+      "start": 43.194,
+      "end": 45.865
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "while the protected wooden body remained.",
+      "start": 45.725,
+      "end": 48.425
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "When the rope rose,",
+      "start": 48.381,
+      "end": 50.585
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "the surprised buyer found a living marionette instead.",
+      "start": 50.385,
+      "end": 54.105
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "Pinocchio slipped free",
+      "start": 54.815,
+      "end": 56.435
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 10,
+      "text": "and explained that the Fairy had protected him.",
+      "start": 56.315,
+      "end": 59.235
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "While he swam away,",
+      "start": 59.188,
+      "end": 61.475
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 11,
+      "text": "an azure Goat called from a white rock.",
+      "start": 61.308,
+      "end": 64.355
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "Before he could reach safety, the Terrible Shark appeared nearby.",
+      "start": 65.415,
+      "end": 69.561
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "Its mouth opened like a cave",
+      "start": 69.581,
+      "end": 72.201
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 13,
+      "text": "and pulled the swimmer inward.",
+      "start": 72.101,
+      "end": 74.201
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "Pinocchio was swallowed before he could change direction.",
+      "start": 75.095,
+      "end": 78.285
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "In the darkness,",
+      "start": 78.358,
+      "end": 80.285
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "a large Tunny explained that escape seemed impossible.",
+      "start": 80.145,
+      "end": 83.885
+    }
+  ]
+}

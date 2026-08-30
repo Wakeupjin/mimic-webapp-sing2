@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-04",
+  "contentChecksum": "c344df90be9c7b4b977699a4d792430e36905696d1954572db2a2281fb0cc48b",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:22:50.033Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2404,
+  "requestId": "NGLEQ5o3DEGgh4lZzFOY",
+  "billedCharactersEstimate": 1253,
+  "duration": 90.258,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Fire Eater gave Pinocchio five gold pieces to carry home to Geppetto.",
+      "start": 0.091,
+      "end": 5.117
+    },
+    {
+      "id": "line-02",
+      "text": "The puppet imagined food, clothing, and a new coat for his father.",
+      "start": 5.117,
+      "end": 10.973
+    },
+    {
+      "id": "line-03",
+      "text": "On the road, a limping Fox and supposedly blind Cat approached him.",
+      "start": 10.973,
+      "end": 17.163
+    },
+    {
+      "id": "line-04",
+      "text": "They described a magical field where buried coins would multiply overnight.",
+      "start": 17.163,
+      "end": 23.262
+    },
+    {
+      "id": "line-05",
+      "text": "A Blackbird exposed the story as a trick and urged Pinocchio home.",
+      "start": 23.262,
+      "end": 28.707
+    },
+    {
+      "id": "line-06",
+      "text": "The Cat quickly silenced the bird before the warning could sink in.",
+      "start": 28.707,
+      "end": 33.969
+    },
+    {
+      "id": "line-07",
+      "text": "Pinocchio chose the exciting promise and followed them to the Red Lobster Inn.",
+      "start": 33.969,
+      "end": 39.437
+    },
+    {
+      "id": "line-08",
+      "text": "His new friends ordered an enormous meal while pretending to be unwell.",
+      "start": 39.437,
+      "end": 45.171
+    },
+    {
+      "id": "line-09",
+      "text": "Before midnight, they disappeared and left Pinocchio responsible for the bill.",
+      "start": 45.171,
+      "end": 51.005
+    },
+    {
+      "id": "line-10",
+      "text": "After paying one coin, he continued alone along the dark road.",
+      "start": 51.005,
+      "end": 56.201
+    },
+    {
+      "id": "line-11",
+      "text": "The ghost of the Talking Cricket offered one final warning to return.",
+      "start": 56.201,
+      "end": 61.774
+    },
+    {
+      "id": "line-12",
+      "text": "Two masked Assassins appeared and chased Pinocchio deep into the forest.",
+      "start": 61.774,
+      "end": 68.069
+    },
+    {
+      "id": "line-13",
+      "text": "He hid the remaining four coins beneath his tongue and refused to speak.",
+      "start": 68.069,
+      "end": 73.516
+    },
+    {
+      "id": "line-14",
+      "text": "After a desperate escape, he raced toward a distant white house.",
+      "start": 73.516,
+      "end": 79.75
+    },
+    {
+      "id": "line-15",
+      "text": "The Assassins caught him near a giant oak when the door stayed closed.",
+      "start": 79.75,
+      "end": 85.126
+    },
+    {
+      "id": "line-16",
+      "text": "They left him suspended from a branch while the violent wind rose.",
+      "start": 85.126,
+      "end": 90.258
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "Fire Eater gave Pinocchio five gold",
+      "start": 0.051,
+      "end": 2.687
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "pieces to carry home to Geppetto.",
+      "start": 2.547,
+      "end": 5.167
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "The puppet imagined food, clothing,",
+      "start": 5.047,
+      "end": 8.447
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "and a new coat for his father.",
+      "start": 8.267,
+      "end": 10.527
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "On the road, a limping Fox",
+      "start": 11.4,
+      "end": 13.887
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "and supposedly blind Cat approached him.",
+      "start": 13.767,
+      "end": 17.167
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "They described a magical field",
+      "start": 17.139,
+      "end": 19.967
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "where buried coins would multiply overnight.",
+      "start": 19.787,
+      "end": 22.847
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "A Blackbird exposed the story",
+      "start": 23.657,
+      "end": 25.727
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "as a trick and urged Pinocchio home.",
+      "start": 25.56,
+      "end": 28.687
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "The Cat quickly silenced the bird",
+      "start": 28.707,
+      "end": 31.647
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "before the warning could sink in.",
+      "start": 31.473,
+      "end": 33.487
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "Pinocchio chose the exciting promise",
+      "start": 34.431,
+      "end": 36.687
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "and followed them to the Red Lobster Inn.",
+      "start": 36.587,
+      "end": 39.407
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "His new friends ordered an enormous meal",
+      "start": 39.447,
+      "end": 42.847
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "while pretending to be unwell.",
+      "start": 42.68,
+      "end": 44.687
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "Before midnight, they disappeared",
+      "start": 45.634,
+      "end": 47.408
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "and left Pinocchio responsible for the bill.",
+      "start": 47.348,
+      "end": 51.048
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "After paying one coin,",
+      "start": 50.941,
+      "end": 53.088
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "he continued alone along the dark road.",
+      "start": 52.895,
+      "end": 55.728
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "The ghost of the Talking Cricket",
+      "start": 56.654,
+      "end": 58.774
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 10,
+      "text": "offered one final warning to return.",
+      "start": 58.634,
+      "end": 61.734
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "Two masked Assassins appeared and chased Pinocchio deep into the forest.",
+      "start": 61.794,
+      "end": 67.654
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "He hid the remaining four coins beneath his tongue",
+      "start": 68.463,
+      "end": 71.416
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "and refused to speak.",
+      "start": 71.316,
+      "end": 73.496
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "After a desperate escape, he raced toward a distant white house.",
+      "start": 73.516,
+      "end": 79.336
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 14,
+      "text": "The Assassins caught him near a giant oak",
+      "start": 80.143,
+      "end": 82.698
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "when the door stayed closed.",
+      "start": 82.558,
+      "end": 85.178
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "They left him suspended from a branch",
+      "start": 85.054,
+      "end": 87.818
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "while the violent wind rose.",
+      "start": 87.651,
+      "end": 90.138
+    }
+  ]
+}

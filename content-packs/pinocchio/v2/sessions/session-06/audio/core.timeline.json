@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-06",
+  "contentChecksum": "7ce600697e19cef5e274eed43c2e21d74bb247e326e0b6278b205d96c1583c83",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:23:53.179Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2406,
+  "requestId": "k1RaNjKTEoIcQ7gzxOFt",
+  "billedCharactersEstimate": 1255,
+  "duration": 94.65,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Once released from prison, Pinocchio hurried back toward the Blue Fairy.",
+      "start": 0.138,
+      "end": 5.11
+    },
+    {
+      "id": "line-02",
+      "text": "A giant smoking Serpent blocked the road and frightened him senseless.",
+      "start": 5.11,
+      "end": 12.532
+    },
+    {
+      "id": "line-03",
+      "text": "Later, hunger tempted Pinocchio to steal grapes from a vineyard.",
+      "start": 12.532,
+      "end": 16.756
+    },
+    {
+      "id": "line-04",
+      "text": "A hidden trap snapped shut and held both wooden legs.",
+      "start": 16.756,
+      "end": 22.189
+    },
+    {
+      "id": "line-05",
+      "text": "The farmer who found him chained the puppet beside his chicken coop.",
+      "start": 22.189,
+      "end": 27.101
+    },
+    {
+      "id": "line-06",
+      "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog.",
+      "start": 27.101,
+      "end": 33.559
+    },
+    {
+      "id": "line-07",
+      "text": "That night, Weasels offered him food for allowing their usual theft.",
+      "start": 33.559,
+      "end": 39.384
+    },
+    {
+      "id": "line-08",
+      "text": "Instead of accepting the bargain, Pinocchio trapped them and alerted the farmer.",
+      "start": 39.384,
+      "end": 46.034
+    },
+    {
+      "id": "line-09",
+      "text": "Impressed by this unexpected honesty, the farmer removed the humiliating collar.",
+      "start": 46.034,
+      "end": 53.13
+    },
+    {
+      "id": "line-10",
+      "text": "At the Fairy's home, Pinocchio discovered a stone claiming she had died.",
+      "start": 53.13,
+      "end": 59.677
+    },
+    {
+      "id": "line-11",
+      "text": "His grief continued until a great Pigeon brought news of Geppetto.",
+      "start": 59.677,
+      "end": 65.505
+    },
+    {
+      "id": "line-12",
+      "text": "The bird explained that his father had built a small boat to search overseas.",
+      "start": 65.505,
+      "end": 71.528
+    },
+    {
+      "id": "line-13",
+      "text": "Pinocchio climbed onto the Pigeon's back without hesitating.",
+      "start": 71.528,
+      "end": 75.878
+    },
+    {
+      "id": "line-14",
+      "text": "They flew through the entire night and reached the coast by morning.",
+      "start": 75.878,
+      "end": 81.726
+    },
+    {
+      "id": "line-15",
+      "text": "Offshore, Pinocchio recognized Geppetto struggling as a storm overturned the boat.",
+      "start": 81.726,
+      "end": 88.99
+    },
+    {
+      "id": "line-16",
+      "text": "He threw himself into the rough sea, determined to reach his father.",
+      "start": 88.99,
+      "end": 94.65
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "Once released from prison,",
+      "start": 0.098,
+      "end": 2.11
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio hurried back toward the Blue Fairy.",
+      "start": 1.95,
+      "end": 4.91
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "A giant smoking Serpent blocked the road",
+      "start": 5.29,
+      "end": 9.39
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "and frightened him senseless.",
+      "start": 9.29,
+      "end": 12.19
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "Later, hunger tempted Pinocchio to",
+      "start": 12.853,
+      "end": 14.916
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "steal grapes from a vineyard.",
+      "start": 14.763,
+      "end": 16.676
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "A hidden trap snapped shut",
+      "start": 16.816,
+      "end": 19.316
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "and held both wooden legs.",
+      "start": 19.216,
+      "end": 21.796
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "The farmer who found him chained",
+      "start": 22.561,
+      "end": 25.001
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "the puppet beside his chicken coop.",
+      "start": 24.801,
+      "end": 27.081
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "Pinocchio was ordered to replace Melampo, the farmer's dead watchdog.",
+      "start": 27.101,
+      "end": 33.001
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 6,
+      "text": "That night,",
+      "start": 34.096,
+      "end": 35.244
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "Weasels offered him food for allowing their usual theft.",
+      "start": 35.104,
+      "end": 39.404
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 7,
+      "text": "Instead of accepting the bargain,",
+      "start": 39.344,
+      "end": 42.444
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "Pinocchio trapped them and alerted the farmer.",
+      "start": 42.284,
+      "end": 45.404
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 8,
+      "text": "Impressed by this unexpected honesty,",
+      "start": 46.644,
+      "end": 50.044
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "the farmer removed the humiliating collar.",
+      "start": 49.864,
+      "end": 53.004
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 9,
+      "text": "At the Fairy's home,",
+      "start": 53.237,
+      "end": 55.724
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "Pinocchio discovered a stone claiming she had died.",
+      "start": 55.564,
+      "end": 59.244
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 10,
+      "text": "His grief continued until a",
+      "start": 60.09,
+      "end": 62.45
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "great Pigeon brought news of Geppetto.",
+      "start": 62.31,
+      "end": 65.53
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 11,
+      "text": "The bird explained that his father had",
+      "start": 65.46,
+      "end": 68.05
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "built a small boat to search overseas.",
+      "start": 67.87,
+      "end": 71.09
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "Pinocchio climbed onto the Pigeon's back without hesitating.",
+      "start": 71.945,
+      "end": 75.89
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 13,
+      "text": "They flew through the entire night",
+      "start": 75.846,
+      "end": 78.77
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "and reached the coast by morning.",
+      "start": 78.69,
+      "end": 81.09
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 14,
+      "text": "Offshore, Pinocchio recognized Geppetto struggling",
+      "start": 82.342,
+      "end": 86.29
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "as a storm overturned the boat.",
+      "start": 86.15,
+      "end": 88.93
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "He threw himself into the rough sea,",
+      "start": 89.03,
+      "end": 92.21
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "determined to reach his father.",
+      "start": 92.07,
+      "end": 94.53
+    }
+  ]
+}

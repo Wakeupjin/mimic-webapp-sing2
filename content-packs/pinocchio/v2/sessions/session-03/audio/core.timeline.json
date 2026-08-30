@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-03",
+  "contentChecksum": "92bbe30f2acca381c0eb196fe357b594096700ea43c0341060b118e72ba37966",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:22:22.955Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2403,
+  "requestId": "41ZxnnydhtBnh0AS0eYk",
+  "billedCharactersEstimate": 1234,
+  "duration": 92.974,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Pinocchio started toward school, proudly carrying the primer Geppetto had sacrificed for.",
+      "start": 0.064,
+      "end": 6.674
+    },
+    {
+      "id": "line-02",
+      "text": "Music from a nearby puppet theater made him forget every promise.",
+      "start": 6.674,
+      "end": 11.697
+    },
+    {
+      "id": "line-03",
+      "text": "He sold the precious book and spent the money on a ticket.",
+      "start": 11.697,
+      "end": 16.387
+    },
+    {
+      "id": "line-04",
+      "text": "Onstage, the wooden actors immediately recognized Pinocchio as their long-lost brother.",
+      "start": 16.387,
+      "end": 23.739
+    },
+    {
+      "id": "line-05",
+      "text": "They abandoned the play and greeted him with noisy affection.",
+      "start": 23.739,
+      "end": 28.354
+    },
+    {
+      "id": "line-06",
+      "text": "Their enormous director, Fire Eater, entered and demanded an explanation.",
+      "start": 28.354,
+      "end": 34.82
+    },
+    {
+      "id": "line-07",
+      "text": "He blamed Pinocchio for the ruined performance and threatened to burn him.",
+      "start": 34.82,
+      "end": 39.997
+    },
+    {
+      "id": "line-08",
+      "text": "The terrified puppet called for his father and begged for mercy.",
+      "start": 39.997,
+      "end": 45.955
+    },
+    {
+      "id": "line-09",
+      "text": "Fire Eater's repeated sneezes revealed that his anger was beginning to soften.",
+      "start": 45.955,
+      "end": 51.773
+    },
+    {
+      "id": "line-10",
+      "text": "He spared Pinocchio but ordered Harlequin burned beneath the roasting dinner.",
+      "start": 51.773,
+      "end": 58.159
+    },
+    {
+      "id": "line-11",
+      "text": "Pinocchio refused to celebrate while his innocent friend faced danger.",
+      "start": 58.159,
+      "end": 64.159
+    },
+    {
+      "id": "line-12",
+      "text": "He begged, argued, and finally offered to replace Harlequin himself.",
+      "start": 64.159,
+      "end": 70.423
+    },
+    {
+      "id": "line-13",
+      "text": "The selfish runaway suddenly acted with loyalty and genuine courage.",
+      "start": 70.423,
+      "end": 76.562
+    },
+    {
+      "id": "line-14",
+      "text": "Fire Eater lifted him up, deeply moved by the sacrifice.",
+      "start": 76.562,
+      "end": 81.988
+    },
+    {
+      "id": "line-15",
+      "text": "He pardoned Harlequin and decided to eat his dinner uncooked.",
+      "start": 81.988,
+      "end": 88.024
+    },
+    {
+      "id": "line-16",
+      "text": "The entire puppet company danced with relief until dawn.",
+      "start": 88.024,
+      "end": 92.974
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio started toward school,",
+      "start": 0.024,
+      "end": 2.604
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "proudly carrying the primer Geppetto had sacrificed for.",
+      "start": 2.464,
+      "end": 6.724
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "Music from a nearby puppet",
+      "start": 6.604,
+      "end": 8.524
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "theater made him forget every promise.",
+      "start": 8.374,
+      "end": 11.324
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "He sold the precious book",
+      "start": 12.049,
+      "end": 13.967
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "and spent the money on a ticket.",
+      "start": 13.847,
+      "end": 16.287
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "Onstage, the wooden actors immediately recognized Pinocchio",
+      "start": 16.467,
+      "end": 21.647
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "as their long-lost brother.",
+      "start": 21.534,
+      "end": 23.407
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "They abandoned the play",
+      "start": 24.051,
+      "end": 25.727
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "and greeted him with noisy affection.",
+      "start": 25.587,
+      "end": 28.367
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "Their enormous director, Fire Eater,",
+      "start": 28.32,
+      "end": 31.887
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "entered and demanded an explanation.",
+      "start": 31.737,
+      "end": 34.527
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "He blamed Pinocchio for the ruined performance",
+      "start": 35.094,
+      "end": 37.887
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "and threatened to burn him.",
+      "start": 37.787,
+      "end": 39.967
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "The terrified puppet called for his father",
+      "start": 40.007,
+      "end": 43.487
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "and begged for mercy.",
+      "start": 43.387,
+      "end": 45.407
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "Fire Eater's repeated sneezes revealed that",
+      "start": 46.483,
+      "end": 49.727
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "his anger was beginning to soften.",
+      "start": 49.567,
+      "end": 51.727
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "He spared Pinocchio",
+      "start": 51.8,
+      "end": 53.807
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "but ordered Harlequin burned beneath the roasting dinner.",
+      "start": 53.747,
+      "end": 57.647
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "Pinocchio refused to celebrate",
+      "start": 58.652,
+      "end": 60.772
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 10,
+      "text": "while his innocent friend faced danger.",
+      "start": 60.619,
+      "end": 64.172
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "He begged, argued,",
+      "start": 64.125,
+      "end": 66.532
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 11,
+      "text": "and finally offered to replace Harlequin himself.",
+      "start": 66.332,
+      "end": 69.972
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "The selfish runaway suddenly acted with loyalty",
+      "start": 70.854,
+      "end": 74.534
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 12,
+      "text": "and genuine courage.",
+      "start": 74.454,
+      "end": 76.534
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 13,
+      "text": "Fire Eater lifted him up,",
+      "start": 76.57,
+      "end": 79.334
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 13,
+      "text": "deeply moved by the sacrifice.",
+      "start": 79.194,
+      "end": 81.654
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 14,
+      "text": "He pardoned Harlequin and decided to eat his dinner uncooked.",
+      "start": 82.301,
+      "end": 88.054
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "The entire puppet company danced with relief until dawn.",
+      "start": 87.974,
+      "end": 92.854
+    }
+  ]
+}

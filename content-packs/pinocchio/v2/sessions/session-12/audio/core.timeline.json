@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-12",
+  "contentChecksum": "defe515ec38a536a5e9e52956e6c5c373568742ee9f09a9355fd3b34b67f41d0",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:26:47.588Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2412,
+  "requestId": "iW33TBobwdFnlPpgpque",
+  "billedCharactersEstimate": 1280,
+  "duration": 96.741,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Pinocchio carried Geppetto through the sea until his strength began failing.",
+      "start": 0.107,
+      "end": 5.487
+    },
+    {
+      "id": "line-02",
+      "text": "The friendly Tunny arrived and carried both exhausted travelers safely ashore.",
+      "start": 5.487,
+      "end": 11.503
+    },
+    {
+      "id": "line-03",
+      "text": "On the road, the ruined Fox and Cat begged their former victim for money.",
+      "start": 11.503,
+      "end": 17.977
+    },
+    {
+      "id": "line-04",
+      "text": "Pinocchio remembered their theft, rejected their excuses, and continued with his father.",
+      "start": 17.977,
+      "end": 24.784
+    },
+    {
+      "id": "line-05",
+      "text": "The Talking Cricket welcomed them into a small straw cottage.",
+      "start": 24.784,
+      "end": 30.871
+    },
+    {
+      "id": "line-06",
+      "text": "Pinocchio apologized for the hammer and prepared a bed for Geppetto.",
+      "start": 30.871,
+      "end": 35.886
+    },
+    {
+      "id": "line-07",
+      "text": "Farmer John offered warm milk in exchange for one hundred buckets of water.",
+      "start": 35.886,
+      "end": 41.807
+    },
+    {
+      "id": "line-08",
+      "text": "Every morning, Pinocchio completed the hard work to feed his weak father.",
+      "start": 41.807,
+      "end": 48.23
+    },
+    {
+      "id": "line-09",
+      "text": "At the farm, he discovered Lamp-Wick dying after a donkey's life of exhaustion.",
+      "start": 48.23,
+      "end": 54.721
+    },
+    {
+      "id": "line-10",
+      "text": "For five months, Pinocchio worked by day and studied by lamplight.",
+      "start": 54.721,
+      "end": 60.674
+    },
+    {
+      "id": "line-11",
+      "text": "He sold baskets, supported Geppetto, and built him a comfortable rolling chair.",
+      "start": 60.674,
+      "end": 66.823
+    },
+    {
+      "id": "line-12",
+      "text": "Eventually he saved fifty pennies and planned to buy new clothes.",
+      "start": 66.823,
+      "end": 72.793
+    },
+    {
+      "id": "line-13",
+      "text": "The Snail then reported that the Blue Fairy was sick and penniless.",
+      "start": 72.793,
+      "end": 78.311
+    },
+    {
+      "id": "line-14",
+      "text": "Pinocchio gave away every coin and doubled his work for her.",
+      "start": 78.311,
+      "end": 84.202
+    },
+    {
+      "id": "line-15",
+      "text": "That night, the Fairy praised his loving heart and forgave his past.",
+      "start": 84.202,
+      "end": 90.041
+    },
+    {
+      "id": "line-16",
+      "text": "He awoke as a real boy in a renewed home beside a healthy Geppetto.",
+      "start": 90.041,
+      "end": 96.741
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio carried Geppetto through the",
+      "start": 0.067,
+      "end": 2.137
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "sea until his strength began failing.",
+      "start": 2.037,
+      "end": 5.577
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "The friendly Tunny arrived",
+      "start": 5.377,
+      "end": 7.097
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "and carried both exhausted travelers safely ashore.",
+      "start": 6.937,
+      "end": 11.017
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "On the road, the ruined Fox",
+      "start": 11.97,
+      "end": 14.377
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "and Cat begged their former victim for money.",
+      "start": 14.197,
+      "end": 17.977
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "Pinocchio remembered their theft, rejected their excuses,",
+      "start": 17.957,
+      "end": 22.617
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "and continued with his father.",
+      "start": 22.457,
+      "end": 24.377
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "The Talking Cricket welcomed them into a small straw cottage.",
+      "start": 25.171,
+      "end": 30.861
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 5,
+      "text": "Pinocchio apologized for the hammer",
+      "start": 30.861,
+      "end": 33.501
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "and prepared a bed for Geppetto.",
+      "start": 33.361,
+      "end": 35.421
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 6,
+      "text": "Farmer John offered warm milk in",
+      "start": 36.332,
+      "end": 38.781
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "exchange for one hundred buckets of water.",
+      "start": 38.632,
+      "end": 41.821
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 7,
+      "text": "Every morning, Pinocchio completed the hard",
+      "start": 41.774,
+      "end": 45.261
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "work to feed his weak father.",
+      "start": 45.121,
+      "end": 47.821
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 8,
+      "text": "At the farm, he discovered Lamp-Wick dying",
+      "start": 48.62,
+      "end": 51.901
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "after a donkey's life of exhaustion.",
+      "start": 51.788,
+      "end": 54.701
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 9,
+      "text": "For five months, Pinocchio worked by day",
+      "start": 54.721,
+      "end": 58.541
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "and studied by lamplight.",
+      "start": 58.421,
+      "end": 60.381
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 10,
+      "text": "He sold baskets, supported Geppetto,",
+      "start": 60.948,
+      "end": 64.381
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "and built him a comfortable rolling chair.",
+      "start": 64.201,
+      "end": 66.861
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 11,
+      "text": "Eventually he saved fifty pennies",
+      "start": 66.765,
+      "end": 69.821
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "and planned to buy new clothes.",
+      "start": 69.701,
+      "end": 72.461
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "The Snail then reported that the",
+      "start": 73.106,
+      "end": 75.341
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "Blue Fairy was sick and penniless.",
+      "start": 75.201,
+      "end": 78.301
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "Pinocchio gave away every coin and doubled his work for her.",
+      "start": 78.301,
+      "end": 83.941
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 14,
+      "text": "That night, the Fairy praised his loving heart",
+      "start": 84.443,
+      "end": 88.061
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "and forgave his past.",
+      "start": 87.921,
+      "end": 89.981
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "He awoke as a real boy in",
+      "start": 90.081,
+      "end": 93.101
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "a renewed home beside a healthy Geppetto.",
+      "start": 92.921,
+      "end": 96.621
+    }
+  ]
+}

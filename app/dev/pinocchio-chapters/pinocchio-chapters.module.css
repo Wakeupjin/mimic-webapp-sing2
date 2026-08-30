@@ -1,0 +1,92 @@
+.profileBadge {
+  display: grid;
+  grid-template-columns: 44px auto;
+  grid-template-rows: auto auto;
+  min-width: 154px;
+  align-items: center;
+  column-gap: 10px;
+  padding: 7px 14px 7px 7px;
+  border: 2px solid #3a3838;
+  border-radius: 999px;
+  background: #201e1e;
+  color: white;
+  text-align: left;
+}
+
+.profileBadge > span {
+  display: grid;
+  grid-row: 1 / 3;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: #60d96c;
+  color: #102012;
+  font-weight: 900;
+}
+
+.profileBadge b { font-size: .86rem; line-height: 1.1; }
+.profileBadge small { max-width: 12rem; overflow: hidden; color: #aaa; font-size: .66rem; text-overflow: ellipsis; white-space: nowrap; }
+
+.stageArt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--focus-x, 50%) 45%;
+  transition: object-position .8s ease, filter .2s ease, opacity .2s ease;
+  user-select: none;
+}
+
+.stageArtFallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12%;
+  background:
+    radial-gradient(circle at var(--focus-x, 50%) 44%, rgba(96, 217, 108, .3), transparent 28%),
+    linear-gradient(145deg, #203425, #0b110d 64%, #18231a);
+  color: white;
+  text-align: center;
+}
+
+.stageArtFallback span { color: #60d96c; font-size: clamp(.7rem, 1.2vw, 1rem); font-weight: 900; letter-spacing: .14em; }
+.stageArtFallback strong { max-width: 20ch; margin-top: .5rem; font-size: clamp(1.4rem, 3.6vw, 3.7rem); line-height: 1; }
+.stageArtFallback p { max-width: 42rem; margin: .75rem 0 0; color: rgba(255,255,255,.72); font-size: clamp(.72rem, 1.1vw, 1rem); font-weight: 700; }
+.stageVignette { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.08), transparent 52%, rgba(0,0,0,.28)); pointer-events: none; }
+.stageDim .stageArt, .stageDim .stageArtFallback { filter: brightness(.38); }
+.stageFaded .stageArt, .stageFaded .stageArtFallback { opacity: .16; }
+.storyCaption { position: absolute; right: 8%; bottom: 8%; left: 8%; z-index: 8; margin: 0; color: white; font-family: "Encode Sans", sans-serif; font-size: clamp(1rem, 2vw, 2rem); font-weight: 800; line-height: 1.35; text-align: center; text-shadow: 0 2px 12px #000, 0 0 3px #000; }
+.topActions { position: absolute; top: .75rem; right: .75rem; left: .75rem; z-index: 30; display: flex; align-items: center; justify-content: space-between; }
+.topActionsRight { display: flex; align-items: center; gap: .5rem; }
+.mediaNotice { position: absolute; top: .9rem; left: 50%; z-index: 29; max-width: calc(100% - 12rem); padding: .45rem .8rem; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; background: rgba(32,30,30,.88); color: #fff; font-size: clamp(.62rem, 1vw, .78rem); font-weight: 800; text-align: center; transform: translateX(-50%); }
+.completionOverlay { position: absolute; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 1rem; background: rgba(0,0,0,.62); }
+.completionStack { display: flex; width: 100%; max-width: 920px; flex-direction: column; align-items: center; }
+.completionButtons { display: flex; align-items: flex-start; justify-content: center; gap: clamp(2rem, 8vw, 12rem); }
+.completionButtonWrap { display: flex; width: clamp(9.5rem, 14.5vw, 17.4rem); flex-direction: column; align-items: center; }
+.reviewCard { width: min(100%, 680px); margin-bottom: clamp(3.5rem, 7vw, 6.5rem); padding: 1.25rem; border: 1px solid rgba(255,255,255,.22); border-radius: 1rem; background: rgba(32,30,30,.96); color: white; text-align: center; }
+.reviewCard > span { color: #60d96c; font-size: .72rem; font-weight: 900; letter-spacing: .16em; }
+.reviewCard h2 { margin: .3rem 0 .9rem; font-size: clamp(1.25rem, 2.4vw, 2rem); }
+.reviewCard ol { display: grid; gap: .5rem; margin: 0; padding: 0; list-style: none; text-align: left; }
+.reviewCard li { display: flex; gap: .75rem; padding: .7rem 1rem; border-radius: .7rem; background: rgba(255,255,255,.1); }
+.reviewCard li b { color: #60d96c; }
+.feedbackCard { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; z-index: 30; width: min(100% - 2rem, 560px); margin: 0 auto; padding: 1rem; border: 1px solid rgba(255,255,255,.2); border-radius: 1rem; background: rgba(32,30,30,.96); text-align: center; }
+.feedbackCard span { color: #60d96c; font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
+.feedbackCard strong { display: block; margin: .35rem 0 .8rem; }
+.feedbackActions { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.feedbackActions button { min-height: 44px; border-radius: .7rem; background: rgba(255,255,255,.12); color: white; font-weight: 800; }
+.feedbackActions button:last-child { background: #60d96c; color: #111; }
+.wordMainStack { gap: clamp(.35rem, 1.1vh, .85rem); }
+
+@media (max-width: 640px) {
+  .profileBadge { min-width: 44px; padding: 0; border: 0; background: transparent; }
+  .profileBadge b, .profileBadge small { display: none; }
+  .mediaNotice { top: .55rem; max-width: calc(100% - 7rem); padding: .35rem .6rem; }
+  .completionButtons { gap: 1rem; }
+  .completionButtonWrap { width: min(42vw, 11rem); }
+  .reviewCard { margin-bottom: 2rem; }
+}

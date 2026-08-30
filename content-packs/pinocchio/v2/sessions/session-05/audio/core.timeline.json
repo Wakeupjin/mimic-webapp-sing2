@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-05",
+  "contentChecksum": "e1e416d59c15a683f70565d0e77b1a968f74c7d34b15bf1f84e91aa07a7e9b5a",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:23:20.507Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2405,
+  "requestId": "FGaCJI5aydIvalYmbNdr",
+  "billedCharactersEstimate": 1192,
+  "duration": 82.181,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "The Blue Fairy noticed Pinocchio hanging helplessly from the giant oak.",
+      "start": 0.15,
+      "end": 5.14
+    },
+    {
+      "id": "line-02",
+      "text": "She sent a Falcon to cut the rope and rescue him.",
+      "start": 5.14,
+      "end": 8.431
+    },
+    {
+      "id": "line-03",
+      "text": "Her elegant Poodle carried the puppet home in a tiny carriage.",
+      "start": 8.431,
+      "end": 12.991
+    },
+    {
+      "id": "line-04",
+      "text": "A Crow, Owl, and Talking Cricket debated whether their patient was alive.",
+      "start": 12.991,
+      "end": 19.757
+    },
+    {
+      "id": "line-05",
+      "text": "Pinocchio refused the bitter medicine until Black Rabbits arrived for him.",
+      "start": 19.757,
+      "end": 25.326
+    },
+    {
+      "id": "line-06",
+      "text": "He swallowed it immediately and recovered from his dangerous fever.",
+      "start": 25.326,
+      "end": 30.56
+    },
+    {
+      "id": "line-07",
+      "text": "When the Fairy asked about the coins, Pinocchio invented several lies.",
+      "start": 30.56,
+      "end": 35.65
+    },
+    {
+      "id": "line-08",
+      "text": "His nose lengthened after every false answer until he could barely move.",
+      "start": 35.65,
+      "end": 41.952
+    },
+    {
+      "id": "line-09",
+      "text": "The Fairy forgave him and called Woodpeckers to shorten the nose.",
+      "start": 41.952,
+      "end": 46.464
+    },
+    {
+      "id": "line-10",
+      "text": "She promised that Geppetto could soon join them as a family.",
+      "start": 46.464,
+      "end": 51.126
+    },
+    {
+      "id": "line-11",
+      "text": "On the way to meet his father, Pinocchio met the Fox and Cat again.",
+      "start": 51.126,
+      "end": 55.904
+    },
+    {
+      "id": "line-12",
+      "text": "Ignoring experience, he followed them toward the Field of Wonders.",
+      "start": 55.904,
+      "end": 61.377
+    },
+    {
+      "id": "line-13",
+      "text": "He buried his four coins and waited for a tree of money.",
+      "start": 61.377,
+      "end": 65.817
+    },
+    {
+      "id": "line-14",
+      "text": "A laughing Parrot revealed that the swindlers had stolen everything.",
+      "start": 65.817,
+      "end": 71.609
+    },
+    {
+      "id": "line-15",
+      "text": "The local judge listened to the robbery, then imprisoned the victim.",
+      "start": 71.609,
+      "end": 76.321
+    },
+    {
+      "id": "line-16",
+      "text": "Only a royal celebration freed Pinocchio four months later.",
+      "start": 76.321,
+      "end": 82.181
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "The Blue Fairy noticed Pinocchio",
+      "start": 0.11,
+      "end": 2.75
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "hanging helplessly from the giant oak.",
+      "start": 2.58,
+      "end": 5.15
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "She sent a Falcon to cut the rope",
+      "start": 5.11,
+      "end": 7.31
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "and rescue him.",
+      "start": 7.13,
+      "end": 8.19
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "Her elegant Poodle carried the",
+      "start": 8.651,
+      "end": 10.671
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "puppet home in a tiny carriage.",
+      "start": 10.508,
+      "end": 12.911
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "A Crow, Owl,",
+      "start": 13.051,
+      "end": 15.071
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "and Talking Cricket debated whether their patient was alive.",
+      "start": 14.891,
+      "end": 19.551
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Pinocchio refused the bitter medicine",
+      "start": 19.943,
+      "end": 22.353
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "until Black Rabbits arrived for him.",
+      "start": 22.226,
+      "end": 25.353
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "He swallowed it immediately",
+      "start": 25.28,
+      "end": 27.233
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "and recovered from his dangerous fever.",
+      "start": 27.133,
+      "end": 30.353
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "When the Fairy asked about the coins,",
+      "start": 30.748,
+      "end": 33.24
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "Pinocchio invented several lies.",
+      "start": 33.06,
+      "end": 35.64
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "His nose lengthened",
+      "start": 35.64,
+      "end": 37.64
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "after every false answer until he could barely move.",
+      "start": 37.46,
+      "end": 41.76
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "The Fairy forgave him",
+      "start": 42.124,
+      "end": 43.644
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "and called Woodpeckers to shorten the nose.",
+      "start": 43.524,
+      "end": 46.444
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "She promised that Geppetto could soon join them",
+      "start": 46.464,
+      "end": 49.724
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "as a family.",
+      "start": 49.584,
+      "end": 50.604
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "On the way to meet his father,",
+      "start": 51.628,
+      "end": 53.484
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 10,
+      "text": "Pinocchio met the Fox and Cat again.",
+      "start": 53.324,
+      "end": 55.884
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "Ignoring experience,",
+      "start": 55.904,
+      "end": 58.364
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 11,
+      "text": "he followed them toward the Field of Wonders.",
+      "start": 58.224,
+      "end": 61.004
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "He buried his four coins",
+      "start": 61.73,
+      "end": 63.417
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 12,
+      "text": "and waited for a tree of money.",
+      "start": 63.337,
+      "end": 65.657
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 13,
+      "text": "A laughing Parrot revealed that the swindlers had stolen everything.",
+      "start": 65.957,
+      "end": 71.417
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "The local judge listened to the robbery,",
+      "start": 71.781,
+      "end": 74.541
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 14,
+      "text": "then imprisoned the victim.",
+      "start": 74.385,
+      "end": 76.301
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "Only a royal celebration freed Pinocchio four months later.",
+      "start": 76.321,
+      "end": 82.061
+    }
+  ]
+}

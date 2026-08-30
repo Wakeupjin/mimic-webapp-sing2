@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-07",
+  "contentChecksum": "b24b9ed17c6a305214ad3b99012b6b17395058da6f1fcc2d5d959429f748ea68",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:24:19.892Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2407,
+  "requestId": "1hbWt1B22jrznUbEOBdh",
+  "billedCharactersEstimate": 1182,
+  "duration": 79.2,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "After swimming through the night, Pinocchio reached the Island of Busy Bees.",
+      "start": 0.267,
+      "end": 5.27
+    },
+    {
+      "id": "line-02",
+      "text": "A helpful Dolphin warned that the Terrible Shark hunted in those waters.",
+      "start": 5.27,
+      "end": 10.457
+    },
+    {
+      "id": "line-03",
+      "text": "In the busy town, nobody would give food to an able beggar.",
+      "start": 10.457,
+      "end": 14.846
+    },
+    {
+      "id": "line-04",
+      "text": "Each person offered a meal only if Pinocchio completed honest work.",
+      "start": 14.846,
+      "end": 19.95
+    },
+    {
+      "id": "line-05",
+      "text": "Hunger finally persuaded him to carry a woman's heavy water jug.",
+      "start": 19.95,
+      "end": 25.232
+    },
+    {
+      "id": "line-06",
+      "text": "She rewarded him with a generous meal and his favorite candy.",
+      "start": 25.232,
+      "end": 29.831
+    },
+    {
+      "id": "line-07",
+      "text": "Pinocchio then recognized the woman as the Blue Fairy.",
+      "start": 29.831,
+      "end": 33.724
+    },
+    {
+      "id": "line-08",
+      "text": "She had grown into a motherly figure while he remained a puppet.",
+      "start": 33.724,
+      "end": 38.567
+    },
+    {
+      "id": "line-09",
+      "text": "He promised to attend school, work hard, and respect her guidance.",
+      "start": 38.567,
+      "end": 43.641
+    },
+    {
+      "id": "line-10",
+      "text": "Classmates mocked him at first, but Pinocchio continued studying.",
+      "start": 43.641,
+      "end": 49.079
+    },
+    {
+      "id": "line-11",
+      "text": "His effort soon made him one of the strongest students.",
+      "start": 49.079,
+      "end": 52.894
+    },
+    {
+      "id": "line-12",
+      "text": "The Fairy suggested that good habits could eventually make him a real boy.",
+      "start": 52.894,
+      "end": 58.73
+    },
+    {
+      "id": "line-13",
+      "text": "Several lazy classmates resented the change and planned to distract him.",
+      "start": 58.73,
+      "end": 64.102
+    },
+    {
+      "id": "line-14",
+      "text": "They claimed that the Terrible Shark had appeared near the beach.",
+      "start": 64.102,
+      "end": 68.672
+    },
+    {
+      "id": "line-15",
+      "text": "Hoping for news about Geppetto, Pinocchio forgot the school-day promise.",
+      "start": 68.672,
+      "end": 73.566
+    },
+    {
+      "id": "line-16",
+      "text": "He followed the boys toward the sea and another dangerous test.",
+      "start": 73.566,
+      "end": 79.2
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "After swimming through the night,",
+      "start": 0.227,
+      "end": 2.02
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio reached the Island of Busy Bees.",
+      "start": 1.86,
+      "end": 5.26
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "A helpful Dolphin warned that the",
+      "start": 5.26,
+      "end": 7.54
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "Terrible Shark hunted in those waters.",
+      "start": 7.38,
+      "end": 10.1
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "In the busy town,",
+      "start": 10.793,
+      "end": 12.266
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "nobody would give food to an able beggar.",
+      "start": 12.103,
+      "end": 14.906
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "Each person offered a meal",
+      "start": 14.766,
+      "end": 16.586
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "only if Pinocchio completed honest work.",
+      "start": 16.446,
+      "end": 19.386
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Hunger finally persuaded him to",
+      "start": 20.493,
+      "end": 22.507
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "carry a woman's heavy water jug.",
+      "start": 22.354,
+      "end": 25.267
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "She rewarded him with a generous meal",
+      "start": 25.177,
+      "end": 27.627
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "and his favorite candy.",
+      "start": 27.507,
+      "end": 29.467
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "Pinocchio then recognized the woman as the Blue Fairy.",
+      "start": 30.174,
+      "end": 33.714
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 7,
+      "text": "She had grown into a motherly figure",
+      "start": 33.714,
+      "end": 36.274
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "while he remained a puppet.",
+      "start": 36.147,
+      "end": 38.194
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 8,
+      "text": "He promised to attend school,",
+      "start": 38.921,
+      "end": 40.994
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "work hard, and respect her guidance.",
+      "start": 40.838,
+      "end": 43.634
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 9,
+      "text": "Classmates mocked him at first, but Pinocchio continued studying.",
+      "start": 43.627,
+      "end": 48.754
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 10,
+      "text": "His effort soon made him",
+      "start": 49.384,
+      "end": 50.994
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 10,
+      "text": "one of the strongest students.",
+      "start": 50.794,
+      "end": 52.914
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 11,
+      "text": "The Fairy suggested that good habits",
+      "start": 52.854,
+      "end": 55.634
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 11,
+      "text": "could eventually make him a real boy.",
+      "start": 55.441,
+      "end": 58.194
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 12,
+      "text": "Several lazy classmates resented the change",
+      "start": 59.246,
+      "end": 61.954
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "and planned to distract him.",
+      "start": 61.854,
+      "end": 64.114
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 13,
+      "text": "They claimed that the Terrible",
+      "start": 64.07,
+      "end": 66.194
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "Shark had appeared near the beach.",
+      "start": 66.054,
+      "end": 68.474
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 14,
+      "text": "Hoping for news about Geppetto,",
+      "start": 68.85,
+      "end": 71.08
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "Pinocchio forgot the school-day promise.",
+      "start": 70.9,
+      "end": 73.56
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "He followed the boys toward the sea",
+      "start": 73.553,
+      "end": 76.12
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "and another dangerous test.",
+      "start": 76.04,
+      "end": 79.08
+    }
+  ]
+}

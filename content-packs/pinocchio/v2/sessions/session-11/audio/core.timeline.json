@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-11",
+  "contentChecksum": "d4fe477a44d76238f59fef0d5027ef2c9c02318fd725ed62f6b764b9db7880df",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:26:16.371Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2411,
+  "requestId": "gB3SLdgQDUdZbYrz17Qu",
+  "billedCharactersEstimate": 1228,
+  "duration": 83.928,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "Pinocchio left the Tunny and followed a tiny light through the darkness.",
+      "start": 0.127,
+      "end": 4.553
+    },
+    {
+      "id": "line-02",
+      "text": "At a small table, an old man ate beside his final candle.",
+      "start": 4.553,
+      "end": 10.241
+    },
+    {
+      "id": "line-03",
+      "text": "The white-haired prisoner was Geppetto, the father Pinocchio had searched for.",
+      "start": 10.241,
+      "end": 16.175
+    },
+    {
+      "id": "line-04",
+      "text": "They embraced in disbelief, laughing and crying at the same time.",
+      "start": 16.175,
+      "end": 21.875
+    },
+    {
+      "id": "line-05",
+      "text": "Pinocchio poured out the entire story of his mistakes and misfortunes.",
+      "start": 21.875,
+      "end": 27.207
+    },
+    {
+      "id": "line-06",
+      "text": "Geppetto explained how the storm and Terrible Shark had swallowed him.",
+      "start": 27.207,
+      "end": 31.8
+    },
+    {
+      "id": "line-07",
+      "text": "He had survived inside the monster for two long years.",
+      "start": 31.8,
+      "end": 35.918
+    },
+    {
+      "id": "line-08",
+      "text": "Supplies from a swallowed merchant ship had provided food, candles, and matches.",
+      "start": 35.918,
+      "end": 42.908
+    },
+    {
+      "id": "line-09",
+      "text": "Now the food was gone, and the candle on the table was the last.",
+      "start": 42.908,
+      "end": 47.581
+    },
+    {
+      "id": "line-10",
+      "text": "Pinocchio insisted that they attempt an escape before darkness returned.",
+      "start": 47.581,
+      "end": 53.081
+    },
+    {
+      "id": "line-11",
+      "text": "Although Geppetto could not swim, Pinocchio promised to carry him.",
+      "start": 53.081,
+      "end": 58.203
+    },
+    {
+      "id": "line-12",
+      "text": "The ancient Shark's asthma forced it to sleep with its mouth open.",
+      "start": 58.203,
+      "end": 63.083
+    },
+    {
+      "id": "line-13",
+      "text": "Their first attempt failed when a sudden sneeze threw them backward.",
+      "start": 63.083,
+      "end": 68.223
+    },
+    {
+      "id": "line-14",
+      "text": "Pinocchio refused despair, took his father's hand, and climbed again.",
+      "start": 68.223,
+      "end": 73.703
+    },
+    {
+      "id": "line-15",
+      "text": "At the final row of teeth, Geppetto climbed onto his son's back.",
+      "start": 73.703,
+      "end": 78.888
+    },
+    {
+      "id": "line-16",
+      "text": "Pinocchio leaped into the moonlit water and began carrying them home.",
+      "start": 78.888,
+      "end": 83.928
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio left the Tunny",
+      "start": 0.087,
+      "end": 1.627
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "and followed a tiny light through the darkness.",
+      "start": 1.427,
+      "end": 4.507
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "At a small table,",
+      "start": 4.58,
+      "end": 6.667
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "an old man ate beside his final candle.",
+      "start": 6.527,
+      "end": 9.787
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "The white-haired prisoner was Geppetto,",
+      "start": 10.675,
+      "end": 13.867
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "the father Pinocchio had searched for.",
+      "start": 13.707,
+      "end": 16.187
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "They embraced in disbelief, laughing",
+      "start": 16.143,
+      "end": 19.627
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "and crying at the same time.",
+      "start": 19.447,
+      "end": 21.387
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Pinocchio poured out the entire",
+      "start": 22.343,
+      "end": 24.267
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "story of his mistakes and misfortunes.",
+      "start": 24.127,
+      "end": 27.227
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "Geppetto explained how the storm",
+      "start": 27.167,
+      "end": 29.467
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "and Terrible Shark had swallowed him.",
+      "start": 29.267,
+      "end": 31.467
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "He had survived inside the",
+      "start": 32.114,
+      "end": 33.627
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "monster for two long years.",
+      "start": 33.467,
+      "end": 35.947
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "Supplies from a swallowed merchant ship",
+      "start": 35.869,
+      "end": 38.907
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "had provided food, candles, and matches.",
+      "start": 38.807,
+      "end": 42.507
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "Now the food was gone,",
+      "start": 43.29,
+      "end": 44.99
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "and the candle on the table was the last.",
+      "start": 44.79,
+      "end": 47.551
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "Pinocchio insisted that they attempt an escape",
+      "start": 47.59,
+      "end": 50.91
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "before darkness returned.",
+      "start": 50.759,
+      "end": 52.75
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "Although Geppetto could not swim, Pinocchio promised to carry him.",
+      "start": 53.392,
+      "end": 58.248
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 11,
+      "text": "The ancient Shark's asthma forced it",
+      "start": 58.138,
+      "end": 60.928
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "to sleep with its mouth open.",
+      "start": 60.761,
+      "end": 62.608
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "Their first attempt failed",
+      "start": 63.538,
+      "end": 65.168
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "when a sudden sneeze threw them backward.",
+      "start": 64.964,
+      "end": 68.248
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "Pinocchio refused despair, took his father's hand, and climbed again.",
+      "start": 68.178,
+      "end": 73.248
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 14,
+      "text": "At the final row of teeth,",
+      "start": 74.137,
+      "end": 75.968
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "Geppetto climbed onto his son's back.",
+      "start": 75.801,
+      "end": 78.928
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "Pinocchio leaped into the moonlit water",
+      "start": 78.828,
+      "end": 81.648
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "and began carrying them home.",
+      "start": 81.548,
+      "end": 83.808
+    }
+  ]
+}

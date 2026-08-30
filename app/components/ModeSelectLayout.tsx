@@ -81,9 +81,10 @@ export default function ModeSelectLayout({
                   key={chapter.id}
                   type="button"
                   disabled={chapter.locked}
+                  aria-current={chapter.selected ? "true" : undefined}
                   onClick={chapter.onSelect}
                   className={`relative flex w-full items-center justify-center border-t border-[#333] px-6 py-3 first:border-t-0 disabled:cursor-not-allowed ${
-                    chapter.locked ? "text-[#555]" : "text-white hover:bg-[#2a2a2a]"
+                    chapter.locked ? "text-[#555]" : chapter.selected ? "bg-[#2a2a2a] text-white" : "text-white hover:bg-[#2a2a2a]"
                   }`}
                   style={{
                     fontFamily: '"Encode Sans Semi Condensed", "Encode Sans", sans-serif',

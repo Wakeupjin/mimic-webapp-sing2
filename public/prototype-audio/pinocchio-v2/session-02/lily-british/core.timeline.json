@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-02",
+  "contentChecksum": "62619dd6ba94ba24e6bf814392316af001d45c9d3172d90a712045ef955c402b",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:21:50.349Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2402,
+  "requestId": "8lienDqGKsE89nBJyYxj",
+  "billedCharactersEstimate": 1218,
+  "duration": 87.77,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "While Geppetto sat in prison, Pinocchio celebrated being completely free.",
+      "start": 0.036,
+      "end": 5.413
+    },
+    {
+      "id": "line-02",
+      "text": "The century-old Talking Cricket warned him to respect his father.",
+      "start": 5.413,
+      "end": 11.204
+    },
+    {
+      "id": "line-03",
+      "text": "Pinocchio rejected school, honest work, and every uncomfortable piece of advice.",
+      "start": 11.204,
+      "end": 17.473
+    },
+    {
+      "id": "line-04",
+      "text": "When the Cricket predicted trouble, the angry puppet threw a hammer.",
+      "start": 17.473,
+      "end": 22.619
+    },
+    {
+      "id": "line-05",
+      "text": "His victory felt empty as hunger filled the cold, bare house.",
+      "start": 22.619,
+      "end": 27.395
+    },
+    {
+      "id": "line-06",
+      "text": "The only egg cracked open, and a cheerful chick escaped through the window.",
+      "start": 27.395,
+      "end": 33.675
+    },
+    {
+      "id": "line-07",
+      "text": "Outside, Pinocchio begged for food but received a bucket of cold water.",
+      "start": 33.675,
+      "end": 39.291
+    },
+    {
+      "id": "line-08",
+      "text": "He returned soaked and fell asleep with his feet beside the stove.",
+      "start": 39.291,
+      "end": 44.765
+    },
+    {
+      "id": "line-09",
+      "text": "By morning, both wooden feet had burned completely away.",
+      "start": 44.765,
+      "end": 49.545
+    },
+    {
+      "id": "line-10",
+      "text": "Geppetto returned from prison and listened to Pinocchio's desperate story.",
+      "start": 49.545,
+      "end": 55.291
+    },
+    {
+      "id": "line-11",
+      "text": "Though he was hungry too, the old man offered his last three pears.",
+      "start": 55.291,
+      "end": 61.33
+    },
+    {
+      "id": "line-12",
+      "text": "Pinocchio first refused the skins and cores, then ate them gratefully.",
+      "start": 61.33,
+      "end": 67.256
+    },
+    {
+      "id": "line-13",
+      "text": "Geppetto agreed to replace the feet only after a sincere promise.",
+      "start": 67.256,
+      "end": 72.295
+    },
+    {
+      "id": "line-14",
+      "text": "The puppet apologized and declared that he would go to school.",
+      "start": 72.295,
+      "end": 77.127
+    },
+    {
+      "id": "line-15",
+      "text": "His father carved and attached two sturdy new wooden feet.",
+      "start": 77.127,
+      "end": 82.475
+    },
+    {
+      "id": "line-16",
+      "text": "Finally, Geppetto sold his only coat to buy the promised primer.",
+      "start": 82.475,
+      "end": 87.77
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "While Geppetto sat in prison,",
+      "start": 0,
+      "end": 2.203
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio celebrated being completely free.",
+      "start": 2.043,
+      "end": 5.403
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "The century-old Talking Cricket warned",
+      "start": 5.403,
+      "end": 9.003
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "him to respect his father.",
+      "start": 8.843,
+      "end": 11.003
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "Pinocchio rejected school, honest work,",
+      "start": 11.385,
+      "end": 14.685
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "and every uncomfortable piece of advice.",
+      "start": 14.505,
+      "end": 17.485
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "When the Cricket predicted trouble,",
+      "start": 17.441,
+      "end": 20.205
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "the angry puppet threw a hammer.",
+      "start": 20.005,
+      "end": 22.205
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "His victory felt empty",
+      "start": 23.013,
+      "end": 24.605
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "as hunger filled the cold, bare house.",
+      "start": 24.412,
+      "end": 27.405
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "The only egg cracked open,",
+      "start": 27.365,
+      "end": 30.125
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "and a cheerful chick escaped through the window.",
+      "start": 29.945,
+      "end": 32.925
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "Outside, Pinocchio begged for food",
+      "start": 34.405,
+      "end": 36.765
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "but received a bucket of cold water.",
+      "start": 36.665,
+      "end": 39.245
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "He returned soaked",
+      "start": 39.318,
+      "end": 41.245
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "and fell asleep with his feet beside the stove.",
+      "start": 41.065,
+      "end": 44.525
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "By morning, both wooden feet had burned completely away.",
+      "start": 44.985,
+      "end": 49.485
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 9,
+      "text": "Geppetto returned from prison",
+      "start": 49.585,
+      "end": 51.885
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "and listened to Pinocchio's desperate story.",
+      "start": 51.785,
+      "end": 54.845
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 10,
+      "text": "Though he was hungry too,",
+      "start": 55.718,
+      "end": 57.645
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "the old man offered his last three pears.",
+      "start": 57.445,
+      "end": 61.365
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 11,
+      "text": "Pinocchio first refused the skins",
+      "start": 61.275,
+      "end": 63.885
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "and cores, then ate them gratefully.",
+      "start": 63.705,
+      "end": 66.765
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "Geppetto agreed to replace the feet only",
+      "start": 67.727,
+      "end": 70.365
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "after a sincere promise.",
+      "start": 70.225,
+      "end": 72.285
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "The puppet apologized",
+      "start": 72.285,
+      "end": 74.445
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 13,
+      "text": "and declared that he would go to school.",
+      "start": 74.325,
+      "end": 76.765
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "His father carved and attached two sturdy new wooden feet.",
+      "start": 77.47,
+      "end": 82.53
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "Finally, Geppetto sold his only",
+      "start": 82.4,
+      "end": 85.25
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "coat to buy the promised primer.",
+      "start": 85.126,
+      "end": 87.65
+    }
+  ]
+}

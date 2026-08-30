@@ -758,3 +758,47 @@ manual navigation and slot playback until a choice is made.
 **Validation:** Browser QA confirmed right navigation moves to 02/30, left
 navigation returns to 01/30, one control remains actively green, the underlying
 audio element is playing, and no console errors are emitted.
+
+## 2026-08-30 — user / correction
+
+Asked whether only Session 1 had been built, restated that the complete
+Pinocchio book must fit twelve one-hour meetings, and required learner-facing
+terminology to change from Session to Chapter.
+
+## 2026-08-30 — codex / checkpoint
+
+Generalized the local Sing 2-parity pilot into one dynamic Chapter 1–12 course.
+All twelve learner Chapters use their matching v2 `session-01..12/pack.json`
+while the UI and routes say Chapter; the internal session filenames remain the
+stable content-generation/media contract. Added independent local progress per
+Chapter, sequential Watch → Mimic → Guess → Word gates, next-Chapter unlocking
+after Word, direct-route rejection, legacy Session 1 progress migration and URL
+redirection, deterministic public audio/art slots, timeline fallback, and a
+pack-driven art placeholder. Generated paid-plan Eleven v3 Lily British Core
+masters and matching timelines for Chapters 2–12, plus original non-Disney
+Living Storybook panoramas for every Chapter 2–12. Added precise 30 ms segment
+stops, sequential within-mode item gates, a real Chapter 12 course exit, and a
+deployment include rule for all twelve Core masters.
+
+**Validation:** Both content validators, TypeScript, whitespace checks, and the
+40-route Next production build pass. Media QA confirms original source Chapters
+1–36 in order, twelve byte-matched canonical/public art and audio sets, 192
+Watch lines, 360 Mimic units, 120 Guess items, and 120 Word items. Browser QA
+completed all four modes through learner Chapters 1–12, confirmed sequential
+unlocking and locked direct-route rejection, real Chapter 1/2/12 Lily playback,
+Mimic arrow autoplay/green state, hidden Word cards after completion, the final
+Home CTA, mobile/desktop rendering, and zero console errors.
+
+**Files:**
+- app/components/ModeSelectLayout.tsx
+- app/dev/pinocchio-chapters/
+- app/dev/pinocchio-session-1/
+- content-packs/pinocchio/v2/APP_MEDIA_PATHS.md
+- public/prototype-audio/pinocchio-v2/session-01..12/lily-british/
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
+
+**Open risks:** A human listen-through of all twelve Core masters remains
+pending. Foundation/Studio media, long-term Lily replacement, classroom pacing,
+and Korean-market rights confirmation remain separate follow-ups. No deployment
+was performed.

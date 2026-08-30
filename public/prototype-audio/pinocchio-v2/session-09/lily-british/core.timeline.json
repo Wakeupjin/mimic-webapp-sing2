@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-09",
+  "contentChecksum": "a47a82890a4f3e7a6b71c0023cf9d87b013c879b760ed8bfaffd9f3b3e36877a",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:25:16.103Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2409,
+  "requestId": "lFARvdVexIPJMQsCRFVE",
+  "billedCharactersEstimate": 1270,
+  "duration": 96.025,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "The Fairy prepared a celebration for Pinocchio's transformation into a real boy.",
+      "start": 0.136,
+      "end": 5.586
+    },
+    {
+      "id": "line-02",
+      "text": "Pinocchio went out to invite Lamp-Wick, his closest and laziest friend.",
+      "start": 5.586,
+      "end": 11.523
+    },
+    {
+      "id": "line-03",
+      "text": "Lamp-Wick announced that he was leaving for the famous Land of Toys.",
+      "start": 11.523,
+      "end": 16.709
+    },
+    {
+      "id": "line-04",
+      "text": "He described a country without schools, books, teachers, or any required work.",
+      "start": 16.709,
+      "end": 23.441
+    },
+    {
+      "id": "line-05",
+      "text": "Pinocchio remembered the Fairy's promise, but endless play sounded irresistible.",
+      "start": 23.441,
+      "end": 29.916
+    },
+    {
+      "id": "line-06",
+      "text": "At midnight, a crowded wagon arrived to carry the boys away.",
+      "start": 29.916,
+      "end": 34.81
+    },
+    {
+      "id": "line-07",
+      "text": "The exhausted donkeys pulling it seemed to whisper warnings through their tears.",
+      "start": 34.81,
+      "end": 40.146
+    },
+    {
+      "id": "line-08",
+      "text": "Pinocchio ignored every sign, squeezed aboard, and abandoned the waiting celebration.",
+      "start": 40.146,
+      "end": 47.529
+    },
+    {
+      "id": "line-09",
+      "text": "In Toyland, children played from morning until night without correction.",
+      "start": 47.529,
+      "end": 53.512
+    },
+    {
+      "id": "line-10",
+      "text": "Five carefree months passed without a single lesson or useful task.",
+      "start": 53.512,
+      "end": 60.672
+    },
+    {
+      "id": "line-11",
+      "text": "Then Pinocchio awoke and discovered long donkey ears on his head.",
+      "start": 60.672,
+      "end": 65.776
+    },
+    {
+      "id": "line-12",
+      "text": "A Marmot examined him and sadly diagnosed incurable Donkey Fever.",
+      "start": 65.776,
+      "end": 72.937
+    },
+    {
+      "id": "line-13",
+      "text": "Pinocchio covered the ears and hurried to check on Lamp-Wick.",
+      "start": 72.937,
+      "end": 77.118
+    },
+    {
+      "id": "line-14",
+      "text": "His friend was hiding the same ears beneath an oversized cap.",
+      "start": 77.118,
+      "end": 83.268
+    },
+    {
+      "id": "line-15",
+      "text": "Laughter changed into braying as both boys became complete donkeys.",
+      "start": 83.268,
+      "end": 90.095
+    },
+    {
+      "id": "line-16",
+      "text": "The wagon driver sold Pinocchio to a new owner and collected his profit.",
+      "start": 90.095,
+      "end": 96.025
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "The Fairy prepared a celebration for",
+      "start": 0.096,
+      "end": 2.266
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio's transformation into a real boy.",
+      "start": 2.126,
+      "end": 5.626
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "Pinocchio went out to invite Lamp-Wick,",
+      "start": 5.526,
+      "end": 8.426
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "his closest and laziest friend.",
+      "start": 8.246,
+      "end": 11.066
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "Lamp-Wick announced that he was leaving",
+      "start": 11.96,
+      "end": 14.036
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "for the famous Land of Toys.",
+      "start": 13.836,
+      "end": 16.756
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "He described a country without schools,",
+      "start": 16.643,
+      "end": 19.516
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "books, teachers, or any required work.",
+      "start": 19.356,
+      "end": 22.996
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Pinocchio remembered the Fairy's promise,",
+      "start": 23.866,
+      "end": 26.516
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "but endless play sounded irresistible.",
+      "start": 26.336,
+      "end": 29.916
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "At midnight,",
+      "start": 29.896,
+      "end": 31.476
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "a crowded wagon arrived to carry the boys away.",
+      "start": 31.336,
+      "end": 34.516
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "The exhausted donkeys pulling it seemed",
+      "start": 35.084,
+      "end": 37.796
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "to whisper warnings through their tears.",
+      "start": 37.603,
+      "end": 40.116
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "Pinocchio ignored every sign, squeezed aboard,",
+      "start": 40.156,
+      "end": 44.756
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "and abandoned the waiting celebration.",
+      "start": 44.576,
+      "end": 47.076
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "In Toyland,",
+      "start": 47.963,
+      "end": 49.396
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "children played from morning until night without correction.",
+      "start": 49.22,
+      "end": 53.476
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "Five carefree months passed without",
+      "start": 53.528,
+      "end": 57.236
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "a single lesson or useful task.",
+      "start": 57.096,
+      "end": 60.356
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "Then Pinocchio awoke",
+      "start": 60.968,
+      "end": 62.436
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 10,
+      "text": "and discovered long donkey ears on his head.",
+      "start": 62.336,
+      "end": 65.636
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 11,
+      "text": "A Marmot examined him",
+      "start": 65.896,
+      "end": 67.956
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 11,
+      "text": "and sadly diagnosed incurable Donkey Fever.",
+      "start": 67.876,
+      "end": 72.756
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 12,
+      "text": "Pinocchio covered the ears and hurried to check on Lamp-Wick.",
+      "start": 73.098,
+      "end": 77.098
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "His friend was hiding the",
+      "start": 77.118,
+      "end": 79.178
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 13,
+      "text": "same ears beneath an oversized cap.",
+      "start": 79.07,
+      "end": 82.778
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "Laughter changed into braying as both boys became complete donkeys.",
+      "start": 83.738,
+      "end": 90.065
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "The wagon driver sold Pinocchio to a new owner",
+      "start": 90.105,
+      "end": 93.985
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "and collected his profit.",
+      "start": 93.905,
+      "end": 95.905
+    }
+  ]
+}

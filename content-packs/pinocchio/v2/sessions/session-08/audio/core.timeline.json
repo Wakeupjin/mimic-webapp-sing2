@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "contentId": "pinocchio-v2-session-08",
+  "contentChecksum": "434b38e37e90f7c8d87abcb2da155c15541cde3ae7d044fc52881e24588bb697",
+  "level": "core",
+  "generatedAt": "2026-08-30T04:24:48.332Z",
+  "provider": "ElevenLabs",
+  "modelId": "eleven_v3",
+  "voice": {
+    "id": "pFZP5JQG7iQjIQuC4Bku",
+    "name": "Lily"
+  },
+  "accentTag": "[British accent]",
+  "outputFormat": "mp3_44100_192",
+  "seed": 2408,
+  "requestId": "TKyiOliq0BcpnyeBPp46",
+  "billedCharactersEstimate": 1218,
+  "duration": 87.865,
+  "source": "one-continuous-master",
+  "lines": [
+    {
+      "id": "line-01",
+      "text": "At the beach, Pinocchio discovered that the Shark story was a lie.",
+      "start": 0.066,
+      "end": 4.898
+    },
+    {
+      "id": "line-02",
+      "text": "His classmates mocked him, and their argument became a violent book fight.",
+      "start": 4.898,
+      "end": 10.248
+    },
+    {
+      "id": "line-03",
+      "text": "A heavy schoolbook struck Eugene, leaving him injured on the sand.",
+      "start": 10.248,
+      "end": 15.133
+    },
+    {
+      "id": "line-04",
+      "text": "The guilty boys ran away before the officers could question them.",
+      "start": 15.133,
+      "end": 19.826
+    },
+    {
+      "id": "line-05",
+      "text": "Because Pinocchio remained beside Eugene, the officers blamed and arrested him.",
+      "start": 19.826,
+      "end": 25.766
+    },
+    {
+      "id": "line-06",
+      "text": "He escaped, but the powerful police dog Alidoro chased him into the sea.",
+      "start": 25.766,
+      "end": 32.118
+    },
+    {
+      "id": "line-07",
+      "text": "When Alidoro began drowning, Pinocchio turned back and saved his pursuer.",
+      "start": 32.118,
+      "end": 37.961
+    },
+    {
+      "id": "line-08",
+      "text": "The dog promised to repay the unexpected act of kindness.",
+      "start": 37.961,
+      "end": 43.78
+    },
+    {
+      "id": "line-09",
+      "text": "Soon a Green Fisherman pulled Pinocchio from the water in a net.",
+      "start": 43.78,
+      "end": 48.123
+    },
+    {
+      "id": "line-10",
+      "text": "Mistaking him for a rare fish, the cook prepared to fry him.",
+      "start": 48.123,
+      "end": 53.313
+    },
+    {
+      "id": "line-11",
+      "text": "Alidoro arrived at the last moment and carried Pinocchio away.",
+      "start": 53.313,
+      "end": 58.515
+    },
+    {
+      "id": "line-12",
+      "text": "The rescued puppet finally returned to the Blue Fairy's house.",
+      "start": 58.515,
+      "end": 64.201
+    },
+    {
+      "id": "line-13",
+      "text": "A painfully slow Snail left him waiting outside through the night.",
+      "start": 64.201,
+      "end": 69.425
+    },
+    {
+      "id": "line-14",
+      "text": "Pinocchio kicked the door, trapped his foot, and regretted his impatience.",
+      "start": 69.425,
+      "end": 75.859
+    },
+    {
+      "id": "line-15",
+      "text": "During the following months, he studied, worked, and rebuilt the Fairy's trust.",
+      "start": 75.859,
+      "end": 82.085
+    },
+    {
+      "id": "line-16",
+      "text": "At last, she promised that he would wake as a real boy the next day.",
+      "start": 82.085,
+      "end": 87.865
+    }
+  ],
+  "mimicItems": [
+    {
+      "id": "mimic-01",
+      "sourceLineIndex": 0,
+      "text": "At the beach,",
+      "start": 0.026,
+      "end": 1.153
+    },
+    {
+      "id": "mimic-02",
+      "sourceLineIndex": 0,
+      "text": "Pinocchio discovered that the Shark story was a lie.",
+      "start": 0.993,
+      "end": 4.953
+    },
+    {
+      "id": "mimic-03",
+      "sourceLineIndex": 1,
+      "text": "His classmates mocked him,",
+      "start": 4.823,
+      "end": 7.073
+    },
+    {
+      "id": "mimic-04",
+      "sourceLineIndex": 1,
+      "text": "and their argument became a violent book fight.",
+      "start": 6.893,
+      "end": 10.033
+    },
+    {
+      "id": "mimic-05",
+      "sourceLineIndex": 2,
+      "text": "A heavy schoolbook struck Eugene,",
+      "start": 10.443,
+      "end": 13.233
+    },
+    {
+      "id": "mimic-06",
+      "sourceLineIndex": 2,
+      "text": "leaving him injured on the sand.",
+      "start": 13.063,
+      "end": 15.153
+    },
+    {
+      "id": "mimic-07",
+      "sourceLineIndex": 3,
+      "text": "The guilty boys ran away",
+      "start": 15.093,
+      "end": 17.393
+    },
+    {
+      "id": "mimic-08",
+      "sourceLineIndex": 3,
+      "text": "before the officers could question them.",
+      "start": 17.219,
+      "end": 19.393
+    },
+    {
+      "id": "mimic-09",
+      "sourceLineIndex": 4,
+      "text": "Because Pinocchio remained beside Eugene,",
+      "start": 20.239,
+      "end": 23.239
+    },
+    {
+      "id": "mimic-10",
+      "sourceLineIndex": 4,
+      "text": "the officers blamed and arrested him.",
+      "start": 23.039,
+      "end": 25.799
+    },
+    {
+      "id": "mimic-11",
+      "sourceLineIndex": 5,
+      "text": "He escaped, but the powerful police",
+      "start": 25.712,
+      "end": 28.439
+    },
+    {
+      "id": "mimic-12",
+      "sourceLineIndex": 5,
+      "text": "dog Alidoro chased him into the sea.",
+      "start": 28.299,
+      "end": 31.719
+    },
+    {
+      "id": "mimic-13",
+      "sourceLineIndex": 6,
+      "text": "When Alidoro began drowning,",
+      "start": 32.498,
+      "end": 35.001
+    },
+    {
+      "id": "mimic-14",
+      "sourceLineIndex": 6,
+      "text": "Pinocchio turned back and saved his pursuer.",
+      "start": 34.841,
+      "end": 37.961
+    },
+    {
+      "id": "mimic-15",
+      "sourceLineIndex": 7,
+      "text": "The dog promised to repay",
+      "start": 37.941,
+      "end": 40.441
+    },
+    {
+      "id": "mimic-16",
+      "sourceLineIndex": 7,
+      "text": "the unexpected act of kindness.",
+      "start": 40.261,
+      "end": 43.321
+    },
+    {
+      "id": "mimic-17",
+      "sourceLineIndex": 8,
+      "text": "Soon a Green Fisherman pulled Pinocchio",
+      "start": 44.219,
+      "end": 46.775
+    },
+    {
+      "id": "mimic-18",
+      "sourceLineIndex": 8,
+      "text": "from the water in a net.",
+      "start": 46.587,
+      "end": 48.135
+    },
+    {
+      "id": "mimic-19",
+      "sourceLineIndex": 9,
+      "text": "Mistaking him for a rare fish,",
+      "start": 48.091,
+      "end": 50.855
+    },
+    {
+      "id": "mimic-20",
+      "sourceLineIndex": 9,
+      "text": "the cook prepared to fry him.",
+      "start": 50.675,
+      "end": 53.135
+    },
+    {
+      "id": "mimic-21",
+      "sourceLineIndex": 10,
+      "text": "Alidoro arrived at the last moment and carried Pinocchio away.",
+      "start": 53.472,
+      "end": 58.465
+    },
+    {
+      "id": "mimic-22",
+      "sourceLineIndex": 11,
+      "text": "The rescued puppet finally returned to the Blue Fairy's house.",
+      "start": 58.545,
+      "end": 63.905
+    },
+    {
+      "id": "mimic-23",
+      "sourceLineIndex": 12,
+      "text": "A painfully slow Snail left",
+      "start": 64.477,
+      "end": 67.345
+    },
+    {
+      "id": "mimic-24",
+      "sourceLineIndex": 12,
+      "text": "him waiting outside through the night.",
+      "start": 67.165,
+      "end": 69.425
+    },
+    {
+      "id": "mimic-25",
+      "sourceLineIndex": 13,
+      "text": "Pinocchio kicked the door,",
+      "start": 69.405,
+      "end": 71.985
+    },
+    {
+      "id": "mimic-26",
+      "sourceLineIndex": 13,
+      "text": "trapped his foot, and regretted his impatience.",
+      "start": 71.815,
+      "end": 75.345
+    },
+    {
+      "id": "mimic-27",
+      "sourceLineIndex": 14,
+      "text": "During the following months, he studied,",
+      "start": 76.354,
+      "end": 79.025
+    },
+    {
+      "id": "mimic-28",
+      "sourceLineIndex": 14,
+      "text": "worked, and rebuilt the Fairy's trust.",
+      "start": 78.874,
+      "end": 82.065
+    },
+    {
+      "id": "mimic-29",
+      "sourceLineIndex": 15,
+      "text": "At last, she promised that he would wake",
+      "start": 82.085,
+      "end": 85.185
+    },
+    {
+      "id": "mimic-30",
+      "sourceLineIndex": 15,
+      "text": "as a real boy the next day.",
+      "start": 85.045,
+      "end": 87.745
+    }
+  ]
+}
