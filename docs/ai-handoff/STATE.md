@@ -12,48 +12,41 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-COMPLETE
+IN PROGRESS
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Close the remaining behavioral and microinteraction gaps between Pinocchio Foundation and the canonical Sing2 Watch/Mimic/Guess/Word experience, then validate and deploy the exact parity release to Production
+Fix Sing 2 student progress persistence and gate navigation without changing gate policy
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Deployed the full Pinocchio Foundation behavior pass against Sing2 to Production. Signed-in live QA verified Watch's playback-synchronized clock and progress bar, Mimic's playback-only active-green slot, Guess's three-view flow and Correct feedback, and Word's listen/listen/mimic sequence, ten visible fixed-position chips, Correct feedback, chameleon eating state, and 01/10 → 02/10 transition. The deployed release also includes seek/resume, guarded navigation, correct/wrong melodies, pause-safe timers, completion persistence, and per-mode remote progress hydration.
+PR #39 is open from codex/fix-sing2-progress-gate with the scoped Sing2 gate fix. GitHub/Vercel checks passed and the preview correctly keeps unauthenticated lesson entry behind signup.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/pinocchio/PinocchioLessonModeClient.tsx
-- app/globals.css
-- app/hooks/useSoundEffects.ts
-- app/lib/progressGate.ts
-- package.json
-- tests/pinocchio-learning-behavior-parity.test.mjs
-- docs/ai-handoff/STATE.md
-- docs/ai-handoff/CONVERSATION.md
+- app/hooks/useGuessingGame.ts, app/lib/useRequireModeAccess.ts, app/sing2/guessing/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/word/page.tsx, tests/sing2-progress-gate.test.mjs, package.json, docs/ai-handoff/STATE.md, docs/ai-handoff/CONVERSATION.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-`npm run validate:pinocchio-behavior-parity` passes 26/26; `npm run validate:pinocchio-ui-parity` passes 9/9; `npm run validate:pinocchio-visual-release` passes 5/5; `npx tsc --noEmit` passes; the final 101-page Production build passes. GitHub commit `3579366dc65c7443d47f1fe831b4aa788d3442dd` received a successful Vercel Production status, and signed-in live QA passed all four learning modes on `mimicenglish.vercel.app`.
+Sing2 gate 14/14; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript pass; 101-page build pass; PR #39 Vercel deployment pass; unauthenticated preview smoke pass.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-No release blocker remains. The automated browser runtime cannot render Web Audio output, so the live pass verified the exact Correct/Again trigger states while the executable parity suite verifies the C5-E5-G5 and G5-E5-C5 note sequences. Keep Pinocchio's explicit completion persistence rather than copying Sing2's known final Guess/Word persistence defects.
+Real-student end-to-end verification remains because the automated preview browser has no student session. Production is untouched. Completion analytics remain best-effort after the durable gate write.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-No implementation action remains. Treat the 26-contract behavior suite as a required release gate for future Pinocchio learning-mode changes.
+Use the PR #39 Vercel preview with a real student account to verify Mimic 30/30 to Guess, Guess 10/10 to unlocked Word across refresh/re-login, Guess re-entry, and Word completion to Chapter 2. Do not merge or deploy Production without explicit approval.
 <!-- HANDOFF:NEXT_ACTION:END -->
