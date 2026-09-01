@@ -24,29 +24,29 @@ Fix Sing 2 student progress persistence and gate navigation without changing gat
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Implemented a scoped Sing2 progress-gate fix: durable Guess and Word completion writes, working Mimic completion navigation, retryable Guess/access loading errors, explicit Word lock reasons, stable Guess resume state, and completion race guards.
+PR #39 is open from codex/fix-sing2-progress-gate with the scoped Sing2 gate fix. GitHub/Vercel checks passed and the preview correctly keeps unauthenticated lesson entry behind signup.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/hooks/useGuessingGame.ts, app/lib/useRequireModeAccess.ts, app/sing2/guessing/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/word/page.tsx, tests/sing2-progress-gate.test.mjs, package.json
+- app/hooks/useGuessingGame.ts, app/lib/useRequireModeAccess.ts, app/sing2/guessing/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/word/page.tsx, tests/sing2-progress-gate.test.mjs, package.json, docs/ai-handoff/STATE.md, docs/ai-handoff/CONVERSATION.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-Sing2 gate 14/14; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript pass; Next.js 101-page production build pass.
+Sing2 gate 14/14; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript pass; 101-page build pass; PR #39 Vercel deployment pass; unauthenticated preview smoke pass.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Production is untouched. Real-student preview verification still requires an authenticated student session. Completion analytics remain best-effort after the durable gate write, matching the existing non-blocking UX.
+Real-student end-to-end verification remains because the automated preview browser has no student session. Production is untouched. Completion analytics remain best-effort after the durable gate write.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Commit and open a PR against main, then validate the Vercel preview with a real student account before any merge.
+Use the PR #39 Vercel preview with a real student account to verify Mimic 30/30 to Guess, Guess 10/10 to unlocked Word across refresh/re-login, Guess re-entry, and Word completion to Chapter 2. Do not merge or deploy Production without explicit approval.
 <!-- HANDOFF:NEXT_ACTION:END -->

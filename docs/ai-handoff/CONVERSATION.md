@@ -1312,3 +1312,21 @@ Implemented a scoped Sing2 progress-gate fix: durable Guess and Word completion 
 ## 2026-09-01 23:32:23 — codex / decision
 
 Kept canAccessLesson/canAccessMode policy unchanged; completion UI and next-step navigation now wait for the real learning_progress completed write instead of local state.
+
+## 2026-09-01 23:37:22 — codex / checkpoint
+
+PR #39 is open from codex/fix-sing2-progress-gate with the scoped Sing2 gate fix. GitHub/Vercel checks passed and the preview correctly keeps unauthenticated lesson entry behind signup.
+
+**Next action:** Use the PR #39 Vercel preview with a real student account to verify Mimic 30/30 to Guess, Guess 10/10 to unlocked Word across refresh/re-login, Guess re-entry, and Word completion to Chapter 2. Do not merge or deploy Production without explicit approval.
+
+**Validation:** Sing2 gate 14/14; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript pass; 101-page build pass; PR #39 Vercel deployment pass; unauthenticated preview smoke pass.
+
+**Files:**
+- app/hooks/useGuessingGame.ts, app/lib/useRequireModeAccess.ts, app/sing2/guessing/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/word/page.tsx, tests/sing2-progress-gate.test.mjs, package.json, docs/ai-handoff/STATE.md, docs/ai-handoff/CONVERSATION.md
+
+**Open risks:** Real-student end-to-end verification remains because the automated preview browser has no student session. Production is untouched. Completion analytics remain best-effort after the durable gate write.
+
+
+## 2026-09-01 23:37:22 — codex / validation
+
+PR #39 and its Vercel preview passed automated checks; guest access to the Guess preview redirected to signup with the original destination preserved.
