@@ -12,48 +12,41 @@ codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-COMPLETE
+IN PROGRESS
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Close the remaining behavioral and microinteraction gaps between Pinocchio Foundation and the canonical Sing2 Watch/Mimic/Guess/Word experience, then validate and deploy the exact parity release to Production
+Repair only the Sing2 student progress gate: durable Guess and Word completion, functional Mimic-to-Guess completion CTA, finite Guess load failure with retry, and an explanatory locked Word state
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Deployed the full Pinocchio Foundation behavior pass against Sing2 to Production. Signed-in live QA verified Watch's playback-synchronized clock and progress bar, Mimic's playback-only active-green slot, Guess's three-view flow and Correct feedback, and Word's listen/listen/mimic sequence, ten visible fixed-position chips, Correct feedback, chameleon eating state, and 01/10 → 02/10 transition. The deployed release also includes seek/resume, guarded navigation, correct/wrong melodies, pause-safe timers, completion persistence, and per-mode remote progress hydration.
+Completed the narrow Sing2 gate repair on codex/sing2-progress-gate-fix. Guess and Word now begin durable completion writes on the final correct answer and expose completion UI only after success; Mimic completion waits for persistence and routes to Guess; Sing2 Guess returns to Selecting while legacy Book Guess still routes directly to Word; Guess load failures have retry; locked Word explains the missing prerequisite without flashing content; interaction guards prevent final-feedback navigation races.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/components/pinocchio/PinocchioLessonModeClient.tsx
-- app/globals.css
-- app/hooks/useSoundEffects.ts
-- app/lib/progressGate.ts
-- package.json
-- tests/pinocchio-learning-behavior-parity.test.mjs
-- docs/ai-handoff/STATE.md
-- docs/ai-handoff/CONVERSATION.md
+- app/lib/useRequireModeAccess.ts,app/sing2/guessing/page.tsx,app/sing2/mimicking/page.tsx,app/sing2/word/page.tsx,package.json,tests/sing2-progress-gate-regression.test.mjs,docs/ai-handoff/STATE.md,docs/ai-handoff/CONVERSATION.md
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-`npm run validate:pinocchio-behavior-parity` passes 26/26; `npm run validate:pinocchio-ui-parity` passes 9/9; `npm run validate:pinocchio-visual-release` passes 5/5; `npx tsc --noEmit` passes; the final 101-page Production build passes. GitHub commit `3579366dc65c7443d47f1fe831b4aa788d3442dd` received a successful Vercel Production status, and signed-in live QA passed all four learning modes on `mimicenglish.vercel.app`.
+Independent P0/P1 review clean; Sing2 gate regression 5/5; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript passed; production build generated 101/101 pages; git diff check passed.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-No release blocker remains. The automated browser runtime cannot render Web Audio output, so the live pass verified the exact Correct/Again trigger states while the executable parity suite verifies the C5-E5-G5 and G5-E5-C5 note sequences. Keep Pinocchio's explicit completion persistence rather than copying Sing2's known final Guess/Word persistence defects.
+A signed-in ordinary student must still verify fresh completion, refresh/re-login persistence, and Chapter 2 unlock on Vercel Preview before merge.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-No implementation action remains. Treat the 26-contract behavior suite as a required release gate for future Pinocchio learning-mode changes.
+Commit and push the branch, open a main-targeted PR, wait for Vercel Preview, and run ordinary-student completion plus refresh/re-login QA without merging or deploying Production.
 <!-- HANDOFF:NEXT_ACTION:END -->
