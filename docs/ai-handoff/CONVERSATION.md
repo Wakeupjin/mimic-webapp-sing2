@@ -1289,3 +1289,34 @@ Signed-in live verification on `mimicenglish.vercel.app` confirmed: Watch advanc
 **Validation:** behavior parity 26/26, structural/mobile UI parity 9/9, visual release gate 5/5, TypeScript, diff check, 101-page Production build, Vercel status, and signed-in four-mode live smoke all passed.
 
 **Root cause of the previous incomplete pass:** the earlier release gate proved shared geometry, route wiring, visual assets, and answer visibility, but did not encode click → playback → active-green → feedback sound → counter → next-step behavior. Pinocchio also maintained a separate large state machine from Sing2, so visual parity could pass while runtime timing and feedback still diverged. The new 26-contract executable gate closes that gap while intentionally preserving Pinocchio's stronger completion persistence.
+
+## 2026-09-01 23:07:50 — codex / work started
+
+Objective: Repair only the Sing2 student progress gate: durable Guess and Word completion, functional Mimic-to-Guess completion CTA, finite Guess load failure with retry, and an explanatory locked Word state
+
+
+## 2026-09-01 23:07:50 — codex / checkpoint
+
+Implemented the narrow Sing2 gate repair on codex/sing2-progress-gate-fix. Guess, Mimic, and Word now expose completion UI only after learning_progress confirms completed=true; Mimic completion routes directly to Guess; Guess load failures show retry instead of an endless spinner; locked Word stays on-page and explains that Guess must be completed; guarded pages stay neutral through the profile/progress check.
+
+**Next action:** Finish independent diff review, commit and push the branch, open a main-targeted PR, wait for Vercel Preview, then perform signed-in real-student QA without merging or deploying Production.
+
+**Validation:** Sing2 gate regression 5/5; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript passed; production build generated 101/101 pages; git diff check passed.
+
+**Files:**
+- app/lib/useRequireModeAccess.ts, app/sing2/guessing/page.tsx, app/sing2/mimicking/page.tsx, app/sing2/word/page.tsx, package.json, tests/sing2-progress-gate-regression.test.mjs
+
+**Open risks:** The automated source contracts prove save-before-overlay and retry wiring, but a signed-in ordinary student must still exercise the exact fresh-completion, refresh/re-login, and Chapter 2 unlock path on the Vercel Preview before merge.
+
+## 2026-09-01 23:20:32 — codex / checkpoint
+
+Completed the narrow Sing2 gate repair on codex/sing2-progress-gate-fix. Guess and Word now begin durable completion writes on the final correct answer and expose completion UI only after success; Mimic completion waits for persistence and routes to Guess; Sing2 Guess returns to Selecting while legacy Book Guess still routes directly to Word; Guess load failures have retry; locked Word explains the missing prerequisite without flashing content; interaction guards prevent final-feedback navigation races.
+
+**Next action:** Commit and push the branch, open a main-targeted PR, wait for Vercel Preview, and run ordinary-student completion plus refresh/re-login QA without merging or deploying Production.
+
+**Validation:** Independent P0/P1 review clean; Sing2 gate regression 5/5; Pinocchio behavior 26/26; Pinocchio UI 9/9; visual release 5/5; TypeScript passed; production build generated 101/101 pages; git diff check passed.
+
+**Files:**
+- app/lib/useRequireModeAccess.ts,app/sing2/guessing/page.tsx,app/sing2/mimicking/page.tsx,app/sing2/word/page.tsx,package.json,tests/sing2-progress-gate-regression.test.mjs,docs/ai-handoff/STATE.md,docs/ai-handoff/CONVERSATION.md
+
+**Open risks:** A signed-in ordinary student must still verify fresh completion, refresh/re-login persistence, and Chapter 2 unlock on Vercel Preview before merge.

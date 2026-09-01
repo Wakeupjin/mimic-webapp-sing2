@@ -27,6 +27,7 @@ import { MIMICKING_SEGMENT_TAIL_SECONDS } from "../../constants/timings";
 
 type SentenceFeedback = "easy" | "hard";
 type SentenceFeedbackMap = Record<string, SentenceFeedback>;
+type MimicCompletionSaveState = "idle" | "saving" | "error";
 
 function parseSentenceFeedback(progressData: unknown): SentenceFeedbackMap {
   let parsed = progressData;
@@ -115,6 +116,7 @@ function MimickingPageContent() {
   const [nudgeNext, setNudgeNext] = useState(false);
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const [sentenceFeedback, setSentenceFeedback] = useState<SentenceFeedbackMap>({});
+  const [completionSaveState, setCompletionSaveState] = useState<MimicCompletionSaveState>("idle");
   const { bumpPlay, patch } = useEvaluationLog(lessonNumber, 'mimicking', isMimickingStarted);
   const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'mimicking', movieId);
   const maxSentenceRef = useRef(0);
@@ -126,6 +128,8 @@ function MimickingPageContent() {
   const stepTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isSequencePausedRef = useRef(false);
   const sentenceFeedbackRef = useRef<SentenceFeedbackMap>({});
+  const completionSavePromiseRef = useRef<Promise<void> | null>(null);
+  const completionFeedbackRef = useRef<SentenceFeedbackMap>({});
 
   const clearStepTimeout = useCallback(() => {
     if (stepTimeoutRef.current) {
@@ -159,6 +163,7 @@ function MimickingPageContent() {
         setIsMimickingStarted(false);
         setIsMimickingComplete(false);
         setShowNextCta(false);
+        setCompletionSaveState("idle");
         const contentLesson = parseLessonNumber(movieId);
         const pack = parsePack(movieId);
         const progressLesson = parseProgressLesson(movieId);
@@ -272,31 +277,51 @@ function MimickingPageContent() {
     return () => clearInterval(saveProgressInterval);
   }, [lessonNumber, isMimickingStarted, currentIndex, isMimickingComplete, scenes.length, sentenceFeedback]);
 
-  // 미믹킹 완료 시 최종 저장
-  useEffect(() => {
-    if (isMimickingComplete && lessonNumber) {
-      const saveFinalProgress = async () => {
-        try {
-          await saveProgress(lessonNumber, 'mimicking', true, currentIndex, {
-            currentScene: currentIndex,
-            totalScenes: scenes.length,
-            isComplete: true,
-            sentenceFeedback,
-            completed_at: new Date().toISOString()
-          });
-          await saveLog(lessonNumber, 'mimicking', 'mimicking_completed', {
-            totalScenes: scenes.length,
-            difficultSentenceCount: Object.values(sentenceFeedback).filter((value) => value === 'hard').length,
-            completed_at: new Date().toISOString()
-          });
-          console.log('🎉 미믹킹 모드 완료!');
-        } catch (error) {
-          console.error('미믹킹 완료 저장 실패:', error);
-        }
-      };
-      saveFinalProgress();
+  const completeMimicking = useCallback((finalFeedback: SentenceFeedbackMap) => {
+    completionFeedbackRef.current = finalFeedback;
+    if (completionSavePromiseRef.current) {
+      return completionSavePromiseRef.current;
     }
-  }, [isMimickingComplete, lessonNumber, currentIndex, scenes.length, sentenceFeedback]);
+
+    const finalSceneIndex = Math.max(0, scenes.length - 1);
+    const completedAt = new Date().toISOString();
+    setIsLineListOpen(false);
+    setCompletionSaveState("saving");
+
+    const savePromise = (async () => {
+      try {
+        await saveProgress(lessonNumber, 'mimicking', true, finalSceneIndex, {
+          currentScene: finalSceneIndex,
+          totalScenes: scenes.length,
+          isComplete: true,
+          sentenceFeedback: finalFeedback,
+          completed_at: completedAt,
+        });
+
+        setIsMimickingComplete(true);
+        setShowNextCta(true);
+        setCompletionSaveState("idle");
+
+        void saveLog(lessonNumber, 'mimicking', 'mimicking_completed', {
+          totalScenes: scenes.length,
+          difficultSentenceCount: Object.values(finalFeedback).filter((value) => value === 'hard').length,
+          completed_at: completedAt,
+        }).catch((error) => console.error('미믹킹 완료 로그 저장 실패:', error));
+      } catch (error) {
+        console.error('미믹킹 완료 저장 실패:', error);
+        setCompletionSaveState("error");
+      } finally {
+        completionSavePromiseRef.current = null;
+      }
+    })();
+
+    completionSavePromiseRef.current = savePromise;
+    return savePromise;
+  }, [lessonNumber, scenes.length, setIsMimickingComplete, setShowNextCta]);
+
+  const retryMimickingCompletion = useCallback(() => {
+    void completeMimicking(completionFeedbackRef.current);
+  }, [completeMimicking]);
 
   // 풀스크린 복원 로직
   useEffect(() => {
@@ -445,6 +470,9 @@ function MimickingPageContent() {
   ]);
 
   const handlePrev = useCallback(() => {
+    if (completionSaveState !== "idle") {
+      return;
+    }
     if (isSequenceRunning && !isMaster && !nudgeNext) {
       return;
     }
@@ -473,9 +501,12 @@ function MimickingPageContent() {
       if (currentIndex === 1) {
         setIsMimickingStarted(false);
       }
-  }, [isSequenceRunning, isMaster, nudgeNext, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
+  }, [completionSaveState, isSequenceRunning, isMaster, nudgeNext, currentIndex, pauseVideo, resetVideo, setActiveControlIndex, setAutoSeqIndex, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
 
   const handleNext = useCallback(() => {
+    if (completionSaveState !== "idle") {
+      return;
+    }
     if (isFeedbackOpen) {
       return;
     }
@@ -509,7 +540,19 @@ function MimickingPageContent() {
         window.location.href = lessonPath(movieId, 'guessing');
     }
     setShowNextCta(false);
-  }, [currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, isFeedbackOpen, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
+  }, [completionSaveState, currentIndex, scenes.length, isSequenceRunning, isMaster, isMimickingComplete, movieId, nudgeNext, isFeedbackOpen, setCurrentIndex, setShowNextCta, clearStepTimeout, setIsSequenceRunning]);
+
+  const handleCompletionNext = useCallback(() => {
+    if (!showNextCta || !isMimickingComplete || currentIndex < scenes.length - 1) {
+      return;
+    }
+    const isCurrentlyFullscreen = document.fullscreenElement !== null;
+    if (isCurrentlyFullscreen) {
+      sessionStorage.setItem('maintainFullscreen', 'true');
+    }
+    sessionStorage.setItem('mimickingComplete', 'true');
+    window.location.href = lessonPath(movieId, 'guessing');
+  }, [currentIndex, isMimickingComplete, movieId, scenes.length, showNextCta]);
 
   const skipLine = useCallback(() => {
     if (showNextCta) return;
@@ -519,12 +562,14 @@ function MimickingPageContent() {
     }
     clearStepTimeout();
     setIsSequenceRunning(false);
-    setIsMimickingComplete(true);
-    setShowNextCta(true);
     pauseVideo();
-  }, [showNextCta, currentIndex, scenes.length, handleNext, clearStepTimeout, setIsSequenceRunning, setIsMimickingComplete, setShowNextCta, pauseVideo]);
+    void completeMimicking(sentenceFeedbackRef.current);
+  }, [showNextCta, currentIndex, scenes.length, handleNext, clearStepTimeout, setIsSequenceRunning, pauseVideo, completeMimicking]);
 
   const handleSceneSelect = useCallback((index: number) => {
+    if (completionSaveState !== "idle" || showNextCta) {
+      return;
+    }
     if (index === 0 && !isMimickingStarted) {
       return;
     }
@@ -549,6 +594,8 @@ function MimickingPageContent() {
     setIsLineListOpen(false);
     setCurrentIndex(index);
   }, [
+    completionSaveState,
+    showNextCta,
     isMimickingStarted,
     isMaster,
     clearTimeouts,
@@ -562,6 +609,7 @@ function MimickingPageContent() {
   ]);
 
   const handlePlay = useCallback((m: boolean, slotIndex: number) => {
+    if (completionSaveState !== "idle") return;
     if (showNextCta || isFeedbackOpen) return;
     clearStepTimeout();
     setIsSequencePaused(false);
@@ -573,7 +621,7 @@ function MimickingPageContent() {
     autoSeqIndexRef.current = slotIndex;
     setIsSequenceRunning(true);
     playVideo();
-  }, [showNextCta, isFeedbackOpen, playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
+  }, [completionSaveState, showNextCta, isFeedbackOpen, playVideo, setActiveControlIndex, setMuted, setAutoSeqIndex, setIsSequenceRunning, clearStepTimeout]);
 
   const handleSentenceFeedback = useCallback((feedback: SentenceFeedback) => {
     const nextFeedback = {
@@ -586,13 +634,15 @@ function MimickingPageContent() {
     setNudgeNext(false);
 
     const isLastSentence = currentIndex >= scenes.length - 1;
-    void saveProgress(lessonNumber, 'mimicking', isLastSentence, currentIndex, {
-      currentScene: currentIndex,
-      totalScenes: scenes.length,
-      isComplete: isLastSentence,
-      sentenceFeedback: nextFeedback,
-      lastSaved: new Date().toISOString(),
-    }).catch((error) => console.error('문장 평가 저장 실패:', error));
+    if (!isLastSentence) {
+      void saveProgress(lessonNumber, 'mimicking', false, currentIndex, {
+        currentScene: currentIndex,
+        totalScenes: scenes.length,
+        isComplete: false,
+        sentenceFeedback: nextFeedback,
+        lastSaved: new Date().toISOString(),
+      }).catch((error) => console.error('문장 평가 저장 실패:', error));
+    }
     void saveLog(lessonNumber, 'mimicking', 'sentence_feedback', {
       sentenceIndex: currentIndex,
       feedback,
@@ -604,9 +654,8 @@ function MimickingPageContent() {
     lastStartedIndexRef.current = null;
 
     if (isLastSentence) {
-      setIsMimickingComplete(true);
-      setShowNextCta(true);
       pauseVideo();
+      void completeMimicking(nextFeedback);
       return;
     }
 
@@ -616,10 +665,13 @@ function MimickingPageContent() {
     setActiveControlIndex(null);
     pendingButtonIndexRef.current = null;
     setCurrentIndex(nextIndex);
-  }, [currentIndex, scenes, lessonNumber, clearStepTimeout, pauseVideo, setActiveControlIndex, setCurrentIndex, setIsMimickingComplete, setIsSequenceRunning, setMuted, setShowNextCta]);
+  }, [currentIndex, scenes, lessonNumber, clearStepTimeout, pauseVideo, setActiveControlIndex, setCurrentIndex, setIsSequenceRunning, setMuted, completeMimicking]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (completionSaveState !== "idle") {
+        return;
+      }
       if (e.code === "Space") {
         e.preventDefault();
         toggleSequencePause();
@@ -633,7 +685,7 @@ function MimickingPageContent() {
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [toggleSequencePause, handlePrev, handleNext]);
+  }, [completionSaveState, toggleSequencePause, handlePrev, handleNext]);
 
   const currentScene = scenes[currentIndex];
 
@@ -852,6 +904,27 @@ function MimickingPageContent() {
                   </div>
                 </div>
               )}
+
+              {completionSaveState !== "idle" && !showNextCta && (
+                <div className="absolute inset-0 z-40 flex items-center justify-center bg-black/75 px-4">
+                  <div className="w-full max-w-md rounded-2xl border border-white/20 bg-[#201e1e]/95 p-6 text-center text-white shadow-2xl">
+                    {completionSaveState === "saving" ? (
+                      <>
+                        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#60D96C] border-t-transparent" />
+                        <h2 className="text-xl font-bold">진도를 저장하고 있어요…</h2>
+                      </>
+                    ) : (
+                      <>
+                        <h2 className="text-xl font-bold" role="alert">진도를 저장하지 못했어요.</h2>
+                        <p className="mt-2 text-sm text-zinc-300">저장이 끝나면 복습 결과를 보여드릴게요.</p>
+                        <button type="button" className="cta-btn cta-primary mt-5" onClick={retryMimickingCompletion}>
+                          다시 시도
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
         
             {showNextCta && (
               <div className="lesson-completion-overlay pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 px-4">
@@ -884,12 +957,13 @@ function MimickingPageContent() {
                         resetMimickingState();
                         setIsMimickingStarted(false);
                         setIsFeedbackOpen(false);
+                        setCompletionSaveState("idle");
                         setNudgeNext(false);
                         maxSentenceRef.current = 0;
                         sentenceFeedbackRef.current = {};
                         setSentenceFeedback({});
                       }}
-                    onNext={handleNext}
+                    onNext={handleCompletionNext}
                   />
                 </div>
               </div>
@@ -912,6 +986,7 @@ function MimickingPageContent() {
               className="mimic-count"
               aria-expanded={isLineListOpen}
               aria-label="문장 목록"
+              disabled={completionSaveState !== "idle" || showNextCta}
               onClick={() => setIsLineListOpen((open) => !open)}
             >
               <span>{lineCurrent} / </span>

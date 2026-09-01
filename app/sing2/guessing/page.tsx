@@ -59,6 +59,8 @@ interface MimicSentence {
   text: string;
 }
 
+type CompletionSaveState = 'idle' | 'saving' | 'error';
+
 function GuessingPageContent() {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -71,9 +73,12 @@ function GuessingPageContent() {
   const [lessonData, setLessonData] = useState<LessonDataType | null>(null);
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const [guessingData, setGuessingData] = useState<any[]>([]);
   const [savedProgress, setSavedProgress] = useState<any>(null);
   const [lessonNumber, setLessonNumber] = useState<number>(() => parseProgressLesson(movieId));
+  const [completionSaveState, setCompletionSaveState] = useState<CompletionSaveState>('idle');
   
   // 커스텀 훅 사용
   const { isFullscreen, toggleFullscreen } = useFullscreen();
@@ -160,7 +165,9 @@ function GuessingPageContent() {
   const autoPlayIndexRef = useRef(0);
   const autoPlayTriggeredRef = useRef(false);
   const onEndedFiredRef = useRef(false);
-  const dataLoadedRef = useRef(false); // 데이터 로딩 중복 방지
+  const dataLoadKeyRef = useRef<string | null>(null); // 데이터 로딩 중복 방지
+  const completionSavePromiseRef = useRef<Promise<boolean> | null>(null);
+  const completionCorrectCountRef = useRef(0);
   const stopAudioSegmentRef = useRef<(() => void) | null>(null);
   const missedThisQuestionRef = useRef(false);
   const [isClipPlaying, setIsClipPlaying] = useState(false);
@@ -259,18 +266,29 @@ function GuessingPageContent() {
     };
   }, [isFullscreen]);
 
+  const retryLoad = useCallback(() => {
+    setLoadError(null);
+    setIsLoading(true);
+    setLoadAttempt((attempt) => attempt + 1);
+  }, []);
+
   // Supabase 데이터 로드 - 중복 방지
   useEffect(() => {
-    if (!movieId || dataLoadedRef.current) return;
+    const loadKey = `${movieId}:${loadAttempt}`;
+    if (!movieId || dataLoadKeyRef.current === loadKey) return;
+    dataLoadKeyRef.current = loadKey;
 
     const loadDataFromSupabase = async () => {
       try {
         setIsLoading(true);
+        setLoadError(null);
+        setLessonData(null);
+        setGuessingData([]);
         setSavedProgress(null);
         setIsGuessingStarted(false);
         setIsGuessingComplete(false);
         setShowResults(false);
-        dataLoadedRef.current = true; // 로딩 시작 시 바로 플래그 설정
+        setCompletionSaveState('idle');
 
         const contentLesson = parseLessonNumber(movieId);
         const pack = parsePack(movieId);
@@ -278,57 +296,124 @@ function GuessingPageContent() {
         setLessonNumber(progressLesson);
 
         if (isNaN(contentLesson)) {
-          console.error('❌ Invalid lesson number:', movieId);
-          setIsLoading(false);
-          return;
+          throw new Error(`Invalid lesson number: ${movieId}`);
         }
 
         const lesson = await fetchLessonData(contentLesson, pack);
 
         if (!lesson) {
-          console.error('❌ No lesson data found');
-          setIsLoading(false);
-          return;
+          throw new Error('No lesson data found');
         }
 
         const guessingDataArray = lesson.guessing_data || [];
+        if (!Array.isArray(guessingDataArray) || guessingDataArray.length === 0) {
+          throw new Error('No guessing data found');
+        }
         setLessonData(lesson as LessonDataType);
         setVideoUrl(getLessonMedia(movieId).src);
         setGuessingData(guessingDataArray);
         setTotalQuestions(guessingDataArray.length);
         
         // 저장된 진도 불러오기
-        try {
-          const progress = await getProgressByMode(progressLesson, 'guessing');
-          if (progress) {
-            setSavedProgress(progress);
-            const idx = progress.completed
-              ? Math.max(0, guessingDataArray.length - 1)
-              : Math.max(0, Math.floor(Number(progress.current_position || 0)));
-            setCurrentQuestionIndex(idx);
-            setCurrentIndex(idx);
-            maxQuestionRef.current = idx;
-            if (progress.completed) {
-              setIsGuessingComplete(true);
-              setShowResults(true);
-            }
+        const progress = await getProgressByMode(progressLesson, 'guessing');
+        if (progress) {
+          setSavedProgress(progress);
+          const idx = progress.completed
+            ? Math.max(0, guessingDataArray.length - 1)
+            : Math.max(0, Math.floor(Number(progress.current_position || 0)));
+          setCurrentQuestionIndex(idx);
+          setCurrentIndex(idx);
+          maxQuestionRef.current = idx;
+          if (progress.completed) {
+            setIsGuessingComplete(true);
+            setShowResults(true);
           }
-        } catch (error) {
-          // 게싱 진도 데이터 없음 (첫 학습)
         }
         setIsLoading(false);
       } catch (error) {
         console.error('❌ Supabase data loading error:', error);
+        setLoadError('학습 내용을 불러오지 못했어요. 잠시 후 다시 시도해 주세요.');
         setIsLoading(false);
-        dataLoadedRef.current = false; // 에러 발생 시 재시도 가능하도록
+        if (dataLoadKeyRef.current === loadKey) {
+          dataLoadKeyRef.current = null;
+        }
       }
     };
 
     loadDataFromSupabase();
-  }, [movieId]); // movieId만 의존성으로
+  }, [movieId, loadAttempt]);
 
   // currentQuestion 변수를 useEffect보다 위로 이동
   const currentQuestion = guessingData[currentQuestionIndex];
+
+  const completeGuessing = useCallback((finalCorrectCount: number, revealResultsOnSuccess = true) => {
+    completionCorrectCountRef.current = finalCorrectCount;
+    if (completionSavePromiseRef.current) {
+      return completionSavePromiseRef.current;
+    }
+
+    const finalQuestionIndex = Math.max(0, totalQuestions - 1);
+    const completedAt = new Date().toISOString();
+    setIsLineListOpen(false);
+    setCompletionSaveState('saving');
+
+    const savePromise = (async () => {
+      try {
+        // saveProgress의 completed upsert는 재시도해도 같은 진도 행을 갱신한다.
+        await saveProgress(lessonNumber, 'guessing', true, finalQuestionIndex, {
+          currentQuestion: finalQuestionIndex,
+          totalQuestions,
+          correctCount: finalCorrectCount,
+          isComplete: true,
+          completed_at: completedAt,
+        });
+
+        setIsGuessingComplete(true);
+        if (revealResultsOnSuccess) {
+          setShowResults(true);
+        }
+        setCompletionSaveState('idle');
+
+        const score = Math.round((finalCorrectCount / totalQuestions) * 100);
+        void Promise.allSettled([
+          saveResult(
+            lessonNumber,
+            'guessing',
+            score,
+            finalCorrectCount,
+            totalQuestions,
+            Date.now()
+          ),
+          saveLog(lessonNumber, 'guessing', 'guessing_completed', {
+            totalQuestions,
+            correctCount: finalCorrectCount,
+            score,
+            completed_at: completedAt,
+          }),
+        ]).then((results) => {
+          results.forEach((result) => {
+            if (result.status === 'rejected') {
+              console.error('게싱 결과 로그 저장 실패:', result.reason);
+            }
+          });
+        });
+        return true;
+      } catch (error) {
+        console.error('게싱 완료 저장 실패:', error);
+        setCompletionSaveState('error');
+        return false;
+      } finally {
+        completionSavePromiseRef.current = null;
+      }
+    })();
+
+    completionSavePromiseRef.current = savePromise;
+    return savePromise;
+  }, [lessonNumber, setIsGuessingComplete, setShowResults, totalQuestions]);
+
+  const retryGuessingCompletion = useCallback(() => {
+    void completeGuessing(completionCorrectCountRef.current);
+  }, [completeGuessing]);
 
   // 게싱 진도 저장 useEffect
   useEffect(() => {
@@ -340,9 +425,9 @@ function GuessingPageContent() {
           lessonNumber,
           'guessing',
           isGuessingComplete, // 완료 상태
-          currentQuestion, // 현재 문제 번호
+          currentQuestionIndex, // 현재 문제 인덱스
           JSON.stringify({ 
-            currentQuestion: currentQuestion,
+            currentQuestion: currentQuestionIndex,
             totalQuestions: totalQuestions,
             correctCount: correctCount,
             isComplete: isGuessingComplete,
@@ -355,48 +440,7 @@ function GuessingPageContent() {
     }, 15000); // 15초마다 저장
 
     return () => clearInterval(saveProgressInterval);
-  }, [lessonNumber, isGuessingStarted, currentQuestion, isGuessingComplete, totalQuestions, correctCount]);
-
-  // 게싱 완료 시 최종 저장
-  useEffect(() => {
-    if (isGuessingComplete && lessonNumber) {
-      const saveFinalProgress = async () => {
-        try {
-          // 진도 저장
-          await saveProgress(lessonNumber, 'guessing', true, currentQuestion, JSON.stringify({
-            currentQuestion: currentQuestion,
-            totalQuestions: totalQuestions,
-            correctCount: correctCount,
-            isComplete: true,
-            completed_at: new Date().toISOString()
-          }));
-          
-          // 결과 저장
-          const score = Math.round((correctCount / totalQuestions) * 100);
-          await saveResult(
-            lessonNumber,
-            'guessing',
-            score,
-            correctCount,
-            totalQuestions,
-            Date.now() // 시간은 임시로 현재 시간 사용
-          );
-          
-          // 로그 저장
-          await saveLog(lessonNumber, 'guessing', 'guessing_completed', {
-            totalQuestions: totalQuestions,
-            correctCount: correctCount,
-            score: score,
-            completed_at: new Date().toISOString()
-          });
-          
-        } catch (error) {
-          console.error('게싱 완료 저장 실패:', error);
-        }
-      };
-      saveFinalProgress();
-    }
-  }, [isGuessingComplete, lessonNumber, currentQuestion, totalQuestions, correctCount]);
+  }, [lessonNumber, isGuessingStarted, currentQuestionIndex, isGuessingComplete, totalQuestions, correctCount]);
 
 
   // 영상 재생 중 중앙 시점에서 스크린샷을 찍는 함수 (비활성화)
@@ -496,12 +540,13 @@ function GuessingPageContent() {
   }, [setVideoPlayCount, setPlayingAudio, setAllOptionsPlayed, setCurrentAutoIndex, setScreenshot, setScreenshotTaken, clearStepTimeout]);
 
   const goToNextQuestion = useCallback(() => {
+    if (completionSaveState !== 'idle') return;
     clearStepTimeout();
     setNudgeNext(false);
     setIsPaused(false);
     isPausedRef.current = false;
     if (currentQuestionIndex >= totalQuestions - 1) {
-      setShowResults(true);
+      void completeGuessing(correctCount);
       return;
     }
     const nextIdx = currentQuestionIndex + 1;
@@ -521,8 +566,11 @@ function GuessingPageContent() {
     }, GUESSING_NEXT_QUESTION_DELAY);
   }, [
     clearStepTimeout,
+    completionSaveState,
     currentQuestionIndex,
     totalQuestions,
+    completeGuessing,
+    correctCount,
     resetQuestionPlayback,
     setShowResults,
     setCurrentQuestionIndex,
@@ -536,7 +584,7 @@ function GuessingPageContent() {
   ]);
 
   const togglePause = useCallback(() => {
-    if (!isGuessingStarted || showCorrect || showAgain || showResults || nudgeNext) return;
+    if (completionSaveState !== 'idle' || !isGuessingStarted || showCorrect || showAgain || showResults || nudgeNext) return;
 
     if (isPaused) {
       setIsPaused(false);
@@ -564,6 +612,7 @@ function GuessingPageContent() {
     setPlayingAudio(null);
   }, [
     isGuessingStarted,
+    completionSaveState,
     showCorrect,
     showAgain,
     showResults,
@@ -582,11 +631,11 @@ function GuessingPageContent() {
   ]);
 
   const replayOption = useCallback((option: any) => {
-    if (!allOptionsPlayed || isPaused || showCorrect || showAgain || nudgeNext) return;
+    if (completionSaveState !== 'idle' || !allOptionsPlayed || isPaused || showCorrect || showAgain || nudgeNext) return;
     const q = guessingData[currentQuestionIndex];
     if (!q) return;
     playAudioDirect(option, q);
-  }, [allOptionsPlayed, isPaused, showCorrect, showAgain, nudgeNext, guessingData, currentQuestionIndex, playAudioDirect]);
+  }, [completionSaveState, allOptionsPlayed, isPaused, showCorrect, showAgain, nudgeNext, guessingData, currentQuestionIndex, playAudioDirect]);
 
   const clearLongPress = useCallback(() => {
     if (longPressTimerRef.current) {
@@ -596,6 +645,7 @@ function GuessingPageContent() {
   }, []);
 
   const jumpToQuestion = useCallback((idx: number) => {
+    if (completionSaveState !== 'idle' || showCorrect || showAgain) return;
     clearStepTimeout();
     clearLongPress();
     missedThisQuestionRef.current = false;
@@ -614,6 +664,9 @@ function GuessingPageContent() {
     }, GUESSING_NEXT_QUESTION_DELAY);
   }, [
     clearStepTimeout,
+    completionSaveState,
+    showCorrect,
+    showAgain,
     clearLongPress,
     resetQuestionPlayback,
     playVideo,
@@ -628,6 +681,7 @@ function GuessingPageContent() {
   ]);
 
   const handlePrevQuestion = useCallback(() => {
+    if (completionSaveState !== 'idle' || showCorrect || showAgain) return;
     if (nudgeNext) return;
     if (currentQuestionIndex > 0) {
       jumpToQuestion(currentQuestionIndex - 1);
@@ -635,9 +689,10 @@ function GuessingPageContent() {
     }
     stopAllMedia();
     window.location.href = lessonPath(movieId, 'mimicking');
-  }, [nudgeNext, currentQuestionIndex, jumpToQuestion, stopAllMedia, movieId]);
+  }, [completionSaveState, showCorrect, showAgain, nudgeNext, currentQuestionIndex, jumpToQuestion, stopAllMedia, movieId]);
 
   const handleNextQuestion = useCallback(() => {
+    if (completionSaveState !== 'idle') return;
     if (nudgeNext) {
       goToNextQuestion();
       return;
@@ -650,6 +705,7 @@ function GuessingPageContent() {
     jumpToQuestion(currentQuestionIndex + 1);
   }, [
     nudgeNext,
+    completionSaveState,
     goToNextQuestion,
     currentQuestionIndex,
     guessingData.length,
@@ -659,21 +715,24 @@ function GuessingPageContent() {
   ]);
 
   const restartGuessing = useCallback(() => {
+    if (completionSaveState !== 'idle') return;
     maxQuestionRef.current = 0;
     setCorrectCount(0);
     setUserAnswers([]);
     jumpToQuestion(0);
-  }, [setCorrectCount, setUserAnswers, jumpToQuestion]);
+  }, [completionSaveState, setCorrectCount, setUserAnswers, jumpToQuestion]);
 
-  const canSelectAnswer = allOptionsPlayed && !isPaused && !showCorrect && !showAgain && !nudgeNext && !showResults;
+  const canSelectAnswer = completionSaveState === 'idle' && allOptionsPlayed && !isPaused && !showCorrect && !showAgain && !nudgeNext && !showResults;
 
   // 답안 선택 처리
   const handleAnswerSelection = useCallback((selectedAnswer: string) => {
-    if (!allOptionsPlayed || isPaused || nudgeNext) return;
+    if (completionSaveState !== 'idle' || !allOptionsPlayed || isPaused || nudgeNext) return;
 
     const currentQuestion = guessingData[currentQuestionIndex];
     const correctAnswer = currentQuestion.correctAnswer;
     const isCorrect = selectedAnswer === correctAnswer;
+    const finalCorrectCount = correctCount + (isCorrect && !missedThisQuestionRef.current ? 1 : 0);
+    setIsLineListOpen(false);
 
     evalLog.addAttempt({
       question: currentQuestionIndex + 1,
@@ -696,6 +755,12 @@ function GuessingPageContent() {
       setUserAnswers((prev) => [...prev, selectedAnswer]);
       playCorrectSound();
 
+      // 마지막 정답은 피드백 애니메이션과 동시에 저장을 시작한다.
+      // 사용자가 2초 안에 브라우저를 떠나도 완료 기록이 로컬 화면에만 남지 않는다.
+      const finalCompletionPromise = currentQuestionIndex >= totalQuestions - 1
+        ? completeGuessing(finalCorrectCount, false)
+        : null;
+
       clearStepTimeout();
       stepTimeoutRef.current = setTimeout(() => {
         if (currentQuestionIndex < totalQuestions - 1) {
@@ -707,7 +772,9 @@ function GuessingPageContent() {
             }, 1600);
           }
         } else {
-          setShowResults(true);
+          void finalCompletionPromise?.then((saved) => {
+            if (saved) setShowResults(true);
+          });
         }
       }, GUESSING_ANSWER_FEEDBACK_DURATION);
     } else {
@@ -722,6 +789,7 @@ function GuessingPageContent() {
     }
   }, [
     allOptionsPlayed,
+    completionSaveState,
     isPaused,
     nudgeNext,
     currentQuestionIndex,
@@ -736,6 +804,8 @@ function GuessingPageContent() {
     setCorrectCount,
     setAllOptionsPlayed,
     setShowResults,
+    completeGuessing,
+    correctCount,
     evalLog,
     videoPlayCount,
     isMaster,
@@ -763,8 +833,22 @@ function GuessingPageContent() {
     );
   }
 
+  if (loadError) {
+    return (
+      <main className="flex min-h-screen items-center justify-center px-4" style={{ backgroundColor: '#201E1E' }}>
+        <div className="text-center text-white">
+          <h1 className="mb-3 text-xl font-semibold">학습 내용을 불러오지 못했어요.</h1>
+          <p className="mb-6 text-gray-300">연결을 확인하고 다시 시도해 주세요.</p>
+          <button type="button" className="cta-btn cta-primary" onClick={retryLoad}>
+            다시 시도
+          </button>
+        </div>
+      </main>
+    );
+  }
+
   // 로딩 화면
-  if (isLoading || !lessonData || guessingData.length === 0) {
+  if (isLoading) {
     return (
       <main className="min-h-screen px-4 py-4">
         <div className="mb-4 flex items-center justify-between group">
@@ -777,6 +861,19 @@ function GuessingPageContent() {
             <div className="w-8 h-8 border-2 border-[#60D96C] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
             <p className="text-lg" style={{ fontFamily: 'Encode Sans, sans-serif' }}>Loading...</p>
           </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (!lessonData || guessingData.length === 0) {
+    return (
+      <main className="flex min-h-screen items-center justify-center px-4" style={{ backgroundColor: '#201E1E' }}>
+        <div className="text-center text-white">
+          <h1 className="mb-3 text-xl font-semibold">학습 내용을 찾지 못했어요.</h1>
+          <button type="button" className="cta-btn cta-primary" onClick={retryLoad}>
+            다시 시도
+          </button>
         </div>
       </main>
     );
@@ -962,6 +1059,27 @@ function GuessingPageContent() {
               showAgain={showAgain}
             />
 
+            {completionSaveState !== 'idle' && !showResults && !showCorrect && (
+              <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/75 px-4">
+                <div className="w-full max-w-md rounded-2xl border border-white/20 bg-[#201e1e]/95 p-6 text-center text-white shadow-2xl">
+                  {completionSaveState === 'saving' ? (
+                    <>
+                      <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#60D96C] border-t-transparent" />
+                      <h2 className="text-xl font-bold">진도를 저장하고 있어요…</h2>
+                    </>
+                  ) : (
+                    <>
+                      <h2 className="text-xl font-bold" role="alert">진도를 저장하지 못했어요.</h2>
+                      <p className="mt-2 text-sm text-zinc-300">저장이 끝나야 다음 단계로 갈 수 있어요.</p>
+                      <button type="button" className="cta-btn cta-primary mt-5" onClick={retryGuessingCompletion}>
+                        다시 시도
+                      </button>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+
             {lockHint && (
               <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-lg bg-black/80 px-4 py-2 text-sm font-semibold text-white sm:text-base" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
                 아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.
@@ -977,7 +1095,9 @@ function GuessingPageContent() {
                     if (document.fullscreenElement) {
                       sessionStorage.setItem("maintainFullscreen", "true");
                     }
-                    window.location.href = lessonPath(movieId, 'word');
+                    window.location.href = isBookLesson
+                      ? lessonPath(movieId, 'word')
+                      : lessonSelectHref(movieId);
                   }}
                 />
               </div>
@@ -1037,6 +1157,7 @@ function GuessingPageContent() {
               className="mimic-count"
               aria-expanded={isLineListOpen}
               aria-label="문제 목록"
+              disabled={completionSaveState !== 'idle' || showCorrect || showAgain || showResults}
               onClick={() => setIsLineListOpen((open) => !open)}
             >
               <span>{lineCurrent} / </span>

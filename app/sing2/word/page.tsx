@@ -48,6 +48,8 @@ interface LessonDataType {
   watching_data?: any;
 }
 
+type CompletionSaveState = 'idle' | 'saving' | 'failed';
+
 function WordPageContent() {
   const { user, loading } = useAuth();
   const router = useRouter();
@@ -83,6 +85,7 @@ function WordPageContent() {
   const [currentQuestionNumber, setCurrentQuestionNumber] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [showCompletion, setShowCompletion] = useState(false);
+  const [completionSaveState, setCompletionSaveState] = useState<CompletionSaveState>('idle');
   const [isReplayingClip, setIsReplayingClip] = useState(false);
   const [replayNonce, setReplayNonce] = useState(0);
 
@@ -91,12 +94,18 @@ function WordPageContent() {
   const isReplayingClipRef = useRef(false);
   const stepTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const gamePhaseRef = useRef(gamePhase);
+  const completionSavePromiseRef = useRef<Promise<boolean> | null>(null);
 
   const { isFullscreen, toggleFullscreen } = useFullscreen();
   const { playCorrectSound, playAgainSound } = useSoundEffects();
   const totalQuestions = 10;
   const evalLog = useEvaluationLog(lessonNumber, 'word', isStarted);
-  const { isMaster, checking } = useRequireModeAccess(lessonNumber, 'word', movieId);
+  const { isMaster, checking, accessDenied } = useRequireModeAccess(
+    lessonNumber,
+    'word',
+    movieId,
+    { redirectOnDenied: false }
+  );
   const maxQuestionRef = useRef(1);
   const lockHintTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isLineListOpen, setIsLineListOpen] = useState(false);
@@ -155,6 +164,8 @@ function WordPageContent() {
       setShowStartOverlay(true);
       setIsStarted(false);
       setShowCompletion(false);
+      setCompletionSaveState('idle');
+      completionSavePromiseRef.current = null;
 
       const contentLesson = parseLessonNumber(movieId);
       const packName = parsePack(movieId);
@@ -231,38 +242,6 @@ function WordPageContent() {
 
     return () => clearInterval(saveProgressInterval);
   }, [lessonNumber, isStarted, currentQuestionNumber, totalQuestions, selectedWords]);
-
-  useEffect(() => {
-    if (currentQuestionNumber > totalQuestions && lessonNumber) {
-      const saveFinalProgress = async () => {
-        try {
-          await saveProgress(lessonNumber, 'word', true, currentQuestionNumber, {
-            currentQuestion: currentQuestionNumber,
-            totalQuestions,
-            isComplete: true,
-            completed_at: new Date().toISOString(),
-          });
-
-          await saveResult(
-            lessonNumber,
-            'word',
-            100,
-            totalQuestions,
-            totalQuestions,
-            Date.now()
-          );
-
-          await saveLog(lessonNumber, 'word', 'word_completed', {
-            totalQuestions,
-            completed_at: new Date().toISOString(),
-          });
-        } catch (error) {
-          console.error('워드 완료 저장 실패:', error);
-        }
-      };
-      saveFinalProgress();
-    }
-  }, [currentQuestionNumber, totalQuestions, lessonNumber]);
 
   const generateQuestion = useCallback(() => {
     if (!lessonData || !lessonData.word) return;
@@ -455,11 +434,68 @@ function WordPageContent() {
     startListeningSequence();
   };
 
+  const completeWordLesson = (revealCompletionOnSuccess = true) => {
+    if (!lessonNumber) return Promise.resolve(false);
+    if (completionSavePromiseRef.current) return completionSavePromiseRef.current;
+
+    setIsLineListOpen(false);
+    setCompletionSaveState('saving');
+    const completedAt = new Date().toISOString();
+
+    const savePromise = (async () => {
+      try {
+        await saveProgress(lessonNumber, 'word', true, totalQuestions, {
+          currentQuestion: totalQuestions,
+          totalQuestions,
+          isComplete: true,
+          completed_at: completedAt,
+        });
+
+        setCompletionSaveState('idle');
+        if (revealCompletionOnSuccess) {
+          setShowCompletion(true);
+        }
+
+        void Promise.allSettled([
+          saveResult(
+            lessonNumber,
+            'word',
+            100,
+            totalQuestions,
+            totalQuestions,
+            Date.now()
+          ),
+          saveLog(lessonNumber, 'word', 'word_completed', {
+            totalQuestions,
+            completed_at: completedAt,
+          }),
+        ]).then((results) => {
+          results.forEach((result) => {
+            if (result.status === 'rejected') {
+              console.error('워드 완료 부가 기록 저장 실패:', result.reason);
+            }
+          });
+        });
+        return true;
+      } catch (error) {
+        console.error('워드 완료 저장 실패:', error);
+        setCompletionSaveState('failed');
+        return false;
+      } finally {
+        completionSavePromiseRef.current = null;
+      }
+    })();
+
+    completionSavePromiseRef.current = savePromise;
+    return savePromise;
+  };
+
   const handleAgain = () => {
     clearStepTimeout();
     maxQuestionRef.current = 1;
     setIsLineListOpen(false);
     setShowCompletion(false);
+    setCompletionSaveState('idle');
     setCurrentQuestionNumber(1);
     playCountRef.current = 0;
     setPlayCount(0);
@@ -492,6 +528,7 @@ function WordPageContent() {
   };
 
   const goToQuestion = (n: number) => {
+    if (completionSaveState !== 'idle' || showCompletion || showCorrect || showAgain) return;
     if (n < 1 || n > totalQuestions) return;
     if (!isMaster && n > maxQuestionRef.current) {
       showLockHint();
@@ -515,9 +552,9 @@ function WordPageContent() {
   };
 
   const skipQuestion = () => {
-    if (showCompletion) return;
+    if (showCompletion || showCorrect || showAgain || completionSaveState !== 'idle') return;
     if (currentQuestionNumber >= totalQuestions) {
-      setShowCompletion(true);
+      void completeWordLesson();
       return;
     }
     goToQuestion(currentQuestionNumber + 1);
@@ -528,6 +565,7 @@ function WordPageContent() {
     if (selectedWords.length !== currentQuestion.correctWords.length) return;
     if (showCorrect || showAgain || isPaused || isChameleonEating) return;
 
+    setIsLineListOpen(false);
     setIsChameleonEating(true);
     window.setTimeout(() => setIsChameleonEating(false), 720);
 
@@ -550,6 +588,9 @@ function WordPageContent() {
     if (isCorrect) {
       playCorrectSound();
       setShowCorrect(true);
+      const finalCompletionPromise = currentQuestionNumber >= totalQuestions
+        ? completeWordLesson(false)
+        : null;
 
       scheduleStep(() => {
         setShowCorrect(false);
@@ -558,7 +599,9 @@ function WordPageContent() {
         setHideAllWords(false);
 
         if (currentQuestionNumber >= totalQuestions) {
-          setShowCompletion(true);
+          void finalCompletionPromise?.then((saved) => {
+            if (saved) setShowCompletion(true);
+          });
         } else {
           playCountRef.current = 0;
           setPlayCount(0);
@@ -587,7 +630,12 @@ function WordPageContent() {
   const neededCount = currentQuestion?.correctWords.length ?? 0;
   const slotsFull = neededCount > 0 && selectedWords.length >= neededCount;
   const canArrange =
-    gamePhase === 'guessing' && !isPaused && !showCorrect && !showAgain && !showCompletion;
+    gamePhase === 'guessing' &&
+    !isPaused &&
+    !showCorrect &&
+    !showAgain &&
+    !showCompletion &&
+    completionSaveState === 'idle';
   const canSubmit =
     canArrange && neededCount > 0 && selectedWords.length === neededCount;
   const controlsLocked = gamePhase === 'playing' || !canArrange;
@@ -633,6 +681,25 @@ function WordPageContent() {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-xl font-semibold text-[#60D96C]">로그인이 필요해요.</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (accessDenied) {
+    return (
+      <main className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-md text-center">
+          <h1 className="text-2xl font-semibold text-[#60D96C]">Word는 아직 잠겨 있어요.</h1>
+          <p className="mt-3 text-base text-gray-300">
+            이전 학습 단계인 Guess를 먼저 완료하면 Word가 열려요.
+          </p>
+          <Link
+            href={lessonSelectHref(movieId)}
+            className="mt-6 inline-flex rounded-xl bg-[#60D96C] px-5 py-3 font-semibold text-black"
+          >
+            학습 순서로 돌아가기
+          </Link>
         </div>
       </main>
     );
@@ -789,6 +856,31 @@ function WordPageContent() {
               {showCorrect && <p className="guess-banner is-correct">Correct</p>}
               {showAgain && <p className="guess-banner is-again">Again</p>}
 
+              {completionSaveState !== 'idle' && !showCompletion && !showCorrect && (
+                <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/75 px-6">
+                  <div className="max-w-sm text-center text-white">
+                    {completionSaveState === 'saving' ? (
+                      <>
+                        <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-[#60D96C] border-t-transparent" />
+                        <p className="text-lg font-semibold">학습 완료를 저장하고 있어요…</p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-lg font-semibold">완료 내용을 저장하지 못했어요.</p>
+                        <p className="mt-2 text-sm text-gray-300">저장해야 다음 챕터를 열 수 있어요.</p>
+                        <button
+                          type="button"
+                          className="mt-5 rounded-xl bg-[#60D96C] px-5 py-3 font-semibold text-black"
+                          onClick={() => void completeWordLesson()}
+                        >
+                          다시 시도
+                        </button>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+
               {lockHint && (
                 <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 rounded-lg bg-black/80 px-4 py-2 text-sm font-semibold text-white sm:text-base" style={{ fontFamily: 'Encode Sans, sans-serif' }}>
                   아직 잠겨 있어요. 지금 문제를 먼저 맞춰 주세요.
@@ -851,6 +943,7 @@ function WordPageContent() {
               className="mimic-count"
               aria-expanded={isLineListOpen}
               aria-label="문제 목록"
+              disabled={completionSaveState !== 'idle' || showCompletion || showCorrect || showAgain}
               onClick={() => setIsLineListOpen((open) => !open)}
             >
               <span>{lineCurrent} / </span>

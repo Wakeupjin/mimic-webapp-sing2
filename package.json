@@ -18,6 +18,7 @@
     "validate:pinocchio-ui-parity": "node --test tests/pinocchio-sing2-parity.test.mjs",
     "validate:pinocchio-behavior-parity": "node --test tests/pinocchio-learning-behavior-parity.test.mjs",
     "validate:pinocchio-visual-release": "node --test tests/pinocchio-visual-release-gate.test.mjs",
+    "validate:sing2-progress-gates": "node --test tests/sing2-progress-gate-regression.test.mjs",
     "sync:story-pack-activity-checksums": "node scripts/sync-story-pack-activity-checksums.mjs",
     "publish:pinocchio-v3-web": "node scripts/publish-pinocchio-v3-web-assets.mjs --level=foundation"
   },
