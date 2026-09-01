@@ -44,7 +44,7 @@ interface GuessingGameActions {
   setIsGuessingComplete: (complete: boolean) => void;
   setCorrectCount: Dispatch<SetStateAction<number>>;
   loadGuessingData: (data: any[]) => void;
-  startGuessing: () => void;
+  startGuessing: (startIndex?: number) => void;
   playAudio: (option: any) => void;
   startAutoPlaySequence: () => void;
   handleAnswerSelect: (answer: string, correctAnswer?: string) => void;
@@ -80,11 +80,12 @@ export function useGuessingGame(): GuessingGameState & GuessingGameActions {
     setTotalQuestions(data.length);
   }, []);
 
-  const startGuessing = useCallback(() => {
+  const startGuessing = useCallback((startIndex = 0) => {
     console.log('🎮 게싱 시작');
     setIsGuessingStarted(true);
     setUserInteracted(true);
-    setCurrentQuestionIndex(0);
+    setCurrentQuestionIndex(startIndex);
+    setCurrentIndex(startIndex);
     setVideoPlayCount(0);
     videoPlayCountRef.current = 0;
     setShowIntro(false);
