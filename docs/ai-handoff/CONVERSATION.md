@@ -1364,3 +1364,9 @@ PR #40 Preview smoke found and fixed the final removed-Guess deep-link race: aut
 - docs/ai-handoff/{STATE.md,CONVERSATION.md}
 
 **Open risks:** Production remains untouched. Authenticated playback and visual approval still require the refreshed Vercel Preview.
+
+## 2026-09-02 22:47:19 — Codex / completed
+
+Pinocchio reading-first redesign is complete on PR #40. Learner flow is Listen → Mimic → Word, book Mimic keeps the Living Storybook motion under a comfortable dim and shows the stable authored sentence, legacy Guess data is preserved but unroutable, and old/deep Guess links safely return to the correct Chapter even through authentication. Vercel Preview: https://mimic-webapp-sing2-git-codex-pinocc-8ed6ab-kangjinlees-projects.vercel.app/ . Production was not merged or deployed.
+
+**Validation:** 45 tests passed; TypeScript and diff checks passed; final 89-page production build passed; both Vercel checks passed; live unauthenticated deep-link smoke confirmed next=/book/pinocchio/7 rather than the removed Guess route.

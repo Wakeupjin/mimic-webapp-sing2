@@ -12,7 +12,7 @@ Codex
 ## Status
 
 <!-- HANDOFF:STATUS:START -->
-IN PROGRESS
+COMPLETE
 <!-- HANDOFF:STATUS:END -->
 
 ## Current objective
@@ -24,21 +24,31 @@ Remove Pinocchio Guess from the learner flow and redesign Pinocchio Mimic as a r
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-PR #40 Preview smoke found and fixed the final removed-Guess deep-link race: auth redirects now canonicalize book Guess URLs to the Chapter root before signup/login can preserve them. The dedicated server redirect remains as defense in depth; Sing2 Guess is unchanged.
+Pinocchio reading-first redesign is complete on PR #40. Learner flow is Listen → Mimic → Word, book Mimic keeps the Living Storybook motion under a comfortable dim and shows the stable authored sentence, legacy Guess data is preserved but unroutable, and old/deep Guess links safely return to the correct Chapter even through authentication. Vercel Preview: https://mimic-webapp-sing2-git-codex-pinocc-8ed6ab-kangjinlees-projects.vercel.app/ . Production was not merged or deployed.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
+- app/book/{guessing,listen,mimicking,selecting,word}/page.tsx
+- app/book/pinocchio/[chapter]/{[mode],guessing}/page.tsx
+- app/components/ModeSelectLayout.tsx
+- app/components/pinocchio/PinocchioLessonModeClient.tsx
+- app/dev/brand-preview/page.tsx
+- app/dev/pinocchio-chapters/[chapter]/ChapterSelectClient.tsx
+- app/dev/pinocchio-chapters/{lessonData.ts,localProgress.ts,pinocchio-chapters.module.css}
+- app/globals.css
 - app/lib/authRedirect.ts
-- tests/pinocchio-three-mode-reading.test.mjs
+- package.json
+- tests/pinocchio-{sing2-parity,learning-behavior-parity,three-mode-reading}.test.mjs
+- docs/ai-handoff/PROJECT_CONTEXT.md
 - docs/ai-handoff/{STATE.md,CONVERSATION.md}
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-45 tests passed (UI/three-mode 14, behavior 26, visual release 5); TypeScript and diff check passed; final 89-page production build passed.
+45 tests passed; TypeScript and diff checks passed; final 89-page production build passed; both Vercel checks passed; live unauthenticated deep-link smoke confirmed next=/book/pinocchio/7 rather than the removed Guess route.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
@@ -50,5 +60,5 @@ Production remains untouched. Authenticated playback and visual approval still r
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Commit and push the auth normalization follow-up, wait for the refreshed Vercel Preview, verify the browser lands with next=/book/pinocchio/{chapter}, then perform authenticated responsive visual QA and stop before merge/Production.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->
