@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PinocchioLessonModeClient from "@/app/components/pinocchio/PinocchioLessonModeClient";
-import { MODE_ORDER, parseChapterNumber } from "../../../../dev/pinocchio-chapters/lessonData";
+import { BOOK_FLOW_MODES, parseChapterNumber } from "../../../../dev/pinocchio-chapters/lessonData";
 import type { LessonMode } from "../../../../dev/pinocchio-chapters/types";
 import {
   loadPinocchioV3FoundationChapter,
@@ -16,7 +16,7 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return Array.from({ length: PINOCCHIO_TOTAL_CHAPTERS }, (_, chapterIndex) =>
-    MODE_ORDER.map((mode) => ({ chapter: String(chapterIndex + 1), mode })),
+    BOOK_FLOW_MODES.map((mode) => ({ chapter: String(chapterIndex + 1), mode })),
   ).flat();
 }
 
@@ -25,14 +25,14 @@ export default async function PinocchioProductionLesson({
 }: {
   params: Promise<{ chapter: string; mode: string }>;
 }) {
-  if (productionPinocchioRelease() === "v2") {
-    return <PinocchioLessonModeClient />;
-  }
-
   const { chapter, mode: rawMode } = await params;
   const chapterNumber = parseChapterNumber(chapter);
   const mode = rawMode as LessonMode;
-  if (!chapterNumber || !MODE_ORDER.includes(mode)) notFound();
+  if (!chapterNumber || !BOOK_FLOW_MODES.includes(mode)) notFound();
+
+  if (productionPinocchioRelease() === "v2") {
+    return <PinocchioLessonModeClient />;
+  }
 
   const release = await loadPinocchioV3FoundationChapter(chapterNumber);
   if (!release.mediaReady || !release.timeline) {

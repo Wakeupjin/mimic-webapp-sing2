@@ -63,12 +63,20 @@
 .stageVignette { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.08), transparent 52%, rgba(0,0,0,.28)); pointer-events: none; }
 .stageDim .stageArt, .stageDim .stageArtFallback { filter: brightness(.38); }
 .stageFaded .stageArt, .stageFaded .stageArtFallback { opacity: .16; }
+.stageReading::after { position: absolute; inset: 0; z-index: 7; background: rgba(0,0,0,.36); content: ""; pointer-events: none; }
+.stageReading .stageVignette { background: linear-gradient(180deg, rgba(0,0,0,.12), transparent 38%, rgba(0,0,0,.42)); }
 .storyCaption { position: absolute; right: 8%; bottom: 8%; left: 8%; z-index: 8; margin: 0; color: white; font-family: "Encode Sans", sans-serif; font-size: clamp(1rem, 2vw, 2rem); font-weight: 800; line-height: 1.35; text-align: center; text-shadow: 0 2px 12px #000, 0 0 3px #000; }
+.mimicReadingGuide { position: absolute; right: max(5%, 32px); bottom: 6%; left: max(5%, 32px); z-index: 14; width: auto; max-width: 56rem; margin: 0 auto; padding: clamp(.72rem, 1.4vw, 1rem) clamp(.9rem, 1.8vw, 1.2rem); border: 1px solid rgba(96,217,108,.34); border-radius: 8px; background: rgba(11,16,12,.94); color: #f4efe2; text-align: center; box-shadow: 0 12px 32px rgba(0,0,0,.24); pointer-events: none; animation: mimicSentenceReveal .22s ease-out .12s both; }
+.mimicReadingEyebrow { display: flex; align-items: center; justify-content: center; gap: .8rem; margin: 0 0 clamp(.4rem, .9vw, .7rem); color: #60d96c; font-size: clamp(.58rem, .9vw, .78rem); font-weight: 900; letter-spacing: .08em; line-height: 1.3; }
+.mimicReadingEyebrow b { padding-left: .8rem; border-left: 1px solid rgba(96,217,108,.42); font: inherit; letter-spacing: .12em; }
+.mimicReadingSentence { margin: 0; color: #f4efe2; font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif; font-size: clamp(1.05rem, 1.7vw, 1.55rem); font-weight: 780; line-height: 1.34; text-wrap: balance; text-shadow: 0 2px 12px rgba(0,0,0,.86); }
+@keyframes mimicSentenceReveal { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 .betaBadge { display: inline-flex; min-height: 2rem; align-items: center; justify-content: center; padding: .4rem .7rem .35rem; border: 1px solid rgba(255, 211, 77, .68); border-radius: 999px; background: rgba(32, 30, 30, .92); color: #ffd34d; font-size: clamp(.58rem, .95vw, .72rem); font-weight: 950; letter-spacing: .08em; line-height: 1; white-space: nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.28); }
 .mediaNotice { position: absolute; top: .9rem; left: 50%; z-index: 29; max-width: calc(100% - 12rem); padding: .45rem .8rem; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; background: rgba(32,30,30,.88); color: #fff; font-size: clamp(.62rem, 1vw, .78rem); font-weight: 800; text-align: center; transform: translateX(-50%); }
 .feedbackCard { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; z-index: 30; width: min(100% - 2rem, 560px); margin: 0 auto; padding: 1rem; border: 1px solid rgba(255,255,255,.2); border-radius: 1rem; background: rgba(32,30,30,.96); text-align: center; }
 .feedbackCard span { color: #60d96c; font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
 .feedbackCard strong { display: block; margin: .35rem 0 .8rem; }
+.feedbackSentence { margin: .35rem auto .6rem; color: #f4efe2; font-family: "Encode Sans Semi Condensed", "Encode Sans", sans-serif; font-size: clamp(.9rem, 1.5vw, 1.12rem); font-weight: 760; line-height: 1.35; text-wrap: balance; }
 .feedbackActions { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
 .feedbackActions button { min-height: 44px; border-radius: .7rem; background: rgba(255,255,255,.12); color: white; font-weight: 800; }
 .feedbackActions button:last-child { background: #60d96c; color: #111; }
@@ -79,4 +87,21 @@
   .profileBadge b, .profileBadge small { display: none; }
   .mediaNotice { top: .55rem; max-width: calc(100% - 7rem); padding: .35rem .6rem; }
   .betaBadge { min-height: 1.75rem; padding-inline: .5rem; font-size: .55rem; letter-spacing: .04em; }
+  .mimicReadingGuide { right: 8px; bottom: 8px; left: 8px; width: auto; padding: .5rem .62rem; border-radius: 10px; }
+  .mimicReadingEyebrow { display: none; }
+  .mimicReadingSentence { font-size: clamp(.95rem, 4.1vw, 1.08rem); line-height: 1.28; }
+  .feedbackCard { inset: .5rem; width: auto; max-height: calc(100% - 1rem); margin: auto; padding: .65rem; overflow-y: auto; overscroll-behavior: contain; }
+  .feedbackSentence { margin-block: .2rem .4rem; font-size: clamp(.82rem, 3.8vw, .96rem); line-height: 1.24; }
+  .feedbackCard strong { margin: .2rem 0 .45rem; }
+}
+
+@media (orientation: landscape) and (max-height: 540px) {
+  .mimicReadingGuide { right: 16%; bottom: 6px; left: 16%; width: auto; padding: .38rem .62rem; }
+  .mimicReadingEyebrow { display: none; }
+  .mimicReadingSentence { font-size: clamp(.9rem, 4.2vh, 1rem); line-height: 1.22; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mimicReadingGuide { animation: none; }
+  .stageArt, .stageArtFallback { transition: none; will-change: auto; }
 }

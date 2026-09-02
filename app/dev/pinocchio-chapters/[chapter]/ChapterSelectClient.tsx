@@ -7,7 +7,7 @@ import { FullscreenIcon, HeaderIconButton } from "../../../components/HeaderIcon
 import { useAuth } from "../../../contexts/AuthContext";
 import { useFullscreen } from "../../../hooks/useFullscreen";
 import { fetchOwnProgress, isMasterRole } from "../../../lib/progressGate";
-import { chapterRoot, MODE_LABEL, MODE_ORDER, modeHref } from "../lessonData";
+import { BOOK_FLOW_MODES, chapterRoot, MODE_LABEL, modeHref } from "../lessonData";
 import {
   canOpenChapter,
   canOpenMode,
@@ -106,7 +106,7 @@ export default function ChapterSelectClient({
   }, [dropdownOpen]);
 
   const completed = progress[String(chapterNumber)] ?? [];
-  const hereMode = mediaReady ? MODE_ORDER.find((mode) => !completed.includes(mode)) : undefined;
+  const hereMode = mediaReady ? BOOK_FLOW_MODES.find((mode) => !completed.includes(mode)) : undefined;
 
   if (loading || profileLoading || !user || !ready || (!isMaster && !canOpenChapter(chapterNumber, progress))) {
     return <main className="min-h-screen bg-black" />;
@@ -154,7 +154,7 @@ export default function ChapterSelectClient({
           },
         };
       })}
-      modes={MODE_ORDER.map((mode: LessonMode) => ({
+      modes={BOOK_FLOW_MODES.map((mode: LessonMode) => ({
         id: mode,
         label: MODE_LABEL[mode],
         locked: !mediaReady || (!isMaster && !canOpenMode(mode, completed)),

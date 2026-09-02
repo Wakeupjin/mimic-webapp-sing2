@@ -1,3 +1,11 @@
-"use client";
+import { redirect } from "next/navigation";
+import { legacyBookChapter, modeHref } from "../../dev/pinocchio-chapters/lessonData";
 
-export { default } from "../../sing2/word/page";
+export default async function LegacyBookWordRedirect({
+  searchParams,
+}: {
+  searchParams: Promise<{ id?: string | string[] }>;
+}) {
+  const { id } = await searchParams;
+  redirect(modeHref(legacyBookChapter(id), "word"));
+}

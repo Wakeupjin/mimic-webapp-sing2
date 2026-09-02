@@ -1628,6 +1628,11 @@ body {
   gap: clamp(1.75rem, 4vh, 3.25rem) clamp(1rem, 3vw, 2.75rem);
 }
 
+.select-modes.has-three {
+  width: min(100%, 58rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .select-mode-item {
   position: relative;
   display: flex;
@@ -1893,6 +1898,11 @@ body {
     width: min(100%, 20.5rem);
     grid-template-columns: minmax(0, 1fr);
     row-gap: clamp(1.65rem, 4.6vh, 2.75rem);
+  }
+
+  .select-modes.has-three {
+    width: min(100%, 20.5rem);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .select-mode {

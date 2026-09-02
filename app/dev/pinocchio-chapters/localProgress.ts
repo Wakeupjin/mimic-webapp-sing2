@@ -1,4 +1,4 @@
-import { MODE_ORDER, chapterRoot } from "./lessonData";
+import { ALL_PINOCCHIO_MODES, BOOK_FLOW_MODES, chapterRoot } from "./lessonData";
 import type { LessonMode } from "./types";
 import type { ProgressRow } from "../../lib/progressGate";
 
@@ -19,7 +19,7 @@ function storageKey(scope: string) {
 
 function sanitizeModes(value: unknown): LessonMode[] {
   if (!Array.isArray(value)) return [];
-  return MODE_ORDER.filter((mode) => value.includes(mode));
+  return ALL_PINOCCHIO_MODES.filter((mode) => value.includes(mode));
 }
 
 function sanitizeProgress(value: unknown): ChapterProgress {
@@ -69,13 +69,13 @@ export function mergeRemoteProgress(
       !row.completed
       || chapterNumber < 1
       || chapterNumber > 12
-      || !MODE_ORDER.includes(mode)
+      || !ALL_PINOCCHIO_MODES.includes(mode)
     ) {
       continue;
     }
 
     const completed = progress[String(chapterNumber)] ?? [];
-    progress[String(chapterNumber)] = MODE_ORDER.filter(
+    progress[String(chapterNumber)] = ALL_PINOCCHIO_MODES.filter(
       (item) => item === mode || completed.includes(item)
     );
   }
@@ -93,7 +93,7 @@ export function completeMode(
   if (typeof window === "undefined") return;
   const progress = readProgress(scope);
   const completed = progress[String(chapterNumber)] ?? [];
-  progress[String(chapterNumber)] = MODE_ORDER.filter(
+  progress[String(chapterNumber)] = ALL_PINOCCHIO_MODES.filter(
     (item) => item === mode || completed.includes(item)
   );
   window.localStorage.setItem(storageKey(scope), JSON.stringify(progress));
@@ -108,8 +108,9 @@ export function resetProgress(scope = LEGACY_PINOCCHIO_PROGRESS_SCOPE) {
 }
 
 export function canOpenMode(mode: LessonMode, completed: LessonMode[]) {
-  const index = MODE_ORDER.indexOf(mode);
-  return index === 0 || MODE_ORDER.slice(0, index).every((item) => completed.includes(item));
+  const index = BOOK_FLOW_MODES.indexOf(mode);
+  if (index < 0) return false;
+  return index === 0 || BOOK_FLOW_MODES.slice(0, index).every((item) => completed.includes(item));
 }
 
 export function canOpenChapter(chapterNumber: number, progress: ChapterProgress) {
