@@ -10,10 +10,13 @@ import type {
   Timeline,
 } from "./types";
 
-export const MODE_ORDER: LessonMode[] = ["watching", "mimicking", "guessing", "word"];
+// Guess remains a known persisted mode so released progress and old links can be
+// migrated safely. It is no longer part of the learner-facing book course.
+export const ALL_PINOCCHIO_MODES: LessonMode[] = ["watching", "mimicking", "guessing", "word"];
+export const BOOK_FLOW_MODES: LessonMode[] = ["watching", "mimicking", "word"];
 
 export const MODE_LABEL: Record<LessonMode, string> = {
-  watching: "Watch",
+  watching: "Listen",
   mimicking: "Mimic",
   guessing: "Guess",
   word: "Word",
@@ -26,6 +29,12 @@ export function parseChapterNumber(value: string | string[] | undefined) {
   return Number.isInteger(chapterNumber) && chapterNumber >= 1 && chapterNumber <= 12
     ? chapterNumber
     : null;
+}
+
+export function legacyBookChapter(value: string | string[] | undefined) {
+  const legacyId = Array.isArray(value) ? value[0] : value;
+  const chapter = legacyId?.split(":").at(-1);
+  return parseChapterNumber(chapter) ?? 1;
 }
 
 export function chapterRoot(chapterNumber: number) {

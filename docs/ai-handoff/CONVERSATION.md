@@ -1289,3 +1289,84 @@ Signed-in live verification on `mimicenglish.vercel.app` confirmed: Watch advanc
 **Validation:** behavior parity 26/26, structural/mobile UI parity 9/9, visual release gate 5/5, TypeScript, diff check, 101-page Production build, Vercel status, and signed-in four-mode live smoke all passed.
 
 **Root cause of the previous incomplete pass:** the earlier release gate proved shared geometry, route wiring, visual assets, and answer visibility, but did not encode click → playback → active-green → feedback sound → counter → next-step behavior. Pinocchio also maintained a separate large state machine from Sing2, so visual parity could pass while runtime timing and feedback still diverged. The new 26-contract executable gate closes that gap while intentionally preserving Pinocchio's stronger completion persistence.
+
+## 2026-09-02 17:02:00 — Codex / work started
+
+Objective: Remove Pinocchio Guess from the learner flow and redesign Pinocchio Mimic as a readable, dimmed Living Storybook sentence practice while preserving movie Mimic
+
+## 2026-09-02 22:29:46 — user / decision
+
+Pinocchio learner course becomes Listen → Mimic → Word. Book Mimic shows the authored English sentence over a dimmed Living Storybook stage; movie Mimic remains answer-hidden. Preserve existing Guess progress data and do not deploy Production without explicit approval.
+
+
+## 2026-09-02 22:30:07 — Codex / checkpoint
+
+Implemented the three-mode Pinocchio learner flow, visible-sentence Mimic over a dimmed Living Storybook stage, stable 8-slot sentence display, line-list pause/resume, responsive 3-mode selecting, legacy/deep-link redirects, and resume logic that ignores legacy Guess ordering while preserving its stored rows.
+
+**Next action:** Review the final scoped diff, commit and push codex/pinocchio-three-mode-reading, open a PR, and wait for the Vercel Preview; stop before merge or Production deployment.
+
+**Validation:** 39 Pinocchio tests passed; TypeScript passed; diff check passed; production build passed and generated 36 active book mode routes plus a dedicated removed-Guess redirect route.
+
+**Files:**
+- app/book/{guessing,listen,mimicking,selecting,word}/page.tsx
+- app/book/pinocchio/[chapter]/{[mode],guessing}/page.tsx
+- app/components/ModeSelectLayout.tsx
+- app/components/pinocchio/PinocchioLessonModeClient.tsx
+- app/dev/brand-preview/page.tsx
+- app/dev/pinocchio-chapters/{lessonData,localProgress,pinocchio-chapters.module}.ts*
+- app/dev/pinocchio-chapters/[chapter]/ChapterSelectClient.tsx
+- app/globals.css
+- tests/pinocchio-*.test.mjs
+- package.json
+- docs/ai-handoff/*
+
+**Open risks:** Authenticated visual QA must be completed on the Vercel Preview. Dormant Guess implementation and authored Guess fixtures remain only for rollback/data compatibility and are not learner-routable.
+
+## 2026-09-02 22:35:24 — Codex / checkpoint
+
+Final review is clean. Pinocchio learner UI now exposes only Listen → Mimic → Word; book Mimic shows one stable authored sentence across all eight audible/muted repetitions over a dimmed Living Storybook; the line list safely pauses playback; small-phone, iPad, reduced-motion, and screen-reader overlaps are handled. Legacy Guess rows remain stored but are ignored by learner gates and resume ordering.
+
+**Next action:** Commit and push codex/pinocchio-three-mode-reading, open a PR, wait for Vercel Preview, then perform authenticated visual QA and stop before merge/Production.
+
+**Validation:** 44 tests passed (UI/three-mode 13, behavior 26, visual release 5); TypeScript passed; git diff --check passed; final production build passed with 89 pages, 36 active book lesson paths, and a dedicated removed-Guess redirect.
+
+**Files:**
+- app/book/{guessing,listen,mimicking,selecting,word}/page.tsx
+- app/book/pinocchio/[chapter]/{[mode],guessing}/page.tsx
+- app/components/ModeSelectLayout.tsx
+- app/components/pinocchio/PinocchioLessonModeClient.tsx
+- app/dev/brand-preview/page.tsx
+- app/dev/pinocchio-chapters/[chapter]/ChapterSelectClient.tsx
+- app/dev/pinocchio-chapters/{lessonData.ts,localProgress.ts,pinocchio-chapters.module.css}
+- app/globals.css
+- package.json
+- tests/pinocchio-*.test.mjs
+- docs/ai-handoff/{PROJECT_CONTEXT.md,STATE.md,CONVERSATION.md}
+
+**Open risks:** Production remains untouched. Authenticated playback and responsive visual approval must happen on the Vercel Preview before merge. Dormant Guess code/fixtures remain for rollback and data compatibility but cannot be routed or rendered by learners.
+
+## 2026-09-02 22:42:49 — Codex / work
+
+Live Vercel Preview navigation exposed an AuthGate race on removed Pinocchio Guess deep links: the server redirect existed, but unauthenticated signup preserved the obsolete Guess destination first. getSafeNextPath now normalizes canonical and legacy book Guess URLs to the correct Chapter root while leaving movie Guess untouched.
+
+
+## 2026-09-02 22:43:03 — Codex / checkpoint
+
+PR #40 Preview smoke found and fixed the final removed-Guess deep-link race: auth redirects now canonicalize book Guess URLs to the Chapter root before signup/login can preserve them. The dedicated server redirect remains as defense in depth; Sing2 Guess is unchanged.
+
+**Next action:** Commit and push the auth normalization follow-up, wait for the refreshed Vercel Preview, verify the browser lands with next=/book/pinocchio/{chapter}, then perform authenticated responsive visual QA and stop before merge/Production.
+
+**Validation:** 45 tests passed (UI/three-mode 14, behavior 26, visual release 5); TypeScript and diff check passed; final 89-page production build passed.
+
+**Files:**
+- app/lib/authRedirect.ts
+- tests/pinocchio-three-mode-reading.test.mjs
+- docs/ai-handoff/{STATE.md,CONVERSATION.md}
+
+**Open risks:** Production remains untouched. Authenticated playback and visual approval still require the refreshed Vercel Preview.
+
+## 2026-09-02 22:47:19 — Codex / completed
+
+Pinocchio reading-first redesign is complete on PR #40. Learner flow is Listen → Mimic → Word, book Mimic keeps the Living Storybook motion under a comfortable dim and shows the stable authored sentence, legacy Guess data is preserved but unroutable, and old/deep Guess links safely return to the correct Chapter even through authentication. Vercel Preview: https://mimic-webapp-sing2-git-codex-pinocc-8ed6ab-kangjinlees-projects.vercel.app/ . Production was not merged or deployed.
+
+**Validation:** 45 tests passed; TypeScript and diff checks passed; final 89-page production build passed; both Vercel checks passed; live unauthenticated deep-link smoke confirmed next=/book/pinocchio/7 rather than the removed Guess route.

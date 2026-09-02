@@ -7,10 +7,12 @@ import test from "node:test";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const modeClientPath = path.join(root, "app", "components", "pinocchio", "PinocchioLessonModeClient.tsx");
+const movieMimicPath = path.join(root, "app", "sing2", "mimicking", "page.tsx");
 const lessonUiPolicyPath = path.join(root, "app", "components", "pinocchio", "lessonUiPolicy.mjs");
 const mimicLineListPath = path.join(root, "app", "components", "MimicLineList.tsx");
 const productionModeRoutePath = path.join(root, "app", "book", "pinocchio", "[chapter]", "[mode]", "page.tsx");
 const loaderPath = path.join(root, "app", "lib", "pinocchioStoryPack.server.ts");
+const pinocchioCssPath = path.join(root, "app", "dev", "pinocchio-chapters", "pinocchio-chapters.module.css");
 const globalCssPath = path.join(root, "app", "globals.css");
 const lessonShellPath = path.join(root, "app", "components", "LessonShell.tsx");
 const playbackControlsPath = path.join(root, "app", "components", "PlaybackControls.tsx");
@@ -52,12 +54,11 @@ function sha256(buffer) {
   return `sha256:${createHash("sha256").update(buffer).digest("hex")}`;
 }
 
-test("Pinocchio Watch/Mimic/Guess/Word use the same responsive lesson shell contract as Sing2", async () => {
+test("Pinocchio Listen/Mimic/Word use the same responsive lesson shell contract as Sing2", async () => {
   const source = await text(modeClientPath);
   const sections = {
     watch: sourceSection(source, "function WatchMode()", "function MimicMode()"),
     mimic: sourceSection(source, "function MimicMode()", "function GuessMode()"),
-    guess: sourceSection(source, "function GuessMode()", "function normalizedTokens"),
     word: sourceSection(source, "function WordMode()", "export type PinocchioLessonModePageProps"),
   };
 
@@ -70,29 +71,45 @@ test("Pinocchio Watch/Mimic/Guess/Word use the same responsive lesson shell cont
   }
 
   assert.match(sections.mimic, /className=["']lesson-dock mimic-dock["']/);
-  assert.match(sections.guess, /className=["']lesson-dock guess-dock["']/);
   assert.match(sections.word, /className=["'][^"']*lesson-dock word-dock[^"']*["']/);
   assert.match(sections.mimic, /<PlaybackControls[\s\S]*?<button[^>]+className=["']mimic-count["']/);
-  assert.match(sections.guess, /<div className=["']guess-abc["']>[\s\S]*?<button[^>]+className=["']mimic-count["']/);
   assert.match(sections.word, /<div className=["']word-bar["']>[\s\S]*?<button[^>]+className=["']mimic-count["']/);
 });
 
-test("Mimic shows phrase progress without revealing the English practice phrase", async () => {
-  const [source, policy] = await Promise.all([
+test("book Mimic shows the stable English sentence while movie Mimic remains no-text", async () => {
+  const [source, movieMimic, css, policy] = await Promise.all([
     text(modeClientPath),
+    text(movieMimicPath),
+    text(pinocchioCssPath),
     import(pathToFileURL(lessonUiPolicyPath).href),
   ]);
   const mimic = sourceSection(source, "function MimicMode()", "function GuessMode()");
   const storyStage = sourceSection(source, "function StoryStage", "function StageActions");
+  const readingGuide = sourceSection(source, "function MimicReadingGuide", "function StageActions");
 
-  const secretPhrase = "Please don't hit me!";
   const indicator = policy.mimicPhraseProgress(1, 3);
   assert.equal(indicator, "PHRASE 2 / 3", "learners still need their position inside a split sentence");
-  assert.equal(indicator.includes(secretPhrase), false, "the progress indicator must never contain the answer phrase");
   assert.equal(policy.mimicPhraseProgress(0, 1), null, "a one-piece sentence needs no phrase indicator");
-  assert.match(mimic, /mimicPhraseProgress\(activeChunkIndex,\s*currentPractice\.chunks\.length\)/, "Mimic must render only the tested progress label");
-  assert.doesNotMatch(mimic, /caption=|chunks\[activeChunkIndex\]\?\.text/, "Mimic must not send the active English answer to the stage");
-  assert.doesNotMatch(storyStage, /storyCaption|caption\s*\?/, "the shared story stage must not expose a hidden answer-caption path");
+  assert.match(mimic, /reading=\{started\s*&&\s*!complete\}/, "book Mimic must dim the Living Storybook only during reading practice");
+  assert.match(mimic, /<MimicReadingGuide[\s\S]{0,220}key=\{currentPractice\.id\}[\s\S]{0,220}sentence=\{currentPractice\.text\}/, "the full authored sentence must stay stable for all slots in one practice item");
+  assert.match(mimic, /mimicPhraseProgress\(activeChunkIndex,\s*currentPractice\.chunks\.length\)/, "split sentences may still show a compact part indicator");
+  assert.match(readingGuide, /lang=["']en["'][^>]*>\s*\{sentence\}/, "the visible sentence must carry English language semantics");
+  assert.doesNotMatch(readingGuide, /aria-live|role=["']status["']/, "screen-reader speech must not overlap the authored lesson audio");
+  assert.match(storyStage, /reading\s*\?\s*styles\.stageReading/, "the stage must expose a dedicated, branded reading treatment");
+  assert.match(mimic, /if\s*\(lineListOpen\)\s*return;/, "lesson hotkeys must stay inert while the line list is open");
+  assert.match(mimic, /complete\s*\|\|\s*feedbackOpen\s*\|\|\s*lineListOpen/, "stage taps must not resume playback behind the line list");
+
+  const readingStage = balancedBlock(css, ".stageReading::after");
+  const dimAlpha = Number(readingStage.match(/background:\s*rgba\(0,\s*0,\s*0,\s*([\d.]+)\)/)?.[1]);
+  assert.ok(dimAlpha >= 0.25 && dimAlpha <= 0.5, "the story art must stay visible but subdued behind the sentence");
+  const guide = balancedBlock(css, ".mimicReadingGuide");
+  assert.match(guide, /rgba\(96,\s*217,\s*108/, "the reading rail must retain Mimic green");
+  assert.match(guide, /color:\s*#f4efe2/i, "the sentence rail must use a softer reading white instead of glare-white");
+  const reducedMotion = css.match(/@media\s*\(prefers-reduced-motion:\s*reduce\)[\s\S]*?\n\}/)?.[0] ?? "";
+  assert.match(reducedMotion, /\.stageArt,\s*\.stageArtFallback\s*\{[^}]*transition:\s*none/, "Living Storybook travel must respect reduced-motion preferences");
+
+  assert.match(movieMimic, /showText=\{false\}/, "movie Mimic must keep the established no-text acquisition rule");
+  assert.doesNotMatch(movieMimic, /showText=\{true\}/, "the book exception must not leak into movie Mimic");
 });
 
 test("Word judges the visible token sequence when repeated words swap IDs", async () => {
@@ -196,7 +213,10 @@ test("mobile line navigation escapes the 16:9 frame as a scrollable bottom sheet
   assert.match(listSource, /matchMedia\(["']\(orientation: portrait\) and \(max-width: 540px\)["']\)/, "only phone portrait should switch to the bottom sheet");
   assert.match(listSource, /event\.key\s*!==\s*["']Escape["']/, "Escape must dismiss the sheet");
   assert.match(listSource, /role=["']dialog["'][^>]*aria-modal=["']true["']/, "the portalled sheet must expose modal semantics");
-  assert.equal((modeSource.match(/\bmobileSheet\b/g) ?? []).length, 3, "Mimic, Guess, and Word must all opt into safe mobile navigation");
+  const activeMimic = sourceSection(modeSource, "function MimicMode()", "function GuessMode()");
+  const activeWord = sourceSection(modeSource, "function WordMode()", "export type PinocchioLessonModePageProps");
+  assert.match(activeMimic, /<MimicLineList[\s\S]{0,220}\bmobileSheet\b/, "Mimic must opt into safe mobile navigation");
+  assert.match(activeWord, /<MimicLineList[\s\S]{0,220}\bmobileSheet\b/, "Word must opt into safe mobile navigation");
   assert.match(scrollArea, /overflow-y:\s*auto/, "the list body must scroll independently");
   assert.match(scrollArea, /overscroll-behavior:\s*contain/, "list scrolling must not drag the lesson behind it");
 });

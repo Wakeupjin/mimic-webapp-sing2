@@ -6,7 +6,7 @@
 ## Active operator
 
 <!-- HANDOFF:ACTIVE_OPERATOR:START -->
-codex
+Codex
 <!-- HANDOFF:ACTIVE_OPERATOR:END -->
 
 ## Status
@@ -18,42 +18,47 @@ COMPLETE
 ## Current objective
 
 <!-- HANDOFF:OBJECTIVE:START -->
-Close the remaining behavioral and microinteraction gaps between Pinocchio Foundation and the canonical Sing2 Watch/Mimic/Guess/Word experience, then validate and deploy the exact parity release to Production
+Remove Pinocchio Guess from the learner flow and redesign Pinocchio Mimic as a readable, dimmed Living Storybook sentence practice while preserving movie Mimic
 <!-- HANDOFF:OBJECTIVE:END -->
 
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Deployed the full Pinocchio Foundation behavior pass against Sing2 to Production. Signed-in live QA verified Watch's playback-synchronized clock and progress bar, Mimic's playback-only active-green slot, Guess's three-view flow and Correct feedback, and Word's listen/listen/mimic sequence, ten visible fixed-position chips, Correct feedback, chameleon eating state, and 01/10 → 02/10 transition. The deployed release also includes seek/resume, guarded navigation, correct/wrong melodies, pause-safe timers, completion persistence, and per-mode remote progress hydration.
+Pinocchio reading-first redesign is complete on PR #40. Learner flow is Listen → Mimic → Word, book Mimic keeps the Living Storybook motion under a comfortable dim and shows the stable authored sentence, legacy Guess data is preserved but unroutable, and old/deep Guess links safely return to the correct Chapter even through authentication. Vercel Preview: https://mimic-webapp-sing2-git-codex-pinocc-8ed6ab-kangjinlees-projects.vercel.app/ . Production was not merged or deployed.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
+- app/book/{guessing,listen,mimicking,selecting,word}/page.tsx
+- app/book/pinocchio/[chapter]/{[mode],guessing}/page.tsx
+- app/components/ModeSelectLayout.tsx
 - app/components/pinocchio/PinocchioLessonModeClient.tsx
+- app/dev/brand-preview/page.tsx
+- app/dev/pinocchio-chapters/[chapter]/ChapterSelectClient.tsx
+- app/dev/pinocchio-chapters/{lessonData.ts,localProgress.ts,pinocchio-chapters.module.css}
 - app/globals.css
-- app/hooks/useSoundEffects.ts
-- app/lib/progressGate.ts
+- app/lib/authRedirect.ts
 - package.json
-- tests/pinocchio-learning-behavior-parity.test.mjs
-- docs/ai-handoff/STATE.md
-- docs/ai-handoff/CONVERSATION.md
+- tests/pinocchio-{sing2-parity,learning-behavior-parity,three-mode-reading}.test.mjs
+- docs/ai-handoff/PROJECT_CONTEXT.md
+- docs/ai-handoff/{STATE.md,CONVERSATION.md}
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-`npm run validate:pinocchio-behavior-parity` passes 26/26; `npm run validate:pinocchio-ui-parity` passes 9/9; `npm run validate:pinocchio-visual-release` passes 5/5; `npx tsc --noEmit` passes; the final 101-page Production build passes. GitHub commit `3579366dc65c7443d47f1fe831b4aa788d3442dd` received a successful Vercel Production status, and signed-in live QA passed all four learning modes on `mimicenglish.vercel.app`.
+45 tests passed; TypeScript and diff checks passed; final 89-page production build passed; both Vercel checks passed; live unauthenticated deep-link smoke confirmed next=/book/pinocchio/7 rather than the removed Guess route.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-No release blocker remains. The automated browser runtime cannot render Web Audio output, so the live pass verified the exact Correct/Again trigger states while the executable parity suite verifies the C5-E5-G5 and G5-E5-C5 note sequences. Keep Pinocchio's explicit completion persistence rather than copying Sing2's known final Guess/Word persistence defects.
+Production remains untouched. Authenticated playback and visual approval still require the refreshed Vercel Preview.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-No implementation action remains. Treat the 26-contract behavior suite as a required release gate for future Pinocchio learning-mode changes.
+Wait for the next user request. Begin a new objective before making unrelated changes.
 <!-- HANDOFF:NEXT_ACTION:END -->

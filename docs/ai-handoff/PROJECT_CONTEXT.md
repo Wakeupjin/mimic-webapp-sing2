@@ -7,8 +7,9 @@ checkpoint and `CONVERSATION.md` for recent decisions.
 ## Product in one sentence
 
 Mimic is an AI-native content company that releases a monthly English
-playground: one licensed film world and one owned story season, both learned
-through Watch → Mimic → Guess → Word across a twelve-class Monthly Pack.
+playground: one licensed film world and one owned story season across a
+twelve-class Monthly Pack. Film uses Watch → Mimic → Guess → Word; the reading
+course uses Listen → Mimic → Word.
 
 Film creates discovery and vividness; reusable Story Packs create owned,
 levelled inventory and margin. Long stories may fill a season, while medium or
@@ -51,7 +52,7 @@ generate thirty unrelated sentence TTS clips.
 ## Learning flows
 
 - Movie: Selecting → Watching → Mimicking → Guessing → Word
-- Book: Selecting → Listen → Mimicking → Guessing → Word
+- Book: Selecting → Listen → Mimicking → Word
 - Progress vocabulary:
   - green check: completed
   - chameleon: current step
@@ -60,9 +61,12 @@ generate thirty unrelated sentence TTS clips.
 - Resume should continue at the saved line, but a completed mode must reopen in
   a deliberate replay state rather than unexpectedly autoplaying its last line.
 - Onboarding timing and language should feel consistent across modes.
-- Mimic and Mimic Check never reveal the target English sentence. Learners
-  listen first, then use the same scene without sound as the speaking cue;
-  replaying the sound is an optional recovery action rather than the default.
+- Movie Mimic and Mimic Check never reveal the target English sentence.
+  Learners listen first, then use the same scene without sound as the speaking
+  cue; replaying the sound is an optional recovery action rather than the
+  default. Book Mimic is the deliberate exception: it keeps the Living
+  Storybook scene visible under a comfortable dim treatment and shows the full
+  authored English sentence for read-aloud practice.
 
 ## Product and design rules
 
@@ -73,7 +77,8 @@ generate thirty unrelated sentence TTS clips.
 - Login, account, home, selection, and every learning mode must work naturally
   in mobile portrait. Landscape/fullscreen may improve movie immersion, but it
   is a user choice rather than a hard gate. Book Mimicking keeps its portrait
-  layout because it displays a static cover rather than video.
+  layout and shared Living Storybook motion while reserving a stable,
+  readable sentence rail inside the stage.
 - Always check phone, tablet, laptop, and large-screen layouts. Fixed desktop
   widths must not create horizontal clipping on phones.
 - In mobile portrait Mimicking, keep all eight practice steps visible and place

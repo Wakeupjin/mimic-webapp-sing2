@@ -69,12 +69,12 @@ async function executableFunction(source, name) {
   return (await import(moduleUrl))[name];
 }
 
-test("Foundation fixtures keep the learner-facing 30/10/10 counters in every Chapter", async () => {
+test("Foundation fixtures keep active Mimic/Word counters and retain authored Guess data for compatibility", async () => {
   for (let chapterNumber = 1; chapterNumber <= 12; chapterNumber += 1) {
     const activities = JSON.parse(await text(foundationActivities(chapterNumber)));
     assert.equal(activities.mimic.length, 30, `Chapter ${chapterNumber} Mimic counter drifted`);
-    assert.equal(activities.guess.length, 10, `Chapter ${chapterNumber} Guess counter drifted`);
     assert.equal(activities.word.length, 10, `Chapter ${chapterNumber} Word counter drifted`);
+    assert.equal(activities.guess.length, 10, `Chapter ${chapterNumber} legacy Guess content must remain reversible`);
   }
 });
 
@@ -360,12 +360,11 @@ test("feedback audio reuses one mobile-safe AudioContext", async () => {
   assert.equal((source.match(/new AudioContextConstructor\(\)/g) ?? []).length, 1, "sounds must not allocate a new context for every correct answer");
 });
 
-test("all four modes expose deterministic completion and replay routes", async () => {
+test("learner-facing Listen, Mimic, and Word expose deterministic completion and replay routes", async () => {
   const source = await text(modeClientPath);
   const sections = {
     watching: sourceSection(source, "function WatchMode()", "function MimicMode()"),
     mimicking: sourceSection(source, "function MimicMode()", "function GuessMode()"),
-    guessing: sourceSection(source, "function GuessMode()", "function normalizedTokens"),
     word: sourceSection(source, "function WordMode()", "export type PinocchioLessonModePageProps"),
   };
 
@@ -377,18 +376,24 @@ test("all four modes expose deterministic completion and replay routes", async (
   }
 
   assert.match(sections.watching, /router\.push\(modeHref\(chapterNumber,\s*["']mimicking["']\)\)/);
-  assert.match(sections.mimicking, /router\.push\(modeHref\(chapterNumber,\s*["']guessing["']\)\)/);
-  assert.match(sections.guessing, /router\.push\(modeHref\(chapterNumber,\s*["']word["']\)\)/);
+  assert.match(sections.mimicking, /router\.push\(modeHref\(chapterNumber,\s*["']word["']\)\)/);
+  assert.doesNotMatch(sections.mimicking, /router\.push\(modeHref\(chapterNumber,\s*["']guessing["']\)\)/);
   assert.match(sections.word, /chapterRoot\(chapterNumber\s*\+\s*1\)/);
+
+  const renderSwitch = sourceSection(source, "let content: ReactNode = null", "return (\n    <LessonContext.Provider");
+  assert.match(renderSwitch, /mode\s*===\s*["']watching["'][\s\S]+<WatchMode/);
+  assert.match(renderSwitch, /mode\s*===\s*["']mimicking["'][\s\S]+<MimicMode/);
+  assert.match(renderSwitch, /mode\s*===\s*["']word["'][\s\S]+<WordMode/);
+  assert.doesNotMatch(renderSwitch, /mode\s*===\s*["']guessing["']|<GuessMode/, "legacy Guess implementation must not be learner-renderable");
 });
 
-test("remote current-position and completed state hydrate all four mode counters", async () => {
+test("remote current-position and completed state hydrate all three learner-facing mode counters", async () => {
   const source = await text(modeClientPath);
 
   assertSource(source, /current_position/, "Pinocchio must read and write the same resume position contract as Sing2");
   assertSource(source, /savedProgress|modeProgress|progressSnapshot/, "mode components need the matching remote progress row");
   assertSource(source, /completed/, "a completed mode must reopen at its final counter and explicit completion overlay");
-  for (const mode of ["watching", "mimicking", "guessing", "word"]) {
+  for (const mode of ["watching", "mimicking", "word"]) {
     assertSource(
       source,
       new RegExp(`mode\\s*===\\s*["']${mode}["'][\\s\\S]{0,500}(current_position|savedProgress|modeProgress|progressSnapshot)`),

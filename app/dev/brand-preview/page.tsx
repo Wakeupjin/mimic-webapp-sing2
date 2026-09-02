@@ -12,6 +12,8 @@ import { signupPath } from "../../lib/authRedirect";
 import { lessonPath } from "../../lib/lessonMedia";
 import { placementStorageKey } from "../../lib/placement";
 import { fetchOwnProgress, MODE_ORDER, type LearnMode, type ProgressRow } from "../../lib/progressGate";
+import { ALL_PINOCCHIO_MODES, BOOK_FLOW_MODES } from "../pinocchio-chapters/lessonData";
+import type { LessonMode as PinocchioLessonMode } from "../pinocchio-chapters/types";
 import styles from "./brand-preview.module.css";
 
 type Language = "ko" | "en";
@@ -47,7 +49,7 @@ const copy = {
     movieBody: "12개의 장면에서 등장인물의 목소리와 리듬을 익혀요.",
     movieCta: "영화로 학습하기",
     bookLabel: "이번 달 원서",
-    bookBody: "먼저 듣고, 한 문장씩 따라 말하며 이야기를 내 목소리로 익혀요.",
+    bookBody: "듣고, 문장을 보며 따라 읽고, 낱말로 다시 완성해요.",
     bookCta: "원서로 학습하기",
     methodTop: "문제 풀이 대신",
     methodAccent: "장면 리허설.",
@@ -98,7 +100,7 @@ const copy = {
     movieBody: "Borrow the voices and rhythms of the characters across twelve scenes.",
     movieCta: "Open movie course",
     bookLabel: "This month’s book",
-    bookBody: "Listen first, then find the story’s voice one sentence at a time.",
+    bookBody: "Listen, mimic with the sentence in view, then rebuild it word by word.",
     bookCta: "Open book course",
     methodTop: "LESS TEST PREP.",
     methodAccent: "MORE REHEARSAL.",
@@ -138,6 +140,49 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
     if (Number.isFinite(byTime) && byTime !== 0) return byTime;
     return b.lesson_number - a.lesson_number;
   })[0];
+
+  if (latest.lesson_number >= 401 && latest.lesson_number <= 412) {
+    const rawMode = latest.mode as PinocchioLessonMode;
+    if (!ALL_PINOCCHIO_MODES.includes(rawMode)) return null;
+
+    let lessonNumber = latest.lesson_number;
+    const chapterRows = rows.filter((row) => row.lesson_number === lessonNumber);
+    const completedModes = new Set(
+      chapterRows
+        .filter((row) => row.completed && BOOK_FLOW_MODES.includes(row.mode as PinocchioLessonMode))
+        .map((row) => row.mode as PinocchioLessonMode),
+    );
+    let mode = BOOK_FLOW_MODES.find((candidate) => !completedModes.has(candidate));
+    if (!mode) {
+      lessonNumber += 1;
+      mode = "watching";
+    }
+
+    if (lessonNumber > 412) return null;
+    const chapter = lessonNumber - 400;
+    const modeLabel = mode === "watching" ? "LISTEN" : mode.toUpperCase();
+    const modeRow = chapterRows.find((row) => row.mode === mode);
+    const position = modeRow && !modeRow.completed && Number(modeRow.current_position) > 0 && mode !== "watching"
+      ? ` · LINE ${Math.floor(Number(modeRow.current_position)) + 1}`
+      : "";
+    return {
+      href: `/book/pinocchio/${chapter}/${mode}`,
+      ko: `PINOCCHIO · CHAPTER ${chapter} · ${modeLabel}${position}`,
+      en: `PINOCCHIO · CHAPTER ${chapter} · ${modeLabel}${position}`,
+    };
+  }
+
+  if (latest.lesson_number >= 300 && latest.lesson_number < 400) {
+    const finishedChapter = latest.completed && latest.mode === "word";
+    const chapter = Math.max(1, latest.lesson_number % 100) + (finishedChapter ? 1 : 0);
+    if (chapter > 12) return null;
+    return {
+      href: `/book/pinocchio/${chapter}`,
+      ko: `PINOCCHIO · CHAPTER ${chapter}`,
+      en: `PINOCCHIO · CHAPTER ${chapter}`,
+    };
+  }
+
   if (!MODE_ORDER.includes(latest.mode as LearnMode)) return null;
 
   let lessonNumber = latest.lesson_number;
@@ -151,26 +196,12 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
     }
   }
 
-  if (latest.lesson_number >= 401 && latest.lesson_number <= 412) {
-    if (lessonNumber > 412) return null;
-    const chapter = lessonNumber - 400;
-    const modeLabel = mode.toUpperCase();
-    const position = !latest.completed && Number(latest.current_position) > 0 && mode !== "watching"
-      ? ` · LINE ${Math.floor(Number(latest.current_position)) + 1}`
-      : "";
-    return {
-      href: `/book/pinocchio/${chapter}/${mode}`,
-      ko: `PINOCCHIO · CHAPTER ${chapter} · ${modeLabel}${position}`,
-      en: `PINOCCHIO · CHAPTER ${chapter} · ${modeLabel}${position}`,
-    };
-  }
-
-  const pack = lessonNumber >= 300 ? 3 : lessonNumber >= 200 ? 2 : 1;
+  const pack = lessonNumber >= 200 ? 2 : 1;
   const lesson = pack === 1 ? lessonNumber : lessonNumber % 100;
   const movieId = formatMovieId(pack, Math.max(1, lesson));
-  const content = pack >= 3 ? "PINOCCHIO" : "SING 2";
-  const chapterKo = pack >= 3 ? `SCENE ${lesson}` : pack === 2 ? `HARD ${lesson}` : `CHAPTER ${lesson}`;
-  const modeLabel = mode === "watching" && pack >= 3 ? "LISTEN" : mode === "watching" ? "WATCH" : mode.toUpperCase();
+  const content = "SING 2";
+  const chapterKo = pack === 2 ? `HARD ${lesson}` : `CHAPTER ${lesson}`;
+  const modeLabel = mode === "watching" ? "WATCH" : mode.toUpperCase();
   const position = !latest.completed && Number(latest.current_position) > 0 && mode !== "watching"
     ? ` · LINE ${Math.floor(Number(latest.current_position)) + 1}`
     : "";

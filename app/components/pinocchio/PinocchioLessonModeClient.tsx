@@ -20,7 +20,7 @@ import {
   estimatedTimeline,
   lessonLevel,
   mimicPracticeItems,
-  MODE_ORDER,
+  BOOK_FLOW_MODES,
   modeHref,
   parseChapterNumber,
 } from "@/app/dev/pinocchio-chapters/lessonData";
@@ -333,10 +333,11 @@ function usePausableTimer() {
   return { clear, schedule, pause, resume };
 }
 
-function StoryStage({ activeLine, dim = false, faded = false, onClick, children }: {
+function StoryStage({ activeLine, dim = false, faded = false, reading = false, onClick, children }: {
   activeLine: number;
   dim?: boolean;
   faded?: boolean;
+  reading?: boolean;
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   children?: ReactNode;
 }) {
@@ -352,7 +353,7 @@ function StoryStage({ activeLine, dim = false, faded = false, onClick, children 
   }));
   return (
     <div
-      className={`relative h-full w-full ${dim ? styles.stageDim : ""} ${faded ? styles.stageFaded : ""}`}
+      className={`relative h-full w-full ${dim ? styles.stageDim : ""} ${faded ? styles.stageFaded : ""} ${reading ? styles.stageReading : ""}`}
       style={{
         "--focus-x": `${PINOCCHIO_PANORAMA.focusX[beatIndex]}%`,
         "--focus-y": `${PINOCCHIO_PANORAMA.focusY}%`,
@@ -376,6 +377,29 @@ function StoryStage({ activeLine, dim = false, faded = false, onClick, children 
       )}
       <div className={styles.stageVignette} />
       {children}
+    </div>
+  );
+}
+
+function MimicReadingGuide({
+  sentence,
+  phraseProgress,
+}: {
+  sentence: string;
+  phraseProgress: string | null;
+}) {
+  return (
+    <div className={styles.mimicReadingGuide}>
+      <p className={styles.mimicReadingEyebrow}>
+        <span>문장을 보며 소리와 리듬을 따라가요</span>
+        {phraseProgress ? <b>{phraseProgress.replace("PHRASE", "PART")}</b> : null}
+      </p>
+      <p
+        className={styles.mimicReadingSentence}
+        lang="en"
+      >
+        {sentence}
+      </p>
     </div>
   );
 }
@@ -573,6 +597,7 @@ function MimicMode() {
   const [hardLines, setHardLines] = useState<number[]>(() => [...new Set(restoredHardLines)]);
   const [maxReached, setMaxReached] = useState(modeProgress?.completed ? Math.max(0, total - 1) : restoredIndex);
   const pausedMediaRef = useRef(false);
+  const lineListPausedSequenceRef = useRef(false);
   const { clear: clearStepTimer, schedule: scheduleStep, pause: pauseStepTimer, resume: resumeStepTimer } = usePausableTimer();
   const engine = useLessonAudio();
   const currentPractice = practiceItems[current];
@@ -628,6 +653,7 @@ function MimicMode() {
     setActiveSlot(null);
     setFeedbackOpen(false);
     setLineListOpen(false);
+    lineListPausedSequenceRef.current = false;
     setPaused(false);
     if (autoplay) runStep(0, index, 0);
   };
@@ -656,8 +682,22 @@ function MimicMode() {
     if (engine.isPlaying) engine.pause();
     if (timerPaused || pausedMediaRef.current) setPaused(true);
   }, [engine, pauseStepTimer, paused, resumeStepTimer]);
+  const toggleLineList = () => {
+    if (lineListOpen) {
+      setLineListOpen(false);
+      if (lineListPausedSequenceRef.current && paused) toggleSequencePause();
+      lineListPausedSequenceRef.current = false;
+      return;
+    }
+
+    const shouldPauseSequence = sequenceRunning && !paused;
+    lineListPausedSequenceRef.current = shouldPauseSequence;
+    if (shouldPauseSequence) toggleSequencePause();
+    setLineListOpen(true);
+  };
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (lineListOpen) return;
       if (event.code === "Space") {
         event.preventDefault();
         if (!started || complete || feedbackOpen) return;
@@ -672,7 +712,7 @@ function MimicMode() {
     };
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [complete, current, feedbackOpen, sequenceRunning, started, toggleSequencePause, total]);
+  }, [complete, current, feedbackOpen, lineListOpen, sequenceRunning, started, toggleSequencePause, total]);
   const feedback = (hard: boolean) => {
     const nextHardLines = hard
       ? (hardLines.includes(current) ? hardLines : [...hardLines, current])
@@ -694,7 +734,7 @@ function MimicMode() {
     }
   };
   const togglePause = (event: MouseEvent<HTMLDivElement>) => {
-    if ((event.target as HTMLElement).closest("button,a") || !started || complete || feedbackOpen) return;
+    if ((event.target as HTMLElement).closest("button,a") || !started || complete || feedbackOpen || lineListOpen) return;
     toggleSequencePause();
   };
   const skipLine = () => {
@@ -730,6 +770,7 @@ function MimicMode() {
       video={
         <StoryStage
           activeLine={activeLine}
+          reading={started && !complete}
           faded={complete}
           onClick={togglePause}
         >
@@ -743,15 +784,23 @@ function MimicMode() {
               total={total}
               currentIndex={current}
               canOpen={(index) => isMaster || index <= maxReached}
-              onDismiss={() => setLineListOpen(false)}
+              onDismiss={toggleLineList}
               onSelect={(index) => chooseLine(index, true)}
             />
           ) : null}
-          {!started && !complete ? <ClickToStartOverlay onClick={() => runStep(0)} text="듣고 따라 말해요" description="먼저 듣고, 소리 없이 한 번 더 말하며 30개 문장을 연습해요." actionLabel="시작" /> : null}
+          {!started && !complete ? <ClickToStartOverlay onClick={() => runStep(0)} text="문장을 보며 따라 읽어요" description="문장을 보며 먼저 듣고, 소리 없이 다시 말하면서 30개 문장을 내 목소리로 익혀요." actionLabel="시작" /> : null}
+          {started && !complete && !feedbackOpen && !lineListOpen && currentPractice ? (
+            <MimicReadingGuide
+              key={currentPractice.id}
+              sentence={currentPractice.text}
+              phraseProgress={mimicPhraseProgress(activeChunkIndex, currentPractice.chunks.length)}
+            />
+          ) : null}
           {paused && !complete ? <PauseOverlay /> : null}
           {feedbackOpen && !complete ? (
             <div className={styles.feedbackCard}>
               <span>LINE {String(current + 1).padStart(2, "0")}</span>
+              <p className={styles.feedbackSentence} lang="en">{currentPractice.text}</p>
               <strong>이 문장은 어땠나요?</strong>
               <div className={styles.feedbackActions}><button type="button" onClick={() => feedback(false)}>쉬웠어요</button><button type="button" onClick={() => feedback(true)}>어려웠어요</button></div>
             </div>
@@ -760,7 +809,7 @@ function MimicMode() {
             <div className="lesson-completion-overlay pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-black/60 px-4">
               <div className="lesson-results pointer-events-auto flex w-full max-w-4xl flex-col items-center">
                 {review}
-                <LessonCompletionActions onAgain={again} onNext={() => router.push(modeHref(chapterNumber, "guessing"))} />
+                <LessonCompletionActions onAgain={again} onNext={() => router.push(modeHref(chapterNumber, "word"))} />
               </div>
             </div>
           ) : null}
@@ -769,12 +818,7 @@ function MimicMode() {
       controls={
         <div className="lesson-dock mimic-dock">
           <PlaybackControls variant="cinema" onPrev={prev} onNext={next} onPlay={(_muted, slot) => { if (!feedbackOpen) runStep(slot); }} activeIndex={engine.isPlaying ? activeSlot : null} />
-          {currentPractice?.chunks.length > 1 ? (
-            <p className="text-center text-[10px] font-bold tracking-[0.18em] text-[#60D96C] sm:text-xs" aria-live="polite">
-              {mimicPhraseProgress(activeChunkIndex, currentPractice.chunks.length)}
-            </p>
-          ) : null}
-          <button type="button" className="mimic-count" aria-controls="pinocchio-mimic-line-list" aria-expanded={lineListOpen} aria-haspopup="listbox" aria-label="문장 목록" onClick={() => setLineListOpen((open) => !open)}>
+          <button type="button" className="mimic-count" aria-controls="pinocchio-mimic-line-list" aria-expanded={lineListOpen} aria-haspopup="listbox" aria-label="문장 목록" onClick={toggleLineList}>
             <span>{String(current + 1).padStart(2, "0")} / </span><span className="mimic-count-total">{total}</span><img src="/home/chevron.svg" alt="" className="mimic-count-chevron" />
           </button>
         </div>
@@ -1472,7 +1516,7 @@ export default function PinocchioLessonModeClient({
   const [allowed, setAllowed] = useState<boolean | null>(null);
   const [modeProgress, setModeProgress] = useState<ModeProgressSnapshot | null>(null);
   const [loadedProgressKey, setLoadedProgressKey] = useState<string | null>(null);
-  const progressKey = chapterNumber && MODE_ORDER.includes(mode)
+  const progressKey = chapterNumber && BOOK_FLOW_MODES.includes(mode)
     ? `${lessonNumberBase + chapterNumber}:${mode}`
     : null;
 
@@ -1491,7 +1535,7 @@ export default function PinocchioLessonModeClient({
     setModeProgress(null);
     setLoadedProgressKey(null);
     const verifyAccess = async () => {
-      if (!chapterNumber || !pack || !MODE_ORDER.includes(mode)) {
+      if (!chapterNumber || !pack || !BOOK_FLOW_MODES.includes(mode)) {
         setAllowed(false);
         router.replace(chapterRoot(1));
         return;
@@ -1576,7 +1620,6 @@ export default function PinocchioLessonModeClient({
   let content: ReactNode = null;
   if (mode === "watching") content = <WatchMode />;
   else if (mode === "mimicking") content = <MimicMode />;
-  else if (mode === "guessing") content = <GuessMode />;
   else if (mode === "word") content = <WordMode />;
 
   return (
