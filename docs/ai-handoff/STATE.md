@@ -24,39 +24,31 @@ Remove Pinocchio Guess from the learner flow and redesign Pinocchio Mimic as a r
 ## Last durable progress
 
 <!-- HANDOFF:PROGRESS:START -->
-Final review is clean. Pinocchio learner UI now exposes only Listen → Mimic → Word; book Mimic shows one stable authored sentence across all eight audible/muted repetitions over a dimmed Living Storybook; the line list safely pauses playback; small-phone, iPad, reduced-motion, and screen-reader overlaps are handled. Legacy Guess rows remain stored but are ignored by learner gates and resume ordering.
+PR #40 Preview smoke found and fixed the final removed-Guess deep-link race: auth redirects now canonicalize book Guess URLs to the Chapter root before signup/login can preserve them. The dedicated server redirect remains as defense in depth; Sing2 Guess is unchanged.
 <!-- HANDOFF:PROGRESS:END -->
 
 ## Files changed or relevant
 
 <!-- HANDOFF:FILES:START -->
-- app/book/{guessing,listen,mimicking,selecting,word}/page.tsx
-- app/book/pinocchio/[chapter]/{[mode],guessing}/page.tsx
-- app/components/ModeSelectLayout.tsx
-- app/components/pinocchio/PinocchioLessonModeClient.tsx
-- app/dev/brand-preview/page.tsx
-- app/dev/pinocchio-chapters/[chapter]/ChapterSelectClient.tsx
-- app/dev/pinocchio-chapters/{lessonData.ts,localProgress.ts,pinocchio-chapters.module.css}
-- app/globals.css
-- package.json
-- tests/pinocchio-*.test.mjs
-- docs/ai-handoff/{PROJECT_CONTEXT.md,STATE.md,CONVERSATION.md}
+- app/lib/authRedirect.ts
+- tests/pinocchio-three-mode-reading.test.mjs
+- docs/ai-handoff/{STATE.md,CONVERSATION.md}
 <!-- HANDOFF:FILES:END -->
 
 ## Validation
 
 <!-- HANDOFF:VALIDATION:START -->
-44 tests passed (UI/three-mode 13, behavior 26, visual release 5); TypeScript passed; git diff --check passed; final production build passed with 89 pages, 36 active book lesson paths, and a dedicated removed-Guess redirect.
+45 tests passed (UI/three-mode 14, behavior 26, visual release 5); TypeScript and diff check passed; final 89-page production build passed.
 <!-- HANDOFF:VALIDATION:END -->
 
 ## Open decisions / risks
 
 <!-- HANDOFF:RISKS:START -->
-Production remains untouched. Authenticated playback and responsive visual approval must happen on the Vercel Preview before merge. Dormant Guess code/fixtures remain for rollback and data compatibility but cannot be routed or rendered by learners.
+Production remains untouched. Authenticated playback and visual approval still require the refreshed Vercel Preview.
 <!-- HANDOFF:RISKS:END -->
 
 ## Next action
 
 <!-- HANDOFF:NEXT_ACTION:START -->
-Commit and push codex/pinocchio-three-mode-reading, open a PR, wait for Vercel Preview, then perform authenticated visual QA and stop before merge/Production.
+Commit and push the auth normalization follow-up, wait for the refreshed Vercel Preview, verify the browser lands with next=/book/pinocchio/{chapter}, then perform authenticated responsive visual QA and stop before merge/Production.
 <!-- HANDOFF:NEXT_ACTION:END -->

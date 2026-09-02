@@ -16,6 +16,7 @@ const legacyMimicRoutePath = path.join(root, "app", "book", "mimicking", "page.t
 const legacyGuessRoutePath = path.join(root, "app", "book", "guessing", "page.tsx");
 const legacyWordRoutePath = path.join(root, "app", "book", "word", "page.tsx");
 const legacySelectingRoutePath = path.join(root, "app", "book", "selecting", "page.tsx");
+const authRedirectPath = path.join(root, "app", "lib", "authRedirect.ts");
 const homePath = path.join(root, "app", "dev", "brand-preview", "page.tsx");
 
 async function text(filePath) {
@@ -144,4 +145,15 @@ test("legacy book URLs preserve the Chapter and enter only the canonical three-m
   assert.match(legacyWord, /modeHref\(legacyBookChapter\(id\),\s*["']word["']\)/);
   assert.match(legacyGuess, /chapterRoot\(legacyBookChapter\(id\)\)/, "removed Guess must return to its own Chapter map");
   assert.match(legacySelecting, /chapterRoot\(legacyBookChapter\(id\)\)/);
+});
+
+test("authentication cannot preserve a removed book Guess destination", async () => {
+  const source = await text(authRedirectPath);
+  const auth = await import(javascriptModuleUrl(source, authRedirectPath));
+
+  assert.equal(auth.getSafeNextPath("/book/pinocchio/7/guessing"), "/book/pinocchio/7");
+  assert.equal(auth.getSafeNextPath("/book/pinocchio/12/guessing?id=003:12"), "/book/pinocchio/12");
+  assert.equal(auth.getSafeNextPath("/book/guessing?id=003:7"), "/book/pinocchio/7");
+  assert.equal(auth.getSafeNextPath("/book/guessing?id=garbage"), "/book/pinocchio/1");
+  assert.equal(auth.getSafeNextPath("/sing2/guessing?id=001:1"), "/sing2/guessing?id=001:1", "movie Guess remains a valid destination");
 });

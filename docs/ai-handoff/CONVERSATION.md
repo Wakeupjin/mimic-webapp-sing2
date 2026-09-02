@@ -1344,3 +1344,23 @@ Final review is clean. Pinocchio learner UI now exposes only Listen → Mimic �
 - docs/ai-handoff/{PROJECT_CONTEXT.md,STATE.md,CONVERSATION.md}
 
 **Open risks:** Production remains untouched. Authenticated playback and responsive visual approval must happen on the Vercel Preview before merge. Dormant Guess code/fixtures remain for rollback and data compatibility but cannot be routed or rendered by learners.
+
+## 2026-09-02 22:42:49 — Codex / work
+
+Live Vercel Preview navigation exposed an AuthGate race on removed Pinocchio Guess deep links: the server redirect existed, but unauthenticated signup preserved the obsolete Guess destination first. getSafeNextPath now normalizes canonical and legacy book Guess URLs to the correct Chapter root while leaving movie Guess untouched.
+
+
+## 2026-09-02 22:43:03 — Codex / checkpoint
+
+PR #40 Preview smoke found and fixed the final removed-Guess deep-link race: auth redirects now canonicalize book Guess URLs to the Chapter root before signup/login can preserve them. The dedicated server redirect remains as defense in depth; Sing2 Guess is unchanged.
+
+**Next action:** Commit and push the auth normalization follow-up, wait for the refreshed Vercel Preview, verify the browser lands with next=/book/pinocchio/{chapter}, then perform authenticated responsive visual QA and stop before merge/Production.
+
+**Validation:** 45 tests passed (UI/three-mode 14, behavior 26, visual release 5); TypeScript and diff check passed; final 89-page production build passed.
+
+**Files:**
+- app/lib/authRedirect.ts
+- tests/pinocchio-three-mode-reading.test.mjs
+- docs/ai-handoff/{STATE.md,CONVERSATION.md}
+
+**Open risks:** Production remains untouched. Authenticated playback and visual approval still require the refreshed Vercel Preview.
