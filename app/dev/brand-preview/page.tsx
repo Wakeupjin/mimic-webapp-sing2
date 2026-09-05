@@ -7,9 +7,7 @@ import { useRouter } from "next/navigation";
 import AccountMenu from "../../components/AccountMenu";
 import Sing2Preview from "../../components/Sing2Preview";
 import { useAuth } from "../../contexts/AuthContext";
-import { formatMovieId } from "../../dataService";
 import { signupPath } from "../../lib/authRedirect";
-import { lessonPath } from "../../lib/lessonMedia";
 import { placementStorageKey } from "../../lib/placement";
 import { fetchOwnProgress, MODE_ORDER, type LearnMode, type ProgressRow } from "../../lib/progressGate";
 import styles from "./brand-preview.module.css";
@@ -201,7 +199,10 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
 
   const pack = lessonNumber >= 300 ? 3 : lessonNumber >= 200 ? 2 : 1;
   const lesson = pack === 1 ? lessonNumber : lessonNumber % 100;
-  const movieId = formatMovieId(pack, Math.max(1, lesson));
+  const movieId = `${String(pack).padStart(3, "0")}:${Math.max(1, lesson)}`;
+  const href = pack >= 3
+    ? `/book/${mode === "watching" ? "listen" : mode}?id=${movieId}`
+    : `/sing2/${mode}?id=${movieId}`;
   const content = pack >= 3 ? "PINOCCHIO" : "SING 2";
   const chapterKo = pack >= 3 ? `SCENE ${lesson}` : pack === 2 ? `HARD ${lesson}` : `CHAPTER ${lesson}`;
   const modeLabel = mode === "watching" && pack >= 3 ? "LISTEN" : mode === "watching" ? "WATCH" : mode.toUpperCase();
@@ -210,7 +211,7 @@ function getResumeTarget(rows: HomeProgressRow[]): ResumeTarget | null {
     : "";
 
   return {
-    href: lessonPath(movieId, mode),
+    href,
     ko: `${content} · ${chapterKo} · ${modeLabel}${position}`,
     en: `${content} · ${chapterKo} · ${modeLabel}${position}`,
   };
