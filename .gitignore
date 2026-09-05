@@ -42,6 +42,7 @@ next-env.d.ts
 
 # large video files
 public/videos/*.mp4
+!public/videos/sing2-preview.mp4
 public/books/pinocchio/v3/
 
 # Rebuildable Story Pack audio intermediates stay out of Git. Canonical

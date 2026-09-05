@@ -1289,3 +1289,36 @@ Signed-in live verification on `mimicenglish.vercel.app` confirmed: Watch advanc
 **Validation:** behavior parity 26/26, structural/mobile UI parity 9/9, visual release gate 5/5, TypeScript, diff check, 101-page Production build, Vercel status, and signed-in four-mode live smoke all passed.
 
 **Root cause of the previous incomplete pass:** the earlier release gate proved shared geometry, route wiring, visual assets, and answer visibility, but did not encode click → playback → active-green → feedback sound → counter → next-step behavior. Pinocchio also maintained a separate large state machine from Sing2, so visual parity could pass while runtime timing and feedback still diverged. The new 26-contract executable gate closes that gap while intentionally preserving Pinocchio's stronger completion persistence.
+
+## 2026-09-05 16:12:14 — Codex / work started
+
+Objective: Deploy the approved MimiC introduction design to the production homepage while preserving account, placement, resume, and course-entry behavior.
+
+
+## 2026-09-05 16:12:14 — Codex / request
+
+User approved the revised operating-site design and explicitly requested deployment to the original MimiC production page.
+
+
+## 2026-09-05 16:12:14 — Codex / checkpoint
+
+Integrated the approved online/offline space, learning-method, and educational-roots story into the production home while preserving authentication, placement, progress resume, account menu, and direct movie/book course entry. Public home preview now loads only the reviewed local 11.72-second clip. Added branded social preview metadata.
+
+**Next action:** Commit and push only the homepage release files, open and merge a PR to main, then verify the Vercel production aliases and public preview asset.
+
+**Validation:** Standalone TypeScript passed; fresh Next production build passed with 101 static pages; local built server returned 200 for home, space image, OG image, and reviewed preview video; expected Korean positioning and roots copy appeared in rendered HTML.
+
+**Files:**
+- .gitignore
+- .vercelignore
+- app/components/Sing2Preview.tsx
+- app/dev/brand-preview/page.tsx
+- app/dev/brand-preview/brand-preview.module.css
+- app/layout.tsx
+- public/home/mimic-space.png
+- public/og.png
+- public/videos/sing2-preview.mp4
+- docs/ai-handoff/STATE.md
+- docs/ai-handoff/CONVERSATION.md
+
+**Open risks:** Vercel MCP tools are unavailable in this task, so Git-linked deployment status must be verified through the repository and available Vercel CLI/API tooling without claiming MCP evidence.

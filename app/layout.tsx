@@ -30,8 +30,25 @@ const bmHannaPro = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MimiC",
-  description: "영화와 원서로 완성하는 영어 리듬 학습",
+  metadataBase: new URL("https://mimicenglish.vercel.app"),
+  title: "MimiC | 아이가 영어에 빠져드는 공간",
+  description: "모국어 습득 원리를 바탕으로 영화와 원서 속 이야기를 듣고 따라 말하며 영어에 몰입하는 온·오프라인 공간.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "MimiC | 아이가 영어에 빠져드는 공간",
+    description: "영화와 원서, 그리고 우리만의 영어 공간. 듣고 따라 말하며 영어를 내 목소리로 만듭니다.",
+    url: "/",
+    siteName: "MimiC",
+    locale: "ko_KR",
+    type: "website",
+    images: [{ url: "/og.png", width: 1536, height: 1024, alt: "MimiC — 아이가 영어에 빠져드는 공간" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MimiC | 아이가 영어에 빠져드는 공간",
+    description: "영화와 원서, 그리고 우리만의 영어 공간.",
+    images: ["/og.png"],
+  },
 };
 
 export const viewport = {
