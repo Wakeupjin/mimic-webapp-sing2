@@ -1,12 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { getVideoSourceWithTimeRange } from "../utils/videoSource";
 import styles from "../dev/brand-preview/brand-preview.module.css";
 
-const CLIP_START = 288.5;
-const CLIP_END = 300.218;
-const CLIP_DURATION = CLIP_END - CLIP_START;
+const PUBLIC_VIDEO_PREVIEW_URL = "/videos/sing2-preview.mp4";
+const PREVIEW_DURATION_FALLBACK_SECONDS = 11.72;
 
 const previewCopy = {
   ko: {
@@ -40,17 +38,9 @@ export default function Sing2Preview({
   const [progress, setProgress] = useState(0);
   const t = previewCopy[language];
 
-  const keepInsideClip = (video: HTMLVideoElement) => {
-    if (video.currentTime < CLIP_START - 0.2 || video.currentTime >= CLIP_END) {
-      video.currentTime = CLIP_START;
-      setProgress(0);
-    }
-  };
-
   const togglePlayback = () => {
     const video = videoRef.current;
     if (!video) return;
-    keepInsideClip(video);
     if (video.paused) {
       void video.play();
     } else {
@@ -69,13 +59,11 @@ export default function Sing2Preview({
   const handleTimeUpdate = () => {
     const video = videoRef.current;
     if (!video) return;
-    if (video.currentTime >= CLIP_END) {
-      video.currentTime = CLIP_START;
-      setProgress(0);
-      if (!video.paused) void video.play();
-      return;
-    }
-    setProgress(Math.max(0, Math.min(1, (video.currentTime - CLIP_START) / CLIP_DURATION)));
+    const duration =
+      Number.isFinite(video.duration) && video.duration > 0
+        ? video.duration
+        : PREVIEW_DURATION_FALLBACK_SECONDS;
+    setProgress(Math.max(0, Math.min(1, video.currentTime / duration)));
   };
 
   return (
@@ -84,13 +72,13 @@ export default function Sing2Preview({
         <video
           ref={videoRef}
           className={styles.previewVideo}
-          src={getVideoSourceWithTimeRange(CLIP_START)}
+          src={PUBLIC_VIDEO_PREVIEW_URL}
           poster="/sing2Poster.jpg"
           preload="metadata"
           autoPlay
+          loop
           muted={muted}
           playsInline
-          onLoadedMetadata={(event) => keepInsideClip(event.currentTarget)}
           onTimeUpdate={handleTimeUpdate}
           onPlay={() => setIsPlaying(true)}
           onPause={() => setIsPlaying(false)}
